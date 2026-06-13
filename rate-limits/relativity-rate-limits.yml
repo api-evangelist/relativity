@@ -1,0 +1,54 @@
+name: Relativity API Rate Limits
+description: RelativityOne enforces rate limiting on key API services to ensure platform stability. The Object Manager API is the primary service with documented throttling. Requests exceeding limits receive HTTP 429 (Too Many Requests) responses.
+url: https://platform.relativity.com/RelativityOne/Content/What_s_new/What_s_new.htm
+limits:
+
+  - api: Object Manager API
+    description: Per-application rate limit applied on a per-Web-Server basis for all Object Manager consumers.
+    limit: 1000 requests per minute
+    scope: Per application per Web Server
+    error_code: 429 Too Many Requests
+    behavior: Requests exceeding the limit are rejected with a 429 exception.
+    notes:
+      - Enforced in Production environments since March 20, 2024.
+      - First applied to Sandbox environments December 20, 2023.
+      - Best practices and code samples for rate limit handling are available in developer documentation.
+      - Retry logic with exponential backoff is recommended.
+
+http_status_codes:
+  - code: 200
+    meaning: Success
+  - code: 400
+    meaning: Bad Request — malformed request or invalid parameters
+  - code: 401
+    meaning: Unauthorized — missing or invalid credentials
+  - code: 403
+    meaning: Forbidden — insufficient permissions
+  - code: 404
+    meaning: Not Found — resource does not exist
+  - code: 429
+    meaning: Too Many Requests — rate limit exceeded
+  - code: 500
+    meaning: Internal Server Error — server-side failure
+
+authentication_limits:
+  - type: OAuth2 Bearer Token
+    notes:
+      - Consumer key and secret obtained via OAuth2 Client Manager.
+      - OAuth2 client secrets are displayed only once after creation.
+      - Tokens are issued by the Relativity identity service.
+  - type: Basic Authentication
+    notes:
+      - Username and password encoded in Base64.
+      - Sent via Authorization header.
+  - type: Cookie Authentication
+    notes:
+      - RelAuth cookie issued upon login.
+      - Used automatically in browser-based AJAX calls.
+
+best_practices:
+  - Implement retry logic with exponential backoff for 429 responses.
+  - Batch Object Manager requests where possible to reduce call volume.
+  - Use bulk/mass operations APIs instead of looping individual requests.
+  - Monitor per-application request rates to stay within 1,000 req/min.
+  - Reference rate limit documentation at platform.relativity.com for code samples.

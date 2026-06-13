@@ -1,0 +1,57 @@
+name: Relativity FinOps
+description: Financial operations guidance for managing and optimizing RelativityOne costs. Relativity uses a consumption-based model billed per GB of active data. Key cost levers include data lifecycle management, storage tiering, commitment discounts, and AI feature usage.
+url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+
+billing_model:
+  type: Consumption-based (per GB of active data per month)
+  unit: Gigabyte (GB)
+  user_fees: None — unlimited users included in all plans
+  commitment_options:
+    - Pay As You Go (month-to-month, highest per-GB rate)
+    - Flex Commit 1-Year (up to 25% discount)
+    - Flex Commit 3-Year (maximum discount, rate lock)
+
+cost_categories:
+  - name: Active Data Storage
+    description: Primary billing unit — data actively under review and processing.
+    rate_note: Base rate varies by plan and volume tier.
+  - name: Early Case Assessment (ECA) Data
+    description: Data in pre-review or ECA stage billed at a reduced rate.
+    rate_note: Approximately 33% of the active data rate on Flex Commit plans.
+  - name: Cold Storage
+    description: Archived workspace data retained for long-term preservation billed at lowest rate.
+    rate_note: Approximately 25% of the active data rate on Flex Commit plans.
+    management_note: Cold storage eligibility determined by "Workspace State" field.
+  - name: AI Feature Usage
+    description: Relativity aiR suite (Review, Privilege, Case Strategy, Data Breach Response) may carry additional consumption costs.
+    rate_note: Pricing on request; included with enterprise plans.
+
+cost_management_tools:
+  - name: Cost Explorer
+    description: Built-in RelativityOne console for monitoring data usage, billing metrics, and cost trends.
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+  - name: Billing Insights API
+    description: REST API endpoint to programmatically check billing metrics and usage data.
+    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+optimization_strategies:
+  - Move inactive workspaces to cold storage to reduce per-GB costs.
+  - Use Early Case Assessment (ECA) staging to defer full active data billing.
+  - Commit to 1-year or 3-year Flex Commit plans for volume discounts (up to 25%+).
+  - Regularly cull and deduplicate data before processing to reduce active GB count.
+  - Leverage mass/bulk operations APIs to reduce API call overhead.
+  - Archive completed matters promptly to downgrade storage tier.
+  - Monitor Billing Insights API to detect unexpected data growth early.
+  - Use ARM (Archive, Restore, Move) API to manage workspace data lifecycle.
+
+deprecation_cost_risks:
+  - ARM API V1 deprecated July 2026; migrate to V2 to avoid integration failures.
+  - Processing API v0 deprecated July 7, 2026; migrate to v1/v2.
+  - Transfer SDK versions earlier than 4.2.2 deprecated July 1, 2026.
+  - Legacy Document Viewer Kepler/.NET endpoints deprecated June 2026.
+  - Failing to migrate deprecated APIs may cause operational disruptions impacting billable workflows.
+
+notes:
+  - Relativity eliminated per-user seat fees; all plans include unlimited users.
+  - Contact Relativity sales for volume pricing tiers and enterprise discounts.
+  - Pricing page: https://www.relativity.com/pricing/

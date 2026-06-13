@@ -1,0 +1,62 @@
+name: Relativity Plans and Pricing
+description: RelativityOne uses consumption-based pricing with no per-user license fees. Billing is based on active data volume (GB/month). Three commitment tiers are available — Pay As You Go, Flex Commit 1-Year, and Flex Commit 3-Year. All plans include unlimited users, AI-powered analytics, and full eDiscovery workflows across 17 countries.
+url: https://www.relativity.com/pricing/
+plans:
+  - name: RelativityOne Pay As You Go
+    description: Month-to-month consumption-based billing with no annual commitment. Best for law firms and legal departments with variable eDiscovery volumes.
+    price: Custom — contact sales
+    billing: Monthly, per GB of active data
+    commitment: None (month-to-month)
+    features:
+      - Unlimited users (no per-seat fees)
+      - Full eDiscovery workflow (collect, process, review, produce)
+      - AI-powered analytics and assisted review
+      - Relativity aiR for Review
+      - Relativity aiR for Privilege
+      - 24/7/365 support
+      - Available in 17 countries
+      - Cold storage at reduced rate
+      - Early case assessment (ECA) data at reduced rate
+
+  - name: RelativityOne Flex Commit (1-Year)
+    description: Annual subscription with discounted data rates. Best for mid-size to large firms with predictable eDiscovery volumes.
+    price: Custom — contact sales
+    billing: Annual commitment, per GB of active data
+    commitment: 1-year
+    features:
+      - Up to 25% discount from pay-as-you-go rates
+      - Tiered data pricing with volume discounts
+      - Early case assessment data at 33% of active data rate
+      - Cold storage at 25% of active data rate
+      - Relativity aiR for Review and aiR for Privilege
+      - Dedicated account team
+      - All features from Pay As You Go
+
+  - name: RelativityOne Flex Commit (3-Year)
+    description: Three-year subscription with deepest volume discounts and long-term rate certainty. Best for large law firms, corporations, and government agencies.
+    price: Custom — contact sales
+    billing: Multi-year commitment, per GB of active data
+    commitment: 3-year
+    features:
+      - Deepest volume discounts available
+      - Long-term rate lock protection
+      - Priority access to new AI features (aiR suite)
+      - Strategic account management
+      - Custom SLAs with guaranteed uptime
+      - White-glove support
+      - All features from Flex Commit 1-Year
+
+add_ons:
+  - name: Relativity aiR for Case Strategy
+    description: AI-powered case strategy and insights tool.
+  - name: Relativity Contracts
+    description: Contract review and analysis application.
+  - name: Relativity FOIA
+    description: Freedom of Information Act request processing.
+  - name: Relativity Legal Hold
+    description: Legal hold management for custodians and data preservation.
+
+notes:
+  - All plans are consumption-based; Relativity eliminated per-seat user fees.
+  - Enterprise and government custom pricing available on request.
+  - Pricing is not publicly listed; request via https://www.relativity.com/pricing/

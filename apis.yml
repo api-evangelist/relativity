@@ -1,0 +1,199 @@
+aid: relativity
+name: Relativity
+description: Relativity is an eDiscovery and legal review platform offering RelativityOne, a cloud-based SaaS solution for managing the full legal data lifecycle. Its REST API enables programmatic access to workspaces, document import and export, processing pipelines, search and analytics, production management, legal hold, automated workflows, user and permission management, and AI-powered review features. Relativity exposes 80+ integration APIs organized by business domain, supporting OAuth2, basic, and cookie-based authentication.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+type: Index
+tags:
+  - eDiscovery
+  - Legal
+  - Document Review
+  - Legal Technology
+  - Data Processing
+  - AI Review
+  - Litigation
+  - Compliance
+
+apis:
+
+  - name: Relativity Object Manager API
+    description: Core API for working with documents and Relativity Dynamic Objects (RDOs). Supports CRUD operations, querying, bulk/mass operations, and field management across all workspace objects.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+    baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+    tags:
+      - Documents
+      - Objects
+      - CRUD
+      - Search
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+      - type: OpenAPI
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: Plans
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+      - type: RateLimits
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+      - type: FinOps
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+
+  - name: Relativity Import Service API
+    description: REST API for importing large numbers of documents, images, and RDOs into RelativityOne workspaces. Supports native files, extracted text, images, and metadata.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/import-service/v1
+    tags:
+      - Import
+      - Documents
+      - Data Ingestion
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: GettingStarted
+        url: https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+
+  - name: Relativity Export Service API
+    description: REST API for exporting documents, images, PDFs, and native files from RelativityOne workspaces, as well as exporting applications as RAP or schema files.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/export-service/v1
+    tags:
+      - Export
+      - Documents
+      - Production
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+  - name: Relativity Workspace Manager API
+    description: REST API for performing CRUD operations on RelativityOne workspaces, including creation, configuration, and deletion.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/workspace-service/v1
+    tags:
+      - Workspaces
+      - Administration
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+  - name: Relativity Production Manager API
+    description: REST API for creating, deleting, staging, and running production sets in RelativityOne. Manages production data sources, placeholders, and the production queue.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/production-manager/v1
+    tags:
+      - Production
+      - Legal Review
+      - Documents
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+  - name: Relativity Legal Hold API
+    description: REST API for managing legal holds, custodians, and data preservation workflows in RelativityOne.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/legal-hold/v1
+    tags:
+      - Legal Hold
+      - Compliance
+      - Custodians
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+  - name: Relativity Automated Workflows API
+    description: REST API for registering and managing automated workflow actions, triggers, and events within RelativityOne to streamline review processes.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/automated-workflows/v1
+    tags:
+      - Workflows
+      - Automation
+      - Review
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+  - name: Relativity Audit API
+    description: REST API for reverting, retrieving, and searching audit records stored in Elasticsearch. Provides full audit trail access for compliance and investigation.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/audit/v1
+    tags:
+      - Audit
+      - Compliance
+      - Elasticsearch
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+  - name: Relativity User and Permission Manager API
+    description: REST API for managing users, groups, clients, and permissions within RelativityOne. Supports OAuth2 client management, login profiles, and federated instance access.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    baseURL: https://{host}/Relativity.REST/api/user-management/v1
+    tags:
+      - Users
+      - Permissions
+      - Identity
+      - OAuth2
+    properties:
+      - type: Documentation
+        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+
+  - name: Relativity Billing Insights API
+    description: REST API for programmatically checking billing metrics and data usage in RelativityOne, enabling FinOps monitoring of active data, cold storage, and ECA volumes.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+    baseURL: https://{host}/Relativity.REST/api/billing-insights/v1
+    tags:
+      - Billing
+      - FinOps
+      - Usage
+    properties:
+      - type: Documentation
+        url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+      - type: FinOps
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+
+common:
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: Documentation
+    url: https://platform.relativity.com/
+  - type: Developer Portal
+    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Changelog
+    url: https://platform.relativity.com/RelativityOne/Content/What_s_new/What_s_new.htm
+  - type: PlatformChangeLog
+    url: https://platform.relativity.com/RelativityOne/Content/What_s_new/Platform_change_log.htm
+  - type: GitHub
+    url: https://github.com/relativitydev
+  - type: GitHubDevTools
+    url: https://relativitydev.github.io/
+  - type: OpenAPI
+    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: Authentication
+    url: https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: KnownIssues
+    url: https://help.relativity.com/RelativityOne/Content/What_s_New/Known_issues_list.htm
+  - type: Pricing
+    url: https://www.relativity.com/pricing/
+  - type: Blog
+    url: https://www.relativity.com/blog/
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
