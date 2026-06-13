@@ -33,7 +33,7 @@ apis:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
       - type: OpenAPI
-        url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-object-manager-openapi.yml
       - type: Plans
         url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
       - type: RateLimits
@@ -53,6 +53,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-import-openapi.yml
       - type: GettingStarted
         url: https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
 
@@ -68,6 +70,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-export-openapi.yml
 
   - name: Relativity Workspace Manager API
     description: REST API for performing CRUD operations on RelativityOne workspaces, including creation, configuration, and deletion.
@@ -80,6 +84,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-workspace-openapi.yml
 
   - name: Relativity Production Manager API
     description: REST API for creating, deleting, staging, and running production sets in RelativityOne. Manages production data sources, placeholders, and the production queue.
@@ -93,6 +99,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-productions-openapi.yml
 
   - name: Relativity Legal Hold API
     description: REST API for managing legal holds, custodians, and data preservation workflows in RelativityOne.
@@ -106,6 +114,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-legal-hold-openapi.yml
 
   - name: Relativity Automated Workflows API
     description: REST API for registering and managing automated workflow actions, triggers, and events within RelativityOne to streamline review processes.
@@ -119,6 +129,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-automated-workflows-openapi.yml
 
   - name: Relativity Audit API
     description: REST API for reverting, retrieving, and searching audit records stored in Elasticsearch. Provides full audit trail access for compliance and investigation.
@@ -132,6 +144,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-permissions-openapi.yml
 
   - name: Relativity User and Permission Manager API
     description: REST API for managing users, groups, clients, and permissions within RelativityOne. Supports OAuth2 client management, login profiles, and federated instance access.
@@ -146,6 +160,8 @@ apis:
     properties:
       - type: Documentation
         url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-identity-openapi.yml
 
   - name: Relativity Billing Insights API
     description: REST API for programmatically checking billing metrics and data usage in RelativityOne, enabling FinOps monitoring of active data, cold storage, and ECA volumes.
@@ -159,6 +175,8 @@ apis:
     properties:
       - type: Documentation
         url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-billing-v2-openapi.yml
       - type: FinOps
         url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
 
@@ -184,7 +202,9 @@ common:
   - type: GitHubDevTools
     url: https://relativitydev.github.io/
   - type: OpenAPI
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-object-manager-openapi.yml
+  - type: JSONLDContext
+    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/json-ld/relativity-context.jsonld
   - type: Authentication
     url: https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
   - type: KnownIssues

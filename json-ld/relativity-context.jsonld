@@ -1,0 +1,128 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "relativity": "https://platform.relativity.com/vocab#",
+    "aid": "relativity",
+    "name": "name",
+    "description": "description",
+    "url": "url",
+    "provider": {
+      "@id": "provider",
+      "@type": "Organization"
+    },
+    "Organization": "Organization",
+    "SoftwareApplication": "SoftwareApplication",
+    "WebAPI": "WebAPI",
+    "documentation": "documentation",
+    "termsOfService": "termsOfService",
+    "workspace": {
+      "@id": "relativity:workspace",
+      "@type": "@id"
+    },
+    "document": {
+      "@id": "relativity:document",
+      "@type": "@id"
+    },
+    "production": {
+      "@id": "relativity:production",
+      "@type": "@id"
+    },
+    "legalHold": {
+      "@id": "relativity:legalHold",
+      "@type": "@id"
+    },
+    "custodian": {
+      "@id": "relativity:custodian",
+      "@type": "@id"
+    },
+    "review": {
+      "@id": "relativity:review",
+      "@type": "@id"
+    },
+    "import": {
+      "@id": "relativity:import",
+      "@type": "@id"
+    },
+    "export": {
+      "@id": "relativity:export",
+      "@type": "@id"
+    },
+    "workflow": {
+      "@id": "relativity:workflow",
+      "@type": "@id"
+    },
+    "audit": {
+      "@id": "relativity:audit",
+      "@type": "@id"
+    },
+    "processing": {
+      "@id": "relativity:processing",
+      "@type": "@id"
+    },
+    "analytics": {
+      "@id": "relativity:analytics",
+      "@type": "@id"
+    },
+    "billing": {
+      "@id": "relativity:billing",
+      "@type": "@id"
+    },
+    "identity": {
+      "@id": "relativity:identity",
+      "@type": "@id"
+    },
+    "permissions": {
+      "@id": "relativity:permissions",
+      "@type": "@id"
+    },
+    "eDiscovery": {
+      "@id": "relativity:eDiscovery",
+      "@type": "@id"
+    },
+    "RelativityOne": {
+      "@id": "relativity:RelativityOne",
+      "@type": "SoftwareApplication"
+    },
+    "apiDomain": {
+      "@id": "relativity:apiDomain"
+    },
+    "workspaceId": {
+      "@id": "relativity:workspaceId",
+      "@type": "xsd:integer"
+    },
+    "artifactId": {
+      "@id": "relativity:artifactId",
+      "@type": "xsd:integer"
+    },
+    "objectType": {
+      "@id": "relativity:objectType"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.relativity.com/",
+      "name": "Relativity",
+      "description": "Relativity is an eDiscovery and legal review platform offering RelativityOne, a cloud-based SaaS solution for managing the full legal data lifecycle.",
+      "url": "https://www.relativity.com/",
+      "documentation": "https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm",
+      "sameAs": [
+        "https://github.com/relativitydev",
+        "https://relativitydev.github.io/"
+      ]
+    },
+    {
+      "@type": "WebAPI",
+      "@id": "https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm",
+      "name": "Relativity REST API",
+      "description": "Relativity exposes 80+ integration APIs organized by business domain, supporting OAuth2, basic, and cookie-based authentication.",
+      "provider": {
+        "@id": "https://www.relativity.com/"
+      },
+      "documentation": "https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm",
+      "termsOfService": "https://www.relativity.com/terms-of-service/",
+      "apiDomain": "eDiscovery"
+    }
+  ]
+}

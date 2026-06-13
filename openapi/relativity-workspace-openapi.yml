@@ -1,0 +1,1285 @@
+openapi: 3.0.4
+info:
+  title: Workspace Service API
+  description: 'The Workspace Service API provides a REST service for managing workspace
+    creation and maintenance.
+
+
+    The URL prefix for workspace services endpoints: https://\<host\>/api/workspace-service'
+  version: '1'
+  x-relativity-api-visibility: public
+paths:
+  /v1/workspace/{workspaceId}/cold-storage/status:
+    get:
+      tags:
+      - ColdStorage
+      summary: Gets the cold storage status of a workspace
+      description: 'Returns one of:
+
+        Out – Workspace is not in cold storage.
+
+        In – Workspace is in cold storage.
+
+        MovingOut – Retrieval has been requested; the workspace will be returned to
+        Active by the retrieval agent after the minimum request age has elapsed.
+
+        For MovingOut, ActivationJobSubmittedBy and ActivationJobSubmittedOnUtc identify
+        the user who requested retrieval (secured when the caller cannot view the
+        user).'
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceColdStorageStatusResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceColdStorageStatusResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceColdStorageStatusResponse'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+  /v1/workspace/{workspaceId}:
+    get:
+      tags:
+      - Workspace
+      summary: Read workspace
+      description: Returns the workspace with its core properties (client, matter,
+        resource pool, status, SQL server, SQL full-text language, audit fields, etc.).
+        Returns 567 Workspace Temporarily Unavailable when the workspace is still
+        upgrading — clients can safely retry after a short delay. Equivalent to `/v1/workspace/{workspaceId}/false/false`
+        — use the parameterized form to additionally include the `Meta` field or the
+        available `Actions` list.
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '567':
+          description: Workspace Temporarily Unavailable
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+    delete:
+      tags:
+      - Workspace
+      summary: Delete workspace
+      description: Soft-deletes the workspace by moving it to the Recycle Bin. The
+        workspace is hidden from normal views but can be recovered via `POST /v1/recycle-bin/workspace/{workspaceId}/recover`
+        or permanently removed via `DELETE /v1/recycle-bin/workspace/{workspaceId}`.
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '500':
+          description: Internal Server Error
+    put:
+      tags:
+      - Workspace
+      summary: Update workspace
+      description: Updates the workspace's properties. Include `lastModifiedOn` (timestamp
+        of the last known version) to enforce optimistic concurrency — if the workspace
+        has been modified since, the request fails with 409 Conflict and no changes
+        are applied. On success, returns the updated workspace.
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceRequestEnvelope'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceRequestEnvelope'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceRequestEnvelope'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+  /v1/workspace/{workspaceId}/{includeMetadata}/{includeActions}:
+    get:
+      tags:
+      - Workspace
+      summary: Read workspace with optional metadata and actions
+      description: Returns the workspace with its core properties. `includeMetadata`
+        and `includeActions` are required path segments (not query parameters), e.g.
+        `/v1/workspace/{workspaceId}/true/false`. When `includeMetadata` is `true`,
+        the response additionally contains the `Meta` field (list of unsupported and
+        read-only properties on the workspace). When `includeActions` is `true`, the
+        response contains the `Actions` list (REST operations the caller is permitted
+        to perform on the workspace). Returns 567 Workspace Temporarily Unavailable
+        when the workspace is still upgrading — clients can safely retry after a short
+        delay.
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: includeMetadata
+        in: path
+        required: true
+        schema:
+          type: boolean
+      - name: includeActions
+        in: path
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceReadResponseV1'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+        '567':
+          description: Workspace Temporarily Unavailable
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/KeplerProblemDetails'
+  /v1/workspace-job:
+    post:
+      tags:
+      - WorkspaceJob
+      summary: Start workspace creation
+      description: Starts asynchronous workspace creation and returns a job ID. Use
+        GET /v1/workspace-job/{jobId} to track the progress of the created job.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceCreateRequestDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceCreateRequestDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceCreateRequestDto'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateEnqueueResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateEnqueueResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateEnqueueResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '415':
+          description: Unsupported Media Type
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+  /v1/workspace-job/{jobId}:
+    get:
+      tags:
+      - WorkspaceJob
+      summary: Get workspace creation job progress
+      description: Returns the current step, total steps, state, and workspace artifact
+        ID for a given job. Poll this endpoint to track the progress of a workspace
+        creation started via POST /v1/workspace-job.
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateJobResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateJobResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateJobResponse'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    Action:
+      type: object
+      properties:
+        Name:
+          type: string
+          nullable: true
+        Verb:
+          type: string
+          nullable: true
+        Href:
+          type: string
+          nullable: true
+        IsAvailable:
+          type: boolean
+        Reason:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    DisplayableObjectIdentifier:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+          nullable: true
+        Guids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    DisplayableObjectIdentifierSecurable:
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        Secured:
+          type: boolean
+      additionalProperties: false
+    Field:
+      type: object
+      properties:
+        FieldCategory:
+          enum:
+          - Generic
+          - FullText
+          - Identifier
+          - Reflected
+          - Comments
+          - Relational
+          - ProductionMarker
+          - AutoCreate
+          - FileSize
+          - FolderName
+          - FileInfo
+          - ParentArtifact
+          - MarkupSetMarker
+          - GenericSystem
+          - MultiReflected
+          - Batch
+          type: string
+        FieldType:
+          enum:
+          - FixedLengthText
+          - WholeNumber
+          - Date
+          - YesNo
+          - LongText
+          - SingleChoice
+          - Decimal
+          - Currency
+          - MultipleChoice
+          - File
+          - SingleObject
+          - User
+          - MultipleObject
+          - Empty
+          type: string
+        ViewFieldID:
+          type: integer
+          format: int32
+        ArtifactID:
+          type: integer
+          format: int32
+        Guids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FieldRefV1:
+      type: object
+      properties:
+        Name:
+          type: string
+          nullable: true
+        ViewFieldID:
+          type: integer
+          format: int32
+        ArtifactID:
+          type: integer
+          format: int32
+        Guids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+      additionalProperties: false
+    FieldRefV1QueryRequest:
+      type: object
+      properties:
+        ObjectType:
+          $ref: '#/components/schemas/ObjectTypeRef'
+        Condition:
+          type: string
+          nullable: true
+        Sorts:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldRefV1Sort'
+          nullable: true
+        RelationalField:
+          $ref: '#/components/schemas/FieldRefV1'
+        RowCondition:
+          type: string
+          nullable: true
+        SearchProviderCondition:
+          $ref: '#/components/schemas/SearchProviderCondition'
+        SampleParameters:
+          $ref: '#/components/schemas/SampleParameters'
+        IncludeIDWindow:
+          type: boolean
+          nullable: true
+        RankSortOrder:
+          enum:
+          - Ascending
+          - Descending
+          type: string
+          nullable: true
+        QueryHint:
+          type: string
+          nullable: true
+        Fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldRefV1'
+          nullable: true
+        IsAdhocQuery:
+          type: boolean
+          nullable: true
+        ConvertNumberFieldValuesToString:
+          type: boolean
+          nullable: true
+        IncludeNameInQueryResult:
+          type: boolean
+          nullable: true
+        ExecutingSavedSearchID:
+          type: integer
+          format: int32
+          nullable: true
+        ExecutingViewID:
+          type: integer
+          format: int32
+          nullable: true
+        ActiveArtifactID:
+          type: integer
+          format: int32
+          nullable: true
+        MaxCharactersForLongTextValues:
+          type: integer
+          format: int32
+          nullable: true
+        LongTextBehavior:
+          enum:
+          - Default
+          - Tokenized
+          - DefaultWithErrors
+          - TokenizedWithErrors
+          type: string
+      additionalProperties: false
+    FieldRefV1QueryRequestBody:
+      required:
+      - Length
+      - Request
+      - Start
+      type: object
+      properties:
+        Request:
+          $ref: '#/components/schemas/FieldRefV1QueryRequest'
+        Start:
+          type: integer
+          format: int32
+        Length:
+          type: integer
+          format: int32
+      additionalProperties: false
+    FieldRefV1Sort:
+      type: object
+      properties:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRefV1'
+        Direction:
+          enum:
+          - Ascending
+          - Descending
+          type: string
+        Order:
+          type: integer
+          format: int32
+      additionalProperties: false
+    KeplerProblemDetails:
+      type: object
+      properties:
+        ErrorType:
+          type: string
+          nullable: true
+        Identifier:
+          type: string
+          nullable: true
+        Message:
+          type: string
+          nullable: true
+        Errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/KeplerValidationError'
+          nullable: true
+      additionalProperties: false
+    KeplerValidationError:
+      type: object
+      properties:
+        PropertyName:
+          type: string
+          nullable: true
+        ErrorMessage:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Meta:
+      type: object
+      properties:
+        Unsupported:
+          type: array
+          items:
+            type: string
+          nullable: true
+        ReadOnly:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    NameIDPair:
+      type: object
+      properties:
+        ID:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ObjectIdentifier:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+          nullable: true
+        Guids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+      additionalProperties: false
+    ObjectIdentifierSecurable:
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Secured:
+          type: boolean
+      additionalProperties: false
+    ObjectType:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        Guids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        ArtifactTypeID:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ObjectTypeRef:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+        ArtifactTypeID:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        Guid:
+          type: string
+          format: uuid
+          nullable: true
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    QueryResultSlim:
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+        Objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/RelativityObjectSlim'
+          nullable: true
+        IDWindow:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        CurrentStartIndex:
+          type: integer
+          format: int32
+        ResultCount:
+          type: integer
+          format: int32
+        ObjectType:
+          $ref: '#/components/schemas/ObjectType'
+        SampleDetails:
+          $ref: '#/components/schemas/SampleDetails'
+        RankWindow:
+          type: array
+          items:
+            type: number
+            format: double
+            nullable: true
+          nullable: true
+        RelationalField:
+          $ref: '#/components/schemas/Field'
+        Fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/Field'
+          nullable: true
+      additionalProperties: false
+    RelativityObjectSlim:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+        Values:
+          type: array
+          items: {}
+          nullable: true
+      additionalProperties: false
+    SampleDetails:
+      type: object
+      properties:
+        SampleSize:
+          type: integer
+          format: int32
+          nullable: true
+        UniverseSize:
+          type: integer
+          format: int32
+          nullable: true
+        Token:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SampleParameters:
+      type: object
+      properties:
+        ExistingToken:
+          type: string
+          format: uuid
+          nullable: true
+        MarginOfError:
+          type: number
+          format: double
+        ConfidenceLevel:
+          type: number
+          format: double
+        FixedSampleSize:
+          type: integer
+          format: int32
+        SamplingPercentage:
+          type: number
+          format: double
+      additionalProperties: false
+    SearchIndexRef:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SearchProviderCondition:
+      type: object
+      properties:
+        SearchIndex:
+          $ref: '#/components/schemas/SearchIndexRef'
+        Input:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SqlFullTextLanguageOptions:
+      type: object
+      properties:
+        DefaultLanguageLcid:
+          type: integer
+          format: int32
+        Languages:
+          type: array
+          items:
+            $ref: '#/components/schemas/NameIDPair'
+          nullable: true
+      additionalProperties: false
+    StringSecurable:
+      type: object
+      properties:
+        Value:
+          type: string
+          nullable: true
+        Secured:
+          type: boolean
+      additionalProperties: false
+    WorkspaceColdStorageStatusResponse:
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+          format: int32
+        Status:
+          enum:
+          - Out
+          - In
+          - MovingOut
+          - MovingIn
+          type: string
+        ActivationJobSubmittedBy:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        ActivationJobSubmittedOnUtc:
+          type: string
+          format: date-time
+          nullable: true
+        AddedToColdStorageOnUtc:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    WorkspaceCreateEnqueueResponse:
+      required:
+      - JobId
+      type: object
+      properties:
+        JobId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    WorkspaceCreateJobResponse:
+      type: object
+      properties:
+        JobId:
+          type: string
+          format: uuid
+        WorkspaceArtifactId:
+          type: integer
+          format: int32
+          nullable: true
+        TotalNumberOfSteps:
+          type: integer
+          format: int32
+          nullable: true
+        CurrentStep:
+          type: integer
+          format: int32
+          nullable: true
+        JobState:
+          type: string
+          nullable: true
+        Attempt:
+          type: integer
+          format: int32
+      additionalProperties: false
+    WorkspaceCreateRequestDto:
+      required:
+      - Name
+      - UseCase
+      type: object
+      properties:
+        Name:
+          maxLength: 50
+          minLength: 1
+          type: string
+        MatterArtifactId:
+          type: integer
+          format: int32
+        StatusArtifactId:
+          type: integer
+          format: int32
+        TemplateArtifactId:
+          type: integer
+          format: int32
+        SqlFullTextLanguage:
+          type: integer
+          format: int32
+        Keywords:
+          maxLength: 50
+          minLength: 0
+          type: string
+          nullable: true
+        Notes:
+          type: string
+          nullable: true
+        DownloadHandlerUrl:
+          type: string
+          nullable: true
+        UseCase:
+          minLength: 1
+          type: string
+        WorkspaceAdminGroupArtifactId:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    WorkspaceReadResponseV1:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+          nullable: true
+        Guids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        Client:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        ClientNumber:
+          $ref: '#/components/schemas/StringSecurable'
+        DownloadHandlerUrl:
+          type: string
+          nullable: true
+        EnableDataGrid:
+          type: boolean
+        Matter:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        MatterNumber:
+          $ref: '#/components/schemas/StringSecurable'
+        ProductionRestrictions:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        ResourcePool:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        DefaultFileRepository:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        DataGridFileRepository:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        DefaultCacheLocation:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        SqlServer:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        AzureCredentials:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        AzureFileSystemCredentials:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        SqlFullTextLanguage:
+          $ref: '#/components/schemas/NameIDPair'
+        Status:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        Keywords:
+          type: string
+          nullable: true
+        Notes:
+          type: string
+          nullable: true
+        CreatedOn:
+          type: string
+          format: date-time
+        CreatedBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        LastModifiedBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        LastModifiedOn:
+          type: string
+          format: date-time
+        Meta:
+          $ref: '#/components/schemas/Meta'
+        Actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Action'
+          nullable: true
+        WorkspaceAdminGroup:
+          $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
+        UseCase:
+          type: string
+          nullable: true
+        JobID:
+          type: string
+          nullable: true
+      additionalProperties: false
+    WorkspaceRequestEnvelope:
+      required:
+      - WorkspaceRequest
+      type: object
+      properties:
+        WorkspaceRequest:
+          $ref: '#/components/schemas/WorkspaceUpdateRequest'
+        LastModifiedOn:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    WorkspaceUpdateRequest:
+      type: object
+      properties:
+        DownloadHandlerUrl:
+          type: string
+          nullable: true
+        EnableDataGrid:
+          type: boolean
+          nullable: true
+        Matter:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        Name:
+          type: string
+          nullable: true
+        ProductionRestrictions:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        ResourcePool:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DefaultFileRepository:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DataGridFileRepository:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DefaultCacheLocation:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        SqlServer:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        AzureCredentials:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        AzureFileSystemCredentials:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        SqlFullTextLanguage:
+          type: integer
+          format: int32
+          nullable: true
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Template:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        WorkspaceAdminGroup:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        UseCase:
+          type: string
+          nullable: true
+        Keywords:
+          type: string
+          nullable: true
+        Notes:
+          type: string
+          nullable: true
+        UserId:
+          type: integer
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example:
+        "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT
+security:
+- Bearer: []
