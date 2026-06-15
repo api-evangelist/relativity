@@ -1,0 +1,1066 @@
+"""
+Relativity GraphQL API Schema
+Derived from the Relativity REST API covering workspace management,
+document import and review, coding, search, production, analytics,
+imaging, and case management for legal discovery workflows.
+"""
+
+# ─────────────────────────────────────────────
+# Scalars
+# ─────────────────────────────────────────────
+scalar DateTime
+scalar JSON
+scalar Upload
+
+# ─────────────────────────────────────────────
+# Enums
+# ─────────────────────────────────────────────
+
+enum WorkspaceStatus {
+  ACTIVE
+  INACTIVE
+  CREATING
+  DELETING
+  ERROR
+}
+
+enum DocumentStatus {
+  PENDING
+  PROCESSING
+  PROCESSED
+  ERROR
+  DELETED
+}
+
+enum ReviewStatus {
+  UNREVIEWED
+  REVIEWED
+  NEEDS_REVIEW
+  CONFLICTED
+}
+
+enum ProductionStatus {
+  NEW
+  STAGING
+  STAGED
+  RUNNING
+  COMPLETE
+  ERROR
+  CANCELLED
+}
+
+enum LegalHoldStatus {
+  ACTIVE
+  RELEASED
+  DRAFT
+  ERROR
+}
+
+enum CodingDecision {
+  RESPONSIVE
+  NON_RESPONSIVE
+  PRIVILEGED
+  NEEDS_FURTHER_REVIEW
+  DUPLICATE
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+enum FieldType {
+  FIXED_LENGTH_TEXT
+  LONG_TEXT
+  DATE
+  DECIMAL
+  WHOLE_NUMBER
+  YES_NO
+  USER
+  SINGLE_CHOICE
+  MULTIPLE_CHOICE
+  FILE
+}
+
+enum WorkflowStatus {
+  ENABLED
+  DISABLED
+  ERROR
+}
+
+enum ImagingStatus {
+  PENDING
+  RUNNING
+  COMPLETE
+  ERROR
+}
+
+enum AuditAction {
+  CREATE
+  READ
+  UPDATE
+  DELETE
+  EXPORT
+  IMPORT
+  LOGIN
+  LOGOUT
+  PERMISSION_CHANGE
+}
+
+enum PermissionLevel {
+  VIEW
+  EDIT
+  ADD
+  DELETE
+  ADMIN
+}
+
+enum ProcessingStatus {
+  QUEUED
+  PROCESSING
+  COMPLETE
+  ERROR
+  CANCELLED
+}
+
+# ─────────────────────────────────────────────
+# Common / Shared Types
+# ─────────────────────────────────────────────
+
+"""Artifact base for all Relativity Dynamic Objects."""
+interface Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+}
+
+"""Pagination metadata for list responses."""
+type PageInfo {
+  totalCount: Int!
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+"""Generic key-value pair used for choice fields."""
+type Choice {
+  artifactId: Int!
+  name: String!
+  order: Int
+  color: String
+}
+
+"""Field definition within a workspace object type."""
+type Field implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  fieldType: FieldType!
+  isRequired: Boolean!
+  isEditable: Boolean!
+  isIndexEnabled: Boolean!
+  includeInTextIndex: Boolean
+  choices: [Choice!]
+  linkedFields: [Field!]
+}
+
+"""Tag applied to a document or object."""
+type Tag {
+  artifactId: Int!
+  name: String!
+  color: String
+}
+
+# ─────────────────────────────────────────────
+# Identity / User Management
+# ─────────────────────────────────────────────
+
+"""A Relativity user account."""
+type User implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  firstName: String!
+  lastName: String!
+  emailAddress: String!
+  isEnabled: Boolean!
+  groups: [Group!]
+  client: Client
+  defaultSelectedFileType: String
+  lastLogin: DateTime
+}
+
+"""A Relativity group of users."""
+type Group implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  users: [User!]
+  client: Client
+  isSystemGroup: Boolean!
+}
+
+"""A Relativity client (tenant/organization)."""
+type Client implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: String
+  keywords: String
+  notes: String
+  workspaces: [Workspace!]
+  groups: [Group!]
+}
+
+"""Permission set for a group within a workspace."""
+type Permission {
+  id: ID!
+  group: Group!
+  workspace: Workspace!
+  level: PermissionLevel!
+  objectTypes: [String!]
+  isAdmin: Boolean!
+}
+
+"""OAuth2 client credential for API access."""
+type OAuthClient {
+  clientId: String!
+  name: String!
+  enabled: Boolean!
+  contextUser: User
+  createdOn: DateTime
+  flowType: String
+  redirectUris: [String!]
+}
+
+# ─────────────────────────────────────────────
+# Workspace
+# ─────────────────────────────────────────────
+
+"""A Relativity workspace (case)."""
+type Workspace implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: WorkspaceStatus!
+  client: Client!
+  matter: Matter
+  template: WorkspaceTemplate
+  sqlFullTextLanguage: String
+  defaultFileRepository: String
+  resourcePool: ResourcePool
+  documents(first: Int, after: String, filter: DocumentFilter): DocumentConnection!
+  fields: [Field!]
+  groups: [Group!]
+  savedSearches: [SavedSearch!]
+  productions: [Production!]
+  matters: [Matter!]
+}
+
+"""Paginated list of workspaces."""
+type WorkspaceConnection {
+  edges: [WorkspaceEdge!]!
+  pageInfo: PageInfo!
+}
+
+type WorkspaceEdge {
+  cursor: String!
+  node: Workspace!
+}
+
+"""A workspace template used to pre-populate a new workspace."""
+type WorkspaceTemplate implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  description: String
+}
+
+"""Resource pool for compute and storage allocation."""
+type ResourcePool implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  agents: [Agent!]
+  fileRepositories: [String!]
+}
+
+# ─────────────────────────────────────────────
+# Matter / Case
+# ─────────────────────────────────────────────
+
+"""A legal matter (case) in Relativity."""
+type Matter implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  number: String
+  status: String
+  client: Client
+  workspaces: [Workspace!]
+}
+
+# ─────────────────────────────────────────────
+# Documents
+# ─────────────────────────────────────────────
+
+"""A document in a Relativity workspace."""
+type Document implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  controlNumber: String!
+  status: DocumentStatus!
+  reviewStatus: ReviewStatus
+  custodian: Custodian
+  fileSize: Float
+  mimeType: String
+  extractedText: String
+  nativeFileLocation: String
+  hasNative: Boolean!
+  hasImages: Boolean!
+  hasExtractedText: Boolean!
+  parentDocument: Document
+  familyDocuments: [Document!]
+  tags: [Tag!]
+  fields: JSON
+  codingHistory: [CodingRecord!]
+  workspace: Workspace!
+}
+
+"""Paginated list of documents."""
+type DocumentConnection {
+  edges: [DocumentEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type DocumentEdge {
+  cursor: String!
+  node: Document!
+}
+
+"""A coding record representing a reviewer's decision on a document."""
+type CodingRecord {
+  id: ID!
+  document: Document!
+  reviewer: User!
+  decision: CodingDecision!
+  codedOn: DateTime!
+  fields: JSON
+  layout: Layout
+  notes: String
+}
+
+# ─────────────────────────────────────────────
+# Import / Export
+# ─────────────────────────────────────────────
+
+"""Import job for loading documents into a workspace."""
+type ImportJob {
+  jobId: String!
+  workspace: Workspace!
+  status: ProcessingStatus!
+  createdOn: DateTime!
+  completedOn: DateTime
+  totalRecords: Int
+  importedRecords: Int
+  errorCount: Int
+  errors: [ImportError!]
+  dataSource: String
+  settings: JSON
+}
+
+"""An error encountered during an import job."""
+type ImportError {
+  lineNumber: Int
+  identifier: String
+  message: String!
+  details: String
+}
+
+"""Export job for extracting documents from a workspace."""
+type ExportJob {
+  jobId: String!
+  workspace: Workspace!
+  status: ProcessingStatus!
+  createdOn: DateTime!
+  completedOn: DateTime
+  exportLocation: String
+  totalRecords: Int
+  exportedRecords: Int
+  settings: JSON
+  savedSearch: SavedSearch
+}
+
+# ─────────────────────────────────────────────
+# Search
+# ─────────────────────────────────────────────
+
+"""A saved search in a Relativity workspace."""
+type SavedSearch implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  owner: User
+  isPublic: Boolean!
+  conditions: JSON
+  fields: [Field!]
+  sorts: [SortCondition!]
+  documentCount: Int
+  workspace: Workspace!
+}
+
+"""A sort condition applied to a saved search."""
+type SortCondition {
+  field: Field!
+  order: SortOrder!
+}
+
+"""A dtSearch index for full-text keyword searching."""
+type SearchIndex implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: String
+  lastBuiltOn: DateTime
+  documentCount: Int
+  workspace: Workspace!
+}
+
+"""An analytics index for conceptual clustering and categorization."""
+type AnalyticsIndex implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  trainingDocumentCount: Int
+  status: String
+  lastBuiltOn: DateTime
+  workspace: Workspace!
+}
+
+# ─────────────────────────────────────────────
+# Production
+# ─────────────────────────────────────────────
+
+"""A production set for delivering documents to opposing counsel."""
+type Production implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: ProductionStatus!
+  productionNumber: String
+  batesPrefix: String
+  batesSuffix: String
+  batesStartNumber: Int
+  batesPadding: Int
+  scaleBrandingFont: Boolean
+  dataSources: [ProductionDataSource!]
+  placeholders: [ProductionPlaceholder!]
+  workspace: Workspace!
+  completedOn: DateTime
+  exportLocation: String
+}
+
+"""A data source (saved search or folder) for a production set."""
+type ProductionDataSource {
+  id: ID!
+  production: Production!
+  savedSearch: SavedSearch
+  burnRedactions: Boolean!
+  useImagePlaceholder: Boolean!
+}
+
+"""A placeholder page for documents without images in a production."""
+type ProductionPlaceholder implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  customText: String
+  production: Production!
+}
+
+# ─────────────────────────────────────────────
+# Legal Hold
+# ─────────────────────────────────────────────
+
+"""A legal hold notice preserving data for litigation."""
+type LegalHold implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: LegalHoldStatus!
+  matter: Matter
+  custodians: [Custodian!]
+  issuedOn: DateTime
+  releasedOn: DateTime
+  notificationMessage: String
+}
+
+"""A custodian (data source owner) associated with a legal hold or document."""
+type Custodian implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  emailAddress: String
+  department: String
+  legalHolds: [LegalHold!]
+  documents: [Document!]
+}
+
+# ─────────────────────────────────────────────
+# Imaging
+# ─────────────────────────────────────────────
+
+"""An imaging profile controlling how documents are rendered to images."""
+type ImagingProfile implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  imagingMethod: String!
+  basicOptions: JSON
+  nativeOptions: JSON
+  spreadsheetOptions: JSON
+  emailOptions: JSON
+  htmlOptions: JSON
+  wordProcessingOptions: JSON
+  workspace: Workspace!
+}
+
+"""An imaging set batch job for rendering documents to images."""
+type ImagingSet implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: ImagingStatus!
+  savedSearch: SavedSearch!
+  imagingProfile: ImagingProfile!
+  workspace: Workspace!
+  completedOn: DateTime
+  totalDocuments: Int
+  processedDocuments: Int
+  errorCount: Int
+}
+
+# ─────────────────────────────────────────────
+# Processing
+# ─────────────────────────────────────────────
+
+"""A processing set for extracting files from a data source."""
+type ProcessingSet implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: ProcessingStatus!
+  dataSource: ProcessingDataSource
+  processingProfile: ProcessingProfile
+  workspace: Workspace!
+  inventoriedFiles: Int
+  processedFiles: Int
+  errorCount: Int
+}
+
+"""A data source location pointing to files for processing."""
+type ProcessingDataSource implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  sourceLocation: String!
+  processingSet: ProcessingSet
+  custodian: Custodian
+  timezone: String
+  ocrLanguages: [String!]
+}
+
+"""A processing profile defining how files are extracted and de-duplicated."""
+type ProcessingProfile implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  deduplicationMethod: String
+  defaultTimeZone: String
+  ocr: Boolean!
+  extractionSettings: JSON
+}
+
+# ─────────────────────────────────────────────
+# Automated Workflows
+# ─────────────────────────────────────────────
+
+"""An automated workflow that triggers actions based on conditions."""
+type AutomatedWorkflow implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  status: WorkflowStatus!
+  trigger: WorkflowTrigger
+  actions: [WorkflowAction!]
+  workspace: Workspace!
+  lastRunOn: DateTime
+  runCount: Int
+}
+
+"""A trigger condition that starts an automated workflow."""
+type WorkflowTrigger {
+  id: ID!
+  triggerType: String!
+  conditions: JSON
+  workflow: AutomatedWorkflow!
+}
+
+"""An action executed as part of an automated workflow."""
+type WorkflowAction {
+  id: ID!
+  actionType: String!
+  order: Int!
+  configuration: JSON
+  workflow: AutomatedWorkflow!
+}
+
+# ─────────────────────────────────────────────
+# Audit
+# ─────────────────────────────────────────────
+
+"""An audit record for a user action in Relativity."""
+type AuditRecord {
+  id: ID!
+  action: AuditAction!
+  user: User
+  artifactId: Int
+  artifactTypeName: String
+  workspace: Workspace
+  timestamp: DateTime!
+  details: JSON
+  requestId: String
+  userAgent: String
+  ipAddress: String
+}
+
+"""Paginated list of audit records."""
+type AuditRecordConnection {
+  edges: [AuditRecordEdge!]!
+  pageInfo: PageInfo!
+}
+
+type AuditRecordEdge {
+  cursor: String!
+  node: AuditRecord!
+}
+
+# ─────────────────────────────────────────────
+# Layout / Review Interface
+# ─────────────────────────────────────────────
+
+"""A review layout defining which fields appear during coding."""
+type Layout implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  owner: User
+  isShared: Boolean!
+  fields: [Field!]
+  categories: [LayoutCategory!]
+  workspace: Workspace!
+}
+
+"""A grouping category within a review layout."""
+type LayoutCategory {
+  id: ID!
+  name: String!
+  order: Int!
+  fields: [Field!]!
+  layout: Layout!
+}
+
+# ─────────────────────────────────────────────
+# Agents / Infrastructure
+# ─────────────────────────────────────────────
+
+"""An agent server that performs background processing tasks."""
+type Agent implements Artifact {
+  artifactId: Int!
+  artifactTypeId: Int!
+  name: String!
+  createdOn: DateTime
+  lastModifiedOn: DateTime
+  createdBy: User
+  lastModifiedBy: User
+  agentType: String!
+  status: String!
+  server: String
+  interval: Int
+  lastRunTime: DateTime
+  resourcePool: ResourcePool
+}
+
+# ─────────────────────────────────────────────
+# Billing / Usage
+# ─────────────────────────────────────────────
+
+"""Billing usage metrics for a Relativity environment."""
+type BillingMetrics {
+  snapshotDate: DateTime!
+  activeDataGB: Float
+  coldStorageGB: Float
+  ecaDataGB: Float
+  processingGB: Float
+  totalStorageGB: Float
+  workspaceCount: Int
+  userCount: Int
+  client: Client
+}
+
+# ─────────────────────────────────────────────
+# Inputs
+# ─────────────────────────────────────────────
+
+input DocumentFilter {
+  controlNumber: String
+  custodianId: Int
+  reviewStatus: ReviewStatus
+  codingDecision: CodingDecision
+  dateFrom: DateTime
+  dateTo: DateTime
+  hasNative: Boolean
+  hasImages: Boolean
+  tags: [Int!]
+}
+
+input WorkspaceFilter {
+  clientId: Int
+  status: WorkspaceStatus
+  name: String
+}
+
+input AuditFilter {
+  userId: Int
+  workspaceId: Int
+  action: AuditAction
+  from: DateTime
+  to: DateTime
+  artifactTypeId: Int
+}
+
+input CreateWorkspaceInput {
+  name: String!
+  clientId: Int!
+  matterId: Int
+  templateId: Int
+  resourcePoolId: Int
+}
+
+input UpdateDocumentFieldsInput {
+  artifactId: Int!
+  fields: JSON!
+}
+
+input CreateProductionInput {
+  workspaceId: Int!
+  name: String!
+  batesPrefix: String
+  batesStartNumber: Int
+  batesPadding: Int
+  savedSearchId: Int
+}
+
+input CreateLegalHoldInput {
+  name: String!
+  matterId: Int!
+  custodianIds: [Int!]
+  notificationMessage: String
+}
+
+input ImportDocumentsInput {
+  workspaceId: Int!
+  dataSource: String!
+  settings: JSON
+}
+
+input SearchDocumentsInput {
+  workspaceId: Int!
+  savedSearchId: Int
+  keywords: String
+  filter: DocumentFilter
+  first: Int
+  after: String
+  sortField: String
+  sortOrder: SortOrder
+}
+
+# ─────────────────────────────────────────────
+# Root Types
+# ─────────────────────────────────────────────
+
+type Query {
+  """Fetch a single workspace by ID."""
+  workspace(artifactId: Int!): Workspace
+
+  """List all accessible workspaces."""
+  workspaces(first: Int, after: String, filter: WorkspaceFilter): WorkspaceConnection!
+
+  """Fetch a single document by artifact ID within a workspace."""
+  document(workspaceId: Int!, artifactId: Int!): Document
+
+  """Search or list documents within a workspace."""
+  documents(input: SearchDocumentsInput!): DocumentConnection!
+
+  """Fetch a user by ID."""
+  user(artifactId: Int!): User
+
+  """List users, optionally filtered by client or group."""
+  users(clientId: Int, groupId: Int, first: Int, after: String): [User!]!
+
+  """Fetch a group by ID."""
+  group(artifactId: Int!): Group
+
+  """List all groups."""
+  groups(clientId: Int): [Group!]!
+
+  """Fetch a client by ID."""
+  client(artifactId: Int!): Client
+
+  """List all clients."""
+  clients: [Client!]!
+
+  """Fetch a production by ID."""
+  production(workspaceId: Int!, artifactId: Int!): Production
+
+  """List productions within a workspace."""
+  productions(workspaceId: Int!): [Production!]!
+
+  """Fetch a legal hold by ID."""
+  legalHold(artifactId: Int!): LegalHold
+
+  """List legal holds, optionally filtered by matter."""
+  legalHolds(matterId: Int): [LegalHold!]!
+
+  """Fetch a custodian by ID."""
+  custodian(artifactId: Int!): Custodian
+
+  """List custodians."""
+  custodians(workspaceId: Int): [Custodian!]!
+
+  """Fetch a saved search by ID."""
+  savedSearch(workspaceId: Int!, artifactId: Int!): SavedSearch
+
+  """List saved searches in a workspace."""
+  savedSearches(workspaceId: Int!): [SavedSearch!]!
+
+  """Fetch an import job by ID."""
+  importJob(jobId: String!): ImportJob
+
+  """Fetch an export job by ID."""
+  exportJob(jobId: String!): ExportJob
+
+  """Fetch an imaging set by ID."""
+  imagingSet(workspaceId: Int!, artifactId: Int!): ImagingSet
+
+  """List imaging sets in a workspace."""
+  imagingSets(workspaceId: Int!): [ImagingSet!]!
+
+  """Fetch a processing set by ID."""
+  processingSet(workspaceId: Int!, artifactId: Int!): ProcessingSet
+
+  """Fetch an automated workflow by ID."""
+  automatedWorkflow(workspaceId: Int!, artifactId: Int!): AutomatedWorkflow
+
+  """List automated workflows in a workspace."""
+  automatedWorkflows(workspaceId: Int!): [AutomatedWorkflow!]!
+
+  """Query audit records."""
+  auditRecords(filter: AuditFilter, first: Int, after: String): AuditRecordConnection!
+
+  """Fetch a layout by ID."""
+  layout(workspaceId: Int!, artifactId: Int!): Layout
+
+  """List layouts in a workspace."""
+  layouts(workspaceId: Int!): [Layout!]!
+
+  """Fetch billing metrics for a client."""
+  billingMetrics(clientId: Int, snapshotDate: DateTime): BillingMetrics
+
+  """Fetch an analytics index by ID."""
+  analyticsIndex(workspaceId: Int!, artifactId: Int!): AnalyticsIndex
+
+  """Fetch a matter by ID."""
+  matter(artifactId: Int!): Matter
+
+  """List matters for a client."""
+  matters(clientId: Int): [Matter!]!
+
+  """Fetch an OAuth2 client by client ID."""
+  oauthClient(clientId: String!): OAuthClient
+
+  """List OAuth2 clients."""
+  oauthClients: [OAuthClient!]!
+}
+
+type Mutation {
+  """Create a new workspace."""
+  createWorkspace(input: CreateWorkspaceInput!): Workspace!
+
+  """Delete a workspace by ID."""
+  deleteWorkspace(artifactId: Int!): Boolean!
+
+  """Update document field values."""
+  updateDocumentFields(workspaceId: Int!, input: UpdateDocumentFieldsInput!): Document!
+
+  """Create a new production set."""
+  createProduction(input: CreateProductionInput!): Production!
+
+  """Stage a production for review."""
+  stageProduction(workspaceId: Int!, productionId: Int!): Production!
+
+  """Run a staged production."""
+  runProduction(workspaceId: Int!, productionId: Int!): Production!
+
+  """Delete a production."""
+  deleteProduction(workspaceId: Int!, productionId: Int!): Boolean!
+
+  """Create a new legal hold."""
+  createLegalHold(input: CreateLegalHoldInput!): LegalHold!
+
+  """Release a legal hold."""
+  releaseLegalHold(artifactId: Int!): LegalHold!
+
+  """Start an import job."""
+  startImportJob(input: ImportDocumentsInput!): ImportJob!
+
+  """Cancel a running import job."""
+  cancelImportJob(jobId: String!): ImportJob!
+
+  """Start an export job."""
+  startExportJob(workspaceId: Int!, savedSearchId: Int!, settings: JSON): ExportJob!
+
+  """Enable an automated workflow."""
+  enableAutomatedWorkflow(workspaceId: Int!, artifactId: Int!): AutomatedWorkflow!
+
+  """Disable an automated workflow."""
+  disableAutomatedWorkflow(workspaceId: Int!, artifactId: Int!): AutomatedWorkflow!
+
+  """Run an imaging set."""
+  runImagingSet(workspaceId: Int!, artifactId: Int!): ImagingSet!
+
+  """Code (tag) a document in a workspace."""
+  codeDocument(workspaceId: Int!, artifactId: Int!, decision: CodingDecision!, layoutId: Int, fields: JSON): CodingRecord!
+
+  """Add a custodian to a legal hold."""
+  addCustodianToLegalHold(legalHoldId: Int!, custodianId: Int!): LegalHold!
+
+  """Remove a custodian from a legal hold."""
+  removeCustodianFromLegalHold(legalHoldId: Int!, custodianId: Int!): LegalHold!
+}
+
+type Subscription {
+  """Subscribe to status updates for an import job."""
+  importJobStatus(jobId: String!): ImportJob!
+
+  """Subscribe to status updates for an export job."""
+  exportJobStatus(jobId: String!): ExportJob!
+
+  """Subscribe to status updates for a production."""
+  productionStatus(workspaceId: Int!, productionId: Int!): Production!
+
+  """Subscribe to status updates for an imaging set."""
+  imagingSetStatus(workspaceId: Int!, imagingSetId: Int!): ImagingSet!
+
+  """Subscribe to document review events in a workspace."""
+  documentCoded(workspaceId: Int!): CodingRecord!
+}
