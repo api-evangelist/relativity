@@ -7,7 +7,7 @@ description: Relativity is an eDiscovery and legal review platform offering Rela
   user and permission management, and AI-powered review features. Relativity exposes
   80+ integration APIs organized by business domain, supporting OAuth2, basic, and
   cookie-based authentication.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -27,7 +27,7 @@ apis:
   description: Core API for working with documents and Relativity Dynamic Objects
     (RDOs). Supports CRUD operations, querying, bulk/mass operations, and field management
     across all workspace objects.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
@@ -52,7 +52,7 @@ apis:
   description: REST API for importing large numbers of documents, images, and RDOs
     into RelativityOne workspaces. Supports native files, extracted text, images,
     and metadata.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/import-service/v1
   tags:
@@ -69,7 +69,7 @@ apis:
 - name: Relativity Export Service API
   description: REST API for exporting documents, images, PDFs, and native files from
     RelativityOne workspaces, as well as exporting applications as RAP or schema files.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/export-service/v1
   tags:
@@ -84,7 +84,7 @@ apis:
 - name: Relativity Workspace Manager API
   description: REST API for performing CRUD operations on RelativityOne workspaces,
     including creation, configuration, and deletion.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/workspace-service/v1
   tags:
@@ -99,7 +99,7 @@ apis:
   description: REST API for creating, deleting, staging, and running production sets
     in RelativityOne. Manages production data sources, placeholders, and the production
     queue.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/production-manager/v1
   tags:
@@ -114,7 +114,7 @@ apis:
 - name: Relativity Legal Hold API
   description: REST API for managing legal holds, custodians, and data preservation
     workflows in RelativityOne.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/legal-hold/v1
   tags:
@@ -129,7 +129,7 @@ apis:
 - name: Relativity Automated Workflows API
   description: REST API for registering and managing automated workflow actions, triggers,
     and events within RelativityOne to streamline review processes.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/automated-workflows/v1
   tags:
@@ -144,7 +144,7 @@ apis:
 - name: Relativity Audit API
   description: REST API for reverting, retrieving, and searching audit records stored
     in Elasticsearch. Provides full audit trail access for compliance and investigation.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/audit/v1
   tags:
@@ -160,7 +160,7 @@ apis:
   description: REST API for managing users, groups, clients, and permissions within
     RelativityOne. Supports OAuth2 client management, login profiles, and federated
     instance access.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   baseURL: https://{host}/Relativity.REST/api/user-management/v1
   tags:
@@ -177,7 +177,7 @@ apis:
   description: REST API for programmatically checking billing metrics and data usage
     in RelativityOne, enabling FinOps monitoring of active data, cold storage, and
     ECA volumes.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
   baseURL: https://{host}/Relativity.REST/api/billing-insights/v1
   tags:
