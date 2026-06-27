@@ -200,11 +200,11 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
 - type: Documentation
   url: https://platform.relativity.com/
-- type: Developer Portal
+- type: DeveloperPortal
   url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
 - type: GettingStarted
   url: https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
-- type: Changelog
+- type: ChangeLog
   url: https://platform.relativity.com/RelativityOne/Content/What_s_new/What_s_new.htm
 - type: PlatformChangeLog
   url: https://platform.relativity.com/RelativityOne/Content/What_s_new/Platform_change_log.htm
