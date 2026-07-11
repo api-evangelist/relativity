@@ -1,0 +1,33 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/relativity-collect-openapi.yml, openapi/relativity-glacier-openapi.yml, openapi/relativity-permissions-openapi.yml,
+  openapi/relativity-review-service-openapi.yml, openapi/relativity-staging-reports-openapi.yml,
+  openapi/relativity-transfer-openapi.yml, openapi/relativity-usage-reports-openapi.yml, openapi/relativity-workspace-openapi.yml
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - clientCredentials
+schemes:
+- name: Bearer
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: 'Relativity Identity Service (RIS) bearer token to authenticate: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API_authentication.htm#Bearertokenauthentication'
+  sources:
+  - openapi/relativity-collect-openapi.yml
+  - openapi/relativity-permissions-openapi.yml
+  - openapi/relativity-review-service-openapi.yml
+  - openapi/relativity-staging-reports-openapi.yml
+  - openapi/relativity-transfer-openapi.yml
+  - openapi/relativity-usage-reports-openapi.yml
+  - openapi/relativity-workspace-openapi.yml
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.relone.preview.com/oauth/token
+    scopes: 0
+  sources:
+  - openapi/relativity-glacier-openapi.yml

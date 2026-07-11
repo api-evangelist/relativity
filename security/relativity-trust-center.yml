@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://relativity.com/
+url: https://relativity.com/
+certifications:
+- FedRAMP
+- GDPR
+evidence:
+- source: https://relativity.com/
+  keywords:
+  - fedramp
+  - gdpr
