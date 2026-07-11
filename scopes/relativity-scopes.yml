@@ -1,0 +1,22 @@
+generated: '2026-07-11'
+method: searched
+source: openapi/relativity-glacier-openapi.yml
+docs: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API_authentication.htm
+note: Relativity does not publish granular OAuth permission scopes; the OAuth2 client
+  Scopes property cannot be set by users (defaults cover only id_token/access_token/refresh_token
+  per flow), and API access is governed by the client's assigned context user and
+  Relativity permissions (https://platform.relativity.com/RelativityOne/Content/BD_Identity/OAuth2_Client_Manager__REST_.htm).
+schemes:
+- name: oauth2
+  source: openapi/relativity-glacier-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.relone.preview.com/oauth/token
+scopes:
+- scope: SystemUserInfo
+  description: The only scope value shown in Relativity's documented OAuth2 client
+    credentials token request (grant_type=client_credentials&scope=SystemUserInfo)
+    against the /Relativity/Identity/connect/token endpoint; no description or additional
+    permission scopes are published.
+  sources:
+  - https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API_authentication.htm
