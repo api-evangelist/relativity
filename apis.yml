@@ -192,6 +192,8 @@ apis:
   - type: FinOps
     url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
 common:
+- type: AgenticAccess
+  url: agentic-access/relativity-agentic-access.yml
 - type: TrustCenter
   url: security/relativity-trust-center.yml
 - type: VulnerabilityDisclosure
