@@ -1,0 +1,253 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ObjectManagerAPI API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: ObjectManagerAPI
+  description: Use the Relativity Object Manager to discover prerequisite artifact IDs before creating Collect collections. These calls are read-only and use the same Bearer token authentication as the Collect API.
+paths:
+  /Relativity.Rest/api/Relativity.ObjectManager/v1/workspace/-1/object/queryslim:
+    post:
+      tags:
+      - ObjectManagerAPI
+      summary: Query admin-level Collect artifacts (Workspaces, Matters)
+      description: Use this endpoint to retrieve Workspaces and Matters. Run with the Workspace object type to list all workspaces and their associated Matter Names. Then run with the Matter object type and a name condition to retrieve a specific Matter's ArtifactID. The workspace context -1 is required for these admin-level objects.
+      parameters:
+      - name: x-csrf-header
+        in: header
+        description: Required CSRF header. Set to any non-empty string.
+        required: true
+        schema:
+          type: string
+          default: '-'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuerySlimRequest'
+            examples:
+              ListWorkspaces:
+                summary: Call 1 — List all Workspaces with associated Matter Name
+                description: Returns all workspaces the caller has access to. The ArtifactID feeds the workspaceId path parameter in all Collect API calls. Matter Name identifies the matter associated with each workspace.
+                value:
+                  request:
+                    objectType:
+                      name: Workspace
+                    fields:
+                    - name: Name
+                    - name: Matter Name
+                  start: 1
+                  length: 100
+              ListMatters:
+                summary: Call 2 — Retrieve a specific Matter by name (use Matter Name from Call 1)
+                description: Filters Matters by name to return the ArtifactID for the matter associated with your workspace. Replace 'Your Matter Name Here' with the Matter Name value returned in Call 1. The ArtifactID feeds MatterArtifactId in the Create Collection request.
+                value:
+                  request:
+                    objectType:
+                      name: Matter
+                    fields:
+                    - name: Name
+                    condition: '''Name'' == ''Your Matter Name Here'''
+                  start: 1
+                  length: 10
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/QuerySlimResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuerySlimResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/QuerySlimResponse'
+        '401':
+          description: Unauthorized — Bearer token is missing or expired. Re-run the token call to obtain a new token.
+        '403':
+          description: Forbidden — The caller does not have sufficient permissions.
+        '404':
+          description: Not Found — The object type name is incorrect for this context.
+        '429':
+          description: Too Many Requests — Rate limit exceeded. Check the RateLimit-Reset response header for the number of seconds to wait before retrying.
+  /Relativity.Rest/api/Relativity.ObjectManager/v1/workspace/{workspaceId}/object/queryslim:
+    post:
+      tags:
+      - ObjectManagerAPI
+      summary: Query workspace-level Collect artifacts (Source Instances, Entities, Processing Profiles)
+      description: Use this endpoint to retrieve Source Instances, Entities, and Processing Profiles from a specific workspace. The workspaceId is the ArtifactID returned in Call 1. For Processing Profiles, use the ArtifactID of a workspace that has Processing installed. The X-CSRF-Header must be set.
+      parameters:
+      - name: workspaceId
+        in: path
+        description: ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: x-csrf-header
+        in: header
+        description: Required CSRF header. Set to any non-empty string.
+        required: true
+        schema:
+          type: string
+          default: '-'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuerySlimRequest'
+            examples:
+              ListSourceInstances:
+                summary: Call 3 — List Source Instances pre-created in Collect Admin
+                description: Returns all Collect Source Instances configured in this workspace. The ArtifactID of each feeds the SourceInstances array in the Create Collection request. Returns TotalCount 0 if Collect is not installed in this workspace.
+                value:
+                  request:
+                    objectType:
+                      guid: 503A479A-18E4-406B-9537-AA74523B5A0C
+                    fields:
+                    - name: Name
+                  start: 1
+                  length: 100
+              ListEntities:
+                summary: Call 4 — List Entities (custodians) eligible for targeting
+                description: 'Returns all Entities in this workspace eligible for data collection. The ArtifactID of each feeds the Entities array in the Create Collection request. Note: use ''Full Name'' as the field name for Entities — using ''Name'' returns empty values.'
+                value:
+                  request:
+                    objectType:
+                      guid: D216472D-A1AA-4965-8B36-367D43D4E64C
+                    fields:
+                    - name: Full Name
+                  start: 1
+                  length: 100
+              ListProcessingProfiles:
+                summary: Call 5 — List Processing Profiles (run against a Processing Workspace)
+                description: Returns all Processing Profiles in the specified workspace. Use the ArtifactID of a workspace where Processing is installed. The Processing Profile ArtifactID feeds AutoProcessingProcessingProfileId in the Create Collection request.
+                value:
+                  request:
+                    objectType:
+                      guid: 4be0a8e2-c236-4dac-b8df-e7944b84cee5
+                    fields:
+                    - name: Name
+                  start: 1
+                  length: 100
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/QuerySlimResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuerySlimResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/QuerySlimResponse'
+        '401':
+          description: Unauthorized — Bearer token is missing or expired. Re-run the token call to obtain a new token.
+        '403':
+          description: Forbidden — The caller does not have access to this workspace.
+        '404':
+          description: Not Found — The object type GUID was not found in this workspace. Confirm Collect is installed and the X-CSRF-Header is set.
+        '429':
+          description: Too Many Requests — Rate limit exceeded. Check the RateLimit-Reset response header for the number of seconds to wait before retrying.
+components:
+  schemas:
+    QuerySlimRequest:
+      type: object
+      description: Request body for the Relativity Object Manager queryslim endpoint.
+      required:
+      - request
+      - start
+      - length
+      properties:
+        request:
+          type: object
+          required:
+          - objectType
+          - fields
+          properties:
+            objectType:
+              type: object
+              description: Identifies the object type to query. Use 'name' for system objects (Workspace, Matter) or 'guid' for Collect RDOs (Source Instance, Entity, Processing Profile).
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                  description: Display name of a system object type, e.g. 'Workspace' or 'Matter'.
+                guid:
+                  type: string
+                  nullable: true
+                  description: Artifact type GUID for a Collect RDO. Use for Source Instances, Entities, and Processing Profiles.
+            fields:
+              type: array
+              description: 'Fields to include in the response. Use [{ ''name'': ''Name'' }] for the display name, or [{ ''name'': ''Full Name'' }] for Entities.'
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+            condition:
+              type: string
+              nullable: true
+              description: Optional filter condition using Relativity query syntax, e.g. "'Name' == 'My Matter'".
+        start:
+          type: integer
+          format: int32
+          description: 1-based index of the first result to return. Use with 'length' for pagination.
+          default: 1
+        length:
+          type: integer
+          format: int32
+          description: Maximum number of results to return. Increase and paginate using 'start' for large environments.
+          default: 100
+      additionalProperties: false
+    QuerySlimResponse:
+      type: object
+      description: Response from the Relativity Object Manager queryslim endpoint.
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          description: Total number of objects matching the query. If 0 and results are expected, verify object type and workspace permissions.
+        Objects:
+          type: array
+          description: Array of result objects. Each object contains an ArtifactID and a Values array. Values are ordered to match the Fields array at the bottom of the response.
+          items:
+            $ref: '#/components/schemas/QuerySlimObject'
+        CurrentStartIndex:
+          type: integer
+          format: int32
+          description: The start index of this result page.
+        ResultCount:
+          type: integer
+          format: int32
+          description: Number of objects returned in this response page.
+        Fields:
+          type: array
+          description: Metadata for each field returned, in the same order as Values in each Object.
+          items:
+            type: object
+          nullable: true
+      additionalProperties: false
+    QuerySlimObject:
+      type: object
+      description: A single result object returned by queryslim.
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+          description: The unique Relativity identifier for this object. This is the value to supply in Collect API fields such as MatterArtifactId, SourceInstances, Entities, AutoProcessingWorkspaceId, and AutoProcessingProcessingProfileId.
+        Values:
+          type: array
+          description: Field values in the same order as the Fields array. The display name (workspace name, matter name, entity full name, etc.) appears here.
+          items: {}
+          nullable: true
+      additionalProperties: false

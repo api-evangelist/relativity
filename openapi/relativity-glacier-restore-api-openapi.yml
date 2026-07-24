@@ -1,0 +1,146 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Restore API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Glacier Restore
+paths:
+  /api/glaciers/{glacierId}/restore:
+    post:
+      tags:
+      - Glacier Restore
+      operationId: StartGlacierRestore
+      summary: Start a new glacier restore
+      description: Schedules restoring glacier entities from glacier storage to a destination location. The operation returns immediately with a store identifier while the actual data restoration happens asynchronously.
+      security:
+      - oauth2: []
+      parameters:
+      - name: glacierId
+        in: path
+        required: true
+        description: The unique identifier of the glacier to restore
+        schema:
+          type: string
+          format: uuid
+        example: 456e7890-f12a-34b5-c678-901234567890
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartGlacierRestoreRequest'
+            examples:
+              restore_request:
+                summary: Basic glacier restore request
+                value:
+                  destinationLocation: t001/ARM/RestoreLocation1
+      responses:
+        '202':
+          description: Glacier restore created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StartGlacierRestoreResponse'
+              example:
+                jobId: 456e7890-f12a-34b5-c678-901234567890
+          headers:
+            Location:
+              description: URL to check restore job status
+              schema:
+                type: string
+                format: uri
+              example: /api/jobs/456e7890-f12a-34b5-c678-901234567890
+        '409':
+          description: Conflict - validation failed
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ValidationProblemDetails'
+        '404':
+          description: Glacier not found
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    StartGlacierRestoreResponse:
+      type: object
+      required:
+      - jobId
+      - glacierId
+      properties:
+        jobId:
+          type: string
+          format: uuid
+          description: The unique identifier of the created job
+          example: 456e7890-f12a-34b5-c678-901234567890
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier to restore
+          example: 456e7890-f12a-34b5-c678-901234567890
+    StartGlacierRestoreRequest:
+      type: object
+      required:
+      - destinationLocation
+      properties:
+        destinationLocation:
+          type: string
+          minLength: 10
+          description: Specify the destination location to restore from Glacier. The location should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM.
+          example: t001/ARM/RestoreLocation1
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
+    ValidationProblemDetails:
+      allOf:
+      - $ref: '#/components/schemas/ProblemDetails'
+      - type: object
+        properties:
+          errors:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+            description: Field-specific validation errors

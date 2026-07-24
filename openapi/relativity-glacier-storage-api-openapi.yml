@@ -1,0 +1,278 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Storage API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Glacier Storage
+paths:
+  /api/glaciers:
+    get:
+      tags:
+      - Glacier Storage
+      operationId: ListGlaciers
+      summary: List glaciers
+      description: Retrieves a paginated list of all glaciers. Each glacier in the list includes basic information such as ID, name, and creation date.
+      security:
+      - oauth2: []
+      parameters:
+      - name: page
+        in: query
+        required: false
+        description: 'The page number to retrieve (default: 1)'
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+        example: 1
+      - name: pageSize
+        in: query
+        required: false
+        description: 'The number of items per page (default: 50)'
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 50
+        example: 50
+      - name: status
+        in: query
+        required: false
+        description: Filter glaciers by status
+        schema:
+          type: string
+          enum:
+          - GLACIER_PENDING
+          - GLACIER_IN_PREVIEW
+          - GLACIER_AVAILABLE
+          - GLACIER_RESTORED
+          - GLACIER_FAILED
+        example: GLACIER_AVAILABLE
+      responses:
+        '200':
+          description: List of glaciers retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGlaciersResponse'
+              example:
+                items:
+                - glacierId: 987fcdeb-51a2-43d1-9876-543210fedcba
+                  name: project-archive-2024
+                  createdAt: '2024-01-15T10:30:00Z'
+                  status: GLACIER_AVAILABLE
+                - glacierId: 456e7890-f12a-34b5-c678-901234567890
+                  name: backup-2024-01
+                  createdAt: '2024-01-10T14:20:00Z'
+                  status: GLACIER_PENDING
+                page: 1
+                pageSize: 50
+                totalCount: 125
+                totalPages: 3
+        '401':
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /api/glaciers/{glacierId}/report:
+    get:
+      tags:
+      - Glacier Storage
+      operationId: GetGlacierReports
+      summary: Get glacier inventory report
+      description: Retrieves detailed Inventory Report information about a specific glacier with download link.
+      security:
+      - oauth2: []
+      parameters:
+      - name: glacierId
+        in: path
+        required: true
+        description: The unique identifier of the glacier
+        schema:
+          type: string
+          format: uuid
+        example: 987fcdeb-51a2-43d1-9876-543210fedcba
+      responses:
+        '200':
+          description: Glacier inventory report retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GlacierReportResponse'
+              example:
+                glacierId: 987fcdeb-51a2-43d1-9876-543210fedcba
+                name: project-archive-2024
+                createdAt: '2024-01-15T10:30:00Z'
+                inventoryReport:
+                  glacierStoreEntityCount: 1250
+                  glacierStoreTotalEntitySize: 5368709120
+                downloadLink: https://mystorageaccount.dfs.core.windows.net/glacier-reports?sv=2022-11-02&ss=bfqt&srt=sco&sp=rl&se=2025-10-02T00:00:00Z&st=2025-10-01T00:00:00Z&spr=https&sig=abc123XYZsignature%3D
+        '404':
+          description: Glacier not found
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    GlacierListItem:
+      type: object
+      required:
+      - glacierId
+      - name
+      - createdAt
+      - status
+      properties:
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier
+          example: 987fcdeb-51a2-43d1-9876-543210fedcba
+        name:
+          type: string
+          description: The name of the glacier
+          example: project-archive-2024
+        createdAt:
+          type: string
+          format: date-time
+          description: When the glacier was created
+          example: '2024-01-15T10:30:00Z'
+        status:
+          type: string
+          enum:
+          - GLACIER_PENDING
+          - GLACIER_IN_PREVIEW
+          - GLACIER_AVAILABLE
+          - GLACIER_RESTORED
+          - GLACIER_FAILED
+          description: Current status of the glacier
+          example: GLACIER_AVAILABLE
+    ListGlaciersResponse:
+      type: object
+      required:
+      - items
+      - page
+      - pageSize
+      - totalCount
+      - totalPages
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/GlacierListItem'
+          description: Array of glacier objects
+        page:
+          type: integer
+          description: Current page number
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 50
+        totalCount:
+          type: integer
+          description: Total number of glaciers
+          example: 125
+        totalPages:
+          type: integer
+          description: Total number of pages
+          example: 3
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
+    GlacierReportResponse:
+      type: object
+      required:
+      - glacierId
+      - name
+      - createdAt
+      - inventoryReport
+      - downloadLink
+      properties:
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier
+          example: 987fcdeb-51a2-43d1-9876-543210fedcba
+        name:
+          type: string
+          description: The name of the glacier
+          example: project-archive-2024
+        createdAt:
+          type: string
+          format: date-time
+          description: When the glacier was created
+          example: '2024-01-15T10:30:00Z'
+        inventoryReport:
+          $ref: '#/components/schemas/InventoryReport'
+        downloadLink:
+          type: string
+          format: uri
+          description: Download link for the glacier inventory report
+          example: https://mystorageaccount.dfs.core.windows.net/glacier-reports?sv=2022-11-02&ss=bfqt&srt=sco&sp=rl&se=2025-10-02T00:00:00Z&st=2025-10-01T00:00:00Z&spr=https&sig=abc123XYZsignature%3D
+    InventoryReport:
+      type: object
+      required:
+      - glacierStoreEntityCount
+      - glacierStoreTotalEntitySize
+      properties:
+        glacierStoreEntityCount:
+          type: integer
+          description: Number of entities in the glacier
+          example: 1250
+        glacierStoreTotalEntitySize:
+          type: integer
+          format: int64
+          description: Total size of all entities in bytes
+          example: 5368709120

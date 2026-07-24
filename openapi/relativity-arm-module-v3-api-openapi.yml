@@ -1,0 +1,479 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ARM Module v3 API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: ARM Module v3
+paths:
+  /relativity-arm/v3/restore-jobs:
+    post:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Restore Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmRestoreJobManager_V3_CreateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRestoreJobResponse_V3'
+  /relativity-arm/v3/restore-jobs/{jobID}:
+    get:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Restore Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestoreJobResponse_V3'
+    put:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Restore Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.UpdateAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmRestoreJobManager_V3_UpdateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateRestoreJobResponse_V3'
+    delete:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Restore Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.DeleteAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+  /relativity-arm/v3/jobs/{jobID}/status:
+    get:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Job Information Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.JobInformation.IArmJobInformationManager.GetJobStatusAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobProgressResponse_V3'
+  /relativity-arm/v3/jobs/{jobID}/cancel:
+    post:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Job Actions Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V3.JobAction.IArmJobActionManager.CancelAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmJobActionManager_V3_CancelAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelJobResponse_V3'
+  /relativity-arm/v3/jobs/{jobID}/run:
+    post:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Job Actions Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V3.JobAction.IArmJobActionManager.RunAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmJobActionManager_V3_RunAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunJobResponse_V3'
+  /relativity-arm/v3/archive-jobs:
+    post:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Archive Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmArchiveJobManager_V3_CreateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateArchiveJobResponse_V3'
+  /relativity-arm/v3/archive-jobs/{jobID}:
+    get:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Archive Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchiveJobResponse_V3'
+    put:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Archive Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.UpdateAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmArchiveJobManager_V3_UpdateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateArchiveJobResponse_V3'
+    delete:
+      tags:
+      - ARM Module v3
+      summary: ''
+      description: '[Public] ARM Archive Manager V3'
+      operationId: Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.DeleteAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+components:
+  schemas:
+    JobActions_V3:
+      title: JobActions_V3
+      type: object
+      properties:
+        Date:
+          type: string
+          format: date-time
+        Type:
+          type: string
+        UserName:
+          type: string
+    IArmArchiveJobManager_V3_UpdateAsync_RequestBody:
+      title: IArmArchiveJobManager_V3_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest_V3'
+    IArmRestoreJobManager_V3_UpdateAsync_RequestBody:
+      title: IArmRestoreJobManager_V3_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest_V3'
+    RestoreJobResponse_V3:
+      title: RestoreJobResponse_V3
+      type: object
+      properties:
+        JobID:
+          type: string
+        JobName:
+          type: string
+        ArchivePath:
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        SourceWorkspace:
+          type: string
+        DestinationWorkspaceID:
+          type: integer
+          nullable: true
+        ExistingTargetDatabase:
+          type: string
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V3'
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V3'
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V3'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V3'
+        UiJobActionsLocked:
+          type: boolean
+    CreateArchiveJobResponse_V3:
+      title: CreateArchiveJobResponse_V3
+      type: object
+      properties:
+        JobID:
+          type: string
+    UpdateArchiveJobResponse_V3:
+      title: UpdateArchiveJobResponse_V3
+      type: object
+    CreateRestoreJobResponse_V3:
+      title: CreateRestoreJobResponse_V3
+      type: object
+      properties:
+        JobID:
+          type: string
+    ArchiveJobResponse_V3:
+      title: ArchiveJobResponse_V3
+      type: object
+      properties:
+        JobID:
+          type: string
+        JobName:
+          type: string
+        ArchivePath:
+          type: string
+        WorkspaceID:
+          type: integer
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V3'
+        ExcludedMigrators:
+          type: array
+          items:
+            type: string
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V3'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V3'
+        UiJobActionsLocked:
+          type: boolean
+    IArmJobActionManager_V3_CancelAsync_RequestBody:
+      title: IArmJobActionManager_V3_CancelAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/CancelJobRequest_V3'
+    CancelJobResponse_V3:
+      title: CancelJobResponse_V3
+      type: object
+    JobProgressResponse_V3:
+      title: JobProgressResponse_V3
+      type: object
+      properties:
+        JobId:
+          type: string
+        JobState:
+          enum:
+          - NotStarted
+          - InProgress
+          - Paused
+          - Cancelling
+          - Cancelled
+          - Errored
+          - Completed
+          type: string
+    JobDetails_V3:
+      title: JobDetails_V3
+      type: object
+      properties:
+        Priority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ActionsHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobActions_V3'
+    RestoreJobRequest_V3:
+      title: RestoreJobRequest_V3
+      type: object
+      properties:
+        ArchivePath:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        ExistingTargetDatabase:
+          type: string
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V3'
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V3'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V3'
+        UiJobActionsLocked:
+          type: boolean
+    RunJobRequest_V3:
+      title: RunJobRequest_V3
+      type: object
+    RestoreDestinationOptions_V3:
+      title: RestoreDestinationOptions_V3
+      type: object
+      properties:
+        MatterID:
+          type: integer
+    UpdateRestoreJobResponse_V3:
+      title: UpdateRestoreJobResponse_V3
+      type: object
+    NotificationOptions_V3:
+      title: NotificationOptions_V3
+      type: object
+      properties:
+        NotifyJobCreator:
+          type: boolean
+        NotifyJobExecutor:
+          type: boolean
+    ArchiveJobRequest_V3:
+      title: ArchiveJobRequest_V3
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ArchiveDirectory:
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ExcludedMigrators:
+          type: array
+          items:
+            type: string
+          example: '["ADS", "Processing", "NonRepositoryFiles", "dtIndex", "analytics-core", "StructuredAnalytics", "Audit", "Database"]'
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V3'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V3'
+        UiJobActionsLocked:
+          type: boolean
+    IArmRestoreJobManager_V3_CreateAsync_RequestBody:
+      title: IArmRestoreJobManager_V3_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest_V3'
+    IArmArchiveJobManager_V3_CreateAsync_RequestBody:
+      title: IArmArchiveJobManager_V3_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest_V3'
+    MigratorOptions_V3:
+      title: MigratorOptions_V3
+      type: object
+      additionalProperties:
+        type: object
+      example: '"Common": {"FileFirstFlow": {"IsFilesFirstFlow": true, "AdditionalFilesDirectoryPath": "path"}},"UserGroup": {"GroupMapping": {"AutoMapGroups": false,"GroupMappings": [{"ArchiveGroupID": 1000000,"InstanceGroupID": 1000000}]},"UserMapping": {"AutoMapUsers": true,"UserMappings": [{"ArchiveUserID": 7000000,"InstanceUserID": 1000000}]}'
+    IArmJobActionManager_V3_RunAsync_RequestBody:
+      title: IArmJobActionManager_V3_RunAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RunJobRequest_V3'
+    CancelJobRequest_V3:
+      title: CancelJobRequest_V3
+      type: object
+    RunJobResponse_V3:
+      title: RunJobResponse_V3
+      type: object
+  parameters:
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    jobID:
+      name: jobID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string

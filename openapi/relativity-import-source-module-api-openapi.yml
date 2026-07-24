@@ -1,0 +1,510 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Import Source Module API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Import Source Module
+paths:
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/{sourceID}:
+    post:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Add source to import job.
+      operationId: Import.Services.V1.IImportSourceController.AddSourceAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      - $ref: '#/components/parameters/sourceID'
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createDataSourceSettingsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/{sourceID}/columns:
+    get:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Returns list of column names read from configuration.
+      operationId: Import.Services.V1.IImportSourceController.GetColumnsAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      - $ref: '#/components/parameters/sourceID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.StringArray'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/{sourceID}/details:
+    get:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Returns details for single source.
+      operationId: Import.Services.V1.IImportSourceController.GetDetailsAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      - $ref: '#/components/parameters/sourceID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.DataSourceDetails'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/{sourceID}/delete:
+    post:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Deletes the parent folder of the data source's load file if it is located in \StructuredData\Import\.
+      operationId: Import.Services.V1.IImportSourceController.DeleteParentFolderAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      - $ref: '#/components/parameters/sourceID'
+      requestBody:
+        description: ''
+        content:
+          application/json: {}
+        required: false
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/:
+    get:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Returns sources for single source.
+      operationId: Import.Services.V1.IImportSourceController.GetSourcesAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.DataSources'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/{sourceID}/itemerrors:
+    get:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Get errors for single source.
+      operationId: Import.Services.V1.IImportSourceController.GetItemErrorsAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      - $ref: '#/components/parameters/sourceID'
+      - $ref: '#/components/parameters/start'
+      - $ref: '#/components/parameters/length'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.ImportErrors'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/{sourceID}/errorloadfile:
+    get:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Get path to Loadfile with error lines. Empty if data source had no errors.
+      operationId: Import.Services.V1.IImportSourceController.GetErrorLoadfileAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      - $ref: '#/components/parameters/sourceID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.String'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/sources/{sourceID}/progress:
+    get:
+      tags:
+      - Import Source Module
+      summary: ''
+      description: Get progress for single source.
+      operationId: Import.Services.V1.IImportSourceController.GetProgressAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      - $ref: '#/components/parameters/sourceID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.ImportProgress'
+        '400':
+          description: Bad Request. Validation exception.
+components:
+  schemas:
+    ValueResponse.ImportErrors:
+      description: ValueResponse of ImportErrors type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            $ref: '#/components/schemas/ImportErrors'
+      - $ref: '#/components/schemas/Response'
+    Response:
+      type: object
+      properties:
+        IsSuccess:
+          type: boolean
+          example: true
+        ErrorMessage:
+          type: string
+          example: ''
+        ErrorCode:
+          type: string
+          example: ''
+        ImportJobID:
+          description: Import job identification GUID number.
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+    ValueResponse.ImportProgress:
+      description: ValueResponse of ImportProgress type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: object
+            properties:
+              RecordsInDataSources:
+                type: integer
+                example: 11
+              ImportedRecords:
+                type: integer
+                example: 10
+              ErrorRecords:
+                type: integer
+                example: 1
+      - $ref: '#/components/schemas/Response'
+    ImportErrors:
+      type: object
+      properties:
+        DataSourceID:
+          type: string
+          format: uuid
+          description: Gets or sets Data Source Id.
+          example: 00000000-0000-0000-0000-000000000000
+        Errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImportError'
+          description: Gets or sets collection of errors.
+        TotalCount:
+          type: integer
+          example: 1
+        NumberOfSkippedRecords:
+          description: Gets number of skipped item errors. Item errors are ordered by Line Number.
+          type: integer
+          example: 0
+        NumberOfRecords:
+          description: Gets number of item errors in the Errors collection
+          type: integer
+          example: 1
+        HasMoreRecords:
+          description: Returns true if there is more records for a given Data Source(NumberOfSkippedRecords + NumberOfRecords < TotalCount).
+          type: boolean
+          example: false
+    DataSourceState:
+      type: string
+      example: New
+      enum:
+      - Unknown
+      - New
+      - Scheduled
+      - PendingInserting
+      - Inserting
+      - Canceled
+      - Failed
+      - CompletedWithItemErrors
+      - Completed
+    ErrorDetail:
+      type: object
+      properties:
+        ColumnIndex:
+          description: Gets index of a column in the load file.
+          type: integer
+          example: 1
+        ErrorCode:
+          description: Gets error code.
+          type: string
+          example: S.LN.INT.0001
+        ErrorMessage:
+          description: Gets error message.
+          type: string
+          example: Error message.
+        ErrorMessageTemplate:
+          description: Gets error message template.
+          type: string
+          example: Template error message.
+        ErrorProperties:
+          type: object
+          additionalProperties:
+            type: string
+          description: Gets dictionary (key/value pairs of strings) of properties of a given errors. Structure of this dictionary is defined for each error code.
+    ImportError:
+      type: object
+      properties:
+        ErrorDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: Gets or sets collection of error details.
+        LineNumber:
+          type: integer
+          example: 1
+        ObjectIdentifier:
+          type: string
+          description: Document identifier
+    DataSourceEndOfLine:
+      type: string
+      description: Line ending standard of the load file
+      example: Windows
+      enum:
+      - Windows
+      - Linux
+      - Mac
+    DataSources:
+      type: object
+      properties:
+        Jobs:
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+          description: Jobs sources ids.
+          example:
+          - 1D2F6FF7-D3BA-49D4-BAF0-808533EE5233
+          - 00000000-0000-0000-0000-000000000000
+        TotalCount:
+          type: integer
+          example: 2
+    ValueResponse.DataSourceDetails:
+      description: ValueResponse of DataSourceDetails type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            $ref: '#/components/schemas/DataSourceDetails'
+      - $ref: '#/components/schemas/Response'
+    createDataSourceSettingsRequest:
+      type: object
+      description: Object of type DataSourceSettings.
+      properties:
+        dataSourceSettings:
+          $ref: '#/components/schemas/DataSourceSettings'
+    DataSourceDetails:
+      description: DataSourceDetails type
+      type: object
+      properties:
+        State:
+          $ref: '#/components/schemas/DataSourceState'
+        DataSourceSettings:
+          $ref: '#/components/schemas/DataSourceSettings'
+        IsParentFolderDeleted:
+          type: boolean
+          description: Gets or sets a value indicating whether the source load file's parent folder is deleted.
+          example: true
+        JobLevelErrors:
+          $ref: '#/components/schemas/ImportError'
+    ValueResponse.String:
+      description: ValueResponse of string type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: string
+            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
+      - $ref: '#/components/schemas/Response'
+    DataSourceType:
+      type: string
+      description: Type of the input load file
+      example: Opticon
+      enum:
+      - Unknown
+      - Opticon
+      - LoadFile
+    DataSourceSettings:
+      type: object
+      description: Settings for the data source.
+      properties:
+        Path:
+          type: string
+          description: File localization
+          example: C:\tmp_loadfile\loadfile.dat
+        EndOfLine:
+          $ref: '#/components/schemas/DataSourceEndOfLine'
+        Type:
+          $ref: '#/components/schemas/DataSourceType'
+        FirstLineContainsColumnNames:
+          type: boolean
+          example: true
+        StartLine:
+          type: integer
+          example: 0
+        ColumnDelimiter:
+          type: string
+          format: char
+          description: Character separating columns.
+          example: '|'
+        QuoteDelimiter:
+          type: string
+          format: char
+          description: Character indicating quote.
+          example: ^
+        NewLineDelimiter:
+          type: string
+          format: char
+          description: Character indicating new line in filed value.
+          example: '#'
+        MultiValueDelimiter:
+          type: string
+          format: char
+          description: Represents the delimiter used to separate multiple values, such as different single-choice field values.
+          example: $
+        NestedValueDelimiter:
+          type: string
+          format: char
+          description: Represents the delimiter used to separate nested values, such as choices or child choices on a multi-choice field.
+          example: '&'
+        Encoding:
+          type: string
+          description: 'Represents the encoding of the load file as a string (WebName) ex: "utf-8", "utf-16" "utf-16BE", "Windows-1252".'
+          example: utf-8
+        CultureInfo:
+          type: string
+          description: 'Represents the culture info used to parse dates from load file. Defined as a language tag - based on RFC 4646 and BCP 47. ex: \en-US\", \"pl-PL\". When not specified invariant culture will be used by default.'
+          example: en-US
+    ValueResponse.StringArray:
+      description: ValueResponse of string[] type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: array
+            items:
+              type: string
+            description: Names of columns.
+            example:
+            - Column1
+            - Column2
+      - $ref: '#/components/schemas/Response'
+    ValueResponse.DataSources:
+      description: ValueResponse of DataSources type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            $ref: '#/components/schemas/DataSources'
+      - $ref: '#/components/schemas/Response'
+  parameters:
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: Workspace identification number.
+      required: true
+      schema:
+        type: integer
+      example: 10000
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .
+    importJobID:
+      name: importJobID
+      in: path
+      description: Import job identification GUID.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 00000000-0000-0000-0000-000000000000
+    start:
+      name: start
+      in: query
+      description: Index from which import jobs will be read.
+      required: true
+      schema:
+        type: integer
+      example: '0'
+    length:
+      name: length
+      in: query
+      description: Number of returned import jobs in workspace.
+      required: true
+      schema:
+        type: integer
+      example: 10
+    sourceID:
+      name: sourceID
+      in: path
+      description: Source identification GUID.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 00000000-0000-0000-0000-000000000000

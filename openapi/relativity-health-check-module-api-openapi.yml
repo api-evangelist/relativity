@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Health Check Module API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Health Check Module
+paths:
+  /import-service/v1/health-check/:
+    get:
+      tags:
+      - Health Check Module
+      summary: ''
+      description: Check if Import Service is available.
+      operationId: Import.Services.V1.HealthCheckController.HealthCheckAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheckResult'
+        '400':
+          description: Bad Request. Validation exception.
+components:
+  parameters:
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .
+  schemas:
+    HealthCheckResult:
+      type: object
+      properties:
+        IsHealthy:
+          type: boolean
+          example: true
+        Message:
+          type: string
+          example: Import.Services is Healthy

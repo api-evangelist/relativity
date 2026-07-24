@@ -1,0 +1,240 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService WorkspaceJob API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: WorkspaceJob
+paths:
+  /v1/workspace-job:
+    post:
+      tags:
+      - WorkspaceJob
+      summary: Start workspace creation
+      description: Starts asynchronous workspace creation and returns a job ID. Use GET /v1/workspace-job/{jobId} to track the progress of the created job.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceCreateRequestDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceCreateRequestDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceCreateRequestDto'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateEnqueueResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateEnqueueResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateEnqueueResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '415':
+          description: Unsupported Media Type
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+  /v1/workspace-job/{jobId}:
+    get:
+      tags:
+      - WorkspaceJob
+      summary: Get workspace creation job progress
+      description: Returns the current step, total steps, state, and workspace artifact ID for a given job. Poll this endpoint to track the progress of a workspace creation started via POST /v1/workspace-job.
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateJobResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateJobResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceCreateJobResponse'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    WorkspaceCreateJobResponse:
+      type: object
+      properties:
+        JobId:
+          type: string
+          format: uuid
+        WorkspaceArtifactId:
+          type: integer
+          format: int32
+          nullable: true
+        TotalNumberOfSteps:
+          type: integer
+          format: int32
+          nullable: true
+        CurrentStep:
+          type: integer
+          format: int32
+          nullable: true
+        JobState:
+          type: string
+          nullable: true
+        Attempt:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    WorkspaceCreateRequestDto:
+      required:
+      - Name
+      - UseCase
+      type: object
+      properties:
+        Name:
+          maxLength: 50
+          minLength: 1
+          type: string
+        MatterArtifactId:
+          type: integer
+          format: int32
+        StatusArtifactId:
+          type: integer
+          format: int32
+        TemplateArtifactId:
+          type: integer
+          format: int32
+        SqlFullTextLanguage:
+          type: integer
+          format: int32
+        Keywords:
+          maxLength: 50
+          minLength: 0
+          type: string
+          nullable: true
+        Notes:
+          type: string
+          nullable: true
+        DownloadHandlerUrl:
+          type: string
+          nullable: true
+        UseCase:
+          minLength: 1
+          type: string
+        WorkspaceAdminGroupArtifactId:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    WorkspaceCreateEnqueueResponse:
+      required:
+      - JobId
+      type: object
+      properties:
+        JobId:
+          type: string
+          format: uuid
+      additionalProperties: false

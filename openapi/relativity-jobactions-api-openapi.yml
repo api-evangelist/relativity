@@ -1,0 +1,141 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService JobActions API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: JobActions
+paths:
+  /v3/jobs/{jobID}/cancel:
+    post:
+      tags:
+      - JobActions
+      summary: Asynchronously cancels a running job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Job identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Cancel job request with optional parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CancelJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CancelJobRequestWrapper'
+      responses:
+        '200':
+          description: Job cancellation initiated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelJobResponse'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+  /v3/jobs/{jobID}/run:
+    post:
+      tags:
+      - JobActions
+      summary: Asynchronously runs a job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Job identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Run job request with optional parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RunJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RunJobRequestWrapper'
+      responses:
+        '200':
+          description: Job execution initiated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunJobResponse'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    RunJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for running an ARM Job
+    RunJobRequest:
+      type: object
+      additionalProperties: false
+      description: Request for running an ARM Job
+    CancelJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for cancelling an ARM Job
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    RunJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RunJobRequest'
+      additionalProperties: false
+      description: Request for running an ARM Job
+    CancelJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/CancelJobRequest'
+      additionalProperties: false
+      description: Request for cancelling an ARM Job
+    CancelJobRequest:
+      type: object
+      additionalProperties: false
+      description: Request for cancelling an ARM Job

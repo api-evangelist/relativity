@@ -1,0 +1,404 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Import Job Module API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Import Job Module
+paths:
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/:
+    post:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Create import job.
+      operationId: Import.Services.V1.ImportJobController.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createJobBodyRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/cancel/:
+    post:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Cancel import job.
+      operationId: Import.Services.V1.ImportJobController.CancelAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/begin/:
+    post:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Begin import job.
+      operationId: Import.Services.V1.ImportJobController.BeginAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/end/:
+    post:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: End import job.
+      operationId: Import.Services.V1.ImportJobController.EndAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/pause/:
+    post:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Pause import job.
+      operationId: Import.Services.V1.ImportJobController.PauseAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/resume/:
+    post:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Resume previously paused import job.
+      operationId: Import.Services.V1.ImportJobController.ResumeAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/progress/:
+    get:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Get import job progress.
+      operationId: Import.Services.V1.ImportJobController.GetProgressAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.ImportProgress'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/details/:
+    get:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Get import job details.
+      operationId: Import.Services.V1.ImportJobController.GetDetailsAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.ImportDetails'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/jobs/:
+    get:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Get import jobs which exist in workspace.
+      operationId: Import.Services.V1.ImportJobController.GetJobsAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/start'
+      - $ref: '#/components/parameters/length'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.ImportJobs'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/location:
+    get:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Gets the default location for the import files upload.
+      operationId: Import.Services.V1.ImportJobController.GetDefaultLocationForWorkspaceAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.String'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/location:
+    get:
+      tags:
+      - Import Job Module
+      summary: ''
+      description: Gets the default location for the import files upload.
+      operationId: Import.Services.V1.ImportJobController.GetDefaultLocationForJobAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.String'
+        '400':
+          description: Bad Request. Validation exception.
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        IsSuccess:
+          type: boolean
+          example: true
+        ErrorMessage:
+          type: string
+          example: ''
+        ErrorCode:
+          type: string
+          example: ''
+        ImportJobID:
+          description: Import job identification GUID number.
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+    ImportState:
+      type: string
+      example: New
+      enum:
+      - Unknown
+      - New
+      - Configured
+      - ValidationErrors
+      - InProgress
+      - Paused
+      - Canceled
+      - Failed
+      - Completed
+    ValueResponse.ImportDetails:
+      description: ValueResponse of ImportDetails type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: object
+            properties:
+              IsFinished:
+                type: boolean
+                example: true
+              State:
+                $ref: '#/components/schemas/ImportState'
+              ApplicationName:
+                type: string
+                example: Example Application
+              CreatedBy:
+                type: integer
+                example: 10
+              CreatedOn:
+                type: string
+                format: date-time
+                example: '2021-11-30T09:17:19.81'
+              LastModifiedBy:
+                type: integer
+                example: 9
+              LastModifiedOn:
+                type: string
+                format: date-time
+                example: '2021-11-30T09:17:19.81'
+      - $ref: '#/components/schemas/Response'
+    ValueResponse.String:
+      description: ValueResponse of string type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: string
+            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
+      - $ref: '#/components/schemas/Response'
+    ValueResponse.ImportProgress:
+      description: ValueResponse of ImportProgress type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: object
+            properties:
+              RecordsInDataSources:
+                type: integer
+                example: 11
+              ImportedRecords:
+                type: integer
+                example: 10
+              ErrorRecords:
+                type: integer
+                example: 1
+      - $ref: '#/components/schemas/Response'
+    ValueResponse.ImportJobs:
+      description: ValueResponse of ImportJobs type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: object
+            properties:
+              Jobs:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+                uniqueItems: true
+                description: Jobs Guid ids.
+                example:
+                - 1D2F6FF7-D3BA-49D4-BAF0-808533EE5233
+                - 00000000-0000-0000-0000-000000000000
+              TotalCount:
+                type: integer
+                example: 2
+      - $ref: '#/components/schemas/Response'
+    createJobBodyRequest:
+      type: object
+      properties:
+        applicationName:
+          type: string
+          description: Application name.
+          example: importini
+        correlationID:
+          type: string
+          description: External correlation ID.
+          example: c0r31ati0n_ID
+  parameters:
+    start:
+      name: start
+      in: query
+      description: Index from which import jobs will be read.
+      required: true
+      schema:
+        type: integer
+      example: '0'
+    length:
+      name: length
+      in: query
+      description: Number of returned import jobs in workspace.
+      required: true
+      schema:
+        type: integer
+      example: 10
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .
+    importJobID:
+      name: importJobID
+      in: path
+      description: Import job identification GUID.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 00000000-0000-0000-0000-000000000000
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: Workspace identification number.
+      required: true
+      schema:
+        type: integer
+      example: 10000

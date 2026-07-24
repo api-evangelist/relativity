@@ -1,0 +1,226 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Jobs API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Glacier Jobs
+paths:
+  /api/jobs/{jobId}:
+    get:
+      tags:
+      - Glacier Jobs
+      operationId: GetGlacierJobStatus
+      summary: Get glacier job status
+      description: Retrieves the current status of glacier and status of a glacier store or restore job. Provides detailed information about the current status of glacier and operations, also any errors that may have occurred.
+      security:
+      - oauth2: []
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        description: The unique identifier of the glacier job
+        schema:
+          type: string
+          format: uuid
+        example: 123e4567-e89b-12d3-a456-426614174000
+      responses:
+        '200':
+          description: Job status retrieved successfully
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/GlacierStoreStatusResponse'
+                - $ref: '#/components/schemas/GlacierRestoreStatusResponse'
+        '404':
+          description: Job not found
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
+    GlacierRestoreStatusResponse:
+      type: object
+      required:
+      - status
+      - jobType
+      - glacierId
+      - tenantId
+      - glacierName
+      - destinationLocation
+      - scheduledAt
+      properties:
+        status:
+          type: string
+          enum:
+          - RESTORE_SCHEDULED
+          - RESTORE_IN_PROGRESS
+          - RESTORE_COMPLETED
+          - RESTORE_FAILED
+          description: Current status of the glacier restore
+        jobType:
+          type: string
+          enum:
+          - STORE
+          - RESTORE
+          description: The type of job
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier restore job
+        tenantId:
+          type: string
+          format: uuid
+          description: The tenant identifier
+        glacierName:
+          type: string
+          description: The name of the glacier to restore from
+        destinationLocation:
+          type: string
+          description: The destination location for restore operations
+        scheduledAt:
+          type: string
+          format: date-time
+          description: When the restore was scheduled
+        completedAt:
+          type: string
+          format: date-time
+          description: When the restore was completed (only present for completed restores)
+        failedAt:
+          type: string
+          format: date-time
+          description: When the restore failed (only present for failed restores)
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: Collection of error objects with message details (only present for failed restores)
+    GlacierStoreStatusResponse:
+      type: object
+      required:
+      - status
+      - jobType
+      - glacierId
+      - tenantId
+      - sourceLocation
+      - glacierName
+      - scheduledAt
+      properties:
+        status:
+          type: string
+          enum:
+          - STORE_DATA_SCHEDULED
+          - STORE_DATA_IN_PROGRESS
+          - STORE_DATA_COMPLETED
+          - STORE_INVENTORY_REPORT_SCHEDULED
+          - STORE_INVENTORY_REPORT_IN_PROGRESS
+          - STORE_INVENTORY_REPORT_COMPLETED
+          - STORE_COMPLETED
+          - STORE_FAILED
+          description: Current status of the glacier store
+        jobType:
+          type: string
+          enum:
+          - STORE
+          - RESTORE
+          description: The type of job
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier store
+        tenantId:
+          type: string
+          format: uuid
+          description: The tenant identifier for the store
+        sourceLocation:
+          type: string
+          description: Source location archived in Glacier
+        glacierName:
+          type: string
+          description: The name of the glacier storage
+        scheduledAt:
+          type: string
+          format: date-time
+          description: When the store was scheduled
+        completedAt:
+          type: string
+          format: date-time
+          description: When the store was completed (only present for completed stores)
+        failedAt:
+          type: string
+          format: date-time
+          description: When the store failed (only present for failed stores)
+        inventoryReport:
+          $ref: '#/components/schemas/InventoryReport'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: Collection of error objects with message details (only present for failed stores)
+    ErrorDetail:
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          type: string
+          description: Error message
+          example: Source directory not found
+    InventoryReport:
+      type: object
+      required:
+      - glacierStoreEntityCount
+      - glacierStoreTotalEntitySize
+      properties:
+        glacierStoreEntityCount:
+          type: integer
+          description: Number of entities in the glacier
+          example: 1250
+        glacierStoreTotalEntitySize:
+          type: integer
+          format: int64
+          description: Total size of all entities in bytes
+          example: 5368709120

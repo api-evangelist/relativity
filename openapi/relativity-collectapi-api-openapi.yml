@@ -1,0 +1,652 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService CollectAPI API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: CollectAPI
+paths:
+  /collect-services/v1/CollectAPI/{workspaceId}/collection:
+    put:
+      tags:
+      - CollectAPI
+      parameters:
+      - name: workspaceArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: x-csrf-header
+        in: header
+        description: Instance Header
+        required: true
+        schema:
+          type: string
+          default: '-'
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CreateCollectionAPIModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCollectionAPIModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateCollectionAPIModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateCollectionAPIModel'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+  /collect-services/v1/CollectAPI/{workspaceId}/collection/{collectionArtifactId}/start-target-generation:
+    post:
+      tags:
+      - CollectAPI
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: x-csrf-header
+        in: header
+        description: Instance Header
+        required: true
+        schema:
+          type: string
+          default: '-'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+  /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}/target-generation:
+    get:
+      tags:
+      - CollectAPI
+      parameters:
+      - name: workspaceArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: collectionArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StringListActionResult'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+  /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}/start-collection:
+    patch:
+      tags:
+      - CollectAPI
+      parameters:
+      - name: workspaceArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: collectionArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: x-csrf-header
+        in: header
+        description: Instance Header
+        required: true
+        schema:
+          type: string
+          default: '-'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StartJobResultActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StartJobResultActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StartJobResultActionResult'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+  /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}:
+    get:
+      tags:
+      - CollectAPI
+      parameters:
+      - name: workspaceArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: collectionArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CollectionJobModelActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionJobModelActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CollectionJobModelActionResult'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+  /collect-services/v1/CollectAPI/{workspaceId}/collection/{collectionArtifactId}/stop:
+    patch:
+      tags:
+      - CollectAPI
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: collectionArtifactId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: x-csrf-header
+        in: header
+        description: Instance Header
+        required: true
+        schema:
+          type: string
+          default: '-'
+      responses:
+        '202':
+          description: Accepted
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    CollectionJobTargetModel:
+      type: object
+      properties:
+        ArtifactId:
+          type: integer
+          format: int32
+        Target:
+          type: string
+          nullable: true
+        SourceInstance:
+          type: string
+          nullable: true
+        Items:
+          type: integer
+          format: int32
+        Errors:
+          type: integer
+          format: int32
+        Size:
+          type: integer
+          format: int64
+        StatusMessage:
+          type: string
+          nullable: true
+        State:
+          type: string
+          nullable: true
+      additionalProperties: false
+    StartJobResult:
+      type: object
+      properties:
+        Success:
+          type: boolean
+        Message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    StringListActionResult:
+      type: object
+      properties:
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    CollectionJobModelActionResult:
+      type: object
+      properties:
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
+          $ref: '#/components/schemas/CollectionJobModel'
+      additionalProperties: false
+    SourceInstanceModel:
+      type: object
+      properties:
+        ArtifactId:
+          type: integer
+          format: int32
+        Criteria:
+          type: array
+          items:
+            $ref: '#/components/schemas/SelectedCollectionCriteriaModel'
+          nullable: true
+      additionalProperties: false
+    SelectedCollectionCriteriaModel:
+      type: object
+      properties:
+        DataType:
+          type: string
+          nullable: true
+        FieldName:
+          type: string
+          nullable: true
+        Operator:
+          type: string
+          nullable: true
+        Value:
+          type: string
+          nullable: true
+        CriteriaDataType:
+          $ref: '#/components/schemas/CriteriaDataType'
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    CreateCollectionAPIModel:
+      type: object
+      properties:
+        CollectionName:
+          type: string
+          nullable: true
+        MatterArtifactId:
+          type: integer
+          format: int32
+        ProcessingSourceLocation:
+          type: string
+          nullable: true
+        JobNumber:
+          type: string
+          nullable: true
+        ZipCollectedFiles:
+          type: boolean
+        ZipPassword:
+          type: string
+          nullable: true
+        AutoProcessing:
+          type: boolean
+        AutoProcessingWorkspaceId:
+          type: integer
+          format: int32
+        AutoProcessingProcessingProfileId:
+          type: integer
+          format: int32
+        SelectedDocumentNumberingPrefixOption:
+          type: string
+          nullable: true
+        NotificationEmail:
+          type: string
+          nullable: true
+        SendEmailNotification:
+          type: boolean
+        Description:
+          type: string
+          nullable: true
+        SourceInstances:
+          type: array
+          items:
+            $ref: '#/components/schemas/SourceInstanceModel'
+          nullable: true
+        Entities:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        NoncustodialInstances:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+      additionalProperties: false
+    StartJobResultActionResult:
+      type: object
+      properties:
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
+          $ref: '#/components/schemas/StartJobResult'
+      additionalProperties: false
+    CollectionJobModel:
+      type: object
+      properties:
+        ArtifactId:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        Targets:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollectionJobTargetModel'
+          nullable: true
+      additionalProperties: false
+    CriteriaDataType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      x-enumNames:
+      - Unknown
+      - String
+      - Integer
+      - Date
+      - Boolean
+      - Guid
+      - Decimal
+      type: integer
+      format: int32
+    ActionResult:
+      type: object
+      additionalProperties: false

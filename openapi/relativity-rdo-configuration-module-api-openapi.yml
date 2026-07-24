@@ -1,0 +1,265 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService RDO Configuration Module API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: RDO Configuration Module
+paths:
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/rdos-configurations/:
+    post:
+      tags:
+      - RDO Configuration Module
+      summary: ''
+      description: Create RDO configuration.
+      operationId: Import.Services.V1.IRDOConfigurationController.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createRDOConfigurationRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request. Validation exception.
+  /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/rdos-configurations:
+    get:
+      tags:
+      - RDO Configuration Module
+      summary: ''
+      description: Get RDO configuration.
+      operationId: Import.Services.V1.IRDOConfigurationController.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/X-CSRF-Header'
+      - $ref: '#/components/parameters/workspaceID'
+      - $ref: '#/components/parameters/importJobID'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValueResponse.ImportDocumentSettings'
+        '400':
+          description: Bad Request. Validation exception.
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        IsSuccess:
+          type: boolean
+          example: true
+        ErrorMessage:
+          type: string
+          example: ''
+        ErrorCode:
+          type: string
+          example: ''
+        ImportJobID:
+          description: Import job identification GUID number.
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+    FieldMapping:
+      type: object
+      properties:
+        ColumnIndex:
+          type: integer
+          description: The index of the column in the data source (count from zero).
+          example: 4
+        Field:
+          type: string
+          description: The name of the field in the Workspace.
+          example: one
+        ContainsID:
+          type: boolean
+          description: Indicates whether SingleObject or MultiObject field type contains ArtifactID or the actual text identifier.
+          example: false
+        ContainsFilePath:
+          type: boolean
+          description: Indicates whether the Extracted Text field contains a path to the extracted text file or contains the actual extracted text.
+          example: false
+        MayContainTranscript:
+          type: boolean
+          description: Indicates whether the field may contain a path to the transcript file (.csv or .txt).
+          example: false
+    ImportDocumentSettings:
+      type: object
+      properties:
+        Overlay:
+          $ref: '#/components/schemas/OverlaySettings'
+          description: Overlay settings. If not set append mode would be used.
+        Native:
+          $ref: '#/components/schemas/NativeSettings'
+          description: Native file settings. If not set, no native files would be imported.
+        Image:
+          $ref: '#/components/schemas/ImageSettings'
+          description: Image file settings. If not set, no image files would be imported.
+        Fields:
+          $ref: '#/components/schemas/FieldsSettings'
+          description: Field settings. Required for every data source except image opticon load file which has defined structure.
+        Folder:
+          $ref: '#/components/schemas/FolderSettings'
+          description: Folder settings. If not set, the root folder would be used as a parent for every document.
+    PageNumbering:
+      type: string
+      example: AutoNumberImages
+      enum:
+      - Unknown
+      - AutoNumberImages
+      - ReadPageIDsFromInput
+    createRDOConfigurationRequest:
+      type: object
+      description: Object of type ImportRdoSettings.
+      properties:
+        importSettings:
+          $ref: '#/components/schemas/ImportRdoSettings'
+    RdoSettings:
+      type: object
+      properties:
+        ArtifactTypeID:
+          type: integer
+          description: Indicates the ArtifactTypeId of the destination object type. This property is required.
+          example: 1003663
+        ParentColumnIndex:
+          type: integer
+          description: The index of the column in data source (count from zero) which contains parent identifiers.
+          nullable: true
+          example: 3
+    ValueResponse.ImportDocumentSettings:
+      description: ValueResponse of ImportDocumentSettings type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            $ref: '#/components/schemas/ImportDocumentSettings'
+      - $ref: '#/components/schemas/Response'
+    FolderSettings:
+      type: object
+      properties:
+        RootFolderID:
+          type: integer
+          description: Indicates the Import Destination folder under which documents and objects, as well as folders containing documents or objects, are built.
+          example: 1003663
+        FolderPathColumnIndex:
+          type: integer
+          description: The index of the column in the data source (count from zero) which contains the folder path.
+          nullable: true
+          example: 2
+    ImportRdoSettings:
+      type: object
+      properties:
+        Overlay:
+          $ref: '#/components/schemas/OverlaySettings'
+          description: Overlay settings. If not set append mode would be used.
+        Fields:
+          $ref: '#/components/schemas/FieldsSettings'
+          description: Fields settings. Required for any object type.
+        Rdo:
+          $ref: '#/components/schemas/RdoSettings'
+          description: Rdo settings. Required for any object type.
+    FieldsSettings:
+      type: object
+      properties:
+        FieldMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldMapping'
+    OverlaySettings:
+      type: object
+      properties:
+        Mode:
+          $ref: '#/components/schemas/OverlayMode'
+          description: Indicates whether records should be appended or overlaid.
+        KeyField:
+          type: string
+          description: Represents a key field that is set only on Overwrite mode.
+          example: KeyField
+        MultiFieldOverlayBehaviour:
+          $ref: '#/components/schemas/MultiFieldOverlayBehaviour'
+          description: Indicates the method for overlay imports with multiple choice and multiple object fields.
+    ImageSettings:
+      type: object
+      properties:
+        ProductionID:
+          type: integer
+          description: Indicates a valid ArtifactID for a production set. Optional.
+          example: 1003663
+        PageNumbering:
+          $ref: '#/components/schemas/PageNumbering'
+          description: Determines whether a page number is automatically appended to a page-level identifier. When this property is set to True, a new incremental number (such as 01, 02) is added to the page-level identifier, creating a unique page number.
+        LoadExtractedText:
+          type: boolean
+          description: Determines whether Extracted Text should be loaded together with images if Extracted Text file is available.
+          example: true
+    OverlayMode:
+      type: string
+      example: Overlay
+      enum:
+      - Unknown
+      - Overlay
+      - AppendOverlay
+    NativeSettings:
+      type: object
+      example: null
+      properties:
+        FilePathColumnIndex:
+          type: integer
+          nullable: true
+          description: The index of the column in the data source (count from zero) which contains path to the native file. Required.
+          example: 0
+        FileNameColumnIndex:
+          type: integer
+          nullable: true
+          description: The index of the column in the data source (count from zero) which contains native file name metadata. If property is not set, value is retrieved from file.
+          example: 1
+    MultiFieldOverlayBehaviour:
+      type: string
+      example: UseRelativityDefaults
+      enum:
+      - Unknown
+      - UseRelativityDefaults
+      - MergeAll
+      - ReplaceAll
+  parameters:
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: Workspace identification number.
+      required: true
+      schema:
+        type: integer
+      example: 10000
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .
+    importJobID:
+      name: importJobID
+      in: path
+      description: Import job identification GUID.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 00000000-0000-0000-0000-000000000000

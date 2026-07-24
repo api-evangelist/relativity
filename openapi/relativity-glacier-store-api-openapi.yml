@@ -1,0 +1,153 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Store API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Glacier Store
+paths:
+  /api/glaciers:
+    post:
+      tags:
+      - Glacier Store
+      operationId: StartGlacierStore
+      summary: Start a new glacier store
+      description: Schedules a new glacier store to move folder to glacier storage. The operation returns immediately with identifiers while the actual data transfer and Inventory Report generation happens asynchronously.
+      security:
+      - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartGlacierStoreRequest'
+            examples:
+              store_request:
+                summary: Basic glacier store request
+                value:
+                  sourceLocation: t001/ARM/TestLocation-1
+                  glacierName: project-archive-2024
+      responses:
+        '202':
+          description: Glacier store created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StartGlacierStoreResponse'
+              example:
+                jobId: 123e4567-e89b-12d3-a456-426614174000
+                glacierId: 987fcdeb-51a2-43d1-9876-543210fedcba
+          headers:
+            Location:
+              description: URL to check status
+              schema:
+                type: string
+                format: uri
+              example: /api/jobs/123e4567-e89b-12d3-a456-426614174000
+        '400':
+          description: Bad request - validation failed
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ValidationProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Source location not found
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    StartGlacierStoreResponse:
+      type: object
+      required:
+      - jobId
+      - glacierId
+      properties:
+        jobId:
+          type: string
+          format: uuid
+          description: The unique identifier of the created job
+          example: 123e4567-e89b-12d3-a456-426614174000
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the created glacier
+          example: 987fcdeb-51a2-43d1-9876-543210fedcba
+    StartGlacierStoreRequest:
+      type: object
+      required:
+      - sourceLocation
+      - glacierName
+      properties:
+        sourceLocation:
+          type: string
+          minLength: 10
+          description: Specify the source location to be archived in Glacier. The folder should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM. Only one item is accepted.
+          example: t001/ARM/TestLocation-1
+        glacierName:
+          type: string
+          minLength: 1
+          maxLength: 100
+          pattern: ^[a-z0-9-]+$
+          description: The name of the glacier storage
+          example: project-archive-2024
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
+    ValidationProblemDetails:
+      allOf:
+      - $ref: '#/components/schemas/ProblemDetails'
+      - type: object
+        properties:
+          errors:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+            description: Field-specific validation errors

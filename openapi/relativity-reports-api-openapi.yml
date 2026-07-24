@@ -1,0 +1,980 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Reports API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Reports
+paths:
+  /v4/Reports:
+    post:
+      tags:
+      - Reports
+      summary: Create new report
+      description: Schedules a new report generation. When 'date' (YYYYMMDD) is provided in the body, a Summary report is produced from the Billable Summary CSV; otherwise a Detailed folder report is generated.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DirectoryReportRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DirectoryReportRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DirectoryReportRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '429':
+          description: Too Many Requests
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    get:
+      tags:
+      - Reports
+      summary: Get reports list
+      description: This endpoint retrieves a paginated list of reports. Snapshot reports ("Last Known Sizes") are included by default and can be excluded by passing includeSnapshotReports=false. Summary reports are excluded by default and are only returned when includeSummaryReports=true.
+      parameters:
+      - name: start
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: includeSnapshotReports
+        in: query
+        schema:
+          type: boolean
+          default: true
+      - name: includeSummaryReports
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportJobsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportJobsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportJobsResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v4/Reports/{id}:
+    get:
+      tags:
+      - Reports
+      summary: Get report details
+      description: This endpoint retrieves detailed information about a specific report including its status and metadata.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportJobResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportJobResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportJobResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    delete:
+      tags:
+      - Reports
+      summary: Cancel report
+      description: This endpoint cancels a running or pending report generation job.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v4/Reports/{id}/file:
+    get:
+      tags:
+      - Reports
+      summary: Download report file
+      description: This endpoint downloads the generated report file for a completed report.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/Reports/{id}:
+    get:
+      tags:
+      - Reports
+      summary: Gets the details of a report by ID
+      description: This endpoint retrieves basic information about a specific report based on its unique identifier, like report's ID, name, etc.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportDto'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    delete:
+      tags:
+      - Reports
+      summary: Delete a report by ID
+      description: This endpoint allows you to delete a specific report based on its unique identifier.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportsDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportsDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportsDto'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /v1/Reports/{id}/details:
+    get:
+      tags:
+      - Reports
+      summary: Gets the detailed information of a report by ID
+      description: This endpoint retrieves detailed information about a specific report based on its unique identifier. The details include all columns, workspaces, and fields that were selected for the report.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: PageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: PageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportDetailsDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportDetailsDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportDetailsDto'
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '503':
+          description: Server Error
+  /v1/Reports:
+    get:
+      tags:
+      - Reports
+      summary: Lists all reports
+      description: This endpoint retrieves a list of all reports.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportsDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportsDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportsDto'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    post:
+      tags:
+      - Reports
+      summary: Generate a new report
+      description: This endpoint allows you to generate a new report based on the provided request data.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReportRequestDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateReportRequestDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateReportRequestDto'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReportDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReportDto'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /v1/Reports/download/{id}:
+    get:
+      tags:
+      - Reports
+      summary: Download a report by ID
+      description: This endpoint allows you to download a specific report based on its unique identifier.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Stream'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stream'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Stream'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '503':
+          description: Server Error
+components:
+  schemas:
+    CreateReportRequestDto:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        dateRange:
+          $ref: '#/components/schemas/DateRangeDto'
+        fields:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        dataMaxPrecision:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    DateRangeDto:
+      type: object
+      properties:
+        from:
+          type: string
+          format: date-time
+        to:
+          type: string
+          format: date-time
+      additionalProperties: false
+    ReportDepth:
+      enum:
+      - TopLevelOnly
+      - OneLevelDeep
+      - TwoLevelsDeep
+      - FullHierarchy
+      type: string
+    ReportDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        tenantId:
+          type: string
+          format: uuid
+        name:
+          type: string
+          nullable: true
+        dateRange:
+          $ref: '#/components/schemas/DateRangeDto'
+        fields:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+        type:
+          enum:
+          - Workspace
+          - User
+          type: string
+        status:
+          enum:
+          - Scheduled
+          - InProgress
+          - Completed
+          - Failed
+          - CompletedEmpty
+          - CompletedWithErrors
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        dataMaxPrecision:
+          type: boolean
+        version:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    ReportJobResponse:
+      type: object
+      properties:
+        reportId:
+          type: string
+          format: uuid
+        path:
+          type: string
+          nullable: true
+        createdOn:
+          type: string
+          format: date-time
+        state:
+          type: string
+          nullable: true
+        includeFiles:
+          type: boolean
+        depth:
+          $ref: '#/components/schemas/ReportDepth'
+        useSnapshot:
+          type: boolean
+        captureStart:
+          type: string
+          format: date-time
+        captureEnd:
+          type: string
+          format: date-time
+        reportCategory:
+          $ref: '#/components/schemas/ReportCategory'
+        reportDate:
+          type: string
+          nullable: true
+          description: For Summary reports, the source CSV date (YYYYMMDD); otherwise null.
+        errorMessage:
+          type: string
+          nullable: true
+          description: Sanitized, user-facing failure reason. Populated only when `state` is `Failed` (see Failure reporting in the implementation notes); null otherwise. Omitted from the JSON payload when null.
+      additionalProperties: false
+    ReportDetailsDto:
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            type: string
+          nullable: true
+        items:
+          type: array
+          items: {}
+          nullable: true
+        currentPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+      additionalProperties: false
+    DirectoryReportRequest:
+      required:
+      - depth
+      - path
+      type: object
+      properties:
+        path:
+          minLength: 1
+          type: string
+        includeFiles:
+          type: boolean
+        depth:
+          $ref: '#/components/schemas/ReportDepth'
+        useSnapshot:
+          type: boolean
+        date:
+          pattern: ^\d{8}$
+          type: string
+          nullable: true
+          description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
+      additionalProperties: false
+    ReportCategory:
+      enum:
+      - DetailedReport
+      - SummaryReport
+      type: string
+    ReportsDto:
+      type: object
+      properties:
+        reports:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportDto'
+          nullable: true
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    ReportResponse:
+      type: object
+      properties:
+        reportId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Page:
+      required:
+      - limit
+      - start
+      type: object
+      properties:
+        start:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+        limit:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+      additionalProperties: false
+    Stream:
+      type: object
+      properties:
+        canRead:
+          type: boolean
+          readOnly: true
+        canWrite:
+          type: boolean
+          readOnly: true
+        canSeek:
+          type: boolean
+          readOnly: true
+        canTimeout:
+          type: boolean
+          readOnly: true
+        length:
+          type: integer
+          format: int64
+          readOnly: true
+        position:
+          type: integer
+          format: int64
+        readTimeout:
+          type: integer
+          format: int32
+        writeTimeout:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ReportJobsResponse:
+      type: object
+      properties:
+        reportJobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportJobResponse'
+          nullable: true
+        paging:
+          $ref: '#/components/schemas/Page'
+      additionalProperties: false

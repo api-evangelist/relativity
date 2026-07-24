@@ -1,0 +1,1288 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ARM Module v1 API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: ARM Module v1
+paths:
+  /relativity-arm/v1/tasks/{taskId}/retry:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Task Actions Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.TaskAction.IArmTaskActionManager.RetryFailedTaskAsync
+      parameters:
+      - $ref: '#/components/parameters/taskId'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/restore-jobs:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Restore.IArmRestoreJobManager.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmRestoreJobManager_V1_CreateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: integer
+      deprecated: true
+  /relativity-arm/v1/restore-jobs/{jobID}:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Restore.IArmRestoreJobManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestoreJobResponse_V1'
+      deprecated: true
+    put:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Restore.IArmRestoreJobManager.UpdateAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmRestoreJobManager_V1_UpdateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+    delete:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Restore.IArmRestoreJobManager.DeleteAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/move-jobs:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Move Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Move.IArmMoveJobManager.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmMoveJobManager_V1_CreateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: integer
+      deprecated: true
+  /relativity-arm/v1/move-jobs/{jobID}:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Move Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Move.IArmMoveJobManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MoveJobResponse_V1'
+      deprecated: true
+    put:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Move Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Move.IArmMoveJobManager.UpdateAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmMoveJobManager_V1_UpdateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+    delete:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Move Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Move.IArmMoveJobManager.DeleteAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobID}/status:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] Arm Job Status Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobStatus.IArmJobStatusManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArmJobStatusResponse_V1'
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobID}/logs:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Job Information Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobInformation.IArmJobInformationManager.DownloadLogAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IKeplerStream_V1'
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobExecutionId}/statistics:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Job Information Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobInformation.IArmJobInformationManager.GetJobStatisticsAsync
+      parameters:
+      - $ref: '#/components/parameters/jobExecutionId'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatistics_V1'
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobExecutionID}/qualityCheckResult:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Job Information Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobInformation.IArmJobInformationManager.GetQualityCheckResultAsync
+      parameters:
+      - $ref: '#/components/parameters/jobExecutionID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QualityCheckResult_V1'
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobID}/cancel:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Job Actions Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobAction.IArmJobActionManager.CancelAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobID}/pause:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Job Actions Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobAction.IArmJobActionManager.PauseAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobID}/run:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Job Actions Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobAction.IArmJobActionManager.RunAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/jobs/{jobID}/terminate:
+    delete:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Job Actions Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.JobAction.IArmJobActionManager.TerminateJobAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/health-check:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Health Check'
+      operationId: Relativity.ARM.Services.Interfaces.V1.HealthCheck.IArmHealthCheckManager.HealthCheckAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/database-restore-jobs:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Database Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.DatabaseRestore.IArmDatabaseRestoreJobManager.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmDatabaseRestoreJobManager_V1_CreateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: integer
+      deprecated: true
+  /relativity-arm/v1/database-restore-jobs/{jobID}:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Database Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.DatabaseRestore.IArmDatabaseRestoreJobManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatabaseRestoreJobResponse_V1'
+      deprecated: true
+    put:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Database Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.DatabaseRestore.IArmDatabaseRestoreJobManager.UpdateAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmDatabaseRestoreJobManager_V1_UpdateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+    delete:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Database Restore Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.DatabaseRestore.IArmDatabaseRestoreJobManager.DeleteAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+  /relativity-arm/v1/archive-information:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Archive Information Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.ArchiveInformation.IArmArchiveInformationManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmArchiveInformationManager_V1_ReadAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchiveInformationResponse_V1'
+      deprecated: true
+  /relativity-arm/v1/archive-information/additional-files-directories/{workspaceId}:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED
+      description: '[Public] ARM Archive Information Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.ArchiveInformation.IArmArchiveInformationManager.GetAdditionalFilesDirectoriesAsync
+      parameters:
+      - $ref: '#/components/parameters/workspaceId'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdditionalFilesDirectoriesResponse_V1'
+      deprecated: true
+  /relativity-arm/v1/archive-jobs:
+    post:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Archive Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Archive.IArmArchiveJobManager.CreateAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmArchiveJobManager_V1_CreateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: integer
+      deprecated: true
+  /relativity-arm/v1/archive-jobs/{jobID}:
+    get:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Archive Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Archive.IArmArchiveJobManager.ReadAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchiveJobResponse_V1'
+      deprecated: true
+    put:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Archive Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Archive.IArmArchiveJobManager.UpdateAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IArmArchiveJobManager_V1_UpdateAsync_RequestBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+    delete:
+      tags:
+      - ARM Module v1
+      summary: DEPRECATED - Use V3 API instead
+      description: '[Public] ARM Archive Manager'
+      operationId: Relativity.ARM.Services.Interfaces.V1.Archive.IArmArchiveJobManager.DeleteAsync
+      parameters:
+      - $ref: '#/components/parameters/jobID'
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+      deprecated: true
+components:
+  schemas:
+    SourceOptions_V1:
+      title: SourceOptions_V1
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ResourcePoolID:
+          type: integer
+        DatabaseServerID:
+          type: integer
+        CacheLocationID:
+          type: integer
+        FileRepositoryID:
+          type: integer
+    GroupMapping_V1:
+      title: GroupMapping_V1
+      type: object
+    MoveJobRequest_V1:
+      title: MoveJobRequest_V1
+      type: object
+      properties:
+        SourceWorkspaceID:
+          type: integer
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        FileOptions:
+          $ref: '#/components/schemas/MoveFileOptions_V1'
+        DatabaseOptions:
+          $ref: '#/components/schemas/DatabaseOptions_V1'
+        DestinationOptions:
+          $ref: '#/components/schemas/DestinationOptions_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    DatabaseRestoreJobRequest_V1:
+      title: DatabaseRestoreJobRequest_V1
+      type: object
+      properties:
+        SourceDatabase:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        UserMapping:
+          $ref: '#/components/schemas/UserMapping_V1'
+        GroupMapping:
+          $ref: '#/components/schemas/GroupMapping_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    GroupMap_V1:
+      title: GroupMap_V1
+      type: object
+    ArchiveJobRequest_V1:
+      title: ArchiveJobRequest_V1
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ArchiveDirectory:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V1'
+        FileOptions:
+          $ref: '#/components/schemas/FileOptions_V1'
+        ProcessingOptions:
+          $ref: '#/components/schemas/ProcessingOptions_V1'
+        ExtendedWorkspaceDataOptions:
+          $ref: '#/components/schemas/ExtendedWorkspaceDataOptions_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+        UseDefaultArchiveDirectory:
+          type: boolean
+    ApplicationSettingsResponse_V1:
+      title: ApplicationSettingsResponse_V1
+      type: object
+    ArchiveItemStatistics_V1:
+      title: ArchiveItemStatistics_V1
+      type: object
+      properties:
+        ItemTypeName:
+          type: string
+        SourceItemCount:
+          type: integer
+          nullable: true
+        DestinationItemCount:
+          type: integer
+          nullable: true
+        MissingItemsCount:
+          type: integer
+          nullable: true
+        MalwareItemsCount:
+          type: integer
+          nullable: true
+    ApplicationSettings_V1:
+      title: ApplicationSettings_V1
+      type: object
+      properties:
+        Guid:
+          type: string
+        ShouldRestore:
+          type: boolean
+    MoveJobResponse_V1:
+      title: MoveJobResponse_V1
+      type: object
+      properties:
+        JobID:
+          type: integer
+        JobName:
+          type: string
+        JobExecutionID:
+          type: integer
+        JobExecutionGuid:
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V1'
+        SourceOptions:
+          $ref: '#/components/schemas/SourceOptions_V1'
+        DestinationOptions:
+          $ref: '#/components/schemas/DestinationOptions_V1'
+        FileOptions:
+          $ref: '#/components/schemas/MoveFileOptions_V1'
+        DatabaseOptions:
+          $ref: '#/components/schemas/DatabaseOptions_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    TimeSpan_V1:
+      title: TimeSpan_V1
+      type: object
+    JobStageError_V1:
+      title: JobStageError_V1
+      type: object
+      properties:
+        Message:
+          type: string
+        Exception:
+          type: string
+    DatabaseRestoreJobResponse_V1:
+      title: DatabaseRestoreJobResponse_V1
+      type: object
+      properties:
+        JobID:
+          type: integer
+        JobName:
+          type: string
+        JobExecutionID:
+          type: integer
+        JobExecutionGuid:
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        DestinationWorkspaceID:
+          type: integer
+          nullable: true
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V1'
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        UserMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserMap_V1'
+        GroupMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupMap_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    RestoreDestinationOptions_V1:
+      title: RestoreDestinationOptions_V1
+      type: object
+    IArmDatabaseRestoreJobManager_V1_CreateAsync_RequestBody:
+      title: IArmDatabaseRestoreJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/DatabaseRestoreJobRequest_V1'
+    IArmRestoreJobManager_V1_UpdateAsync_RequestBody:
+      title: IArmRestoreJobManager_V1_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest_V1'
+    ClientInfo_V1:
+      title: ClientInfo_V1
+      type: object
+      properties:
+        Name:
+          type: string
+        Number:
+          type: string
+    IKeplerStream_V1:
+      title: IKeplerStream_V1
+      type: object
+      properties:
+        ContentType:
+          type: string
+        ContentDisposition:
+          type: string
+        CacheControl:
+          type: string
+        StatusCode:
+          enum:
+          - Continue
+          - SwitchingProtocols
+          - Processing
+          - EarlyHints
+          - OK
+          - Created
+          - Accepted
+          - NonAuthoritativeInformation
+          - NoContent
+          - ResetContent
+          - PartialContent
+          - MultiStatus
+          - AlreadyReported
+          - IMUsed
+          - MultipleChoices
+          - Ambiguous
+          - MovedPermanently
+          - Moved
+          - Found
+          - Redirect
+          - SeeOther
+          - RedirectMethod
+          - NotModified
+          - UseProxy
+          - Unused
+          - TemporaryRedirect
+          - RedirectKeepVerb
+          - PermanentRedirect
+          - BadRequest
+          - Unauthorized
+          - PaymentRequired
+          - Forbidden
+          - NotFound
+          - MethodNotAllowed
+          - NotAcceptable
+          - ProxyAuthenticationRequired
+          - RequestTimeout
+          - Conflict
+          - Gone
+          - LengthRequired
+          - PreconditionFailed
+          - RequestEntityTooLarge
+          - RequestUriTooLong
+          - UnsupportedMediaType
+          - RequestedRangeNotSatisfiable
+          - ExpectationFailed
+          - MisdirectedRequest
+          - UnprocessableEntity
+          - UnprocessableContent
+          - Locked
+          - FailedDependency
+          - UpgradeRequired
+          - PreconditionRequired
+          - TooManyRequests
+          - RequestHeaderFieldsTooLarge
+          - UnavailableForLegalReasons
+          - InternalServerError
+          - NotImplemented
+          - BadGateway
+          - ServiceUnavailable
+          - GatewayTimeout
+          - HttpVersionNotSupported
+          - VariantAlsoNegotiates
+          - InsufficientStorage
+          - LoopDetected
+          - NotExtended
+          - NetworkAuthenticationRequired
+          type: string
+          nullable: true
+        Headers:
+          type: array
+          items:
+            type: string
+            format: NameValueCollection
+    IArmArchiveJobManager_V1_UpdateAsync_RequestBody:
+      title: IArmArchiveJobManager_V1_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest_V1'
+    MigratorsDestinationOptions_V1:
+      title: MigratorsDestinationOptions_V1
+      type: object
+    IArmRestoreJobManager_V1_CreateAsync_RequestBody:
+      title: IArmRestoreJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest_V1'
+    UserMapping_V1:
+      title: UserMapping_V1
+      type: object
+    RestoreJobRequest_V1:
+      title: RestoreJobRequest_V1
+      type: object
+      properties:
+        ArchivePath:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        ExistingTargetDatabase:
+          type: string
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        MigratorsDestinationOptions:
+          $ref: '#/components/schemas/MigratorsDestinationOptions_V1'
+        AdvancedFileOptions:
+          $ref: '#/components/schemas/AdvancedFileOptions_V1'
+        UserMapping:
+          $ref: '#/components/schemas/UserMapping_V1'
+        GroupMapping:
+          $ref: '#/components/schemas/GroupMapping_V1'
+        Applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationSettings_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        FileShareOptions:
+          $ref: '#/components/schemas/FileShareOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+        IncludeQualityCheck:
+          type: boolean
+        IsFilesFirstFlow:
+          type: boolean
+    JobStatistics_V1:
+      title: JobStatistics_V1
+      type: object
+      properties:
+        SourceName:
+          type: string
+        DestinationName:
+          type: string
+        JobTypeName:
+          type: string
+        ArchiveItemsStatistics:
+          type: array
+          items:
+            $ref: '#/components/schemas/ArchiveItemStatistics_V1'
+    JobStage_V1:
+      title: JobStage_V1
+      type: object
+      properties:
+        Name:
+          type: string
+        Order:
+          type: integer
+        NumberOfSucceededTasks:
+          type: integer
+          nullable: true
+        NumberOfFailedTasks:
+          type: integer
+          nullable: true
+        TotalNumberOfTasks:
+          type: integer
+          nullable: true
+        TimeStarted:
+          type: string
+          format: date-time
+          nullable: true
+        TimeElapsed:
+          $ref: '#/components/schemas/TimeSpan_V1'
+        PercentComplete:
+          type: integer
+        Errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobStageError_V1'
+        UserActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DependencyUserAction_V1'
+    ExtendedWorkspaceDataOptions_V1:
+      title: ExtendedWorkspaceDataOptions_V1
+      type: object
+      properties:
+        IncludeExtendedWorkspaceData:
+          type: boolean
+        ApplicationErrorExportBehavior:
+          enum:
+          - SkipApplication
+          - StopJob
+          type: string
+    FileOptions_V1:
+      title: FileOptions_V1
+      type: object
+    ArmJobStatusResponse_V1:
+      title: ArmJobStatusResponse_V1
+      type: object
+      properties:
+        JobType:
+          enum:
+          - Archive
+          - Move
+          - Restore
+          - DatabaseRestore
+          type: string
+        JobState:
+          enum:
+          - ExecutionRequested
+          - Pending
+          - Processing
+          - ProcessingWithErrors
+          - Errored
+          - Complete
+          - CancellationRequested
+          - CancellationPending
+          - CancellationProcessing
+          - CancellationProcessingWithErrors
+          - CancellationErrored
+          - CancellationComplete
+          - Paused
+          - NotStarted
+          - PauseRequested
+          - RecoveryRequested
+          - CancellationRecoveryRequested
+          - Scheduled
+          - CleaningUp
+          - Recurring
+          - ProcessingButAvailable
+          - Unknown
+          type: string
+        CurrentJobStage:
+          $ref: '#/components/schemas/JobStage_V1'
+        TotalNumberOfStages:
+          type: integer
+        TimeStarted:
+          type: string
+          format: date-time
+          nullable: true
+        TimeCompleted:
+          type: string
+          format: date-time
+          nullable: true
+        TimeElapsed:
+          $ref: '#/components/schemas/TimeSpan_V1'
+    DependencyUserAction_V1:
+      title: DependencyUserAction_V1
+      type: object
+    DestinationOptions_V1:
+      title: DestinationOptions_V1
+      type: object
+      properties:
+        ResourcePoolID:
+          type: integer
+        DatabaseServerID:
+          type: integer
+        CacheLocationID:
+          type: integer
+        FileRepositoryID:
+          type: integer
+        UseDefaultWorkspaceConfiguration:
+          type: boolean
+          nullable: true
+    ArchiveInformationResponse_V1:
+      title: ArchiveInformationResponse_V1
+      type: object
+      properties:
+        Client:
+          $ref: '#/components/schemas/ClientInfo_V1'
+        Matter:
+          $ref: '#/components/schemas/MatterInfo_V1'
+    IArmMoveJobManager_V1_UpdateAsync_RequestBody:
+      title: IArmMoveJobManager_V1_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MoveJobRequest_V1'
+    MigratorOptions_V1:
+      title: MigratorOptions_V1
+      type: object
+      properties:
+        IncludeDatabaseBackup:
+          type: boolean
+        IncludeDtSearch:
+          type: boolean
+        IncludeConceptualAnalytics:
+          type: boolean
+        IncludeStructuredAnalytics:
+          type: boolean
+        IncludeDataGrid:
+          type: boolean
+        IncludeQualityCheck:
+          type: boolean
+    NotificationOptions_V1:
+      title: NotificationOptions_V1
+      type: object
+    AdditionalFilesDirectoriesResponse_V1:
+      title: AdditionalFilesDirectoriesResponse_V1
+      type: object
+      properties:
+        WorkspaceId:
+          type: integer
+        AdditionalFilesDirectories:
+          type: array
+          items:
+            type: string
+    AdvancedFileOptions_V1:
+      title: AdvancedFileOptions_V1
+      type: object
+      properties:
+        ReferenceFilesAsArchiveLinks:
+          type: boolean
+        UpdateRepositoryFilePaths:
+          type: boolean
+        UpdateLinkedFilePaths:
+          type: boolean
+        AdditionalFilesDirectoryPath:
+          type: string
+    UserMap_V1:
+      title: UserMap_V1
+      type: object
+    MoveFileOptions_V1:
+      title: MoveFileOptions_V1
+      type: object
+      properties:
+        LinkToExistingDocuments:
+          type: boolean
+        MissingFileBehavior:
+          enum:
+          - SkipFile
+          - StopJob
+          type: string
+        LinkedFileBehavior:
+          enum:
+          - LeaveInPlace
+          - CopyToRepository
+          - MoveToRepository
+          type: string
+    MatterInfo_V1:
+      title: MatterInfo_V1
+      type: object
+      properties:
+        Name:
+          type: string
+        Number:
+          type: string
+    DatabaseOptions_V1:
+      title: DatabaseOptions_V1
+      type: object
+      properties:
+        IncludeDatabaseBackup:
+          type: boolean
+        CustomDatabasePath:
+          type: string
+    IArmArchiveInformationManager_V1_ReadAsync_RequestBody:
+      title: IArmArchiveInformationManager_V1_ReadAsync_RequestBody
+      type: object
+      properties:
+        archivePath:
+          type: string
+    FileShareOptions_V1:
+      title: FileShareOptions_V1
+      type: object
+      properties:
+        Fqdn:
+          type: string
+        SecretPath:
+          type: string
+    RestoreJobResponse_V1:
+      title: RestoreJobResponse_V1
+      type: object
+      properties:
+        JobID:
+          type: integer
+        JobName:
+          type: string
+        JobExecutionID:
+          type: integer
+        JobExecutionGuid:
+          type: string
+        ArchivePath:
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        SourceWorkspace:
+          type: string
+        DestinationWorkspaceID:
+          type: integer
+          nullable: true
+        ExistingTargetDatabase:
+          type: string
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V1'
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        MigratorsDestinationOptions:
+          $ref: '#/components/schemas/MigratorsDestinationOptions_V1'
+        AdvancedFileOptions:
+          $ref: '#/components/schemas/AdvancedFileOptions_V1'
+        UserMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserMap_V1'
+        GroupMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupMap_V1'
+        Applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationSettingsResponse_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+        IsFilesFirstFlow:
+          type: boolean
+    QualityCheckResult_V1:
+      title: QualityCheckResult_V1
+      type: object
+      properties:
+        Type:
+          type: string
+        Status:
+          type: string
+    IArmMoveJobManager_V1_CreateAsync_RequestBody:
+      title: IArmMoveJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MoveJobRequest_V1'
+    IArmDatabaseRestoreJobManager_V1_UpdateAsync_RequestBody:
+      title: IArmDatabaseRestoreJobManager_V1_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/DatabaseRestoreJobRequest_V1'
+    ProcessingOptions_V1:
+      title: ProcessingOptions_V1
+      type: object
+      properties:
+        IncludeProcessing:
+          type: boolean
+        IncludeProcessingFiles:
+          type: boolean
+        ProcessingMissingFileBehavior:
+          enum:
+          - SkipFile
+          - StopJob
+          type: string
+    JobDetails_V1:
+      title: JobDetails_V1
+      type: object
+    IArmArchiveJobManager_V1_CreateAsync_RequestBody:
+      title: IArmArchiveJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest_V1'
+    ArchiveJobResponse_V1:
+      title: ArchiveJobResponse_V1
+      type: object
+      properties:
+        JobID:
+          type: integer
+        JobName:
+          type: string
+        JobExecutionID:
+          type: integer
+        JobExecutionGuid:
+          type: string
+        ArchivePath:
+          type: string
+        WorkspaceID:
+          type: integer
+        WorkspaceName:
+          type: string
+        ScheduledStartTime:
+          type: string
+          format: date-time
+          nullable: true
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V1'
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V1'
+        FileOptions:
+          $ref: '#/components/schemas/FileOptions_V1'
+        ProcessingOptions:
+          $ref: '#/components/schemas/ProcessingOptions_V1'
+        ExtendedWorkspaceDataOptions:
+          $ref: '#/components/schemas/ExtendedWorkspaceDataOptions_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+  parameters:
+    workspaceId:
+      name: workspaceId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    taskId:
+      name: taskId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    jobExecutionID:
+      name: jobExecutionID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    jobExecutionId:
+      name: jobExecutionId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    jobID:
+      name: jobID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string

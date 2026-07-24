@@ -1,0 +1,175 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService DocumentViewerService API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: DocumentViewerService
+paths:
+  /v{version}/DocumentViewerServiceManager/GetViewerContentKeyAsync:
+    post:
+      tags:
+      - DocumentViewerService
+      summary: Submits a conversion request and returns a viewer content key for document viewer rendering.
+      description: "Supports document, production, image, and file-field conversion scenarios used by the Document Viewer REST API.\r\nThe returned value includes keys used to track conversion and retrieve converted content."
+      parameters:
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Request payload containing workspace, document identifiers, conversion type, and conversion options.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.ViewerContentKeyRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.ViewerContentKeyRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.ViewerContentKeyRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey'
+components:
+  schemas:
+    Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey:
+      type: object
+      properties:
+        RequestKey:
+          type: string
+          format: uuid
+          nullable: true
+        CacheEntryId:
+          type: integer
+          format: int64
+          nullable: true
+        DocumentArtifactId:
+          type: integer
+          format: int32
+        ConversionVersion:
+          type: string
+          nullable: true
+        Priority:
+          type: integer
+          format: int32
+        WorkspaceArtifactId:
+          type: integer
+          format: int32
+        ViewerType:
+          type: integer
+          format: int32
+        Priority2ViewerContentKeys:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey'
+          nullable: true
+        MinimalFilesManifest:
+          type: string
+          nullable: true
+        ErrorId:
+          type: integer
+          format: int64
+          readOnly: true
+        ErrorMessage:
+          type: string
+          nullable: true
+        IsPartialConversion:
+          type: boolean
+        VersionKey:
+          type: string
+          nullable: true
+        SemanticCacheKey:
+          type: string
+          nullable: true
+        LimitedOutput:
+          type: boolean
+        PasswordRequested:
+          type: boolean
+        DocumentPassword:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.ViewerContentKeyRequest:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.V2.GetViewerContentKeyRequest'
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.ConversionType:
+      enum:
+      - None
+      - Native
+      - Image
+      - Production
+      - Transcript
+      - HTMLImage
+      - HTMLProduction
+      - Text
+      - ProducedNative
+      - PDF
+      type: string
+    Relativity.DocumentViewer.Domain.GetViewerContentKeyOptions:
+      type: object
+      properties:
+        ProductionId:
+          type: integer
+          format: int32
+          nullable: true
+        ForceConversion:
+          type: boolean
+        FileId:
+          type: integer
+          format: int32
+          nullable: true
+        DocumentSetId:
+          type: string
+          nullable: true
+        ClientId:
+          type: string
+          nullable: true
+        CorrelationId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Review.Shared.PriorityLevel:
+      enum:
+      - None
+      - OnTheFly
+      - ConvertAhead
+      - MassConvert
+      type: string
+    Relativity.DocumentViewer.Domain.DTOs.V2.GetViewerContentKeyRequest:
+      type: object
+      properties:
+        WorkspaceId:
+          type: integer
+          format: int32
+        DocumentIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        ConversionType:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.ConversionType'
+        Priority:
+          $ref: '#/components/schemas/Review.Shared.PriorityLevel'
+        Options:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.GetViewerContentKeyOptions'
+      additionalProperties: false

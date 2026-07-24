@@ -1,0 +1,438 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ShortMessageViewerService API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: ShortMessageViewerService
+paths:
+  /v{version}/workspaces/{workspaceID}/short-messages/{documentID}/attachment-info:
+    post:
+      tags:
+      - ShortMessageViewerService
+      summary: Retrieves attachment metadata for a short message document.
+      description: Returns attachment records for the attachment identifiers supplied in the request body.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: The Artifact ID of the workspace containing the documents for short message viewer.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: documentID
+        in: path
+        description: The Artifact ID of the short message document.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: The attachment IDs to return information about.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.GetAttachmentInfoRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.GetAttachmentInfoRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.GetAttachmentInfoRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.AttachmentInfo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.AttachmentInfo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.AttachmentInfo'
+  /v{version}/workspaces/{workspaceID}/short-messages/participant-info:
+    post:
+      tags:
+      - ShortMessageViewerService
+      summary: Retrieves entity information for one or more short message participants.
+      description: Participant lookups use participant identity details from the request body and return mapped entity details.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: The Artifact ID of the workspace containing the documents for short message viewer.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: The ParticipantRequest object of the workspace containing the name, email address and id of a participant for short message viewer.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.GetParticipantInfoRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.GetParticipantInfoRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.GetParticipantInfoRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantResponseInfo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantResponseInfo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantResponseInfo'
+  /v{version}/workspaces/{workspaceID}/short-messages/{documentID}/message-json:
+    get:
+      tags:
+      - ShortMessageViewerService
+      summary: Retrieves the JSON representation of a short message conversation document.
+      description: The JSON structure aligns with RSMF manifest-style payloads used by the short message viewer.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: The Artifact ID of the workspace containing the documents for short message viewer.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: documentID
+        in: path
+        description: The Artifact ID of the document for short message viewer.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+  /v{version}/workspaces/{workspaceID}/short-messages/{documentID}/slice:
+    post:
+      tags:
+      - ShortMessageViewerService
+      summary: Requests creation of a new short message document from a subset of events.
+      description: This operation queues slicing work and supports options such as attachment creation and participant preservation.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: The Artifact ID of the workspace containing the document to be sliced.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: documentID
+        in: path
+        description: The Artifact ID of the document to be sliced.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: A SliceRequest object containing details about the request.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.SliceRSMFRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.SliceRSMFRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.SliceRSMFRequest'
+      responses:
+        '200':
+          description: OK
+  /v{version}/workspaces/{workspaceID}/short-messages/{documentID}/validate:
+    get:
+      tags:
+      - ShortMessageViewerService
+      summary: Validates whether the specified short message document contains a valid RSMF payload.
+      description: Returns validation status and diagnostic details for document-level RSMF validation.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: The Artifact ID of the workspace containing the documents for short message viewer.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: documentID
+        in: path
+        description: The Artifact ID of the short message document.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse'
+components:
+  schemas:
+    Relativity.DocumentViewer.Services.V2.SliceRequest:
+      type: object
+      properties:
+        EventIndexes:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        Options:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequestOptions'
+        CorrelationId:
+          type: string
+          format: uuid
+          nullable: true
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse:
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType'
+        Errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
+          nullable: true
+        Warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
+          nullable: true
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo:
+      type: object
+      properties:
+        Id:
+          type: string
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        Email:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.AttachmentInfo:
+      type: object
+      properties:
+        AttachmentId:
+          type: string
+          nullable: true
+        DocumentArtifactId:
+          type: integer
+          format: int32
+        FileGuid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType:
+      enum:
+      - Passed
+      - Failed
+      - PassedWithWarnings
+      type: string
+    Reviewservice.Api.V2.Models.GetParticipantInfoRequest:
+      type: object
+      properties:
+        participantRequests:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo'
+          nullable: true
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.SliceRSMFRequest:
+      type: object
+      properties:
+        sliceRequest:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequest'
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.SliceRequestOptions:
+      type: object
+      properties:
+        CreateAttachments:
+          type: boolean
+          nullable: true
+        SourceLayoutID:
+          type: integer
+          format: int32
+          nullable: true
+        PreserveAllParticipants:
+          type: boolean
+          nullable: true
+        EmailConfirmation:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.GetAttachmentInfoRequest:
+      type: object
+      properties:
+        attachmentIDs:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.ParticipantResponseInfo:
+      type: object
+      properties:
+        Id:
+          type: string
+          nullable: true
+        EntityName:
+          type: string
+          nullable: true
+        Aliases:
+          type: array
+          items:
+            type: string
+          nullable: true
+        Url:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Relativity.RSMFU.Validator.RSMFValidatorErrorCode:
+      enum:
+      - RSMFValidatorError
+      - RSMFValidity
+      - RSMFHeadersMissing
+      - RSMFHeaderVersion
+      - RSMFAccessZip
+      - ZipIntegrity
+      - ZipMissingManifest
+      - ManifestValidity
+      - ManifestSchemaViolation
+      - ManifestVersion
+      - ManifestDuplicateId
+      - JSONTrailingCommas
+      - MissingTimeZoneOffset
+      - RSMFMissingBody
+      - ZipAttachmentMissing
+      - ZipAvatarMissing
+      - ManifestParticipantArrayEmpty
+      - ManifestConversationArrayEmpty
+      - ManifestEventArrayEmpty
+      - ManifestOrphanedDirectConversation
+      - ManifestParticipantCount
+      - ManifestConversationCount
+      - ManifestEventCount
+      - ManifestUndefinedProperty
+      - RSMFHeaderVersionMismatch
+      - RSMFHeaderDateFormat
+      - RSMFHeaderDateMismatch
+      - RSMFHeaderEventCountFormat
+      - RSMFHeaderEventCountMismatch
+      - ZipUnreferencedFiles
+      - ManifestParentIdInvalid
+      - ManifestOrphanedEvent
+      - ManifestUndefinedParticipantId
+      - ManifestInvalidConversationParticipant
+      - ManifestInvalidConversationCustodian
+      - ManifestJoinLeaveInDirectConversation
+      - ManifestInvalidEventEditTimestamp
+      - ManifestInvalidEventEditParticipant
+      - ManifestInvalidEventParticipant
+      - ManifestInvalidEventReactionParticipants
+      - ManifestInvalidEventReceiptParticipant
+      - ManifestEmptyEventReceipt
+      - RSMFHeaderAttachmentCountFormat
+      - RSMFHeaderParticipantsMismatch
+      - RSMFInvalidHeaderValue
+      - RSMFInvalidToAddress
+      - ManifestEventMissingTimeZone
+      - ManifestEventEditMissingTimeZone
+      - ManifestEventReadReceiptMissingTimeZone
+      - ManifestUnknownObjectMissingTimeZone
+      type: string
+    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails:
+      type: object
+      properties:
+        LineNumber:
+          type: integer
+          format: int32
+        LinePosition:
+          type: integer
+          format: int32
+        Message:
+          type: string
+          nullable: true
+        Submessages:
+          type: array
+          items:
+            type: string
+          nullable: true
+        ErrorCode:
+          $ref: '#/components/schemas/Relativity.RSMFU.Validator.RSMFValidatorErrorCode'
+      additionalProperties: false

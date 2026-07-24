@@ -1,0 +1,307 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService PersistentHighlightService API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: PersistentHighlightService
+paths:
+  /v{version}/workspaces/{workspaceID}/documents/{documentID}/highlight-sets:
+    get:
+      tags:
+      - PersistentHighlightService
+      summary: Retrieves persistent highlight sets and terms applied to a specific document.
+      description: Returns highlight set metadata and term definitions scoped to the specified document in the workspace.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: Workspace's Artifact ID.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: documentID
+        in: path
+        description: Document ID.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO'
+  /v{version}/workspaces/{workspaceID}/highlights/{persistentHighlightSetID}/state:
+    post:
+      tags:
+      - PersistentHighlightService
+      summary: Changes the active state of a persistent highlight set or selected terms.
+      description: Use this endpoint to activate or deactivate an entire set, or to change state for specific term identifiers.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: Workspace's Artifact ID.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: persistentHighlightSetID
+        in: path
+        description: Persistent Highlight Set's ID.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Request body describing the state action and optional term identifiers.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.SavePersistentHighlightSetStateRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.SavePersistentHighlightSetStateRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.SavePersistentHighlightSetStateRequest'
+      responses:
+        '200':
+          description: OK
+  /v{version}/workspaces/{workspaceID}/highlight-sets:
+    get:
+      tags:
+      - PersistentHighlightService
+      summary: Retrieves all persistent highlight sets and terms available in a workspace.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: Workspace's Artifact ID.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO'
+  /v{version}/workspaces/{workspaceID}/highlights/{persistentHighlightSetID}/add-terms:
+    post:
+      tags:
+      - PersistentHighlightService
+      summary: Adds one or more new terms to an existing persistent highlight set.
+      description: Each term can include foreground and background colors that define how it appears in the viewer.
+      parameters:
+      - name: workspaceID
+        in: path
+        description: Workspace's Artifact ID.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: persistentHighlightSetID
+        in: path
+        description: Persistent Highlight Set's ID.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Request body containing terms to append to the highlight set.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.AddPersistentHighlightTermsRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.AddPersistentHighlightTermsRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Reviewservice.Api.V2.Models.AddPersistentHighlightTermsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+components:
+  schemas:
+    Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO:
+      type: object
+      properties:
+        SetID:
+          type: string
+          nullable: true
+        SetName:
+          type: string
+          nullable: true
+        Expanded:
+          type: boolean
+        Selected:
+          type: boolean
+        PersistentHighlightSetID:
+          type: integer
+          format: int64
+        PersistentHighlightTerms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.PersistentHighlightTerm'
+          nullable: true
+        Order:
+          type: integer
+          format: int32
+        HasEditPermission:
+          type: boolean
+        Syntax:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.DTOs.PersistentHighlightTerm:
+      type: object
+      properties:
+        Id:
+          type: string
+          nullable: true
+        Term:
+          type: string
+          nullable: true
+        Syntax:
+          type: string
+          nullable: true
+        BackgroundColor:
+          type: string
+          nullable: true
+        ForegroundColor:
+          type: string
+          nullable: true
+        PersistentHighlightTermId:
+          type: integer
+          format: int64
+        PersistentHighlightSetId:
+          type: integer
+          format: int64
+        Selected:
+          type: boolean
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.DTOs.PersistentHighlightStateAction:
+      enum:
+      - None
+      - Enabled
+      - Disabled
+      - Expanded
+      - Collapsed
+      type: string
+    Reviewservice.Api.V2.Models.SavePersistentHighlightSetStateRequest:
+      type: object
+      properties:
+        workspaceId:
+          type: integer
+          description: Gets or sets workspaceId.
+          format: int32
+        persistentHighlightSetId:
+          type: integer
+          description: Gets or sets persistentHighlightSetId.
+          format: int32
+        termIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Gets or sets termIds.
+          nullable: true
+        action:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.PersistentHighlightStateAction'
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.AddPersistentHighlightTermsRequest:
+      type: object
+      properties:
+        workspaceId:
+          type: integer
+          description: Gets or sets workspaceId.
+          format: int32
+        persistentHighlightSetId:
+          type: integer
+          description: Gets or sets persistentHighlightSetId.
+          format: int32
+        terms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.AddHighlightTermsToSetRequest'
+          description: Gets or sets terms.
+          nullable: true
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.DTOs.AddHighlightTermsToSetRequest:
+      type: object
+      properties:
+        Term:
+          type: string
+          nullable: true
+        BackgroundColor:
+          type: string
+          nullable: true
+        ForegroundColor:
+          type: string
+          nullable: true
+      additionalProperties: false

@@ -1,0 +1,43 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Web Import Export v1 API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Web Import Export v1
+paths:
+  /Relativity.WebImportExport/v1/HealthCheck/RunHealthCheck:
+    get:
+      tags:
+      - Web Import Export v1
+      description: '[Public] IHealthCheckController - '
+      operationId: Relativity.RIE.Contracts.Interfaces.V1.HealthCheck.IHealthCheckController.RunHealthCheckAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+  /Relativity.WebImportExport/v1/HealthCheck/RunS2HealthCheck:
+    get:
+      tags:
+      - Web Import Export v1
+      description: '[Public] IHealthCheckController - '
+      operationId: Relativity.RIE.Contracts.Interfaces.V1.HealthCheck.IHealthCheckController.RunS2HealthCheckAsync
+      parameters:
+      - $ref: '#/components/parameters/x-csrf-header'
+      responses:
+        '200':
+          description: Successful Operation
+components:
+  parameters:
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'

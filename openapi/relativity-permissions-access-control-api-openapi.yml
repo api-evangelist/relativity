@@ -1,0 +1,207 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Permissions Access Control API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: Permissions Access Control
+  description: "External public API for managing role assignments.\r\nRole keys must use the r1_ prefix (e.g. r1_staging_viewer).\r\nEnd user token is required"
+paths:
+  /access-control/public/v1/role-assignments/{nodeType}/{nodeKey}:
+    get:
+      tags:
+      - Permissions Access Control
+      summary: List role assignments on a node.
+      parameters:
+      - name: nodeType
+        in: path
+        description: The type of the node. Only 'fileshare' is supported.
+        required: true
+        schema:
+          type: string
+      - name: nodeKey
+        in: path
+        description: The key of the node.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoleAssignment'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoleAssignment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoleAssignment'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+    post:
+      tags:
+      - Permissions Access Control
+      summary: Batch assign and/or revoke roles on a node.
+      parameters:
+      - name: nodeType
+        in: path
+        description: The type of the node. Only 'fileshare' is supported.
+        required: true
+        schema:
+          type: string
+      - name: nodeKey
+        in: path
+        description: The key of the node.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: The role assignment/revocation request.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalBulkRoleAssignmentRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ExternalBulkRoleAssignmentRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ExternalBulkRoleAssignmentRequest'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+  /access-control/public/v1/role-assignments/instance:
+    get:
+      tags:
+      - Permissions Access Control
+      summary: List role assignments on the instance (tenant) node.
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoleAssignment'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoleAssignment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoleAssignment'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+    post:
+      tags:
+      - Permissions Access Control
+      summary: Batch assign and/or revoke roles on the instance (tenant) node.
+      requestBody:
+        description: The role assignment/revocation request.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalBulkRoleAssignmentRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ExternalBulkRoleAssignmentRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ExternalBulkRoleAssignmentRequest'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    ExternalRoleAssignmentPair:
+      required:
+      - groupId
+      - roleKey
+      type: object
+      properties:
+        roleKey:
+          minLength: 1
+          type: string
+          description: The role key with r1_ prefix (e.g. r1_staging_viewer).
+        groupId:
+          minLength: 1
+          type: string
+          description: The group identifier.
+      additionalProperties: false
+      description: A role and group pair used in external bulk operations.
+    RoleAssignment:
+      required:
+      - groupId
+      - roleKey
+      type: object
+      properties:
+        roleKey:
+          minLength: 1
+          type: string
+          description: The role key with r1_ prefix (e.g. r1_staging_viewer).
+        groupId:
+          minLength: 1
+          type: string
+          description: The group identifier.
+      additionalProperties: false
+      description: A single role assignment entry in the external API.
+    ExternalBulkRoleAssignmentRequest:
+      type: object
+      properties:
+        assign:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExternalRoleAssignmentPair'
+          description: Role assignments to apply. Role keys must use the r1_ prefix.
+          nullable: true
+        revoke:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExternalRoleAssignmentPair'
+          description: Role assignments to revoke. Role keys must use the r1_ prefix.
+          nullable: true
+      additionalProperties: false
+      description: "Request to batch assign and/or revoke roles via the external API.\r\nRole keys must use the r1_ prefix (e.g. r1_staging_viewer)."

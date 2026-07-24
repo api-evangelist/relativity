@@ -1,0 +1,883 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillingConfiguration API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: BillingConfiguration
+paths:
+  /api/v1/billing-configuration/product-configurations:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get product configuration
+      description: Get product configuration for a given dates. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductConfigurationRequest'
+            examples:
+              All product configurations for an instance:
+                summary: Product configurations for an instance for a given dates
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKeys:
+                  - '202308'
+                  - '202307'
+                  metricKey: Relativity_Translate
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductConfigurationRequest'
+            examples:
+              All product configurations for an instance:
+                summary: Product configurations for an instance for a given dates
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKeys:
+                  - '202308'
+                  - '202307'
+                  metricKey: Relativity_Translate
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductConfigurationRequest'
+            examples:
+              All product configurations for an instance:
+                summary: Product configurations for an instance for a given dates
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKeys:
+                  - '202308'
+                  - '202307'
+                  metricKey: Relativity_Translate
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetProductConfigurationResponse'
+              example:
+                results:
+                  Relativity_Translate:
+                  - name: ConversionRate
+                    dateKey: '202308'
+                    value: 20
+                  - name: ConversionRate
+                    dateKey: '202307'
+                    value: 30
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProductConfigurationResponse'
+              example:
+                results:
+                  Relativity_Translate:
+                  - name: ConversionRate
+                    dateKey: '202308'
+                    value: 20
+                  - name: ConversionRate
+                    dateKey: '202307'
+                    value: 30
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetProductConfigurationResponse'
+              example:
+                results:
+                  Relativity_Translate:
+                  - name: ConversionRate
+                    dateKey: '202308'
+                    value: 20
+                  - name: ConversionRate
+                    dateKey: '202307'
+                    value: 30
+  /api/v1/billing-configuration/package-consumption:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about package consumption
+      description: Get package consumption for specific instance. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPackageConsumptionRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetPackageConsumptionRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetPackageConsumptionRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetPackageConsumptionResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPackageConsumptionResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetPackageConsumptionResponse'
+  /api/v1/billing-configuration/available-products:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about products available for instance
+      description: Get information about products available for instance. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAvailableProductsResponse'
+              example:
+                results:
+                - metricKey: Relativity_Translate
+                - metricKey: aiR_for_Privilege
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailableProductsResponse'
+              example:
+                results:
+                - metricKey: Relativity_Translate
+                - metricKey: aiR_for_Privilege
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailableProductsResponse'
+              example:
+                results:
+                - metricKey: Relativity_Translate
+                - metricKey: aiR_for_Privilege
+  /api/v1/billing-configuration/available-packages:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about packages available for instance
+      description: Get information about packages available for instance. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAvailablePackagesResponse'
+              example:
+                results:
+                - packageType: aiRBulkUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 1000000
+                  unitOfMeasure: Documents
+                  overageRate: 0.15
+                  metricKeys:
+                  - aiRforReview
+                  - aiRforPrivilege
+                - packageType: aiRUnitUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 500000
+                  unitOfMeasure: Pages
+                  overageRate: 0.1
+                  metricKeys:
+                  - aiR_for_Review
+                  - aiR_for_Privilige
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailablePackagesResponse'
+              example:
+                results:
+                - packageType: aiRBulkUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 1000000
+                  unitOfMeasure: Documents
+                  overageRate: 0.15
+                  metricKeys:
+                  - aiRforReview
+                  - aiRforPrivilege
+                - packageType: aiRUnitUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 500000
+                  unitOfMeasure: Pages
+                  overageRate: 0.1
+                  metricKeys:
+                  - aiR_for_Review
+                  - aiR_for_Privilige
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailablePackagesResponse'
+              example:
+                results:
+                - packageType: aiRBulkUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 1000000
+                  unitOfMeasure: Documents
+                  overageRate: 0.15
+                  metricKeys:
+                  - aiRforReview
+                  - aiRforPrivilege
+                - packageType: aiRUnitUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 500000
+                  unitOfMeasure: Pages
+                  overageRate: 0.1
+                  metricKeys:
+                  - aiR_for_Review
+                  - aiR_for_Privilige
+  /api/v1/billing-configuration/products-and-packages-availability:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about products and packages availability for instance
+      description: Get information about products and packages availability for instance. If the requested data does not exist then false is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityResponse'
+              example:
+                results:
+                - areProductsAvailable: true
+                  arePackagesAvailable: true
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityResponse'
+              example:
+                results:
+                - areProductsAvailable: true
+                  arePackagesAvailable: true
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityResponse'
+              example:
+                results:
+                - areProductsAvailable: true
+                  arePackagesAvailable: true
+  /api/v2/billing-configuration/product-configurations:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get product configuration
+      description: Get product configuration for a given dates. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductConfigurationRequest'
+            examples:
+              All product configurations for an instance:
+                summary: Product configurations for an instance for a given dates
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKeys:
+                  - '202308'
+                  - '202307'
+                  metricKey: Relativity_Translate
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductConfigurationRequest'
+            examples:
+              All product configurations for an instance:
+                summary: Product configurations for an instance for a given dates
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKeys:
+                  - '202308'
+                  - '202307'
+                  metricKey: Relativity_Translate
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductConfigurationRequest'
+            examples:
+              All product configurations for an instance:
+                summary: Product configurations for an instance for a given dates
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKeys:
+                  - '202308'
+                  - '202307'
+                  metricKey: Relativity_Translate
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetProductConfigurationResponse'
+              example:
+                results:
+                  Relativity_Translate:
+                  - name: ConversionRate
+                    dateKey: '202308'
+                    value: 20
+                  - name: ConversionRate
+                    dateKey: '202307'
+                    value: 30
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProductConfigurationResponse'
+              example:
+                results:
+                  Relativity_Translate:
+                  - name: ConversionRate
+                    dateKey: '202308'
+                    value: 20
+                  - name: ConversionRate
+                    dateKey: '202307'
+                    value: 30
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetProductConfigurationResponse'
+              example:
+                results:
+                  Relativity_Translate:
+                  - name: ConversionRate
+                    dateKey: '202308'
+                    value: 20
+                  - name: ConversionRate
+                    dateKey: '202307'
+                    value: 30
+  /api/v2/billing-configuration/package-consumption:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about package consumption
+      description: Get package consumption for specific instance. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPackageConsumptionRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetPackageConsumptionRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetPackageConsumptionRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetPackageConsumptionResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPackageConsumptionResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetPackageConsumptionResponse'
+  /api/v2/billing-configuration/available-products:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about products available for instance
+      description: Get information about products available for instance. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAvailableProductsResponse'
+              example:
+                results:
+                - metricKey: Relativity_Translate
+                - metricKey: aiR_for_Privilege
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailableProductsResponse'
+              example:
+                results:
+                - metricKey: Relativity_Translate
+                - metricKey: aiR_for_Privilege
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailableProductsResponse'
+              example:
+                results:
+                - metricKey: Relativity_Translate
+                - metricKey: aiR_for_Privilege
+  /api/v2/billing-configuration/available-packages:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about packages available for instance
+      description: Get information about packages available for instance. If the requested data does not exist then 404 is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAvailablePackagesResponse'
+              example:
+                results:
+                - packageType: aiRBulkUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 1000000
+                  unitOfMeasure: Documents
+                  overageRate: 0.15
+                  metricKeys:
+                  - aiRforReview
+                  - aiRforPrivilege
+                - packageType: aiRUnitUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 500000
+                  unitOfMeasure: Pages
+                  overageRate: 0.1
+                  metricKeys:
+                  - aiR_for_Review
+                  - aiR_for_Privilige
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailablePackagesResponse'
+              example:
+                results:
+                - packageType: aiRBulkUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 1000000
+                  unitOfMeasure: Documents
+                  overageRate: 0.15
+                  metricKeys:
+                  - aiRforReview
+                  - aiRforPrivilege
+                - packageType: aiRUnitUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 500000
+                  unitOfMeasure: Pages
+                  overageRate: 0.1
+                  metricKeys:
+                  - aiR_for_Review
+                  - aiR_for_Privilige
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAvailablePackagesResponse'
+              example:
+                results:
+                - packageType: aiRBulkUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 1000000
+                  unitOfMeasure: Documents
+                  overageRate: 0.15
+                  metricKeys:
+                  - aiRforReview
+                  - aiRforPrivilege
+                - packageType: aiRUnitUsage
+                  startDate: '0001-01-01T00:00:00'
+                  endDate: '9999-12-31T23:59:59.9999999'
+                  quantity: 500000
+                  unitOfMeasure: Pages
+                  overageRate: 0.1
+                  metricKeys:
+                  - aiR_for_Review
+                  - aiR_for_Privilige
+  /api/v2/billing-configuration/products-and-packages-availability:
+    post:
+      tags:
+      - BillingConfiguration
+      summary: Get information about products and packages availability for instance
+      description: Get information about products and packages availability for instance. If the requested data does not exist then false is returned.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityRequest'
+            examples:
+              Products and packages availability for an instance:
+                summary: Products and packages availability for an instance for a given date
+                value:
+                  instanceID: f53c069b-9706-4570-8f97-be6e8fdbe156
+                  dateKey: '202308'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityResponse'
+              example:
+                results:
+                - areProductsAvailable: true
+                  arePackagesAvailable: true
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityResponse'
+              example:
+                results:
+                - areProductsAvailable: true
+                  arePackagesAvailable: true
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetProductsAndPackagesAvailabilityResponse'
+              example:
+                results:
+                - areProductsAvailable: true
+                  arePackagesAvailable: true
+components:
+  schemas:
+    ProductConfigurationDetails:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the product
+          nullable: true
+        dateKey:
+          type: string
+          description: The Year and the month for which configuration details is returned
+          nullable: true
+        value:
+          description: Value reported for given product configuration
+          nullable: true
+      additionalProperties: false
+    ProductDetails:
+      type: object
+      properties:
+        metricKey:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetProductConfigurationRequest:
+      type: object
+      properties:
+        instanceID:
+          type: string
+          description: Specifies the instanceId for which the data should be returned
+          nullable: true
+        dateKeys:
+          type: array
+          items:
+            type: string
+          description: 'An array of years with months for which data should be returned. Format: ["YYYYMM"].'
+          nullable: true
+          example:
+          - 202208,202209
+        metricKey:
+          type: string
+          description: "Specifies the metric key for which the data should be returned. If no metric key is provided, no metric will be returned.\r\nList of possible values:\r\n- Relativity_Translate\r\n- aiR_for_Review\r\n- aiR_for_Privilege\r\n- aiR_for_CaseStrategy.AppInstallation\r\n- aiR_for_CaseStrategy.WorkspaceOneTimeFee\r\n- aiR_for_CaseStrategy.Document\r\n- FOIA_Request\r\n- FOIA_DisclosureCenter_Storage\r\n- FOIA_ReadingRoom_Storage"
+          nullable: true
+      additionalProperties: false
+      description: Request body used in product-configuration API
+    GetAvailablePackagesResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PackageDetails'
+          description: List of available packages
+          nullable: true
+      additionalProperties: false
+    GetPackageConsumptionRequest:
+      type: object
+      properties:
+        instanceID:
+          type: string
+          description: Specifies the instanceId for which the data should be returned
+          nullable: true
+        metricKey:
+          type: string
+          description: Specifies the metric key for which the data should be returned. If no metric key is provided, no metric will be returned.
+          nullable: true
+      additionalProperties: false
+    GetAvailableProductsResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductDetails'
+          description: List of available products
+          nullable: true
+      additionalProperties: false
+    GetProductsAndPackagesAvailabilityResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductsAndPackagesAvailability'
+          description: Configuration of available extended products
+          nullable: true
+      additionalProperties: false
+    GetPackageConsumptionResponse:
+      type: object
+      properties:
+        metricKey:
+          type: string
+          description: MetricKey
+          nullable: true
+        aggregationDateUtc:
+          type: string
+          description: Date when the recalculation of consumed packages was done
+          format: date-time
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PackageConsumptionItem'
+          description: List of package consumptions
+          nullable: true
+      additionalProperties: false
+    GetProductsAndPackagesAvailabilityRequest:
+      type: object
+      properties:
+        instanceID:
+          type: string
+          description: Specifies the instanceId for which the data should be returned
+          nullable: true
+        dateKey:
+          type: string
+          description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
+          nullable: true
+          example: 202209
+      additionalProperties: false
+    PackageDetails:
+      type: object
+      properties:
+        packageType:
+          type: string
+          nullable: true
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        quantity:
+          type: number
+          format: double
+        unitOfMeasure:
+          type: string
+          nullable: true
+        overageRate:
+          type: number
+          format: double
+        metricKeys:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    ProductsAndPackagesAvailability:
+      type: object
+      properties:
+        areProductsAvailable:
+          type: boolean
+        arePackagesAvailable:
+          type: boolean
+      additionalProperties: false
+    GetProductConfigurationResponse:
+      type: object
+      properties:
+        results:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/ProductConfigurationDetails'
+            nullable: true
+          description: "Product configuration.\r\nEach property in this object is the _metricKey_ specified in the request."
+          nullable: true
+      additionalProperties: false
+    PackageConsumptionItem:
+      type: object
+      properties:
+        type:
+          enum:
+          - Free
+          - Purchased
+          type: string
+          description: "Type of the package\r\nList of possible values:\r\n- Free\r\n- Purchased"
+        total:
+          type: number
+          description: Total units of the package
+          format: double
+        consumed:
+          type: number
+          description: Consumed units of the package
+          format: double
+        expirationDateUtc:
+          type: string
+          description: Expiration date of the package
+          format: date-time
+      additionalProperties: false

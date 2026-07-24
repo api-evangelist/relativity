@@ -1,0 +1,139 @@
+openapi: 3.0.1
+info:
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ColdStorage API
+  description: Analytics.Conceptual.Service.Interfaces.Public
+  version: V1
+servers:
+- url: /Relativity.REST/api
+  description: The URL prefix for all Kepler services
+tags:
+- name: ColdStorage
+paths:
+  /v1/workspace/{workspaceId}/cold-storage/status:
+    get:
+      tags:
+      - ColdStorage
+      summary: Gets the cold storage status of a workspace
+      description: 'Returns one of:
+
+        Out – Workspace is not in cold storage.
+
+        In – Workspace is in cold storage.
+
+        MovingOut – Retrieval has been requested; the workspace will be returned to Active by the retrieval agent after the minimum request age has elapsed.
+
+        For MovingOut, ActivationJobSubmittedBy and ActivationJobSubmittedOnUtc identify the user who requested retrieval (secured when the caller cannot view the user).'
+      parameters:
+      - name: workspaceId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkspaceColdStorageStatusResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceColdStorageStatusResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceColdStorageStatusResponse'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    ObjectIdentifierSecurable:
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Secured:
+          type: boolean
+      additionalProperties: false
+    WorkspaceColdStorageStatusResponse:
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+          format: int32
+        Status:
+          enum:
+          - Out
+          - In
+          - MovingOut
+          - MovingIn
+          type: string
+        ActivationJobSubmittedBy:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        ActivationJobSubmittedOnUtc:
+          type: string
+          format: date-time
+          nullable: true
+        AddedToColdStorageOnUtc:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    ObjectIdentifier:
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+          format: int32
+          nullable: true
+        Guids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+      additionalProperties: false
