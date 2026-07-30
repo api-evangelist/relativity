@@ -7,7 +7,20 @@ description: Relativity is an eDiscovery and legal review platform offering Rela
   user and permission management, and AI-powered review features. Relativity exposes
   80+ integration APIs organized by business domain, supporting OAuth2, basic, and
   cookie-based authentication.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/relativity.png
 url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -23,174 +36,1616 @@ tags:
 - Litigation
 - Compliance
 apis:
-- name: Relativity Object Manager API
-  description: Core API for working with documents and Relativity Dynamic Objects
-    (RDOs). Supports CRUD operations, querying, bulk/mass operations, and field management
-    across all workspace objects.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+- aid: relativity:relativity-annotationservice-api
+  name: Relativity AnnotationService API
+  description: The AnnotationService API from Relativity — 2 operation(s) for annotationservice.
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
-  - Documents
-  - Objects
-  - CRUD
-  - Search
+  - AnnotationService
   properties:
+  - type: OpenAPI
+    url: openapi/relativity-annotationservice-api-openapi.yml
   - type: Documentation
     url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-object-manager-openapi.yml
   - type: Plans
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
   - type: RateLimits
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
   - type: FinOps
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - url: graphql/relativity-graphql.md
-    type: GraphQL
-- name: Relativity Import Service API
-  description: REST API for importing large numbers of documents, images, and RDOs
-    into RelativityOne workspaces. Supports native files, extracted text, images,
-    and metadata.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/import-service/v1
-  tags:
-  - Import
-  - Documents
-  - Data Ingestion
-  properties:
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
   - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-import-openapi.yml
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
   - type: GettingStarted
-    url: https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
-- name: Relativity Export Service API
-  description: REST API for exporting documents, images, PDFs, and native files from
-    RelativityOne workspaces, as well as exporting applications as RAP or schema files.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/export-service/v1
-  tags:
-  - Export
-  - Documents
-  - Production
-  properties:
-  - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-export-openapi.yml
-- name: Relativity Workspace Manager API
-  description: REST API for performing CRUD operations on RelativityOne workspaces,
-    including creation, configuration, and deletion.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/workspace-service/v1
-  tags:
-  - Workspaces
-  - Administration
-  properties:
-  - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-workspace-openapi.yml
-- name: Relativity Production Manager API
-  description: REST API for creating, deleting, staging, and running production sets
-    in RelativityOne. Manages production data sources, placeholders, and the production
-    queue.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/production-manager/v1
-  tags:
-  - Production
-  - Legal Review
-  - Documents
-  properties:
-  - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-productions-openapi.yml
-- name: Relativity Legal Hold API
-  description: REST API for managing legal holds, custodians, and data preservation
-    workflows in RelativityOne.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/legal-hold/v1
-  tags:
-  - Legal Hold
-  - Compliance
-  - Custodians
-  properties:
-  - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-legal-hold-openapi.yml
-- name: Relativity Automated Workflows API
-  description: REST API for registering and managing automated workflow actions, triggers,
-    and events within RelativityOne to streamline review processes.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/automated-workflows/v1
-  tags:
-  - Workflows
-  - Automation
-  - Review
-  properties:
-  - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-automated-workflows-openapi.yml
-- name: Relativity Audit API
-  description: REST API for reverting, retrieving, and searching audit records stored
-    in Elasticsearch. Provides full audit trail access for compliance and investigation.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/audit/v1
-  tags:
-  - Audit
-  - Compliance
-  - Elasticsearch
-  properties:
-  - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-permissions-openapi.yml
-- name: Relativity User and Permission Manager API
-  description: REST API for managing users, groups, clients, and permissions within
-    RelativityOne. Supports OAuth2 client management, login profiles, and federated
-    instance access.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  baseURL: https://{host}/Relativity.REST/api/user-management/v1
-  tags:
-  - Users
-  - Permissions
-  - Identity
-  - OAuth2
-  properties:
-  - type: Documentation
-    url: https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-identity-openapi.yml
-- name: Relativity Billing Insights API
-  description: REST API for programmatically checking billing metrics and data usage
-    in RelativityOne, enabling FinOps monitoring of active data, cold storage, and
-    ECA volumes.
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
-  baseURL: https://{host}/Relativity.REST/api/billing-insights/v1
-  tags:
-  - Billing
-  - FinOps
-  - Usage
-  properties:
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
   - type: Documentation
     url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-archivejobs-api
+  name: Relativity ArchiveJobs API
+  description: The ArchiveJobs API from Relativity — 2 operation(s) for archivejobs.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - ArchiveJobs
+  properties:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/openapi/relativity-billing-v2-openapi.yml
+    url: openapi/relativity-archivejobs-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
   - type: FinOps
-    url: https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-arm-module-v1-api
+  name: Relativity ARM Module v1 API
+  description: The ARM Module v1 API from Relativity — 20 operation(s) for arm module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - ARM Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-arm-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-arm-module-v3-api
+  name: Relativity ARM Module v3 API
+  description: The ARM Module v3 API from Relativity — 7 operation(s) for arm module v3.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - ARM Module v3
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-arm-module-v3-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-billablesummaryreports-api
+  name: Relativity BillableSummaryReports API
+  description: >-
+    The BillableSummaryReports API from Relativity — 4 operation(s) for billablesummaryreports.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - BillableSummaryReports
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-billablesummaryreports-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-billingconfiguration-api
+  name: Relativity BillingConfiguration API
+  description: The BillingConfiguration API from Relativity — 10 operation(s) for billingconfiguration.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - BillingConfiguration
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-billingconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-billinginsights-api
+  name: Relativity BillingInsights API
+  description: The BillingInsights API from Relativity — 6 operation(s) for billinginsights.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - BillingInsights
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-billinginsights-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-client-side-libraries-module-api
+  name: Relativity Client Side Libraries Module API
+  description: >-
+    The Client Side Libraries Module API from Relativity — 1 operation(s) for client side libraries module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Client Side Libraries Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-client-side-libraries-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-coldstorage-api
+  name: Relativity ColdStorage API
+  description: The ColdStorage API from Relativity — 1 operation(s) for coldstorage.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - ColdStorage
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-coldstorage-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-collectapi-api
+  name: Relativity CollectAPI API
+  description: The CollectAPI API from Relativity — 6 operation(s) for collectapi.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - CollectAPI
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-collectapi-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-conceptual-analytics-v1-api
+  name: Relativity Conceptual Analytics v1 API
+  description: >-
+    The Conceptual Analytics v1 API from Relativity — 4 operation(s) for conceptual analytics v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Conceptual Analytics v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-conceptual-analytics-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-directory-api
+  name: Relativity Directory API
+  description: The Directory API from Relativity — 2 operation(s) for directory.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Directory
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-directory-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-document-configuration-module-api
+  name: Relativity Document Configuration Module API
+  description: >-
+    The Document Configuration Module API from Relativity — 2 operation(s) for document configuration
+    module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Document Configuration Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-document-configuration-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-documentviewerservice-api
+  name: Relativity DocumentViewerService API
+  description: >-
+    The DocumentViewerService API from Relativity — 1 operation(s) for documentviewerservice.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - DocumentViewerService
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-documentviewerservice-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-dtsearchindex-module-v1-api
+  name: Relativity DtSearchIndex Module v1 API
+  description: >-
+    The DtSearchIndex Module v1 API from Relativity — 39 operation(s) for dtsearchindex module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - DtSearchIndex Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-dtsearchindex-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-glacier-jobs-api
+  name: Relativity Glacier Jobs API
+  description: The Glacier Jobs API from Relativity — 1 operation(s) for glacier jobs.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Glacier Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-glacier-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-glacier-restore-api
+  name: Relativity Glacier Restore API
+  description: The Glacier Restore API from Relativity — 1 operation(s) for glacier restore.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Glacier Restore
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-glacier-restore-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-glacier-storage-api
+  name: Relativity Glacier Storage API
+  description: The Glacier Storage API from Relativity — 2 operation(s) for glacier storage.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Glacier Storage
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-glacier-storage-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-glacier-store-api
+  name: Relativity Glacier Store API
+  description: The Glacier Store API from Relativity — 1 operation(s) for glacier store.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Glacier Store
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-glacier-store-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-health-check-module-api
+  name: Relativity Health Check Module API
+  description: The Health Check Module API from Relativity — 1 operation(s) for health check module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Health Check Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-health-check-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-identity-module-v1-api
+  name: Relativity Identity Module v1 API
+  description: The Identity Module v1 API from Relativity — 62 operation(s) for identity module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Identity Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-identity-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-import-job-module-api
+  name: Relativity Import Job Module API
+  description: The Import Job Module API from Relativity — 11 operation(s) for import job module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Import Job Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-import-job-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-import-source-module-api
+  name: Relativity Import Source Module API
+  description: The Import Source Module API from Relativity — 8 operation(s) for import source module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Import Source Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-import-source-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-jobactions-api
+  name: Relativity JobActions API
+  description: The JobActions API from Relativity — 2 operation(s) for jobactions.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - JobActions
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-jobactions-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-jobinformation-api
+  name: Relativity JobInformation API
+  description: The JobInformation API from Relativity — 1 operation(s) for jobinformation.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - JobInformation
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-jobinformation-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-legal-hold-module-api
+  name: Relativity Legal Hold Module API
+  description: The Legal Hold Module API from Relativity — 14 operation(s) for legal hold module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Legal Hold Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-legal-hold-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-metadata-api
+  name: Relativity Metadata API
+  description: The Metadata API from Relativity — 1 operation(s) for metadata.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-metadata-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-metrics-module-api
+  name: Relativity Metrics Module API
+  description: The Metrics Module API from Relativity — 8 operation(s) for metrics module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Metrics Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-metrics-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-object-manager-v1-api
+  name: Relativity Object Manager v1 API
+  description: The Object Manager v1 API from Relativity — 12 operation(s) for object manager v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Object Manager v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-object-manager-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-objectmanagerapi-api
+  name: Relativity ObjectManagerAPI API
+  description: >-
+    Use the Relativity Object Manager to discover prerequisite artifact IDs before creating Collect collections.
+    These calls are read-only and use the same Bearer token authentication as the Collect API.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - ObjectManagerAPI
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-objectmanagerapi-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-permissions-access-control-api
+  name: Relativity Permissions Access Control API
+  description: "External public API for managing role assignments.\r\nRole keys must use the r1_ prefix\
+    \ (e.g. r1_staging_viewer).\r\nEnd user token is required"
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Permissions Access Control
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-permissions-access-control-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-persistenthighlightservice-api
+  name: Relativity PersistentHighlightService API
+  description: >-
+    The PersistentHighlightService API from Relativity — 4 operation(s) for persistenthighlightservice.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - PersistentHighlightService
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-persistenthighlightservice-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-processing-module-v1-api
+  name: Relativity Processing Module v1 API
+  description: The Processing Module v1 API from Relativity — 51 operation(s) for processing module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Processing Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-processing-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-processing-module-v2-api
+  name: Relativity Processing Module v2 API
+  description: The Processing Module v2 API from Relativity — 19 operation(s) for processing module v2.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Processing Module v2
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-processing-module-v2-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-rdo-configuration-module-api
+  name: Relativity RDO Configuration Module API
+  description: >-
+    The RDO Configuration Module API from Relativity — 2 operation(s) for rdo configuration module.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - RDO Configuration Module
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-rdo-configuration-module-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-relativity-automated-workflows-api
+  name: Relativity Relativity Automated Workflows API
+  description: >-
+    The Relativity Automated Workflows API from Relativity — 4 operation(s) for relativity automated workflows.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Relativity Automated Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-relativity-automated-workflows-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-relativity-environment-module-v1-api
+  name: Relativity Relativity Environment Module v1 API
+  description: >-
+    The Relativity Environment Module v1 API from Relativity — 93 operation(s) for relativity environment
+    module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Relativity Environment Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-relativity-environment-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-relativity-infrastructure-module-v1-api
+  name: Relativity Relativity Infrastructure Module v1 API
+  description: >-
+    The Relativity Infrastructure Module v1 API from Relativity — 70 operation(s) for relativity infrastructure
+    module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Relativity Infrastructure Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-relativity-infrastructure-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-relativity-mass-operation-module-v2-api
+  name: Relativity Relativity Mass Operation Module v2 API
+  description: >-
+    The Relativity Mass Operation Module v2 API from Relativity — 26 operation(s) for relativity mass
+    operation module v2.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Relativity Mass Operation Module v2
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-relativity-mass-operation-module-v2-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-relativity-notifications-module-v1-api
+  name: Relativity Relativity Notifications Module v1 API
+  description: >-
+    The Relativity Notifications Module v1 API from Relativity — 1 operation(s) for relativity notifications
+    module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Relativity Notifications Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-relativity-notifications-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-relativity-pivot-module-v1-api
+  name: Relativity Relativity Pivot Module v1 API
+  description: >-
+    The Relativity Pivot Module v1 API from Relativity — 7 operation(s) for relativity pivot module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Relativity Pivot Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-relativity-pivot-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-relativity-structured-analytics-v1-api
+  name: Relativity Relativity Structured Analytics v1 API
+  description: >-
+    The Relativity Structured Analytics v1 API from Relativity — 10 operation(s) for relativity structured
+    analytics v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Relativity Structured Analytics v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-relativity-structured-analytics-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-reports-api
+  name: Relativity Reports API
+  description: The Reports API from Relativity — 7 operation(s) for reports.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-reports-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-restorejobs-api
+  name: Relativity RestoreJobs API
+  description: The RestoreJobs API from Relativity — 2 operation(s) for restorejobs.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - RestoreJobs
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-restorejobs-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-shortmessageviewerservice-api
+  name: Relativity ShortMessageViewerService API
+  description: >-
+    The ShortMessageViewerService API from Relativity — 5 operation(s) for shortmessageviewerservice.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - ShortMessageViewerService
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-shortmessageviewerservice-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-transfercontrollerv2-api
+  name: Relativity TransferControllerV2 API
+  description: The TransferControllerV2 API from Relativity — 3 operation(s) for transfercontrollerv2.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - TransferControllerV2
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-transfercontrollerv2-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-versioned-imaging-module-v1-api
+  name: Relativity Versioned Imaging Module v1 API
+  description: >-
+    The Versioned Imaging Module v1 API from Relativity — 20 operation(s) for versioned imaging module
+    v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Versioned Imaging Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-versioned-imaging-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-versioned-production-module-v1-api
+  name: Relativity Versioned Production Module v1 API
+  description: >-
+    The Versioned Production Module v1 API from Relativity — 41 operation(s) for versioned production
+    module v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Versioned Production Module v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-versioned-production-module-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-web-import-export-v1-api
+  name: Relativity Web Import Export v1 API
+  description: The Web Import Export v1 API from Relativity — 2 operation(s) for web import export v1.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Web Import Export v1
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-web-import-export-v1-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-workspace-api
+  name: Relativity Workspace API
+  description: The Workspace API from Relativity — 2 operation(s) for workspace.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - Workspace
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-workspace-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
+- aid: relativity:relativity-workspacejob-api
+  name: Relativity WorkspaceJob API
+  description: The WorkspaceJob API from Relativity — 2 operation(s) for workspacejob.
+  humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
+  tags:
+  - WorkspaceJob
+  properties:
+  - type: OpenAPI
+    url: openapi/relativity-workspacejob-api-openapi.yml
+  - type: Documentation
+    url: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
+  - type: Plans
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/plans/relativity-plans-pricing.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/rate-limits/relativity-rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
+  - type: GraphQL
+    url: graphql/relativity-graphql.md
+  - type: Documentation
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
+  - type: GettingStarted
+    url: >-
+      https://platform.relativity.com/RelativityOne/Content/Getting_Started/Basic_REST_API_concepts.htm
+  - type: Documentation
+    url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
 common:
 - type: AgenticAccess
   url: agentic-access/relativity-agentic-access.yml
