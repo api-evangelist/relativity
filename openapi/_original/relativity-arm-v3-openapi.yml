@@ -1,0 +1,760 @@
+openapi: 3.0.4
+info:
+  title: Relativity.ARM.Services.Interfaces
+  description: Relativity.ARM.Services.Interfaces
+  version: V3
+servers:
+- url: /Relativity.REST/api/relativity-arm
+  description: The URL prefix for all Kepler services
+paths:
+  /v3/archive-jobs:
+    post:
+      tags:
+      - ArchiveJobs
+      summary: Asynchronously creates an instance of an Archive Job.
+      requestBody:
+        description: Archive job request containing workspace ID, archive directory,
+          and configuration
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArchiveJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ArchiveJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ArchiveJobRequestWrapper'
+      responses:
+        '200':
+          description: Archive job created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateArchiveJobResponse'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+  /v3/archive-jobs/{jobID}:
+    get:
+      tags:
+      - ArchiveJobs
+      summary: Asynchronously read an instance of an Archive Job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Archive job identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Archive job retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchiveJobResponse'
+        '404':
+          description: Archive job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+    put:
+      tags:
+      - ArchiveJobs
+      summary: Asynchronously updates an instance of an Archive Job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Archive job identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated archive job configuration
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArchiveJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ArchiveJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ArchiveJobRequestWrapper'
+      responses:
+        '200':
+          description: Archive job updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateArchiveJobResponse'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Archive job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+      - ArchiveJobs
+      summary: Asynchronously deletes an instance of an Archive Job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Archive job identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Archive job deleted successfully
+        '404':
+          description: Archive job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+  /v3/jobs/{jobID}/cancel:
+    post:
+      tags:
+      - JobActions
+      summary: Asynchronously cancels a running job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Job identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Cancel job request with optional parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CancelJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CancelJobRequestWrapper'
+      responses:
+        '200':
+          description: Job cancellation initiated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelJobResponse'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+  /v3/jobs/{jobID}/run:
+    post:
+      tags:
+      - JobActions
+      summary: Asynchronously runs a job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Job identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Run job request with optional parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RunJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RunJobRequestWrapper'
+      responses:
+        '200':
+          description: Job execution initiated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunJobResponse'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+  /v3/jobs/{jobID}/status:
+    get:
+      tags:
+      - JobInformation
+      summary: Asynchronously retrieves the current status and progress of a job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Job identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job status retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobProgressResponse'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+  /v3/restore-jobs:
+    post:
+      tags:
+      - RestoreJobs
+      summary: Asynchronously creates an instance of a Restore Job.
+      requestBody:
+        description: Restore job request containing workspace ID, restore directory,
+          and configuration
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestoreJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RestoreJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RestoreJobRequestWrapper'
+      responses:
+        '200':
+          description: Restore job created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRestoreJobResponse'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+  /v3/restore-jobs/{jobID}:
+    get:
+      tags:
+      - RestoreJobs
+      summary: Asynchronously read an instance of a Restore Job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Restore job identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Restore job retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestoreJobResponse'
+        '404':
+          description: Restore job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+    put:
+      tags:
+      - RestoreJobs
+      summary: Asynchronously updates an instance of a Restore Job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Restore job identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated restore job configuration
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestoreJobRequestWrapper'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RestoreJobRequestWrapper'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RestoreJobRequestWrapper'
+      responses:
+        '200':
+          description: Restore job updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateRestoreJobResponse'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Restore job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+      - RestoreJobs
+      summary: Asynchronously deletes an instance of a Restore Job.
+      parameters:
+      - name: jobID
+        in: path
+        description: Restore job identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Restore job deleted successfully
+        '404':
+          description: Restore job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    ArchiveJobRequest:
+      type: object
+      properties:
+        workspaceID:
+          type: integer
+          description: Gets or sets the Workspace id.
+          format: int32
+        archiveDirectory:
+          type: string
+          description: Gets or sets ARM Archive Directory
+          nullable: true
+        scheduledStartTime:
+          type: string
+          description: Gets or sets scheduled start time.
+          format: date-time
+          nullable: true
+        jobPriority:
+          $ref: '#/components/schemas/JobPriority'
+        excludedMigrators:
+          type: array
+          items:
+            type: string
+          description: 'Gets or sets the list of migrators to exclude from execution.
+
+            If null or empty, all available migrators execute with default parameters.'
+          nullable: true
+          example:
+          - ExtensionData
+          - Invariant
+          - RepositoryFiles
+          - NonRepositoryFiles
+          - dtIndex
+          - analytics-core
+          - StructuredAnalytics
+          - Audit
+          - Database
+        migratorOptions:
+          type: object
+          additionalProperties:
+            nullable: true
+          description: 'Gets or sets generic per-migrator configuration.
+
+            Key = migrator name
+
+            Value = JSON  with migrator-specific parameters.
+
+            If a migrator is not listed here, it runs with defaults.
+
+            If null, all non-excluded migrators use default configuration.'
+          nullable: true
+          example:
+            Common:
+              FileFirstFlow:
+                IsFilesFirstFlow: true
+                AdditionalFilesDirectoryPath: path
+            Invariant:
+              IncludeProcessingFiles: true
+        notificationOptions:
+          $ref: '#/components/schemas/NotificationOptions'
+        uiJobActionsLocked:
+          type: boolean
+          description: Gets or sets a value indicating whether this job ui actions
+            are locked
+      additionalProperties: false
+      description: Request to create new Archive job
+    ArchiveJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest'
+      additionalProperties: false
+      description: Request to create new Archive job
+    ArchiveJobResponse:
+      type: object
+      properties:
+        jobID:
+          type: string
+          description: Gets or sets the Job id.
+          nullable: true
+        jobName:
+          type: string
+          description: Gets or sets the Job name.
+          nullable: true
+        archivePath:
+          type: string
+          description: Gets or sets the path to the archive.
+          nullable: true
+        workspaceID:
+          type: integer
+          description: Gets or sets the Workspace id.
+          format: int32
+        scheduledStartTime:
+          type: string
+          description: Gets or sets scheduled start time.
+          format: date-time
+          nullable: true
+        jobDetails:
+          $ref: '#/components/schemas/JobDetails'
+        excludedMigrators:
+          type: array
+          items:
+            type: string
+          description: Gets or sets the migrators excluded from this archive job.
+          nullable: true
+        migratorOptions:
+          type: object
+          additionalProperties:
+            nullable: true
+          description: 'Gets or sets per-migrator configuration used for this job.
+
+            Key = migrator name,
+
+            Value = JSON  with migrator-specific parameters.'
+          nullable: true
+        notificationOptions:
+          $ref: '#/components/schemas/NotificationOptions'
+        uiJobActionsLocked:
+          type: boolean
+          description: Gets or sets a value indicating whether this job ui actions
+            are locked.
+      additionalProperties: false
+      description: Response with Archive Job
+    CancelJobRequest:
+      type: object
+      additionalProperties: false
+      description: Request for cancelling an ARM Job
+    CancelJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/CancelJobRequest'
+      additionalProperties: false
+      description: Request for cancelling an ARM Job
+    CancelJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for cancelling an ARM Job
+    CreateArchiveJobResponse:
+      type: object
+      properties:
+        jobID:
+          type: string
+          description: Gets or sets the created Job id.
+          nullable: true
+      additionalProperties: false
+      description: Response for Archive Job creation
+    CreateRestoreJobResponse:
+      type: object
+      properties:
+        jobID:
+          type: string
+          description: Gets or sets the created Job id.
+          nullable: true
+      additionalProperties: false
+      description: Response for Restore Job creation
+    JobActions:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date and time when the action was performed
+          format: date-time
+        type:
+          type: string
+          description: Type of action performed
+          nullable: true
+        userName:
+          type: string
+          description: User who performed the action
+          nullable: true
+      additionalProperties: false
+      description: Represents an action performed on a job
+    JobDetails:
+      type: object
+      properties:
+        priority:
+          $ref: '#/components/schemas/JobPriority'
+        actionsHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobActions'
+          description: Gets or sets job action history.
+          nullable: true
+      additionalProperties: false
+      description: ARM Job details
+    JobPriority:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: Job priority levels
+      format: int32
+    JobProgressResponse:
+      type: object
+      properties:
+        jobId:
+          type: string
+          description: Unique identifier of the job
+          nullable: true
+        jobState:
+          $ref: '#/components/schemas/JobProgressStatus'
+      additionalProperties: false
+      description: Response containing job progress information
+    JobProgressStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      description: Job progress status values
+      format: int32
+    NotificationOptions:
+      type: object
+      properties:
+        notifyJobRunner:
+          type: boolean
+          description: 'Gets or sets a value indicating whether to notify both creator
+            and runner.
+
+            When true, notifications are sent to both creator and executor.'
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+          description: Gets or sets the list of additional recipient emails.
+          nullable: true
+      additionalProperties: false
+      description: ARM Job notification options
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    RestoreDestinationOptions:
+      type: object
+      properties:
+        matterID:
+          type: integer
+          description: Gets or sets a matter that the restored workspace will use.
+          format: int32
+      additionalProperties: false
+      description: V3 Restore Job destination options
+    RestoreJobRequest:
+      type: object
+      properties:
+        archivePath:
+          type: string
+          description: Gets or sets path to the archive
+          nullable: true
+        jobPriority:
+          $ref: '#/components/schemas/JobPriority'
+        scheduledStartTime:
+          type: string
+          description: Gets or sets scheduled start time.
+          format: date-time
+          nullable: true
+        existingTargetDatabase:
+          type: string
+          description: 'Gets or sets existing target database.
+
+            Required if archive doesn''t have a database backup'
+          nullable: true
+        destinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions'
+        migratorOptions:
+          type: object
+          additionalProperties:
+            nullable: true
+          description: 'Gets or sets generic per-migrator configuration.
+
+            Value = JSON string with migrator-specific parameters.
+
+            If null, all migrators use default configuration.'
+          nullable: true
+        notificationOptions:
+          $ref: '#/components/schemas/NotificationOptions'
+        uiJobActionsLocked:
+          type: boolean
+          description: Gets or sets a value indicating whether this job ui actions
+            are locked
+      additionalProperties: false
+      description: Request to create new Restore job V3
+    RestoreJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest'
+      additionalProperties: false
+      description: Request to create new Restore job V3
+    RestoreJobResponse:
+      type: object
+      properties:
+        jobID:
+          type: string
+          description: Gets or sets the Job id.
+          nullable: true
+        jobName:
+          type: string
+          description: Gets or sets the Job name.
+          nullable: true
+        archivePath:
+          type: string
+          description: Gets or sets the path to the archive.
+          nullable: true
+        scheduledStartTime:
+          type: string
+          description: Gets or sets scheduled start time.
+          format: date-time
+          nullable: true
+        sourceWorkspace:
+          type: string
+          description: Gets or sets the name of the source workspace.
+          nullable: true
+        destinationWorkspaceID:
+          type: integer
+          description: Gets or sets a destination workspace artifact id.
+          format: int32
+          nullable: true
+        existingTargetDatabase:
+          type: string
+          description: Gets or sets existing target database.
+          nullable: true
+        jobDetails:
+          $ref: '#/components/schemas/JobDetails'
+        destinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions'
+        migratorOptions:
+          type: object
+          additionalProperties:
+            nullable: true
+          description: 'Gets or sets generic per-migrator configuration.
+
+            Value = JSON string with migrator-specific parameters.
+
+            If null, all migrators use default configuration.'
+          nullable: true
+        notificationOptions:
+          $ref: '#/components/schemas/NotificationOptions'
+        uiJobActionsLocked:
+          type: boolean
+          description: Gets or sets a value indicating whether this job ui actions
+            are locked.
+      additionalProperties: false
+      description: Response with Restore Job V3
+    RunJobRequest:
+      type: object
+      additionalProperties: false
+      description: Request for running an ARM Job
+    RunJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RunJobRequest'
+      additionalProperties: false
+      description: Request for running an ARM Job
+    RunJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for running an ARM Job
+    UpdateArchiveJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for Archive Job update
+    UpdateRestoreJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for Restore Job update
+tags:
+- name: ArchiveJobs
+- name: JobActions
+- name: JobInformation
+- name: RestoreJobs
