@@ -1,0 +1,951 @@
+{
+  "item": [
+    {
+      "id": "e80aa5c9-ad16-4696-9c7e-72770064ba06",
+      "name": "Relativity Pivot Module v1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "835238da-f9af-4f2a-8de5-4c3d48eec355",
+          "name": "Relativity.Pivot.V1.I Pivot Field Manager.Get Fields For Group By Async",
+          "request": {
+            "name": "Relativity.Pivot.V1.I Pivot Field Manager.Get Fields For Group By Async",
+            "description": {
+              "content": "[Public] IPivotFieldManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-pivot",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "fields",
+                "group-by",
+                ":artifactTypeID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "artifactTypeID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdf8d305-54fc-4c20-a166-22da56d6dd77",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-pivot",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "fields",
+                    "group-by",
+                    ":artifactTypeID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "artifactTypeID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ArtifactID\": 2377,\n    \"ViewFieldID\": 6757,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Name\": \"string\"\n  },\n  {\n    \"ArtifactID\": 2121,\n    \"ViewFieldID\": 2292,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "833e15d2-fb98-4c5d-af92-658cd28652e7",
+          "name": "Relativity.Pivot.V1.I Pivot Field Manager.Get Fields For Pivot On Async",
+          "request": {
+            "name": "Relativity.Pivot.V1.I Pivot Field Manager.Get Fields For Pivot On Async",
+            "description": {
+              "content": "[Public] IPivotFieldManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-pivot",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "fields",
+                "pivot-on",
+                ":artifactTypeID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "artifactTypeID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f63546e3-9abb-4358-88ec-126e6662cff9",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-pivot",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "fields",
+                    "pivot-on",
+                    ":artifactTypeID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "artifactTypeID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ArtifactID\": 289,\n    \"ViewFieldID\": 2018,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Name\": \"string\"\n  },\n  {\n    \"ArtifactID\": 1942,\n    \"ViewFieldID\": 6527,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e62684de-2333-43d9-8c3d-a7a434a6a38a",
+          "name": "Relativity.Pivot.V1.I Pivot Profile Manager.Execute Pivot Profile Async",
+          "request": {
+            "name": "Relativity.Pivot.V1.I Pivot Profile Manager.Execute Pivot Profile Async",
+            "description": {
+              "content": "[Public] IPivotProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-pivot",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "profiles",
+                ":pivotProfileID",
+                "execute"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "pivotProfileID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Condition\": \"<string>\",\n  \"Sorts\": [\n    {\n      \"FieldIdentifier\": {\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guids\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"Name\": \"<string>\"\n      },\n      \"Order\": \"<integer>\",\n      \"Direction\": \"<string>\"\n    },\n    {\n      \"FieldIdentifier\": {\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guids\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"Name\": \"<string>\"\n      },\n      \"Order\": \"<integer>\",\n      \"Direction\": \"<string>\"\n    }\n  ],\n  \"RelationalField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"RowCondition\": \"<string>\",\n  \"SearchProviderCondition\": {\n    \"SearchIndex\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    \"Input\": \"<string>\"\n  },\n  \"ExecutingSavedSearchID\": \"<integer>\",\n  \"SampleParameters\": {\n    \"ExistingToken\": \"<string>\",\n    \"MarginOfError\": \"<number>\",\n    \"ConfidenceLevel\": \"<number>\",\n    \"FixedSampleSize\": \"<integer>\",\n    \"SamplingPercentage\": \"<number>\"\n  },\n  \"IncludeIDWindow\": \"<boolean>\",\n  \"RankSortOrder\": \"<string>\",\n  \"QueryHint\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "311d56da-ddcd-4142-8b5b-fa3c1932f95d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-pivot",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "profiles",
+                    ":pivotProfileID",
+                    "execute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "pivotProfileID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Condition\": \"<string>\",\n  \"Sorts\": [\n    {\n      \"FieldIdentifier\": {\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guids\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"Name\": \"<string>\"\n      },\n      \"Order\": \"<integer>\",\n      \"Direction\": \"<string>\"\n    },\n    {\n      \"FieldIdentifier\": {\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guids\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"Name\": \"<string>\"\n      },\n      \"Order\": \"<integer>\",\n      \"Direction\": \"<string>\"\n    }\n  ],\n  \"RelationalField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"RowCondition\": \"<string>\",\n  \"SearchProviderCondition\": {\n    \"SearchIndex\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    \"Input\": \"<string>\"\n  },\n  \"ExecutingSavedSearchID\": \"<integer>\",\n  \"SampleParameters\": {\n    \"ExistingToken\": \"<string>\",\n    \"MarginOfError\": \"<number>\",\n    \"ConfidenceLevel\": \"<number>\",\n    \"FixedSampleSize\": \"<integer>\",\n    \"SamplingPercentage\": \"<number>\"\n  },\n  \"IncludeIDWindow\": \"<boolean>\",\n  \"RankSortOrder\": \"<string>\",\n  \"QueryHint\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Results\": {\n    \"CaseSensitive\": true,\n    \"IsInitialized\": true,\n    \"RemotingFormat\": \"Xml\",\n    \"ChildRelations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Columns\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Constraints\": [\n      \"string\",\n      \"string\"\n    ],\n    \"DataSet\": {\n      \"RemotingFormat\": \"Binary\",\n      \"SchemaSerializationMode\": \"IncludeSchema\",\n      \"CaseSensitive\": false,\n      \"DefaultViewManager\": [\n        \"string\",\n        \"string\"\n      ],\n      \"EnforceConstraints\": false,\n      \"DataSetName\": \"string\",\n      \"Namespace\": \"string\",\n      \"Prefix\": \"string\",\n      \"ExtendedProperties\": [\n        \"string\",\n        \"string\"\n      ],\n      \"HasErrors\": false,\n      \"IsInitialized\": true,\n      \"Locale\": {\n        \"CurrentCulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"CurrentUICulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"InstalledUICulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"DefaultThreadCurrentCulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"DefaultThreadCurrentUICulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"InvariantCulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"Parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"LCID\": 6721,\n        \"KeyboardLayoutId\": 5128,\n        \"Name\": \"string\",\n        \"IetfLanguageTag\": \"string\",\n        \"DisplayName\": \"string\",\n        \"NativeName\": \"string\",\n        \"EnglishName\": \"string\",\n        \"TwoLetterISOLanguageName\": \"string\",\n        \"ThreeLetterISOLanguageName\": \"string\",\n        \"ThreeLetterWindowsLanguageName\": \"string\",\n        \"CompareInfo\": {\n          \"Name\": \"string\",\n          \"LCID\": 5986,\n          \"Version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"TextInfo\": {\n          \"ANSICodePage\": 8096,\n          \"OEMCodePage\": 4042,\n          \"MacCodePage\": 6452,\n          \"EBCDICCodePage\": 1586,\n          \"LCID\": 9817,\n          \"CultureName\": \"string\",\n          \"IsReadOnly\": false,\n          \"ListSeparator\": \"string\",\n          \"IsRightToLeft\": false\n        },\n        \"IsNeutralCulture\": true,\n        \"CultureTypes\": \"UserCustomCulture\",\n        \"NumberFormat\": {\n          \"InvariantInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n          },\n          \"CurrencyDecimalDigits\": 4859,\n          \"CurrencyDecimalSeparator\": \"string\",\n          \"IsReadOnly\": false,\n          \"CurrencyGroupSizes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"NumberGroupSizes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"PercentGroupSizes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"CurrencyGroupSeparator\": \"string\",\n          \"CurrencySymbol\": \"string\",\n          \"CurrentInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n          },\n          \"NaNSymbol\": \"string\",\n          \"CurrencyNegativePattern\": 150,\n          \"NumberNegativePattern\": 8929,\n          \"PercentPositivePattern\": 8926,\n          \"PercentNegativePattern\": 30,\n          \"NegativeInfinitySymbol\": \"string\",\n          \"NegativeSign\": \"string\",\n          \"NumberDecimalDigits\": 1229,\n          \"NumberDecimalSeparator\": \"string\",\n          \"NumberGroupSeparator\": \"string\",\n          \"CurrencyPositivePattern\": 9680,\n          \"PositiveInfinitySymbol\": \"string\",\n          \"PositiveSign\": \"string\",\n          \"PercentDecimalDigits\": 3792,\n          \"PercentDecimalSeparator\": \"string\",\n          \"PercentGroupSeparator\": \"string\",\n          \"PercentSymbol\": \"string\",\n          \"PerMilleSymbol\": \"string\",\n          \"NativeDigits\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"DigitSubstitution\": \"Context\"\n        },\n        \"DateTimeFormat\": {\n          \"InvariantInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n          },\n          \"CurrentInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n          },\n          \"AMDesignator\": \"string\",\n          \"Calendar\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"DateSeparator\": \"string\",\n          \"FirstDayOfWeek\": \"Tuesday\",\n          \"CalendarWeekRule\": \"FirstFourDayWeek\",\n          \"FullDateTimePattern\": \"string\",\n          \"LongDatePattern\": \"string\",\n          \"LongTimePattern\": \"string\",\n          \"MonthDayPattern\": \"string\",\n          \"PMDesignator\": \"string\",\n          \"RFC1123Pattern\": \"string\",\n          \"ShortDatePattern\": \"string\",\n          \"ShortTimePattern\": \"string\",\n          \"SortableDateTimePattern\": \"string\",\n          \"TimeSeparator\": \"string\",\n          \"UniversalSortableDateTimePattern\": \"string\",\n          \"YearMonthPattern\": \"string\",\n          \"AbbreviatedDayNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"ShortestDayNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"DayNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"AbbreviatedMonthNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MonthNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"IsReadOnly\": false,\n          \"NativeCalendarName\": \"string\",\n          \"AbbreviatedMonthGenitiveNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MonthGenitiveNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"Calendar\": {\n          \"MinSupportedDateTime\": \"2016-06-04T12:45:36.555Z\",\n          \"MaxSupportedDateTime\": \"1989-04-14T17:23:09.759Z\",\n          \"AlgorithmType\": \"Unknown\",\n          \"IsReadOnly\": false,\n          \"Eras\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"TwoDigitYearMax\": 2658\n        },\n        \"OptionalCalendars\": [\n          {\n            \"MinSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MaxSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"AlgorithmType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsReadOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Eras\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TwoDigitYearMax\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"MinSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MaxSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"AlgorithmType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsReadOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Eras\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TwoDigitYearMax\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"UseUserOverride\": true,\n        \"IsReadOnly\": false\n      },\n      \"Site\": {\n        \"Component\": {\n          \"Site\": {\n            \"value\": \"<Circular reference to #/components/schemas/ISite detected>\"\n          }\n        },\n        \"Container\": {\n          \"Components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"DesignMode\": true,\n        \"Name\": \"string\"\n      },\n      \"Relations\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Tables\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Container\": {\n        \"Components\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"DesignMode\": false\n    },\n    \"DefaultView\": [\n      \"string\",\n      \"string\"\n    ],\n    \"DisplayExpression\": \"string\",\n    \"ExtendedProperties\": [\n      \"string\",\n      \"string\"\n    ],\n    \"HasErrors\": false,\n    \"Locale\": {\n      \"CurrentCulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"CurrentUICulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"InstalledUICulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"DefaultThreadCurrentCulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"DefaultThreadCurrentUICulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"InvariantCulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"Parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"LCID\": 4171,\n      \"KeyboardLayoutId\": 9931,\n      \"Name\": \"string\",\n      \"IetfLanguageTag\": \"string\",\n      \"DisplayName\": \"string\",\n      \"NativeName\": \"string\",\n      \"EnglishName\": \"string\",\n      \"TwoLetterISOLanguageName\": \"string\",\n      \"ThreeLetterISOLanguageName\": \"string\",\n      \"ThreeLetterWindowsLanguageName\": \"string\",\n      \"CompareInfo\": {\n        \"Name\": \"string\",\n        \"LCID\": 1679,\n        \"Version\": {\n          \"FullVersion\": 5353,\n          \"SortId\": \"string\"\n        }\n      },\n      \"TextInfo\": {\n        \"ANSICodePage\": 3403,\n        \"OEMCodePage\": 3430,\n        \"MacCodePage\": 3067,\n        \"EBCDICCodePage\": 1465,\n        \"LCID\": 9788,\n        \"CultureName\": \"string\",\n        \"IsReadOnly\": false,\n        \"ListSeparator\": \"string\",\n        \"IsRightToLeft\": true\n      },\n      \"IsNeutralCulture\": true,\n      \"CultureTypes\": \"FrameworkCultures\",\n      \"NumberFormat\": {\n        \"InvariantInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n        },\n        \"CurrencyDecimalDigits\": 3130,\n        \"CurrencyDecimalSeparator\": \"string\",\n        \"IsReadOnly\": false,\n        \"CurrencyGroupSizes\": [\n          6574,\n          3726\n        ],\n        \"NumberGroupSizes\": [\n          8756,\n          8374\n        ],\n        \"PercentGroupSizes\": [\n          1097,\n          9966\n        ],\n        \"CurrencyGroupSeparator\": \"string\",\n        \"CurrencySymbol\": \"string\",\n        \"CurrentInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n        },\n        \"NaNSymbol\": \"string\",\n        \"CurrencyNegativePattern\": 3254,\n        \"NumberNegativePattern\": 1892,\n        \"PercentPositivePattern\": 3066,\n        \"PercentNegativePattern\": 2619,\n        \"NegativeInfinitySymbol\": \"string\",\n        \"NegativeSign\": \"string\",\n        \"NumberDecimalDigits\": 3162,\n        \"NumberDecimalSeparator\": \"string\",\n        \"NumberGroupSeparator\": \"string\",\n        \"CurrencyPositivePattern\": 3923,\n        \"PositiveInfinitySymbol\": \"string\",\n        \"PositiveSign\": \"string\",\n        \"PercentDecimalDigits\": 5783,\n        \"PercentDecimalSeparator\": \"string\",\n        \"PercentGroupSeparator\": \"string\",\n        \"PercentSymbol\": \"string\",\n        \"PerMilleSymbol\": \"string\",\n        \"NativeDigits\": [\n          \"string\",\n          \"string\"\n        ],\n        \"DigitSubstitution\": \"Context\"\n      },\n      \"DateTimeFormat\": {\n        \"InvariantInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n        },\n        \"CurrentInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n        },\n        \"AMDesignator\": \"string\",\n        \"Calendar\": {\n          \"MinSupportedDateTime\": \"2024-03-06T03:31:28.405Z\",\n          \"MaxSupportedDateTime\": \"1970-09-11T05:57:36.475Z\",\n          \"AlgorithmType\": \"LunisolarCalendar\",\n          \"IsReadOnly\": false,\n          \"Eras\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"TwoDigitYearMax\": 4600\n        },\n        \"DateSeparator\": \"string\",\n        \"FirstDayOfWeek\": \"Thursday\",\n        \"CalendarWeekRule\": \"FirstFullWeek\",\n        \"FullDateTimePattern\": \"string\",\n        \"LongDatePattern\": \"string\",\n        \"LongTimePattern\": \"string\",\n        \"MonthDayPattern\": \"string\",\n        \"PMDesignator\": \"string\",\n        \"RFC1123Pattern\": \"string\",\n        \"ShortDatePattern\": \"string\",\n        \"ShortTimePattern\": \"string\",\n        \"SortableDateTimePattern\": \"string\",\n        \"TimeSeparator\": \"string\",\n        \"UniversalSortableDateTimePattern\": \"string\",\n        \"YearMonthPattern\": \"string\",\n        \"AbbreviatedDayNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"ShortestDayNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"DayNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"AbbreviatedMonthNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MonthNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"IsReadOnly\": true,\n        \"NativeCalendarName\": \"string\",\n        \"AbbreviatedMonthGenitiveNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MonthGenitiveNames\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"Calendar\": {\n        \"MinSupportedDateTime\": \"1955-12-24T08:59:43.019Z\",\n        \"MaxSupportedDateTime\": \"1983-03-28T11:07:39.285Z\",\n        \"AlgorithmType\": \"Unknown\",\n        \"IsReadOnly\": false,\n        \"Eras\": [\n          5047,\n          4662\n        ],\n        \"TwoDigitYearMax\": 1241\n      },\n      \"OptionalCalendars\": [\n        {\n          \"MinSupportedDateTime\": \"1953-07-29T19:45:40.789Z\",\n          \"MaxSupportedDateTime\": \"1970-08-29T13:03:30.437Z\",\n          \"AlgorithmType\": \"SolarCalendar\",\n          \"IsReadOnly\": true,\n          \"Eras\": [\n            5697,\n            782\n          ],\n          \"TwoDigitYearMax\": 3141\n        },\n        {\n          \"MinSupportedDateTime\": \"1955-05-29T03:24:03.607Z\",\n          \"MaxSupportedDateTime\": \"1971-07-10T23:40:23.771Z\",\n          \"AlgorithmType\": \"LunisolarCalendar\",\n          \"IsReadOnly\": false,\n          \"Eras\": [\n            7627,\n            4930\n          ],\n          \"TwoDigitYearMax\": 5495\n        }\n      ],\n      \"UseUserOverride\": true,\n      \"IsReadOnly\": true\n    },\n    \"MinimumCapacity\": 7183,\n    \"ParentRelations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"PrimaryKey\": [\n      {\n        \"AllowDBNull\": true,\n        \"AutoIncrement\": true,\n        \"AutoIncrementSeed\": 539,\n        \"AutoIncrementStep\": 799,\n        \"Caption\": \"string\",\n        \"ColumnName\": \"string\",\n        \"Prefix\": \"string\",\n        \"DataType\": {\n          \"MemberType\": \"Custom\",\n          \"DeclaringType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"DeclaringMethod\": {\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"ReflectedType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"StructLayoutAttribute\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TypeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"GUID\": \"string\",\n          \"DefaultBinder\": {},\n          \"Module\": {\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MDStreamVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullyQualifiedName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleVersionId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ScopeName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Assembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Assembly\": {\n            \"CodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EscapedCodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EntryPoint\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ExportedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DefinedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Evidence\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"PermissionSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFullyTrusted\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"SecurityRuleSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ManifestModule\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectionOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Modules\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ImageRuntimeVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"GlobalAssemblyCache\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"HostContext\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsDynamic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"TypeHandle\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"FullName\": \"string\",\n          \"Namespace\": \"string\",\n          \"AssemblyQualifiedName\": \"string\",\n          \"BaseType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"TypeInitializer\": {\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IsNested\": true,\n          \"Attributes\": \"SequentialLayout\",\n          \"GenericParameterAttributes\": \"SpecialConstraintMask\",\n          \"IsVisible\": false,\n          \"IsNotPublic\": true,\n          \"IsPublic\": true,\n          \"IsNestedPublic\": true,\n          \"IsNestedPrivate\": false,\n          \"IsNestedFamily\": true,\n          \"IsNestedAssembly\": true,\n          \"IsNestedFamANDAssem\": false,\n          \"IsNestedFamORAssem\": true,\n          \"IsAutoLayout\": true,\n          \"IsLayoutSequential\": true,\n          \"IsExplicitLayout\": true,\n          \"IsClass\": true,\n          \"IsInterface\": false,\n          \"IsValueType\": true,\n          \"IsAbstract\": false,\n          \"IsSealed\": true,\n          \"IsEnum\": true,\n          \"IsSpecialName\": true,\n          \"IsImport\": true,\n          \"IsSerializable\": true,\n          \"IsAnsiClass\": false,\n          \"IsUnicodeClass\": true,\n          \"IsAutoClass\": false,\n          \"IsArray\": false,\n          \"IsGenericType\": true,\n          \"IsGenericTypeDefinition\": false,\n          \"IsConstructedGenericType\": false,\n          \"IsGenericParameter\": false,\n          \"GenericParameterPosition\": 5087,\n          \"ContainsGenericParameters\": true,\n          \"IsByRef\": false,\n          \"IsPointer\": false,\n          \"IsPrimitive\": true,\n          \"IsCOMObject\": true,\n          \"HasElementType\": false,\n          \"IsContextful\": true,\n          \"IsMarshalByRef\": false,\n          \"GenericTypeArguments\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            }\n          ],\n          \"IsSecurityCritical\": true,\n          \"IsSecuritySafeCritical\": true,\n          \"IsSecurityTransparent\": false,\n          \"UnderlyingSystemType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"Name\": \"string\",\n          \"CustomAttributes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MetadataToken\": 1044\n        },\n        \"DateTimeMode\": \"Unspecified\",\n        \"DefaultValue\": {},\n        \"Expression\": \"string\",\n        \"ExtendedProperties\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MaxLength\": 2218,\n        \"Namespace\": \"string\",\n        \"Ordinal\": 3684,\n        \"ReadOnly\": false,\n        \"Table\": {\n          \"value\": \"<Circular reference to #/components/schemas/DataTable detected>\"\n        },\n        \"Unique\": false,\n        \"ColumnMapping\": \"SimpleContent\",\n        \"Site\": {\n          \"Component\": {\n            \"Site\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Container\": {\n            \"Components\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"DesignMode\": false,\n          \"Name\": \"string\"\n        },\n        \"Container\": {\n          \"Components\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"DesignMode\": false\n      },\n      {\n        \"AllowDBNull\": true,\n        \"AutoIncrement\": false,\n        \"AutoIncrementSeed\": 8368,\n        \"AutoIncrementStep\": 5293,\n        \"Caption\": \"string\",\n        \"ColumnName\": \"string\",\n        \"Prefix\": \"string\",\n        \"DataType\": {\n          \"MemberType\": \"Event\",\n          \"DeclaringType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"DeclaringMethod\": {\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"ReflectedType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"StructLayoutAttribute\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TypeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"GUID\": \"string\",\n          \"DefaultBinder\": {},\n          \"Module\": {\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MDStreamVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullyQualifiedName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleVersionId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ScopeName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Assembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Assembly\": {\n            \"CodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EscapedCodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EntryPoint\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ExportedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DefinedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Evidence\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"PermissionSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFullyTrusted\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"SecurityRuleSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ManifestModule\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectionOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Modules\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ImageRuntimeVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"GlobalAssemblyCache\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"HostContext\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsDynamic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"TypeHandle\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"FullName\": \"string\",\n          \"Namespace\": \"string\",\n          \"AssemblyQualifiedName\": \"string\",\n          \"BaseType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"TypeInitializer\": {\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IsNested\": false,\n          \"Attributes\": \"ClassSemanticsMask\",\n          \"GenericParameterAttributes\": \"Contravariant\",\n          \"IsVisible\": false,\n          \"IsNotPublic\": true,\n          \"IsPublic\": true,\n          \"IsNestedPublic\": true,\n          \"IsNestedPrivate\": true,\n          \"IsNestedFamily\": false,\n          \"IsNestedAssembly\": true,\n          \"IsNestedFamANDAssem\": true,\n          \"IsNestedFamORAssem\": true,\n          \"IsAutoLayout\": false,\n          \"IsLayoutSequential\": true,\n          \"IsExplicitLayout\": true,\n          \"IsClass\": false,\n          \"IsInterface\": false,\n          \"IsValueType\": true,\n          \"IsAbstract\": true,\n          \"IsSealed\": false,\n          \"IsEnum\": false,\n          \"IsSpecialName\": false,\n          \"IsImport\": false,\n          \"IsSerializable\": false,\n          \"IsAnsiClass\": true,\n          \"IsUnicodeClass\": false,\n          \"IsAutoClass\": true,\n          \"IsArray\": false,\n          \"IsGenericType\": false,\n          \"IsGenericTypeDefinition\": false,\n          \"IsConstructedGenericType\": false,\n          \"IsGenericParameter\": false,\n          \"GenericParameterPosition\": 9965,\n          \"ContainsGenericParameters\": true,\n          \"IsByRef\": false,\n          \"IsPointer\": false,\n          \"IsPrimitive\": true,\n          \"IsCOMObject\": true,\n          \"HasElementType\": false,\n          \"IsContextful\": true,\n          \"IsMarshalByRef\": true,\n          \"GenericTypeArguments\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            }\n          ],\n          \"IsSecurityCritical\": false,\n          \"IsSecuritySafeCritical\": true,\n          \"IsSecurityTransparent\": false,\n          \"UnderlyingSystemType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"Name\": \"string\",\n          \"CustomAttributes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MetadataToken\": 7308\n        },\n        \"DateTimeMode\": \"Local\",\n        \"DefaultValue\": {},\n        \"Expression\": \"string\",\n        \"ExtendedProperties\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MaxLength\": 2677,\n        \"Namespace\": \"string\",\n        \"Ordinal\": 5316,\n        \"ReadOnly\": false,\n        \"Table\": {\n          \"value\": \"<Circular reference to #/components/schemas/DataTable detected>\"\n        },\n        \"Unique\": true,\n        \"ColumnMapping\": \"SimpleContent\",\n        \"Site\": {\n          \"Component\": {\n            \"Site\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Container\": {\n            \"Components\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"DesignMode\": false,\n          \"Name\": \"string\"\n        },\n        \"Container\": {\n          \"Components\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"DesignMode\": false\n      }\n    ],\n    \"Rows\": [\n      \"string\",\n      \"string\"\n    ],\n    \"TableName\": \"string\",\n    \"Namespace\": \"string\",\n    \"Prefix\": \"string\",\n    \"Site\": {\n      \"Component\": {\n        \"Site\": {\n          \"value\": \"<Circular reference to #/components/schemas/ISite detected>\"\n        }\n      },\n      \"Container\": {\n        \"Components\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"DesignMode\": false,\n      \"Name\": \"string\"\n    },\n    \"Container\": {\n      \"Components\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"DesignMode\": false\n  },\n  \"TotalCount\": 8726,\n  \"QueryToken\": \"string\",\n  \"Success\": true,\n  \"Message\": \"string\",\n  \"MessageType\": \"string\",\n  \"PivotIDToDisplayValueMap\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eaf7e261-968f-471b-90b3-0e78b61adb2b",
+          "name": "Relativity.Pivot.V1.I Pivot Profile Manager.Update Profile Async",
+          "request": {
+            "name": "Relativity.Pivot.V1.I Pivot Profile Manager.Update Profile Async",
+            "description": {
+              "content": "[Public] IPivotProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-pivot",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "profiles",
+                ":pivotProfileID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "pivotProfileID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ID\": \"<integer>\",\n  \"GroupByField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateTimePart\": \"<string>\",\n  \"PivotOnField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOnDateTimePart\": \"<string>\",\n  \"GroupByResultLimit\": \"<string>\",\n  \"GroupByResultLimitValue\": \"<integer>\",\n  \"PivotOnResultLimit\": \"<string>\",\n  \"PivotOnResultLimitValue\": \"<integer>\",\n  \"ChartType\": \"<string>\",\n  \"ChartOrientation\": \"<string>\",\n  \"SortOn\": \"<string>\",\n  \"SortOrder\": \"<string>\",\n  \"Toggles\": {\n    \"ShowBlankValues\": \"<boolean>\",\n    \"ShowGrandTotal\": \"<boolean>\",\n    \"ShowLegend\": \"<boolean>\",\n    \"RotateLabels\": \"<boolean>\",\n    \"StaggerLabels\": \"<boolean>\",\n    \"ShowLabels\": \"<boolean>\",\n    \"ShowSubChart\": \"<boolean>\"\n  },\n  \"PageSize\": \"<integer>\",\n  \"SwitchSeries\": \"<boolean>\",\n  \"ObjectType\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Name\": \"<string>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "070aebf3-d4c0-4afa-8123-908f523c23b4",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-pivot",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "profiles",
+                    ":pivotProfileID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "pivotProfileID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ID\": \"<integer>\",\n  \"GroupByField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateTimePart\": \"<string>\",\n  \"PivotOnField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOnDateTimePart\": \"<string>\",\n  \"GroupByResultLimit\": \"<string>\",\n  \"GroupByResultLimitValue\": \"<integer>\",\n  \"PivotOnResultLimit\": \"<string>\",\n  \"PivotOnResultLimitValue\": \"<integer>\",\n  \"ChartType\": \"<string>\",\n  \"ChartOrientation\": \"<string>\",\n  \"SortOn\": \"<string>\",\n  \"SortOrder\": \"<string>\",\n  \"Toggles\": {\n    \"ShowBlankValues\": \"<boolean>\",\n    \"ShowGrandTotal\": \"<boolean>\",\n    \"ShowLegend\": \"<boolean>\",\n    \"RotateLabels\": \"<boolean>\",\n    \"StaggerLabels\": \"<boolean>\",\n    \"ShowLabels\": \"<boolean>\",\n    \"ShowSubChart\": \"<boolean>\"\n  },\n  \"PageSize\": \"<integer>\",\n  \"SwitchSeries\": \"<boolean>\",\n  \"ObjectType\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Name\": \"<string>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ID\": \"<integer>\",\n  \"GroupByField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateTimePart\": \"<string>\",\n  \"PivotOnField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOnDateTimePart\": \"<string>\",\n  \"GroupByResultLimit\": \"<string>\",\n  \"GroupByResultLimitValue\": \"<integer>\",\n  \"PivotOnResultLimit\": \"<string>\",\n  \"PivotOnResultLimitValue\": \"<integer>\",\n  \"ChartType\": \"<string>\",\n  \"ChartOrientation\": \"<string>\",\n  \"SortOn\": \"<string>\",\n  \"SortOrder\": \"<string>\",\n  \"Toggles\": {\n    \"ShowBlankValues\": \"<boolean>\",\n    \"ShowGrandTotal\": \"<boolean>\",\n    \"ShowLegend\": \"<boolean>\",\n    \"RotateLabels\": \"<boolean>\",\n    \"StaggerLabels\": \"<boolean>\",\n    \"ShowLabels\": \"<boolean>\",\n    \"ShowSubChart\": \"<boolean>\"\n  },\n  \"PageSize\": \"<integer>\",\n  \"SwitchSeries\": \"<boolean>\",\n  \"ObjectType\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Name\": \"<string>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Name\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98cef11d-7c7c-4485-896a-6570c1eee91d",
+          "name": "Relativity.Pivot.V1.I Pivot Profile Manager.Create Profile Async",
+          "request": {
+            "name": "Relativity.Pivot.V1.I Pivot Profile Manager.Create Profile Async",
+            "description": {
+              "content": "[Public] IPivotProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-pivot",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ID\": \"<integer>\",\n  \"GroupByField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateTimePart\": \"<string>\",\n  \"PivotOnField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOnDateTimePart\": \"<string>\",\n  \"GroupByResultLimit\": \"<string>\",\n  \"GroupByResultLimitValue\": \"<integer>\",\n  \"PivotOnResultLimit\": \"<string>\",\n  \"PivotOnResultLimitValue\": \"<integer>\",\n  \"ChartType\": \"<string>\",\n  \"ChartOrientation\": \"<string>\",\n  \"SortOn\": \"<string>\",\n  \"SortOrder\": \"<string>\",\n  \"Toggles\": {\n    \"ShowBlankValues\": \"<boolean>\",\n    \"ShowGrandTotal\": \"<boolean>\",\n    \"ShowLegend\": \"<boolean>\",\n    \"RotateLabels\": \"<boolean>\",\n    \"StaggerLabels\": \"<boolean>\",\n    \"ShowLabels\": \"<boolean>\",\n    \"ShowSubChart\": \"<boolean>\"\n  },\n  \"PageSize\": \"<integer>\",\n  \"SwitchSeries\": \"<boolean>\",\n  \"ObjectType\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Name\": \"<string>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c6c50cfe-536a-487e-9d4c-5fc82bf35954",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-pivot",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ID\": \"<integer>\",\n  \"GroupByField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateTimePart\": \"<string>\",\n  \"PivotOnField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOnDateTimePart\": \"<string>\",\n  \"GroupByResultLimit\": \"<string>\",\n  \"GroupByResultLimitValue\": \"<integer>\",\n  \"PivotOnResultLimit\": \"<string>\",\n  \"PivotOnResultLimitValue\": \"<integer>\",\n  \"ChartType\": \"<string>\",\n  \"ChartOrientation\": \"<string>\",\n  \"SortOn\": \"<string>\",\n  \"SortOrder\": \"<string>\",\n  \"Toggles\": {\n    \"ShowBlankValues\": \"<boolean>\",\n    \"ShowGrandTotal\": \"<boolean>\",\n    \"ShowLegend\": \"<boolean>\",\n    \"RotateLabels\": \"<boolean>\",\n    \"StaggerLabels\": \"<boolean>\",\n    \"ShowLabels\": \"<boolean>\",\n    \"ShowSubChart\": \"<boolean>\"\n  },\n  \"PageSize\": \"<integer>\",\n  \"SwitchSeries\": \"<boolean>\",\n  \"ObjectType\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Name\": \"<string>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ID\": \"<integer>\",\n  \"GroupByField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateTimePart\": \"<string>\",\n  \"PivotOnField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOnDateTimePart\": \"<string>\",\n  \"GroupByResultLimit\": \"<string>\",\n  \"GroupByResultLimitValue\": \"<integer>\",\n  \"PivotOnResultLimit\": \"<string>\",\n  \"PivotOnResultLimitValue\": \"<integer>\",\n  \"ChartType\": \"<string>\",\n  \"ChartOrientation\": \"<string>\",\n  \"SortOn\": \"<string>\",\n  \"SortOrder\": \"<string>\",\n  \"Toggles\": {\n    \"ShowBlankValues\": \"<boolean>\",\n    \"ShowGrandTotal\": \"<boolean>\",\n    \"ShowLegend\": \"<boolean>\",\n    \"RotateLabels\": \"<boolean>\",\n    \"StaggerLabels\": \"<boolean>\",\n    \"ShowLabels\": \"<boolean>\",\n    \"ShowSubChart\": \"<boolean>\"\n  },\n  \"PageSize\": \"<integer>\",\n  \"SwitchSeries\": \"<boolean>\",\n  \"ObjectType\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Name\": \"<string>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Name\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83b6e414-023e-468f-9240-53e8b70e35bf",
+          "name": "Relativity.Pivot.V1.I Pivot Query Manager.Execute Async",
+          "request": {
+            "name": "Relativity.Pivot.V1.I Pivot Query Manager.Execute Async",
+            "description": {
+              "content": "[Public] IPivotQueryManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-pivot",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "queries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ObjectSetQuery\": {\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\"\n  },\n  \"ArtifactTypeID\": \"<integer>\",\n  \"GroupBy\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOn\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateGrouping\": \"<string>\",\n  \"PivotOnDateGrouping\": \"<string>\",\n  \"MaximumNumberOfColumns\": \"<integer>\",\n  \"MaximumNumberOfRows\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"RawDataOnly\": \"<boolean>\",\n  \"ConvertNumberFieldValuesToString\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64871515-87bd-48f8-8504-4e0c36f9d965",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-pivot",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "queries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ObjectSetQuery\": {\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\"\n  },\n  \"ArtifactTypeID\": \"<integer>\",\n  \"GroupBy\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"PivotOn\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"GroupByDateGrouping\": \"<string>\",\n  \"PivotOnDateGrouping\": \"<string>\",\n  \"MaximumNumberOfColumns\": \"<integer>\",\n  \"MaximumNumberOfRows\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"RawDataOnly\": \"<boolean>\",\n  \"ConvertNumberFieldValuesToString\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Results\": {\n    \"CaseSensitive\": true,\n    \"IsInitialized\": false,\n    \"RemotingFormat\": \"Xml\",\n    \"ChildRelations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Columns\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Constraints\": [\n      \"string\",\n      \"string\"\n    ],\n    \"DataSet\": {\n      \"RemotingFormat\": \"Binary\",\n      \"SchemaSerializationMode\": \"IncludeSchema\",\n      \"CaseSensitive\": true,\n      \"DefaultViewManager\": [\n        \"string\",\n        \"string\"\n      ],\n      \"EnforceConstraints\": false,\n      \"DataSetName\": \"string\",\n      \"Namespace\": \"string\",\n      \"Prefix\": \"string\",\n      \"ExtendedProperties\": [\n        \"string\",\n        \"string\"\n      ],\n      \"HasErrors\": false,\n      \"IsInitialized\": false,\n      \"Locale\": {\n        \"CurrentCulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"CurrentUICulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"InstalledUICulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"DefaultThreadCurrentCulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"DefaultThreadCurrentUICulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"InvariantCulture\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"Parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n        },\n        \"LCID\": 3732,\n        \"KeyboardLayoutId\": 8062,\n        \"Name\": \"string\",\n        \"IetfLanguageTag\": \"string\",\n        \"DisplayName\": \"string\",\n        \"NativeName\": \"string\",\n        \"EnglishName\": \"string\",\n        \"TwoLetterISOLanguageName\": \"string\",\n        \"ThreeLetterISOLanguageName\": \"string\",\n        \"ThreeLetterWindowsLanguageName\": \"string\",\n        \"CompareInfo\": {\n          \"Name\": \"string\",\n          \"LCID\": 8405,\n          \"Version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"TextInfo\": {\n          \"ANSICodePage\": 113,\n          \"OEMCodePage\": 6270,\n          \"MacCodePage\": 6234,\n          \"EBCDICCodePage\": 3985,\n          \"LCID\": 6265,\n          \"CultureName\": \"string\",\n          \"IsReadOnly\": false,\n          \"ListSeparator\": \"string\",\n          \"IsRightToLeft\": true\n        },\n        \"IsNeutralCulture\": true,\n        \"CultureTypes\": \"NeutralCultures\",\n        \"NumberFormat\": {\n          \"InvariantInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n          },\n          \"CurrencyDecimalDigits\": 7425,\n          \"CurrencyDecimalSeparator\": \"string\",\n          \"IsReadOnly\": true,\n          \"CurrencyGroupSizes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"NumberGroupSizes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"PercentGroupSizes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"CurrencyGroupSeparator\": \"string\",\n          \"CurrencySymbol\": \"string\",\n          \"CurrentInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n          },\n          \"NaNSymbol\": \"string\",\n          \"CurrencyNegativePattern\": 2634,\n          \"NumberNegativePattern\": 276,\n          \"PercentPositivePattern\": 2006,\n          \"PercentNegativePattern\": 7793,\n          \"NegativeInfinitySymbol\": \"string\",\n          \"NegativeSign\": \"string\",\n          \"NumberDecimalDigits\": 6553,\n          \"NumberDecimalSeparator\": \"string\",\n          \"NumberGroupSeparator\": \"string\",\n          \"CurrencyPositivePattern\": 8238,\n          \"PositiveInfinitySymbol\": \"string\",\n          \"PositiveSign\": \"string\",\n          \"PercentDecimalDigits\": 2072,\n          \"PercentDecimalSeparator\": \"string\",\n          \"PercentGroupSeparator\": \"string\",\n          \"PercentSymbol\": \"string\",\n          \"PerMilleSymbol\": \"string\",\n          \"NativeDigits\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"DigitSubstitution\": \"Context\"\n        },\n        \"DateTimeFormat\": {\n          \"InvariantInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n          },\n          \"CurrentInfo\": {\n            \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n          },\n          \"AMDesignator\": \"string\",\n          \"Calendar\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"DateSeparator\": \"string\",\n          \"FirstDayOfWeek\": \"Wednesday\",\n          \"CalendarWeekRule\": \"FirstDay\",\n          \"FullDateTimePattern\": \"string\",\n          \"LongDatePattern\": \"string\",\n          \"LongTimePattern\": \"string\",\n          \"MonthDayPattern\": \"string\",\n          \"PMDesignator\": \"string\",\n          \"RFC1123Pattern\": \"string\",\n          \"ShortDatePattern\": \"string\",\n          \"ShortTimePattern\": \"string\",\n          \"SortableDateTimePattern\": \"string\",\n          \"TimeSeparator\": \"string\",\n          \"UniversalSortableDateTimePattern\": \"string\",\n          \"YearMonthPattern\": \"string\",\n          \"AbbreviatedDayNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"ShortestDayNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"DayNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"AbbreviatedMonthNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MonthNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"IsReadOnly\": true,\n          \"NativeCalendarName\": \"string\",\n          \"AbbreviatedMonthGenitiveNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MonthGenitiveNames\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"Calendar\": {\n          \"MinSupportedDateTime\": \"1981-03-11T15:20:17.834Z\",\n          \"MaxSupportedDateTime\": \"1976-03-26T16:13:37.167Z\",\n          \"AlgorithmType\": \"SolarCalendar\",\n          \"IsReadOnly\": false,\n          \"Eras\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"TwoDigitYearMax\": 9575\n        },\n        \"OptionalCalendars\": [\n          {\n            \"MinSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MaxSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"AlgorithmType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsReadOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Eras\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TwoDigitYearMax\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"MinSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MaxSupportedDateTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"AlgorithmType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsReadOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Eras\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TwoDigitYearMax\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"UseUserOverride\": true,\n        \"IsReadOnly\": true\n      },\n      \"Site\": {\n        \"Component\": {\n          \"Site\": {\n            \"value\": \"<Circular reference to #/components/schemas/ISite detected>\"\n          }\n        },\n        \"Container\": {\n          \"Components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"DesignMode\": false,\n        \"Name\": \"string\"\n      },\n      \"Relations\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Tables\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Container\": {\n        \"Components\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"DesignMode\": true\n    },\n    \"DefaultView\": [\n      \"string\",\n      \"string\"\n    ],\n    \"DisplayExpression\": \"string\",\n    \"ExtendedProperties\": [\n      \"string\",\n      \"string\"\n    ],\n    \"HasErrors\": false,\n    \"Locale\": {\n      \"CurrentCulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"CurrentUICulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"InstalledUICulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"DefaultThreadCurrentCulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"DefaultThreadCurrentUICulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"InvariantCulture\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"Parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/CultureInfo detected>\"\n      },\n      \"LCID\": 5177,\n      \"KeyboardLayoutId\": 6674,\n      \"Name\": \"string\",\n      \"IetfLanguageTag\": \"string\",\n      \"DisplayName\": \"string\",\n      \"NativeName\": \"string\",\n      \"EnglishName\": \"string\",\n      \"TwoLetterISOLanguageName\": \"string\",\n      \"ThreeLetterISOLanguageName\": \"string\",\n      \"ThreeLetterWindowsLanguageName\": \"string\",\n      \"CompareInfo\": {\n        \"Name\": \"string\",\n        \"LCID\": 9819,\n        \"Version\": {\n          \"FullVersion\": 9178,\n          \"SortId\": \"string\"\n        }\n      },\n      \"TextInfo\": {\n        \"ANSICodePage\": 3193,\n        \"OEMCodePage\": 0,\n        \"MacCodePage\": 7562,\n        \"EBCDICCodePage\": 4362,\n        \"LCID\": 8929,\n        \"CultureName\": \"string\",\n        \"IsReadOnly\": false,\n        \"ListSeparator\": \"string\",\n        \"IsRightToLeft\": false\n      },\n      \"IsNeutralCulture\": true,\n      \"CultureTypes\": \"UserCustomCulture\",\n      \"NumberFormat\": {\n        \"InvariantInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n        },\n        \"CurrencyDecimalDigits\": 3420,\n        \"CurrencyDecimalSeparator\": \"string\",\n        \"IsReadOnly\": false,\n        \"CurrencyGroupSizes\": [\n          1161,\n          5692\n        ],\n        \"NumberGroupSizes\": [\n          9921,\n          7297\n        ],\n        \"PercentGroupSizes\": [\n          7762,\n          3756\n        ],\n        \"CurrencyGroupSeparator\": \"string\",\n        \"CurrencySymbol\": \"string\",\n        \"CurrentInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/NumberFormatInfo detected>\"\n        },\n        \"NaNSymbol\": \"string\",\n        \"CurrencyNegativePattern\": 7780,\n        \"NumberNegativePattern\": 4416,\n        \"PercentPositivePattern\": 3150,\n        \"PercentNegativePattern\": 9109,\n        \"NegativeInfinitySymbol\": \"string\",\n        \"NegativeSign\": \"string\",\n        \"NumberDecimalDigits\": 1724,\n        \"NumberDecimalSeparator\": \"string\",\n        \"NumberGroupSeparator\": \"string\",\n        \"CurrencyPositivePattern\": 2482,\n        \"PositiveInfinitySymbol\": \"string\",\n        \"PositiveSign\": \"string\",\n        \"PercentDecimalDigits\": 4457,\n        \"PercentDecimalSeparator\": \"string\",\n        \"PercentGroupSeparator\": \"string\",\n        \"PercentSymbol\": \"string\",\n        \"PerMilleSymbol\": \"string\",\n        \"NativeDigits\": [\n          \"string\",\n          \"string\"\n        ],\n        \"DigitSubstitution\": \"NativeNational\"\n      },\n      \"DateTimeFormat\": {\n        \"InvariantInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n        },\n        \"CurrentInfo\": {\n          \"value\": \"<Circular reference to #/components/schemas/DateTimeFormatInfo detected>\"\n        },\n        \"AMDesignator\": \"string\",\n        \"Calendar\": {\n          \"MinSupportedDateTime\": \"1959-10-17T14:27:14.002Z\",\n          \"MaxSupportedDateTime\": \"2004-02-11T06:34:17.442Z\",\n          \"AlgorithmType\": \"Unknown\",\n          \"IsReadOnly\": false,\n          \"Eras\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"TwoDigitYearMax\": 1821\n        },\n        \"DateSeparator\": \"string\",\n        \"FirstDayOfWeek\": \"Tuesday\",\n        \"CalendarWeekRule\": \"FirstFourDayWeek\",\n        \"FullDateTimePattern\": \"string\",\n        \"LongDatePattern\": \"string\",\n        \"LongTimePattern\": \"string\",\n        \"MonthDayPattern\": \"string\",\n        \"PMDesignator\": \"string\",\n        \"RFC1123Pattern\": \"string\",\n        \"ShortDatePattern\": \"string\",\n        \"ShortTimePattern\": \"string\",\n        \"SortableDateTimePattern\": \"string\",\n        \"TimeSeparator\": \"string\",\n        \"UniversalSortableDateTimePattern\": \"string\",\n        \"YearMonthPattern\": \"string\",\n        \"AbbreviatedDayNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"ShortestDayNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"DayNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"AbbreviatedMonthNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MonthNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"IsReadOnly\": false,\n        \"NativeCalendarName\": \"string\",\n        \"AbbreviatedMonthGenitiveNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MonthGenitiveNames\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"Calendar\": {\n        \"MinSupportedDateTime\": \"1965-10-06T16:00:11.190Z\",\n        \"MaxSupportedDateTime\": \"2013-08-14T11:59:23.505Z\",\n        \"AlgorithmType\": \"Unknown\",\n        \"IsReadOnly\": false,\n        \"Eras\": [\n          3411,\n          4480\n        ],\n        \"TwoDigitYearMax\": 1809\n      },\n      \"OptionalCalendars\": [\n        {\n          \"MinSupportedDateTime\": \"2022-06-16T07:47:16.224Z\",\n          \"MaxSupportedDateTime\": \"2008-10-31T07:39:11.239Z\",\n          \"AlgorithmType\": \"SolarCalendar\",\n          \"IsReadOnly\": false,\n          \"Eras\": [\n            1479,\n            8026\n          ],\n          \"TwoDigitYearMax\": 5517\n        },\n        {\n          \"MinSupportedDateTime\": \"2026-01-25T06:30:46.403Z\",\n          \"MaxSupportedDateTime\": \"1966-04-13T18:51:44.130Z\",\n          \"AlgorithmType\": \"LunisolarCalendar\",\n          \"IsReadOnly\": true,\n          \"Eras\": [\n            3820,\n            7964\n          ],\n          \"TwoDigitYearMax\": 1935\n        }\n      ],\n      \"UseUserOverride\": true,\n      \"IsReadOnly\": true\n    },\n    \"MinimumCapacity\": 1272,\n    \"ParentRelations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"PrimaryKey\": [\n      {\n        \"AllowDBNull\": true,\n        \"AutoIncrement\": false,\n        \"AutoIncrementSeed\": 9356,\n        \"AutoIncrementStep\": 3990,\n        \"Caption\": \"string\",\n        \"ColumnName\": \"string\",\n        \"Prefix\": \"string\",\n        \"DataType\": {\n          \"MemberType\": \"NestedType\",\n          \"DeclaringType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"DeclaringMethod\": {\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"ReflectedType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"StructLayoutAttribute\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TypeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"GUID\": \"string\",\n          \"DefaultBinder\": {},\n          \"Module\": {\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MDStreamVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullyQualifiedName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleVersionId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ScopeName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Assembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Assembly\": {\n            \"CodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EscapedCodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EntryPoint\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ExportedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DefinedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Evidence\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"PermissionSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFullyTrusted\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"SecurityRuleSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ManifestModule\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectionOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Modules\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ImageRuntimeVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"GlobalAssemblyCache\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"HostContext\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsDynamic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"TypeHandle\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"FullName\": \"string\",\n          \"Namespace\": \"string\",\n          \"AssemblyQualifiedName\": \"string\",\n          \"BaseType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"TypeInitializer\": {\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IsNested\": true,\n          \"Attributes\": \"Import\",\n          \"GenericParameterAttributes\": \"None\",\n          \"IsVisible\": true,\n          \"IsNotPublic\": false,\n          \"IsPublic\": false,\n          \"IsNestedPublic\": true,\n          \"IsNestedPrivate\": false,\n          \"IsNestedFamily\": false,\n          \"IsNestedAssembly\": true,\n          \"IsNestedFamANDAssem\": false,\n          \"IsNestedFamORAssem\": true,\n          \"IsAutoLayout\": false,\n          \"IsLayoutSequential\": false,\n          \"IsExplicitLayout\": true,\n          \"IsClass\": false,\n          \"IsInterface\": true,\n          \"IsValueType\": true,\n          \"IsAbstract\": true,\n          \"IsSealed\": true,\n          \"IsEnum\": false,\n          \"IsSpecialName\": false,\n          \"IsImport\": true,\n          \"IsSerializable\": true,\n          \"IsAnsiClass\": true,\n          \"IsUnicodeClass\": false,\n          \"IsAutoClass\": true,\n          \"IsArray\": true,\n          \"IsGenericType\": true,\n          \"IsGenericTypeDefinition\": true,\n          \"IsConstructedGenericType\": true,\n          \"IsGenericParameter\": true,\n          \"GenericParameterPosition\": 5842,\n          \"ContainsGenericParameters\": false,\n          \"IsByRef\": true,\n          \"IsPointer\": true,\n          \"IsPrimitive\": true,\n          \"IsCOMObject\": false,\n          \"HasElementType\": false,\n          \"IsContextful\": true,\n          \"IsMarshalByRef\": false,\n          \"GenericTypeArguments\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            }\n          ],\n          \"IsSecurityCritical\": false,\n          \"IsSecuritySafeCritical\": false,\n          \"IsSecurityTransparent\": true,\n          \"UnderlyingSystemType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"Name\": \"string\",\n          \"CustomAttributes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MetadataToken\": 4916\n        },\n        \"DateTimeMode\": \"Local\",\n        \"DefaultValue\": {},\n        \"Expression\": \"string\",\n        \"ExtendedProperties\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MaxLength\": 5618,\n        \"Namespace\": \"string\",\n        \"Ordinal\": 994,\n        \"ReadOnly\": false,\n        \"Table\": {\n          \"value\": \"<Circular reference to #/components/schemas/DataTable detected>\"\n        },\n        \"Unique\": true,\n        \"ColumnMapping\": \"Attribute\",\n        \"Site\": {\n          \"Component\": {\n            \"Site\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Container\": {\n            \"Components\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"DesignMode\": false,\n          \"Name\": \"string\"\n        },\n        \"Container\": {\n          \"Components\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"DesignMode\": false\n      },\n      {\n        \"AllowDBNull\": false,\n        \"AutoIncrement\": true,\n        \"AutoIncrementSeed\": 8624,\n        \"AutoIncrementStep\": 2300,\n        \"Caption\": \"string\",\n        \"ColumnName\": \"string\",\n        \"Prefix\": \"string\",\n        \"DataType\": {\n          \"MemberType\": \"TypeInfo\",\n          \"DeclaringType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"DeclaringMethod\": {\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"ReflectedType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"StructLayoutAttribute\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"TypeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"GUID\": \"string\",\n          \"DefaultBinder\": {},\n          \"Module\": {\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MDStreamVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullyQualifiedName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleVersionId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ScopeName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Assembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ModuleHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Assembly\": {\n            \"CodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EscapedCodeBase\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"FullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"EntryPoint\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ExportedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DefinedTypes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Evidence\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"PermissionSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFullyTrusted\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"SecurityRuleSet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ManifestModule\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectionOnly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Modules\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Location\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ImageRuntimeVersion\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"GlobalAssemblyCache\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"HostContext\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsDynamic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"TypeHandle\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"FullName\": \"string\",\n          \"Namespace\": \"string\",\n          \"AssemblyQualifiedName\": \"string\",\n          \"BaseType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"TypeInitializer\": {\n            \"MemberType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodImplementationFlags\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MethodHandle\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Attributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CallingConvention\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethodDefinition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ContainsGenericParameters\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsGenericMethod\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecuritySafeCritical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSecurityTransparent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPublic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsPrivate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamily\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyAndAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFamilyOrAssembly\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsStatic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsFinal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsVirtual\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsHideBySig\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsAbstract\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsSpecialName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"IsConstructor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"DeclaringType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ReflectedType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"CustomAttributes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"MetadataToken\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Module\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IsNested\": false,\n          \"Attributes\": \"NestedFamily\",\n          \"GenericParameterAttributes\": \"ReferenceTypeConstraint\",\n          \"IsVisible\": false,\n          \"IsNotPublic\": false,\n          \"IsPublic\": false,\n          \"IsNestedPublic\": false,\n          \"IsNestedPrivate\": true,\n          \"IsNestedFamily\": true,\n          \"IsNestedAssembly\": true,\n          \"IsNestedFamANDAssem\": true,\n          \"IsNestedFamORAssem\": true,\n          \"IsAutoLayout\": false,\n          \"IsLayoutSequential\": false,\n          \"IsExplicitLayout\": false,\n          \"IsClass\": true,\n          \"IsInterface\": true,\n          \"IsValueType\": false,\n          \"IsAbstract\": false,\n          \"IsSealed\": false,\n          \"IsEnum\": true,\n          \"IsSpecialName\": false,\n          \"IsImport\": false,\n          \"IsSerializable\": true,\n          \"IsAnsiClass\": false,\n          \"IsUnicodeClass\": true,\n          \"IsAutoClass\": false,\n          \"IsArray\": false,\n          \"IsGenericType\": false,\n          \"IsGenericTypeDefinition\": false,\n          \"IsConstructedGenericType\": true,\n          \"IsGenericParameter\": false,\n          \"GenericParameterPosition\": 852,\n          \"ContainsGenericParameters\": false,\n          \"IsByRef\": true,\n          \"IsPointer\": true,\n          \"IsPrimitive\": false,\n          \"IsCOMObject\": false,\n          \"HasElementType\": true,\n          \"IsContextful\": true,\n          \"IsMarshalByRef\": false,\n          \"GenericTypeArguments\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n            }\n          ],\n          \"IsSecurityCritical\": false,\n          \"IsSecuritySafeCritical\": false,\n          \"IsSecurityTransparent\": false,\n          \"UnderlyingSystemType\": {\n            \"value\": \"<Circular reference to #/components/schemas/Type detected>\"\n          },\n          \"Name\": \"string\",\n          \"CustomAttributes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"MetadataToken\": 4251\n        },\n        \"DateTimeMode\": \"UnspecifiedLocal\",\n        \"DefaultValue\": {},\n        \"Expression\": \"string\",\n        \"ExtendedProperties\": [\n          \"string\",\n          \"string\"\n        ],\n        \"MaxLength\": 8188,\n        \"Namespace\": \"string\",\n        \"Ordinal\": 6256,\n        \"ReadOnly\": false,\n        \"Table\": {\n          \"value\": \"<Circular reference to #/components/schemas/DataTable detected>\"\n        },\n        \"Unique\": false,\n        \"ColumnMapping\": \"Element\",\n        \"Site\": {\n          \"Component\": {\n            \"Site\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Container\": {\n            \"Components\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"DesignMode\": true,\n          \"Name\": \"string\"\n        },\n        \"Container\": {\n          \"Components\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"DesignMode\": false\n      }\n    ],\n    \"Rows\": [\n      \"string\",\n      \"string\"\n    ],\n    \"TableName\": \"string\",\n    \"Namespace\": \"string\",\n    \"Prefix\": \"string\",\n    \"Site\": {\n      \"Component\": {\n        \"Site\": {\n          \"value\": \"<Circular reference to #/components/schemas/ISite detected>\"\n        }\n      },\n      \"Container\": {\n        \"Components\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"DesignMode\": false,\n      \"Name\": \"string\"\n    },\n    \"Container\": {\n      \"Components\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"DesignMode\": false\n  },\n  \"TotalCount\": 1606,\n  \"QueryToken\": \"string\",\n  \"Success\": true,\n  \"Message\": \"string\",\n  \"MessageType\": \"string\",\n  \"PivotIDToDisplayValueMap\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55a01265-8aee-4093-a1b5-8b9cb9058b3c",
+          "name": "Relativity.Pivot.V1.I Pivot Query Manager.Execute Export Async",
+          "request": {
+            "name": "Relativity.Pivot.V1.I Pivot Query Manager.Execute Export Async",
+            "description": {
+              "content": "[Public] IPivotQueryManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-pivot",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "queries",
+                "export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DashboardName\": \"<string>\",\n  \"Pivots\": [\n    {\n      \"PivotProfileID\": \"<integer>\",\n      \"PivotSettings\": {\n        \"ID\": \"<integer>\",\n        \"GroupByField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"GroupByDateTimePart\": \"<string>\",\n        \"PivotOnField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"PivotOnDateTimePart\": \"<string>\",\n        \"GroupByResultLimit\": \"<string>\",\n        \"GroupByResultLimitValue\": \"<integer>\",\n        \"PivotOnResultLimit\": \"<string>\",\n        \"PivotOnResultLimitValue\": \"<integer>\",\n        \"ChartType\": \"<string>\",\n        \"ChartOrientation\": \"<string>\",\n        \"SortOn\": \"<string>\",\n        \"SortOrder\": \"<string>\",\n        \"Toggles\": {\n          \"ShowBlankValues\": \"<boolean>\",\n          \"ShowGrandTotal\": \"<boolean>\",\n          \"ShowLegend\": \"<boolean>\",\n          \"RotateLabels\": \"<boolean>\",\n          \"StaggerLabels\": \"<boolean>\",\n          \"ShowLabels\": \"<boolean>\",\n          \"ShowSubChart\": \"<boolean>\"\n        },\n        \"PageSize\": \"<integer>\",\n        \"SwitchSeries\": \"<boolean>\",\n        \"ObjectType\": {\n          \"ArtifactTypeID\": \"<integer>\",\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"Name\": \"<string>\"\n      },\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    },\n    {\n      \"PivotProfileID\": \"<integer>\",\n      \"PivotSettings\": {\n        \"ID\": \"<integer>\",\n        \"GroupByField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"GroupByDateTimePart\": \"<string>\",\n        \"PivotOnField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"PivotOnDateTimePart\": \"<string>\",\n        \"GroupByResultLimit\": \"<string>\",\n        \"GroupByResultLimitValue\": \"<integer>\",\n        \"PivotOnResultLimit\": \"<string>\",\n        \"PivotOnResultLimitValue\": \"<integer>\",\n        \"ChartType\": \"<string>\",\n        \"ChartOrientation\": \"<string>\",\n        \"SortOn\": \"<string>\",\n        \"SortOrder\": \"<string>\",\n        \"Toggles\": {\n          \"ShowBlankValues\": \"<boolean>\",\n          \"ShowGrandTotal\": \"<boolean>\",\n          \"ShowLegend\": \"<boolean>\",\n          \"RotateLabels\": \"<boolean>\",\n          \"StaggerLabels\": \"<boolean>\",\n          \"ShowLabels\": \"<boolean>\",\n          \"ShowSubChart\": \"<boolean>\"\n        },\n        \"PageSize\": \"<integer>\",\n        \"SwitchSeries\": \"<boolean>\",\n        \"ObjectType\": {\n          \"ArtifactTypeID\": \"<integer>\",\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"Name\": \"<string>\"\n      },\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    }\n  ],\n  \"Images\": [\n    {\n      \"ImageBase64Encoded\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    },\n    {\n      \"ImageBase64Encoded\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    }\n  ],\n  \"AddFullDashboardSheet\": \"<boolean>\",\n  \"HeaderSettings\": {\n    \"IncludeWorkspace\": \"<boolean>\",\n    \"IncludeView\": \"<boolean>\",\n    \"IncludeDashboard\": \"<boolean>\",\n    \"IncludeUser\": \"<boolean>\",\n    \"IncludeLogo\": \"<boolean>\",\n    \"IncludeDateAndTime\": \"<boolean>\"\n  },\n  \"ShowChildSheets\": \"<boolean>\",\n  \"SavedSearchID\": \"<integer>\",\n  \"ViewID\": \"<integer>\",\n  \"WorkspaceName\": \"<string>\",\n  \"ViewName\": \"<string>\",\n  \"UserName\": \"<string>\",\n  \"CellRatio\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f252167b-2561-41e8-ba17-d96faefb1d4d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-pivot",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "queries",
+                    "export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DashboardName\": \"<string>\",\n  \"Pivots\": [\n    {\n      \"PivotProfileID\": \"<integer>\",\n      \"PivotSettings\": {\n        \"ID\": \"<integer>\",\n        \"GroupByField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"GroupByDateTimePart\": \"<string>\",\n        \"PivotOnField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"PivotOnDateTimePart\": \"<string>\",\n        \"GroupByResultLimit\": \"<string>\",\n        \"GroupByResultLimitValue\": \"<integer>\",\n        \"PivotOnResultLimit\": \"<string>\",\n        \"PivotOnResultLimitValue\": \"<integer>\",\n        \"ChartType\": \"<string>\",\n        \"ChartOrientation\": \"<string>\",\n        \"SortOn\": \"<string>\",\n        \"SortOrder\": \"<string>\",\n        \"Toggles\": {\n          \"ShowBlankValues\": \"<boolean>\",\n          \"ShowGrandTotal\": \"<boolean>\",\n          \"ShowLegend\": \"<boolean>\",\n          \"RotateLabels\": \"<boolean>\",\n          \"StaggerLabels\": \"<boolean>\",\n          \"ShowLabels\": \"<boolean>\",\n          \"ShowSubChart\": \"<boolean>\"\n        },\n        \"PageSize\": \"<integer>\",\n        \"SwitchSeries\": \"<boolean>\",\n        \"ObjectType\": {\n          \"ArtifactTypeID\": \"<integer>\",\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"Name\": \"<string>\"\n      },\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    },\n    {\n      \"PivotProfileID\": \"<integer>\",\n      \"PivotSettings\": {\n        \"ID\": \"<integer>\",\n        \"GroupByField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"GroupByDateTimePart\": \"<string>\",\n        \"PivotOnField\": {\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"Name\": \"<string>\"\n        },\n        \"PivotOnDateTimePart\": \"<string>\",\n        \"GroupByResultLimit\": \"<string>\",\n        \"GroupByResultLimitValue\": \"<integer>\",\n        \"PivotOnResultLimit\": \"<string>\",\n        \"PivotOnResultLimitValue\": \"<integer>\",\n        \"ChartType\": \"<string>\",\n        \"ChartOrientation\": \"<string>\",\n        \"SortOn\": \"<string>\",\n        \"SortOrder\": \"<string>\",\n        \"Toggles\": {\n          \"ShowBlankValues\": \"<boolean>\",\n          \"ShowGrandTotal\": \"<boolean>\",\n          \"ShowLegend\": \"<boolean>\",\n          \"RotateLabels\": \"<boolean>\",\n          \"StaggerLabels\": \"<boolean>\",\n          \"ShowLabels\": \"<boolean>\",\n          \"ShowSubChart\": \"<boolean>\"\n        },\n        \"PageSize\": \"<integer>\",\n        \"SwitchSeries\": \"<boolean>\",\n        \"ObjectType\": {\n          \"ArtifactTypeID\": \"<integer>\",\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"Name\": \"<string>\"\n      },\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    }\n  ],\n  \"Images\": [\n    {\n      \"ImageBase64Encoded\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    },\n    {\n      \"ImageBase64Encoded\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Top\": \"<integer>\",\n      \"Left\": \"<integer>\",\n      \"Width\": \"<integer>\",\n      \"Height\": \"<integer>\"\n    }\n  ],\n  \"AddFullDashboardSheet\": \"<boolean>\",\n  \"HeaderSettings\": {\n    \"IncludeWorkspace\": \"<boolean>\",\n    \"IncludeView\": \"<boolean>\",\n    \"IncludeDashboard\": \"<boolean>\",\n    \"IncludeUser\": \"<boolean>\",\n    \"IncludeLogo\": \"<boolean>\",\n    \"IncludeDateAndTime\": \"<boolean>\"\n  },\n  \"ShowChildSheets\": \"<boolean>\",\n  \"SavedSearchID\": \"<integer>\",\n  \"ViewID\": \"<integer>\",\n  \"WorkspaceName\": \"<string>\",\n  \"ViewName\": \"<string>\",\n  \"UserName\": \"<string>\",\n  \"CellRatio\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ContentType\": \"string\",\n  \"Content\": \"string\",\n  \"Success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "77a3306f-7a08-4c0d-bad3-127a7209cd60",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Pivot Module v1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

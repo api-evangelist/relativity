@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService JobActions API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "JobActions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Asynchronously cancels a running job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v3/jobs/:jobID/cancel",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Job identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Asynchronously cancels a running job."
+        },
+        {
+          "info": {
+            "name": "Asynchronously runs a job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v3/jobs/:jobID/run",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Job identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Asynchronously runs a job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

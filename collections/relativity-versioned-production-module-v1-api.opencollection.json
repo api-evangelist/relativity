@@ -1,0 +1,1463 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Versioned Production Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Versioned Production Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionDataSourceManager.CreateSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/production-data-sources",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionDataSourceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionDataSourceManager.UpdateSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/production-data-sources",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionDataSourceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionDataSourceManager.ReadSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-data-sources/:dataSourceID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataSourceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "withPlaceholderImage",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionDataSourceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionDataSourceManager.DeleteSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-data-sources/:dataSourceID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataSourceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionDataSourceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionDataSourceManager.GetProductionDataSourceDefaultFieldValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-data-sources/defaults",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionDataSourceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataSourceReadMode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.CreateSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.ReadSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataSourceReadMode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.DeleteSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.StagingErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/staging-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.ProgressAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/progress",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.DocumentConflictsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/document-conflicts",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.DeleteDocumentConflictsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/document-conflicts",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetReproductionsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/re-productions",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionsEligibleForReproductionAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/database-tokens/:databaseToken/reproduction-types/:reproductionType/eligible-re-productions",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "databaseToken",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reproductionType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.ProductionRunCheckAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/prerun-check",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionDefaultFieldValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/defaults",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.MassStageAndRunProductionsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/reproduction-jobs/:reproductionJobID/stage-and-run",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reproductionJobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.MassStageAndRunAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/stage-and-run",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionIDs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetBrandingErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/branding-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.StageProductionAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/stage",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "automaticallyRun",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.RunProductionAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/run",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "suppressWarnings",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "overrideConflicts",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.RerunProductionAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/re-run",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetJobStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/job-status",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includePercentages",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "numberOfBrandingErrors",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProducedProductionsFromDocumentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/produced-production",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentIDs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludeNonReproducible",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProducedProductionsFromDocumentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/tokens/:token/produced-production",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "excludeNonReproducible",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionStatusDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/status-details",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionRestrictionAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-restriction",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.SetProductionRestrictionsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-restriction",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionRestrictionSearchID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionImagesTokenAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/production-images/token",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionImagesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/production-images/:token",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "top",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionImagesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/production-images",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentIDs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.CancelReproductionJobAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/reproduction-jobs/:reproductionJobID/cancel",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reproductionJobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionManager.GetProductionPreviewAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/productions/:productionID/production-preview",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionPlaceholderManager.CreateSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-placeholders",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionPlaceholderManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionPlaceholderManager.UpdateSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-placeholders",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionPlaceholderManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionPlaceholderManager.ReadSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-placeholders/:placeholderID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "placeholderID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionPlaceholderManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionPlaceholderManager.DeleteSingleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-placeholders/:placeholderID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "placeholderID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionPlaceholderManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionPlaceholderManager.GetProductionPlaceholderDefaultFieldValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/production-placeholders/defaults",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionPlaceholderManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionQueueManager.MassCancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/production-queue/mass-cancel",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "databaseToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionQueueManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionQueueManager.MassRetryAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/production-queue/mass-retry",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "databaseToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionQueueManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionQueueManager.MassPrioritizeAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/production-queue/mass-prioritize",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "databaseToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "priority",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IProductionQueueManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionQueueManager.CancelJobAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/production-queue/production-jobs/cancel",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionQueueManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionQueueManager.MassCancelProductionJobsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/production-queue/production-jobs/mass-cancel",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionQueueManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IProductionQueueManager.RetryProductionJobsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/production-queue/production-jobs/mass-retry",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProductionQueueManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IReproductionJobManager.CreateReproductionJobAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/re-productions/re-production-job",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "databaseToken",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IReproductionJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IReproductionJobManager.CreateReproductionJobAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/re-productions/re-production-job-with-documents",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documents",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IReproductionJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IReproductionJobManager.GetReproductionStatusByReproductionJobIDAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/re-productions/:reproductionJobID/status",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reproductionJobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IReproductionJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Productions.Services.V1.IReproductionJobManager.GetReproductionJobIDsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-productions/v1/workspaces/:workspaceID/re-productions/jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IReproductionJobManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

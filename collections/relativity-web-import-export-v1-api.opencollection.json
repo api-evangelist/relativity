@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Web Import Export v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Web Import Export v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.RIE.Contracts.Interfaces.V1.HealthCheck.IHealthCheckController.RunHealthCheckAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity.WebImportExport/v1/HealthCheck/RunHealthCheck",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Public] IHealthCheckController - "
+        },
+        {
+          "info": {
+            "name": "Relativity.RIE.Contracts.Interfaces.V1.HealthCheck.IHealthCheckController.RunS2HealthCheckAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity.WebImportExport/v1/HealthCheck/RunS2HealthCheck",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Public] IHealthCheckController - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

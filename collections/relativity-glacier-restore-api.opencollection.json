@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Restore API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Glacier Restore",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Start a new glacier restore",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/glaciers/:glacierId/restore",
+            "params": [
+              {
+                "name": "glacierId",
+                "value": "456e7890-f12a-34b5-c678-901234567890",
+                "type": "path",
+                "description": "The unique identifier of the glacier to restore"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Schedules restoring glacier entities from glacier storage to a destination location. The operation returns immediately with a store identifier while the actual data restoration happens asynchronously."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

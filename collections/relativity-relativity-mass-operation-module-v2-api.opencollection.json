@@ -1,0 +1,736 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Mass Operation Module v2 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Relativity Mass Operation Module v2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassCopyJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmasscopyjobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.MassCopyAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/masscopy",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassMoveJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmassmovejobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.MassMoveAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/massmove",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassEditJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmasseditjobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.MassEditAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/massedit",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassDeleteJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmassdeletejobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.MassDeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/massdelete",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassReplaceJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmassreplacejobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.MassReplaceAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/massreplace",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassSaveAsListJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmasssaveaslistjobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.MassSaveAsListAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/masssaveaslist",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassTallySumAverageJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmasstallysumaveragejobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.TallySumAverageAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/masstallysumaverage",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.PublishMassExportToFileJobRequestAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/publishmassexporttofilejobrequest",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.MassExportToFileAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/massexporttofile",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.InitializeMassOperationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/initializemassoperation",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/processes/:processID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "processID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/processes/:processIdentifier",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "processIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.CheckProgress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/processes/:processID/checkprogress",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "processID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.CheckProgress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/processes/:processIdentifier/checkprogress",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "processIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.GetMassDeleteStartupInformationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/artifactType/:artifactTypeID/processes/:processID/massdeletestartup",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "artifactTypeID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "processID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.GetMassAgentDeleteStartupInformationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/processes/:processID/massagentdeletestartup",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "processID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.ValidateMassEditAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/workspaces/:workspaceID/artifactType/:artifactTypeID/processes/:processID/validatemassedit",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "artifactTypeID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "processID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.GetMassOperationProcessStateExtendedAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/massoperationprocessstateextended",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.MassOperations.Service.V2.IMassOperationManagerService.GetMassOperationJobsRefreshInterval",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-massoperation/v2/massoperationjobsrefreshinterval",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Public] IMassOperationManagerService - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

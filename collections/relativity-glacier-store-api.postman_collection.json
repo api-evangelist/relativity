@@ -1,0 +1,394 @@
+{
+  "item": [
+    {
+      "id": "d1981825-00c6-4a01-ab91-e4aa4f12f43d",
+      "name": "Glacier Store",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6f43e60a-e2cd-477f-89ea-b970cf05badb",
+          "name": "Start a new glacier store",
+          "request": {
+            "name": "Start a new glacier store",
+            "description": {
+              "content": "Schedules a new glacier store to move folder to glacier storage. The operation returns immediately with identifiers while the actual data transfer and Inventory Report generation happens asynchronously.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "glaciers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sourceLocation\": \"<string>\",\n  \"glacierName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "54a04918-ae93-41f5-a824-06a7094403ac",
+              "name": "Glacier store created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sourceLocation\": \"t001/ARM/TestLocation-1\",\n  \"glacierName\": \"project-archive-2024\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "URL to check status",
+                  "key": "Location",
+                  "value": "https://hlnZMCNCAeFy.qtjlyPiQt3.gpWY5wENZa-JrlS1C+k7woAEFxOEGoWRC+n9Im8s3MvDJQxGuAm9,qR9vgS"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"123e4567-e89b-12d3-a456-426614174000\",\n  \"glacierId\": \"987fcdeb-51a2-43d1-9876-543210fedcba\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c164330c-a568-48f4-b3c1-ab8163443cbe",
+              "name": "Bad request - validation failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sourceLocation\": \"t001/ARM/TestLocation-1\",\n  \"glacierName\": \"project-archive-2024\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://rrxiYpjyEUC.hzDnSpDinIfrxcLgBrvEw0aAxZ\",\n  \"title\": \"string\",\n  \"status\": 3850,\n  \"detail\": \"string\",\n  \"instance\": \"http://dDgS.hcfhL-dsU+Nkv806aryEkRw7Wvv7GD2tIVsCeJBkQWN6JB3B\",\n  \"errors\": {\n    \"key_0\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_1\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8659b4cc-343a-4f3f-ad3d-2166c61c3b97",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sourceLocation\": \"t001/ARM/TestLocation-1\",\n  \"glacierName\": \"project-archive-2024\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://KfROtIZFtErXqECgOgRIXH.injcLgAsmPhwgeZ3g8zU.8d-0fQ2.1aVlHPBMadGDCy9O2C,adM5mibJAOSNL+t\",\n  \"title\": \"string\",\n  \"status\": 6998,\n  \"detail\": \"string\",\n  \"instance\": \"https://qIArmUQoRvbrpGnjzpQHHdsHI.jyukYPkk3mZVLImAy.rLLGjLotihl9kkGJPEJkkXbxdRSBzyiA1IgTHqK6-C-L\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0180acf-5b85-4b5b-94d2-242ad3ab2b9d",
+              "name": "Forbidden - insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sourceLocation\": \"t001/ARM/TestLocation-1\",\n  \"glacierName\": \"project-archive-2024\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://KfROtIZFtErXqECgOgRIXH.injcLgAsmPhwgeZ3g8zU.8d-0fQ2.1aVlHPBMadGDCy9O2C,adM5mibJAOSNL+t\",\n  \"title\": \"string\",\n  \"status\": 6998,\n  \"detail\": \"string\",\n  \"instance\": \"https://qIArmUQoRvbrpGnjzpQHHdsHI.jyukYPkk3mZVLImAy.rLLGjLotihl9kkGJPEJkkXbxdRSBzyiA1IgTHqK6-C-L\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad3e28c3-ab04-4910-a235-cb677b559bd9",
+              "name": "Source location not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sourceLocation\": \"t001/ARM/TestLocation-1\",\n  \"glacierName\": \"project-archive-2024\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://KfROtIZFtErXqECgOgRIXH.injcLgAsmPhwgeZ3g8zU.8d-0fQ2.1aVlHPBMadGDCy9O2C,adM5mibJAOSNL+t\",\n  \"title\": \"string\",\n  \"status\": 6998,\n  \"detail\": \"string\",\n  \"instance\": \"https://qIArmUQoRvbrpGnjzpQHHdsHI.jyukYPkk3mZVLImAy.rLLGjLotihl9kkGJPEJkkXbxdRSBzyiA1IgTHqK6-C-L\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8d25146-601a-49a4-bbed-3ac904e5f260",
+              "name": "Unprocessable Entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sourceLocation\": \"t001/ARM/TestLocation-1\",\n  \"glacierName\": \"project-archive-2024\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://KfROtIZFtErXqECgOgRIXH.injcLgAsmPhwgeZ3g8zU.8d-0fQ2.1aVlHPBMadGDCy9O2C,adM5mibJAOSNL+t\",\n  \"title\": \"string\",\n  \"status\": 6998,\n  \"detail\": \"string\",\n  \"instance\": \"https://qIArmUQoRvbrpGnjzpQHHdsHI.jyukYPkk3mZVLImAy.rLLGjLotihl9kkGJPEJkkXbxdRSBzyiA1IgTHqK6-C-L\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d90e9c94-68f8-40d2-895e-e476f74bedd3",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sourceLocation\": \"t001/ARM/TestLocation-1\",\n  \"glacierName\": \"project-archive-2024\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://KfROtIZFtErXqECgOgRIXH.injcLgAsmPhwgeZ3g8zU.8d-0fQ2.1aVlHPBMadGDCy9O2C,adM5mibJAOSNL+t\",\n  \"title\": \"string\",\n  \"status\": 6998,\n  \"detail\": \"string\",\n  \"instance\": \"https://qIArmUQoRvbrpGnjzpQHHdsHI.jyukYPkk3mZVLImAy.rLLGjLotihl9kkGJPEJkkXbxdRSBzyiA1IgTHqK6-C-L\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a1b5a230-5e51-49b8-83bb-f434cddf33b4",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Store API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

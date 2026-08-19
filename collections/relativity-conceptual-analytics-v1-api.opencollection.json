@@ -1,0 +1,187 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Conceptual Analytics v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conceptual Analytics v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.IConceptualIndexService.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/conceptual-analytics/v1/workspaces/:workspaceID/indexes/",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IConceptualIndexService"
+        },
+        {
+          "info": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.IConceptualIndexService.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/conceptual-analytics/v1/workspaces/:workspaceID/indexes/:indexID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "indexID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IConceptualIndexService"
+        },
+        {
+          "info": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.IConceptualIndexService.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/conceptual-analytics/v1/workspaces/:workspaceID/indexes/:indexID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "indexID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IConceptualIndexService"
+        },
+        {
+          "info": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.IConceptualIndexService.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/conceptual-analytics/v1/workspaces/:workspaceID/indexes/:indexID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "indexID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IConceptualIndexService"
+        },
+        {
+          "info": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.IConceptualIndexService.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/conceptual-analytics/v1/workspaces/:workspaceID/indexes/:indexID/status",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "indexID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IConceptualIndexService"
+        },
+        {
+          "info": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.IConceptualIndexService.SubmitJobAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/conceptual-analytics/v1/workspaces/:workspaceID/indexes/:indexID/job",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "indexID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IConceptualIndexService"
+        },
+        {
+          "info": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.IConceptualIndexService.CancelJobAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/conceptual-analytics/v1/workspaces/:workspaceID/indexes/:indexID/job",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "indexID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IConceptualIndexService"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

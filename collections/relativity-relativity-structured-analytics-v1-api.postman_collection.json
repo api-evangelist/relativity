@@ -1,0 +1,1739 @@
+{
+  "item": [
+    {
+      "id": "a463dec7-280c-4675-88c2-44802fdc8d6d",
+      "name": "Relativity Structured Analytics v1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "27149816-5264-4b09-aec7-98292afa8d4f",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Run Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Run Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"PopulateAll\": \"<boolean>\",\n  \"AnalyzeAll\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "143e74ea-b293-4b3e-a45a-7150ee7eff3c",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PopulateAll\": \"<boolean>\",\n  \"AnalyzeAll\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": false,\n  \"Message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6898fe9e-40cb-44d3-a60a-7a1c33ed5c8c",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Status Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Status Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7d919500-537f-4891-983e-45d35adaeabc",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobName\": \"string\",\n  \"JobState\": {\n    \"Status\": \"string\",\n    \"Phase\": \"Unknown\",\n    \"IsRunning\": true,\n    \"IsRunningOperations\": true,\n    \"IsCompleted\": false,\n    \"IsCanceled\": false,\n    \"IsCanceling\": false,\n    \"IsQueued\": false,\n    \"IsUnknown\": false,\n    \"PhaseProgressPercentage\": 7049.570454663013,\n    \"JobTimeElapsed\": 6977,\n    \"OperationTimeElapsed\": 8374\n  },\n  \"OperationState\": [\n    {\n      \"Operation\": \"EmailThreading\",\n      \"Phase\": \"CompletedOperations\",\n      \"LastActivity\": \"1947-08-25T05:43:02.976Z\"\n    },\n    {\n      \"Operation\": \"LanguageID\",\n      \"Phase\": \"CompletedExporting\",\n      \"LastActivity\": \"1951-03-27T07:53:46.115Z\"\n    }\n  ],\n  \"JobResults\": {\n    \"DocumentsAnalyzed\": 2049,\n    \"EmailThreadingStats\": {\n      \"EmailsAnalyzed\": 8327,\n      \"InclusiveEmails\": 2528,\n      \"DocumentsAnalyzed\": 6252\n    },\n    \"NameNormalizationStats\": {\n      \"AliasesIdentified\": 3141,\n      \"NewAliasesImported\": 6270\n    },\n    \"TextualNearDupeStats\": {\n      \"AverageSimilarityPercentage\": 9191.794271311192,\n      \"GroupsCount\": 2931,\n      \"DocumentsAnalyzed\": 1585\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "423bd024-d3dd-44e2-a719-cece7d081f8b",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Run Analysis Preparation Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Run Analysis Preparation Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "prep"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5acb329-7e36-43f8-99f8-ba9c58722ad5",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "prep"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": false,\n  \"Message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd47231a-196f-4db7-b6ea-7dda256fdc77",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Run Copy To Legacy Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Run Copy To Legacy Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "copy-to-legacy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09ff4ce2-156c-489a-9dbd-7e7719c2b2e5",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "copy-to-legacy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": false,\n  \"Message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5c9a5f50-6b79-4ad8-a6f2-18d8ecdde87f",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Cancel Copy To Legacy Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Cancel Copy To Legacy Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "copy-to-legacy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9ceac70-03ee-4c45-be7a-bd3fab794165",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "copy-to-legacy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": false,\n  \"Message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39d41973-596f-42fd-854f-ade96507c2f3",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Cancel Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Cancel Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "wait",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90ce286f-8c10-4f5e-8c72-105c9f920d71",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "wait",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": false,\n  \"Message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "310d0011-da5a-42c7-9f95-2df0d49acff0",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Retry Errors Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Retry Errors Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "retry"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "356737a9-937b-4889-8d53-a9fb12c02586",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "retry"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": false,\n  \"Message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8f6e3a2-0166-4895-81cb-81cc832431f9",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get TMQ Entry Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get TMQ Entry Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "tmq"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f396b46f-41fe-4a7b-9ecb-21c165f45631",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "tmq"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TaskID\": 7080,\n  \"WorkspaceID\": 3261,\n  \"ResourceGroupID\": 7277,\n  \"Status\": 6365,\n  \"JobArtifactID\": 3876,\n  \"Handled\": \"2019-10-30T10:16:01.951Z\",\n  \"DBLocation\": \"string\",\n  \"Retries\": 2909,\n  \"PopulateAll\": false,\n  \"AnalyzeAll\": false,\n  \"StatusAtCancel\": 6543,\n  \"UpgradeStatusComplete\": false,\n  \"InitiatorGuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b31a645-2f47-4838-8c1a-fd6cf987e315",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Errors Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Errors Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "0"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79235fdb-1e54-474f-b941-3e26fd798e21",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "0"
+                    },
+                    {
+                      "key": "length",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"FullText\": \"string\",\n    \"Message\": \"string\",\n    \"Server\": \"string\",\n    \"Source\": \"string\"\n  },\n  {\n    \"FullText\": \"string\",\n    \"Message\": \"string\",\n    \"Server\": \"string\",\n    \"Source\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1627756d-2ce5-411a-b53c-bbecc278f277",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Document Errors Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Document Errors Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "doc-errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "0"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92ca8f7e-410e-4760-acca-f48a6f4c54f5",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "doc-errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "0"
+                    },
+                    {
+                      "key": "length",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"DocumentArtifactID\": 7325,\n    \"DocumentIdentifier\": \"string\",\n    \"Message\": \"string\",\n    \"Operations\": [\n      \"TextualNearDuplicateID\",\n      \"NameNormalizationID\"\n    ],\n    \"Status\": \"DataWarning\",\n    \"DateErrored\": \"2000-05-31T09:34:08.242Z\"\n  },\n  {\n    \"DocumentArtifactID\": 5374,\n    \"DocumentIdentifier\": \"string\",\n    \"Message\": \"string\",\n    \"Operations\": [\n      \"TextualNearDuplicateID\",\n      \"LanguageID\"\n    ],\n    \"Status\": \"IncludedInSet\",\n    \"DateErrored\": \"1978-11-20T07:56:41.314Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18f4aa2d-425e-4212-b16e-d5e3ac6f29ea",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Document Errors Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Document Errors Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "doc-errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Sorts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Start\": \"<integer>\",\n  \"Length\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "83d6e0cb-6dd3-4627-b9f9-27ebbc23983d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "doc-errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Sorts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Start\": \"<integer>\",\n  \"Length\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DocumentErrors\": [\n    {\n      \"DocumentArtifactID\": 1131,\n      \"DocumentIdentifier\": \"string\",\n      \"Message\": \"string\",\n      \"Operations\": [\n        \"LanguageID\",\n        \"NameNormalizationID\"\n      ],\n      \"Status\": \"IncludedInSet\",\n      \"DateErrored\": \"1983-03-28T07:50:18.960Z\"\n    },\n    {\n      \"DocumentArtifactID\": 824,\n      \"DocumentIdentifier\": \"string\",\n      \"Message\": \"string\",\n      \"Operations\": [\n        \"LanguageID\",\n        \"EmailThreading\"\n      ],\n      \"Status\": \"IncludedInSet\",\n      \"DateErrored\": \"1977-04-21T23:23:18.981Z\"\n    }\n  ],\n  \"TotalCount\": 4953\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdf5cbcb-a089-4274-b91e-ece56e3e7144",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Valid Tasks Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Get Valid Tasks Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "sets",
+                ":sasArtifactID",
+                "jobs",
+                "valid-tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sasArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a83f7bfc-93a6-41e0-b08e-317c1f16cb37",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "sets",
+                    ":sasArtifactID",
+                    "jobs",
+                    "valid-tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sasArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ValidTasks\": [\n    \"RETRY_ERRORS\",\n    \"RETRY_ERRORS\"\n  ],\n  \"CopyToLegacyQualified\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75216ff4-acde-4486-81aa-3bfa1b7bed83",
+          "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Remove All Choices Async",
+          "request": {
+            "name": "Relativity.Structured Analytics.V1.Jobs.I Job Manager.Remove All Choices Async",
+            "description": {
+              "content": "[Public] IJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-structured-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "choices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1bc2f3ba-2848-4165-8a3c-c8a09244218d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-structured-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "choices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": false,\n  \"Message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "61f13cbf-5d65-442f-9f53-96a878c3f8af",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Structured Analytics v1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

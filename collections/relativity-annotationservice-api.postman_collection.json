@@ -1,0 +1,416 @@
+{
+  "item": [
+    {
+      "id": "8ca83013-e3dc-46c4-8c73-c4c7dad02744",
+      "name": "AnnotationService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b926b31b-53ad-4d2d-87e2-b2fdd6b4fea5",
+          "name": "Creates or updates redactions and highlights for a document in a workspace.",
+          "request": {
+            "name": "Creates or updates redactions and highlights for a document in a workspace.",
+            "description": {
+              "content": "This endpoint accepts a collection of annotations. New annotations are created and existing annotations are updated\r\nwhen their identifiers are provided.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "Annotations",
+                "save"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace's Artifact ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotations\": [\n    {\n      \"ID\": \"<integer>\",\n      \"X\": \"<double>\",\n      \"Y\": \"<double>\",\n      \"PageNumber\": \"<integer>\",\n      \"Height\": \"<double>\",\n      \"Width\": \"<double>\",\n      \"MarkupType\": \"<integer>\",\n      \"MarkupSubType\": \"<integer>\",\n      \"DrawCrossLines\": \"<boolean>\",\n      \"FillA\": \"<integer>\",\n      \"FillR\": \"<integer>\",\n      \"FillG\": \"<integer>\",\n      \"FillB\": \"<integer>\",\n      \"BorderStyle\": \"<integer>\",\n      \"BorderSize\": \"<integer>\",\n      \"BorderA\": \"<integer>\",\n      \"BorderR\": \"<integer>\",\n      \"BorderG\": \"<integer>\",\n      \"BorderB\": \"<integer>\",\n      \"FontA\": \"<integer>\",\n      \"FontR\": \"<integer>\",\n      \"FontG\": \"<integer>\",\n      \"FontB\": \"<integer>\",\n      \"FontName\": \"<string>\",\n      \"FontStyle\": \"<integer>\",\n      \"ZOrder\": \"<integer>\",\n      \"Text\": \"<string>\",\n      \"FontSize\": \"<integer>\",\n      \"ImageWidth\": \"<integer>\",\n      \"ImageHeight\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"WorkspaceID\": \"<integer>\",\n      \"PageHeight\": \"<integer>\",\n      \"PageWidth\": \"<integer>\",\n      \"ValuesAreScaledToDB\": \"<boolean>\",\n      \"DocumentArtifactID\": \"<integer>\",\n      \"MarkupSetArtifactID\": \"<integer>\",\n      \"ModifiedBy\": \"<integer>\",\n      \"CreatedOn\": \"<dateTime>\"\n    },\n    {\n      \"ID\": \"<integer>\",\n      \"X\": \"<double>\",\n      \"Y\": \"<double>\",\n      \"PageNumber\": \"<integer>\",\n      \"Height\": \"<double>\",\n      \"Width\": \"<double>\",\n      \"MarkupType\": \"<integer>\",\n      \"MarkupSubType\": \"<integer>\",\n      \"DrawCrossLines\": \"<boolean>\",\n      \"FillA\": \"<integer>\",\n      \"FillR\": \"<integer>\",\n      \"FillG\": \"<integer>\",\n      \"FillB\": \"<integer>\",\n      \"BorderStyle\": \"<integer>\",\n      \"BorderSize\": \"<integer>\",\n      \"BorderA\": \"<integer>\",\n      \"BorderR\": \"<integer>\",\n      \"BorderG\": \"<integer>\",\n      \"BorderB\": \"<integer>\",\n      \"FontA\": \"<integer>\",\n      \"FontR\": \"<integer>\",\n      \"FontG\": \"<integer>\",\n      \"FontB\": \"<integer>\",\n      \"FontName\": \"<string>\",\n      \"FontStyle\": \"<integer>\",\n      \"ZOrder\": \"<integer>\",\n      \"Text\": \"<string>\",\n      \"FontSize\": \"<integer>\",\n      \"ImageWidth\": \"<integer>\",\n      \"ImageHeight\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"WorkspaceID\": \"<integer>\",\n      \"PageHeight\": \"<integer>\",\n      \"PageWidth\": \"<integer>\",\n      \"ValuesAreScaledToDB\": \"<boolean>\",\n      \"DocumentArtifactID\": \"<integer>\",\n      \"MarkupSetArtifactID\": \"<integer>\",\n      \"ModifiedBy\": \"<integer>\",\n      \"CreatedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ebd1c270-a609-4734-90b1-0453cac0452c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "Annotations",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace's Artifact ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotations\": [\n    {\n      \"ID\": \"<integer>\",\n      \"X\": \"<double>\",\n      \"Y\": \"<double>\",\n      \"PageNumber\": \"<integer>\",\n      \"Height\": \"<double>\",\n      \"Width\": \"<double>\",\n      \"MarkupType\": \"<integer>\",\n      \"MarkupSubType\": \"<integer>\",\n      \"DrawCrossLines\": \"<boolean>\",\n      \"FillA\": \"<integer>\",\n      \"FillR\": \"<integer>\",\n      \"FillG\": \"<integer>\",\n      \"FillB\": \"<integer>\",\n      \"BorderStyle\": \"<integer>\",\n      \"BorderSize\": \"<integer>\",\n      \"BorderA\": \"<integer>\",\n      \"BorderR\": \"<integer>\",\n      \"BorderG\": \"<integer>\",\n      \"BorderB\": \"<integer>\",\n      \"FontA\": \"<integer>\",\n      \"FontR\": \"<integer>\",\n      \"FontG\": \"<integer>\",\n      \"FontB\": \"<integer>\",\n      \"FontName\": \"<string>\",\n      \"FontStyle\": \"<integer>\",\n      \"ZOrder\": \"<integer>\",\n      \"Text\": \"<string>\",\n      \"FontSize\": \"<integer>\",\n      \"ImageWidth\": \"<integer>\",\n      \"ImageHeight\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"WorkspaceID\": \"<integer>\",\n      \"PageHeight\": \"<integer>\",\n      \"PageWidth\": \"<integer>\",\n      \"ValuesAreScaledToDB\": \"<boolean>\",\n      \"DocumentArtifactID\": \"<integer>\",\n      \"MarkupSetArtifactID\": \"<integer>\",\n      \"ModifiedBy\": \"<integer>\",\n      \"CreatedOn\": \"<dateTime>\"\n    },\n    {\n      \"ID\": \"<integer>\",\n      \"X\": \"<double>\",\n      \"Y\": \"<double>\",\n      \"PageNumber\": \"<integer>\",\n      \"Height\": \"<double>\",\n      \"Width\": \"<double>\",\n      \"MarkupType\": \"<integer>\",\n      \"MarkupSubType\": \"<integer>\",\n      \"DrawCrossLines\": \"<boolean>\",\n      \"FillA\": \"<integer>\",\n      \"FillR\": \"<integer>\",\n      \"FillG\": \"<integer>\",\n      \"FillB\": \"<integer>\",\n      \"BorderStyle\": \"<integer>\",\n      \"BorderSize\": \"<integer>\",\n      \"BorderA\": \"<integer>\",\n      \"BorderR\": \"<integer>\",\n      \"BorderG\": \"<integer>\",\n      \"BorderB\": \"<integer>\",\n      \"FontA\": \"<integer>\",\n      \"FontR\": \"<integer>\",\n      \"FontG\": \"<integer>\",\n      \"FontB\": \"<integer>\",\n      \"FontName\": \"<string>\",\n      \"FontStyle\": \"<integer>\",\n      \"ZOrder\": \"<integer>\",\n      \"Text\": \"<string>\",\n      \"FontSize\": \"<integer>\",\n      \"ImageWidth\": \"<integer>\",\n      \"ImageHeight\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"WorkspaceID\": \"<integer>\",\n      \"PageHeight\": \"<integer>\",\n      \"PageWidth\": \"<integer>\",\n      \"ValuesAreScaledToDB\": \"<boolean>\",\n      \"DocumentArtifactID\": \"<integer>\",\n      \"MarkupSetArtifactID\": \"<integer>\",\n      \"ModifiedBy\": \"<integer>\",\n      \"CreatedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": false,\n  \"ErrorCode\": 1492,\n  \"CustomErrorMessage\": \"string\",\n  \"AnnotationIDs\": [\n    2981,\n    7504\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c92a629-e7ad-41ca-afe7-c139dd5f72a9",
+          "name": "Retrieves annotations for a document and markup set in a workspace.",
+          "request": {
+            "name": "Retrieves annotations for a document and markup set in a workspace.",
+            "description": {
+              "content": "Returns the current annotation payload associated with the document image and markup set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "Annotations",
+                ":documentID",
+                ":markUpSetID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace's Artifact ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) Document's Artifact ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "markUpSetID",
+                  "description": "(Required) MarkupSet's Artifact ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad9c648d-e5bb-46cc-aba2-bfdfd01b12dc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "Annotations",
+                    ":documentID",
+                    ":markUpSetID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace's Artifact ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) Document's Artifact ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "markUpSetID",
+                      "description": "(Required) MarkupSet's Artifact ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": {\n    \"Annotations\": [\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      },\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      }\n    ]\n  },\n  \"key_1\": {\n    \"Annotations\": [\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      },\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      }\n    ]\n  },\n  \"key_2\": {\n    \"Annotations\": [\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      },\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      }\n    ]\n  },\n  \"key_3\": {\n    \"Annotations\": [\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      },\n      {\n        \"ID\": \"<integer>\",\n        \"X\": \"<double>\",\n        \"Y\": \"<double>\",\n        \"PageNumber\": \"<integer>\",\n        \"Height\": \"<double>\",\n        \"Width\": \"<double>\",\n        \"MarkupType\": \"<integer>\",\n        \"MarkupSubType\": \"<integer>\",\n        \"DrawCrossLines\": \"<boolean>\",\n        \"FillA\": \"<integer>\",\n        \"FillR\": \"<integer>\",\n        \"FillG\": \"<integer>\",\n        \"FillB\": \"<integer>\",\n        \"BorderStyle\": \"<integer>\",\n        \"BorderSize\": \"<integer>\",\n        \"BorderA\": \"<integer>\",\n        \"BorderR\": \"<integer>\",\n        \"BorderG\": \"<integer>\",\n        \"BorderB\": \"<integer>\",\n        \"FontA\": \"<integer>\",\n        \"FontR\": \"<integer>\",\n        \"FontG\": \"<integer>\",\n        \"FontB\": \"<integer>\",\n        \"FontName\": \"<string>\",\n        \"FontStyle\": \"<integer>\",\n        \"ZOrder\": \"<integer>\",\n        \"Text\": \"<string>\",\n        \"FontSize\": \"<integer>\",\n        \"ImageWidth\": \"<integer>\",\n        \"ImageHeight\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"WorkspaceID\": \"<integer>\",\n        \"PageHeight\": \"<integer>\",\n        \"PageWidth\": \"<integer>\",\n        \"ValuesAreScaledToDB\": \"<boolean>\",\n        \"DocumentArtifactID\": \"<integer>\",\n        \"MarkupSetArtifactID\": \"<integer>\",\n        \"ModifiedBy\": \"<integer>\",\n        \"CreatedOn\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "888c06e5-93ca-400c-962f-1fc5336743a7",
+          "name": "Deletes annotations for a document and markup set in a workspace.",
+          "request": {
+            "name": "Deletes annotations for a document and markup set in a workspace.",
+            "description": {
+              "content": "Removes one or more annotations specified in the request body from the target document and markup set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "Annotations",
+                ":documentID",
+                ":markUpSetID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace's Artifact ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) Document's Artifact ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "markUpSetID",
+                  "description": "(Required) MarkupSet's Artifact ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotationIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20873e66-bfa5-4864-bfe2-1e0c9a2f561a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "Annotations",
+                    ":documentID",
+                    ":markUpSetID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace's Artifact ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) Document's Artifact ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "markUpSetID",
+                      "description": "(Required) MarkupSet's Artifact ID."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotationIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "version"
+    }
+  ],
+  "info": {
+    "_postman_id": "8558c9f6-ab9a-4fb6-89cc-1f2aca17bfe8",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

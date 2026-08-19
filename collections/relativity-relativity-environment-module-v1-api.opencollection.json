@@ -1,0 +1,2890 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Environment Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Relativity Environment Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/:includeMetadata/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetMetaAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/meta"
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetDefaultDownloadHandlerURLAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/default-download-handler-url"
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.QueryWorkspaceByGroupAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/query-by-group/:groupID",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleResourcePoolsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-resource-pools"
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleFileRepositoriesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-resource-pools/:resourcePoolID/eligible-file-repositories",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleCacheLocationsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-resource-pools/:resourcePoolID/eligible-cache-locations",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleSqlServersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-resource-pools/:resourcePoolID/eligible-sql-servers",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleAzureCredentialsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-resource-pools/:resourcePoolID/eligible-azure-credentials",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleAzureFileSystemCredentialsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-resource-pools/:resourcePoolID/eligible-azure-file-system-credentials",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.QueryEligibleClientsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/query-eligible-clients",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.QueryEligibleGroupsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/query-eligible-groups",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.QueryEligibleMattersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/query-eligible-matters",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.QueryEligibleSavedSearchesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/query-eligible-saved-searches",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.QueryEligibleTemplatesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/query-eligible-templates",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleSqlFullTextLanguagesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-sql-full-text-languages"
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetEligibleStatusesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/eligible-statuses"
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.RetryFailedCreateEventHandlersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/retry-failed-create-event-handlers",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.GetWorkspaceSummaryAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/summary",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Workspace.IWorkspaceManager.MoveToColdStorageAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/move-to-cold-storage",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkspaceManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.UpsertAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/:resourceFileID",
+            "params": [
+              {
+                "name": "resourceFileID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/:resourceFileID",
+            "params": [
+              {
+                "name": "resourceFileID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/:resourceFileID",
+            "params": [
+              {
+                "name": "resourceFileID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/:resourceFileID/contents/:contentsKey",
+            "params": [
+              {
+                "name": "resourceFileID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "contentsKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.DownloadContentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/:resourceFileID/contents",
+            "params": [
+              {
+                "name": "resourceFileID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.UploadContentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/contents",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.GetAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/resources/:workspaceId",
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ResourceFile.IResourceFileManager.GetEligibleApplicationsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/resource-files/eligible-applications"
+          },
+          "docs": "[Public] IResourceFileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Matter.IMatterManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/matters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMatterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Matter.IMatterManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/matters/:matterID",
+            "params": [
+              {
+                "name": "matterID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMatterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Matter.IMatterManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/matters/:matterID",
+            "params": [
+              {
+                "name": "matterID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IMatterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Matter.IMatterManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/matters/:matterID",
+            "params": [
+              {
+                "name": "matterID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMatterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Matter.IMatterManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/matters/:matterID/:includeMetadata/:includeActions",
+            "params": [
+              {
+                "name": "matterID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IMatterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Matter.IMatterManager.GetEligibleClientsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/eligible-clients"
+          },
+          "docs": "[Public] IMatterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Matter.IMatterManager.GetEligibleStatusesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/matters/eligible-statuses"
+          },
+          "docs": "[Public] IMatterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:packageGuid",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "packageGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:packageGuid",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "packageGuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:packageGuid/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "packageGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:packageGuid/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "packageGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/:includeMetadata/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/:includeMetadata/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:includeMetadata/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadApplicationContentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/contents",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.ReadApplicationContentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/contents",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.GetLibraryInstallStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/libraryinstall",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.RetryLibraryInstallAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/libraryinstall",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.CancelLibraryInstallAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/libraryinstall",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.RetryLibraryInstallAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/libraryinstall",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.GetLibraryInstallStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/libraryinstall",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.CancelLibraryInstallAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/libraryinstall",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.GetLibraryInstallStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/libraryinstall/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.GetLibraryInstallStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/libraryinstall/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.UploadPackageAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/package",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.DeletePackageAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/package/:packageGuid",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "packageGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.DownloadPackageAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/package/:packageGuid/contents",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "packageGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.GetApplicationHostingStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/hostingStatus",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.LibraryApplication.ILibraryApplicationManager.GetApplicationHostingStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/hostingStatus",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ILibraryApplicationManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.InstanceSetting.IInstanceSettingManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/instance-settings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IInstanceSettingManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.InstanceSetting.IInstanceSettingManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/instance-settings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IInstanceSettingManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.InstanceSetting.IInstanceSettingManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/instance-settings/:instanceSettingID",
+            "params": [
+              {
+                "name": "instanceSettingID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IInstanceSettingManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.InstanceSetting.IInstanceSettingManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/instance-settings/:instanceSettingID",
+            "params": [
+              {
+                "name": "instanceSettingID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IInstanceSettingManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.Error.IErrorManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspaces/-1/errors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IErrorManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallIDs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/install",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/install/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/all",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.CancelAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/all",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/install/all",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/all/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.InstallApplicationAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGUID/install/all/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/:applicationInstallID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/:applicationInstallID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/:applicationInstallID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/:applicationInstallID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/:applicationInstallID/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/:applicationInstallID/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallIDs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetApplicationInstallDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/:applicationInstallID/details/:start/:length",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetApplicationInstallDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/:applicationInstallID/details/:start/:length",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetApplicationInstallDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/:applicationInstallID/details/:start/:length/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetApplicationInstallDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/:applicationInstallID/details/:start/:length/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetApplicationInstallDetailsReportAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/:applicationInstallID/details/report",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetApplicationInstallDetailsReportAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/:applicationInstallID/details/report",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationInstallID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetOutdatedWorkspacesCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/outdated-workspaces-count",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetOutdatedWorkspacesCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/outdated-workspaces-count",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetAvailableWorkspacesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/available-workspaces",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.GetAvailableWorkspacesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/available-workspaces",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.SearchAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/install/search",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.SearchApplicationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/search",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.SearchApplicationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/search",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.CancelAllAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/all",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.ValidateApplicationInstallation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/validate",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workspaceIDs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.ValidateApplicationInstallation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/validate",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workspaceIDs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.ValidateApplicationInstallation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationID/install/validate/all",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "targetWorkspaces",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.ValidateApplicationInstallation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/:applicationGuid/install/validate/all",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "targetWorkspaces",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.ValidateApplicationInstallation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/install/validate",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workspaceIDs",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.ValidateApplicationInstallation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/install/validate/all",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "targetWorkspaces",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Environment.Services.Interfaces.Environment.V1.ApplicationInstall.IApplicationInstallManager.IsNameAvailable",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-environment/v1/workspace/:workspaceID/libraryapplications/install/conflict/validate-names",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationInstallManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

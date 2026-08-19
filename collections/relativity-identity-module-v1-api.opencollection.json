@@ -1,0 +1,2292 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Identity Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Identity Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IFederatedInstanceManager.GetKeplerStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/Federated Instance Manager/GetKeplerStatusAsync",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Ping Endpoint"
+        },
+        {
+          "info": {
+            "name": "Read all Federated Instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/federated-instances",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFederatedInstanceManager"
+        },
+        {
+          "info": {
+            "name": "Update an existing Federated Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/federated-instances",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFederatedInstanceManager"
+        },
+        {
+          "info": {
+            "name": "Create a new Federated Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/federated-instances",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFederatedInstanceManager"
+        },
+        {
+          "info": {
+            "name": "Read a Federated Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/federated-instances/:federatedInstanceName",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "federatedInstanceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the Federated Instance to read"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFederatedInstanceManager"
+        },
+        {
+          "info": {
+            "name": "Remove a Federated Instance from this Relativity instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/federated-instances/:federatedInstanceName",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "federatedInstanceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the Federated Instance to read"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFederatedInstanceManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IOAuth2ClientManager.GetKeplerStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/OAuth2 Client Manager/GetKeplerStatusAsync",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Ping Endpoint"
+        },
+        {
+          "info": {
+            "name": "Read all OAuth2 Clients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/oauth2-clients",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IOAuth2ClientManager"
+        },
+        {
+          "info": {
+            "name": "Create a new OAuth2 Client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/oauth2-clients",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IOAuth2ClientManager"
+        },
+        {
+          "info": {
+            "name": "Save an OAuth2 Client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/oauth2-clients",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IOAuth2ClientManager"
+        },
+        {
+          "info": {
+            "name": "Read an OAuth2 Client by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/oauth2-clients/:clientID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "clientID",
+                "value": "",
+                "type": "path",
+                "description": "The ClientID of the OAuth2 Client to read."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IOAuth2ClientManager"
+        },
+        {
+          "info": {
+            "name": "Delete an OAuth2 Client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/oauth2-clients/:clientID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "clientID",
+                "value": "",
+                "type": "path",
+                "description": "The ClientID of the OAuth2 Client to read."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IOAuth2ClientManager"
+        },
+        {
+          "info": {
+            "name": "Generate a new secret for an OAuth2 Client.  All previous secrets are immediately invalidated.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/oauth2-clients/:clientID/regenerate-secret",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "clientID",
+                "value": "",
+                "type": "path",
+                "description": "The ClientID of the OAuth2 Client to read."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IOAuth2ClientManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IAuthProviderTypeManager.GetKeplerStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/Auth Provider Type Manager/GetKeplerStatusAsync",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Ping Endpoint"
+        },
+        {
+          "info": {
+            "name": "Retrieves all Provider Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/auth-provider-types",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAuthProviderTypeManager"
+        },
+        {
+          "info": {
+            "name": "Updates a Provider Type, allowing you to enable or disable Provider Types\r\n            in the environment.  Disabling a Provider Type prevents all users from\r\n            using that protocol during login.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/auth-provider-types",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAuthProviderTypeManager"
+        },
+        {
+          "info": {
+            "name": "Retrieves a Provider Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/auth-provider-types/:name",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "The name of the Provider Type"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAuthProviderTypeManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.GetKeplerStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/Group Manager/GetKeplerStatusAsync",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Ping Endpoint"
+        },
+        {
+          "info": {
+            "name": "Adds a user group to Relativity.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Retrieves advanced metadata for a user group, including its name, associated client, and other properties.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/:groupID?:includeMetadata&:includeActions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path",
+                "description": "A Boolean value indicating whether to return extended group metadata in the response."
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path",
+                "description": "A Boolean value indicating whether to return a list of operations available to the user for this user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Modifies the properties of a user group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/:groupID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Deletes a user group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/:groupID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Retrieves the list of users in a given group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/:groupID/query-members",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Adds a list of users to a given group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/:groupID/members",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Removes a list of users from a given group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/:groupID/members",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.MassAddUsersToGroupsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/members",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.MassRemoveUsersFromGroupsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/members",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Query for Clients that are valid for the client property on group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/eligible-clients/query",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Query for Users that are eligible to be members of a group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/groups/:groupID/eligible-members/query",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IGroupManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.ILoginProfileManager.GetKeplerStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/Login Profile Manager/GetKeplerStatusAsync",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Ping Endpoint"
+        },
+        {
+          "info": {
+            "name": "Get a Login Method Profile for a given user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID/login-profile",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Save a Login Method profile.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID/login-profile",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Explicitly set a user's password.  Note that admins are not allowed to reset \r\n            Relativity users' passwords by default. (see Remarks for more information)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID/login-profile/set/password",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Sends an Invitation Workflow e-mail to the specified user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID/Invitation",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Sends an Invitation Workflow e-mail to each specified user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/Users/bulk-invitation",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Verifies an Invitation Workflow without sending an email.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/bulk-invitation/verify",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Read the Global Auth Profile from the system",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/auth-profile/global",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Save an Auth Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/auth-profile",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ILoginProfileManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetKeplerStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/Permission Manager/GetKeplerStatusAsync",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Ping Endpoint"
+        },
+        {
+          "info": {
+            "name": "Get Workspace Group Permissions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Set Workspace Group Permissions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Get Item Group Permissions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/artifacts/:artifactID/permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "artifactID",
+                "value": "",
+                "type": "path",
+                "description": "Item ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Set Item Group Permissions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/artifacts/:artifactID/permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              },
+              {
+                "name": "artifactID",
+                "value": "",
+                "type": "path",
+                "description": "Item ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Get Item Level Security settings for a given ArtifactID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/artifacts/:artifactID/security",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "artifactID",
+                "value": "",
+                "type": "path",
+                "description": "Item ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Set Item Level Security settings for a given ArtifactID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/artifacts/:artifactID/security",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "artifactID",
+                "value": "",
+                "type": "path",
+                "description": "Item ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Returns a dictionary of item-level security settings objects for the specified Relativity artifacts. \r\n            Inputs include the workspace ArtifactID and a collection of ArtifactIDs. \r\n            For admin artifacts, specify -1 as the workspace ArtifactID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/artifacts/list-security",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Get Workspace Group Users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/members",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Determines if the given user is a member of the given workspace group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/members/:userID/is-member",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Get Item Group Users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/artifacts/:artifactID/members",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "artifactID",
+                "value": "",
+                "type": "path",
+                "description": "Item ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously create a new permission.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously updates a Permission.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously queries for a subset of a collection of Permission instances.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/query-permissions?:length",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "path",
+                "description": "Number of results to return."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously queries for a subset of a collection of Permission instances.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/query-permissions?:length&:queryToken&:start",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "queryToken",
+                "value": "",
+                "type": "path",
+                "description": "Search Query Token, obtained from the Query Result."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "path",
+                "description": "Starting index for this query."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "path",
+                "description": "Number of results to return."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously read a single Permission instance.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/permissions/:permissionID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "permissionID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Permission to Read."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously delets a Permission.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/permissions/:permissionID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "permissionID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Permission to Read."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Determines if the current user has access to workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/has-access",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Indicates a given permission is selected. (ArtifactTypeID)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/list-permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Indicates a given permission is selected. (ItemLevelSecurity on an ArtifactID of a given permission ArtifactTypeID)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/artifacts/:artifactID/list-permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "artifactID",
+                "value": "",
+                "type": "path",
+                "description": "Item ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Returns the current user’s permission to the specified relativity artifacts as a dictionary that maps the ArtifactID to the permissions values. \r\n            Inputs include the workspace ArtifactID, a collection of PermissionRef objects, and a collection of ArtifactIDs. \r\n            To return admin-level artifact permissions, specify -1 as the workspace ArtifactID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/artifacts/list-permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Indicates a given permission is selected. (ArtifactTypeID for a given Group)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/list-permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Indicates if a given admin permission is selected.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/Admin/list-permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Indicates a given permission is selected. (ItemLevelSecurity on an ArtifactID of a given permission ArtifactTypeID for a given Group)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupID/artifacts/:artifactID/list-permissions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the user group."
+              },
+              {
+                "name": "artifactID",
+                "value": "",
+                "type": "path",
+                "description": "Item ArtifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Get a list of tabs for the group and the tab visibility state.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupArtifactID/tab-visibility",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "The group artifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Update the tab visibility state for a group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceArtifactID/groups/:groupArtifactID/tab-visibility",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ArtifactID."
+              },
+              {
+                "name": "groupArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "The group artifactID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPermissionManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.GetKeplerStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/User Manager/GetKeplerStatusAsync",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Ping Endpoint"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.QueryGroupsByUserAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID/query-groups",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Query for Groups that are eligible for adding at least one of specified users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/query-eligible-groups",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Adds a single user to Relativity.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Retrieves advanced metadata for a user, including their Relativity access, name, email, and other properties.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID?:includeMetadata&:includeActions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path",
+                "description": "A Boolean value indicating whether to return extended group metadata in the response."
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path",
+                "description": "A Boolean value indicating whether to return a list of operations available to the user for this user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Retrieves settings for the current user, including their name, email, and other properties.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/me/settings?:includeMetadata?:includeActions",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path",
+                "description": "A Boolean value indicating whether to return extended group metadata in the response."
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path",
+                "description": "A Boolean value indicating whether to return a list of operations available to the user for this user group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Modifies the properties of a user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Deletes a user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/:userID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path",
+                "description": "The user id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Modifies the user setting properties of the current user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/me/settings",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Gets all possible types for the User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/users/available-types",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Gets a list of all users and their information for a given workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceID/users",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Gets a list of users and their information, and supports filtering, ordering, and paging these results.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceID/query-users",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously retrieves the current user in the specified workspace. NOTE: User Artifact ID may differ for the same user in different workspaces.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceID/users/me",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously retrieves a list of all users in a workspace, including administrators and (optional) deleted users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceID/all-users?:includeDeleted",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context."
+              },
+              {
+                "name": "includeDeleted",
+                "value": "",
+                "type": "path",
+                "description": "[Optional - Default false] Include Users flagged as deleted in the results"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Asynchronously retrieves a list of all active users in a workspace. If the number of returned users exceeds the ChoiceLimitForUI setting, no users will be returned.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceID/active-users?:includeCurrentUser&:enforceChoiceLimitForUI",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context."
+              },
+              {
+                "name": "includeCurrentUser",
+                "value": "",
+                "type": "path",
+                "description": "[Optional - Default true] Include the current user in the results; False would be for instances like coding docs"
+              },
+              {
+                "name": "enforceChoiceLimitForUI",
+                "value": "",
+                "type": "path",
+                "description": "If the list exceeds configured limit of users, no users will be returned."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        },
+        {
+          "info": {
+            "name": "Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.RetrieveAllWithRelativityAccessAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/Relativity-Identity/v1/workspaces/:workspaceID/users-with-access",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IUserManager"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

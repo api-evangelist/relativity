@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Storage API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Glacier Storage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List glaciers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/api/glaciers",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "The page number to retrieve (default: 1)"
+              },
+              {
+                "name": "pageSize",
+                "value": "50",
+                "type": "query",
+                "description": "The number of items per page (default: 50)"
+              },
+              {
+                "name": "status",
+                "value": "GLACIER_AVAILABLE",
+                "type": "query",
+                "description": "Filter glaciers by status"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of all glaciers. Each glacier in the list includes basic information such as ID, name, and creation date."
+        },
+        {
+          "info": {
+            "name": "Get glacier inventory report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/api/glaciers/:glacierId/report",
+            "params": [
+              {
+                "name": "glacierId",
+                "value": "987fcdeb-51a2-43d1-9876-543210fedcba",
+                "type": "path",
+                "description": "The unique identifier of the glacier"
+              }
+            ]
+          },
+          "docs": "Retrieves detailed Inventory Report information about a specific glacier with download link."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,265 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Metrics Module API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metrics Module",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IAPMManager.LogCountAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogCountAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Private] IAPMManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IAPMManager.LogTimerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogTimerAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "milliseconds",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Private] IAPMManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IMetricsManager.LogTimerAsLongAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogTimerAsLongAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "workspaceGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "milliseconds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IMetricsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IMetricsManager.LogTimerAsDoubleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogTimerAsDoubleAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "workspaceGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "milliseconds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IMetricsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IMetricsManager.LogPointInTimeStringAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogPointInTimeStringAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "workspaceGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IMetricsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IMetricsManager.LogPointInTimeLongAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogPointInTimeLongAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "workspaceGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IMetricsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IMetricsManager.LogPointInTimeDoubleAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogPointInTimeDoubleAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "workspaceGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IMetricsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Telemetry.Services.Metrics.IMetricsManager.LogMetricsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/LogMetricsAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Private] IMetricsManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

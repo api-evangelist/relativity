@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Document Configuration Module API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Document Configuration Module",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Import.Services.V1.IDocumentConfigurationController.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/documents-configurations/",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Import Job document configuration."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IDocumentConfigurationController.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/documents-configurations",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              }
+            ]
+          },
+          "docs": "Get Import Job document settings."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

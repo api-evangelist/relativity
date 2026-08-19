@@ -1,0 +1,226 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Pivot Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Relativity Pivot Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Pivot.V1.IPivotFieldManager.GetFieldsForGroupByAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-pivot/v1/workspaces/:workspaceID/fields/group-by/:artifactTypeID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "artifactTypeID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IPivotFieldManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Pivot.V1.IPivotFieldManager.GetFieldsForPivotOnAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-pivot/v1/workspaces/:workspaceID/fields/pivot-on/:artifactTypeID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "artifactTypeID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IPivotFieldManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Pivot.V1.IPivotProfileManager.ExecutePivotProfileAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-pivot/v1/workspaces/:workspaceID/profiles/:pivotProfileID/execute",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pivotProfileID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPivotProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Pivot.V1.IPivotProfileManager.UpdateProfileAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-pivot/v1/workspaces/:workspaceID/profiles/:pivotProfileID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pivotProfileID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPivotProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Pivot.V1.IPivotProfileManager.CreateProfileAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-pivot/v1/workspaces/:workspaceID/profiles",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPivotProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Pivot.V1.IPivotQueryManager.ExecuteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-pivot/v1/workspaces/:workspaceID/queries",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPivotQueryManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Pivot.V1.IPivotQueryManager.ExecuteExportAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-pivot/v1/workspaces/:workspaceID/queries/export",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IPivotQueryManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

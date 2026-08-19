@@ -1,0 +1,3321 @@
+{
+  "item": [
+    {
+      "id": "381c0353-9c20-472c-b20e-422f64279b3e",
+      "name": "Versioned Imaging Module v1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c6ee2737-4b79-418b-a35b-764afce28776",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Read Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Read Async",
+            "description": {
+              "content": "[Public] IApplicationFieldCodeManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "application-field-codes",
+                ":applicationFieldCodeID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "applicationFieldCodeID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "20d46856-5fad-41bf-a8db-34025213fe6f",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "application-field-codes",
+                    ":applicationFieldCodeID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "applicationFieldCodeID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"FieldCode\": \"string\",\n  \"Application\": \"NotSet\",\n  \"Option\": \"DocumentDefault\",\n  \"RelativityField\": {\n    \"ArtifactID\": 9354,\n    \"ViewFieldID\": 5092,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"ImagingProfiles\": [\n    {\n      \"ArtifactID\": 341,\n      \"Name\": \"string\"\n    },\n    {\n      \"ArtifactID\": 4871,\n      \"Name\": \"string\"\n    }\n  ],\n  \"ArtifactID\": 9794,\n  \"Name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c7d51dc-f46a-400e-a25b-4cffd64466cc",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Update Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Update Async",
+            "description": {
+              "content": "[Public] IApplicationFieldCodeManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "application-field-codes",
+                ":applicationFieldCodeID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "applicationFieldCodeID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"FieldCode\": \"<string>\",\n  \"Application\": \"<string>\",\n  \"Option\": \"<string>\",\n  \"RelativityField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"ImagingProfiles\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "34fbdd54-ba16-4ba4-b46e-748203609b93",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "application-field-codes",
+                    ":applicationFieldCodeID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "applicationFieldCodeID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FieldCode\": \"<string>\",\n  \"Application\": \"<string>\",\n  \"Option\": \"<string>\",\n  \"RelativityField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"ImagingProfiles\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30f2f2e6-b832-40e6-9b31-decbcc1d88e2",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Delete Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Delete Async",
+            "description": {
+              "content": "[Public] IApplicationFieldCodeManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "application-field-codes",
+                ":applicationFieldCodeID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "applicationFieldCodeID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2acaefea-6921-4865-b677-38db20e0eb08",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "application-field-codes",
+                    ":applicationFieldCodeID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "applicationFieldCodeID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "false",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e6e92f4-7d3a-4329-9765-111ba3e33234",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Create Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Application Field Code Manager.Create Async",
+            "description": {
+              "content": "[Public] IApplicationFieldCodeManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "application-field-codes",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"FieldCode\": \"<string>\",\n  \"Application\": \"<string>\",\n  \"Option\": \"<string>\",\n  \"RelativityField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"ImagingProfiles\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7df3a4ac-33bc-4e82-81c2-1ec87be14c57",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "application-field-codes",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FieldCode\": \"<string>\",\n  \"Application\": \"<string>\",\n  \"Option\": \"<string>\",\n  \"RelativityField\": {\n    \"ArtifactID\": \"<integer>\",\n    \"ViewFieldID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Name\": \"<string>\"\n  },\n  \"ImagingProfiles\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1eea667c-9bd5-4418-9e29-068e175ca195",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Document Status Manager.Get Status Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Document Status Manager.Get Status Async",
+            "description": {
+              "content": "[Public] IDocumentStatusManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                ":documentID",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1871a48-fb03-4efa-b182-a9fc4bfd9cb8",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    ":documentID",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImageCount\": 5433,\n  \"Error\": {\n    \"Message\": \"string\",\n    \"Status\": \"string\"\n  },\n  \"Warnings\": [\n    {\n      \"Message\": \"string\",\n      \"Type\": \"string\"\n    },\n    {\n      \"Message\": \"string\",\n      \"Type\": \"string\"\n    }\n  ],\n  \"HasImages\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e7abbad-5ff8-4434-a2e8-e24de081772b",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Environment Manager.Cleanup Inactive Jobs Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Environment Manager.Cleanup Inactive Jobs Async",
+            "description": {
+              "content": "[Public] IImagingEnvironmentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "environment",
+                "jobs",
+                "inactive-jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b76aa2d-559f-40cb-a667-fe6f3596dda0",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "environment",
+                    "jobs",
+                    "inactive-jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8eb2161-44f9-408f-acf0-f186efff7f46",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Environment Manager.Get Max Mass Imaging Job Size Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Environment Manager.Get Max Mass Imaging Job Size Async",
+            "description": {
+              "content": "[Public] IImagingEnvironmentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "environment",
+                "jobs",
+                "mass-imaging-max-size"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3cb415cc-96ff-46a5-849b-ab73c3148c81",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "environment",
+                    "jobs",
+                    "mass-imaging-max-size"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1978260-0f43-4e8a-a81b-98ca4edf16f9",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Run Imaging Set Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Run Imaging Set Async",
+            "description": {
+              "content": "[Public] IImagingJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"QcEnabled\": \"<boolean>\",\n  \"OriginationID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aef19667-06dd-42be-9ca0-cf8547d138f1",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"QcEnabled\": \"<boolean>\",\n  \"OriginationID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImagingJobID\": 9818\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cad12deb-80b6-450b-b539-0dedf033bed7",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Retry Imaging Set Errors Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Retry Imaging Set Errors Async",
+            "description": {
+              "content": "[Public] IImagingJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID",
+                "retry-errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"QcEnabled\": \"<boolean>\",\n  \"OriginationID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "121712dd-9a02-41c4-9489-735cdccb58c3",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID",
+                    "retry-errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"QcEnabled\": \"<boolean>\",\n  \"OriginationID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImagingJobID\": 9818\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "584d4c0e-9a39-4686-b7ba-967489d9163a",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Stop Imaging Job Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Stop Imaging Job Async",
+            "description": {
+              "content": "[Public] IImagingJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "jobs",
+                ":imagingJobID",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingJobID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"OriginationID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9f2d140b-4d97-4bd1-995b-90e46b6a9b90",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "jobs",
+                    ":imagingJobID",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingJobID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OriginationID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": false,\n  \"ErrorMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40ad3085-df76-4f77-b207-849db900ed9e",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Image Document Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Image Document Async",
+            "description": {
+              "content": "[Public] IImagingJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                ":documentArtifactID",
+                "image"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentArtifactID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProfileID\": \"<integer>\",\n  \"AlternateNativeLocation\": \"<string>\",\n  \"RemoveAlternateNativeAfterImaging\": \"<boolean>\",\n  \"OriginationID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c73e3d45-72be-411d-b52f-3e1b49959d26",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    ":documentArtifactID",
+                    "image"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentArtifactID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProfileID\": \"<integer>\",\n  \"AlternateNativeLocation\": \"<string>\",\n  \"RemoveAlternateNativeAfterImaging\": \"<boolean>\",\n  \"OriginationID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImagingJobID\": 8521\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c4b9ef5-a88c-4ebf-88c3-f1e4ba45c81b",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Mass Image Documents By Mass Process Id Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Mass Image Documents By Mass Process Id Async",
+            "description": {
+              "content": "[Public] IImagingJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "mass-image"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProfileID\": \"<integer>\",\n  \"MassProcessID\": \"<string>\",\n  \"SourceType\": \"<string>\",\n  \"OriginationID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2b83659a-b1cc-49c2-9fd5-0df225434405",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "mass-image"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProfileID\": \"<integer>\",\n  \"MassProcessID\": \"<string>\",\n  \"SourceType\": \"<string>\",\n  \"OriginationID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImagingJobID\": 7182\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9555acd-75a6-42c1-ac6a-e96a267e7773",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Update Job Priority Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Job Manager.Update Job Priority Async",
+            "description": {
+              "content": "[Public] IImagingJobManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "jobs",
+                ":imagingJobID",
+                "priority"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingJobID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Priority\": \"<integer>\",\n  \"OriginationID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "55bc24c9-ed3f-4a59-a86e-f6bc62445d2f",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "jobs",
+                    ":imagingJobID",
+                    "priority"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingJobID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Priority\": \"<integer>\",\n  \"OriginationID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": true,\n  \"ErrorMessage\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbd5605d-f530-4ed4-81d7-b8a437e542dd",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Create Basic Imaging Profile Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Create Basic Imaging Profile Async",
+            "description": {
+              "content": "[Public] IImagingProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-profiles",
+                "basic"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"BasicOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"BasicImageFormat\": \"<string>\",\n    \"ImageSize\": \"<string>\",\n    \"MaximumImageHeight\": \"<number>\",\n    \"MaximumImageWidth\": \"<number>\",\n    \"BasicWordIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointShowSpeakerNotes\": \"<boolean>\",\n    \"WordIncludeTrackChanges\": \"<boolean>\"\n  },\n  \"Keywords\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"NativeTypes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b34f9fc6-6091-4c6f-ab55-e04c08379fdb",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-profiles",
+                    "basic"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"BasicOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"BasicImageFormat\": \"<string>\",\n    \"ImageSize\": \"<string>\",\n    \"MaximumImageHeight\": \"<number>\",\n    \"MaximumImageWidth\": \"<number>\",\n    \"BasicWordIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointShowSpeakerNotes\": \"<boolean>\",\n    \"WordIncludeTrackChanges\": \"<boolean>\"\n  },\n  \"Keywords\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"NativeTypes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81327e1a-7deb-4efd-9cbc-3a533456f0f1",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Create Native Imaging Profile Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Create Native Imaging Profile Async",
+            "description": {
+              "content": "[Public] IImagingProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-profiles",
+                "native"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NativeOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"NativeImageFormat\": \"<string>\",\n    \"RenderColorPagesToJpeg\": \"<boolean>\",\n    \"MaxPagesPerDoc\": \"<integer>\",\n    \"DitheringAlgorithm\": \"<string>\",\n    \"DitheringThreshold\": \"<integer>\",\n    \"TimeZoneFieldOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    },\n    \"LastModifiedDateOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    }\n  },\n  \"SpreadsheetOptions\": {\n    \"PaperSizeOrientation\": \"<string>\",\n    \"PageOrder\": \"<string>\",\n    \"PrintArea\": \"<string>\",\n    \"HideAndPageBreakAfterConsecutiveBlankRowCol\": \"<integer>\",\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"IncludeRowAndColumnHeadings\": \"<string>\",\n    \"IncludeHeadersAndFooters\": \"<string>\",\n    \"IncludeComments\": \"<boolean>\",\n    \"IncludeGridlines\": \"<string>\",\n    \"IncludeBorders\": \"<boolean>\",\n    \"UnhideHiddenWorksheets\": \"<boolean>\",\n    \"LimitToPages\": \"<integer>\",\n    \"ZoomLevelPercentage\": \"<integer>\",\n    \"FitToPagesWide\": \"<integer>\",\n    \"FitToPagesTall\": \"<integer>\",\n    \"Formatting\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"TextVisibility\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"EmailOptions\": {\n    \"Orientation\": \"<string>\",\n    \"ResizeImagesToFitPage\": \"<boolean>\",\n    \"ResizeTablesToFitPage\": \"<boolean>\",\n    \"SplitTablesToFitPageWidth\": \"<boolean>\",\n    \"DownloadImagesFromInternet\": \"<boolean>\",\n    \"ClearIndentations\": \"<boolean>\",\n    \"DetectCharacterEncoding\": \"<boolean>\",\n    \"DisplaySmtpAddresses\": \"<boolean>\",\n    \"ShowMessageTypeInHeader\": \"<boolean>\"\n  },\n  \"WordProcessingOptions\": {\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"PageOrientation\": \"<string>\",\n    \"Include\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"PresentationOptions\": {\n    \"ShowSpeakerNotes\": \"<boolean>\",\n    \"SlideOrientation\": \"<string>\"\n  },\n  \"HtmlOptions\": {\n    \"RemoveNonBreakingSpaceCodes\": \"<boolean>\"\n  },\n  \"ApplicationFieldCodes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"Name\": \"<string>\",\n  \"BasicOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"BasicImageFormat\": \"<string>\",\n    \"ImageSize\": \"<string>\",\n    \"MaximumImageHeight\": \"<number>\",\n    \"MaximumImageWidth\": \"<number>\",\n    \"BasicWordIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointShowSpeakerNotes\": \"<boolean>\",\n    \"WordIncludeTrackChanges\": \"<boolean>\"\n  },\n  \"Keywords\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"NativeTypes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3ce66672-2cb3-4bd2-a4ff-7d42b27ca8f1",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-profiles",
+                    "native"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NativeOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"NativeImageFormat\": \"<string>\",\n    \"RenderColorPagesToJpeg\": \"<boolean>\",\n    \"MaxPagesPerDoc\": \"<integer>\",\n    \"DitheringAlgorithm\": \"<string>\",\n    \"DitheringThreshold\": \"<integer>\",\n    \"TimeZoneFieldOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    },\n    \"LastModifiedDateOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    }\n  },\n  \"SpreadsheetOptions\": {\n    \"PaperSizeOrientation\": \"<string>\",\n    \"PageOrder\": \"<string>\",\n    \"PrintArea\": \"<string>\",\n    \"HideAndPageBreakAfterConsecutiveBlankRowCol\": \"<integer>\",\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"IncludeRowAndColumnHeadings\": \"<string>\",\n    \"IncludeHeadersAndFooters\": \"<string>\",\n    \"IncludeComments\": \"<boolean>\",\n    \"IncludeGridlines\": \"<string>\",\n    \"IncludeBorders\": \"<boolean>\",\n    \"UnhideHiddenWorksheets\": \"<boolean>\",\n    \"LimitToPages\": \"<integer>\",\n    \"ZoomLevelPercentage\": \"<integer>\",\n    \"FitToPagesWide\": \"<integer>\",\n    \"FitToPagesTall\": \"<integer>\",\n    \"Formatting\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"TextVisibility\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"EmailOptions\": {\n    \"Orientation\": \"<string>\",\n    \"ResizeImagesToFitPage\": \"<boolean>\",\n    \"ResizeTablesToFitPage\": \"<boolean>\",\n    \"SplitTablesToFitPageWidth\": \"<boolean>\",\n    \"DownloadImagesFromInternet\": \"<boolean>\",\n    \"ClearIndentations\": \"<boolean>\",\n    \"DetectCharacterEncoding\": \"<boolean>\",\n    \"DisplaySmtpAddresses\": \"<boolean>\",\n    \"ShowMessageTypeInHeader\": \"<boolean>\"\n  },\n  \"WordProcessingOptions\": {\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"PageOrientation\": \"<string>\",\n    \"Include\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"PresentationOptions\": {\n    \"ShowSpeakerNotes\": \"<boolean>\",\n    \"SlideOrientation\": \"<string>\"\n  },\n  \"HtmlOptions\": {\n    \"RemoveNonBreakingSpaceCodes\": \"<boolean>\"\n  },\n  \"ApplicationFieldCodes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"Name\": \"<string>\",\n  \"BasicOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"BasicImageFormat\": \"<string>\",\n    \"ImageSize\": \"<string>\",\n    \"MaximumImageHeight\": \"<number>\",\n    \"MaximumImageWidth\": \"<number>\",\n    \"BasicWordIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointShowSpeakerNotes\": \"<boolean>\",\n    \"WordIncludeTrackChanges\": \"<boolean>\"\n  },\n  \"Keywords\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"NativeTypes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bdd83067-cbe6-4e48-8d86-946f7d12c5a1",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Read Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Read Async",
+            "description": {
+              "content": "[Public] IImagingProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-profiles",
+                ":imagingProfileID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingProfileID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f890662-9646-4f7f-88c5-03272dd6e969",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-profiles",
+                    ":imagingProfileID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingProfileID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImagingMethod\": \"Native\",\n  \"BasicOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"BasicImageFormat\": \"<string>\",\n    \"ImageSize\": \"<string>\",\n    \"MaximumImageHeight\": \"<number>\",\n    \"MaximumImageWidth\": \"<number>\",\n    \"BasicWordIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointShowSpeakerNotes\": \"<boolean>\",\n    \"WordIncludeTrackChanges\": \"<boolean>\"\n  },\n  \"NativeOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"NativeImageFormat\": \"<string>\",\n    \"RenderColorPagesToJpeg\": \"<boolean>\",\n    \"MaxPagesPerDoc\": \"<integer>\",\n    \"DitheringAlgorithm\": \"<string>\",\n    \"DitheringThreshold\": \"<integer>\",\n    \"TimeZoneFieldOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    },\n    \"LastModifiedDateOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    }\n  },\n  \"SpreadsheetOptions\": {\n    \"PaperSizeOrientation\": \"<string>\",\n    \"PageOrder\": \"<string>\",\n    \"PrintArea\": \"<string>\",\n    \"HideAndPageBreakAfterConsecutiveBlankRowCol\": \"<integer>\",\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"IncludeRowAndColumnHeadings\": \"<string>\",\n    \"IncludeHeadersAndFooters\": \"<string>\",\n    \"IncludeComments\": \"<boolean>\",\n    \"IncludeGridlines\": \"<string>\",\n    \"IncludeBorders\": \"<boolean>\",\n    \"UnhideHiddenWorksheets\": \"<boolean>\",\n    \"LimitToPages\": \"<integer>\",\n    \"ZoomLevelPercentage\": \"<integer>\",\n    \"FitToPagesWide\": \"<integer>\",\n    \"FitToPagesTall\": \"<integer>\",\n    \"Formatting\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"TextVisibility\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"EmailOptions\": {\n    \"Orientation\": \"<string>\",\n    \"ResizeImagesToFitPage\": \"<boolean>\",\n    \"ResizeTablesToFitPage\": \"<boolean>\",\n    \"SplitTablesToFitPageWidth\": \"<boolean>\",\n    \"DownloadImagesFromInternet\": \"<boolean>\",\n    \"ClearIndentations\": \"<boolean>\",\n    \"DetectCharacterEncoding\": \"<boolean>\",\n    \"DisplaySmtpAddresses\": \"<boolean>\",\n    \"ShowMessageTypeInHeader\": \"<boolean>\"\n  },\n  \"WordProcessingOptions\": {\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"PageOrientation\": \"<string>\",\n    \"Include\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"PresentationOptions\": {\n    \"ShowSpeakerNotes\": \"<boolean>\",\n    \"SlideOrientation\": \"<string>\"\n  },\n  \"HtmlOptions\": {\n    \"RemoveNonBreakingSpaceCodes\": \"<boolean>\"\n  },\n  \"NativeTypes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"ApplicationFieldCodes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"Keywords\": \"string\",\n  \"Notes\": \"string\",\n  \"ArtifactID\": 9305,\n  \"Name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1eca9d8b-4dd8-416b-bc30-f44635df7f6f",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Update Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Update Async",
+            "description": {
+              "content": "[Public] IImagingProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-profiles",
+                ":imagingProfileID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingProfileID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ImagingMethod\": \"<string>\",\n  \"NativeOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"NativeImageFormat\": \"<string>\",\n    \"RenderColorPagesToJpeg\": \"<boolean>\",\n    \"MaxPagesPerDoc\": \"<integer>\",\n    \"DitheringAlgorithm\": \"<string>\",\n    \"DitheringThreshold\": \"<integer>\",\n    \"TimeZoneFieldOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    },\n    \"LastModifiedDateOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    }\n  },\n  \"SpreadsheetOptions\": {\n    \"PaperSizeOrientation\": \"<string>\",\n    \"PageOrder\": \"<string>\",\n    \"PrintArea\": \"<string>\",\n    \"HideAndPageBreakAfterConsecutiveBlankRowCol\": \"<integer>\",\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"IncludeRowAndColumnHeadings\": \"<string>\",\n    \"IncludeHeadersAndFooters\": \"<string>\",\n    \"IncludeComments\": \"<boolean>\",\n    \"IncludeGridlines\": \"<string>\",\n    \"IncludeBorders\": \"<boolean>\",\n    \"UnhideHiddenWorksheets\": \"<boolean>\",\n    \"LimitToPages\": \"<integer>\",\n    \"ZoomLevelPercentage\": \"<integer>\",\n    \"FitToPagesWide\": \"<integer>\",\n    \"FitToPagesTall\": \"<integer>\",\n    \"Formatting\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"TextVisibility\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"EmailOptions\": {\n    \"Orientation\": \"<string>\",\n    \"ResizeImagesToFitPage\": \"<boolean>\",\n    \"ResizeTablesToFitPage\": \"<boolean>\",\n    \"SplitTablesToFitPageWidth\": \"<boolean>\",\n    \"DownloadImagesFromInternet\": \"<boolean>\",\n    \"ClearIndentations\": \"<boolean>\",\n    \"DetectCharacterEncoding\": \"<boolean>\",\n    \"DisplaySmtpAddresses\": \"<boolean>\",\n    \"ShowMessageTypeInHeader\": \"<boolean>\"\n  },\n  \"WordProcessingOptions\": {\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"PageOrientation\": \"<string>\",\n    \"Include\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"PresentationOptions\": {\n    \"ShowSpeakerNotes\": \"<boolean>\",\n    \"SlideOrientation\": \"<string>\"\n  },\n  \"HtmlOptions\": {\n    \"RemoveNonBreakingSpaceCodes\": \"<boolean>\"\n  },\n  \"ApplicationFieldCodes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"Name\": \"<string>\",\n  \"BasicOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"BasicImageFormat\": \"<string>\",\n    \"ImageSize\": \"<string>\",\n    \"MaximumImageHeight\": \"<number>\",\n    \"MaximumImageWidth\": \"<number>\",\n    \"BasicWordIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointShowSpeakerNotes\": \"<boolean>\",\n    \"WordIncludeTrackChanges\": \"<boolean>\"\n  },\n  \"Keywords\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"NativeTypes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8153c328-a5fd-488c-91e9-02a1fa6c2b20",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-profiles",
+                    ":imagingProfileID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingProfileID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ImagingMethod\": \"<string>\",\n  \"NativeOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"NativeImageFormat\": \"<string>\",\n    \"RenderColorPagesToJpeg\": \"<boolean>\",\n    \"MaxPagesPerDoc\": \"<integer>\",\n    \"DitheringAlgorithm\": \"<string>\",\n    \"DitheringThreshold\": \"<integer>\",\n    \"TimeZoneFieldOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    },\n    \"LastModifiedDateOnDocument\": {\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Name\": \"<string>\"\n    }\n  },\n  \"SpreadsheetOptions\": {\n    \"PaperSizeOrientation\": \"<string>\",\n    \"PageOrder\": \"<string>\",\n    \"PrintArea\": \"<string>\",\n    \"HideAndPageBreakAfterConsecutiveBlankRowCol\": \"<integer>\",\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"IncludeRowAndColumnHeadings\": \"<string>\",\n    \"IncludeHeadersAndFooters\": \"<string>\",\n    \"IncludeComments\": \"<boolean>\",\n    \"IncludeGridlines\": \"<string>\",\n    \"IncludeBorders\": \"<boolean>\",\n    \"UnhideHiddenWorksheets\": \"<boolean>\",\n    \"LimitToPages\": \"<integer>\",\n    \"ZoomLevelPercentage\": \"<integer>\",\n    \"FitToPagesWide\": \"<integer>\",\n    \"FitToPagesTall\": \"<integer>\",\n    \"Formatting\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"TextVisibility\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"EmailOptions\": {\n    \"Orientation\": \"<string>\",\n    \"ResizeImagesToFitPage\": \"<boolean>\",\n    \"ResizeTablesToFitPage\": \"<boolean>\",\n    \"SplitTablesToFitPageWidth\": \"<boolean>\",\n    \"DownloadImagesFromInternet\": \"<boolean>\",\n    \"ClearIndentations\": \"<boolean>\",\n    \"DetectCharacterEncoding\": \"<boolean>\",\n    \"DisplaySmtpAddresses\": \"<boolean>\",\n    \"ShowMessageTypeInHeader\": \"<boolean>\"\n  },\n  \"WordProcessingOptions\": {\n    \"ShowTrackChanges\": \"<boolean>\",\n    \"PageOrientation\": \"<string>\",\n    \"Include\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"PresentationOptions\": {\n    \"ShowSpeakerNotes\": \"<boolean>\",\n    \"SlideOrientation\": \"<string>\"\n  },\n  \"HtmlOptions\": {\n    \"RemoveNonBreakingSpaceCodes\": \"<boolean>\"\n  },\n  \"ApplicationFieldCodes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ],\n  \"Name\": \"<string>\",\n  \"BasicOptions\": {\n    \"ImageOutputDpi\": \"<integer>\",\n    \"BasicImageFormat\": \"<string>\",\n    \"ImageSize\": \"<string>\",\n    \"MaximumImageHeight\": \"<number>\",\n    \"MaximumImageWidth\": \"<number>\",\n    \"BasicWordIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointIncludeComments\": \"<boolean>\",\n    \"BasicPowerPointShowSpeakerNotes\": \"<boolean>\",\n    \"WordIncludeTrackChanges\": \"<boolean>\"\n  },\n  \"Keywords\": \"<string>\",\n  \"Notes\": \"<string>\",\n  \"NativeTypes\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "018539b6-f05b-49a1-b7da-866bd5a04cbc",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Delete Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Profile Manager.Delete Async",
+            "description": {
+              "content": "[Public] IImagingProfileManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-profiles",
+                ":imagingProfileID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingProfileID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3ffda52-c34d-4982-baf0-42bf5eadc167",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-profiles",
+                    ":imagingProfileID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingProfileID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b31b4ccf-b5ae-46b3-b0d9-5f952f8cb3e7",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Create Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Create Async",
+            "description": {
+              "content": "[Public] IImagingSetManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"ImagingProfileID\": \"<integer>\",\n  \"DataSourceID\": \"<integer>\",\n  \"EmailNotificationRecipients\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64c6774b-3d23-41f2-b38d-4d641dfaed25",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"ImagingProfileID\": \"<integer>\",\n  \"DataSourceID\": \"<integer>\",\n  \"EmailNotificationRecipients\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b72a37a-e532-45a7-8676-32e79657f99a",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Update Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Update Async",
+            "description": {
+              "content": "[Public] IImagingSetManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"ImagingProfileID\": \"<integer>\",\n  \"DataSourceID\": \"<integer>\",\n  \"EmailNotificationRecipients\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "94a446f3-8253-4f78-aa7a-8ec54eb833e2",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"ImagingProfileID\": \"<integer>\",\n  \"DataSourceID\": \"<integer>\",\n  \"EmailNotificationRecipients\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "5391",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdebbbb0-6324-48b5-b3e2-6ebb28294ef2",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Read Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Read Async",
+            "description": {
+              "content": "[Public] IImagingSetManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d268594-9d9e-4e21-8e8c-14a3a267ebaa",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ImagingProfile\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Name\": \"<string>\"\n  },\n  \"DataSourceID\": 9044,\n  \"EmailNotificationRecipients\": \"string\",\n  \"Status\": {\n    \"ImageCompletion\": \"string\",\n    \"ImageQCReviewStatus\": \"string\",\n    \"LastRunError\": \"string\",\n    \"QCEnabledOnLastRun\": true,\n    \"Status\": \"string\",\n    \"CompletionRate\": \"string\",\n    \"StartTime\": \"2003-12-25T15:56:39.019Z\"\n  },\n  \"ArtifactID\": 1523,\n  \"Name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e43831b-28be-410c-aea1-56fffd416d16",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Delete Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Delete Async",
+            "description": {
+              "content": "[Public] IImagingSetManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40325f2e-1b31-4f86-a5ba-a54dcb856db3",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d6ed57b-c3aa-4d5f-9e13-5e6aca4e3972",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Release Imaging Set Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Release Imaging Set Async",
+            "description": {
+              "content": "[Public] IImagingSetManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID",
+                "release-images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d33417f1-653f-4d15-ac9e-4e3f65dd579f",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID",
+                    "release-images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2dd17e36-dabe-4f6a-acf5-59ad5577a617",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Hide Imaging Set Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Hide Imaging Set Async",
+            "description": {
+              "content": "[Public] IImagingSetManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID",
+                "hide-images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f430d6f2-89c9-4ac1-96ec-1ba0e2f96df8",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID",
+                    "hide-images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "553131cc-5597-4e2b-a15d-51053dd38390",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Get Status Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Imaging Set Manager.Get Status Async",
+            "description": {
+              "content": "[Public] IImagingSetManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "imaging-sets",
+                ":imagingSetID",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "imagingSetID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b1b9051-2f64-470a-88ac-697ebaf03f1e",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "imaging-sets",
+                    ":imagingSetID",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "imagingSetID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Status\": \"string\",\n  \"LastRunError\": \"string\",\n  \"QcReviewEnabledOnLastRun\": true,\n  \"JobGuid\": \"string\",\n  \"JobType\": 7962,\n  \"JobStartTime\": \"2026-03-06T09:25:41.138Z\",\n  \"NumberOfDocuments\": 9932,\n  \"NumberOfDocumentsHidden\": 1832,\n  \"NumberOfDocumentsViewable\": 4856,\n  \"NumberOfDocumentsWithWarnings\": 5251,\n  \"SubmittedByUserId\": 6445,\n  \"JobStatus\": \"Default\",\n  \"JobPriority\": 2740,\n  \"JobExists\": false,\n  \"NumberOfDocumentsCompleted\": 512,\n  \"NumberOfDocumentsSkipped\": 3286,\n  \"NumberOfDocumentsWaiting\": 977,\n  \"NumberOfDocumentsErrored\": 4383,\n  \"NumberOfDocumentsSubmitted\": 9815,\n  \"JobArtifactId\": 3887\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8342baa7-a3d8-44bd-a1bc-24a59ff7fc16",
+          "name": "Relativity.Imaging.Services.Interfaces.V1.I Native Type Manager.Read Async",
+          "request": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.I Native Type Manager.Read Async",
+            "description": {
+              "content": "[Public] INativeTypeManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-imaging",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "native-types",
+                ":nativeTypeID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "nativeTypeID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0116c4ac-8664-4cd0-8bc0-9b5483349be8",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-imaging",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "native-types",
+                    ":nativeTypeID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "nativeTypeID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"BasicCategory\": \"Multimedia\",\n  \"NativeCategory\": \"Email\",\n  \"UseNativeImaging\": false,\n  \"RestrictedFromImagingByDefault\": false,\n  \"FileTypeID\": 1902,\n  \"PreventNativeDownload\": true,\n  \"ArtifactID\": 2330,\n  \"Name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7278f2f1-f81a-4f70-a040-0788af2b4cf3",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Versioned Imaging Module v1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

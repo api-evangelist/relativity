@@ -1,0 +1,493 @@
+{
+  "item": [
+    {
+      "id": "b20609a8-329c-40d1-b0d3-737c84640ea7",
+      "name": "PersistentHighlightService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d557df1a-f13a-4b05-9d3f-42232f0625d4",
+          "name": "Retrieves persistent highlight sets and terms applied to a specific document.",
+          "request": {
+            "name": "Retrieves persistent highlight sets and terms applied to a specific document.",
+            "description": {
+              "content": "Returns highlight set metadata and term definitions scoped to the specified document in the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                ":documentID",
+                "highlight-sets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace's Artifact ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) Document ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec712ed5-74c2-4c51-ba70-688158243f01",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    ":documentID",
+                    "highlight-sets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace's Artifact ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) Document ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"SetID\": \"string\",\n    \"SetName\": \"string\",\n    \"Expanded\": false,\n    \"Selected\": true,\n    \"PersistentHighlightSetID\": 3232,\n    \"PersistentHighlightTerms\": [\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 3256,\n        \"PersistentHighlightSetId\": 7811,\n        \"Selected\": true\n      },\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 9627,\n        \"PersistentHighlightSetId\": 4555,\n        \"Selected\": false\n      }\n    ],\n    \"Order\": 2375,\n    \"HasEditPermission\": true,\n    \"Syntax\": \"string\"\n  },\n  {\n    \"SetID\": \"string\",\n    \"SetName\": \"string\",\n    \"Expanded\": false,\n    \"Selected\": false,\n    \"PersistentHighlightSetID\": 6003,\n    \"PersistentHighlightTerms\": [\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 3004,\n        \"PersistentHighlightSetId\": 1217,\n        \"Selected\": true\n      },\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 1128,\n        \"PersistentHighlightSetId\": 4260,\n        \"Selected\": false\n      }\n    ],\n    \"Order\": 3925,\n    \"HasEditPermission\": true,\n    \"Syntax\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b5a6a6e-38ca-4611-93bc-736c19a7f785",
+          "name": "Changes the active state of a persistent highlight set or selected terms.",
+          "request": {
+            "name": "Changes the active state of a persistent highlight set or selected terms.",
+            "description": {
+              "content": "Use this endpoint to activate or deactivate an entire set, or to change state for specific term identifiers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "highlights",
+                ":persistentHighlightSetID",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace's Artifact ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "persistentHighlightSetID",
+                  "description": "(Required) Persistent Highlight Set's ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workspaceId\": \"<integer>\",\n  \"persistentHighlightSetId\": \"<integer>\",\n  \"termIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dfb4bc42-7c1d-4689-b539-efa246837230",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "highlights",
+                    ":persistentHighlightSetID",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace's Artifact ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "persistentHighlightSetID",
+                      "description": "(Required) Persistent Highlight Set's ID."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"workspaceId\": \"<integer>\",\n  \"persistentHighlightSetId\": \"<integer>\",\n  \"termIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"action\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ebb6c3cf-7a11-45b5-8289-cb879e3f630c",
+          "name": "Retrieves all persistent highlight sets and terms available in a workspace.",
+          "request": {
+            "name": "Retrieves all persistent highlight sets and terms available in a workspace.",
+            "description": {},
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "highlight-sets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace's Artifact ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05a0e5f3-b370-4e60-8cc3-3bdc800424c4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "highlight-sets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace's Artifact ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"SetID\": \"string\",\n    \"SetName\": \"string\",\n    \"Expanded\": true,\n    \"Selected\": true,\n    \"PersistentHighlightSetID\": 4264,\n    \"PersistentHighlightTerms\": [\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 6565,\n        \"PersistentHighlightSetId\": 2198,\n        \"Selected\": false\n      },\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 2624,\n        \"PersistentHighlightSetId\": 2649,\n        \"Selected\": false\n      }\n    ],\n    \"Order\": 3756,\n    \"HasEditPermission\": true,\n    \"Syntax\": \"string\"\n  },\n  {\n    \"SetID\": \"string\",\n    \"SetName\": \"string\",\n    \"Expanded\": false,\n    \"Selected\": false,\n    \"PersistentHighlightSetID\": 1845,\n    \"PersistentHighlightTerms\": [\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 7941,\n        \"PersistentHighlightSetId\": 8163,\n        \"Selected\": false\n      },\n      {\n        \"Id\": \"string\",\n        \"Term\": \"string\",\n        \"Syntax\": \"string\",\n        \"BackgroundColor\": \"string\",\n        \"ForegroundColor\": \"string\",\n        \"PersistentHighlightTermId\": 9908,\n        \"PersistentHighlightSetId\": 8712,\n        \"Selected\": true\n      }\n    ],\n    \"Order\": 8359,\n    \"HasEditPermission\": false,\n    \"Syntax\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d75c8316-a302-48a4-8213-f7b41b4d4bf0",
+          "name": "Adds one or more new terms to an existing persistent highlight set.",
+          "request": {
+            "name": "Adds one or more new terms to an existing persistent highlight set.",
+            "description": {
+              "content": "Each term can include foreground and background colors that define how it appears in the viewer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "highlights",
+                ":persistentHighlightSetID",
+                "add-terms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace's Artifact ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "persistentHighlightSetID",
+                  "description": "(Required) Persistent Highlight Set's ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workspaceId\": \"<integer>\",\n  \"persistentHighlightSetId\": \"<integer>\",\n  \"terms\": [\n    {\n      \"Term\": \"<string>\",\n      \"BackgroundColor\": \"<string>\",\n      \"ForegroundColor\": \"<string>\"\n    },\n    {\n      \"Term\": \"<string>\",\n      \"BackgroundColor\": \"<string>\",\n      \"ForegroundColor\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d106a943-f118-44ce-9a8d-840ea27fa71d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "highlights",
+                    ":persistentHighlightSetID",
+                    "add-terms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace's Artifact ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "persistentHighlightSetID",
+                      "description": "(Required) Persistent Highlight Set's ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"workspaceId\": \"<integer>\",\n  \"persistentHighlightSetId\": \"<integer>\",\n  \"terms\": [\n    {\n      \"Term\": \"<string>\",\n      \"BackgroundColor\": \"<string>\",\n      \"ForegroundColor\": \"<string>\"\n    },\n    {\n      \"Term\": \"<string>\",\n      \"BackgroundColor\": \"<string>\",\n      \"ForegroundColor\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "4843",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "version"
+    }
+  ],
+  "info": {
+    "_postman_id": "120055c5-14a8-43b2-a850-6f3d1317c2e2",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService PersistentHighlightService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

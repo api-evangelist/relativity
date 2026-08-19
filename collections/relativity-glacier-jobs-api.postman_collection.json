@@ -1,0 +1,301 @@
+{
+  "item": [
+    {
+      "id": "d60d4cf4-75ca-4727-93c5-30bc3306b7a8",
+      "name": "Glacier Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "603be8ff-7ee6-46e9-b082-51c71149f624",
+          "name": "Get glacier job status",
+          "request": {
+            "name": "Get glacier job status",
+            "description": {
+              "content": "Retrieves the current status of glacier and status of a glacier store or restore job. Provides detailed information about the current status of glacier and operations, also any errors that may have occurred.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "jobId",
+                  "description": "(Required) The unique identifier of the glacier job"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "f038625a-5980-45a3-abda-3526d8c3ee37",
+              "name": "Job status retrieved successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The unique identifier of the glacier job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"STORE_FAILED\",\n  \"jobType\": \"RESTORE\",\n  \"glacierId\": \"1bb18d4b-869d-7a87-9b0f-147346e8e830\",\n  \"tenantId\": \"2d5c2b44-59f0-3dd0-5e3b-53eecfbc31d0\",\n  \"sourceLocation\": \"string\",\n  \"glacierName\": \"string\",\n  \"scheduledAt\": \"2004-04-29T00:25:56.866Z\",\n  \"completedAt\": \"1949-02-21T14:39:15.240Z\",\n  \"failedAt\": \"2004-04-14T07:57:57.596Z\",\n  \"inventoryReport\": {\n    \"glacierStoreEntityCount\": 1250,\n    \"glacierStoreTotalEntitySize\": 5368709120\n  },\n  \"errors\": [\n    {\n      \"message\": \"Source directory not found\"\n    },\n    {\n      \"message\": \"Source directory not found\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17c75712-05fa-43b6-a9dc-ca928d7803c1",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The unique identifier of the glacier job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://ZJCCeFEKlECDMnfjkCFpsCORKntHRrBdH.frlteA2I4m8fEOHPcA3u9NqZ+ylNStBDtBCggHsC\",\n  \"title\": \"string\",\n  \"status\": 7745,\n  \"detail\": \"string\",\n  \"instance\": \"http://hkRdZlGFriDEupYSGRKkjNqvaTCvaOLC.faiSUOeSe92660ualtSTrsaqOnVlC4bMqiAGee9ItSCT-adR6v\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10e0c15b-02f5-4ed6-9945-4b2aeab2d9c3",
+              "name": "Forbidden - insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The unique identifier of the glacier job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://ZJCCeFEKlECDMnfjkCFpsCORKntHRrBdH.frlteA2I4m8fEOHPcA3u9NqZ+ylNStBDtBCggHsC\",\n  \"title\": \"string\",\n  \"status\": 7745,\n  \"detail\": \"string\",\n  \"instance\": \"http://hkRdZlGFriDEupYSGRKkjNqvaTCvaOLC.faiSUOeSe92660ualtSTrsaqOnVlC4bMqiAGee9ItSCT-adR6v\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e0301c6-1775-4428-900f-4908d7bdcd96",
+              "name": "Job not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The unique identifier of the glacier job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://ZJCCeFEKlECDMnfjkCFpsCORKntHRrBdH.frlteA2I4m8fEOHPcA3u9NqZ+ylNStBDtBCggHsC\",\n  \"title\": \"string\",\n  \"status\": 7745,\n  \"detail\": \"string\",\n  \"instance\": \"http://hkRdZlGFriDEupYSGRKkjNqvaTCvaOLC.faiSUOeSe92660ualtSTrsaqOnVlC4bMqiAGee9ItSCT-adR6v\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0495fcb3-9901-4b24-bdbb-fe89806c1613",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The unique identifier of the glacier job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://ZJCCeFEKlECDMnfjkCFpsCORKntHRrBdH.frlteA2I4m8fEOHPcA3u9NqZ+ylNStBDtBCggHsC\",\n  \"title\": \"string\",\n  \"status\": 7745,\n  \"detail\": \"string\",\n  \"instance\": \"http://hkRdZlGFriDEupYSGRKkjNqvaTCvaOLC.faiSUOeSe92660ualtSTrsaqOnVlC4bMqiAGee9ItSCT-adR6v\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "730dab46-2579-41e4-9f88-857085f27ed0",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

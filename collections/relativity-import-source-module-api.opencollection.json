@@ -1,0 +1,328 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Import Source Module API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Import Source Module",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.AddSourceAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/:sourceID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              },
+              {
+                "name": "sourceID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Source identification GUID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add source to import job."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.GetColumnsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/:sourceID/columns",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              },
+              {
+                "name": "sourceID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Source identification GUID."
+              }
+            ]
+          },
+          "docs": "Returns list of column names read from configuration."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.GetDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/:sourceID/details",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              },
+              {
+                "name": "sourceID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Source identification GUID."
+              }
+            ]
+          },
+          "docs": "Returns details for single source."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.DeleteParentFolderAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/:sourceID/delete",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              },
+              {
+                "name": "sourceID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Source identification GUID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deletes the parent folder of the data source's load file if it is located in \\StructuredData\\Import\\."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.GetSourcesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              }
+            ]
+          },
+          "docs": "Returns sources for single source."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.GetItemErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/:sourceID/itemerrors",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              },
+              {
+                "name": "sourceID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Source identification GUID."
+              },
+              {
+                "name": "start",
+                "value": "0",
+                "type": "query",
+                "description": "Index from which import jobs will be read."
+              },
+              {
+                "name": "length",
+                "value": "10",
+                "type": "query",
+                "description": "Number of returned import jobs in workspace."
+              }
+            ]
+          },
+          "docs": "Get errors for single source."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.GetErrorLoadfileAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/:sourceID/errorloadfile",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              },
+              {
+                "name": "sourceID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Source identification GUID."
+              }
+            ]
+          },
+          "docs": "Get path to Loadfile with error lines. Empty if data source had no errors."
+        },
+        {
+          "info": {
+            "name": "Import.Services.V1.IImportSourceController.GetProgressAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/workspaces/:workspaceID/import-jobs/:importJobID/sources/:sourceID/progress",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "10000",
+                "type": "path",
+                "description": "Workspace identification number."
+              },
+              {
+                "name": "importJobID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Import job identification GUID."
+              },
+              {
+                "name": "sourceID",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "Source identification GUID."
+              }
+            ]
+          },
+          "docs": "Get progress for single source."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ObjectManagerAPI API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ObjectManagerAPI",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query admin-level Collect artifacts (Workspaces, Matters)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.Rest/api/Relativity.ObjectManager/v1/workspace/-1/object/queryslim",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to retrieve Workspaces and Matters. Run with the Workspace object type to list all workspaces and their associated Matter Names. Then run with the Matter object type and a name condition to retrieve a specific Matter's ArtifactID. The workspace context -1 is required for these admin-level objects."
+        },
+        {
+          "info": {
+            "name": "Query workspace-level Collect artifacts (Source Instances, Entities, Processing Profiles)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.Rest/api/Relativity.ObjectManager/v1/workspace/:workspaceId/object/queryslim",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path",
+                "description": "ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to retrieve Source Instances, Entities, and Processing Profiles from a specific workspace. The workspaceId is the ArtifactID returned in Call 1. For Processing Profiles, use the ArtifactID of a workspace that has Processing installed. The X-CSRF-Header must be set."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

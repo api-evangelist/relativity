@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AnnotationService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates or updates redactions and highlights for a document in a workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/Annotations/save",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace's Artifact ID."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint accepts a collection of annotations. New annotations are created and existing annotations are updated\r\nwhen their identifiers are provided."
+        },
+        {
+          "info": {
+            "name": "Retrieves annotations for a document and markup set in a workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/Annotations/:documentID/:markUpSetID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace's Artifact ID."
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path",
+                "description": "Document's Artifact ID."
+              },
+              {
+                "name": "markUpSetID",
+                "value": "",
+                "type": "path",
+                "description": "MarkupSet's Artifact ID."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the current annotation payload associated with the document image and markup set."
+        },
+        {
+          "info": {
+            "name": "Deletes annotations for a document and markup set in a workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/Annotations/:documentID/:markUpSetID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace's Artifact ID."
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path",
+                "description": "Document's Artifact ID."
+              },
+              {
+                "name": "markUpSetID",
+                "value": "",
+                "type": "path",
+                "description": "MarkupSet's Artifact ID."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Removes one or more annotations specified in the request body from the target document and markup set."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

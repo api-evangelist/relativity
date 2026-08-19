@@ -1,0 +1,1266 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService DtSearchIndex Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DtSearchIndex Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.WorkloadDiscoveryManager.IWorkloadDiscoveryManager.GetWorkloadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workload-discovery/:agentGuid/workload",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "agentGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Private] IWorkloadDiscoveryManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.ConsistencyCheckManager.IConsistencyCheckManager.GetIsAffectedAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/consistency-check-is-affected",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Private] IConsistencyCheckManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.ArmTestService.IArmTestService.GetArchiveLocationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/GetArchiveLocationAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Testing] IArmTestService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.ArmTestService.IArmTestService.SetDtSearchIndexLocationToNullAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/SetDtSearchIndexLocationToNullAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Testing] IArmTestService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.ArmTestService.IArmTestService.SetDtSearchIndexLocationToEmptyStringAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/SetDtSearchIndexLocationToEmptyStringAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Testing] IArmTestService - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetSearchableSetAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/saved-searches",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.SearchableSetContainsLongTextField",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/:searchableSetID/saved-search-contains-long-text-field",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "searchableSetID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexShareLocationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/index-shares",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexShareLocationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/:resourcePoolID/index-shares",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetAllIndexesInWorkspaceAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/all",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetAllIndexesInWorkspaceFilteredAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/all",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetDefaultAlphabetFileForWorkspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/default-alphabet-file",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetDefaultNoiseWordsFileForWorkspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/default-noise-words-file",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexOptionDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/index-option-details",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetCurrentIndexDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/current-index-details-table",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.CurrentIndexDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/current-index-details-table",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetSubIndexDetailsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/sub-index-details",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexJobProgressAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/index-job-progress",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexIDAndStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/index-status",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexStatisticsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/index-statistics",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetDocumentErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/document-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetFilteredDocumentErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/document-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetWorkspaceResourcePoolWorkerCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/resource-pool-worker-count",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.DeleteSubIndex",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/delete-sub-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.BuildIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/build-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.FullBuildIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/full-build-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.IncrementalBuildIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/incremental-build-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.SwapIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/swap-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.MoveIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/move-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.CompressIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/compress-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.ThresholdCompressIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/threshold-compress-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.ActivateIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/activate-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.DeactivateIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/deactivate-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.CancelBuildIndexAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/cancel-build",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.RetryErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/retry-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/:includeMetaData/:includeActions",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetaData",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/delete-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.CopyAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/dtsearch-indexes/:dtSearchArtifactID/copy-index",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dtSearchArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetHealthCheck",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/workspaces/:workspaceID/health-check",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDtSearchIndexManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchQueueAdminManager.IDtSearchQueueAdminManager.GetAllJobsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/dtsearch-queue-admin/jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Internal] IDtSearchQueueAdminManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchQueueAdminManager.IDtSearchQueueAdminManager.GetAllJobsFilteredAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/dtsearch-queue-admin/jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Internal] IDtSearchQueueAdminManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.DTSearch.V1.DTSearchQueueAdminManager.IDtSearchQueueAdminManager.UpdateJobPriorityAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-dtsearch/v1/dtsearch-queue-admin/jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Internal] IDtSearchQueueAdminManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

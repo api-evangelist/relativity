@@ -1,0 +1,131 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Automated Workflows API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Relativity Automated Workflows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Notifies the given workspace a trigger has happened",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-automated-workflows/v2/workspaces/:workspaceID/notifiers/trigger",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "The trigger will match any workflows expecting that trigger and queue a workflow run too all matching workflows"
+        },
+        {
+          "info": {
+            "name": "List Triggers in a Workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-automated-workflows/v2/workspaces/:workspaceID/actions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all available workflow actions with any version on the workspace"
+        },
+        {
+          "info": {
+            "name": "Creates or Updates an Action",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-automated-workflows/v2/workspaces/:workspaceID/actions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This Operation is Idempotent"
+        },
+        {
+          "info": {
+            "name": "List Triggers in a Workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-automated-workflows/v2/workspaces/:workspaceID/triggers",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all available workflow triggers with any version on the workspace"
+        },
+        {
+          "info": {
+            "name": "Creates or Updates a Trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-automated-workflows/v2/workspaces/:workspaceID/triggers",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This Operation is Idempotent"
+        },
+        {
+          "info": {
+            "name": "Run/Debug Language Expression",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-automated-workflows/v2/language/expressions/run",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Run/Debug Language Expression"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

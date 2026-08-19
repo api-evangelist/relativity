@@ -1,0 +1,425 @@
+{
+  "item": [
+    {
+      "id": "86e445cc-886f-431b-94fe-9d3748d2895f",
+      "name": "TransferControllerV2",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6b952d04-b174-4cc7-997e-797f100863f5",
+          "name": "/v2/transfer/jobs",
+          "request": {
+            "name": "/v2/transfer/jobs",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "transfer",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "correlation-id",
+                "value": "<uuid>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destinationPath\": \"<string>\",\n  \"sourcePath\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"transferType\": \"<string>\",\n  \"transferJobID\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d9fe2fa-5398-4166-b39a-cd2b82580a12",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "transfer",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "correlation-id",
+                    "value": "<uuid>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationPath\": \"<string>\",\n  \"sourcePath\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  },\n  \"transferType\": \"<string>\",\n  \"transferJobID\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "522d120e-8e13-4b97-b152-c1d6f33d0c33",
+          "name": "/v2/transfer/jobs/:jobId",
+          "request": {
+            "name": "/v2/transfer/jobs/:jobId",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "transfer",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "correlation-id",
+                "value": "<uuid>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a2bc0473-0206-4573-b284-bb6130d1f72d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "transfer",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "correlation-id",
+                    "value": "<uuid>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transferStatus\": \"string\",\n  \"transferJobID\": \"104a1ac5-e943-d454-6f77-45223897458d\",\n  \"destinationFullPath\": \"string\",\n  \"sourceFullPath\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"eta\": {\n    \"ticks\": 2281,\n    \"days\": 3090,\n    \"hours\": 1489,\n    \"milliseconds\": 7700,\n    \"microseconds\": 4239,\n    \"nanoseconds\": 3961,\n    \"minutes\": 3340,\n    \"seconds\": 2993,\n    \"totalDays\": 2909.1885185936803,\n    \"totalHours\": 5693.7093655842955,\n    \"totalMilliseconds\": 614.2102503010772,\n    \"totalMicroseconds\": 2436.470239342552,\n    \"totalNanoseconds\": 7776.472079715686,\n    \"totalMinutes\": 1852.910523323219,\n    \"totalSeconds\": 5670.824748077671\n  },\n  \"transferStatistics\": {\n    \"successfulFiles\": 3752,\n    \"failedFiles\": 376,\n    \"skippedFiles\": 6253,\n    \"successfulBytes\": 6456,\n    \"failedBytes\": 8119,\n    \"skippedBytes\": 3231,\n    \"successfulEmptyDirectories\": 7310,\n    \"failedEmptyDirectories\": 1301,\n    \"skippedEmptyDirectories\": 7035\n  },\n  \"enumerationStatistics\": {\n    \"totalFiles\": 3911,\n    \"totalSize\": 8196,\n    \"totalEmptyDirectories\": 1912,\n    \"status\": \"string\",\n    \"error\": \"string\"\n  },\n  \"transferType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc3c73be-5cdf-4890-8520-31fea0e6627d",
+          "name": "/v2/transfer/jobs/:jobId",
+          "request": {
+            "name": "/v2/transfer/jobs/:jobId",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "transfer",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "correlation-id",
+                "value": "<uuid>",
+                "description": ""
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "add5106b-308d-40bb-bd42-ce49788f5c79",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "transfer",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "correlation-id",
+                    "value": "<uuid>",
+                    "description": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c01d1be2-a3ba-480d-b79a-14aaff3eaf79",
+          "name": "/v2/transfer/jobs/:jobId/qc",
+          "request": {
+            "name": "/v2/transfer/jobs/:jobId/qc",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "transfer",
+                "jobs",
+                ":jobId",
+                "qc"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "correlation-id",
+                "value": "<uuid>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "194fa24f-03b4-4be1-b47c-bb443d40602e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "transfer",
+                    "jobs",
+                    ":jobId",
+                    "qc"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "correlation-id",
+                    "value": "<uuid>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sasUrl\": \"https://QCMDsREDFnIYokSRsqvceVRPMlJf.xoL7MczdEGhtPm2mB20QD+c\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "90a83e1e-8630-42f2-bed4-58536e5698c4",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService TransferControllerV2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

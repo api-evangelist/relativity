@@ -1,0 +1,168 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillingConfiguration API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BillingConfiguration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get product configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v1/billing-configuration/product-configurations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get product configuration for a given dates. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about package consumption",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v1/billing-configuration/package-consumption",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get package consumption for specific instance. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about products available for instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v1/billing-configuration/available-products",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get information about products available for instance. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about packages available for instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v1/billing-configuration/available-packages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get information about packages available for instance. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about products and packages availability for instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v1/billing-configuration/products-and-packages-availability",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get information about products and packages availability for instance. If the requested data does not exist then false is returned."
+        },
+        {
+          "info": {
+            "name": "Get product configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v2/billing-configuration/product-configurations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get product configuration for a given dates. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about package consumption",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v2/billing-configuration/package-consumption",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get package consumption for specific instance. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about products available for instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v2/billing-configuration/available-products",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get information about products available for instance. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about packages available for instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v2/billing-configuration/available-packages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get information about packages available for instance. If the requested data does not exist then 404 is returned."
+        },
+        {
+          "info": {
+            "name": "Get information about products and packages availability for instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v2/billing-configuration/products-and-packages-availability",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get information about products and packages availability for instance. If the requested data does not exist then false is returned."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

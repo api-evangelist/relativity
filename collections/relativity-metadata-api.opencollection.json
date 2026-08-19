@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Metadata API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets the metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/Metadata"
+          },
+          "docs": "This endpoint retrieves metadata fields required for report creation. The metadata includes fields that are necessary to generate a report or determine the report's content based on the provided ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

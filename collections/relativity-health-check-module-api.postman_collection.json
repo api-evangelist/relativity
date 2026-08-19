@@ -1,0 +1,160 @@
+{
+  "item": [
+    {
+      "id": "caf660e8-d6cc-4e1b-927b-0e1affce41ba",
+      "name": "Health Check Module",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70b2541e-d371-455e-bd1a-530c680a0112",
+          "name": "Import.Services.V1.Health Check Controller.Health Check Async",
+          "request": {
+            "name": "Import.Services.V1.Health Check Controller.Health Check Async",
+            "description": {
+              "content": "Check if Import Service is available.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "health-check",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1777784b-ecb6-45ee-a0f2-64b3889aec59",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "health-check",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsHealthy\": true,\n  \"Message\": \"Import.Services is Healthy\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c42cd74-22b7-4607-9274-cfd866ac9851",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "health-check",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9d9a4c48-7c9b-4676-9a43-3018f4efe169",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Health Check Module API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

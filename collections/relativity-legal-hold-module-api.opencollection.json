@@ -1,0 +1,426 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Legal Hold Module API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Legal Hold Module",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.ICustodianPortalAuthUrlManager.GetPortalRedirectUrl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/CustodianPortalAuthUrl/GetPortalRedirectUrl",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "emailAddress",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] ICustodianPortalAuthUrlManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.ICustodianRequestManager.ActiveCustodianSummary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/custodian-request-manager/ActiveCustodianSummary",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startingIndex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] ICustodianRequestManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IGoogleAuthorizationManager.GetRedirectUriAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/workspace/:workspaceId/GetRedirectUriAsync",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "authenticationType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IGoogleAuthorizationManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IGoogleAuthorizationManager.ProcessGSuiteAuthRedirectAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/workspace/:workspaceId/GoogleMail/HandleAuthenticationRedirect",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scope",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IGoogleAuthorizationManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IGraphAuthorizationManager.AuthorizeMicrosoftGraph",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/graph-auth-response",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IGraphAuthorizationManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IGraphAuthorizationManager.GetAuthorizedUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/authorized-user/:workspaceId",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Private] IGraphAuthorizationManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IPreservationManager.GetCustodiansAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/preservation/:projectArtifactId/getCustodians",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "projectArtifactId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startingIndex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Private] IPreservationManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IPreservationManager.InstalledAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/preservation/IsInstalled/:workspaceId",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Private] IPreservationManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IPostDeployHealthCheckManager.HealthCheckAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/health-check",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Internal] IPostDeployHealthCheckManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IToggleManager.IsEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/toggles/:toggleName/is-enabled",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "toggleName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Internal] IToggleManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.ISettingsProcessor.ValidateEmailSettings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/SettingsManagement/workspace/:workspaceId/ValidateEmailSettings",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "settingsType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sendTestEmail",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Internal] ISettingsProcessor - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.IWorkloadDiscoveryManager.GetAgentWorkloadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/workload-discovery/:guid/workload",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "guid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Internal] IWorkloadDiscoveryManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.ICommunicationManager.GetCommunicationLayoutState",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/workspace/:workspaceArtifactId/communication/:communicationArtifactId/layout-state",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "communicationArtifactId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Private] ICommunicationManager - "
+        },
+        {
+          "info": {
+            "name": "kCura.LegalHold.Services.ICommunicationManager.AcknowledgeOnBehalf",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/workspace/:workspaceArtifactId/communication/:communicationArtifactId/acknowledge-on-behalf",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "communicationArtifactId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Private] ICommunicationManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Health Check Module API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Health Check Module",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Import.Services.V1.HealthCheckController.HealthCheckAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/import-service/v1/health-check/",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Check if Import Service is available."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,801 @@
+{
+  "item": [
+    {
+      "id": "5a3098a1-9a5c-418a-8598-2446a85ba617",
+      "name": "ArchiveJobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b56e2773-cfcf-4294-b61d-0c40229a554e",
+          "name": "Asynchronously creates an instance of an Archive Job.",
+          "request": {
+            "name": "Asynchronously creates an instance of an Archive Job.",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "archive-jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"migratorOptions\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7710db44-d5ee-4011-887b-b91cd48e6693",
+              "name": "Archive job created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"ExtensionData\",\n      \"Invariant\",\n      \"RepositoryFiles\",\n      \"NonRepositoryFiles\",\n      \"dtIndex\",\n      \"analytics-core\",\n      \"StructuredAnalytics\",\n      \"Audit\",\n      \"Database\"\n    ],\n    \"migratorOptions\": {\n      \"Common\": {\n        \"FileFirstFlow\": {\n          \"IsFilesFirstFlow\": true,\n          \"AdditionalFilesDirectoryPath\": \"path\"\n        }\n      },\n      \"Invariant\": {\n        \"IncludeProcessingFiles\": true\n      }\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobID\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5390ff54-3563-47e6-91d9-a414927906fb",
+              "name": "Invalid request parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"ExtensionData\",\n      \"Invariant\",\n      \"RepositoryFiles\",\n      \"NonRepositoryFiles\",\n      \"dtIndex\",\n      \"analytics-core\",\n      \"StructuredAnalytics\",\n      \"Audit\",\n      \"Database\"\n    ],\n    \"migratorOptions\": {\n      \"Common\": {\n        \"FileFirstFlow\": {\n          \"IsFilesFirstFlow\": true,\n          \"AdditionalFilesDirectoryPath\": \"path\"\n        }\n      },\n      \"Invariant\": {\n        \"IncludeProcessingFiles\": true\n      }\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 8227,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e694fe3-e574-43b4-982d-bd3b87671aa2",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"ExtensionData\",\n      \"Invariant\",\n      \"RepositoryFiles\",\n      \"NonRepositoryFiles\",\n      \"dtIndex\",\n      \"analytics-core\",\n      \"StructuredAnalytics\",\n      \"Audit\",\n      \"Database\"\n    ],\n    \"migratorOptions\": {\n      \"Common\": {\n        \"FileFirstFlow\": {\n          \"IsFilesFirstFlow\": true,\n          \"AdditionalFilesDirectoryPath\": \"path\"\n        }\n      },\n      \"Invariant\": {\n        \"IncludeProcessingFiles\": true\n      }\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77b9d0c9-1027-404e-9f58-3ff07630ba11",
+          "name": "Asynchronously read an instance of an Archive Job.",
+          "request": {
+            "name": "Asynchronously read an instance of an Archive Job.",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "archive-jobs",
+                ":jobID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobID",
+                  "description": "(Required) Archive job identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b077331-cadf-49de-9d49-85a8e8cebab3",
+              "name": "Archive job retrieved successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobID\": \"string\",\n  \"jobName\": \"string\",\n  \"archivePath\": \"string\",\n  \"workspaceID\": 2065,\n  \"scheduledStartTime\": \"1952-06-08T02:39:54.152Z\",\n  \"jobDetails\": {\n    \"priority\": \"<integer>\",\n    \"actionsHistory\": [\n      {\n        \"date\": \"1949-08-02T20:14:08.200Z\",\n        \"type\": \"string\",\n        \"userName\": \"string\"\n      },\n      {\n        \"date\": \"1970-10-01T11:42:39.118Z\",\n        \"type\": \"string\",\n        \"userName\": \"string\"\n      }\n    ]\n  },\n  \"excludedMigrators\": [\n    \"string\",\n    \"string\"\n  ],\n  \"migratorOptions\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  },\n  \"notificationOptions\": {\n    \"notifyJobRunner\": \"<boolean>\",\n    \"additionalRecipients\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"uiJobActionsLocked\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "785a3165-d7b5-4dbb-9f17-5a5cbf432db2",
+              "name": "Archive job not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 8227,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72140b1d-2633-494a-8b46-341c3fc145a0",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "734bb8ac-b281-4a77-92ba-032e5f22191e",
+          "name": "Asynchronously updates an instance of an Archive Job.",
+          "request": {
+            "name": "Asynchronously updates an instance of an Archive Job.",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "archive-jobs",
+                ":jobID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobID",
+                  "description": "(Required) Archive job identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"migratorOptions\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "94ed7cb6-1000-4ae7-a54b-3d303f1832d9",
+              "name": "Archive job updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"ExtensionData\",\n      \"Invariant\",\n      \"RepositoryFiles\",\n      \"NonRepositoryFiles\",\n      \"dtIndex\",\n      \"analytics-core\",\n      \"StructuredAnalytics\",\n      \"Audit\",\n      \"Database\"\n    ],\n    \"migratorOptions\": {\n      \"Common\": {\n        \"FileFirstFlow\": {\n          \"IsFilesFirstFlow\": true,\n          \"AdditionalFilesDirectoryPath\": \"path\"\n        }\n      },\n      \"Invariant\": {\n        \"IncludeProcessingFiles\": true\n      }\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71caa743-2a4e-45b8-9c63-58e6ab568574",
+              "name": "Invalid request parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"ExtensionData\",\n      \"Invariant\",\n      \"RepositoryFiles\",\n      \"NonRepositoryFiles\",\n      \"dtIndex\",\n      \"analytics-core\",\n      \"StructuredAnalytics\",\n      \"Audit\",\n      \"Database\"\n    ],\n    \"migratorOptions\": {\n      \"Common\": {\n        \"FileFirstFlow\": {\n          \"IsFilesFirstFlow\": true,\n          \"AdditionalFilesDirectoryPath\": \"path\"\n        }\n      },\n      \"Invariant\": {\n        \"IncludeProcessingFiles\": true\n      }\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 8227,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6dc2f206-1305-42c1-adea-0a4af3295e66",
+              "name": "Archive job not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"ExtensionData\",\n      \"Invariant\",\n      \"RepositoryFiles\",\n      \"NonRepositoryFiles\",\n      \"dtIndex\",\n      \"analytics-core\",\n      \"StructuredAnalytics\",\n      \"Audit\",\n      \"Database\"\n    ],\n    \"migratorOptions\": {\n      \"Common\": {\n        \"FileFirstFlow\": {\n          \"IsFilesFirstFlow\": true,\n          \"AdditionalFilesDirectoryPath\": \"path\"\n        }\n      },\n      \"Invariant\": {\n        \"IncludeProcessingFiles\": true\n      }\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 8227,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e7fce4b-a589-4b23-8902-ce3a615116ee",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"workspaceID\": \"<integer>\",\n    \"archiveDirectory\": \"<string>\",\n    \"scheduledStartTime\": \"<dateTime>\",\n    \"jobPriority\": \"<integer>\",\n    \"excludedMigrators\": [\n      \"ExtensionData\",\n      \"Invariant\",\n      \"RepositoryFiles\",\n      \"NonRepositoryFiles\",\n      \"dtIndex\",\n      \"analytics-core\",\n      \"StructuredAnalytics\",\n      \"Audit\",\n      \"Database\"\n    ],\n    \"migratorOptions\": {\n      \"Common\": {\n        \"FileFirstFlow\": {\n          \"IsFilesFirstFlow\": true,\n          \"AdditionalFilesDirectoryPath\": \"path\"\n        }\n      },\n      \"Invariant\": {\n        \"IncludeProcessingFiles\": true\n      }\n    },\n    \"notificationOptions\": {\n      \"notifyJobRunner\": \"<boolean>\",\n      \"additionalRecipients\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"uiJobActionsLocked\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e3e5231-99de-4d98-b2ce-19315248c719",
+          "name": "Asynchronously deletes an instance of an Archive Job.",
+          "request": {
+            "name": "Asynchronously deletes an instance of an Archive Job.",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "archive-jobs",
+                ":jobID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobID",
+                  "description": "(Required) Archive job identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48ee3a34-363b-47bc-8e8b-08c7c71a8998",
+              "name": "Archive job deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c4690ffb-210c-4ce6-8be9-09a596538412",
+              "name": "Archive job not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 8227,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6f42acc-2c9d-4c44-a3e9-0092112b6982",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "archive-jobs",
+                    ":jobID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobID",
+                      "description": "(Required) Archive job identifier"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6fdce682-a362-40df-85af-f9150ce22075",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ArchiveJobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

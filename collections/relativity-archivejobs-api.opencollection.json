@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ArchiveJobs API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ArchiveJobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Asynchronously creates an instance of an Archive Job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v3/archive-jobs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Asynchronously creates an instance of an Archive Job."
+        },
+        {
+          "info": {
+            "name": "Asynchronously read an instance of an Archive Job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v3/archive-jobs/:jobID",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Archive job identifier"
+              }
+            ]
+          },
+          "docs": "Asynchronously read an instance of an Archive Job."
+        },
+        {
+          "info": {
+            "name": "Asynchronously updates an instance of an Archive Job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/v3/archive-jobs/:jobID",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Archive job identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Asynchronously updates an instance of an Archive Job."
+        },
+        {
+          "info": {
+            "name": "Asynchronously deletes an instance of an Archive Job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/v3/archive-jobs/:jobID",
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path",
+                "description": "Archive job identifier"
+              }
+            ]
+          },
+          "docs": "Asynchronously deletes an instance of an Archive Job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

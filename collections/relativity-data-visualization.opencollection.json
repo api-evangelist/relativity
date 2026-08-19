@@ -1,0 +1,281 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Relativity.Services.DataVisualization",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tab Manager v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates a Tab.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Reads a Tab.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/:tabArtifactID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              },
+              {
+                "name": "tabArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query",
+                "description": "No description set for this parameter"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query",
+                "description": "No description set for this parameter"
+              }
+            ]
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Updates a Tab.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/:tabArtifactID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              },
+              {
+                "name": "tabArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Deletes a Tab.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/:tabArtifactID",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              },
+              {
+                "name": "tabArtifactID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ]
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Gets the Meta for creating a new Tab object type.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/meta",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ]
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Gets a list of all eligible Parent Tabs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/eligible-parents",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ]
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Gets a list of all eligible object types for a new Tab.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/eligible-object-types",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ]
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Gets a list of all Tabs and their order for a given workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/view-order-list",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ]
+          },
+          "docs": "[Public] ITabManager"
+        },
+        {
+          "info": {
+            "name": "Gets a list of all Tabs in a workspace that a user has permissions and Tab Visibility access to.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-data-visualization/v1/workspaces/:workspaceID/tabs/navigation",
+            "headers": [
+              {
+                "name": "X-CSRF-Header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "No description set for this parameter"
+              }
+            ]
+          },
+          "docs": "[Public] ITabManager"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

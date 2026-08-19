@@ -1,0 +1,396 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Object Manager v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Object Manager v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.QueryAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/query",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/update",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/read",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/delete",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/create",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.QuerySlimAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/queryslim",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.StreamLongTextAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/streamlongtext",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.InitializeExportAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/initializeexport",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.RetrieveNextResultsBlockFromExportAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/retrievenextresultsblockfromexport",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "runID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "batchSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.RetrieveResultsBlockFromExportAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/retrieveresultsblockfromexport",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "runID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsBlockSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "exportIndexID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.UpdateLongTextFromStreamAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/updatelongtextfromstream",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.ObjectManager.Server.ObjectManager.V1.Manager.IObjectManager.GetDependencyListAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/Relativity.ObjectManager/v1/workspace/:workspaceID/object/dependencylist",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IObjectManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

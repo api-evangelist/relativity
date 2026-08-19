@@ -1,0 +1,228 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Reports API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get reports list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v4/Reports",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSnapshotReports",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSummaryReports",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint retrieves a paginated list of reports. Snapshot reports (\"Last Known Sizes\") are included by default and can be excluded by passing includeSnapshotReports=false. Summary reports are excluded by default and are only returned when includeSummaryReports=true."
+        },
+        {
+          "info": {
+            "name": "Create new report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v4/Reports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Schedules a new report generation. When 'date' (YYYYMMDD) is provided in the body, a Summary report is produced from the Billable Summary CSV; otherwise a Detailed folder report is generated."
+        },
+        {
+          "info": {
+            "name": "Get report details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v4/Reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint retrieves detailed information about a specific report including its status and metadata."
+        },
+        {
+          "info": {
+            "name": "Cancel report",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/v4/Reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint cancels a running or pending report generation job."
+        },
+        {
+          "info": {
+            "name": "Download report file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v4/Reports/:id/file",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint downloads the generated report file for a completed report."
+        },
+        {
+          "info": {
+            "name": "Gets the details of a report by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/Reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint retrieves basic information about a specific report based on its unique identifier, like report's ID, name, etc."
+        },
+        {
+          "info": {
+            "name": "Delete a report by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/v1/Reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows you to delete a specific report based on its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Gets the detailed information of a report by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/Reports/:id/details",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "PageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint retrieves detailed information about a specific report based on its unique identifier. The details include all columns, workspaces, and fields that were selected for the report."
+        },
+        {
+          "info": {
+            "name": "Lists all reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/Reports"
+          },
+          "docs": "This endpoint retrieves a list of all reports."
+        },
+        {
+          "info": {
+            "name": "Generate a new report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v1/Reports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows you to generate a new report based on the provided request data."
+        },
+        {
+          "info": {
+            "name": "Download a report by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/Reports/download/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows you to download a specific report based on its unique identifier."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

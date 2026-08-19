@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillableSummaryReports API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BillableSummaryReports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a billable summary report file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v4/billable-summary-reports/file",
+            "params": [
+              {
+                "name": "Container",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint retrieves a billable summary report file based on the container name and report date. Returns 403 if the caller does not have access to the requested container."
+        },
+        {
+          "info": {
+            "name": "Get billable summary reports list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v4/billable-summary-reports",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint retrieves a paginated list of all available billable summary reports."
+        },
+        {
+          "info": {
+            "name": "Get latest billable summary report per container",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v4/billable-summary-reports/latest"
+          },
+          "docs": "Returns the most recent billable summary report for each unique container the caller has access to."
+        },
+        {
+          "info": {
+            "name": "Get billable summary report directory details",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v4/billable-summary-reports/directory-details",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves details for a specific directory inside a billable summary report based on the container, report date, and path. Send the request body as JSON with container, date, and path properties. Returns 403 if the caller does not have access to the requested container."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

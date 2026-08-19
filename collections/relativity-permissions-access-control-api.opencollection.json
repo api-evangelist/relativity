@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Permissions Access Control API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Permissions Access Control",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List role assignments on a node.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/access-control/public/v1/role-assignments/:nodeType/:nodeKey",
+            "params": [
+              {
+                "name": "nodeType",
+                "value": "",
+                "type": "path",
+                "description": "The type of the node. Only 'fileshare' is supported."
+              },
+              {
+                "name": "nodeKey",
+                "value": "",
+                "type": "path",
+                "description": "The key of the node."
+              }
+            ]
+          },
+          "docs": "List role assignments on a node."
+        },
+        {
+          "info": {
+            "name": "Batch assign and/or revoke roles on a node.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/access-control/public/v1/role-assignments/:nodeType/:nodeKey",
+            "params": [
+              {
+                "name": "nodeType",
+                "value": "",
+                "type": "path",
+                "description": "The type of the node. Only 'fileshare' is supported."
+              },
+              {
+                "name": "nodeKey",
+                "value": "",
+                "type": "path",
+                "description": "The key of the node."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Batch assign and/or revoke roles on a node."
+        },
+        {
+          "info": {
+            "name": "List role assignments on the instance (tenant) node.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/access-control/public/v1/role-assignments/instance"
+          },
+          "docs": "List role assignments on the instance (tenant) node."
+        },
+        {
+          "info": {
+            "name": "Batch assign and/or revoke roles on the instance (tenant) node.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/access-control/public/v1/role-assignments/instance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Batch assign and/or revoke roles on the instance (tenant) node."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

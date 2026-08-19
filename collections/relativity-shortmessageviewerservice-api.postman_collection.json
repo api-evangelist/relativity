@@ -1,0 +1,629 @@
+{
+  "item": [
+    {
+      "id": "b4ee7147-eada-4308-bb33-bcf198f5f651",
+      "name": "ShortMessageViewerService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cbe0c8d1-84a0-4dd9-bc1b-ad58c0bf36a6",
+          "name": "Retrieves attachment metadata for a short message document.",
+          "request": {
+            "name": "Retrieves attachment metadata for a short message document.",
+            "description": {
+              "content": "Returns attachment records for the attachment identifiers supplied in the request body.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "short-messages",
+                ":documentID",
+                "attachment-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) The Artifact ID of the short message document."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"attachmentIDs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b6da522b-cbc2-4618-8b58-b8777525d582",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "short-messages",
+                    ":documentID",
+                    "attachment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) The Artifact ID of the short message document."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"attachmentIDs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"AttachmentId\": \"string\",\n    \"DocumentArtifactId\": 1688,\n    \"FileGuid\": \"string\"\n  },\n  {\n    \"AttachmentId\": \"string\",\n    \"DocumentArtifactId\": 6317,\n    \"FileGuid\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "563de564-6ecc-46ee-a2cc-4ee44d540035",
+          "name": "Retrieves entity information for one or more short message participants.",
+          "request": {
+            "name": "Retrieves entity information for one or more short message participants.",
+            "description": {
+              "content": "Participant lookups use participant identity details from the request body and return mapped entity details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "short-messages",
+                "participant-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"participantRequests\": [\n    {\n      \"Id\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Email\": \"<string>\"\n    },\n    {\n      \"Id\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Email\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "09ae616d-0607-4d29-a355-f1dbbf7f418d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "short-messages",
+                    "participant-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"participantRequests\": [\n    {\n      \"Id\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Email\": \"<string>\"\n    },\n    {\n      \"Id\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Email\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Id\": \"string\",\n    \"EntityName\": \"string\",\n    \"Aliases\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Url\": \"string\"\n  },\n  {\n    \"Id\": \"string\",\n    \"EntityName\": \"string\",\n    \"Aliases\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Url\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b55ef2f-0aca-4870-861b-66ac69495d41",
+          "name": "Retrieves the JSON representation of a short message conversation document.",
+          "request": {
+            "name": "Retrieves the JSON representation of a short message conversation document.",
+            "description": {
+              "content": "The JSON structure aligns with RSMF manifest-style payloads used by the short message viewer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "short-messages",
+                ":documentID",
+                "message-json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) The Artifact ID of the document for short message viewer."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebd0602c-d1dd-4b78-ae17-843fb1fa8c48",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "short-messages",
+                    ":documentID",
+                    "message-json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) The Artifact ID of the document for short message viewer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fa68678-6323-4228-a517-452682b547b1",
+          "name": "Requests creation of a new short message document from a subset of events.",
+          "request": {
+            "name": "Requests creation of a new short message document from a subset of events.",
+            "description": {
+              "content": "This operation queues slicing work and supports options such as attachment creation and participant preservation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "short-messages",
+                ":documentID",
+                "slice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) The Artifact ID of the workspace containing the document to be sliced."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) The Artifact ID of the document to be sliced."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sliceRequest\": {\n    \"EventIndexes\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"Options\": {\n      \"CreateAttachments\": \"<boolean>\",\n      \"SourceLayoutID\": \"<integer>\",\n      \"PreserveAllParticipants\": \"<boolean>\",\n      \"EmailConfirmation\": \"<boolean>\"\n    },\n    \"CorrelationId\": \"<uuid>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2fc9581d-1af9-42d7-ae85-0d5bc7b0242f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "short-messages",
+                    ":documentID",
+                    "slice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) The Artifact ID of the workspace containing the document to be sliced."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) The Artifact ID of the document to be sliced."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sliceRequest\": {\n    \"EventIndexes\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"Options\": {\n      \"CreateAttachments\": \"<boolean>\",\n      \"SourceLayoutID\": \"<integer>\",\n      \"PreserveAllParticipants\": \"<boolean>\",\n      \"EmailConfirmation\": \"<boolean>\"\n    },\n    \"CorrelationId\": \"<uuid>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48b1d401-529c-4a18-8692-81afc798bb9a",
+          "name": "Validates whether the specified short message document contains a valid RSMF payload.",
+          "request": {
+            "name": "Validates whether the specified short message document contains a valid RSMF payload.",
+            "description": {
+              "content": "Returns validation status and diagnostic details for document-level RSMF validation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "workspaces",
+                ":workspaceID",
+                "short-messages",
+                ":documentID",
+                "validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "documentID",
+                  "description": "(Required) The Artifact ID of the short message document."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4862fe3-4a5b-4d79-b2be-753b44c28153",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "workspaces",
+                    ":workspaceID",
+                    "short-messages",
+                    ":documentID",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) The Artifact ID of the workspace containing the documents for short message viewer."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "documentID",
+                      "description": "(Required) The Artifact ID of the short message document."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Status\": \"PassedWithWarnings\",\n  \"Errors\": [\n    {\n      \"LineNumber\": 4618,\n      \"LinePosition\": 6693,\n      \"Message\": \"string\",\n      \"Submessages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"ErrorCode\": \"ZipUnreferencedFiles\"\n    },\n    {\n      \"LineNumber\": 3010,\n      \"LinePosition\": 5016,\n      \"Message\": \"string\",\n      \"Submessages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"ErrorCode\": \"ManifestDuplicateId\"\n    }\n  ],\n  \"Warnings\": [\n    {\n      \"LineNumber\": 9890,\n      \"LinePosition\": 8092,\n      \"Message\": \"string\",\n      \"Submessages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"ErrorCode\": \"ManifestEventArrayEmpty\"\n    },\n    {\n      \"LineNumber\": 2887,\n      \"LinePosition\": 1468,\n      \"Message\": \"string\",\n      \"Submessages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"ErrorCode\": \"ManifestInvalidEventEditParticipant\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "version"
+    }
+  ],
+  "info": {
+    "_postman_id": "cfbe654a-8975-40e9-9274-39f1fbf88b2d",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ShortMessageViewerService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

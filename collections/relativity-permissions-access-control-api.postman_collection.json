@@ -1,0 +1,1138 @@
+{
+  "item": [
+    {
+      "id": "6ff10bd8-3970-41a7-bcb6-419d44c55495",
+      "name": "Permissions Access Control",
+      "description": {
+        "content": "External public API for managing role assignments.\r\nRole keys must use the r1_ prefix (e.g. r1_staging_viewer).\r\nEnd user token is required",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e61347fb-8d19-4621-99f2-e204168d46f2",
+          "name": "List role assignments on a node.",
+          "request": {
+            "name": "List role assignments on a node.",
+            "description": {},
+            "url": {
+              "path": [
+                "access-control",
+                "public",
+                "v1",
+                "role-assignments",
+                ":nodeType",
+                ":nodeKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nodeType",
+                  "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nodeKey",
+                  "description": "(Required) The key of the node."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fefb97ac-c857-48ec-9c5a-0f75ff84947f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"groupId\": \"string\",\n    \"roleKey\": \"s\"\n  },\n  {\n    \"groupId\": \"string\",\n    \"roleKey\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e794548-a656-4c5c-9e88-e8481a15331f",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "281a107e-f48d-4d14-9bae-bdf44d78d9e0",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bd94430c-691a-4751-a8e6-7495dc477bf0",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7f5d2c71-5aef-4e1a-9123-baca1f446524",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8353de4-44d3-45ac-ba96-22975b48a8ab",
+          "name": "Batch assign and/or revoke roles on a node.",
+          "request": {
+            "name": "Batch assign and/or revoke roles on a node.",
+            "description": {},
+            "url": {
+              "path": [
+                "access-control",
+                "public",
+                "v1",
+                "role-assignments",
+                ":nodeType",
+                ":nodeKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nodeType",
+                  "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nodeKey",
+                  "description": "(Required) The key of the node."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3c1b6485-8fcd-423e-a723-a88a6ca6f3b7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7aed685a-97a0-44c7-aba9-c1ef1a5398d7",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a3c61fa6-2c6a-4991-a51d-845abf3eaebd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6d5dfd7a-4a9c-4a9e-a17e-80b6f9f2a1df",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9b030938-959b-49ca-9b7a-eda3ac8bf633",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    ":nodeType",
+                    ":nodeKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeType",
+                      "description": "(Required) The type of the node. Only 'fileshare' is supported."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nodeKey",
+                      "description": "(Required) The key of the node."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44aae77e-5936-406e-9123-08b086fa5f91",
+          "name": "List role assignments on the instance (tenant) node.",
+          "request": {
+            "name": "List role assignments on the instance (tenant) node.",
+            "description": {},
+            "url": {
+              "path": [
+                "access-control",
+                "public",
+                "v1",
+                "role-assignments",
+                "instance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2122fc1-3c3a-4094-a550-d582e2947e09",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"groupId\": \"string\",\n    \"roleKey\": \"s\"\n  },\n  {\n    \"groupId\": \"string\",\n    \"roleKey\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad9d6625-5e6e-4115-b2a9-870ca99ceec2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2ca371d-418d-4de4-a5d7-ca5436503e9b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c403e48c-8170-4854-8544-29bb85bdfaf2",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "895f02bf-8432-4184-aebf-e14129257c9b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "865e3f99-6df2-4064-bd5e-9804238eda53",
+          "name": "Batch assign and/or revoke roles on the instance (tenant) node.",
+          "request": {
+            "name": "Batch assign and/or revoke roles on the instance (tenant) node.",
+            "description": {},
+            "url": {
+              "path": [
+                "access-control",
+                "public",
+                "v1",
+                "role-assignments",
+                "instance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a73dfd62-cb23-41d9-9370-7b142e0013f7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3cffeba-e2bc-41ad-8d6a-f115be8ecfa7",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d1daa73f-9ff6-450f-9fb0-06f44748a6f1",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f11f370f-854d-4d49-8c8c-c3bc546b075f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "60687ed9-8780-4853-8ccb-5f5f7aa5d8c7",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access-control",
+                    "public",
+                    "v1",
+                    "role-assignments",
+                    "instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assign\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ],\n  \"revoke\": [\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    },\n    {\n      \"groupId\": \"<string>\",\n      \"roleKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4f14ddc4-c406-4630-bf7c-9e0effc2ae8d",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Permissions Access Control API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

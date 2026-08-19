@@ -1,0 +1,2186 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Infrastructure Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Relativity Infrastructure Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.GetEligibleWorkerDesignatedWorkAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID/eligible-designated-work",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.StartWorkerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID/start-worker",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.StopWorkerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID/stop-worker",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.EnableProcessingLicenseAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID/enable-processing-license",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerServer.IWorkerServerManager.DisableProcessingLicenseAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-servers/:serverID/disable-processing-license",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerManagerServer.IWorkerManagerServerManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-manager-servers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkerManagerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerManagerServer.IWorkerManagerServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-manager-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerManagerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerManagerServer.IWorkerManagerServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-manager-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWorkerManagerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerManagerServer.IWorkerManagerServerManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-manager-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWorkerManagerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WorkerManagerServer.IWorkerManagerServerManager.GetDefaultFieldValuesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/worker-manager-servers/default-field-values"
+          },
+          "docs": "[Public] IWorkerManagerServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebWindowsAuthServer.IWebWindowsAuthServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-windows-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebWindowsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebWindowsAuthServer.IWebWindowsAuthServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-windows-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebWindowsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebServerManager.IWebServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebServerManager.IWebServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebFormsAuthServer.IWebFormsAuthServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-forms-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebFormsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebFormsAuthServer.IWebFormsAuthServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-forms-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebFormsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebDistributedWindowsAuthServer.IWebDistributedWindowsAuthServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-distributed-windows-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebDistributedWindowsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebDistributedWindowsAuthServer.IWebDistributedWindowsAuthServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-distributed-windows-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebDistributedWindowsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebDistributedServer.IWebDistributedServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-distributed-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebDistributedServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebDistributedServer.IWebDistributedServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-distributed-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebDistributedServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebDistributedFormsAuthServer.IWebDistributedFormsAuthServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-distributed-forms-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebDistributedFormsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebDistributedFormsAuthServer.IWebDistributedFormsAuthServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-distributed-forms-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebDistributedFormsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebBackgroundProcessingServer.IWebBackgroundProcessingServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-background-processing-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebBackgroundProcessingServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebBackgroundProcessingServer.IWebBackgroundProcessingServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-background-processing-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebBackgroundProcessingServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebBackgroundProcessingServer.IWebBackgroundProcessingServerManager.RestartWindowsServiceAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-background-processing-servers/:serverID/restart-windows-service",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IWebBackgroundProcessingServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebApiWindowsAuthServer.IWebApiWindowsAuthServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-api-windows-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebApiWindowsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebApiWindowsAuthServer.IWebApiWindowsAuthServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-api-windows-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebApiWindowsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebApiServer.IWebApiServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-api-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebApiServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebApiServer.IWebApiServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-api-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebApiServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebApiFormsAuthServerManager.IWebApiFormsAuthServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-api-forms-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IWebApiFormsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.WebApiFormsAuthServerManager.IWebApiFormsAuthServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/web-api-forms-auth-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IWebApiFormsAuthServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.SQLPrimary.ISqlPrimaryServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/sql-primary-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] ISqlPrimaryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.SQLPrimary.ISqlPrimaryServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/sql-primary-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ISqlPrimaryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.SQLPrimary.ISqlPrimaryServerManager.IsLastVisibleServerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/sql-primary-servers/:serverID/is-last-visible-server",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ISqlPrimaryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.SQLDistributed.ISqlDistributedServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/sql-distributed-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] ISqlDistributedServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.SQLDistributed.ISqlDistributedServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/sql-distributed-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ISqlDistributedServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.SQLDistributed.ISqlDistributedServerManager.IsLastVisibleServerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/sql-distributed-servers/:serverID/is-last-visible-server",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ISqlDistributedServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ServicesServer.IServicesServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/services-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IServicesServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ServicesServer.IServicesServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/services-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IServicesServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourceServer.IResourceServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IResourceServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourceServer.IResourceServerManager.ReadServerTypesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-servers/types"
+          },
+          "docs": "[Public] IResourceServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourceServer.IResourceServerManager.GetEligibleStatusesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-servers/eligible-statuses"
+          },
+          "docs": "[Public] IResourceServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/:resourcePoolID",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/:resourcePoolID",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/:resourcePoolID",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.QueryResourcesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/:resourcePoolID/query-associated",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.QueryEligibleToAddResourcesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/:resourcePoolID-to-add",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.QueryClientsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/query-eligible-clients",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.AddResourcesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/:resourcePoolID/add",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.RemoveResourcesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/:resourcePoolID/remove",
+            "params": [
+              {
+                "name": "resourcePoolID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.MassAddResourceServersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/mass-ops/add-servers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.MassRemoveResourceServersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/mass-ops/remove-servers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.QueryByResourceServerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/query-by-resource-server/:resourceServerID",
+            "params": [
+              {
+                "name": "resourceServerID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.ResourcePool.IResourcePoolManager.QueryEligibleByResourceServerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/resource-pools/query-eligible-by-resource-server/:resourceServerID",
+            "params": [
+              {
+                "name": "resourceServerID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IResourcePoolManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Notifications.INotificationsManager.ReadMotdAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/notifications"
+          },
+          "docs": "[Public] INotificationsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Notifications.INotificationsManager.UpdateMotdAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/notifications",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] INotificationsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Notifications.INotificationsManager.DismissMotdAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/notifications/dismiss/:userID",
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] INotificationsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Notifications.INotificationsManager.HasDismissedMotdAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/notifications/has-dismissed/:userID",
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] INotificationsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Notifications.INotificationsManager.IsTextOnlyMotdAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/notifications/is-text-only"
+          },
+          "docs": "[Public] INotificationsManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.FileRepositoryServer.IFileRepositoryServerManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/file-repository-servers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFileRepositoryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.FileRepositoryServer.IFileRepositoryServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/file-repository-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IFileRepositoryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.FileRepositoryServer.IFileRepositoryServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/file-repository-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFileRepositoryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.FileRepositoryServer.IFileRepositoryServerManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/file-repository-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IFileRepositoryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.FileRepositoryServer.IFileRepositoryServerManager.QueryEligibleFileAccessCredentialsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/file-repository-servers/query-eligible-file-access-credentials",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IFileRepositoryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.FileRepositoryServer.IFileRepositoryServerManager.GetMetadataAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/file-repository-servers/metadata"
+          },
+          "docs": "[Public] IFileRepositoryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.FileRepositoryServer.IFileRepositoryServerManager.IsLastVisibleServerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/file-repository-servers/:serverID/is-last-visible-server",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IFileRepositoryServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.CacheLocationServer.ICacheLocationServerManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/cache-location-servers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ICacheLocationServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.CacheLocationServer.ICacheLocationServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/cache-location-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] ICacheLocationServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.CacheLocationServer.ICacheLocationServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/cache-location-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ICacheLocationServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.CacheLocationServer.ICacheLocationServerManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/cache-location-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ICacheLocationServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.CacheLocationServer.ICacheLocationServerManager.QueryEligibleFileAccessCredentialsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/cache-location-servers/query-eligible-file-access-credentials",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ICacheLocationServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.CacheLocationServer.ICacheLocationServerManager.GetMetadataAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/cache-location-servers/metadata"
+          },
+          "docs": "[Public] ICacheLocationServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.CacheLocationServer.ICacheLocationServerManager.IsLastVisibleServerAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/cache-location-servers/:serverID/is-last-visible-server",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ICacheLocationServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.GetDefaultFieldValuesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers/default-field-values"
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.GetEligibleAnalyticsOperationsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers/eligible-analytics-operations"
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.RestartWindowsServiceAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers/:serverID/restart-windows-service",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AnalyticsServer.IAnalyticsServerManager.GetMetadataAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/analytics-servers/metadata"
+          },
+          "docs": "[Public] IAnalyticsServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents/:agentID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents/:agentID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents/:agentID",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents/:agentID/:includeMetadata/:includeActions",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.ValidateCreateInstanceLimitAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents/validateinstancelimits",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.ValidateUpdateInstanceLimitAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents/:agentID/validateinstancelimits",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.ValidateDeleteInstanceLimitAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agents/:agentID/validateinstancelimits",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.GetAgentServersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agentservers",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.GetAvailableAgentServersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agenttypes/:agentTypeID/availableagentservers",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentTypeID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.GetAvailableAgentServersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agenttypes/:agentTypeGuid/availableagentservers",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "agentTypeGuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.Agent.IAgentManager.GetAgentTypesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspace/:workspaceID/agenttypes",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AgentServerManager.IAgentServerManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/agent-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AgentServerManager.IAgentServerManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/agent-servers/:serverID",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IAgentServerManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Infrastructure.V1.AgentServerManager.IAgentServerManager.RestartWindowsServiceAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-infrastructure/v1/workspaces/-1/agent-servers/:serverID/restart-windows-service",
+            "params": [
+              {
+                "name": "serverID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IAgentServerManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

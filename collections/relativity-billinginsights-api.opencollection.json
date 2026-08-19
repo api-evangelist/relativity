@@ -1,0 +1,140 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillingInsights API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BillingInsights",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get artifact ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/api/v1/billing-insights/hierarchy-lookup/:level",
+            "params": [
+              {
+                "name": "level",
+                "value": "",
+                "type": "path",
+                "description": "The hierarchy level"
+              },
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "query",
+                "description": "The instance ID"
+              },
+              {
+                "name": "shouldUnhashData",
+                "value": "",
+                "type": "query",
+                "description": "Specifies if the response should include unhashed data. Default value is false."
+              }
+            ]
+          },
+          "docs": "Get artifact ids for workspace, matter, client, instance that can be used for filtering billing users and month details data."
+        },
+        {
+          "info": {
+            "name": "Get monthly billing metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v1/billing-insights/month-details",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get monthly billing metrics at the specific level (Workspace, Matter, Client, Instance) for a given date. If the requested data does not exist then an empty list will be returned (e.g. instance didn't exist in a given month)"
+        },
+        {
+          "info": {
+            "name": "Get a user list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v1/billing-insights/users-details",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get a user list with billing attributes for a given date"
+        },
+        {
+          "info": {
+            "name": "Get artifact ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/api/v2/billing-insights/hierarchy-lookup/:level",
+            "params": [
+              {
+                "name": "level",
+                "value": "",
+                "type": "path",
+                "description": "The hierarchy level"
+              },
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "query",
+                "description": "The instance ID"
+              },
+              {
+                "name": "shouldUnhashData",
+                "value": "",
+                "type": "query",
+                "description": "Specifies if the response should include unhashed data. Default value is false."
+              }
+            ]
+          },
+          "docs": "Get artifact ids for workspace, matter, client, instance that can be used for filtering billing users and month details data."
+        },
+        {
+          "info": {
+            "name": "Get monthly billing metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v2/billing-insights/month-details",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get monthly billing metrics at the specific level (Workspace, Matter, Client, Instance) for a given date. If the requested data does not exist then an empty list will be returned (e.g. instance didn't exist in a given month)"
+        },
+        {
+          "info": {
+            "name": "Get a user list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/api/v2/billing-insights/users-details",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get a user list with billing attributes for a given date"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

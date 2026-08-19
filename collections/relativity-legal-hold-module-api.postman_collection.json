@@ -1,0 +1,1608 @@
+{
+  "item": [
+    {
+      "id": "c936fd49-0688-4f34-8f83-fea809dcd7b4",
+      "name": "Legal Hold Module",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7d9e443b-dc9c-4a92-815f-0910cdd8da53",
+          "name": "k Cura.Legal Hold.Services.I Custodian Portal Auth Url Manager.Get Portal Redirect Url",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Custodian Portal Auth Url Manager.Get Portal Redirect Url",
+            "description": {
+              "content": "[Private] ICustodianPortalAuthUrlManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "CustodianPortalAuthUrl",
+                "GetPortalRedirectUrl"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "workspaceId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "emailAddress",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7bc5e8fc-3c2e-4864-b0ba-640d39f1ddea",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "CustodianPortalAuthUrl",
+                    "GetPortalRedirectUrl"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "workspaceId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "emailAddress",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8669e4c9-4d0c-4729-ab3e-f1e9078a991b",
+          "name": "k Cura.Legal Hold.Services.I Custodian Request Manager.Active Custodian Summary",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Custodian Request Manager.Active Custodian Summary",
+            "description": {
+              "content": "[Public] ICustodianRequestManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custodian-request-manager",
+                "ActiveCustodianSummary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "workspaceId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "startingIndex",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74d57f7e-1712-42d5-b7bf-3eb836883bbf",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custodian-request-manager",
+                    "ActiveCustodianSummary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "workspaceId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "startingIndex",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ProjectID\": 8786,\n    \"FullName\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"EmailAddress\": \"string\",\n    \"EmployeeNumber\": \"string\",\n    \"UniqueID\": \"string\",\n    \"ErrorMessage\": \"string\",\n    \"CustodianRole\": \"string\"\n  },\n  {\n    \"ProjectID\": 9264,\n    \"FullName\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"EmailAddress\": \"string\",\n    \"EmployeeNumber\": \"string\",\n    \"UniqueID\": \"string\",\n    \"ErrorMessage\": \"string\",\n    \"CustodianRole\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f17decfd-e317-44c5-98c1-1131c4ed3723",
+          "name": "k Cura.Legal Hold.Services.I Google Authorization Manager.Get Redirect Uri Async",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Google Authorization Manager.Get Redirect Uri Async",
+            "description": {
+              "content": "[Private] IGoogleAuthorizationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "workspace",
+                ":workspaceId",
+                "GetRedirectUriAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "authenticationType",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da1b36ab-4809-457e-825d-a90d4ffa0e88",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workspace",
+                    ":workspaceId",
+                    "GetRedirectUriAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89ec330f-85be-4e85-a7e5-c327ad341c4a",
+          "name": "k Cura.Legal Hold.Services.I Google Authorization Manager.Process G Suite Auth Redirect Async",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Google Authorization Manager.Process G Suite Auth Redirect Async",
+            "description": {
+              "content": "[Private] IGoogleAuthorizationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "workspace",
+                ":workspaceId",
+                "GoogleMail",
+                "HandleAuthenticationRedirect"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3415cc1-cdec-4466-b519-e22da2631b39",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workspace",
+                    ":workspaceId",
+                    "GoogleMail",
+                    "HandleAuthenticationRedirect"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"Success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0758e8c9-800c-4c8c-b746-bb87d5db4579",
+          "name": "k Cura.Legal Hold.Services.I Graph Authorization Manager.Authorize Microsoft Graph",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Graph Authorization Manager.Authorize Microsoft Graph",
+            "description": {
+              "content": "[Private] IGraphAuthorizationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "graph-auth-response"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e0ed338-819d-4b9d-b806-3233275e88da",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "graph-auth-response"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee7748a6-db00-45d9-ac5d-2061d25d800c",
+          "name": "k Cura.Legal Hold.Services.I Graph Authorization Manager.Get Authorized User",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Graph Authorization Manager.Get Authorized User",
+            "description": {
+              "content": "[Private] IGraphAuthorizationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "authorized-user",
+                ":workspaceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b867eb9-814a-4773-952a-821964d5f8f8",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "authorized-user",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41a18e3d-5ed7-4785-a242-231864b4ac7e",
+          "name": "k Cura.Legal Hold.Services.I Preservation Manager.Get Custodians Async",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Preservation Manager.Get Custodians Async",
+            "description": {
+              "content": "[Private] IPreservationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "preservation",
+                ":projectArtifactId",
+                "getCustodians"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "workspaceId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "startingIndex",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "100"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "projectArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c30d5d15-69c8-4ec5-a6b0-e0146d7b1d27",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "preservation",
+                    ":projectArtifactId",
+                    "getCustodians"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "workspaceId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "startingIndex",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "100"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "projectArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error\": \"string\",\n  \"TotalCount\": 728,\n  \"ArtifactIDs\": [\n    1279,\n    9007\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3154ffc-123f-4d0e-bc00-9a95c527995c",
+          "name": "k Cura.Legal Hold.Services.I Preservation Manager.Installed Async",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Preservation Manager.Installed Async",
+            "description": {
+              "content": "[Private] IPreservationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "preservation",
+                "IsInstalled",
+                ":workspaceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26d6322a-bcad-4bc9-b79c-a6075bd6cba0",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "preservation",
+                    "IsInstalled",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Error\": \"string\",\n  \"Results\": [\n    {\n      \"ApplicationInstallID\": 9361,\n      \"ApplicationIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 135,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"WorkspaceIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 1924,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"ClientIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 2483,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"MatterIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 1065,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"Message\": \"string\",\n      \"RootFolderID\": 2186,\n      \"InstallStatus\": {\n        \"Code\": \"Pending\",\n        \"Message\": \"string\",\n        \"Details\": \"string\",\n        \"GetDetailsAction\": {\n          \"Name\": \"string\",\n          \"Href\": \"string\",\n          \"Verb\": \"string\",\n          \"IsAvailable\": false,\n          \"Reason\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"RetryInstallAction\": {\n          \"Name\": \"string\",\n          \"Href\": \"string\",\n          \"Verb\": \"string\",\n          \"IsAvailable\": false,\n          \"Reason\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"CancelInstallAction\": {\n          \"Name\": \"string\",\n          \"Href\": \"string\",\n          \"Verb\": \"string\",\n          \"IsAvailable\": true,\n          \"Reason\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      },\n      \"Version\": \"string\",\n      \"IsOutOfDate\": true,\n      \"InstalledBy\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 7506,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"StartedOn\": \"2013-05-24T08:11:15.609Z\",\n      \"CompletedOn\": \"2014-11-16T09:08:32.826Z\"\n    },\n    {\n      \"ApplicationInstallID\": 5708,\n      \"ApplicationIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 2489,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"WorkspaceIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 8168,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"ClientIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 8083,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"MatterIdentifier\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 3697,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"Message\": \"string\",\n      \"RootFolderID\": 2356,\n      \"InstallStatus\": {\n        \"Code\": \"Canceled\",\n        \"Message\": \"string\",\n        \"Details\": \"string\",\n        \"GetDetailsAction\": {\n          \"Name\": \"string\",\n          \"Href\": \"string\",\n          \"Verb\": \"string\",\n          \"IsAvailable\": true,\n          \"Reason\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"RetryInstallAction\": {\n          \"Name\": \"string\",\n          \"Href\": \"string\",\n          \"Verb\": \"string\",\n          \"IsAvailable\": true,\n          \"Reason\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"CancelInstallAction\": {\n          \"Name\": \"string\",\n          \"Href\": \"string\",\n          \"Verb\": \"string\",\n          \"IsAvailable\": false,\n          \"Reason\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      },\n      \"Version\": \"string\",\n      \"IsOutOfDate\": false,\n      \"InstalledBy\": {\n        \"Name\": \"string\",\n        \"ArtifactID\": 6688,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"StartedOn\": \"1995-11-23T19:05:34.172Z\",\n      \"CompletedOn\": \"1990-01-22T11:43:44.387Z\"\n    }\n  ],\n  \"Summary\": {\n    \"Other\": 7080,\n    \"Pending\": 9018,\n    \"InProgress\": 1060,\n    \"Failed\": 194,\n    \"Completed\": 3543,\n    \"Canceled\": 3252,\n    \"TotalActiveInstalls\": 5815,\n    \"Total\": 7643\n  },\n  \"CurrentStartIndex\": 5920,\n  \"ResultCount\": 6083,\n  \"TotalCount\": 3849,\n  \"FirstPage\": {\n    \"Name\": \"string\",\n    \"Href\": \"string\",\n    \"Verb\": \"string\",\n    \"IsAvailable\": false,\n    \"Reason\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"PreviousPage\": {\n    \"Name\": \"string\",\n    \"Href\": \"string\",\n    \"Verb\": \"string\",\n    \"IsAvailable\": true,\n    \"Reason\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"NextPage\": {\n    \"Name\": \"string\",\n    \"Href\": \"string\",\n    \"Verb\": \"string\",\n    \"IsAvailable\": true,\n    \"Reason\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"LastPage\": {\n    \"Name\": \"string\",\n    \"Href\": \"string\",\n    \"Verb\": \"string\",\n    \"IsAvailable\": true,\n    \"Reason\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae50217c-eef3-441f-9b0a-5ad2599f7d3a",
+          "name": "k Cura.Legal Hold.Services.I Post Deploy Health Check Manager.Health Check Async",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Post Deploy Health Check Manager.Health Check Async",
+            "description": {
+              "content": "[Internal] IPostDeployHealthCheckManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health-check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a88032f9-e3a2-4131-a527-16090f5df080",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health-check"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Version\": {\n    \"Major\": 5229,\n    \"Minor\": 281,\n    \"Build\": 3670,\n    \"Revision\": 3618,\n    \"MajorRevision\": {},\n    \"MinorRevision\": {}\n  },\n  \"Content\": {\n    \"Headers\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"StatusCode\": \"Unauthorized\",\n  \"ReasonPhrase\": \"string\",\n  \"Headers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"RequestMessage\": {\n    \"Version\": {\n      \"Major\": 1471,\n      \"Minor\": 561,\n      \"Build\": 4347,\n      \"Revision\": 9301,\n      \"MajorRevision\": {},\n      \"MinorRevision\": {}\n    },\n    \"Content\": {\n      \"Headers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"Method\": {\n      \"Get\": {\n        \"value\": \"<Circular reference to #/components/schemas/HttpMethod detected>\"\n      },\n      \"Put\": {\n        \"value\": \"<Circular reference to #/components/schemas/HttpMethod detected>\"\n      },\n      \"Post\": {\n        \"value\": \"<Circular reference to #/components/schemas/HttpMethod detected>\"\n      },\n      \"Delete\": {\n        \"value\": \"<Circular reference to #/components/schemas/HttpMethod detected>\"\n      },\n      \"Head\": {\n        \"value\": \"<Circular reference to #/components/schemas/HttpMethod detected>\"\n      },\n      \"Options\": {\n        \"value\": \"<Circular reference to #/components/schemas/HttpMethod detected>\"\n      },\n      \"Trace\": {\n        \"value\": \"<Circular reference to #/components/schemas/HttpMethod detected>\"\n      },\n      \"Method\": \"string\"\n    },\n    \"RequestUri\": {\n      \"AbsolutePath\": \"string\",\n      \"AbsoluteUri\": \"string\",\n      \"LocalPath\": \"string\",\n      \"Authority\": \"string\",\n      \"HostNameType\": \"IPv4\",\n      \"IsDefaultPort\": false,\n      \"IsFile\": false,\n      \"IsLoopback\": false,\n      \"PathAndQuery\": \"string\",\n      \"Segments\": [\n        \"string\",\n        \"string\"\n      ],\n      \"IsUnc\": true,\n      \"Host\": \"string\",\n      \"Port\": 7033,\n      \"Query\": \"string\",\n      \"Fragment\": \"string\",\n      \"Scheme\": \"string\",\n      \"OriginalString\": \"string\",\n      \"DnsSafeHost\": \"string\",\n      \"IdnHost\": \"string\",\n      \"IsAbsoluteUri\": false,\n      \"UserEscaped\": false,\n      \"UserInfo\": \"string\"\n    },\n    \"Headers\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Properties\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    }\n  },\n  \"IsSuccessStatusCode\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62e5251a-22f6-4236-ab42-8ba83f2119f1",
+          "name": "k Cura.Legal Hold.Services.I Toggle Manager.Is Enabled",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Toggle Manager.Is Enabled",
+            "description": {
+              "content": "[Internal] IToggleManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "toggles",
+                ":toggleName",
+                "is-enabled"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "toggleName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be5fa141-af0e-4a81-9e00-9f44a69761d0",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "toggles",
+                    ":toggleName",
+                    "is-enabled"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "toggleName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "true",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1ced080-37ea-4d09-96c8-51e90a648945",
+          "name": "k Cura.Legal Hold.Services.I Settings Processor.Validate Email Settings",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Settings Processor.Validate Email Settings",
+            "description": {
+              "content": "[Internal] ISettingsProcessor - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SettingsManagement",
+                "workspace",
+                ":workspaceId",
+                "ValidateEmailSettings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "settingsType",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "sendTestEmail",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cff80526-2a1b-4d11-a5fb-8fcdf7e62550",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SettingsManagement",
+                    "workspace",
+                    ":workspaceId",
+                    "ValidateEmailSettings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "settingsType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sendTestEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"Status\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dcb018fe-0f62-49ba-ba8a-0941cf8c15d9",
+          "name": "k Cura.Legal Hold.Services.I Workload Discovery Manager.Get Agent Workload Async",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Workload Discovery Manager.Get Agent Workload Async",
+            "description": {
+              "content": "[Internal] IWorkloadDiscoveryManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "workload-discovery",
+                ":guid",
+                "workload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4d63210d-99d3-4187-85af-5b37ec9721cd",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workload-discovery",
+                    ":guid",
+                    "workload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Size\": \"None\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed9e1f57-255f-47e0-98be-f74edbf5bd03",
+          "name": "k Cura.Legal Hold.Services.I Communication Manager.Get Communication Layout State",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Communication Manager.Get Communication Layout State",
+            "description": {
+              "content": "[Private] ICommunicationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "workspace",
+                ":workspaceArtifactId",
+                "communication",
+                ":communicationArtifactId",
+                "layout-state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceArtifactId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "communicationArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c4cef4e-c0e4-45d6-8b08-3df57a8335df",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workspace",
+                    ":workspaceArtifactId",
+                    "communication",
+                    ":communicationArtifactId",
+                    "layout-state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "communicationArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c624c3d-9d00-41fa-a1dc-703581496ea5",
+          "name": "k Cura.Legal Hold.Services.I Communication Manager.Acknowledge On Behalf",
+          "request": {
+            "name": "k Cura.Legal Hold.Services.I Communication Manager.Acknowledge On Behalf",
+            "description": {
+              "content": "[Private] ICommunicationManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "workspace",
+                ":workspaceArtifactId",
+                "communication",
+                ":communicationArtifactId",
+                "acknowledge-on-behalf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceArtifactId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "communicationArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ArtifactIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"Reason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2c1607b-2e05-4598-9d85-5d119aa98bc6",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workspace",
+                    ":workspaceArtifactId",
+                    "communication",
+                    ":communicationArtifactId",
+                    "acknowledge-on-behalf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "communicationArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ArtifactIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"Reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b9c46100-0374-41e2-bc2b-99b26c338689",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Legal Hold Module API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

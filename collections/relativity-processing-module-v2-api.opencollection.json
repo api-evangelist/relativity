@@ -1,0 +1,620 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Processing Module v2 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Processing Module v2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.GetDocumentMetadataAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/metadata",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "logicalID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.GetDocumentsMetadataAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/documents/metadata",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.GetFilePathsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/documents/get-file-paths",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.GetDocumentErrorHistoryAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "logicalID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.RetryDeleteDocumentAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/documents/retry-delete",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.RetryDocumentErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/documents/retry-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.PublishDocumentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/documents/publish",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.GetPublishJobErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/documents/get-publish-job-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingDocumentManager.RetrievePublishableDocumentCountAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/documents/count",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingDocumentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.GetFiltersAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.CreateExpressionFilterAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.GetFilterResultAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/results/:filterID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filterID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.GetFiltersByDataSourceAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/data-sources/:dataSourceID/filters",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataSourceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.UpdateExpressionFilterAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/:filterID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filterID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.DeleteFilterAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/:filterID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filterID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.GetDiscoveredDocumentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/documents",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.PivotOnDiscoveredDocumentsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/pivot-discovered-documents",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.DownloadDiscoveredDocumentListAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/csvs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.DownloadNistedDocumentListAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/get-nisted-documents",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingFilterManager.GetDiscoveredDocumentIdsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/filters/document-ids",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingFilterManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Processing.V2.Services.IProcessingJobExceptionManager.GetTotalJobExceptionCountAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-processing/v2/workspaces/:workspaceID/job-exception/get-total-count-by-set",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IProcessingJobExceptionManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

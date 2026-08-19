@@ -1,0 +1,1002 @@
+{
+  "item": [
+    {
+      "id": "3e9bfc07-bbeb-4deb-b7e8-ccf489d0eacd",
+      "name": "BillingConfiguration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bac7a92c-3f48-4a97-8018-18e0fa716dad",
+          "name": "Get product configuration",
+          "request": {
+            "name": "Get product configuration",
+            "description": {
+              "content": "Get product configuration for a given dates. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-configuration",
+                "product-configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"metricKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "69e951ba-cd6d-4389-99c8-af9fae76d7bc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-configuration",
+                    "product-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKeys\": [\n    \"202308\",\n    \"202307\"\n  ],\n  \"metricKey\": \"Relativity_Translate\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": {\n    \"Relativity_Translate\": [\n      {\n        \"name\": \"ConversionRate\",\n        \"dateKey\": \"202308\",\n        \"value\": 20\n      },\n      {\n        \"name\": \"ConversionRate\",\n        \"dateKey\": \"202307\",\n        \"value\": 30\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dec296d0-6121-4556-94f6-6c53a6b8ada4",
+          "name": "Get information about package consumption",
+          "request": {
+            "name": "Get information about package consumption",
+            "description": {
+              "content": "Get package consumption for specific instance. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-configuration",
+                "package-consumption"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"metricKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "678a4df9-1887-4a9b-b404-201bfdd8d723",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-configuration",
+                    "package-consumption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"<string>\",\n  \"metricKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metricKey\": \"string\",\n  \"aggregationDateUtc\": \"1947-10-11T20:16:33.202Z\",\n  \"results\": [\n    {\n      \"type\": \"Free\",\n      \"total\": 2267.172560385311,\n      \"consumed\": 3921.222256249528,\n      \"expirationDateUtc\": \"2000-12-23T15:40:35.217Z\"\n    },\n    {\n      \"type\": \"Free\",\n      \"total\": 3919.3510341458814,\n      \"consumed\": 3665.8544888870124,\n      \"expirationDateUtc\": \"1946-12-06T10:33:39.047Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "850c534c-ff28-4e26-b5e5-a6134ef70d41",
+          "name": "Get information about products available for instance",
+          "request": {
+            "name": "Get information about products available for instance",
+            "description": {
+              "content": "Get information about products available for instance. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-configuration",
+                "available-products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "587f0706-0f68-4b4b-81cd-3e72de4d99f5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-configuration",
+                    "available-products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKey\": \"202308\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"metricKey\": \"Relativity_Translate\"\n    },\n    {\n      \"metricKey\": \"aiR_for_Privilege\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18984694-d358-43f3-8a6f-de7ee9468334",
+          "name": "Get information about packages available for instance",
+          "request": {
+            "name": "Get information about packages available for instance",
+            "description": {
+              "content": "Get information about packages available for instance. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-configuration",
+                "available-packages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3ca757d-0260-438a-9605-9de129dc896a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-configuration",
+                    "available-packages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKey\": \"202308\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"packageType\": \"aiRBulkUsage\",\n      \"startDate\": \"0001-01-01T00:00:00\",\n      \"endDate\": \"9999-12-31T23:59:59.9999999\",\n      \"quantity\": 1000000,\n      \"unitOfMeasure\": \"Documents\",\n      \"overageRate\": 0.15,\n      \"metricKeys\": [\n        \"aiRforReview\",\n        \"aiRforPrivilege\"\n      ]\n    },\n    {\n      \"packageType\": \"aiRUnitUsage\",\n      \"startDate\": \"0001-01-01T00:00:00\",\n      \"endDate\": \"9999-12-31T23:59:59.9999999\",\n      \"quantity\": 500000,\n      \"unitOfMeasure\": \"Pages\",\n      \"overageRate\": 0.1,\n      \"metricKeys\": [\n        \"aiR_for_Review\",\n        \"aiR_for_Privilige\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c59549db-7771-48fd-8447-57f04afe6209",
+          "name": "Get information about products and packages availability for instance",
+          "request": {
+            "name": "Get information about products and packages availability for instance",
+            "description": {
+              "content": "Get information about products and packages availability for instance. If the requested data does not exist then false is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-configuration",
+                "products-and-packages-availability"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64362185-c36c-4e3a-8835-0fb1273f5b46",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-configuration",
+                    "products-and-packages-availability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKey\": \"202308\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"areProductsAvailable\": true,\n      \"arePackagesAvailable\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bcf78e9-a487-45ec-9b06-e99ea6c36597",
+          "name": "Get product configuration",
+          "request": {
+            "name": "Get product configuration",
+            "description": {
+              "content": "Get product configuration for a given dates. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-configuration",
+                "product-configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"metricKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "176aff4f-1ec8-4e0e-afff-a860c3d71c34",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-configuration",
+                    "product-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKeys\": [\n    \"202308\",\n    \"202307\"\n  ],\n  \"metricKey\": \"Relativity_Translate\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": {\n    \"Relativity_Translate\": [\n      {\n        \"name\": \"ConversionRate\",\n        \"dateKey\": \"202308\",\n        \"value\": 20\n      },\n      {\n        \"name\": \"ConversionRate\",\n        \"dateKey\": \"202307\",\n        \"value\": 30\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a985467b-af8b-460f-b5bc-d95964043df6",
+          "name": "Get information about package consumption",
+          "request": {
+            "name": "Get information about package consumption",
+            "description": {
+              "content": "Get package consumption for specific instance. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-configuration",
+                "package-consumption"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"metricKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "80d0b684-951d-47ff-b10c-a6653997a275",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-configuration",
+                    "package-consumption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"<string>\",\n  \"metricKey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metricKey\": \"string\",\n  \"aggregationDateUtc\": \"1958-05-13T13:51:46.271Z\",\n  \"results\": [\n    {\n      \"type\": \"Free\",\n      \"total\": 1560.6680443073317,\n      \"consumed\": 9261.08393469639,\n      \"expirationDateUtc\": \"1967-07-13T04:22:56.680Z\"\n    },\n    {\n      \"type\": \"Purchased\",\n      \"total\": 6253.040628617219,\n      \"consumed\": 5015.295691885869,\n      \"expirationDateUtc\": \"1950-01-29T02:25:55.036Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7996878-7a49-4c7c-87b6-15833dc8dc3e",
+          "name": "Get information about products available for instance",
+          "request": {
+            "name": "Get information about products available for instance",
+            "description": {
+              "content": "Get information about products available for instance. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-configuration",
+                "available-products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0eb6a4fd-6901-4c3f-b591-f48f9794ca4e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-configuration",
+                    "available-products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKey\": \"202308\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"metricKey\": \"Relativity_Translate\"\n    },\n    {\n      \"metricKey\": \"aiR_for_Privilege\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59e34752-d022-4483-a330-d8c05e7535b0",
+          "name": "Get information about packages available for instance",
+          "request": {
+            "name": "Get information about packages available for instance",
+            "description": {
+              "content": "Get information about packages available for instance. If the requested data does not exist then 404 is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-configuration",
+                "available-packages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "01a85ef4-404e-49fc-831d-f913a1d69cdd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-configuration",
+                    "available-packages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKey\": \"202308\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"packageType\": \"aiRBulkUsage\",\n      \"startDate\": \"0001-01-01T00:00:00\",\n      \"endDate\": \"9999-12-31T23:59:59.9999999\",\n      \"quantity\": 1000000,\n      \"unitOfMeasure\": \"Documents\",\n      \"overageRate\": 0.15,\n      \"metricKeys\": [\n        \"aiRforReview\",\n        \"aiRforPrivilege\"\n      ]\n    },\n    {\n      \"packageType\": \"aiRUnitUsage\",\n      \"startDate\": \"0001-01-01T00:00:00\",\n      \"endDate\": \"9999-12-31T23:59:59.9999999\",\n      \"quantity\": 500000,\n      \"unitOfMeasure\": \"Pages\",\n      \"overageRate\": 0.1,\n      \"metricKeys\": [\n        \"aiR_for_Review\",\n        \"aiR_for_Privilige\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9873ec8c-ba55-416a-936f-36e06e222b0d",
+          "name": "Get information about products and packages availability for instance",
+          "request": {
+            "name": "Get information about products and packages availability for instance",
+            "description": {
+              "content": "Get information about products and packages availability for instance. If the requested data does not exist then false is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-configuration",
+                "products-and-packages-availability"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instanceID\": \"<string>\",\n  \"dateKey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8c4c53ea-d746-4fb4-9a8a-fbd1569de244",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-configuration",
+                    "products-and-packages-availability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n  \"dateKey\": \"202308\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"areProductsAvailable\": true,\n      \"arePackagesAvailable\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9d47e188-ad5b-4a9a-abb7-b1de7c4d5332",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillingConfiguration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

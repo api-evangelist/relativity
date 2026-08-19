@@ -1,0 +1,871 @@
+{
+  "item": [
+    {
+      "id": "c42393b4-f860-46fe-bd26-bf322ba01652",
+      "name": "Metrics Module",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "87600f33-01a7-4bdb-9db3-6ae8db5ca438",
+          "name": "Relativity.Telemetry.Services.Metrics.IAPM Manager.Log Count Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.IAPM Manager.Log Count Async",
+            "description": {
+              "content": "[Private] IAPMManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogCountAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metric\": {\n    \"Name\": \"<string>\",\n    \"CustomData\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\",\n      \"key_2\": \"<object>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b7b65b70-c2eb-4483-a76f-1c0a53c462d8",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogCountAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "count",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metric\": {\n    \"Name\": \"<string>\",\n    \"CustomData\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c61ec57-b99c-425f-9cc9-b547abe7613e",
+          "name": "Relativity.Telemetry.Services.Metrics.IAPM Manager.Log Timer Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.IAPM Manager.Log Timer Async",
+            "description": {
+              "content": "[Private] IAPMManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogTimerAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "milliseconds",
+                  "value": "<number>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metric\": {\n    \"Name\": \"<string>\",\n    \"CustomData\": {\n      \"key_0\": \"<object>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b1ac5c35-577b-499d-a014-dbe2eeb33fae",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogTimerAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "milliseconds",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metric\": {\n    \"Name\": \"<string>\",\n    \"CustomData\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7eb2e15f-ad3f-46b6-9d9f-66f43dfd6d6b",
+          "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Timer As Long Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Timer As Long Async",
+            "description": {
+              "content": "[Private] IMetricsManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogTimerAsLongAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bucket",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "workspaceGuid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "milliseconds",
+                  "value": "<number>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1162c3e-197c-47c5-a730-123da925f2dd",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogTimerAsLongAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bucket",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "workspaceGuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "milliseconds",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9bbf949-a1b8-4b40-b37b-5c45dbe8e990",
+          "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Timer As Double Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Timer As Double Async",
+            "description": {
+              "content": "[Private] IMetricsManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogTimerAsDoubleAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bucket",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "workspaceGuid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "milliseconds",
+                  "value": "<number>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b14c537-299c-4a3e-bdb4-6600188e97f2",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogTimerAsDoubleAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bucket",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "workspaceGuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "milliseconds",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "869ea0d8-2b71-442b-9706-c346f6af8f23",
+          "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Point In Time String Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Point In Time String Async",
+            "description": {
+              "content": "[Private] IMetricsManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogPointInTimeStringAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bucket",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "workspaceGuid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "560d6723-e386-4e5c-a07d-698e673268f0",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogPointInTimeStringAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bucket",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "workspaceGuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "552f14c1-16c2-4c72-bcaf-db66ea454538",
+          "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Point In Time Long Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Point In Time Long Async",
+            "description": {
+              "content": "[Private] IMetricsManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogPointInTimeLongAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bucket",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "workspaceGuid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "528bb21b-1c1f-4142-bf1a-fde0664ac611",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogPointInTimeLongAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bucket",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "workspaceGuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3a73105-13c5-4fce-81a2-63649cf4d822",
+          "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Point In Time Double Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Point In Time Double Async",
+            "description": {
+              "content": "[Private] IMetricsManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogPointInTimeDoubleAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bucket",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "workspaceGuid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e09b7c40-47b1-4ae7-b7a8-3019dd7d307c",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogPointInTimeDoubleAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bucket",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "workspaceGuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f92709f0-c7be-4aca-8357-568849145f41",
+          "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Metrics Async",
+          "request": {
+            "name": "Relativity.Telemetry.Services.Metrics.I Metrics Manager.Log Metrics Async",
+            "description": {
+              "content": "[Private] IMetricsManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "LogMetricsAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metrics\": [\n    {\n      \"Bucket\": \"<string>\",\n      \"WorkspaceGuid\": \"<string>\",\n      \"ClientDomainGuid\": \"<string>\",\n      \"WorkflowID\": \"<string>\",\n      \"MetricTarget\": \"<string>\",\n      \"MetricType\": \"<string>\",\n      \"Value\": \"<object>\"\n    },\n    {\n      \"Bucket\": \"<string>\",\n      \"WorkspaceGuid\": \"<string>\",\n      \"ClientDomainGuid\": \"<string>\",\n      \"WorkflowID\": \"<string>\",\n      \"MetricTarget\": \"<string>\",\n      \"MetricType\": \"<string>\",\n      \"Value\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b6e217cf-7b1c-4993-b80c-a972bf2f0d7b",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LogMetricsAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metrics\": [\n    {\n      \"Bucket\": \"<string>\",\n      \"WorkspaceGuid\": \"<string>\",\n      \"ClientDomainGuid\": \"<string>\",\n      \"WorkflowID\": \"<string>\",\n      \"MetricTarget\": \"<string>\",\n      \"MetricType\": \"<string>\",\n      \"Value\": \"<object>\"\n    },\n    {\n      \"Bucket\": \"<string>\",\n      \"WorkspaceGuid\": \"<string>\",\n      \"ClientDomainGuid\": \"<string>\",\n      \"WorkflowID\": \"<string>\",\n      \"MetricTarget\": \"<string>\",\n      \"MetricType\": \"<string>\",\n      \"Value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3f6ac412-cd8e-49b7-90e2-f72589be810f",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Metrics Module API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService CollectAPI API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CollectAPI",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PUT /collect-services/v1/CollectAPI/{workspaceId}/collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/collect-services/v1/CollectAPI/:workspaceId/collection",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /collect-services/v1/CollectAPI/{workspaceId}/collection/{collectionArtifactId}/start-target-generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/collect-services/v1/CollectAPI/:workspaceId/collection/:collectionArtifactId/start-target-generation",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}/target-generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId/target-generation",
+            "params": [
+              {
+                "name": "workspaceArtifactId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collectionArtifactId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PATCH /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}/start-collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "/Relativity.REST/api/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId/start-collection",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceArtifactId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collectionArtifactId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId",
+            "params": [
+              {
+                "name": "workspaceArtifactId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collectionArtifactId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PATCH /collect-services/v1/CollectAPI/{workspaceId}/collection/{collectionArtifactId}/stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "/Relativity.REST/api/collect-services/v1/CollectAPI/:workspaceId/collection/:collectionArtifactId/stop",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collectionArtifactId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

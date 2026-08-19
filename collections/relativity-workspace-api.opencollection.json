@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Workspace API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workspace",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/workspace/:workspaceId",
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the workspace with its core properties (client, matter, resource pool, status, SQL server, SQL full-text language, audit fields, etc.). Returns 567 Workspace Temporarily Unavailable when the workspace is still upgrading — clients can safely retry after a short delay. Equivalent to `/v1/workspace/{workspaceId}/false/false` — use the parameterized form to additionally include the `Meta` field or the available `Actions` list."
+        },
+        {
+          "info": {
+            "name": "Update workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/v1/workspace/:workspaceId",
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the workspace's properties. Include `lastModifiedOn` (timestamp of the last known version) to enforce optimistic concurrency — if the workspace has been modified since, the request fails with 409 Conflict and no changes are applied. On success, returns the updated workspace."
+        },
+        {
+          "info": {
+            "name": "Delete workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/v1/workspace/:workspaceId",
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Soft-deletes the workspace by moving it to the Recycle Bin. The workspace is hidden from normal views but can be recovered via `POST /v1/recycle-bin/workspace/{workspaceId}/recover` or permanently removed via `DELETE /v1/recycle-bin/workspace/{workspaceId}`."
+        },
+        {
+          "info": {
+            "name": "Read workspace with optional metadata and actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/workspace/:workspaceId/:includeMetadata/:includeActions",
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeMetadata",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeActions",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the workspace with its core properties. `includeMetadata` and `includeActions` are required path segments (not query parameters), e.g. `/v1/workspace/{workspaceId}/true/false`. When `includeMetadata` is `true`, the response additionally contains the `Meta` field (list of unsupported and read-only properties on the workspace). When `includeActions` is `true`, the response contains the `Actions` list (REST operations the caller is permitted to perform on the workspace). Returns 567 Workspa"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

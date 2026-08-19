@@ -1,0 +1,775 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Versioned Imaging Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Versioned Imaging Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/application-field-codes/:applicationFieldCodeID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationFieldCodeID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationFieldCodeManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/application-field-codes/:applicationFieldCodeID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationFieldCodeID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationFieldCodeManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/application-field-codes/:applicationFieldCodeID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "applicationFieldCodeID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IApplicationFieldCodeManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/application-field-codes/",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IApplicationFieldCodeManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IDocumentStatusManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/documents/:documentID/status",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IDocumentStatusManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingEnvironmentManager.CleanupInactiveJobsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/environment/jobs/inactive-jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Public] IImagingEnvironmentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingEnvironmentManager.GetMaxMassImagingJobSizeAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/environment/jobs/mass-imaging-max-size",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Public] IImagingEnvironmentManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.RunImagingSetAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID/run",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.RetryImagingSetErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID/retry-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.StopImagingJobAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/jobs/:imagingJobID/stop",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingJobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.ImageDocumentAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/documents/:documentArtifactID/image",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.MassImageDocumentsByMassProcessIdAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/documents/mass-image",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.UpdateJobPriorityAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/jobs/:imagingJobID/priority",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingJobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.CreateBasicImagingProfileAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-profiles/basic",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.CreateNativeImagingProfileAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-profiles/native",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-profiles/:imagingProfileID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingProfileID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IImagingProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-profiles/:imagingProfileID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingProfileID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-profiles/:imagingProfileID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingProfileID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IImagingProfileManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingSetManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IImagingSetManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IImagingSetManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IImagingSetManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.ReleaseImagingSetAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID/release-images",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IImagingSetManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.HideImagingSetAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID/hide-images",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IImagingSetManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/imaging-sets/:imagingSetID/status",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imagingSetID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IImagingSetManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.Imaging.Services.Interfaces.V1.INativeTypeManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-imaging/v1/workspaces/:workspaceID/native-types/:nativeTypeID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "nativeTypeID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] INativeTypeManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

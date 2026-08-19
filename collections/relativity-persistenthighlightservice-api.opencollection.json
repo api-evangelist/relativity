@@ -1,0 +1,140 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService PersistentHighlightService API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PersistentHighlightService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves persistent highlight sets and terms applied to a specific document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/documents/:documentID/highlight-sets",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace's Artifact ID."
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns highlight set metadata and term definitions scoped to the specified document in the workspace."
+        },
+        {
+          "info": {
+            "name": "Changes the active state of a persistent highlight set or selected terms.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/highlights/:persistentHighlightSetID/state",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace's Artifact ID."
+              },
+              {
+                "name": "persistentHighlightSetID",
+                "value": "",
+                "type": "path",
+                "description": "Persistent Highlight Set's ID."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to activate or deactivate an entire set, or to change state for specific term identifiers."
+        },
+        {
+          "info": {
+            "name": "Retrieves all persistent highlight sets and terms available in a workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/highlight-sets",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace's Artifact ID."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves all persistent highlight sets and terms available in a workspace."
+        },
+        {
+          "info": {
+            "name": "Adds one or more new terms to an existing persistent highlight set.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/highlights/:persistentHighlightSetID/add-terms",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "Workspace's Artifact ID."
+              },
+              {
+                "name": "persistentHighlightSetID",
+                "value": "",
+                "type": "path",
+                "description": "Persistent Highlight Set's ID."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Each term can include foreground and background colors that define how it appears in the viewer."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,3181 @@
+{
+  "item": [
+    {
+      "id": "2ca8963c-f43e-48dd-9887-90af73f63f09",
+      "name": "Relativity Mass Operation Module v2",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c6b0176-dcae-48be-a494-f8193b0ba479",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Copy Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Copy Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmasscopyjobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"ParentArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5bf01c68-e570-4a3d-ab34-5c68958c5187",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmasscopyjobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"ParentArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de472128-67cd-48a6-a2d7-fac826669adc",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Copy Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Copy Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "masscopy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"ParentArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "806e2b2d-2fdb-4207-a599-834bf6e3fc96",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "masscopy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"ParentArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessID\": 525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a569e872-3801-4f2a-ad21-0d08e22c650b",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Move Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Move Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmassmovejobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"DestinationFolderArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7f95c014-285d-4dee-ac04-edfb70e104fc",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmassmovejobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"DestinationFolderArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46dbde92-89ff-4718-ab48-921073c28fd8",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Move Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Move Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "massmove"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"DestinationFolderArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b605a4fd-27e7-4a87-9e23-671946b87328",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "massmove"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"DestinationFolderArtifactID\": \"<integer>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessID\": 525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56cf5474-071c-4426-92c9-ceb0efb97841",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Edit Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Edit Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmasseditjobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6475bbe1-a0f0-4ca7-97e4-6e04e385e81f",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmasseditjobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff1bb514-5ce1-46d9-a292-55a08128195f",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Edit Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Edit Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "massedit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ef2ed62-1f42-4983-bc25-ea4da8c24688",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "massedit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessID\": 525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90dfcce8-a2eb-4711-b289-d36d8b826c48",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Delete Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Delete Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmassdeletejobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"DocumentDeleteOptions\": \"<string>\",\n    \"ForceDelete\": \"<boolean>\",\n    \"Type\": \"<string>\",\n    \"PromoteDuplicatesFromOtherSources\": \"<boolean>\",\n    \"SnapshotAuditSelectionForOperation\": \"<boolean>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db4def1b-7927-44a0-a73a-a516424cd135",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmassdeletejobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"DocumentDeleteOptions\": \"<string>\",\n    \"ForceDelete\": \"<boolean>\",\n    \"Type\": \"<string>\",\n    \"PromoteDuplicatesFromOtherSources\": \"<boolean>\",\n    \"SnapshotAuditSelectionForOperation\": \"<boolean>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b0b63de-c26c-4a88-ab1d-5475f46f36c0",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Delete Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Delete Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "massdelete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"DocumentDeleteOptions\": \"<string>\",\n    \"ForceDelete\": \"<boolean>\",\n    \"Type\": \"<string>\",\n    \"PromoteDuplicatesFromOtherSources\": \"<boolean>\",\n    \"SnapshotAuditSelectionForOperation\": \"<boolean>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6edf46ba-e886-42cf-82d2-b9dde44cf9c5",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "massdelete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"DocumentDeleteOptions\": \"<string>\",\n    \"ForceDelete\": \"<boolean>\",\n    \"Type\": \"<string>\",\n    \"PromoteDuplicatesFromOtherSources\": \"<boolean>\",\n    \"SnapshotAuditSelectionForOperation\": \"<boolean>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessID\": 525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4a85abf-98f3-421e-8868-3561d5f7d31b",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Replace Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Replace Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmassreplacejobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c3fc1a1b-2846-4bb7-a6c4-130eea9a4161",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmassreplacejobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c18eeca-0097-4de3-a667-a1345fe638c2",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Replace Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Replace Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "massreplace"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aa24023a-5f97-4439-b361-2bfcd257dbd3",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "massreplace"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"ReplaceAction\": {\n          \"Options\": \"<string>\",\n          \"ReplacementText\": \"<string>\",\n          \"ReplacementField\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"ReplaceOptions\": {\n          \"Options\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessID\": 525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23d397a7-1dc2-4247-b861-f5babc881488",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Save As List Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Save As List Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmasssaveaslistjobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Notes\": \"<string>\",\n    \"ListName\": \"<string>\",\n    \"ExistingListArtifactID\": \"<integer>\",\n    \"Options\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a9c024b5-08c9-4153-a3be-80034ab99b6b",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmasssaveaslistjobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Notes\": \"<string>\",\n    \"ListName\": \"<string>\",\n    \"ExistingListArtifactID\": \"<integer>\",\n    \"Options\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c67089b0-2c8c-4922-91eb-fd8aa3f4bb46",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Save As List Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Save As List Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "masssaveaslist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Notes\": \"<string>\",\n    \"ListName\": \"<string>\",\n    \"ExistingListArtifactID\": \"<integer>\",\n    \"Options\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e8f1c5c5-019f-4a24-9187-ed3c372fc33a",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "masssaveaslist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Notes\": \"<string>\",\n    \"ListName\": \"<string>\",\n    \"ExistingListArtifactID\": \"<integer>\",\n    \"Options\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessID\": 525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "641e2705-4bc1-46ee-b8ab-7e0e0be4584b",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Tally Sum Average Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Tally Sum Average Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmasstallysumaveragejobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Field\": {\n      \"Name\": \"<string>\",\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Operation\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14e242ec-fb3c-4640-b61d-7b1f45f49d79",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmasstallysumaveragejobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Field\": {\n      \"Name\": \"<string>\",\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Operation\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Value\": \"string\",\n    \"Count\": 2902.5322288619013\n  },\n  {\n    \"Value\": \"string\",\n    \"Count\": 6390.826344743399\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca871e83-8744-4ccc-a5fb-46f45c15073f",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Tally Sum Average Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Tally Sum Average Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "masstallysumaverage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Field\": {\n      \"Name\": \"<string>\",\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Operation\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2748bdb4-b63f-4c58-ab32-e757f5ffbbb4",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "masstallysumaverage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Field\": {\n      \"Name\": \"<string>\",\n      \"ArtifactID\": \"<integer>\",\n      \"ViewFieldID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Operation\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Value\": \"string\",\n    \"Count\": 2902.5322288619013\n  },\n  {\n    \"Value\": \"string\",\n    \"Count\": 6390.826344743399\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3c1ed21-c991-488e-8c2e-5d60a334cea5",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Export To File Job Request Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Publish Mass Export To File Job Request Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "publishmassexporttofilejobrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"ViewID\": \"<integer>\",\n    \"ViewFields\": [\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"EscapeFormulas\": \"<boolean>\",\n    \"HasRank\": \"<boolean>\",\n    \"SearchProviderArtifactID\": \"<integer>\",\n    \"ExportFileFormat\": \"<string>\",\n    \"ExportEncodingType\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "72a2204b-80d4-4a30-9214-091fa69f09eb",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "publishmassexporttofilejobrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"ViewID\": \"<integer>\",\n    \"ViewFields\": [\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"EscapeFormulas\": \"<boolean>\",\n    \"HasRank\": \"<boolean>\",\n    \"SearchProviderArtifactID\": \"<integer>\",\n    \"ExportFileFormat\": \"<string>\",\n    \"ExportEncodingType\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"MassProcessID\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ContentType\": \"string\",\n  \"ContentDisposition\": \"string\",\n  \"CacheControl\": \"string\",\n  \"StatusCode\": \"MultipleChoices\",\n  \"Headers\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9998d62-b4a0-4a67-a534-0da173a1fb97",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Export To File Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Mass Export To File Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "massexporttofile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"ViewID\": \"<integer>\",\n    \"ViewFields\": [\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"EscapeFormulas\": \"<boolean>\",\n    \"HasRank\": \"<boolean>\",\n    \"SearchProviderArtifactID\": \"<integer>\",\n    \"ExportFileFormat\": \"<string>\",\n    \"ExportEncodingType\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "31298b43-65b5-451a-a0a7-c3f36c252ed3",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "massexporttofile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Type\": \"<string>\",\n    \"ViewID\": \"<integer>\",\n    \"ViewFields\": [\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ],\n    \"EscapeFormulas\": \"<boolean>\",\n    \"HasRank\": \"<boolean>\",\n    \"SearchProviderArtifactID\": \"<integer>\",\n    \"ExportFileFormat\": \"<string>\",\n    \"ExportEncodingType\": \"<string>\",\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ContentType\": \"string\",\n  \"ContentDisposition\": \"string\",\n  \"CacheControl\": \"string\",\n  \"StatusCode\": \"OK\",\n  \"Headers\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74ddd468-aadc-4769-bfbd-b13a274a6ce5",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Initialize Mass Operation Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Initialize Mass Operation Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "initializemassoperation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    },\n    \"DatabaseTokenRequired\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8245c7b9-2639-4540-aca9-d3233582d8ca",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "initializemassoperation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"ArtifactTypeID\": \"<integer>\",\n    \"Query\": {\n      \"ObjectType\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\",\n        \"Guid\": \"<string>\",\n        \"ArtifactTypeID\": \"<integer>\"\n      },\n      \"Condition\": \"<string>\",\n      \"Sorts\": [\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        },\n        {\n          \"FieldIdentifier\": {\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ArtifactID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ViewFieldID\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"Order\": \"<integer>\",\n          \"Direction\": \"<string>\"\n        }\n      ],\n      \"RelationalField\": {\n        \"Name\": \"<string>\",\n        \"ArtifactID\": \"<integer>\",\n        \"ViewFieldID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"RowCondition\": \"<string>\",\n      \"SearchProviderCondition\": {\n        \"SearchIndex\": {\n          \"ArtifactID\": \"<integer>\",\n          \"Name\": \"<string>\"\n        },\n        \"Input\": \"<string>\"\n      },\n      \"SampleParameters\": {\n        \"ExistingToken\": \"<string>\",\n        \"MarginOfError\": \"<number>\",\n        \"ConfidenceLevel\": \"<number>\",\n        \"FixedSampleSize\": \"<integer>\",\n        \"SamplingPercentage\": \"<number>\"\n      },\n      \"IncludeIDWindow\": \"<boolean>\",\n      \"RankSortOrder\": \"<string>\",\n      \"QueryHint\": \"<string>\",\n      \"Fields\": [\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"ArtifactID\": \"<integer>\",\n          \"ViewFieldID\": \"<integer>\",\n          \"Guid\": \"<string>\"\n        }\n      ],\n      \"IsAdhocQuery\": \"<boolean>\",\n      \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n      \"IncludeNameInQueryResult\": \"<boolean>\",\n      \"ExecutingSavedSearchID\": \"<integer>\",\n      \"ExecutingViewID\": \"<integer>\",\n      \"ActiveArtifactID\": \"<integer>\",\n      \"MaxCharactersForLongTextValues\": \"<integer>\",\n      \"LongTextBehavior\": \"<string>\"\n    },\n    \"DatabaseTokenRequired\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessID\": 9716,\n  \"ObjectCount\": 9222,\n  \"DatabaseToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed0b5e75-5f64-4ea5-920a-7a895ab7491b",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Cancel Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Cancel Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "processes",
+                ":processID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "processID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "474c7f91-dafd-4687-b0cf-8f370f61428d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "processes",
+                    ":processID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "processID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98c872cc-152c-43f9-8587-c7f73e2d7b44",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Cancel Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Cancel Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "processes",
+                ":processIdentifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "processIdentifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "362a3b6d-83df-4d5a-bbfe-1541bc96b649",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "processes",
+                    ":processIdentifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "processIdentifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8db64e7-d524-437e-a5a7-27a4fba7e649",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Check Progress",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Check Progress",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "processes",
+                ":processID",
+                "checkprogress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "processID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36999986-2cce-499c-b1a0-5c1deddeeb45",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "processes",
+                    ":processID",
+                    "checkprogress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "processID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessIdentifier\": \"string\",\n  \"Name\": \"string\",\n  \"State\": \"CompletedWithError\",\n  \"Status\": \"string\",\n  \"IsCanceled\": false,\n  \"TotalOperations\": 5221,\n  \"OperationsCompleted\": 7572,\n  \"ExceptionMessage\": \"string\",\n  \"CancelReason\": \"AgentShutdown\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5250c94f-7b32-4147-8341-7a0ca9dea171",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Check Progress",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Check Progress",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "processes",
+                ":processIdentifier",
+                "checkprogress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "processIdentifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10c1551d-94a2-429a-9697-1db530605f2c",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "processes",
+                    ":processIdentifier",
+                    "checkprogress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "processIdentifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ProcessIdentifier\": \"string\",\n  \"Name\": \"string\",\n  \"State\": \"CompletedWithError\",\n  \"Status\": \"string\",\n  \"IsCanceled\": false,\n  \"TotalOperations\": 5221,\n  \"OperationsCompleted\": 7572,\n  \"ExceptionMessage\": \"string\",\n  \"CancelReason\": \"AgentShutdown\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7eae8dd3-03a8-4ab8-8c12-73af0f0011f2",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Delete Startup Information Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Delete Startup Information Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "artifactType",
+                ":artifactTypeID",
+                "processes",
+                ":processID",
+                "massdeletestartup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "artifactTypeID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "processID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cade2735-88c1-4a22-a2c4-c9fa67351091",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "artifactType",
+                    ":artifactTypeID",
+                    "processes",
+                    ":processID",
+                    "massdeletestartup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "artifactTypeID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "processID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsCascadeDeletable\": true,\n  \"HasDependencies\": false,\n  \"HasDeleteObjectDependenciesPermission\": false,\n  \"SnapshotAuditSettingFromObjectType\": false,\n  \"PPDEventHandlerToggleValue\": false,\n  \"SnapshotAuditOverrideOptionToggleValue\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ecf5e8ae-4569-4b4d-ba90-105c9c0549b8",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Agent Delete Startup Information Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Agent Delete Startup Information Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "processes",
+                ":processID",
+                "massagentdeletestartup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "processID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0206f0b3-ec62-461d-814c-14b7d6584920",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "processes",
+                    ":processID",
+                    "massagentdeletestartup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "processID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"LastPerEnvironmentAgents\": [\n    \"string\",\n    \"string\"\n  ],\n  \"MinPerResourcePoolAgents\": [\n    {\n      \"AgentName\": \"string\",\n      \"ResourcePoolName\": \"string\"\n    },\n    {\n      \"AgentName\": \"string\",\n      \"ResourcePoolName\": \"string\"\n    }\n  ],\n  \"ForceDelete\": true,\n  \"WarningMessages\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81e7536c-0d98-4a14-878f-7c1542446671",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Validate Mass Edit Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Validate Mass Edit Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "artifactType",
+                ":artifactTypeID",
+                "processes",
+                ":processID",
+                "validatemassedit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "artifactTypeID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "processID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36954864-0c63-4ed1-8f8d-ebdaf0f1877e",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "artifactType",
+                    ":artifactTypeID",
+                    "processes",
+                    ":processID",
+                    "validatemassedit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "artifactTypeID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "processID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "true",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1223c261-e8b4-4d7d-99d1-d5e05550387a",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Operation Process State Extended Async",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Operation Process State Extended Async",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "massoperationprocessstateextended"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "097a1f14-3f25-497b-815e-1ff0bce914cb",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "massoperationprocessstateextended"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"WorkspaceId\": 9652,\n    \"WorkspaceName\": \"string\",\n    \"MassOperationType\": \"string\",\n    \"Status\": \"string\",\n    \"StatusMessage\": \"string\",\n    \"ProcessIdentifier\": \"string\",\n    \"StartedDateTime\": \"1959-12-04T06:55:12.363Z\",\n    \"ArtifactType\": \"string\",\n    \"ArtifactCount\": 462,\n    \"MassOpsProgress\": 601.853918600267,\n    \"MassOperationFriendlyName\": \"string\",\n    \"CancelReason\": \"AgentShutdown\"\n  },\n  {\n    \"WorkspaceId\": 6398,\n    \"WorkspaceName\": \"string\",\n    \"MassOperationType\": \"string\",\n    \"Status\": \"string\",\n    \"StatusMessage\": \"string\",\n    \"ProcessIdentifier\": \"string\",\n    \"StartedDateTime\": \"2008-05-16T20:24:34.622Z\",\n    \"ArtifactType\": \"string\",\n    \"ArtifactCount\": 7486,\n    \"MassOpsProgress\": 9902.220935127722,\n    \"MassOperationFriendlyName\": \"string\",\n    \"CancelReason\": \"UserInitiated\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "011e4634-6f4c-4184-b0ca-79db21366ad1",
+          "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Operation Jobs Refresh Interval",
+          "request": {
+            "name": "Relativity.Mass Operations.Service.V2.I Mass Operation Manager Service.Get Mass Operation Jobs Refresh Interval",
+            "description": {
+              "content": "[Public] IMassOperationManagerService - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-massoperation",
+                "v2",
+                "massoperationjobsrefreshinterval"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63924fb6-4962-44b5-befe-f417fbac89f4",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-massoperation",
+                    "v2",
+                    "massoperationjobsrefreshinterval"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e59c56c4-1439-4ee5-8e51-4a0d41a35780",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Mass Operation Module v2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

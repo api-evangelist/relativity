@@ -1,0 +1,557 @@
+{
+  "item": [
+    {
+      "id": "55a1f1aa-3961-42fc-96d8-f3096c323c39",
+      "name": "Glacier Storage",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0727d306-d71f-4e0c-8985-bde131fd1487",
+          "name": "List glaciers",
+          "request": {
+            "name": "List glaciers",
+            "description": {
+              "content": "Retrieves a paginated list of all glaciers. Each glacier in the list includes basic information such as ID, name, and creation date.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "glaciers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page number to retrieve (default: 1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50",
+                  "description": "The number of items per page (default: 50)"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter glaciers by status"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "cc0c0613-2e6f-40b4-a94d-031ccf97a6a7",
+              "name": "List of glaciers retrieved successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "status",
+                      "value": "GLACIER_AVAILABLE"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"glacierId\": \"987fcdeb-51a2-43d1-9876-543210fedcba\",\n      \"name\": \"project-archive-2024\",\n      \"createdAt\": \"2024-01-15T10:30:00Z\",\n      \"status\": \"GLACIER_AVAILABLE\"\n    },\n    {\n      \"glacierId\": \"456e7890-f12a-34b5-c678-901234567890\",\n      \"name\": \"backup-2024-01\",\n      \"createdAt\": \"2024-01-10T14:20:00Z\",\n      \"status\": \"GLACIER_PENDING\"\n    }\n  ],\n  \"page\": 1,\n  \"pageSize\": 50,\n  \"totalCount\": 125,\n  \"totalPages\": 3\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f044f828-5ada-4d29-ab5c-136e41991d4a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "status",
+                      "value": "GLACIER_AVAILABLE"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://mY.gwsacR1BZ4MTz9FMDHEm3WcB,\",\n  \"title\": \"string\",\n  \"status\": 7081,\n  \"detail\": \"string\",\n  \"instance\": \"http://mQPloLgBvWVfabwIreXkiVxcaE.ivsf0jBy2zHdmVCaORDWzm2z68Ny9qSJfrcHGkmM1bmFiC1Y1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bbe7599b-e099-4199-8bea-3c588502d9ac",
+              "name": "Forbidden - insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "status",
+                      "value": "GLACIER_AVAILABLE"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://mY.gwsacR1BZ4MTz9FMDHEm3WcB,\",\n  \"title\": \"string\",\n  \"status\": 7081,\n  \"detail\": \"string\",\n  \"instance\": \"http://mQPloLgBvWVfabwIreXkiVxcaE.ivsf0jBy2zHdmVCaORDWzm2z68Ny9qSJfrcHGkmM1bmFiC1Y1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d2ae4ec-3a7a-4e2d-9d3a-95c38a145926",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "status",
+                      "value": "GLACIER_AVAILABLE"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://mY.gwsacR1BZ4MTz9FMDHEm3WcB,\",\n  \"title\": \"string\",\n  \"status\": 7081,\n  \"detail\": \"string\",\n  \"instance\": \"http://mQPloLgBvWVfabwIreXkiVxcaE.ivsf0jBy2zHdmVCaORDWzm2z68Ny9qSJfrcHGkmM1bmFiC1Y1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "935fa1a4-51e2-479f-a7a2-12154efd6531",
+          "name": "Get glacier inventory report",
+          "request": {
+            "name": "Get glacier inventory report",
+            "description": {
+              "content": "Retrieves detailed Inventory Report information about a specific glacier with download link.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "glaciers",
+                ":glacierId",
+                "report"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "glacierId",
+                  "description": "(Required) The unique identifier of the glacier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "5b7e2407-dc36-4959-83f2-05aa916b5bf2",
+              "name": "Glacier inventory report retrieved successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"glacierId\": \"987fcdeb-51a2-43d1-9876-543210fedcba\",\n  \"name\": \"project-archive-2024\",\n  \"createdAt\": \"2024-01-15T10:30:00Z\",\n  \"inventoryReport\": {\n    \"glacierStoreEntityCount\": 1250,\n    \"glacierStoreTotalEntitySize\": 5368709120\n  },\n  \"downloadLink\": \"https://mystorageaccount.dfs.core.windows.net/glacier-reports?sv=2022-11-02&ss=bfqt&srt=sco&sp=rl&se=2025-10-02T00:00:00Z&st=2025-10-01T00:00:00Z&spr=https&sig=abc123XYZsignature%3D\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9bc4a3a5-114a-44ab-ab31-0549997a2fbd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://mY.gwsacR1BZ4MTz9FMDHEm3WcB,\",\n  \"title\": \"string\",\n  \"status\": 7081,\n  \"detail\": \"string\",\n  \"instance\": \"http://mQPloLgBvWVfabwIreXkiVxcaE.ivsf0jBy2zHdmVCaORDWzm2z68Ny9qSJfrcHGkmM1bmFiC1Y1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6313ab8e-aca7-41ed-85d8-bd663e758d22",
+              "name": "Forbidden - insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://mY.gwsacR1BZ4MTz9FMDHEm3WcB,\",\n  \"title\": \"string\",\n  \"status\": 7081,\n  \"detail\": \"string\",\n  \"instance\": \"http://mQPloLgBvWVfabwIreXkiVxcaE.ivsf0jBy2zHdmVCaORDWzm2z68Ny9qSJfrcHGkmM1bmFiC1Y1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96c75ef5-cffe-4b86-94b6-eb0d4cd6cb26",
+              "name": "Glacier not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://mY.gwsacR1BZ4MTz9FMDHEm3WcB,\",\n  \"title\": \"string\",\n  \"status\": 7081,\n  \"detail\": \"string\",\n  \"instance\": \"http://mQPloLgBvWVfabwIreXkiVxcaE.ivsf0jBy2zHdmVCaORDWzm2z68Ny9qSJfrcHGkmM1bmFiC1Y1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b907a04-f087-4f36-9535-52a7feebe07d",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://mY.gwsacR1BZ4MTz9FMDHEm3WcB,\",\n  \"title\": \"string\",\n  \"status\": 7081,\n  \"detail\": \"string\",\n  \"instance\": \"http://mQPloLgBvWVfabwIreXkiVxcaE.ivsf0jBy2zHdmVCaORDWzm2z68Ny9qSJfrcHGkmM1bmFiC1Y1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6f7dd9f9-0bd4-4211-a3c2-83c0e6b1825f",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Storage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "811d9653-75bf-4bf7-8bc1-d6966757a3c9",
+      "name": "DocumentViewerService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "569958e2-a0ea-401e-86b3-aee68e35dffe",
+          "name": "Submits a conversion request and returns a viewer content key for document viewer rendering.",
+          "request": {
+            "name": "Submits a conversion request and returns a viewer content key for document viewer rendering.",
+            "description": {
+              "content": "Supports document, production, image, and file-field conversion scenarios used by the Document Viewer REST API.\r\nThe returned value includes keys used to track conversion and retrieve converted content.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v{{version}}",
+                "DocumentViewerServiceManager",
+                "GetViewerContentKeyAsync"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"WorkspaceId\": \"<integer>\",\n    \"DocumentIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"ConversionType\": \"<string>\",\n    \"Priority\": \"<string>\",\n    \"Options\": {\n      \"ProductionId\": \"<integer>\",\n      \"ForceConversion\": \"<boolean>\",\n      \"FileId\": \"<integer>\",\n      \"DocumentSetId\": \"<string>\",\n      \"ClientId\": \"<string>\",\n      \"CorrelationId\": \"<uuid>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3fd6d8e9-383e-41d7-87ec-9fcaac157e15",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v{{version}}",
+                    "DocumentViewerServiceManager",
+                    "GetViewerContentKeyAsync"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"WorkspaceId\": \"<integer>\",\n    \"DocumentIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"ConversionType\": \"<string>\",\n    \"Priority\": \"<string>\",\n    \"Options\": {\n      \"ProductionId\": \"<integer>\",\n      \"ForceConversion\": \"<boolean>\",\n      \"FileId\": \"<integer>\",\n      \"DocumentSetId\": \"<string>\",\n      \"ClientId\": \"<string>\",\n      \"CorrelationId\": \"<uuid>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"RequestKey\": \"e00c63ae-5873-2b09-ca2c-3b3b148eadb6\",\n  \"CacheEntryId\": 4277,\n  \"DocumentArtifactId\": 321,\n  \"ConversionVersion\": \"string\",\n  \"Priority\": 8970,\n  \"WorkspaceArtifactId\": 8478,\n  \"ViewerType\": 8695,\n  \"Priority2ViewerContentKeys\": [\n    {\n      \"RequestKey\": \"965cc684-c13b-460e-efa8-14e943f9b74d\",\n      \"CacheEntryId\": 378,\n      \"DocumentArtifactId\": 4713,\n      \"ConversionVersion\": \"string\",\n      \"Priority\": 4644,\n      \"WorkspaceArtifactId\": 6267,\n      \"ViewerType\": 306,\n      \"Priority2ViewerContentKeys\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey detected>\"\n        }\n      ],\n      \"MinimalFilesManifest\": \"string\",\n      \"ErrorId\": 46,\n      \"ErrorMessage\": \"string\",\n      \"IsPartialConversion\": false,\n      \"VersionKey\": \"string\",\n      \"SemanticCacheKey\": \"string\",\n      \"LimitedOutput\": false,\n      \"PasswordRequested\": false,\n      \"DocumentPassword\": \"string\"\n    },\n    {\n      \"RequestKey\": \"6ff1ac33-6fa1-a31d-1e53-5fd221fd58b0\",\n      \"CacheEntryId\": 8499,\n      \"DocumentArtifactId\": 7529,\n      \"ConversionVersion\": \"string\",\n      \"Priority\": 9787,\n      \"WorkspaceArtifactId\": 4313,\n      \"ViewerType\": 2058,\n      \"Priority2ViewerContentKeys\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey detected>\"\n        }\n      ],\n      \"MinimalFilesManifest\": \"string\",\n      \"ErrorId\": 4935,\n      \"ErrorMessage\": \"string\",\n      \"IsPartialConversion\": false,\n      \"VersionKey\": \"string\",\n      \"SemanticCacheKey\": \"string\",\n      \"LimitedOutput\": false,\n      \"PasswordRequested\": false,\n      \"DocumentPassword\": \"string\"\n    }\n  ],\n  \"MinimalFilesManifest\": \"string\",\n  \"ErrorId\": 4605,\n  \"ErrorMessage\": \"string\",\n  \"IsPartialConversion\": true,\n  \"VersionKey\": \"string\",\n  \"SemanticCacheKey\": \"string\",\n  \"LimitedOutput\": false,\n  \"PasswordRequested\": true,\n  \"DocumentPassword\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "version"
+    }
+  ],
+  "info": {
+    "_postman_id": "666a4fc0-910d-49cd-8fb2-7fdcd793361b",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService DocumentViewerService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ARM Module v3 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ARM Module v3",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v3/restore-jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Restore Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v3/restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Restore Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-arm/v3/restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Restore Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Restore.IArmRestoreJobManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-arm/v3/restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Restore Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.JobInformation.IArmJobInformationManager.GetJobStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v3/jobs/:jobID/status",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Information Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.JobAction.IArmJobActionManager.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v3/jobs/:jobID/cancel",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Job Actions Manager"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.JobAction.IArmJobActionManager.RunAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v3/jobs/:jobID/run",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Job Actions Manager"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.CreateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v3/archive-jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Archive Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.ReadAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v3/archive-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Archive Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.UpdateAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-arm/v3/archive-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Archive Manager V3"
+        },
+        {
+          "info": {
+            "name": "Relativity.ARM.Services.Interfaces.V3.Archive.IArmArchiveJobManager.DeleteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-arm/v3/archive-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Archive Manager V3"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

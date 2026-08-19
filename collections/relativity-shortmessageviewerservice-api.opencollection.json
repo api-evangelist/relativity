@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ShortMessageViewerService API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ShortMessageViewerService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves attachment metadata for a short message document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/short-messages/:documentID/attachment-info",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the workspace containing the documents for short message viewer."
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the short message document."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns attachment records for the attachment identifiers supplied in the request body."
+        },
+        {
+          "info": {
+            "name": "Retrieves entity information for one or more short message participants.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/short-messages/participant-info",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the workspace containing the documents for short message viewer."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Participant lookups use participant identity details from the request body and return mapped entity details."
+        },
+        {
+          "info": {
+            "name": "Retrieves the JSON representation of a short message conversation document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/short-messages/:documentID/message-json",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the workspace containing the documents for short message viewer."
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the document for short message viewer."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "The JSON structure aligns with RSMF manifest-style payloads used by the short message viewer."
+        },
+        {
+          "info": {
+            "name": "Requests creation of a new short message document from a subset of events.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/short-messages/:documentID/slice",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the workspace containing the document to be sliced."
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the document to be sliced."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This operation queues slicing work and supports options such as attachment creation and participant preservation."
+        },
+        {
+          "info": {
+            "name": "Validates whether the specified short message document contains a valid RSMF payload.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v:version/workspaces/:workspaceID/short-messages/:documentID/validate",
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the workspace containing the documents for short message viewer."
+              },
+              {
+                "name": "documentID",
+                "value": "",
+                "type": "path",
+                "description": "The Artifact ID of the short message document."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns validation status and diagnostic details for document-level RSMF validation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

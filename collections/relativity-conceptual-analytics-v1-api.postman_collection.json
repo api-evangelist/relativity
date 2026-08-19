@@ -1,0 +1,768 @@
+{
+  "item": [
+    {
+      "id": "044fae71-a95e-43bf-a3f6-1b980a068d5e",
+      "name": "Conceptual Analytics v1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f3e18d4e-124f-4a9a-ad4a-795a2a51abd3",
+          "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Create Async",
+          "request": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Create Async",
+            "description": {
+              "content": "[Public] IConceptualIndexService",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "conceptual-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "indexes",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ArtifactID\": \"<integer>\",\n  \"Guids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AnalyticsServer\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"ConceptStopWords\": \"<string>\",\n  \"Dimensions\": \"<integer>\",\n  \"EmailNotificationRecipients\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Name\": \"<string>\",\n  \"OptimizeTrainingSet\": \"<boolean>\",\n  \"Order\": \"<integer>\",\n  \"RemoveEngSignaturesAndFooters\": \"<boolean>\",\n  \"EnableEmailHeaderFilter\": \"<boolean>\",\n  \"RepeatedContentFilters\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"SearchableSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"TrainingSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Active\": \"<boolean>\",\n  \"RemoveDocumentErrors\": \"<boolean>\",\n  \"ContinueIndexStepsToCompletion\": \"<boolean>\",\n  \"LastErrorMessage\": \"<string>\",\n  \"IndexLastUsedOn\": \"<dateTime>\",\n  \"InUseByCategorizationSet\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "148bb9a4-b8ba-43c4-a2c4-3a221435f884",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptual-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "indexes",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ArtifactID\": \"<integer>\",\n  \"Guids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AnalyticsServer\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"ConceptStopWords\": \"<string>\",\n  \"Dimensions\": \"<integer>\",\n  \"EmailNotificationRecipients\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Name\": \"<string>\",\n  \"OptimizeTrainingSet\": \"<boolean>\",\n  \"Order\": \"<integer>\",\n  \"RemoveEngSignaturesAndFooters\": \"<boolean>\",\n  \"EnableEmailHeaderFilter\": \"<boolean>\",\n  \"RepeatedContentFilters\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"SearchableSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"TrainingSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Active\": \"<boolean>\",\n  \"RemoveDocumentErrors\": \"<boolean>\",\n  \"ContinueIndexStepsToCompletion\": \"<boolean>\",\n  \"LastErrorMessage\": \"<string>\",\n  \"IndexLastUsedOn\": \"<dateTime>\",\n  \"InUseByCategorizationSet\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c93f125b-a330-4eb6-b61e-3b840eab1754",
+          "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Read Async",
+          "request": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Read Async",
+            "description": {
+              "content": "[Public] IConceptualIndexService",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "conceptual-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "indexes",
+                ":indexID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "indexID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed116676-6b5a-4e2f-ae22-be1e4159f696",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptual-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "indexes",
+                    ":indexID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "indexID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9366d908-33c6-48e2-b67b-8d96f0623a4b",
+          "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Update Async",
+          "request": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Update Async",
+            "description": {
+              "content": "[Public] IConceptualIndexService",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "conceptual-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "indexes",
+                ":indexID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "indexID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ArtifactID\": \"<integer>\",\n  \"Guids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AnalyticsServer\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"ConceptStopWords\": \"<string>\",\n  \"Dimensions\": \"<integer>\",\n  \"EmailNotificationRecipients\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Name\": \"<string>\",\n  \"OptimizeTrainingSet\": \"<boolean>\",\n  \"Order\": \"<integer>\",\n  \"RemoveEngSignaturesAndFooters\": \"<boolean>\",\n  \"EnableEmailHeaderFilter\": \"<boolean>\",\n  \"RepeatedContentFilters\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"SearchableSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"TrainingSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Active\": \"<boolean>\",\n  \"RemoveDocumentErrors\": \"<boolean>\",\n  \"ContinueIndexStepsToCompletion\": \"<boolean>\",\n  \"LastErrorMessage\": \"<string>\",\n  \"IndexLastUsedOn\": \"<dateTime>\",\n  \"InUseByCategorizationSet\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4cdf188a-17e0-44cd-a9fe-8be54f6607e5",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptual-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "indexes",
+                    ":indexID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "indexID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ArtifactID\": \"<integer>\",\n  \"Guids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"AnalyticsServer\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"ConceptStopWords\": \"<string>\",\n  \"Dimensions\": \"<integer>\",\n  \"EmailNotificationRecipients\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Name\": \"<string>\",\n  \"OptimizeTrainingSet\": \"<boolean>\",\n  \"Order\": \"<integer>\",\n  \"RemoveEngSignaturesAndFooters\": \"<boolean>\",\n  \"EnableEmailHeaderFilter\": \"<boolean>\",\n  \"RepeatedContentFilters\": [\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"SearchableSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"TrainingSet\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guids\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Active\": \"<boolean>\",\n  \"RemoveDocumentErrors\": \"<boolean>\",\n  \"ContinueIndexStepsToCompletion\": \"<boolean>\",\n  \"LastErrorMessage\": \"<string>\",\n  \"IndexLastUsedOn\": \"<dateTime>\",\n  \"InUseByCategorizationSet\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40997c67-7515-4ae7-8673-5523791e1c91",
+          "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Delete Async",
+          "request": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Delete Async",
+            "description": {
+              "content": "[Public] IConceptualIndexService",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "conceptual-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "indexes",
+                ":indexID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "indexID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb421f82-6e1f-44c5-a6ad-568f95f412ee",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptual-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "indexes",
+                    ":indexID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "indexID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84dc7577-7cef-4c02-95ca-e998ab082d82",
+          "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Get Status Async",
+          "request": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Get Status Async",
+            "description": {
+              "content": "[Public] IConceptualIndexService",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "conceptual-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "indexes",
+                ":indexID",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "indexID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41830afd-7d18-4a3c-89bc-a767f105013d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptual-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "indexes",
+                    ":indexID",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "indexID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58e99431-bab2-44a0-976d-f99bf95a3c25",
+          "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Submit Job Async",
+          "request": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Submit Job Async",
+            "description": {
+              "content": "[Public] IConceptualIndexService",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "conceptual-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "indexes",
+                ":indexID",
+                "job"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "jobType",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "indexID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc22659d-311b-46b2-9459-4f36c65cec17",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptual-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "indexes",
+                    ":indexID",
+                    "job"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "jobType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "indexID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7cc8b436-5777-4a36-95ed-d2f740b0c7a2",
+          "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Cancel Job Async",
+          "request": {
+            "name": "Analytics.Conceptual.Service.Interfaces.Public.v1.I Conceptual Index Service.Cancel Job Async",
+            "description": {
+              "content": "[Public] IConceptualIndexService",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "conceptual-analytics",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "indexes",
+                ":indexID",
+                "job"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "indexID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82650d97-a4bb-4022-9328-dd7156d5f1cf",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conceptual-analytics",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "indexes",
+                    ":indexID",
+                    "job"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "indexID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ddcefce1-fd6d-4710-be2b-7702d86ec865",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Conceptual Analytics v1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

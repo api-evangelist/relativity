@@ -1,0 +1,423 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Structured Analytics v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Relativity Structured Analytics v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetStatusAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RunAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RunAnalysisPreparationAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/prep",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RunCopyToLegacyAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/copy-to-legacy",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.CancelCopyToLegacyAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/copy-to-legacy",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.CancelAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wait",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RetryErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/retry",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetTMQEntryAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/tmq",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetDocumentErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/doc-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetDocumentErrorsAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/doc-errors",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetValidTasksAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/sets/:sasArtifactID/jobs/valid-tasks",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sasArtifactID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        },
+        {
+          "info": {
+            "name": "Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RemoveAllChoicesAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-structured-analytics/v1/workspaces/:workspaceID/choices",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] IJobManager - "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

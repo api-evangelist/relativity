@@ -1,0 +1,1640 @@
+{
+  "item": [
+    {
+      "id": "ccca9b6e-1a91-49a4-ad2e-1e2cbcc94ad3",
+      "name": "Object Manager v1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c9ef3c68-270a-4f90-a2e8-7188329c77ce",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Query Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Query Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"IsAdhocQuery\": \"<boolean>\",\n    \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n    \"IncludeNameInQueryResult\": \"<boolean>\",\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"ExecutingViewID\": \"<integer>\",\n    \"ActiveArtifactID\": \"<integer>\",\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff9c7c0d-b1c8-4e44-876c-bf126ca50d2f",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"IsAdhocQuery\": \"<boolean>\",\n    \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n    \"IncludeNameInQueryResult\": \"<boolean>\",\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"ExecutingViewID\": \"<integer>\",\n    \"ActiveArtifactID\": \"<integer>\",\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 3552,\n  \"Objects\": [\n    {\n      \"ParentObject\": {\n        \"ArtifactID\": 9889,\n        \"Guid\": \"string\"\n      },\n      \"Name\": \"string\",\n      \"FieldValues\": [\n        {\n          \"Value\": {},\n          \"Field\": {\n            \"FieldCategory\": \"FullText\",\n            \"FieldType\": \"Date\",\n            \"ViewFieldID\": 4974,\n            \"ArtifactID\": 2780,\n            \"Guids\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"Name\": \"string\"\n          }\n        },\n        {\n          \"Value\": {},\n          \"Field\": {\n            \"FieldCategory\": \"ParentArtifact\",\n            \"FieldType\": \"File\",\n            \"ViewFieldID\": 5895,\n            \"ArtifactID\": 4238,\n            \"Guids\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"Name\": \"string\"\n          }\n        }\n      ],\n      \"ArtifactID\": 2412,\n      \"Guids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Item\": {\n        \"Value\": {},\n        \"Field\": {\n          \"FieldCategory\": \"FileInfo\",\n          \"FieldType\": \"SingleObject\",\n          \"ViewFieldID\": 9866,\n          \"ArtifactID\": 5596,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ],\n          \"Name\": \"string\"\n        }\n      }\n    },\n    {\n      \"ParentObject\": {\n        \"ArtifactID\": 5567,\n        \"Guid\": \"string\"\n      },\n      \"Name\": \"string\",\n      \"FieldValues\": [\n        {\n          \"Value\": {},\n          \"Field\": {\n            \"FieldCategory\": \"MultiReflected\",\n            \"FieldType\": \"YesNo\",\n            \"ViewFieldID\": 6091,\n            \"ArtifactID\": 8171,\n            \"Guids\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"Name\": \"string\"\n          }\n        },\n        {\n          \"Value\": {},\n          \"Field\": {\n            \"FieldCategory\": \"Batch\",\n            \"FieldType\": \"Empty\",\n            \"ViewFieldID\": 4695,\n            \"ArtifactID\": 165,\n            \"Guids\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"Name\": \"string\"\n          }\n        }\n      ],\n      \"ArtifactID\": 2997,\n      \"Guids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Item\": {\n        \"Value\": {},\n        \"Field\": {\n          \"FieldCategory\": \"AutoCreate\",\n          \"FieldType\": \"File\",\n          \"ViewFieldID\": 6511,\n          \"ArtifactID\": 1965,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ],\n          \"Name\": \"string\"\n        }\n      }\n    }\n  ],\n  \"IDWindow\": [\n    1888,\n    2274\n  ],\n  \"CurrentStartIndex\": 1082,\n  \"ResultCount\": 3802,\n  \"ObjectType\": {\n    \"ArtifactID\": 4978,\n    \"Name\": \"string\",\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"ArtifactTypeID\": 5483\n  },\n  \"SampleDetails\": {\n    \"SampleSize\": 3802,\n    \"UniverseSize\": 7142,\n    \"Token\": \"string\"\n  },\n  \"RankWindow\": [\n    2496.655918324813,\n    9100.83542895981\n  ],\n  \"RelationalField\": {\n    \"FieldCategory\": \"ParentArtifact\",\n    \"FieldType\": \"User\",\n    \"ViewFieldID\": 3242,\n    \"ArtifactID\": 6376,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Name\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89adcf06-1728-4d26-9db4-0daa0327e366",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Update Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Update Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"FieldValues\": [\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      }\n    ],\n    \"ObjectVersionToken\": \"<string>\"\n  },\n  \"operationOptions\": {\n    \"UpdateBehavior\": \"<string>\",\n    \"CallingContext\": {\n      \"Layout\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"Referrer\": \"<string>\",\n      \"PageMode\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "55502a05-e085-493b-ab04-e631d7670279",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"FieldValues\": [\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      }\n    ],\n    \"ObjectVersionToken\": \"<string>\"\n  },\n  \"operationOptions\": {\n    \"UpdateBehavior\": \"<string>\",\n    \"CallingContext\": {\n      \"Layout\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"Referrer\": \"<string>\",\n      \"PageMode\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"EventHandlerStatuses\": [\n    {\n      \"Success\": true,\n      \"Message\": \"string\",\n      \"FailingEventHandler\": {\n        \"ClassName\": \"string\",\n        \"EventHandlerType\": \"PreMassDelete\",\n        \"Application\": {\n          \"Name\": \"string\",\n          \"ArtifactID\": 4695,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      }\n    },\n    {\n      \"Success\": true,\n      \"Message\": \"string\",\n      \"FailingEventHandler\": {\n        \"ClassName\": \"string\",\n        \"EventHandlerType\": \"PreMassDelete\",\n        \"Application\": {\n          \"Name\": \"string\",\n          \"ArtifactID\": 3505,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e62ecb7-5036-44f5-bf0c-4c3625b30f28",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Read Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Read Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ]\n  },\n  \"readOptions\": {\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\",\n    \"FieldTypesToReturnAsString\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"CallingContext\": {\n      \"Layout\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"Referrer\": \"<string>\",\n      \"PageMode\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "145b1dbd-a2ff-40ff-9dd1-52c2185d2823",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ]\n  },\n  \"readOptions\": {\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\",\n    \"FieldTypesToReturnAsString\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"CallingContext\": {\n      \"Layout\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"Referrer\": \"<string>\",\n      \"PageMode\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Message\": \"string\",\n  \"FailingEventHandler\": {\n    \"ClassName\": \"string\",\n    \"EventHandlerType\": \"PreLoad\",\n    \"Application\": {\n      \"Name\": \"string\",\n      \"ArtifactID\": 9994,\n      \"Guids\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  },\n  \"Object\": {\n    \"ParentObject\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Name\": \"string\",\n    \"FieldValues\": [\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"FieldCategory\": \"MarkupSetMarker\",\n          \"FieldType\": \"User\",\n          \"ViewFieldID\": 8831,\n          \"ArtifactID\": 282,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ],\n          \"Name\": \"string\"\n        }\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"FieldCategory\": \"Batch\",\n          \"FieldType\": \"FixedLengthText\",\n          \"ViewFieldID\": 2851,\n          \"ArtifactID\": 4840,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ],\n          \"Name\": \"string\"\n        }\n      }\n    ],\n    \"ArtifactID\": 4673,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Item\": {\n      \"Value\": \"<object>\",\n      \"Field\": {\n        \"FieldCategory\": \"Identifier\",\n        \"FieldType\": \"Currency\",\n        \"ViewFieldID\": 8063,\n        \"ArtifactID\": 4304,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ],\n        \"Name\": \"string\"\n      }\n    }\n  },\n  \"ObjectType\": {\n    \"ArtifactID\": 7515,\n    \"Name\": \"string\",\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"ArtifactTypeID\": 6476\n  },\n  \"ObjectVersionToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35b9f093-6f7a-40d4-a0f7-7a97ad8ff9b4",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Delete Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Delete Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e1cbb43a-d8e9-4c78-96a4-410e90aaa72d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Report\": {\n    \"DeletedItems\": [\n      {\n        \"ObjectTypeName\": \"string\",\n        \"Action\": \"string\",\n        \"Count\": 2345,\n        \"Connection\": \"string\"\n      },\n      {\n        \"ObjectTypeName\": \"string\",\n        \"Action\": \"string\",\n        \"Count\": 9845,\n        \"Connection\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73e64246-2807-4aee-8a5e-d57e8521a23d",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Create Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Create Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"ParentObject\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"FieldValues\": [\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"operationOptions\": {\n    \"CallingContext\": {\n      \"Layout\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"Referrer\": \"<string>\",\n      \"PageMode\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d8bd5865-1623-4def-8e79-a1c46f3bed71",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"ParentObject\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"FieldValues\": [\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"operationOptions\": {\n    \"CallingContext\": {\n      \"Layout\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      \"Referrer\": \"<string>\",\n      \"PageMode\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Object\": {\n    \"ParentObject\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Name\": \"string\",\n    \"FieldValues\": [\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"FieldCategory\": \"AutoCreate\",\n          \"FieldType\": \"Currency\",\n          \"ViewFieldID\": 3543,\n          \"ArtifactID\": 1627,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ],\n          \"Name\": \"string\"\n        }\n      },\n      {\n        \"Value\": \"<object>\",\n        \"Field\": {\n          \"FieldCategory\": \"FileSize\",\n          \"FieldType\": \"MultipleObject\",\n          \"ViewFieldID\": 1733,\n          \"ArtifactID\": 6732,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ],\n          \"Name\": \"string\"\n        }\n      }\n    ],\n    \"ArtifactID\": 6154,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Item\": {\n      \"Value\": \"<object>\",\n      \"Field\": {\n        \"FieldCategory\": \"FileInfo\",\n        \"FieldType\": \"Currency\",\n        \"ViewFieldID\": 6450,\n        \"ArtifactID\": 2144,\n        \"Guids\": [\n          \"string\",\n          \"string\"\n        ],\n        \"Name\": \"string\"\n      }\n    }\n  },\n  \"EventHandlerStatuses\": [\n    {\n      \"Success\": false,\n      \"Message\": \"string\",\n      \"FailingEventHandler\": {\n        \"ClassName\": \"string\",\n        \"EventHandlerType\": \"PreDelete\",\n        \"Application\": {\n          \"Name\": \"string\",\n          \"ArtifactID\": 2386,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      }\n    },\n    {\n      \"Success\": true,\n      \"Message\": \"string\",\n      \"FailingEventHandler\": {\n        \"ClassName\": \"string\",\n        \"EventHandlerType\": \"PreSave\",\n        \"Application\": {\n          \"Name\": \"string\",\n          \"ArtifactID\": 2620,\n          \"Guids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5b2796f-8198-4bd9-8929-c9f85c55bb3d",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Query Slim Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Query Slim Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "queryslim"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"IsAdhocQuery\": \"<boolean>\",\n    \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n    \"IncludeNameInQueryResult\": \"<boolean>\",\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"ExecutingViewID\": \"<integer>\",\n    \"ActiveArtifactID\": \"<integer>\",\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9b9676eb-ac16-4f45-b714-d35794848256",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"IsAdhocQuery\": \"<boolean>\",\n    \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n    \"IncludeNameInQueryResult\": \"<boolean>\",\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"ExecutingViewID\": \"<integer>\",\n    \"ActiveArtifactID\": \"<integer>\",\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 3571,\n  \"Objects\": [\n    {\n      \"ArtifactID\": 9907,\n      \"Values\": [\n        \"<object>\",\n        \"<object>\"\n      ]\n    },\n    {\n      \"ArtifactID\": 3175,\n      \"Values\": [\n        \"<object>\",\n        \"<object>\"\n      ]\n    }\n  ],\n  \"IDWindow\": [\n    7840,\n    9709\n  ],\n  \"CurrentStartIndex\": 9434,\n  \"ResultCount\": 3054,\n  \"ObjectType\": {\n    \"ArtifactID\": 3623,\n    \"Name\": \"string\",\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"ArtifactTypeID\": 1882\n  },\n  \"SampleDetails\": {\n    \"SampleSize\": 8619,\n    \"UniverseSize\": 8130,\n    \"Token\": \"string\"\n  },\n  \"RankWindow\": [\n    5793.319788952036,\n    6972.087897388994\n  ],\n  \"RelationalField\": {\n    \"FieldCategory\": \"MarkupSetMarker\",\n    \"FieldType\": \"SingleObject\",\n    \"ViewFieldID\": 1833,\n    \"ArtifactID\": 219,\n    \"Guids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"Fields\": [\n    {\n      \"FieldCategory\": \"GenericSystem\",\n      \"FieldType\": \"User\",\n      \"ViewFieldID\": 5090,\n      \"ArtifactID\": 3082,\n      \"Guids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Name\": \"string\"\n    },\n    {\n      \"FieldCategory\": \"Relational\",\n      \"FieldType\": \"Empty\",\n      \"ViewFieldID\": 1537,\n      \"ArtifactID\": 6467,\n      \"Guids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2b5dbc0f-b021-40c2-908b-bae7d8b87b53",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Stream Long Text Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Stream Long Text Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "streamlongtext"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"exportObject\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guid\": \"<string>\"\n  },\n  \"longTextField\": {\n    \"ViewFieldID\": \"<integer>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guid\": \"<string>\",\n    \"Name\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fa5a2c95-d138-404e-b33a-9dce4f2c3553",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "streamlongtext"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exportObject\": {\n    \"ArtifactID\": \"<integer>\",\n    \"Guid\": \"<string>\"\n  },\n  \"longTextField\": {\n    \"ViewFieldID\": \"<integer>\",\n    \"ArtifactID\": \"<integer>\",\n    \"Guid\": \"<string>\",\n    \"Name\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ContentType\": \"string\",\n  \"ContentDisposition\": \"string\",\n  \"CacheControl\": \"string\",\n  \"StatusCode\": \"LengthRequired\",\n  \"Headers\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92349b2a-7b2e-4fe0-bb48-b3012d228528",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Initialize Export Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Initialize Export Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "initializeexport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"queryRequest\": {\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"IsAdhocQuery\": \"<boolean>\",\n    \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n    \"IncludeNameInQueryResult\": \"<boolean>\",\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"ExecutingViewID\": \"<integer>\",\n    \"ActiveArtifactID\": \"<integer>\",\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d2f4068f-f4fa-4c61-ac9b-cae1eba7acb3",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "initializeexport"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"queryRequest\": {\n    \"ObjectType\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Name\": \"<string>\",\n      \"Guid\": \"<string>\",\n      \"ArtifactTypeID\": \"<integer>\"\n    },\n    \"Condition\": \"<string>\",\n    \"Sorts\": [\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      },\n      {\n        \"FieldIdentifier\": {\n          \"ViewFieldID\": \"<integer>\",\n          \"ArtifactID\": \"<integer>\",\n          \"Guid\": \"<string>\",\n          \"Name\": \"<string>\"\n        },\n        \"Order\": \"<integer>\",\n        \"Direction\": \"<string>\"\n      }\n    ],\n    \"RelationalField\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    \"RowCondition\": \"<string>\",\n    \"SearchProviderCondition\": {\n      \"SearchIndex\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Name\": \"<string>\"\n      },\n      \"Input\": \"<string>\"\n    },\n    \"SampleParameters\": {\n      \"ExistingToken\": \"<string>\",\n      \"MarginOfError\": \"<number>\",\n      \"ConfidenceLevel\": \"<number>\",\n      \"FixedSampleSize\": \"<integer>\",\n      \"SamplingPercentage\": \"<number>\"\n    },\n    \"IncludeIDWindow\": \"<boolean>\",\n    \"RankSortOrder\": \"<string>\",\n    \"QueryHint\": \"<string>\",\n    \"Fields\": [\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      },\n      {\n        \"ViewFieldID\": \"<integer>\",\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"IsAdhocQuery\": \"<boolean>\",\n    \"ConvertNumberFieldValuesToString\": \"<boolean>\",\n    \"IncludeNameInQueryResult\": \"<boolean>\",\n    \"ExecutingSavedSearchID\": \"<integer>\",\n    \"ExecutingViewID\": \"<integer>\",\n    \"ActiveArtifactID\": \"<integer>\",\n    \"MaxCharactersForLongTextValues\": \"<integer>\",\n    \"LongTextBehavior\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"RunID\": \"string\",\n  \"RecordCount\": 2498,\n  \"FieldData\": [\n    {\n      \"FieldType\": \"LongText\",\n      \"ArtifactID\": 4809,\n      \"ViewFieldID\": 2256,\n      \"Guids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Name\": \"string\"\n    },\n    {\n      \"FieldType\": \"Date\",\n      \"ArtifactID\": 4082,\n      \"ViewFieldID\": 6057,\n      \"Guids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ec9703d-524e-46c7-a61b-476d5cf842bf",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Retrieve Next Results Block From Export Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Retrieve Next Results Block From Export Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "retrievenextresultsblockfromexport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "runID",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "batchSize",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f069b648-a4ec-4224-a134-29f95c065349",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "retrievenextresultsblockfromexport"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "runID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "batchSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ArtifactID\": 6891,\n    \"Values\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  },\n  {\n    \"ArtifactID\": 4842,\n    \"Values\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ffefbd8-d719-4232-84d8-f915bef2779b",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Retrieve Results Block From Export Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Retrieve Results Block From Export Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "retrieveresultsblockfromexport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "runID",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsBlockSize",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "exportIndexID",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b20ca2af-05d7-41e2-ba42-e81ce0dc1f1e",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "retrieveresultsblockfromexport"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "runID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resultsBlockSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "exportIndexID",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ArtifactID\": 6891,\n    \"Values\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  },\n  {\n    \"ArtifactID\": 4842,\n    \"Values\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d5ea2f1-a707-4aa7-83cd-b9c1664557fc",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Update Long Text From Stream Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Update Long Text From Stream Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "updatelongtextfromstream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"updateLongTextFromStreamRequest\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Field\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  },\n  \"keplerStream\": {\n    \"ContentType\": \"<string>\",\n    \"ContentDisposition\": \"<string>\",\n    \"CacheControl\": \"<string>\",\n    \"StatusCode\": \"<string>\",\n    \"Headers\": [\n      \"<NameValueCollection>\",\n      \"<NameValueCollection>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c1b45c02-cbc6-4318-9dbd-f2a81e131d7d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "updatelongtextfromstream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updateLongTextFromStreamRequest\": {\n    \"Object\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\"\n    },\n    \"Field\": {\n      \"ViewFieldID\": \"<integer>\",\n      \"ArtifactID\": \"<integer>\",\n      \"Guid\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  },\n  \"keplerStream\": {\n    \"ContentType\": \"<string>\",\n    \"ContentDisposition\": \"<string>\",\n    \"CacheControl\": \"<string>\",\n    \"StatusCode\": \"<string>\",\n    \"Headers\": [\n      \"<NameValueCollection>\",\n      \"<NameValueCollection>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5daf067b-0c00-4952-8e34-dca571423810",
+          "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Get Dependency List Async",
+          "request": {
+            "name": "Relativity.Object Manager.Server.Object Manager.V1.Manager.I Object Manager.Get Dependency List Async",
+            "description": {
+              "content": "[Public] IObjectManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceID",
+                "object",
+                "dependencylist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Objects\": [\n      {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc2464e6-cf32-432c-ab46-e81e5f101103",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceID",
+                    "object",
+                    "dependencylist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Objects\": [\n      {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      },\n      {\n        \"ArtifactID\": \"<integer>\",\n        \"Guid\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ObjectType\": {\n      \"Secured\": true,\n      \"Value\": \"string\"\n    },\n    \"Action\": \"string\",\n    \"Count\": {\n      \"Secured\": true,\n      \"Value\": \"string\"\n    },\n    \"Connection\": {\n      \"Secured\": true,\n      \"Value\": \"string\"\n    },\n    \"HierarchicLevel\": 3665\n  },\n  {\n    \"ObjectType\": {\n      \"Secured\": true,\n      \"Value\": \"string\"\n    },\n    \"Action\": \"string\",\n    \"Count\": {\n      \"Secured\": true,\n      \"Value\": \"string\"\n    },\n    \"Connection\": {\n      \"Secured\": false,\n      \"Value\": \"string\"\n    },\n    \"HierarchicLevel\": 7126\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "640f2a2d-152a-4abb-9413-17b240c409b9",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Object Manager v1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

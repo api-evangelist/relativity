@@ -1,0 +1,652 @@
+{
+  "item": [
+    {
+      "id": "df3b6019-9917-4953-91b2-031d00999e60",
+      "name": "BillingInsights",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d7bcfe5-6a4c-4828-b4ac-1bcf22df0be6",
+          "name": "Get artifact ids",
+          "request": {
+            "name": "Get artifact ids",
+            "description": {
+              "content": "Get artifact ids for workspace, matter, client, instance that can be used for filtering billing users and month details data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-insights",
+                "hierarchy-lookup",
+                ":level"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "instanceId",
+                  "value": "<string>",
+                  "description": "The instance ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "shouldUnhashData",
+                  "value": "false",
+                  "description": "Specifies if the response should include unhashed data. Default value is false."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "level",
+                  "description": "(Required) The hierarchy level"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba0175ec-c13f-4ba0-82a6-0d7800ff1485",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-insights",
+                    "hierarchy-lookup",
+                    ":level"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instanceId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shouldUnhashData",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "level",
+                      "description": "(Required) The hierarchy level"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"name\": \"Workspace A\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1001\n      }\n    },\n    {\n      \"name\": \"Workspace B\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1002\n      }\n    },\n    {\n      \"name\": \"Workspace C\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1003\n      }\n    },\n    {\n      \"name\": \"Workspace D\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1004\n      }\n    },\n    {\n      \"name\": \"Workspace A\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 1001\n      }\n    },\n    {\n      \"name\": \"Workspace B\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 1002\n      }\n    },\n    {\n      \"name\": \"Workspace X\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 1003\n      }\n    },\n    {\n      \"name\": \"Workspace Y\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 2005\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fecf229e-b2f8-46e6-9000-cd24d764f065",
+          "name": "Get monthly billing metrics",
+          "request": {
+            "name": "Get monthly billing metrics",
+            "description": {
+              "content": "Get monthly billing metrics at the specific level (Workspace, Matter, Client, Instance) for a given date. If the requested data does not exist then an empty list will be returned (e.g. instance didn't exist in a given month)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-insights",
+                "month-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateKey\": \"<string>\",\n  \"metricKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"subMetricsSummaryKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"selectorLevel\": \"<string>\",\n  \"itemSelectors\": [\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    },\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    }\n  ],\n  \"level\": \"<string>\",\n  \"filters\": [\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"order\": {\n    \"fieldName\": \"<string>\",\n    \"direction\": \"<string>\"\n  },\n  \"pagingRequest\": {\n    \"top\": \"<integer>\",\n    \"skip\": \"<integer>\",\n    \"maxItemCount\": \"<integer>\",\n    \"includeCount\": \"<boolean>\",\n    \"continuationToken\": \"<string>\"\n  },\n  \"shouldUnhashData\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "391ce1b1-ae70-4167-b4d1-e29d969129fe",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-insights",
+                    "month-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dateKey\": \"202105\",\n  \"metricKeys\": [\n    \"Relativity_Storage_Review\",\n    \"Relativity_Storage_Repository\"\n  ],\n  \"selectorLevel\": \"Instance\",\n  \"itemSelectors\": [\n    {\n      \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\"\n    }\n  ],\n  \"level\": \"Workspace\",\n  \"shouldUnhashData\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"contract\": {\n        \"id\": \"10060000003IO9HXXX\",\n        \"name\": \"Sample contract\"\n      },\n      \"instance\": {\n        \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n        \"name\": \"R1 - Sample\",\n        \"pricingVisibility\": \"Visible\"\n      },\n      \"client\": {\n        \"artifactID\": 4001,\n        \"name\": \"Client 1\",\n        \"number\": \"1234\"\n      },\n      \"matter\": {\n        \"artifactID\": 3001,\n        \"name\": \"Matter 1\",\n        \"number\": \"1234\"\n      },\n      \"workspace\": {\n        \"id\": \"a2858a40-c24e-42d3-a6c1-28004f8b4c6f\",\n        \"artifactID\": 2001,\n        \"name\": \"Sample workspace 1\",\n        \"activityStatus\": \"Active\",\n        \"billableStatus\": \"Billable\"\n      },\n      \"usageMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"reportedValue\": 1000,\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\",\n          \"subMetrics\": {\n            \"Relativity_Storage_Linked\": {\n              \"value\": 1000\n            }\n          }\n        },\n        \"Relativity_Storage_Repository\": {\n          \"reportedValue\": 100,\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"billableValue\": 1000,\n          \"amount\": {\n            \"value\": 100000,\n            \"currency\": \"USD\"\n          },\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\",\n          \"subMetrics\": {\n            \"Relativity_Storage_Linked\": {\n              \"value\": 1000\n            }\n          }\n        },\n        \"Relativity_Storage_Repository\": {\n          \"billableValue\": 100,\n          \"amount\": {\n            \"value\": 2500,\n            \"currency\": \"USD\"\n          },\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 4000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 1000,\n          \"comment\": \"\"\n        }\n      },\n      \"usageMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 4000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 1000,\n          \"comment\": \"\"\n        }\n      }\n    },\n    {\n      \"contract\": {\n        \"id\": \"10060000003IO9HXXX\",\n        \"name\": \"Sample contract\"\n      },\n      \"instance\": {\n        \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n        \"name\": \"R1 - Sample\",\n        \"pricingVisibility\": \"Visible\"\n      },\n      \"client\": {\n        \"artifactID\": 8001,\n        \"name\": \"Client 2\",\n        \"number\": \"1234\"\n      },\n      \"matter\": {\n        \"artifactID\": 7001,\n        \"name\": \"Matter 2\",\n        \"number\": \"1234\"\n      },\n      \"workspace\": {\n        \"id\": \"87f653b8-eb1f-4281-a6d8-17f8632123c6\",\n        \"artifactID\": 6001,\n        \"name\": \"Sample workspace 2\",\n        \"activityStatus\": \"Active\",\n        \"billableStatus\": \"Billable\"\n      },\n      \"usageMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"reportedValue\": 200,\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"billableValue\": 200,\n          \"amount\": {\n            \"value\": 20000,\n            \"currency\": \"USD\"\n          },\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 8000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 0,\n          \"comment\": \"\"\n        }\n      },\n      \"usageMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 8000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 0,\n          \"comment\": \"\"\n        }\n      }\n    }\n  ],\n  \"pagingResponse\": {\n    \"totalRecordCount\": 2\n  },\n  \"status\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ba0ffd64-788d-47f1-9ae8-21093e639716",
+          "name": "Get a user list",
+          "request": {
+            "name": "Get a user list",
+            "description": {
+              "content": "Get a user list with billing attributes for a given date",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "billing-insights",
+                "users-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateKey\": \"<string>\",\n  \"selectorLevel\": \"<string>\",\n  \"itemSelectors\": [\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    },\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    }\n  ],\n  \"filters\": [\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"order\": {\n    \"fieldName\": \"<string>\",\n    \"direction\": \"<string>\"\n  },\n  \"pagingRequest\": {\n    \"top\": \"<integer>\",\n    \"skip\": \"<integer>\",\n    \"maxItemCount\": \"<integer>\",\n    \"includeCount\": \"<boolean>\",\n    \"continuationToken\": \"<string>\"\n  },\n  \"includeWorkspaceInfo\": \"<boolean>\",\n  \"shouldUnhashData\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "935bee41-ad74-4e9d-8725-05caae453f14",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "billing-insights",
+                    "users-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dateKey\": \"202105\",\n  \"selectorLevel\": \"Instance\",\n  \"itemSelectors\": [\n    {\n      \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\"\n    }\n  ],\n  \"includeWorkspaceInfo\": false,\n  \"shouldUnhashData\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"email\": \"jane.doe@relativity.com\",\n      \"userRole\": \"Regular\",\n      \"billableStatus\": \"Billable RelativityOne\",\n      \"lastLoginUtc\": \"2021-05-28T12:15:00\",\n      \"userActivity\": \"Active\",\n      \"userType\": \"Internal\",\n      \"instanceSpecificData\": {\n        \"f53c069b-9706-4570-8f97-be6e8fdbe156\": {\n          \"instance\": {\n            \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n            \"name\": \"R1 - Sample\",\n            \"pricingVisibility\": \"Visible\"\n          },\n          \"artifactID\": 12345\n        }\n      },\n      \"workspaces\": {\n        \"12345\": {\n          \"clientArtifactId\": 12345,\n          \"matterArtifactId\": 54321\n        }\n      },\n      \"collectionTimeUtc\": \"2021-05-29T12:15:00\"\n    },\n    {\n      \"email\": \"john.doe@relativity.com\",\n      \"userRole\": \"Administrator\",\n      \"billableStatus\": \"Non-billable\",\n      \"lastLoginUtc\": \"2021-05-27T16:10:00\",\n      \"userActivity\": \"Active\",\n      \"userType\": \"External\",\n      \"comment\": \"Justice for Change\",\n      \"instanceSpecificData\": {\n        \"f53c069b-9706-4570-8f97-be6e8fdbe156\": {\n          \"instance\": {\n            \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n            \"name\": \"R1 - Sample\",\n            \"pricingVisibility\": \"Visible\"\n          },\n          \"artifactID\": 34215\n        }\n      },\n      \"workspaces\": {\n        \"12345\": {\n          \"clientArtifactId\": 12345,\n          \"matterArtifactId\": 54321\n        },\n        \"54321\": {\n          \"clientArtifactId\": 54321,\n          \"matterArtifactId\": 12345\n        }\n      },\n      \"collectionTimeUtc\": \"2021-05-29T12:15:00\"\n    }\n  ],\n  \"pagingResponse\": {\n    \"totalRecordCount\": 2\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54d7c1a3-a63e-4d61-a27a-178be4316b65",
+          "name": "Get artifact ids",
+          "request": {
+            "name": "Get artifact ids",
+            "description": {
+              "content": "Get artifact ids for workspace, matter, client, instance that can be used for filtering billing users and month details data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-insights",
+                "hierarchy-lookup",
+                ":level"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "instanceId",
+                  "value": "<string>",
+                  "description": "The instance ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "shouldUnhashData",
+                  "value": "false",
+                  "description": "Specifies if the response should include unhashed data. Default value is false."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "level",
+                  "description": "(Required) The hierarchy level"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6de16d86-6e54-4e70-9527-d0be2e5874e9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-insights",
+                    "hierarchy-lookup",
+                    ":level"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instanceId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shouldUnhashData",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "level",
+                      "description": "(Required) The hierarchy level"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"name\": \"Workspace A\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1001\n      }\n    },\n    {\n      \"name\": \"Workspace B\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1002\n      }\n    },\n    {\n      \"name\": \"Workspace C\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1003\n      }\n    },\n    {\n      \"name\": \"Workspace D\",\n      \"selector\": {\n        \"instanceID\": \"a2c4e2da-8596-4196-a704-9cd202ce6d47\",\n        \"workspaceArtifactID\": 1004\n      }\n    },\n    {\n      \"name\": \"Workspace A\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 1001\n      }\n    },\n    {\n      \"name\": \"Workspace B\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 1002\n      }\n    },\n    {\n      \"name\": \"Workspace X\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 1003\n      }\n    },\n    {\n      \"name\": \"Workspace Y\",\n      \"selector\": {\n        \"instanceID\": \"891b6552-6db5-459b-a983-1ed94225da52\",\n        \"workspaceArtifactID\": 2005\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e402d19-3ca2-47bb-bc08-816e99e66252",
+          "name": "Get monthly billing metrics",
+          "request": {
+            "name": "Get monthly billing metrics",
+            "description": {
+              "content": "Get monthly billing metrics at the specific level (Workspace, Matter, Client, Instance) for a given date. If the requested data does not exist then an empty list will be returned (e.g. instance didn't exist in a given month)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-insights",
+                "month-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateKey\": \"<string>\",\n  \"metricKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"subMetricsSummaryKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"selectorLevel\": \"<string>\",\n  \"itemSelectors\": [\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    },\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    }\n  ],\n  \"level\": \"<string>\",\n  \"filters\": [\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"order\": {\n    \"fieldName\": \"<string>\",\n    \"direction\": \"<string>\"\n  },\n  \"pagingRequest\": {\n    \"top\": \"<integer>\",\n    \"skip\": \"<integer>\",\n    \"maxItemCount\": \"<integer>\",\n    \"includeCount\": \"<boolean>\",\n    \"continuationToken\": \"<string>\"\n  },\n  \"shouldUnhashData\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "597c5eff-078e-4d33-b9e0-6378e1e0dcc3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-insights",
+                    "month-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dateKey\": \"202105\",\n  \"metricKeys\": [\n    \"Relativity_Storage_Review\",\n    \"Relativity_Storage_Repository\"\n  ],\n  \"selectorLevel\": \"Instance\",\n  \"itemSelectors\": [\n    {\n      \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\"\n    }\n  ],\n  \"level\": \"Workspace\",\n  \"shouldUnhashData\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"contract\": {\n        \"id\": \"10060000003IO9HXXX\",\n        \"name\": \"Sample contract\"\n      },\n      \"instance\": {\n        \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n        \"name\": \"R1 - Sample\",\n        \"pricingVisibility\": \"Visible\"\n      },\n      \"client\": {\n        \"artifactID\": 4001,\n        \"name\": \"Client 1\",\n        \"number\": \"1234\"\n      },\n      \"matter\": {\n        \"artifactID\": 3001,\n        \"name\": \"Matter 1\",\n        \"number\": \"1234\"\n      },\n      \"workspace\": {\n        \"id\": \"a2858a40-c24e-42d3-a6c1-28004f8b4c6f\",\n        \"artifactID\": 2001,\n        \"name\": \"Sample workspace 1\",\n        \"activityStatus\": \"Active\",\n        \"workspaceStatus\": \"Active\",\n        \"billableStatus\": \"Billable\"\n      },\n      \"usageMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"reportedValue\": 1000,\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\",\n          \"subMetrics\": {\n            \"Relativity_Storage_Linked\": {\n              \"value\": 1000\n            }\n          }\n        },\n        \"Relativity_Storage_Repository\": {\n          \"reportedValue\": 100,\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"billableValue\": 1000,\n          \"amount\": {\n            \"value\": 100000,\n            \"currency\": \"USD\"\n          },\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\",\n          \"subMetrics\": {\n            \"Relativity_Storage_Linked\": {\n              \"value\": 1000\n            }\n          }\n        },\n        \"Relativity_Storage_Repository\": {\n          \"billableValue\": 100,\n          \"amount\": {\n            \"value\": 2500,\n            \"currency\": \"USD\"\n          },\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 4000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 1000,\n          \"comment\": \"\"\n        }\n      },\n      \"usageMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 4000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 1000,\n          \"comment\": \"\"\n        }\n      }\n    },\n    {\n      \"contract\": {\n        \"id\": \"10060000003IO9HXXX\",\n        \"name\": \"Sample contract\"\n      },\n      \"instance\": {\n        \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n        \"name\": \"R1 - Sample\",\n        \"pricingVisibility\": \"Visible\"\n      },\n      \"client\": {\n        \"artifactID\": 8001,\n        \"name\": \"Client 2\",\n        \"number\": \"1234\"\n      },\n      \"matter\": {\n        \"artifactID\": 7001,\n        \"name\": \"Matter 2\",\n        \"number\": \"1234\"\n      },\n      \"workspace\": {\n        \"id\": \"87f653b8-eb1f-4281-a6d8-17f8632123c6\",\n        \"artifactID\": 6001,\n        \"name\": \"Sample workspace 2\",\n        \"activityStatus\": \"Active\",\n        \"workspaceStatus\": \"Active\",\n        \"billableStatus\": \"Billable\"\n      },\n      \"usageMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"reportedValue\": 200,\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetrics\": {\n        \"Relativity_Storage_Review\": {\n          \"billableValue\": 200,\n          \"amount\": {\n            \"value\": 20000,\n            \"currency\": \"USD\"\n          },\n          \"collectionTimeUtc\": \"2021-09-10T14:12:00\"\n        }\n      },\n      \"pricedMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 8000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 0,\n          \"comment\": \"\"\n        }\n      },\n      \"usageMetricsSubMetricsSummary\": {\n        \"Relativity_Storage_TextOnlyDocuments\": {\n          \"value\": 8000,\n          \"comment\": \"\"\n        },\n        \"Relativity_Storage_Linked\": {\n          \"value\": 0,\n          \"comment\": \"\"\n        }\n      }\n    }\n  ],\n  \"pagingResponse\": {\n    \"totalRecordCount\": 2\n  },\n  \"status\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4efcf012-5508-4da4-be82-7f1727b1e95e",
+          "name": "Get a user list",
+          "request": {
+            "name": "Get a user list",
+            "description": {
+              "content": "Get a user list with billing attributes for a given date",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "billing-insights",
+                "users-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateKey\": \"<string>\",\n  \"selectorLevel\": \"<string>\",\n  \"itemSelectors\": [\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    },\n    {\n      \"contractID\": \"<string>\",\n      \"instanceID\": \"<string>\",\n      \"clientArtifactID\": \"<integer>\",\n      \"matterArtifactID\": \"<integer>\",\n      \"workspaceArtifactID\": \"<integer>\"\n    }\n  ],\n  \"filters\": [\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"fieldName\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"order\": {\n    \"fieldName\": \"<string>\",\n    \"direction\": \"<string>\"\n  },\n  \"pagingRequest\": {\n    \"top\": \"<integer>\",\n    \"skip\": \"<integer>\",\n    \"maxItemCount\": \"<integer>\",\n    \"includeCount\": \"<boolean>\",\n    \"continuationToken\": \"<string>\"\n  },\n  \"includeWorkspaceInfo\": \"<boolean>\",\n  \"shouldUnhashData\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "119d92a3-58ac-4944-ba4b-d49184212d50",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "billing-insights",
+                    "users-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dateKey\": \"202105\",\n  \"selectorLevel\": \"Instance\",\n  \"itemSelectors\": [\n    {\n      \"instanceID\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\"\n    }\n  ],\n  \"includeWorkspaceInfo\": false,\n  \"shouldUnhashData\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"email\": \"jane.doe@relativity.com\",\n      \"userRole\": \"Regular\",\n      \"billableStatus\": \"Billable RelativityOne\",\n      \"lastLoginUtc\": \"2021-05-28T12:15:00\",\n      \"userActivity\": \"Active\",\n      \"userType\": \"Internal\",\n      \"instanceSpecificData\": {\n        \"f53c069b-9706-4570-8f97-be6e8fdbe156\": {\n          \"instance\": {\n            \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n            \"name\": \"R1 - Sample\",\n            \"pricingVisibility\": \"Visible\"\n          },\n          \"artifactID\": 12345\n        }\n      },\n      \"workspaces\": {\n        \"12345\": {\n          \"clientArtifactId\": 12345,\n          \"matterArtifactId\": 54321\n        }\n      },\n      \"collectionTimeUtc\": \"2021-05-29T12:15:00\"\n    },\n    {\n      \"email\": \"john.doe@relativity.com\",\n      \"userRole\": \"Administrator\",\n      \"billableStatus\": \"Non-billable\",\n      \"lastLoginUtc\": \"2021-05-27T16:10:00\",\n      \"userActivity\": \"Active\",\n      \"userType\": \"External\",\n      \"comment\": \"Justice for Change\",\n      \"instanceSpecificData\": {\n        \"f53c069b-9706-4570-8f97-be6e8fdbe156\": {\n          \"instance\": {\n            \"id\": \"f53c069b-9706-4570-8f97-be6e8fdbe156\",\n            \"name\": \"R1 - Sample\",\n            \"pricingVisibility\": \"Visible\"\n          },\n          \"artifactID\": 34215\n        }\n      },\n      \"workspaces\": {\n        \"12345\": {\n          \"clientArtifactId\": 12345,\n          \"matterArtifactId\": 54321\n        },\n        \"54321\": {\n          \"clientArtifactId\": 54321,\n          \"matterArtifactId\": 12345\n        }\n      },\n      \"collectionTimeUtc\": \"2021-05-29T12:15:00\"\n    }\n  ],\n  \"pagingResponse\": {\n    \"totalRecordCount\": 2\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a1f4ef70-e2b1-45e0-bcae-496a15e66fa1",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillingInsights API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

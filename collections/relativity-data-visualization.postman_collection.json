@@ -1,0 +1,1036 @@
+{
+  "item": [
+    {
+      "id": "090b143f-0f27-4c82-8176-cedcc37d9d2d",
+      "name": "Tab Manager v1",
+      "description": {
+        "content": "Tab Manager is an API which exposes methods for interacting with tab objects in Relativity.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "22aba768-b831-4d4f-81bc-3fe56df94c03",
+          "name": "Creates a Tab.",
+          "request": {
+            "name": "Creates a Tab.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tabRequest\": {\n    \"Name\": \"<System.String>\",\n    \"Order\": \"<System.Int32>\",\n    \"ObjectType\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactTypeID\": \"<System.Int32>\",\n        \"Name\": \"<System.String>\",\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"Link\": \"<System.String>\",\n    \"IsShownInSidebar\": \"<System.Boolean>\",\n    \"RelativityApplications\": [\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      },\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    ],\n    \"Parent\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"IsDefault\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"IsVisible\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"LinkType\": \"<Relativity.Services.Interfaces.DataVisualization.V1.Tab.Models.TabLinkTypeEnum>\",\n    \"IconIdentifier\": \"<System.String>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0fa11a76-d8da-49e4-9b18-de38e2dc13c3",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tabRequest\": {\n    \"Name\": \"<System.String>\",\n    \"Order\": \"<System.Int32>\",\n    \"ObjectType\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactTypeID\": \"<System.Int32>\",\n        \"Name\": \"<System.String>\",\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"Link\": \"<System.String>\",\n    \"IsShownInSidebar\": \"<System.Boolean>\",\n    \"RelativityApplications\": [\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      },\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    ],\n    \"Parent\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"IsDefault\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"IsVisible\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"LinkType\": \"<Relativity.Services.Interfaces.DataVisualization.V1.Tab.Models.TabLinkTypeEnum>\",\n    \"IconIdentifier\": \"<System.String>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0855d12-6eff-4c62-8d9d-c0cb7f3fb18d",
+          "name": "Reads a Tab.",
+          "request": {
+            "name": "Reads a Tab.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                ":tabArtifactID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeMetadata",
+                  "value": "<boolean>",
+                  "description": "(Required) No description set for this parameter"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeActions",
+                  "value": "<boolean>",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "tabArtifactID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b095326f-8b2b-46ee-9832-29d9cdf40d25",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    ":tabArtifactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeMetadata",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "includeActions",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "tabArtifactID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7c4c500-d2ee-4ff9-8ebd-af34979d5188",
+          "name": "Updates a Tab.",
+          "request": {
+            "name": "Updates a Tab.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                ":tabArtifactID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "tabArtifactID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tabRequest\": {\n    \"Name\": \"<System.String>\",\n    \"Order\": \"<System.Int32>\",\n    \"ObjectType\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactTypeID\": \"<System.Int32>\",\n        \"Name\": \"<System.String>\",\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"Link\": \"<System.String>\",\n    \"IsShownInSidebar\": \"<System.Boolean>\",\n    \"RelativityApplications\": [\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      },\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    ],\n    \"Parent\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"IsDefault\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"IsVisible\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"LinkType\": \"<Relativity.Services.Interfaces.DataVisualization.V1.Tab.Models.TabLinkTypeEnum>\",\n    \"IconIdentifier\": \"<System.String>\"\n  },\n  \"lastModifiedOn\": \"<System.DateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff02f6fe-b139-4c6b-8adb-09357c4e4000",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    ":tabArtifactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "tabArtifactID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tabRequest\": {\n    \"Name\": \"<System.String>\",\n    \"Order\": \"<System.Int32>\",\n    \"ObjectType\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactTypeID\": \"<System.Int32>\",\n        \"Name\": \"<System.String>\",\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"Link\": \"<System.String>\",\n    \"IsShownInSidebar\": \"<System.Boolean>\",\n    \"RelativityApplications\": [\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      },\n      {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    ],\n    \"Parent\": {\n      \"Secured\": \"<System.Boolean>\",\n      \"Value\": {\n        \"ArtifactID\": \"<System.Int32>\",\n        \"Guids\": [\n          \"<System.Guid>\",\n          \"<System.Guid>\"\n        ]\n      }\n    },\n    \"IsDefault\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"IsVisible\": \"<System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]>\",\n    \"LinkType\": \"<Relativity.Services.Interfaces.DataVisualization.V1.Tab.Models.TabLinkTypeEnum>\",\n    \"IconIdentifier\": \"<System.String>\"\n  },\n  \"lastModifiedOn\": \"<System.DateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86bcd837-e3c8-4510-b4cd-eb69aac4c8b1",
+          "name": "Deletes a Tab.",
+          "request": {
+            "name": "Deletes a Tab.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                ":tabArtifactID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "tabArtifactID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dcf75e62-5da6-433b-ad0c-7990e3203aaa",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    ":tabArtifactID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "tabArtifactID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d4ff840-84e0-47e0-833e-9b51a76028ce",
+          "name": "Gets the Meta for creating a new Tab object type.",
+          "request": {
+            "name": "Gets the Meta for creating a new Tab object type.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                "meta"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a30e31c-6460-4003-b310-6317a168b9af",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    "meta"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdf9d678-0ae7-4efa-ba2d-a8e71d877dff",
+          "name": "Gets a list of all eligible Parent Tabs.",
+          "request": {
+            "name": "Gets a list of all eligible Parent Tabs.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                "eligible-parents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56c8b57a-5104-4513-9c8b-c7c346a7bc35",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    "eligible-parents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42b604f9-2904-4d64-ba45-77aa6541d10c",
+          "name": "Gets a list of all eligible object types for a new Tab.",
+          "request": {
+            "name": "Gets a list of all eligible object types for a new Tab.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                "eligible-object-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "968eac14-d002-466a-b9c4-547f349a06b6",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    "eligible-object-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41d881e1-8788-4514-8bef-6bbe64995120",
+          "name": "Gets a list of all Tabs and their order for a given workspace.",
+          "request": {
+            "name": "Gets a list of all Tabs and their order for a given workspace.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                "view-order-list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0179bf0e-232c-437e-a2d5-44bf36e9f3e4",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    "view-order-list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "165827bc-1c91-4347-8754-b3d36c4d0c80",
+          "name": "Gets a list of all Tabs in a workspace that a user has permissions and Tab Visibility access to.",
+          "request": {
+            "name": "Gets a list of all Tabs in a workspace that a user has permissions and Tab Visibility access to.",
+            "description": {
+              "content": "[Public] ITabManager",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-data-visualization",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "tabs",
+                "navigation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) No description set for this parameter"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9743aec7-8391-490b-9587-93d813fe7aa3",
+              "name": "No description set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-data-visualization",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "tabs",
+                    "navigation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) No description set for this parameter"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "eccf5a8d-a6b6-49e4-910b-d93b89f175e3",
+    "name": "Relativity.Services.DataVisualization",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Relativity.Services.DataVisualization contains APIs that control the display and visualization of metamodel objects in Relativity.",
+      "type": "text/plain"
+    }
+  }
+}

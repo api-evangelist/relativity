@@ -1,0 +1,782 @@
+{
+  "item": [
+    {
+      "id": "92abd210-5bca-4025-a65c-0f1c09da256a",
+      "name": "Relativity Automated Workflows",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6bed7f84-e8f1-47b5-ac79-b6b1f8789137",
+          "name": "Notifies the given workspace a trigger has happened",
+          "request": {
+            "name": "Notifies the given workspace a trigger has happened",
+            "description": {
+              "content": "The trigger will match any workflows expecting that trigger and queue a workflow run too all matching workflows",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-automated-workflows",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "notifiers",
+                "trigger"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9c6b5681-9465-4b00-8f77-a41f6b73e26c",
+              "name": "Response Object Containing list of actions in the Result property",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "notifiers",
+                    "trigger"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67f20c6f-7553-4bc7-833e-74fa01741939",
+          "name": "List Triggers in a Workspace",
+          "request": {
+            "name": "List Triggers in a Workspace",
+            "description": {
+              "content": "Lists all available workflow actions with any version on the workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-automated-workflows",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "actions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2850056d-7cb8-40a8-bee4-463aadf0ef09",
+              "name": "Response Object Containing list of actions in the Result property",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fff14b6-e5fd-4ed8-be1e-910a6020c3e7",
+          "name": "Creates or Updates an Action",
+          "request": {
+            "name": "Creates or Updates an Action",
+            "description": {
+              "content": "This Operation is Idempotent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-automated-workflows",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "actions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "921a40b9-0b79-4e2f-869e-2d3a7a92b8a1",
+              "name": "Response Object Containing list of actions in the Result property",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24fd7383-26c9-4319-97ac-61041c27916b",
+              "name": "You may have missing or invalid values in your Request. Or the changes proposed on the request are breaking changes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d61f094-7338-46f1-85ef-0f2074449a4a",
+              "name": "Unexpected Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23baebcf-ea70-4bc8-adce-86c4e203ee32",
+          "name": "List Triggers in a Workspace",
+          "request": {
+            "name": "List Triggers in a Workspace",
+            "description": {
+              "content": "Lists all available workflow triggers with any version on the workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-automated-workflows",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "triggers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "819e09c0-6873-406c-b2a2-f4a262fcd349",
+              "name": "Response Object Containing list of triggers in the Result property",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "triggers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a183f367-033b-4694-bbf8-d660931d0c6a",
+          "name": "Creates or Updates a Trigger",
+          "request": {
+            "name": "Creates or Updates a Trigger",
+            "description": {
+              "content": "This Operation is Idempotent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-automated-workflows",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "triggers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "310033bf-0557-48e0-97a7-c4a188657f44",
+              "name": "Response Object Containing list of triggers in the Result property",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "triggers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc913a71-af5d-445a-a567-16085da1825e",
+              "name": "You may have missing or invalid values in your Request. Or the changes proposed on the request are breaking changes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "triggers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "906c76bd-46a9-4599-8d6b-fb728089d736",
+              "name": "Unexpected Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "triggers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68af0065-549a-4830-9fa1-4c4fd931f221",
+          "name": "Run/Debug Language Expression",
+          "request": {
+            "name": "Run/Debug Language Expression",
+            "description": {},
+            "url": {
+              "path": [
+                "relativity-automated-workflows",
+                "v2",
+                "language",
+                "expressions",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Expression\": \"<string>\",\n  \"Context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "367a8518-c196-4438-8c5c-b0d7071f6d39",
+              "name": "The result of the expression run against the provided context",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-automated-workflows",
+                    "v2",
+                    "language",
+                    "expressions",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Success\": true,\n  \"Expression\": \"string\",\n  \"ExpressionResult\": {},\n  \"Error\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e219aa8d-2f6b-48fd-aebf-e8f844450c87",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Automated Workflows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

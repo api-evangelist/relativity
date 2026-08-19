@@ -1,0 +1,2707 @@
+{
+  "item": [
+    {
+      "id": "2b57aac7-bdec-42a9-aad7-94a5db26b11d",
+      "name": "Processing Module v2",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7ec42313-2282-4278-8d8d-aaeeb8f662ef",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Document Metadata Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Document Metadata Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "logicalID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f6bfbb8-72f7-4f2a-8a1e-5e6289925b95",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "logicalID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"LogicalID\": \"string\",\n  \"WorkspaceArtifactID\": 8145,\n  \"MetadataJson\": \"string\",\n  \"Errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fa29af0-3246-4ec0-a5c1-bc83ef597b6e",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Documents Metadata Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Documents Metadata Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"LogicalIDs\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "943aef63-bfab-4af7-a8c5-28119f7e1afa",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"LogicalIDs\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"LogicalID\": \"string\",\n    \"WorkspaceArtifactID\": 9739,\n    \"MetadataJson\": \"string\",\n    \"Errors\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"LogicalID\": \"string\",\n    \"WorkspaceArtifactID\": 7887,\n    \"MetadataJson\": \"string\",\n    \"Errors\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4e28dda-0c76-453f-a942-74bc458b7170",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get File Paths Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get File Paths Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "get-file-paths"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"LogicalIDs\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3d39d95-a04a-4b51-94c1-e85c10a49fee",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "get-file-paths"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"LogicalIDs\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"LogicalID\": \"string\",\n    \"StoredAs\": \"string\"\n  },\n  {\n    \"LogicalID\": \"string\",\n    \"StoredAs\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e14d677-902e-4683-8d21-be51c030d0b0",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Document Error History Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Document Error History Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "logicalID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"skip\": \"<integer>\",\n  \"top\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1b6bdc0e-c04f-418a-b3aa-f5f6694b25eb",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "logicalID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"skip\": \"<integer>\",\n  \"top\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 2209,\n  \"DocumentErrorHistory\": [\n    {\n      \"TimeStamp\": \"2012-09-30T06:27:28.187Z\",\n      \"Category\": \"string\",\n      \"ErrorMessage\": \"string\",\n      \"ErrorPhase\": \"string\",\n      \"RetryStatus\": \"string\"\n    },\n    {\n      \"TimeStamp\": \"1993-07-30T15:44:52.560Z\",\n      \"Category\": \"string\",\n      \"ErrorMessage\": \"string\",\n      \"ErrorPhase\": \"string\",\n      \"RetryStatus\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79dca246-c112-4c06-9787-e146edcbf77b",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Retry Delete Document Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Retry Delete Document Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "retry-delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b08a1df9-d426-414a-b554-f543f720121d",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "retry-delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af617c03-7950-4aef-a40d-b798106a9f52",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Retry Document Errors Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Retry Document Errors Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "retry-errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7a601b52-40d5-4f84-9bdd-3a36b108ef41",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "retry-errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "26b1f4a9-19d7-491c-911e-3c43cd3668cf",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Publish Documents Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Publish Documents Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "publish"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e79925cd-9747-4da4-b129-f09abd709512",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "publish"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "baa9aa1e-0d69-43c3-8d8c-c555d6fe2306",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Publish Job Errors Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Get Publish Job Errors Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "get-publish-job-errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5b455709-61dd-478b-9dcd-f1be33ce7bb8",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "get-publish-job-errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErroredJobCount\": 7364,\n  \"GroupIdsWithJobErrors\": [\n    9859,\n    614\n  ],\n  \"ErrorArtifactIds\": [\n    3510,\n    8609\n  ],\n  \"GroupIdsCheckedCount\": 3838\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74e37c95-4016-4f72-ad5a-ad4c36b6b001",
+          "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Retrieve Publishable Document Count Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Document Manager.Retrieve Publishable Document Count Async",
+            "description": {
+              "content": "[Public] IProcessingDocumentManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "documents",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "308f67f3-b8f7-440c-906a-bfe0c53557fe",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "documents",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentsRequest\": {\n    \"LogicalIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "8253",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eca531f5-867d-457e-b1d9-accd9b263383",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Create Expression Filter Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Create Expression Filter Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"FilterName\": \"<string>\",\n    \"DataSourceIDs\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"IncludeFamily\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5cc1e815-d6c6-49c2-900e-6aa5f742f9f3",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"FilterName\": \"<string>\",\n    \"DataSourceIDs\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"IncludeFamily\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"FilterID\": 535,\n  \"FilterName\": \"string\",\n  \"Type\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e527211-09db-4a85-a38e-2efa2ec62bd7",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Filters Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Filters Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2594f9de-58bf-4a8b-a3fd-b69b038004e6",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"FilterID\": 1842,\n    \"FilterName\": \"string\",\n    \"Type\": \"string\"\n  },\n  {\n    \"FilterID\": 5396,\n    \"FilterName\": \"string\",\n    \"Type\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dee95be7-b299-40a3-a47a-e0c5a8ee4b22",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Filter Result Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Filter Result Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                "results",
+                ":filterID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "filterID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"skip\": \"<integer>\",\n  \"top\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5427b640-39f3-4fd2-9b27-69305817e9c5",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    "results",
+                    ":filterID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "filterID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"skip\": \"<integer>\",\n  \"top\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Uuid\": \"string\",\n  \"TotalCount\": 9675,\n  \"UniqueDataSourceCount\": 6578,\n  \"Results\": [\n    {\n      \"ContainerExtension\": \"string\",\n      \"ContainerID\": 2033,\n      \"ContainerName\": \"string\",\n      \"CustodianArtifactId\": 2374,\n      \"CustodianName\": \"string\",\n      \"DataSourceArtifactId\": 6943,\n      \"DataSourceName\": \"string\",\n      \"DiscoverGroupId\": 3317,\n      \"ErrorMessage\": \"string\",\n      \"ErrorCategory\": \"string\",\n      \"ErrorPhase\": \"string\",\n      \"ExtractedTextLocation\": \"string\",\n      \"FileExtension\": \"string\",\n      \"FileName\": \"string\",\n      \"FileSize\": 645,\n      \"FileType\": \"string\",\n      \"FolderPath\": \"string\",\n      \"ImportSource\": \"string\",\n      \"IsContainer\": false,\n      \"IsDeleted\": false,\n      \"IsEmbedded\": false,\n      \"IsPublished\": false,\n      \"LogicalPath\": \"string\",\n      \"MD5Hash\": \"string\",\n      \"OfficeEmbeddedItems\": false,\n      \"OriginalPath\": \"string\",\n      \"ParentId\": 6243,\n      \"ProcessingFileId\": 70,\n      \"SourceId\": \"string\",\n      \"UniqueId\": \"string\",\n      \"LogicalId\": \"string\",\n      \"ParentLogicalId\": \"string\",\n      \"SHA1Hash\": \"string\",\n      \"SHA256Hash\": \"string\",\n      \"TextExtractionMethod\": \"string\",\n      \"Unprocessable\": false,\n      \"VirtualPath\": \"string\",\n      \"SenderDomain\": \"string\",\n      \"SortDate\": \"2007-01-08T23:40:05.433Z\",\n      \"ErrorStatus\": \"string\",\n      \"DedupeStatus\": \"string\",\n      \"DocumentUuid\": \"string\",\n      \"Severity\": \"string\",\n      \"ProcessingDupeHash\": \"string\",\n      \"StorageId\": \"string\",\n      \"Level\": 7395\n    },\n    {\n      \"ContainerExtension\": \"string\",\n      \"ContainerID\": 3079,\n      \"ContainerName\": \"string\",\n      \"CustodianArtifactId\": 8673,\n      \"CustodianName\": \"string\",\n      \"DataSourceArtifactId\": 2940,\n      \"DataSourceName\": \"string\",\n      \"DiscoverGroupId\": 5651,\n      \"ErrorMessage\": \"string\",\n      \"ErrorCategory\": \"string\",\n      \"ErrorPhase\": \"string\",\n      \"ExtractedTextLocation\": \"string\",\n      \"FileExtension\": \"string\",\n      \"FileName\": \"string\",\n      \"FileSize\": 4469,\n      \"FileType\": \"string\",\n      \"FolderPath\": \"string\",\n      \"ImportSource\": \"string\",\n      \"IsContainer\": false,\n      \"IsDeleted\": true,\n      \"IsEmbedded\": true,\n      \"IsPublished\": false,\n      \"LogicalPath\": \"string\",\n      \"MD5Hash\": \"string\",\n      \"OfficeEmbeddedItems\": true,\n      \"OriginalPath\": \"string\",\n      \"ParentId\": 9815,\n      \"ProcessingFileId\": 43,\n      \"SourceId\": \"string\",\n      \"UniqueId\": \"string\",\n      \"LogicalId\": \"string\",\n      \"ParentLogicalId\": \"string\",\n      \"SHA1Hash\": \"string\",\n      \"SHA256Hash\": \"string\",\n      \"TextExtractionMethod\": \"string\",\n      \"Unprocessable\": true,\n      \"VirtualPath\": \"string\",\n      \"SenderDomain\": \"string\",\n      \"SortDate\": \"2021-10-21T06:03:42.755Z\",\n      \"ErrorStatus\": \"string\",\n      \"DedupeStatus\": \"string\",\n      \"DocumentUuid\": \"string\",\n      \"Severity\": \"string\",\n      \"ProcessingDupeHash\": \"string\",\n      \"StorageId\": \"string\",\n      \"Level\": 2196\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48a96ccb-e363-4e71-b74d-3326abbafc60",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Filters By Data Source Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Filters By Data Source Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                "data-sources",
+                ":dataSourceID",
+                "filters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dataSourceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b8c4fe8-f99b-4990-af04-da1250d3aaff",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    "data-sources",
+                    ":dataSourceID",
+                    "filters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "dataSourceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"FilterID\": 1842,\n    \"FilterName\": \"string\",\n    \"Type\": \"string\"\n  },\n  {\n    \"FilterID\": 5396,\n    \"FilterName\": \"string\",\n    \"Type\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "833660ae-5bba-4ef8-b2d2-23d31a00360b",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Update Expression Filter Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Update Expression Filter Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                ":filterID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "filterID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"FilterName\": \"<string>\",\n    \"DataSourceIDs\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"IncludeFamily\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "419c28de-ae95-47aa-8482-2f4ff1a180d3",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    ":filterID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "filterID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"FilterName\": \"<string>\",\n    \"DataSourceIDs\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"Expression\": \"<string>\",\n    \"IncludeFamily\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"FilterID\": 535,\n  \"FilterName\": \"string\",\n  \"Type\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a613d003-11bd-4279-a51c-e4b8bf35ad6b",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Delete Filter Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Delete Filter Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                ":filterID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "filterID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66682c34-4a20-4ffd-95e7-70ecc03dca59",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    ":filterID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "filterID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99d5e074-0b22-445e-8f16-cab65df6dfae",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Discovered Documents Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Discovered Documents Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"StartingPointOfResult\": \"<integer>\",\n    \"NumberOfResults\": \"<integer>\",\n    \"Expression\": \"<string>\",\n    \"AuditedSourceID\": \"<integer>\",\n    \"SortingOptions\": [\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      }\n    ],\n    \"ExcludeTotalCount\": \"<boolean>\",\n    \"IncludeDuplicateHash\": \"<boolean>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "400509ae-240a-4d21-a099-3c30b1ebb11c",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"StartingPointOfResult\": \"<integer>\",\n    \"NumberOfResults\": \"<integer>\",\n    \"Expression\": \"<string>\",\n    \"AuditedSourceID\": \"<integer>\",\n    \"SortingOptions\": [\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      }\n    ],\n    \"ExcludeTotalCount\": \"<boolean>\",\n    \"IncludeDuplicateHash\": \"<boolean>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Uuid\": \"string\",\n  \"TotalCount\": 5575,\n  \"UniqueDataSourceCount\": 3602,\n  \"Results\": [\n    {\n      \"ContainerExtension\": \"string\",\n      \"ContainerID\": 8007,\n      \"ContainerName\": \"string\",\n      \"CustodianArtifactId\": 1435,\n      \"CustodianName\": \"string\",\n      \"DataSourceArtifactId\": 9158,\n      \"DataSourceName\": \"string\",\n      \"DiscoverGroupId\": 3338,\n      \"ErrorMessage\": \"string\",\n      \"ErrorCategory\": \"string\",\n      \"ErrorPhase\": \"string\",\n      \"ExtractedTextLocation\": \"string\",\n      \"FileExtension\": \"string\",\n      \"FileName\": \"string\",\n      \"FileSize\": 553,\n      \"FileType\": \"string\",\n      \"FolderPath\": \"string\",\n      \"ImportSource\": \"string\",\n      \"IsContainer\": true,\n      \"IsDeleted\": true,\n      \"IsEmbedded\": true,\n      \"IsPublished\": true,\n      \"LogicalPath\": \"string\",\n      \"MD5Hash\": \"string\",\n      \"OfficeEmbeddedItems\": false,\n      \"OriginalPath\": \"string\",\n      \"ParentId\": 7004,\n      \"ProcessingFileId\": 988,\n      \"SourceId\": \"string\",\n      \"UniqueId\": \"string\",\n      \"LogicalId\": \"string\",\n      \"ParentLogicalId\": \"string\",\n      \"SHA1Hash\": \"string\",\n      \"SHA256Hash\": \"string\",\n      \"TextExtractionMethod\": \"string\",\n      \"Unprocessable\": true,\n      \"VirtualPath\": \"string\",\n      \"SenderDomain\": \"string\",\n      \"SortDate\": \"1971-02-25T10:17:26.255Z\",\n      \"ErrorStatus\": \"string\",\n      \"DedupeStatus\": \"string\",\n      \"DocumentUuid\": \"string\",\n      \"Severity\": \"string\",\n      \"ProcessingDupeHash\": \"string\",\n      \"StorageId\": \"string\",\n      \"Level\": 2128\n    },\n    {\n      \"ContainerExtension\": \"string\",\n      \"ContainerID\": 3436,\n      \"ContainerName\": \"string\",\n      \"CustodianArtifactId\": 4583,\n      \"CustodianName\": \"string\",\n      \"DataSourceArtifactId\": 5799,\n      \"DataSourceName\": \"string\",\n      \"DiscoverGroupId\": 1565,\n      \"ErrorMessage\": \"string\",\n      \"ErrorCategory\": \"string\",\n      \"ErrorPhase\": \"string\",\n      \"ExtractedTextLocation\": \"string\",\n      \"FileExtension\": \"string\",\n      \"FileName\": \"string\",\n      \"FileSize\": 7180,\n      \"FileType\": \"string\",\n      \"FolderPath\": \"string\",\n      \"ImportSource\": \"string\",\n      \"IsContainer\": false,\n      \"IsDeleted\": true,\n      \"IsEmbedded\": false,\n      \"IsPublished\": false,\n      \"LogicalPath\": \"string\",\n      \"MD5Hash\": \"string\",\n      \"OfficeEmbeddedItems\": false,\n      \"OriginalPath\": \"string\",\n      \"ParentId\": 9265,\n      \"ProcessingFileId\": 1865,\n      \"SourceId\": \"string\",\n      \"UniqueId\": \"string\",\n      \"LogicalId\": \"string\",\n      \"ParentLogicalId\": \"string\",\n      \"SHA1Hash\": \"string\",\n      \"SHA256Hash\": \"string\",\n      \"TextExtractionMethod\": \"string\",\n      \"Unprocessable\": true,\n      \"VirtualPath\": \"string\",\n      \"SenderDomain\": \"string\",\n      \"SortDate\": \"2006-07-28T20:30:48.379Z\",\n      \"ErrorStatus\": \"string\",\n      \"DedupeStatus\": \"string\",\n      \"DocumentUuid\": \"string\",\n      \"Severity\": \"string\",\n      \"ProcessingDupeHash\": \"string\",\n      \"StorageId\": \"string\",\n      \"Level\": 3819\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f01a2b1-3b3d-48a0-bf1b-9104ef5f1552",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Pivot On Discovered Documents Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Pivot On Discovered Documents Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                "pivot-discovered-documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Expression\": \"<string>\",\n    \"PivotOnOption\": {\n      \"GroupByProperty\": \"<string>\",\n      \"GroupByCount\": \"<integer>\",\n      \"PivotOnProperty\": \"<string>\",\n      \"PivotOnCount\": \"<integer>\"\n    },\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0349863-e4f2-41af-b5e6-a96b1db97af1",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    "pivot-discovered-documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Expression\": \"<string>\",\n    \"PivotOnOption\": {\n      \"GroupByProperty\": \"<string>\",\n      \"GroupByCount\": \"<integer>\",\n      \"PivotOnProperty\": \"<string>\",\n      \"PivotOnCount\": \"<integer>\"\n    },\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"GroupByIdentifier\": \"string\",\n    \"GroupByArtifactId\": \"string\",\n    \"PivotOnIdentifier\": \"string\",\n    \"PivotOnArtifactId\": \"string\",\n    \"ResultCount\": 1876\n  },\n  {\n    \"GroupByIdentifier\": \"string\",\n    \"GroupByArtifactId\": \"string\",\n    \"PivotOnIdentifier\": \"string\",\n    \"PivotOnArtifactId\": \"string\",\n    \"ResultCount\": 2423\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed9d4a9e-7176-41ab-ba3e-d5ee45b1aa38",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Download Discovered Document List Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Download Discovered Document List Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                "csvs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"Expression\": \"<string>\",\n    \"LogicalIDs\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Columns\": [\n      {\n        \"Property\": \"<string>\",\n        \"Header\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Header\": \"<string>\"\n      }\n    ],\n    \"SortingOptions\": [\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      }\n    ],\n    \"Culture\": \"<string>\",\n    \"IncludeDuplicateHash\": \"<boolean>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a3a765f-89a2-4120-92c5-7bb832ae20d1",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    "csvs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"Expression\": \"<string>\",\n    \"LogicalIDs\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"Columns\": [\n      {\n        \"Property\": \"<string>\",\n        \"Header\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Header\": \"<string>\"\n      }\n    ],\n    \"SortingOptions\": [\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      }\n    ],\n    \"Culture\": \"<string>\",\n    \"IncludeDuplicateHash\": \"<boolean>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ContentType\": \"string\",\n  \"ContentDisposition\": \"string\",\n  \"CacheControl\": \"string\",\n  \"StatusCode\": \"MethodNotAllowed\",\n  \"Headers\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c863143b-75f1-4265-b488-60d8f4af93be",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Download Nisted Document List Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Download Nisted Document List Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                "get-nisted-documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"processingSetId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2b60f2ff-48f0-4a6d-b381-8a3c0f3a5de5",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    "get-nisted-documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"processingSetId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ContentType\": \"string\",\n  \"ContentDisposition\": \"string\",\n  \"CacheControl\": \"string\",\n  \"StatusCode\": \"NotModified\",\n  \"Headers\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0321d39-9c54-4be6-bca7-0991f76811ad",
+          "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Discovered Document Ids Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Filter Manager.Get Discovered Document Ids Async",
+            "description": {
+              "content": "[Public] IProcessingFilterManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "filters",
+                "document-ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"StartingPointOfResult\": \"<integer>\",\n    \"NumberOfResults\": \"<integer>\",\n    \"Expression\": \"<string>\",\n    \"AuditedSourceID\": \"<integer>\",\n    \"SortingOptions\": [\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      }\n    ],\n    \"ExcludeTotalCount\": \"<boolean>\",\n    \"IncludeDuplicateHash\": \"<boolean>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3d6b5e63-9ddf-46c9-87f1-f275a5a045c4",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "filters",
+                    "document-ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"StartingPointOfResult\": \"<integer>\",\n    \"NumberOfResults\": \"<integer>\",\n    \"Expression\": \"<string>\",\n    \"AuditedSourceID\": \"<integer>\",\n    \"SortingOptions\": [\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      },\n      {\n        \"Property\": \"<string>\",\n        \"Order\": \"<string>\"\n      }\n    ],\n    \"ExcludeTotalCount\": \"<boolean>\",\n    \"IncludeDuplicateHash\": \"<boolean>\",\n    \"AdvancedOptionsFlag\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"FilterUuid\": \"string\",\n  \"TotalCount\": 6304,\n  \"Results\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c033294-24ed-41cd-a2b8-5b4458d1b525",
+          "name": "Relativity.Processing.V2.Services.I Processing Job Exception Manager.Get Total Job Exception Count Async",
+          "request": {
+            "name": "Relativity.Processing.V2.Services.I Processing Job Exception Manager.Get Total Job Exception Count Async",
+            "description": {
+              "content": "[Public] IProcessingJobExceptionManager - ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "relativity-processing",
+                "v2",
+                "workspaces",
+                ":workspaceID",
+                "job-exception",
+                "get-total-count-by-set"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"ProcessingSetId\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7bd4ba47-7357-4b16-bdb0-8a985743f6e7",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "relativity-processing",
+                    "v2",
+                    "workspaces",
+                    ":workspaceID",
+                    "job-exception",
+                    "get-total-count-by-set"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"ProcessingSetId\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "8253",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fb3de27e-2b34-414a-8e21-569275d0f77a",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Processing Module v2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

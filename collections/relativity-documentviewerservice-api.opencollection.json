@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService DocumentViewerService API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DocumentViewerService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submits a conversion request and returns a viewer content key for document viewer rendering.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v:version/DocumentViewerServiceManager/GetViewerContentKeyAsync",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Supports document, production, image, and file-field conversion scenarios used by the Document Viewer REST API.\r\nThe returned value includes keys used to track conversion and retrieve converted content."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

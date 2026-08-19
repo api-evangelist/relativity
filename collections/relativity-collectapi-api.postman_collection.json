@@ -1,0 +1,1832 @@
+{
+  "item": [
+    {
+      "id": "c6045bb7-af93-4231-8aed-1a9073c5f4ca",
+      "name": "CollectAPI",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "82766533-c334-4ba3-8536-c7661c552bbc",
+          "name": "/collect-services/v1/CollectAPI/:workspaceId/collection",
+          "request": {
+            "name": "/collect-services/v1/CollectAPI/:workspaceId/collection",
+            "description": {},
+            "url": {
+              "path": [
+                "collect-services",
+                "v1",
+                "CollectAPI",
+                ":workspaceId",
+                "collection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Instance Header",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"CollectionName\": \"<string>\",\n  \"MatterArtifactId\": \"<integer>\",\n  \"ProcessingSourceLocation\": \"<string>\",\n  \"JobNumber\": \"<string>\",\n  \"ZipCollectedFiles\": \"<boolean>\",\n  \"ZipPassword\": \"<string>\",\n  \"AutoProcessing\": \"<boolean>\",\n  \"AutoProcessingWorkspaceId\": \"<integer>\",\n  \"AutoProcessingProcessingProfileId\": \"<integer>\",\n  \"SelectedDocumentNumberingPrefixOption\": \"<string>\",\n  \"NotificationEmail\": \"<string>\",\n  \"SendEmailNotification\": \"<boolean>\",\n  \"Description\": \"<string>\",\n  \"SourceInstances\": [\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    }\n  ],\n  \"Entities\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"NoncustodialInstances\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5e40eb59-3af3-44e0-ba46-3de7674282d6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CollectionName\": \"<string>\",\n  \"MatterArtifactId\": \"<integer>\",\n  \"ProcessingSourceLocation\": \"<string>\",\n  \"JobNumber\": \"<string>\",\n  \"ZipCollectedFiles\": \"<boolean>\",\n  \"ZipPassword\": \"<string>\",\n  \"AutoProcessing\": \"<boolean>\",\n  \"AutoProcessingWorkspaceId\": \"<integer>\",\n  \"AutoProcessingProcessingProfileId\": \"<integer>\",\n  \"SelectedDocumentNumberingPrefixOption\": \"<string>\",\n  \"NotificationEmail\": \"<string>\",\n  \"SendEmailNotification\": \"<boolean>\",\n  \"Description\": \"<string>\",\n  \"SourceInstances\": [\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    }\n  ],\n  \"Entities\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"NoncustodialInstances\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Result\": {},\n  \"Value\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "578d6c78-bcee-4f09-b243-bf2cba9f6686",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CollectionName\": \"<string>\",\n  \"MatterArtifactId\": \"<integer>\",\n  \"ProcessingSourceLocation\": \"<string>\",\n  \"JobNumber\": \"<string>\",\n  \"ZipCollectedFiles\": \"<boolean>\",\n  \"ZipPassword\": \"<string>\",\n  \"AutoProcessing\": \"<boolean>\",\n  \"AutoProcessingWorkspaceId\": \"<integer>\",\n  \"AutoProcessingProcessingProfileId\": \"<integer>\",\n  \"SelectedDocumentNumberingPrefixOption\": \"<string>\",\n  \"NotificationEmail\": \"<string>\",\n  \"SendEmailNotification\": \"<boolean>\",\n  \"Description\": \"<string>\",\n  \"SourceInstances\": [\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    }\n  ],\n  \"Entities\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"NoncustodialInstances\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cbf7b45e-4a47-430c-a3ea-a6e1df7b8ff2",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CollectionName\": \"<string>\",\n  \"MatterArtifactId\": \"<integer>\",\n  \"ProcessingSourceLocation\": \"<string>\",\n  \"JobNumber\": \"<string>\",\n  \"ZipCollectedFiles\": \"<boolean>\",\n  \"ZipPassword\": \"<string>\",\n  \"AutoProcessing\": \"<boolean>\",\n  \"AutoProcessingWorkspaceId\": \"<integer>\",\n  \"AutoProcessingProcessingProfileId\": \"<integer>\",\n  \"SelectedDocumentNumberingPrefixOption\": \"<string>\",\n  \"NotificationEmail\": \"<string>\",\n  \"SendEmailNotification\": \"<boolean>\",\n  \"Description\": \"<string>\",\n  \"SourceInstances\": [\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"ArtifactId\": \"<integer>\",\n      \"Criteria\": [\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        },\n        {\n          \"DataType\": \"<string>\",\n          \"FieldName\": \"<string>\",\n          \"Operator\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"CriteriaDataType\": \"<integer>\"\n        }\n      ]\n    }\n  ],\n  \"Entities\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"NoncustodialInstances\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96ed7bb6-c35c-4749-93d1-e0dba3f0cab0",
+          "name": "/collect-services/v1/CollectAPI/:workspaceId/collection/:collectionArtifactId/start-target-generation",
+          "request": {
+            "name": "/collect-services/v1/CollectAPI/:workspaceId/collection/:collectionArtifactId/start-target-generation",
+            "description": {},
+            "url": {
+              "path": [
+                "collect-services",
+                "v1",
+                "CollectAPI",
+                ":workspaceId",
+                "collection",
+                ":collectionArtifactId",
+                "start-target-generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Instance Header",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f94de09d-e977-4b11-a77b-6d810e109b1c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-target-generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Result\": {},\n  \"Value\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "870f843d-3c13-47ad-87a8-b0acacfa5fab",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-target-generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81738dbc-a92b-4486-a682-66ef59ca8527",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-target-generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e2caa79-c292-46c4-b4cf-94ddf6689a6c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-target-generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ea9f555-5398-48c4-b9a9-339528fab9d8",
+          "name": "/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId/target-generation",
+          "request": {
+            "name": "/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId/target-generation",
+            "description": {},
+            "url": {
+              "path": [
+                "collect-services",
+                "v1",
+                "CollectAPI",
+                ":workspaceArtifactId",
+                "collection",
+                ":collectionArtifactId",
+                "target-generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceArtifactId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "collectionArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e79919b6-2576-4d42-880f-4d073bfcb357",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "target-generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Result\": {},\n  \"Value\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f983b21d-fa70-46b3-a376-abd3a409aaf5",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "target-generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f8b51cf-661a-4c6e-815f-45554466218d",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "target-generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a2cc66f-bb3f-463b-9e03-7600acf5d199",
+          "name": "/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId/start-collection",
+          "request": {
+            "name": "/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId/start-collection",
+            "description": {},
+            "url": {
+              "path": [
+                "collect-services",
+                "v1",
+                "CollectAPI",
+                ":workspaceArtifactId",
+                "collection",
+                ":collectionArtifactId",
+                "start-collection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceArtifactId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "collectionArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Instance Header",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af4938a2-464e-428d-a3ec-674e34284237",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Result\": {},\n  \"Value\": {\n    \"Success\": true,\n    \"Message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3753c532-e9c5-4132-94f5-5871f6e1775d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0f99352-5dba-41c7-8289-17fbe13f3aa0",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09c95b19-5e32-463a-abb4-e954a872cf40",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4fbfd26c-0d47-4075-a7ab-4f0d0433ac3f",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "start-collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05769382-e2ab-4475-8872-3c21cb390e07",
+          "name": "/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId",
+          "request": {
+            "name": "/collect-services/v1/CollectAPI/:workspaceArtifactId/collection/:collectionArtifactId",
+            "description": {},
+            "url": {
+              "path": [
+                "collect-services",
+                "v1",
+                "CollectAPI",
+                ":workspaceArtifactId",
+                "collection",
+                ":collectionArtifactId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceArtifactId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "collectionArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a748448-077c-4588-90b5-e22b56cf62d2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Result\": {},\n  \"Value\": {\n    \"ArtifactId\": 6087,\n    \"Name\": \"string\",\n    \"Status\": \"string\",\n    \"Targets\": [\n      {\n        \"ArtifactId\": 877,\n        \"Target\": \"string\",\n        \"SourceInstance\": \"string\",\n        \"Items\": 8842,\n        \"Errors\": 9235,\n        \"Size\": 5069,\n        \"StatusMessage\": \"string\",\n        \"State\": \"string\"\n      },\n      {\n        \"ArtifactId\": 3934,\n        \"Target\": \"string\",\n        \"SourceInstance\": \"string\",\n        \"Items\": 2210,\n        \"Errors\": 2950,\n        \"Size\": 3686,\n        \"StatusMessage\": \"string\",\n        \"State\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87ab2eb0-cc18-429a-9dba-da22e5249cfc",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f1f6206-f932-491b-a1e3-5f0d8ac78631",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8838800c-dbf8-4f25-8d5c-525359d03942",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81c8f7d5-bc6f-4707-b3b8-84ebf8532ca5",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceArtifactId",
+                    "collection",
+                    ":collectionArtifactId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceArtifactId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8599625e-0451-442c-8d08-9451a2146c87",
+          "name": "/collect-services/v1/CollectAPI/:workspaceId/collection/:collectionArtifactId/stop",
+          "request": {
+            "name": "/collect-services/v1/CollectAPI/:workspaceId/collection/:collectionArtifactId/stop",
+            "description": {},
+            "url": {
+              "path": [
+                "collect-services",
+                "v1",
+                "CollectAPI",
+                ":workspaceId",
+                "collection",
+                ":collectionArtifactId",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "collectionArtifactId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Instance Header",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30c9769f-a274-4e7e-8c31-b09c4259a083",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "badc943d-df69-49e3-a160-df20486fa663",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1753,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04b273e4-aa7f-46e1-b3aa-45d5f22759ea",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1753,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2dea7a91-fb4b-45fb-a31f-881ca63304af",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1753,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71a0766e-0f71-4838-8c9c-fd84e17b3993",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collect-services",
+                    "v1",
+                    "CollectAPI",
+                    ":workspaceId",
+                    "collection",
+                    ":collectionArtifactId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "collectionArtifactId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Instance Header",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1753,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "316d9b07-bb22-4e66-887e-1199c37b62b6",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService CollectAPI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

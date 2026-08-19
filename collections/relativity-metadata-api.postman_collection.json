@@ -1,0 +1,140 @@
+{
+  "item": [
+    {
+      "id": "a084bb0d-aeb7-426a-8895-72e28543b48b",
+      "name": "Metadata",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "082ccb4a-e56d-415e-9a24-12dbed10e47d",
+          "name": "Gets the metadata",
+          "request": {
+            "name": "Gets the metadata",
+            "description": {
+              "content": "This endpoint retrieves metadata fields required for report creation. The metadata includes fields that are necessary to generate a report or determine the report's content based on the provided ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "Metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "947f3341-e4b8-4334-a498-f71ad0c97ff4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "Metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"origins\": [\n    {\n      \"id\": \"1a55f431-318e-337a-2aa4-d1b34f846769\",\n      \"name\": \"string\",\n      \"metrics\": [\n        {\n          \"id\": \"705496d1-1f7e-afc6-d9fc-4e5b5ba71ad0\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"valueType\": \"Text\",\n          \"originId\": \"a1d62273-93e2-05be-ce18-15390e2f956e\",\n          \"reportType\": \"User\",\n          \"isDefault\": false,\n          \"isActive\": false\n        },\n        {\n          \"id\": \"414b8071-c72e-9afd-f846-59e9d8af95ae\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"valueType\": \"Int64\",\n          \"originId\": \"0f555cf6-ed6d-d944-18a3-f29faf610788\",\n          \"reportType\": \"User\",\n          \"isDefault\": false,\n          \"isActive\": false\n        }\n      ]\n    },\n    {\n      \"id\": \"9af3b54b-6bcc-5207-a6f8-c22881280a02\",\n      \"name\": \"string\",\n      \"metrics\": [\n        {\n          \"id\": \"63c0b14c-535a-1819-822c-e15f3c49d6de\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"valueType\": \"Decimal\",\n          \"originId\": \"5857d45f-88b9-4d46-5d3f-0fac7206390b\",\n          \"reportType\": \"User\",\n          \"isDefault\": true,\n          \"isActive\": false\n        },\n        {\n          \"id\": \"24954f06-d40c-3528-a836-d8b2c7e81a0d\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"valueType\": \"DateTime\",\n          \"originId\": \"0205f3bd-f2ce-b525-97df-c0d447c0aa67\",\n          \"reportType\": \"User\",\n          \"isDefault\": false,\n          \"isActive\": false\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35ed9ae8-fbab-4e79-a56a-6e35debe3ce5",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "Metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 6309,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "583e31ee-2daa-4993-937c-11df9d70f73c",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Metadata API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

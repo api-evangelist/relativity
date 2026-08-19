@@ -1,0 +1,1766 @@
+{
+  "item": [
+    {
+      "id": "3f0319fa-0945-4563-8667-2cfaf2c0980b",
+      "name": "Import Source Module",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e856009b-45d4-43ea-9095-afc72bf61acd",
+          "name": "Import.Services.V1.I Import Source Controller.Add Source Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Add Source Async",
+            "description": {
+              "content": "Add source to import job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ":sourceID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sourceID",
+                  "description": "(Required) Source identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataSourceSettings\": {\n    \"Path\": \"<string>\",\n    \"EndOfLine\": \"<string>\",\n    \"Type\": \"<string>\",\n    \"FirstLineContainsColumnNames\": \"<boolean>\",\n    \"StartLine\": \"<integer>\",\n    \"ColumnDelimiter\": \"<char>\",\n    \"QuoteDelimiter\": \"<char>\",\n    \"NewLineDelimiter\": \"<char>\",\n    \"MultiValueDelimiter\": \"<char>\",\n    \"NestedValueDelimiter\": \"<char>\",\n    \"Encoding\": \"<string>\",\n    \"CultureInfo\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d1d01ea4-d25a-4daa-bd07-f7d508418d4f",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceSettings\": {\n    \"Path\": \"C:\\\\tmp_loadfile\\\\loadfile.dat\",\n    \"EndOfLine\": \"Windows\",\n    \"Type\": \"Opticon\",\n    \"FirstLineContainsColumnNames\": true,\n    \"StartLine\": 0,\n    \"ColumnDelimiter\": \"|\",\n    \"QuoteDelimiter\": \"^\",\n    \"NewLineDelimiter\": \"#\",\n    \"MultiValueDelimiter\": \"$\",\n    \"NestedValueDelimiter\": \"&\",\n    \"Encoding\": \"utf-8\",\n    \"CultureInfo\": \"en-US\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe53a04b-1b55-47fa-9f87-4f3b1a87ba2d",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataSourceSettings\": {\n    \"Path\": \"C:\\\\tmp_loadfile\\\\loadfile.dat\",\n    \"EndOfLine\": \"Windows\",\n    \"Type\": \"Opticon\",\n    \"FirstLineContainsColumnNames\": true,\n    \"StartLine\": 0,\n    \"ColumnDelimiter\": \"|\",\n    \"QuoteDelimiter\": \"^\",\n    \"NewLineDelimiter\": \"#\",\n    \"MultiValueDelimiter\": \"$\",\n    \"NestedValueDelimiter\": \"&\",\n    \"Encoding\": \"utf-8\",\n    \"CultureInfo\": \"en-US\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49763550-41bf-49ea-9e90-9b9923d97bd4",
+          "name": "Import.Services.V1.I Import Source Controller.Get Columns Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Get Columns Async",
+            "description": {
+              "content": "Returns list of column names read from configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ":sourceID",
+                "columns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sourceID",
+                  "description": "(Required) Source identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2316a01e-c3c7-4561-837e-00c335daa840",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "columns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": [\n    \"Column1\",\n    \"Column2\"\n  ],\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e6e6d73-9d73-4642-9f6b-7adac7375bbf",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "columns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1131a1b0-2a25-4f19-b8a2-2b535bbea39f",
+          "name": "Import.Services.V1.I Import Source Controller.Get Details Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Get Details Async",
+            "description": {
+              "content": "Returns details for single source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ":sourceID",
+                "details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sourceID",
+                  "description": "(Required) Source identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "caa8ec34-c328-4fcb-bf7c-0c5e75c08e56",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": {\n    \"State\": \"New\",\n    \"DataSourceSettings\": {\n      \"Path\": \"C:\\\\tmp_loadfile\\\\loadfile.dat\",\n      \"EndOfLine\": \"Windows\",\n      \"Type\": \"Opticon\",\n      \"FirstLineContainsColumnNames\": true,\n      \"StartLine\": 0,\n      \"ColumnDelimiter\": \"|\",\n      \"QuoteDelimiter\": \"^\",\n      \"NewLineDelimiter\": \"#\",\n      \"MultiValueDelimiter\": \"$\",\n      \"NestedValueDelimiter\": \"&\",\n      \"Encoding\": \"utf-8\",\n      \"CultureInfo\": \"en-US\"\n    },\n    \"IsParentFolderDeleted\": true,\n    \"JobLevelErrors\": {\n      \"ErrorDetails\": [\n        {\n          \"ColumnIndex\": 1,\n          \"ErrorCode\": \"S.LN.INT.0001\",\n          \"ErrorMessage\": \"Error message.\",\n          \"ErrorMessageTemplate\": \"Template error message.\",\n          \"ErrorProperties\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"ColumnIndex\": 1,\n          \"ErrorCode\": \"S.LN.INT.0001\",\n          \"ErrorMessage\": \"Error message.\",\n          \"ErrorMessageTemplate\": \"Template error message.\",\n          \"ErrorProperties\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"key_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"LineNumber\": 1,\n      \"ObjectIdentifier\": \"string\"\n    }\n  },\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6f0a653e-0009-4b03-829c-3975513ef941",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dda3a83b-698c-4c75-97ef-ae4277117166",
+          "name": "Import.Services.V1.I Import Source Controller.Delete Parent Folder Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Delete Parent Folder Async",
+            "description": {
+              "content": "Deletes the parent folder of the data source's load file if it is located in \\StructuredData\\Import\\.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ":sourceID",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sourceID",
+                  "description": "(Required) Source identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e96b5d43-db2b-433d-b559-65a84925d3f5",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf33bb87-c91c-4d24-b328-a44b2e2827d3",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e7ffe30-8fbb-4351-bd7d-4bec90be61fb",
+          "name": "Import.Services.V1.I Import Source Controller.Get Sources Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Get Sources Async",
+            "description": {
+              "content": "Returns sources for single source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbdbfc32-324c-448a-9691-135cedbd52f2",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": {\n    \"Jobs\": [\n      \"1D2F6FF7-D3BA-49D4-BAF0-808533EE5233\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"TotalCount\": 2\n  },\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "897a7b02-7ca3-4282-9c45-bbbccfc9d5c9",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95e28cba-c0a4-45b5-b4cc-77e768e9fc26",
+          "name": "Import.Services.V1.I Import Source Controller.Get Item Errors Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Get Item Errors Async",
+            "description": {
+              "content": "Get errors for single source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ":sourceID",
+                "itemerrors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<integer>",
+                  "description": "(Required) Index from which import jobs will be read."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "(Required) Number of returned import jobs in workspace."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sourceID",
+                  "description": "(Required) Source identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79d410ef-9e57-4d5d-9b0a-7aa38a66c6e9",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "itemerrors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": {\n    \"DataSourceID\": \"00000000-0000-0000-0000-000000000000\",\n    \"Errors\": [\n      {\n        \"ErrorDetails\": [\n          {\n            \"ColumnIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessageTemplate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorProperties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"ColumnIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessageTemplate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorProperties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"LineNumber\": 1,\n        \"ObjectIdentifier\": \"string\"\n      },\n      {\n        \"ErrorDetails\": [\n          {\n            \"ColumnIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessageTemplate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorProperties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"ColumnIndex\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorMessageTemplate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ErrorProperties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"LineNumber\": 1,\n        \"ObjectIdentifier\": \"string\"\n      }\n    ],\n    \"TotalCount\": 1,\n    \"NumberOfSkippedRecords\": 0,\n    \"NumberOfRecords\": 1,\n    \"HasMoreRecords\": false\n  },\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b4693613-3c6c-4bf0-8260-65747293e5ac",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "itemerrors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77e7f08d-79fb-4a5a-9b80-20007a5db918",
+          "name": "Import.Services.V1.I Import Source Controller.Get Error Loadfile Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Get Error Loadfile Async",
+            "description": {
+              "content": "Get path to Loadfile with error lines. Empty if data source had no errors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ":sourceID",
+                "errorloadfile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sourceID",
+                  "description": "(Required) Source identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "394cfba3-3fcb-4444-8d57-6a4584050fc8",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "errorloadfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": \"//emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat\",\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e66487db-3341-4860-8b31-bfe5b1cdbf0d",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "errorloadfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e52195a9-a740-4880-9458-ea199f1eca13",
+          "name": "Import.Services.V1.I Import Source Controller.Get Progress Async",
+          "request": {
+            "name": "Import.Services.V1.I Import Source Controller.Get Progress Async",
+            "description": {
+              "content": "Get progress for single source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "sources",
+                ":sourceID",
+                "progress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sourceID",
+                  "description": "(Required) Source identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9b01879-ce74-4842-b9f0-2fd0c7c50727",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "progress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": {\n    \"RecordsInDataSources\": 11,\n    \"ImportedRecords\": 10,\n    \"ErrorRecords\": 1\n  },\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "510e8634-7fa9-480f-ac43-13cc83067a43",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "sources",
+                    ":sourceID",
+                    "progress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sourceID",
+                      "description": "(Required) Source identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "915a1dde-726b-4737-911f-ede7673409dd",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Import Source Module API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

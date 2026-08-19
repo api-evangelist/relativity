@@ -1,0 +1,684 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ARM Module v1 API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ARM Module v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/tasks/:taskId/retry",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Task Actions Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/restore-jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-arm/v1/restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-arm/v1/restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/move-jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Move Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/move-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Move Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-arm/v1/move-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Move Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-arm/v1/move-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Move Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobID/status",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] Arm Job Status Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobID/logs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Information Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobExecutionId/statistics",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobExecutionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Information Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobExecutionID/qualityCheckResult",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobExecutionID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Information Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobID/cancel",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Actions Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobID/pause",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Actions Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobID/run",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Actions Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-arm/v1/jobs/:jobID/terminate",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Job Actions Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/health-check",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "[Public] ARM Health Check"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/database-restore-jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Database Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/database-restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Database Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-arm/v1/database-restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Database Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-arm/v1/database-restore-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Database Restore Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/archive-information",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Archive Information Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/archive-information/additional-files-directories/:workspaceId",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Archive Information Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/relativity-arm/v1/archive-jobs",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Archive Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/relativity-arm/v1/archive-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Archive Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "/Relativity.REST/api/relativity-arm/v1/archive-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "[Public] ARM Archive Manager"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - Use V3 API instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "/Relativity.REST/api/relativity-arm/v1/archive-jobs/:jobID",
+            "headers": [
+              {
+                "name": "x-csrf-header",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "jobID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "[Public] ARM Archive Manager"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

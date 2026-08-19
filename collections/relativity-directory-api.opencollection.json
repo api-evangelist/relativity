@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Directory API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Directory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get available containers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v4/Directory/containers"
+          },
+          "docs": "This endpoint retrieves a list of all available containers."
+        },
+        {
+          "info": {
+            "name": "Get directory listing",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v4/Directory/directories",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint retrieves a paginated list of directories based on the specified path and paging parameters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

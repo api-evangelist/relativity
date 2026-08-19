@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService WorkspaceJob API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "WorkspaceJob",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Start workspace creation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/Relativity.REST/api/v1/workspace-job",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Starts asynchronous workspace creation and returns a job ID. Use GET /v1/workspace-job/{jobId} to track the progress of the created job."
+        },
+        {
+          "info": {
+            "name": "Get workspace creation job progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/workspace-job/:jobId",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the current step, total steps, state, and workspace artifact ID for a given job. Poll this endpoint to track the progress of a workspace creation started via POST /v1/workspace-job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

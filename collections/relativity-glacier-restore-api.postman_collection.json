@@ -1,0 +1,420 @@
+{
+  "item": [
+    {
+      "id": "ac525d01-3ec8-46b1-85b8-4422e173e284",
+      "name": "Glacier Restore",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d0ce8789-00ea-493b-8d51-f6083c7f7efd",
+          "name": "Start a new glacier restore",
+          "request": {
+            "name": "Start a new glacier restore",
+            "description": {
+              "content": "Schedules restoring glacier entities from glacier storage to a destination location. The operation returns immediately with a store identifier while the actual data restoration happens asynchronously.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "glaciers",
+                ":glacierId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "glacierId",
+                  "description": "(Required) The unique identifier of the glacier to restore"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destinationLocation\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "331266b8-6e4e-485c-8096-6293b2ad83fc",
+              "name": "Glacier restore created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier to restore"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationLocation\": \"t001/ARM/RestoreLocation1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "URL to check restore job status",
+                  "key": "Location",
+                  "value": "https://EikFjN.ecgcHFFr,Jk+C9UKBLsoiWsScQFiDzWqwqXHJt52YOihiaNqYzpU2PKY+XvO9d+MCt,IbKGeyjZ.de132Iz8lXJ"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"456e7890-f12a-34b5-c678-901234567890\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e894eb3-6e79-48aa-ad96-46681780c9e0",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier to restore"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationLocation\": \"t001/ARM/RestoreLocation1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://kLtLuhsMHf.zvmkAchZ,e2RhSZ1uOJvpBRQBR\",\n  \"title\": \"string\",\n  \"status\": 3943,\n  \"detail\": \"string\",\n  \"instance\": \"https://ToaHc.wmlpVu2JQ7rCG2MOKdJkYmSyq1OI0GXMXDYw\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdce7336-0207-4f10-bee7-3bd9a2cd7854",
+              "name": "Forbidden - insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier to restore"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationLocation\": \"t001/ARM/RestoreLocation1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://kLtLuhsMHf.zvmkAchZ,e2RhSZ1uOJvpBRQBR\",\n  \"title\": \"string\",\n  \"status\": 3943,\n  \"detail\": \"string\",\n  \"instance\": \"https://ToaHc.wmlpVu2JQ7rCG2MOKdJkYmSyq1OI0GXMXDYw\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09ab1be0-9fd2-41a5-98af-16c028759629",
+              "name": "Glacier not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier to restore"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationLocation\": \"t001/ARM/RestoreLocation1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://kLtLuhsMHf.zvmkAchZ,e2RhSZ1uOJvpBRQBR\",\n  \"title\": \"string\",\n  \"status\": 3943,\n  \"detail\": \"string\",\n  \"instance\": \"https://ToaHc.wmlpVu2JQ7rCG2MOKdJkYmSyq1OI0GXMXDYw\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ec26774-c4ec-4d86-8509-d132cf5286d0",
+              "name": "Conflict - validation failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier to restore"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationLocation\": \"t001/ARM/RestoreLocation1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://sJrvAGFAVXoCKc.uiyRXDgh+1eZFnfhtDaW8TRIVh\",\n  \"title\": \"string\",\n  \"status\": 2377,\n  \"detail\": \"string\",\n  \"instance\": \"http://u.jafIIlvQKZn555InZCIj\",\n  \"errors\": {\n    \"key_0\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b68a6657-78dd-44a6-a1b5-253cf023dc05",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "glaciers",
+                    ":glacierId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "glacierId",
+                      "description": "(Required) The unique identifier of the glacier to restore"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationLocation\": \"t001/ARM/RestoreLocation1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"http://kLtLuhsMHf.zvmkAchZ,e2RhSZ1uOJvpBRQBR\",\n  \"title\": \"string\",\n  \"status\": 3943,\n  \"detail\": \"string\",\n  \"instance\": \"https://ToaHc.wmlpVu2JQ7rCG2MOKdJkYmSyq1OI0GXMXDYw\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0af2546c-5f00-4a30-bd1d-2df373c54e05",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Restore API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Jobs API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Glacier Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get glacier job status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/api/jobs/:jobId",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "123e4567-e89b-12d3-a456-426614174000",
+                "type": "path",
+                "description": "The unique identifier of the glacier job"
+              }
+            ]
+          },
+          "docs": "Retrieves the current status of glacier and status of a glacier store or restore job. Provides detailed information about the current status of glacier and operations, also any errors that may have occurred."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

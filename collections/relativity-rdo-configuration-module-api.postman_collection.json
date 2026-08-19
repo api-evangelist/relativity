@@ -1,0 +1,428 @@
+{
+  "item": [
+    {
+      "id": "72c864c7-49af-4ec6-ab3e-e4adf4269a87",
+      "name": "RDO Configuration Module",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0ba093bf-07cf-4348-832b-51f52a3815fc",
+          "name": "Import.Services.V1.IRDO Configuration Controller.Create Async",
+          "request": {
+            "name": "Import.Services.V1.IRDO Configuration Controller.Create Async",
+            "description": {
+              "content": "Create RDO configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "rdos-configurations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"importSettings\": {\n    \"Overlay\": {\n      \"Mode\": \"<string>\",\n      \"KeyField\": \"<string>\",\n      \"MultiFieldOverlayBehaviour\": \"<string>\"\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": \"<integer>\",\n          \"Field\": \"<string>\",\n          \"ContainsID\": \"<boolean>\",\n          \"ContainsFilePath\": \"<boolean>\",\n          \"MayContainTranscript\": \"<boolean>\"\n        },\n        {\n          \"ColumnIndex\": \"<integer>\",\n          \"Field\": \"<string>\",\n          \"ContainsID\": \"<boolean>\",\n          \"ContainsFilePath\": \"<boolean>\",\n          \"MayContainTranscript\": \"<boolean>\"\n        }\n      ]\n    },\n    \"Rdo\": {\n      \"ArtifactTypeID\": \"<integer>\",\n      \"ParentColumnIndex\": \"<integer>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c9c14167-fe9f-4472-ab71-c221be23eeff",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "rdos-configurations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"importSettings\": {\n    \"Overlay\": {\n      \"Mode\": \"Overlay\",\n      \"KeyField\": \"KeyField\",\n      \"MultiFieldOverlayBehaviour\": \"UseRelativityDefaults\"\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        },\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        }\n      ]\n    },\n    \"Rdo\": {\n      \"ArtifactTypeID\": 1003663,\n      \"ParentColumnIndex\": 3\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ad46dbf-1cd1-4e5e-8949-dc605872b7b5",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "rdos-configurations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"importSettings\": {\n    \"Overlay\": {\n      \"Mode\": \"Overlay\",\n      \"KeyField\": \"KeyField\",\n      \"MultiFieldOverlayBehaviour\": \"UseRelativityDefaults\"\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        },\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        }\n      ]\n    },\n    \"Rdo\": {\n      \"ArtifactTypeID\": 1003663,\n      \"ParentColumnIndex\": 3\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bae0dca9-b979-4b48-b147-504dfa818587",
+          "name": "Import.Services.V1.IRDO Configuration Controller.Read Async",
+          "request": {
+            "name": "Import.Services.V1.IRDO Configuration Controller.Read Async",
+            "description": {
+              "content": "Get RDO configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "rdos-configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aac6e4b7-89a3-4c94-a754-c9aab6ea8a7a",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "rdos-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": {\n    \"Overlay\": {\n      \"Mode\": \"Overlay\",\n      \"KeyField\": \"KeyField\",\n      \"MultiFieldOverlayBehaviour\": \"UseRelativityDefaults\"\n    },\n    \"Native\": {\n      \"FilePathColumnIndex\": 0,\n      \"FileNameColumnIndex\": 1\n    },\n    \"Image\": {\n      \"ProductionID\": 1003663,\n      \"PageNumbering\": \"AutoNumberImages\",\n      \"LoadExtractedText\": true\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        },\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        }\n      ]\n    },\n    \"Folder\": {\n      \"RootFolderID\": 1003663,\n      \"FolderPathColumnIndex\": 2\n    }\n  },\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "997b253b-0b01-4b26-8278-b4281a843ad4",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "rdos-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "98b49eba-0fc8-472e-b5a2-b00bd36ae573",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService RDO Configuration Module API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

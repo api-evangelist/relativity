@@ -1,0 +1,428 @@
+{
+  "item": [
+    {
+      "id": "d602adcc-fe9f-4568-b8d2-a5f8cb14ae93",
+      "name": "Document Configuration Module",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a78d96c0-8d1f-472c-bfe6-6797ed3a1f94",
+          "name": "Import.Services.V1.I Document Configuration Controller.Create Async",
+          "request": {
+            "name": "Import.Services.V1.I Document Configuration Controller.Create Async",
+            "description": {
+              "content": "Create Import Job document configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "documents-configurations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"importSettings\": {\n    \"Overlay\": {\n      \"Mode\": \"<string>\",\n      \"KeyField\": \"<string>\",\n      \"MultiFieldOverlayBehaviour\": \"<string>\"\n    },\n    \"Native\": {\n      \"FilePathColumnIndex\": \"<integer>\",\n      \"FileNameColumnIndex\": \"<integer>\"\n    },\n    \"Image\": {\n      \"ProductionID\": \"<integer>\",\n      \"PageNumbering\": \"<string>\",\n      \"LoadExtractedText\": \"<boolean>\"\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": \"<integer>\",\n          \"Field\": \"<string>\",\n          \"ContainsID\": \"<boolean>\",\n          \"ContainsFilePath\": \"<boolean>\",\n          \"MayContainTranscript\": \"<boolean>\"\n        },\n        {\n          \"ColumnIndex\": \"<integer>\",\n          \"Field\": \"<string>\",\n          \"ContainsID\": \"<boolean>\",\n          \"ContainsFilePath\": \"<boolean>\",\n          \"MayContainTranscript\": \"<boolean>\"\n        }\n      ]\n    },\n    \"Folder\": {\n      \"RootFolderID\": \"<integer>\",\n      \"FolderPathColumnIndex\": \"<integer>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "df3276b8-de94-4e21-842f-3fd83a7921a5",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "documents-configurations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"importSettings\": {\n    \"Overlay\": {\n      \"Mode\": \"Overlay\",\n      \"KeyField\": \"KeyField\",\n      \"MultiFieldOverlayBehaviour\": \"UseRelativityDefaults\"\n    },\n    \"Native\": {\n      \"FilePathColumnIndex\": 0,\n      \"FileNameColumnIndex\": 1\n    },\n    \"Image\": {\n      \"ProductionID\": 1003663,\n      \"PageNumbering\": \"AutoNumberImages\",\n      \"LoadExtractedText\": true\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        },\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        }\n      ]\n    },\n    \"Folder\": {\n      \"RootFolderID\": 1003663,\n      \"FolderPathColumnIndex\": 2\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48bd04d3-9b88-46dd-945e-98a610338e15",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "documents-configurations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"importSettings\": {\n    \"Overlay\": {\n      \"Mode\": \"Overlay\",\n      \"KeyField\": \"KeyField\",\n      \"MultiFieldOverlayBehaviour\": \"UseRelativityDefaults\"\n    },\n    \"Native\": {\n      \"FilePathColumnIndex\": 0,\n      \"FileNameColumnIndex\": 1\n    },\n    \"Image\": {\n      \"ProductionID\": 1003663,\n      \"PageNumbering\": \"AutoNumberImages\",\n      \"LoadExtractedText\": true\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        },\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        }\n      ]\n    },\n    \"Folder\": {\n      \"RootFolderID\": 1003663,\n      \"FolderPathColumnIndex\": 2\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d60e8cd-2e98-4149-b15b-3a5135eb6068",
+          "name": "Import.Services.V1.I Document Configuration Controller.Read Async",
+          "request": {
+            "name": "Import.Services.V1.I Document Configuration Controller.Read Async",
+            "description": {
+              "content": "Get Import Job document settings.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-service",
+                "v1",
+                "workspaces",
+                ":workspaceID",
+                "import-jobs",
+                ":importJobID",
+                "documents-configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceID",
+                  "description": "(Required) Workspace identification number."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "importJobID",
+                  "description": "(Required) Import job identification GUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                "key": "X-CSRF-Header",
+                "value": "."
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ea00978-c7fe-4b20-9670-5cef1d136d92",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "documents-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Value\": {\n    \"Overlay\": {\n      \"Mode\": \"Overlay\",\n      \"KeyField\": \"KeyField\",\n      \"MultiFieldOverlayBehaviour\": \"UseRelativityDefaults\"\n    },\n    \"Native\": {\n      \"FilePathColumnIndex\": 0,\n      \"FileNameColumnIndex\": 1\n    },\n    \"Image\": {\n      \"ProductionID\": 1003663,\n      \"PageNumbering\": \"AutoNumberImages\",\n      \"LoadExtractedText\": true\n    },\n    \"Fields\": {\n      \"FieldMappings\": [\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        },\n        {\n          \"ColumnIndex\": 4,\n          \"Field\": \"one\",\n          \"ContainsID\": false,\n          \"ContainsFilePath\": false,\n          \"MayContainTranscript\": false\n        }\n      ]\n    },\n    \"Folder\": {\n      \"RootFolderID\": 1003663,\n      \"FolderPathColumnIndex\": 2\n    }\n  },\n  \"IsSuccess\": true,\n  \"ErrorMessage\": \"\",\n  \"ErrorCode\": \"\",\n  \"ImportJobID\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "582f91e9-8f21-4d65-ba2e-08f60e559252",
+              "name": "Bad Request. Validation exception.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-service",
+                    "v1",
+                    "workspaces",
+                    ":workspaceID",
+                    "import-jobs",
+                    ":importJobID",
+                    "documents-configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceID",
+                      "description": "(Required) Workspace identification number."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "importJobID",
+                      "description": "(Required) Import job identification GUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. ",
+                    "key": "X-CSRF-Header",
+                    "value": "."
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "81570f95-ef1c-40eb-8691-e51ef54cf53e",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Document Configuration Module API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

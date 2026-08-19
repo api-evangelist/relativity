@@ -1,0 +1,730 @@
+{
+  "item": [
+    {
+      "id": "43c35a41-640f-4e9c-a20b-e4a5abbc0acf",
+      "name": "ObjectManagerAPI",
+      "description": {
+        "content": "Use the Relativity Object Manager to discover prerequisite artifact IDs before creating Collect collections. These calls are read-only and use the same Bearer token authentication as the Collect API.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f59b7b5-b56c-4dc9-9172-f70ca89fbc6e",
+          "name": "Query admin-level Collect artifacts (Workspaces, Matters)",
+          "request": {
+            "name": "Query admin-level Collect artifacts (Workspaces, Matters)",
+            "description": {
+              "content": "Use this endpoint to retrieve Workspaces and Matters. Run with the Workspace object type to list all workspaces and their associated Matter Names. Then run with the Matter object type and a name condition to retrieve a specific Matter's ArtifactID. The workspace context -1 is required for these admin-level objects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.Rest",
+                "api",
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                "-1",
+                "object",
+                "queryslim"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"name\": \"<string>\",\n      \"guid\": \"<string>\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ],\n    \"condition\": \"<string>\"\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4de429ad-bd28-44a5-a93f-47817891abd1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    "-1",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"name\": \"Workspace\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      },\n      {\n        \"name\": \"Matter Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 8926,\n  \"Objects\": [\n    {\n      \"ArtifactID\": 319\n    },\n    {\n      \"ArtifactID\": 6467\n    }\n  ],\n  \"CurrentStartIndex\": 7536,\n  \"ResultCount\": 44\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43473b7e-ce7b-44b8-a46a-48f8ce847927",
+              "name": "Unauthorized — Bearer token is missing or expired. Re-run the token call to obtain a new token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    "-1",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"name\": \"Workspace\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      },\n      {\n        \"name\": \"Matter Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3e1e5565-009d-4d27-a1ca-52a6f7c05a88",
+              "name": "Forbidden — The caller does not have sufficient permissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    "-1",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"name\": \"Workspace\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      },\n      {\n        \"name\": \"Matter Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6679054-6fd3-4662-b5e9-bc68cbdc6f65",
+              "name": "Not Found — The object type name is incorrect for this context.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    "-1",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"name\": \"Workspace\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      },\n      {\n        \"name\": \"Matter Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90967d28-b99f-4983-af47-ba41567f7806",
+              "name": "Too Many Requests — Rate limit exceeded. Check the RateLimit-Reset response header for the number of seconds to wait before retrying.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    "-1",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"name\": \"Workspace\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      },\n      {\n        \"name\": \"Matter Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "898e903d-fc22-4f32-8ae5-1bcfe6d7d3c6",
+          "name": "Query workspace-level Collect artifacts (Source Instances, Entities, Processing Profiles)",
+          "request": {
+            "name": "Query workspace-level Collect artifacts (Source Instances, Entities, Processing Profiles)",
+            "description": {
+              "content": "Use this endpoint to retrieve Source Instances, Entities, and Processing Profiles from a specific workspace. The workspaceId is the ArtifactID returned in Call 1. For Processing Profiles, use the ArtifactID of a workspace that has Processing installed. The X-CSRF-Header must be set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Relativity.Rest",
+                "api",
+                "Relativity.ObjectManager",
+                "v1",
+                "workspace",
+                ":workspaceId",
+                "object",
+                "queryslim"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                "key": "x-csrf-header",
+                "value": "-"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"name\": \"<string>\",\n      \"guid\": \"<string>\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ],\n    \"condition\": \"<string>\"\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ac861ca6-ba75-4781-9958-6d651d94e688",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"guid\": \"503A479A-18E4-406B-9537-AA74523B5A0C\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"TotalCount\": 6036,\n  \"Objects\": [\n    {\n      \"ArtifactID\": 5377\n    },\n    {\n      \"ArtifactID\": 6860\n    }\n  ],\n  \"CurrentStartIndex\": 7941,\n  \"ResultCount\": 495\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "25efa810-e210-41f1-aa90-e5765a6d3a5f",
+              "name": "Unauthorized — Bearer token is missing or expired. Re-run the token call to obtain a new token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"guid\": \"503A479A-18E4-406B-9537-AA74523B5A0C\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d15c64aa-e2ee-4cc8-b169-4459254c0147",
+              "name": "Forbidden — The caller does not have access to this workspace.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"guid\": \"503A479A-18E4-406B-9537-AA74523B5A0C\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fb239c76-3d0b-4c0a-9c50-e6f9da6f2777",
+              "name": "Not Found — The object type GUID was not found in this workspace. Confirm Collect is installed and the X-CSRF-Header is set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"guid\": \"503A479A-18E4-406B-9537-AA74523B5A0C\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "286b2770-2be8-4010-a32a-a6acdc47b4b4",
+              "name": "Too Many Requests — Rate limit exceeded. Check the RateLimit-Reset response header for the number of seconds to wait before retrying.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Relativity.Rest",
+                    "api",
+                    "Relativity.ObjectManager",
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    "object",
+                    "queryslim"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) ArtifactID of the workspace to query. Retrieve this from Call 1 (List Workspaces). For Processing Profiles, use the ArtifactID of a workspace with Processing installed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Required CSRF header. Set to any non-empty string.",
+                    "key": "x-csrf-header",
+                    "value": "-"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request\": {\n    \"objectType\": {\n      \"guid\": \"503A479A-18E4-406B-9537-AA74523B5A0C\"\n    },\n    \"fields\": [\n      {\n        \"name\": \"Name\"\n      }\n    ]\n  },\n  \"start\": 1,\n  \"length\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b54c6f90-449e-4f80-a98a-fadb8fc692e9",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ObjectManagerAPI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}

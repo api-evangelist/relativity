@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ColdStorage API",
+    "version": "V1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ColdStorage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets the cold storage status of a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/Relativity.REST/api/v1/workspace/:workspaceId/cold-storage/status",
+            "params": [
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns one of:\nOut – Workspace is not in cold storage.\nIn – Workspace is in cold storage.\nMovingOut – Retrieval has been requested; the workspace will be returned to Active by the retrieval agent after the minimum request age has elapsed.\nFor MovingOut, ActivationJobSubmittedBy and ActivationJobSubmittedOnUtc identify the user who requested retrieval (secured when the caller cannot view the user)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

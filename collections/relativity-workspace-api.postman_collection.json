@@ -1,0 +1,1447 @@
+{
+  "item": [
+    {
+      "id": "cf2875ec-a4f8-450a-9beb-dba78282b8dc",
+      "name": "Workspace",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "58f8b3fb-6944-43f1-a945-d37c4b44806a",
+          "name": "Read workspace",
+          "request": {
+            "name": "Read workspace",
+            "description": {
+              "content": "Returns the workspace with its core properties (client, matter, resource pool, status, SQL server, SQL full-text language, audit fields, etc.). Returns 567 Workspace Temporarily Unavailable when the workspace is still upgrading — clients can safely retry after a short delay. Equivalent to `/v1/workspace/{workspaceId}/false/false` — use the parameterized form to additionally include the `Meta` field or the available `Actions` list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "workspace",
+                ":workspaceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27d84cb1-683f-4e5c-9422-dfcee07875d9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ArtifactID\": 9556,\n  \"Guids\": [\n    \"988741d9-d99f-7c50-0776-f487cd983710\",\n    \"5ded3c02-db3c-725a-ac35-46e72b6c6590\"\n  ],\n  \"Name\": \"string\",\n  \"Client\": {\n    \"Value\": {\n      \"ArtifactID\": 4392,\n      \"Guids\": [\n        \"e4be1085-5659-63c5-6720-691b031cf157\",\n        \"03bbe0fc-38a0-dfc0-0cec-c53d24af0dda\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"ClientNumber\": {\n    \"Value\": \"string\",\n    \"Secured\": false\n  },\n  \"DownloadHandlerUrl\": \"string\",\n  \"EnableDataGrid\": true,\n  \"Matter\": {\n    \"Value\": {\n      \"ArtifactID\": 2324,\n      \"Guids\": [\n        \"d2952e65-29fa-c3a6-fae5-08002d13a3d4\",\n        \"e295b43a-7e2f-2dbf-79e8-628fbee7abb1\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"MatterNumber\": {\n    \"Value\": \"string\",\n    \"Secured\": false\n  },\n  \"ProductionRestrictions\": {\n    \"Value\": {\n      \"ArtifactID\": 8322,\n      \"Guids\": [\n        \"1977ece7-c257-ec85-fa2f-f2db0c566604\",\n        \"351d1d2a-ccfb-4a92-8b51-4592caf80e75\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"ResourcePool\": {\n    \"Value\": {\n      \"ArtifactID\": 1330,\n      \"Guids\": [\n        \"c33d57fd-73cb-3efb-593a-aae4dcc771bb\",\n        \"4dd9990e-5cff-ddfd-7480-87d45b0d97ed\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"DefaultFileRepository\": {\n    \"Value\": {\n      \"ArtifactID\": 1636,\n      \"Guids\": [\n        \"60851cfd-b22e-e608-cc06-452fdf74ec85\",\n        \"e5178322-c0b1-ac95-c52d-798e02504dbf\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"DataGridFileRepository\": {\n    \"Value\": {\n      \"ArtifactID\": 3804,\n      \"Guids\": [\n        \"ba34e53d-0960-d039-3f85-ddee07f46050\",\n        \"8a694c32-ee25-f8ed-5527-3c77586a58d9\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"DefaultCacheLocation\": {\n    \"Value\": {\n      \"ArtifactID\": 4244,\n      \"Guids\": [\n        \"e02a5ce0-7bad-5430-5130-b2be385d1ba3\",\n        \"a1cbbc90-7921-44d4-e5de-98d87d9afb2d\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"SqlServer\": {\n    \"Value\": {\n      \"ArtifactID\": 510,\n      \"Guids\": [\n        \"3b84341b-9c3f-36a5-d62a-33719f701d7c\",\n        \"c1b3c816-7cf4-9ba7-435d-53a138fe91af\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"AzureCredentials\": {\n    \"Value\": {\n      \"ArtifactID\": 1660,\n      \"Guids\": [\n        \"434072ac-6da3-0995-a04c-23e59ef81cbd\",\n        \"8da74301-1e75-25f6-c633-e7dab5a9443b\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"AzureFileSystemCredentials\": {\n    \"Value\": {\n      \"ArtifactID\": 4706,\n      \"Guids\": [\n        \"4c2171cc-d830-dc3d-a412-0a8b0439a977\",\n        \"1a40f6e8-f298-adc2-bce3-a894e4c4186a\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"SqlFullTextLanguage\": {\n    \"ID\": 3133,\n    \"Name\": \"string\"\n  },\n  \"Status\": {\n    \"ArtifactID\": 2970,\n    \"Guids\": [\n      \"198a997b-33da-322c-e0ed-a0f9be76c299\",\n      \"115c5700-8f9c-f475-de79-a03d157c97a5\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"Keywords\": \"string\",\n  \"Notes\": \"string\",\n  \"CreatedOn\": \"1995-04-23T08:35:24.323Z\",\n  \"CreatedBy\": {\n    \"ArtifactID\": 3896,\n    \"Guids\": [\n      \"f6f2ef6c-16af-77e1-9237-3007cab8348d\",\n      \"9da80312-59ee-bc7e-de63-360a1220d95c\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"LastModifiedBy\": {\n    \"ArtifactID\": 7792,\n    \"Guids\": [\n      \"e218700b-350f-7eb6-4e34-b1d1f911b7f3\",\n      \"19055fe9-424a-0304-a208-536c54f40d87\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"LastModifiedOn\": \"1960-04-09T19:15:26.622Z\",\n  \"Meta\": {\n    \"Unsupported\": [\n      \"string\",\n      \"string\"\n    ],\n    \"ReadOnly\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"Actions\": [\n    {\n      \"Name\": \"string\",\n      \"Verb\": \"string\",\n      \"Href\": \"string\",\n      \"IsAvailable\": true,\n      \"Reason\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"Name\": \"string\",\n      \"Verb\": \"string\",\n      \"Href\": \"string\",\n      \"IsAvailable\": true,\n      \"Reason\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"WorkspaceAdminGroup\": {\n    \"Value\": {\n      \"ArtifactID\": 9570,\n      \"Guids\": [\n        \"b96584ad-a82c-adea-4c5f-39fae74d0e97\",\n        \"4a1f64ec-af26-99b1-536e-c72c35c425b6\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"UseCase\": \"string\",\n  \"JobID\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc70aaaa-417e-4125-b0f6-44af6791a3e2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2607,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aea7e2ef-dbe3-462c-86ad-543ae584a3ae",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "effb5eb5-200b-4ae3-b915-0a8acb63e4c3",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b72562a6-efb6-4aa7-8942-0975f0a1c122",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3a1b0d5-5275-4b1d-a769-6b7663862833",
+              "name": "Workspace Temporarily Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "code": 567,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2fc0540f-8543-4a6b-9358-77befe067496",
+          "name": "Delete workspace",
+          "request": {
+            "name": "Delete workspace",
+            "description": {
+              "content": "Soft-deletes the workspace by moving it to the Recycle Bin. The workspace is hidden from normal views but can be recovered via `POST /v1/recycle-bin/workspace/{workspaceId}/recover` or permanently removed via `DELETE /v1/recycle-bin/workspace/{workspaceId}`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "workspace",
+                ":workspaceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b7329ff-c2c7-4723-87c5-a32a55e6539d",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1229c0e3-2d5a-4589-99f0-36d9dcec7816",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd868fbb-4959-4679-a087-d9fc4c1cef2f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2607,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "612168a3-f455-4ded-b15e-12e29bc953eb",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bf04ab82-7260-4e76-a250-1c7906ac8222",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6af2cdb1-28b0-47ff-b343-765b42962381",
+          "name": "Update workspace",
+          "request": {
+            "name": "Update workspace",
+            "description": {
+              "content": "Updates the workspace's properties. Include `lastModifiedOn` (timestamp of the last known version) to enforce optimistic concurrency — if the workspace has been modified since, the request fails with 409 Conflict and no changes are applied. On success, returns the updated workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "workspace",
+                ":workspaceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1178434f-67d9-46ba-bd9e-72a9bcb1167b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ArtifactID\": 7450,\n  \"Guids\": [\n    \"fe07abff-b1cc-7d95-ebab-adec8f138982\",\n    \"227f2e61-dc8a-7500-436c-8458c3d22572\"\n  ],\n  \"Name\": \"string\",\n  \"Client\": {\n    \"Value\": {\n      \"ArtifactID\": 5886,\n      \"Guids\": [\n        \"39128ea4-696f-3a60-4ebd-85268875b3fa\",\n        \"29d5010a-85b1-ddd6-50e2-097ee9458dde\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"ClientNumber\": {\n    \"Value\": \"string\",\n    \"Secured\": false\n  },\n  \"DownloadHandlerUrl\": \"string\",\n  \"EnableDataGrid\": false,\n  \"Matter\": {\n    \"Value\": {\n      \"ArtifactID\": 9012,\n      \"Guids\": [\n        \"d78a841c-9af2-9322-7b95-a2b8ecd042fe\",\n        \"279a1b48-1a2d-01e8-4bbb-ff439b8e13c8\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"MatterNumber\": {\n    \"Value\": \"string\",\n    \"Secured\": false\n  },\n  \"ProductionRestrictions\": {\n    \"Value\": {\n      \"ArtifactID\": 2874,\n      \"Guids\": [\n        \"cb4a21a4-de4c-b78c-2fa0-06c73b7e4f40\",\n        \"f339ed7e-01cb-1735-472f-c1e704e5ec72\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"ResourcePool\": {\n    \"Value\": {\n      \"ArtifactID\": 563,\n      \"Guids\": [\n        \"16e93c85-c71a-b496-d4f1-308c85bc080d\",\n        \"451743c3-1665-6c8c-9cca-a92cc3604d1b\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"DefaultFileRepository\": {\n    \"Value\": {\n      \"ArtifactID\": 3545,\n      \"Guids\": [\n        \"cbb3bde5-b2a6-26c6-f180-a9fbe854fbad\",\n        \"9e1ec9b6-15da-7350-dbc4-bc5b6d7ad436\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"DataGridFileRepository\": {\n    \"Value\": {\n      \"ArtifactID\": 6901,\n      \"Guids\": [\n        \"d0162e46-e67f-31a7-19da-48ab62371fca\",\n        \"de1343ca-4369-8128-833c-f8ea46f1b1ff\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"DefaultCacheLocation\": {\n    \"Value\": {\n      \"ArtifactID\": 1632,\n      \"Guids\": [\n        \"80c97fd6-93d6-1c12-72a0-aca4cc063c7b\",\n        \"9c830298-c3bf-e198-2b96-72b24f37ea11\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"SqlServer\": {\n    \"Value\": {\n      \"ArtifactID\": 1912,\n      \"Guids\": [\n        \"2ba92599-b746-b65c-898b-1474b5e3c4c1\",\n        \"1de3144a-bb68-def2-277e-e2b11f63f8bf\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"AzureCredentials\": {\n    \"Value\": {\n      \"ArtifactID\": 399,\n      \"Guids\": [\n        \"ade39fdb-4a81-096b-0cd6-e26799b2cdaa\",\n        \"bb454f81-0b77-235f-3dfa-30fedda7f50b\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"AzureFileSystemCredentials\": {\n    \"Value\": {\n      \"ArtifactID\": 7792,\n      \"Guids\": [\n        \"74e19e46-1625-a9b7-4480-f73e35dc40d9\",\n        \"01ebcfba-b6aa-0db9-5a49-b46c7825ae46\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"SqlFullTextLanguage\": {\n    \"ID\": 4509,\n    \"Name\": \"string\"\n  },\n  \"Status\": {\n    \"ArtifactID\": 3155,\n    \"Guids\": [\n      \"21a61958-2018-ce34-5131-8f435aeb0a8a\",\n      \"d09670e6-e9df-281d-658d-f37d134ac9d0\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"Keywords\": \"string\",\n  \"Notes\": \"string\",\n  \"CreatedOn\": \"2024-06-22T05:45:58.029Z\",\n  \"CreatedBy\": {\n    \"ArtifactID\": 2039,\n    \"Guids\": [\n      \"6bd7f0ec-b901-76a9-4083-6fddbc49fe7f\",\n      \"c787d744-3ff0-b437-d84f-c8c85b8d9dfb\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"LastModifiedBy\": {\n    \"ArtifactID\": 6151,\n    \"Guids\": [\n      \"bc30e265-85f7-94e2-df9f-3638078359d0\",\n      \"40dcd901-4611-1655-e6fa-f17f4ec7e908\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"LastModifiedOn\": \"1979-01-12T11:29:26.102Z\",\n  \"Meta\": {\n    \"Unsupported\": [\n      \"string\",\n      \"string\"\n    ],\n    \"ReadOnly\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"Actions\": [\n    {\n      \"Name\": \"string\",\n      \"Verb\": \"string\",\n      \"Href\": \"string\",\n      \"IsAvailable\": true,\n      \"Reason\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"Name\": \"string\",\n      \"Verb\": \"string\",\n      \"Href\": \"string\",\n      \"IsAvailable\": true,\n      \"Reason\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"WorkspaceAdminGroup\": {\n    \"Value\": {\n      \"ArtifactID\": 8507,\n      \"Guids\": [\n        \"72dcd881-3c8b-3c64-0fa8-2616753cd527\",\n        \"bb1b948a-f6b8-9729-21e3-ec996a22a110\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"UseCase\": \"string\",\n  \"JobID\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e72cafbd-6edf-4cd4-9857-c2eac07385ca",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6b85022-096f-444f-9506-7742277cfaa6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2607,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14f34008-cc9d-47e0-9192-0ae883961f3e",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d3e94ab5-1efd-4480-a5c9-ec30396e2778",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bab994e7-05c5-40bb-87fc-be0b465e2e79",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "019c697c-54b7-4268-8f4d-257a7fcd48fa",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"WorkspaceRequest\": {\n    \"DownloadHandlerUrl\": \"<string>\",\n    \"EnableDataGrid\": \"<boolean>\",\n    \"Matter\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"Name\": \"<string>\",\n    \"ProductionRestrictions\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"ResourcePool\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DataGridFileRepository\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"DefaultCacheLocation\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlServer\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"AzureFileSystemCredentials\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"SqlFullTextLanguage\": \"<integer>\",\n    \"Status\": {\n      \"ArtifactID\": \"<integer>\",\n      \"Guids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ]\n    },\n    \"Template\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"WorkspaceAdminGroup\": {\n      \"Value\": {\n        \"ArtifactID\": \"<integer>\",\n        \"Guids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ]\n      },\n      \"Secured\": \"<boolean>\"\n    },\n    \"UseCase\": \"<string>\",\n    \"Keywords\": \"<string>\",\n    \"Notes\": \"<string>\",\n    \"UserId\": \"<integer>\"\n  },\n  \"LastModifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8effbe2c-0093-4089-8b6e-4dfd1bd5c010",
+          "name": "Read workspace with optional metadata and actions",
+          "request": {
+            "name": "Read workspace with optional metadata and actions",
+            "description": {
+              "content": "Returns the workspace with its core properties. `includeMetadata` and `includeActions` are required path segments (not query parameters), e.g. `/v1/workspace/{workspaceId}/true/false`. When `includeMetadata` is `true`, the response additionally contains the `Meta` field (list of unsupported and read-only properties on the workspace). When `includeActions` is `true`, the response contains the `Actions` list (REST operations the caller is permitted to perform on the workspace). Returns 567 Workspace Temporarily Unavailable when the workspace is still upgrading — clients can safely retry after a short delay.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "workspace",
+                ":workspaceId",
+                ":includeMetadata",
+                ":includeActions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "workspaceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<boolean>",
+                  "key": "includeMetadata",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<boolean>",
+                  "key": "includeActions",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "144aedf4-2700-411e-aabf-98246730eb12",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    ":includeMetadata",
+                    ":includeActions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeMetadata",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeActions",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ArtifactID\": 7450,\n  \"Guids\": [\n    \"fe07abff-b1cc-7d95-ebab-adec8f138982\",\n    \"227f2e61-dc8a-7500-436c-8458c3d22572\"\n  ],\n  \"Name\": \"string\",\n  \"Client\": {\n    \"Value\": {\n      \"ArtifactID\": 5886,\n      \"Guids\": [\n        \"39128ea4-696f-3a60-4ebd-85268875b3fa\",\n        \"29d5010a-85b1-ddd6-50e2-097ee9458dde\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"ClientNumber\": {\n    \"Value\": \"string\",\n    \"Secured\": false\n  },\n  \"DownloadHandlerUrl\": \"string\",\n  \"EnableDataGrid\": false,\n  \"Matter\": {\n    \"Value\": {\n      \"ArtifactID\": 9012,\n      \"Guids\": [\n        \"d78a841c-9af2-9322-7b95-a2b8ecd042fe\",\n        \"279a1b48-1a2d-01e8-4bbb-ff439b8e13c8\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"MatterNumber\": {\n    \"Value\": \"string\",\n    \"Secured\": false\n  },\n  \"ProductionRestrictions\": {\n    \"Value\": {\n      \"ArtifactID\": 2874,\n      \"Guids\": [\n        \"cb4a21a4-de4c-b78c-2fa0-06c73b7e4f40\",\n        \"f339ed7e-01cb-1735-472f-c1e704e5ec72\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"ResourcePool\": {\n    \"Value\": {\n      \"ArtifactID\": 563,\n      \"Guids\": [\n        \"16e93c85-c71a-b496-d4f1-308c85bc080d\",\n        \"451743c3-1665-6c8c-9cca-a92cc3604d1b\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"DefaultFileRepository\": {\n    \"Value\": {\n      \"ArtifactID\": 3545,\n      \"Guids\": [\n        \"cbb3bde5-b2a6-26c6-f180-a9fbe854fbad\",\n        \"9e1ec9b6-15da-7350-dbc4-bc5b6d7ad436\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"DataGridFileRepository\": {\n    \"Value\": {\n      \"ArtifactID\": 6901,\n      \"Guids\": [\n        \"d0162e46-e67f-31a7-19da-48ab62371fca\",\n        \"de1343ca-4369-8128-833c-f8ea46f1b1ff\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"DefaultCacheLocation\": {\n    \"Value\": {\n      \"ArtifactID\": 1632,\n      \"Guids\": [\n        \"80c97fd6-93d6-1c12-72a0-aca4cc063c7b\",\n        \"9c830298-c3bf-e198-2b96-72b24f37ea11\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"SqlServer\": {\n    \"Value\": {\n      \"ArtifactID\": 1912,\n      \"Guids\": [\n        \"2ba92599-b746-b65c-898b-1474b5e3c4c1\",\n        \"1de3144a-bb68-def2-277e-e2b11f63f8bf\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"AzureCredentials\": {\n    \"Value\": {\n      \"ArtifactID\": 399,\n      \"Guids\": [\n        \"ade39fdb-4a81-096b-0cd6-e26799b2cdaa\",\n        \"bb454f81-0b77-235f-3dfa-30fedda7f50b\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"AzureFileSystemCredentials\": {\n    \"Value\": {\n      \"ArtifactID\": 7792,\n      \"Guids\": [\n        \"74e19e46-1625-a9b7-4480-f73e35dc40d9\",\n        \"01ebcfba-b6aa-0db9-5a49-b46c7825ae46\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": true\n  },\n  \"SqlFullTextLanguage\": {\n    \"ID\": 4509,\n    \"Name\": \"string\"\n  },\n  \"Status\": {\n    \"ArtifactID\": 3155,\n    \"Guids\": [\n      \"21a61958-2018-ce34-5131-8f435aeb0a8a\",\n      \"d09670e6-e9df-281d-658d-f37d134ac9d0\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"Keywords\": \"string\",\n  \"Notes\": \"string\",\n  \"CreatedOn\": \"2024-06-22T05:45:58.029Z\",\n  \"CreatedBy\": {\n    \"ArtifactID\": 2039,\n    \"Guids\": [\n      \"6bd7f0ec-b901-76a9-4083-6fddbc49fe7f\",\n      \"c787d744-3ff0-b437-d84f-c8c85b8d9dfb\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"LastModifiedBy\": {\n    \"ArtifactID\": 6151,\n    \"Guids\": [\n      \"bc30e265-85f7-94e2-df9f-3638078359d0\",\n      \"40dcd901-4611-1655-e6fa-f17f4ec7e908\"\n    ],\n    \"Name\": \"string\"\n  },\n  \"LastModifiedOn\": \"1979-01-12T11:29:26.102Z\",\n  \"Meta\": {\n    \"Unsupported\": [\n      \"string\",\n      \"string\"\n    ],\n    \"ReadOnly\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"Actions\": [\n    {\n      \"Name\": \"string\",\n      \"Verb\": \"string\",\n      \"Href\": \"string\",\n      \"IsAvailable\": true,\n      \"Reason\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"Name\": \"string\",\n      \"Verb\": \"string\",\n      \"Href\": \"string\",\n      \"IsAvailable\": true,\n      \"Reason\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"WorkspaceAdminGroup\": {\n    \"Value\": {\n      \"ArtifactID\": 8507,\n      \"Guids\": [\n        \"72dcd881-3c8b-3c64-0fa8-2616753cd527\",\n        \"bb1b948a-f6b8-9729-21e3-ec996a22a110\"\n      ],\n      \"Name\": \"string\"\n    },\n    \"Secured\": false\n  },\n  \"UseCase\": \"string\",\n  \"JobID\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ec9547c5-e977-4cca-bc2e-50351055361b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    ":includeMetadata",
+                    ":includeActions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeMetadata",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeActions",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2607,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "748169b2-325b-4e30-80a3-f57c5ab21394",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    ":includeMetadata",
+                    ":includeActions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeMetadata",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeActions",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b4322443-0b5d-4afa-a022-c062e692823c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    ":includeMetadata",
+                    ":includeActions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeMetadata",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeActions",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ffe242f-04d8-4569-a6eb-5d2c2f2f6bbf",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    ":includeMetadata",
+                    ":includeActions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeMetadata",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeActions",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ErrorType\": \"string\",\n  \"Identifier\": \"string\",\n  \"Message\": \"string\",\n  \"Errors\": [\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    },\n    {\n      \"PropertyName\": \"string\",\n      \"ErrorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff0adf09-332c-4751-9110-77790f258287",
+              "name": "Workspace Temporarily Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "workspace",
+                    ":workspaceId",
+                    ":includeMetadata",
+                    ":includeActions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "workspaceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeMetadata",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<boolean>",
+                      "key": "includeActions",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "code": 567,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/Relativity.REST/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4cc4c708-15c4-440c-a544-bbe2c994700b",
+    "name": "Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Workspace API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Analytics.Conceptual.Service.Interfaces.Public",
+      "type": "text/plain"
+    }
+  }
+}
