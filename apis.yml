@@ -292,6 +292,8 @@ apis:
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
+  - Cold Storage
+  tags_raw:
   - ColdStorage
   properties:
   - type: OpenAPI
@@ -762,6 +764,8 @@ apis:
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
+  - Job Actions
+  tags_raw:
   - JobActions
   properties:
   - type: OpenAPI
@@ -1399,6 +1403,8 @@ apis:
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
+  - Restore Jobs
+  tags_raw:
   - RestoreJobs
   properties:
   - type: OpenAPI
