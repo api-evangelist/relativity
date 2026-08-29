@@ -7,6 +7,18 @@ description: Relativity is an eDiscovery and legal review platform offering Rela
   user and permission management, and AI-powered review features. Relativity exposes
   80+ integration APIs organized by business domain, supporting OAuth2, basic, and
   cookie-based authentication.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -1653,6 +1665,9 @@ apis:
   - type: Documentation
     url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
 common:
+- type: CapabilityMap
+  url: capabilities/relativity-capability-edges.yml
+  name: Relativity Business Capability Map
 - type: AgenticAccess
   url: agentic-access/relativity-agentic-access.yml
 - type: TrustCenter
