@@ -304,7 +304,7 @@ apis:
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
-  - ColdStorage
+  - Cold Storage
   tags_raw:
   - ColdStorage
   properties:
@@ -776,7 +776,7 @@ apis:
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
-  - JobActions
+  - Job Actions
   tags_raw:
   - JobActions
   properties:
@@ -1415,7 +1415,7 @@ apis:
   humanURL: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API.htm
   baseURL: https://{host}/Relativity.REST/api/relativity-object-model/v1
   tags:
-  - RestoreJobs
+  - Restore Jobs
   tags_raw:
   - RestoreJobs
   properties:
