@@ -1397,6 +1397,8 @@ apis:
   - type: Documentation
     url: https://help.relativity.com/RelativityOne/Content/Management_Console/Cost_Explorer.htm
 common:
+- type: Website
+  url: https://relativity.com
 - type: CapabilityMap
   url: capabilities/relativity-capability-edges.yml
   name: Relativity Business Capability Map
