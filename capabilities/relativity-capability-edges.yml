@@ -1,0 +1,58 @@
+slug: relativity
+provider: Relativity
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Identity Module v1
+  spec_file: relativity-identity-module-v1-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: '''Read all OAuth2 Clients'', ''Create a new Federated Instance'', schemas ''SetWorkspaceGroupPermissionsAsync'',
+    ''MassAddUsersToGroupsAsync'', ''GetPermissionSelectedForGroupAsync'''
+  reason: Operations manage OAuth2 clients, federated identity instances, users, groups and permissions
+    — squarely Identity & Access Management (federation, user/group provisioning, permissioning).
+- tag: Permissions Access Control
+  spec_file: relativity-permissions-access-control-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: List role assignments on a node.; Batch assign and/or revoke roles on a node.; List role assignments
+    on the instance (tenant) node.; schema ExternalBulkRoleAssignmentRequest
+  reason: Operations assign and revoke roles on instance/tenant nodes — authorisation and access-rights
+    administration, which is Identity & Access Management. Could arguably be tenant-level access administration,
+    but the surface is plainly role-based access control.
+- tag: Legal Hold Module
+  spec_file: relativity-legal-hold-module-api-openapi.yml
+  capability_id: BC-150.20
+  capability_id_l1: BC-150
+  capability_name: Litigation & Dispute Management
+  confidence: 0.78
+  evidence: '''/preservation/{projectArtifactId}/getCustodians'', ''kCura.LegalHold.Services.ICustodianRequestManager.ActiveCustodianSummary'''
+  reason: Custodian preservation and legal-hold notice management is the litigation-hold/eDiscovery function
+    supporting disputes; Litigation & Dispute Management is the closest fit, though several endpoints
+    here are auth/health plumbing which lowers confidence.
+- tag: Relativity Infrastructure Module v1
+  spec_file: relativity-relativity-infrastructure-module-v1-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.72
+  evidence: IWorkerServerManager.StartWorkerAsync / StopWorkerAsync; POST /relativity-infrastructure/v1/workspaces/-1/worker-manager-servers;
+    schemas SqlPrimaryServerRequest, AgentServerRequest, ResourcePoolRequest
+  reason: Operations register, read, update and start/stop servers (worker, worker-manager, agent, SQL,
+    analytics, web API) and manage resource pools — compute/server infrastructure administration. Reads
+    clearly as IT Infrastructure Management; slight residual chance it belongs under platform operations
+    capacity management.
