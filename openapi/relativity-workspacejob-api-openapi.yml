@@ -1,11 +1,14 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService WorkspaceJob API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
-servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+  title: Workspace Service Workspace Job API
+  description: 'The Workspace Service API provides a REST service for managing workspace creation and maintenance.
+
+
+    The URL prefix for workspace services endpoints: https://\/api/workspace-service'
+  version: '1'
+  x-relativity-api-visibility: public
+security:
+- Bearer: []
 tags:
 - name: WorkspaceJob
 paths:
@@ -89,6 +92,8 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
+      operationId: postV1WorkspaceJob
+      x-operation-id-source: derived
   /v1/workspace-job/{jobId}:
     get:
       tags:
@@ -141,6 +146,8 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal Server Error
+      operationId: getV1WorkspaceJobByJobId
+      x-operation-id-source: derived
 components:
   schemas:
     WorkspaceCreateJobResponse:
@@ -150,44 +157,28 @@ components:
           type: string
           format: uuid
         WorkspaceArtifactId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         TotalNumberOfSteps:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         CurrentStep:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         JobState:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Attempt:
           type: integer
           format: int32
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
     WorkspaceCreateRequestDto:
       required:
       - Name
@@ -213,22 +204,51 @@ components:
         Keywords:
           maxLength: 50
           minLength: 0
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Notes:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         DownloadHandlerUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         UseCase:
           minLength: 1
           type: string
         WorkspaceAdminGroupArtifactId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
       additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     WorkspaceCreateEnqueueResponse:
       required:
       - JobId
@@ -238,3 +258,9 @@ components:
           type: string
           format: uuid
       additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example: "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT

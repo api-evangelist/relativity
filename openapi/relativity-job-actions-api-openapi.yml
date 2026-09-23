@@ -1,19 +1,19 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService JobActions API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity.ARM.Services.Interfaces Job Actions API
+  description: Relativity.ARM.Services.Interfaces
+  version: V3
 servers:
-- url: /Relativity.REST/api
+- url: /Relativity.REST/api/relativity-arm
   description: The URL prefix for all Kepler services
 tags:
-- name: JobActions
+- name: Job Actions
 paths:
   /v3/jobs/{jobID}/cancel:
     post:
       tags:
-      - JobActions
-      summary: Asynchronously cancels a running job.
+      - Job Actions
+      summary: Asynchronously cancels a running job
       parameters:
       - name: jobID
         in: path
@@ -48,11 +48,13 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal server error
+      operationId: postV3JobsByJobIDCancel
+      x-operation-id-source: derived
   /v3/jobs/{jobID}/run:
     post:
       tags:
-      - JobActions
-      summary: Asynchronously runs a job.
+      - Job Actions
+      summary: Asynchronously runs a job
       parameters:
       - name: jobID
         in: path
@@ -87,40 +89,47 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal server error
+      operationId: postV3JobsByJobIDRun
+      x-operation-id-source: derived
 components:
   schemas:
-    RunJobResponse:
-      type: object
-      additionalProperties: false
-      description: Response for running an ARM Job
     RunJobRequest:
       type: object
       additionalProperties: false
       description: Request for running an ARM Job
-    CancelJobResponse:
-      type: object
-      additionalProperties: false
-      description: Response for cancelling an ARM Job
     ProblemDetails:
       type: object
       properties:
         type:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         title:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         status:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         detail:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         instance:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: {}
+    CancelJobRequest:
+      type: object
+      additionalProperties: false
+      description: Request for cancelling an ARM Job
+    CancelJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for cancelling an ARM Job
     RunJobRequestWrapper:
       type: object
       properties:
@@ -128,14 +137,14 @@ components:
           $ref: '#/components/schemas/RunJobRequest'
       additionalProperties: false
       description: Request for running an ARM Job
+    RunJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for running an ARM Job
     CancelJobRequestWrapper:
       type: object
       properties:
         request:
           $ref: '#/components/schemas/CancelJobRequest'
-      additionalProperties: false
-      description: Request for cancelling an ARM Job
-    CancelJobRequest:
-      type: object
       additionalProperties: false
       description: Request for cancelling an ARM Job

@@ -1,8 +1,8 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Health Check Module API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity.Import.Services Health Check Module API
+  description: Relativity.Import.Services
+  version: '1.0'
 servers:
 - url: /Relativity.REST/api
   description: The URL prefix for all Kepler services
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Health Check Module
-      summary: ''
+      summary: Import services V1 health check controller health check async
       description: Check if Import Service is available.
       operationId: Import.Services.V1.HealthCheckController.HealthCheckAsync
       parameters:
@@ -27,6 +27,7 @@ paths:
                 $ref: '#/components/schemas/HealthCheckResult'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
 components:
   parameters:
     X-CSRF-Header:

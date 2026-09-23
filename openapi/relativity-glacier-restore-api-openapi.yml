@@ -1,11 +1,14 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Restore API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Glacier Restore API
+  description: The Glacier API provides a REST service that allows you to manage glacier storage operations. With this API you can create new glacier store to archive and monitor status. You can schedule restore operations and view reports. The API follows REST standards and provides asynchronous processing for data operations.
+  version: v1.0
+  x-relativity-api-visibility: public
 servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+- url: /glass
+  description: Glacier Advanced Access
+security:
+- oauth2: []
 tags:
 - name: Glacier Restore
 paths:
@@ -102,6 +105,18 @@ components:
           format: uuid
           description: The unique identifier of the glacier to restore
           example: 456e7890-f12a-34b5-c678-901234567890
+    ValidationProblemDetails:
+      allOf:
+      - $ref: '#/components/schemas/ProblemDetails'
+      - type: object
+        properties:
+          errors:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+            description: Field-specific validation errors
     StartGlacierRestoreRequest:
       type: object
       required:
@@ -132,15 +147,9 @@ components:
           type: string
           format: uri
           description: A URI reference identifying the specific occurrence
-    ValidationProblemDetails:
-      allOf:
-      - $ref: '#/components/schemas/ProblemDetails'
-      - type: object
-        properties:
-          errors:
-            type: object
-            additionalProperties:
-              type: array
-              items:
-                type: string
-            description: Field-specific validation errors
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.relone.preview.com/oauth/token

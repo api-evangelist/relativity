@@ -1,11 +1,11 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService CollectAPI API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
-servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+  title: collect-api Collect API
+  version: '1'
+security:
+- Bearer:
+  - readAccess
+  - writeAccess
 tags:
 - name: CollectAPI
 paths:
@@ -78,6 +78,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ActionResult'
+      summary: Replace collect services collect api by workspace id collection
+      x-summary-source: derived
+      operationId: putCollectServicesV1CollectAPIByWorkspaceIdCollection
+      x-operation-id-source: derived
   /collect-services/v1/CollectAPI/{workspaceId}/collection/{collectionArtifactId}/start-target-generation:
     post:
       tags:
@@ -145,6 +149,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ActionResult'
+      summary: Create collect services collect api by workspace id collection by collection…
+      x-summary-source: derived
+      operationId: postCollectServicesV1CollectAPIByWorkspaceIdCollectionByCollectionArtifactIdStartTargetGeneration
+      x-operation-id-source: derived
   /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}/target-generation:
     get:
       tags:
@@ -199,6 +207,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ActionResult'
+      summary: Get collect services collect api by workspace artifact id collection by…
+      x-summary-source: derived
+      operationId: getCollectServicesV1CollectAPIByWorkspaceArtifactIdCollectionByCollectionArtifactIdTargetGeneration
+      x-operation-id-source: derived
   /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}/start-collection:
     patch:
       tags:
@@ -284,6 +296,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ActionResult'
+      summary: Update collect services collect api by workspace artifact id collection by…
+      x-summary-source: derived
+      operationId: patchCollectServicesV1CollectAPIByWorkspaceArtifactIdCollectionByCollectionArtifactIdStartCollection
+      x-operation-id-source: derived
   /collect-services/v1/CollectAPI/{workspaceArtifactId}/collection/{collectionArtifactId}:
     get:
       tags:
@@ -362,6 +378,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ActionResult'
+      summary: Get collect services collect api by workspace artifact id collection by…
+      x-summary-source: derived
+      operationId: getCollectServicesV1CollectAPIByWorkspaceArtifactIdCollectionByCollectionArtifactId
+      x-operation-id-source: derived
   /collect-services/v1/CollectAPI/{workspaceId}/collection/{collectionArtifactId}/stop:
     patch:
       tags:
@@ -437,8 +457,171 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Update collect services collect api by workspace id collection by collection…
+      x-summary-source: derived
+      operationId: patchCollectServicesV1CollectAPIByWorkspaceIdCollectionByCollectionArtifactIdStop
+      x-operation-id-source: derived
 components:
   schemas:
+    CollectionJobModel:
+      type: object
+      properties:
+        ArtifactId:
+          type: integer
+          format: int32
+        Name:
+          type:
+          - string
+          - 'null'
+        Status:
+          type:
+          - string
+          - 'null'
+        Targets:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CollectionJobTargetModel'
+      additionalProperties: false
+    CreateCollectionAPIModel:
+      type: object
+      properties:
+        CollectionName:
+          type:
+          - string
+          - 'null'
+        MatterArtifactId:
+          type: integer
+          format: int32
+        ProcessingSourceLocation:
+          type:
+          - string
+          - 'null'
+        JobNumber:
+          type:
+          - string
+          - 'null'
+        ZipCollectedFiles:
+          type: boolean
+        ZipPassword:
+          type:
+          - string
+          - 'null'
+        AutoProcessing:
+          type: boolean
+        AutoProcessingWorkspaceId:
+          type: integer
+          format: int32
+        AutoProcessingProcessingProfileId:
+          type: integer
+          format: int32
+        SelectedDocumentNumberingPrefixOption:
+          type:
+          - string
+          - 'null'
+        NotificationEmail:
+          type:
+          - string
+          - 'null'
+        SendEmailNotification:
+          type: boolean
+        Description:
+          type:
+          - string
+          - 'null'
+        SourceInstances:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SourceInstanceModel'
+        Entities:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        NoncustodialInstances:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    StringListActionResult:
+      type: object
+      properties:
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    StartJobResultActionResult:
+      type: object
+      properties:
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
+          $ref: '#/components/schemas/StartJobResult'
+      additionalProperties: false
+    StartJobResult:
+      type: object
+      properties:
+        Success:
+          type: boolean
+        Message:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SourceInstanceModel:
+      type: object
+      properties:
+        ArtifactId:
+          type: integer
+          format: int32
+        Criteria:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SelectedCollectionCriteriaModel'
+      additionalProperties: false
+    ActionResult:
+      type: object
+      additionalProperties: false
     CollectionJobTargetModel:
       type: object
       properties:
@@ -446,11 +629,13 @@ components:
           type: integer
           format: int32
         Target:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         SourceInstance:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Items:
           type: integer
           format: int32
@@ -461,172 +646,13 @@ components:
           type: integer
           format: int64
         StatusMessage:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         State:
-          type: string
-          nullable: true
-      additionalProperties: false
-    StartJobResult:
-      type: object
-      properties:
-        Success:
-          type: boolean
-        Message:
-          type: string
-          nullable: true
-      additionalProperties: false
-    StringListActionResult:
-      type: object
-      properties:
-        Result:
-          $ref: '#/components/schemas/ActionResult'
-        Value:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
-    CollectionJobModelActionResult:
-      type: object
-      properties:
-        Result:
-          $ref: '#/components/schemas/ActionResult'
-        Value:
-          $ref: '#/components/schemas/CollectionJobModel'
-      additionalProperties: false
-    SourceInstanceModel:
-      type: object
-      properties:
-        ArtifactId:
-          type: integer
-          format: int32
-        Criteria:
-          type: array
-          items:
-            $ref: '#/components/schemas/SelectedCollectionCriteriaModel'
-          nullable: true
-      additionalProperties: false
-    SelectedCollectionCriteriaModel:
-      type: object
-      properties:
-        DataType:
-          type: string
-          nullable: true
-        FieldName:
-          type: string
-          nullable: true
-        Operator:
-          type: string
-          nullable: true
-        Value:
-          type: string
-          nullable: true
-        CriteriaDataType:
-          $ref: '#/components/schemas/CriteriaDataType'
-      additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    CreateCollectionAPIModel:
-      type: object
-      properties:
-        CollectionName:
-          type: string
-          nullable: true
-        MatterArtifactId:
-          type: integer
-          format: int32
-        ProcessingSourceLocation:
-          type: string
-          nullable: true
-        JobNumber:
-          type: string
-          nullable: true
-        ZipCollectedFiles:
-          type: boolean
-        ZipPassword:
-          type: string
-          nullable: true
-        AutoProcessing:
-          type: boolean
-        AutoProcessingWorkspaceId:
-          type: integer
-          format: int32
-        AutoProcessingProcessingProfileId:
-          type: integer
-          format: int32
-        SelectedDocumentNumberingPrefixOption:
-          type: string
-          nullable: true
-        NotificationEmail:
-          type: string
-          nullable: true
-        SendEmailNotification:
-          type: boolean
-        Description:
-          type: string
-          nullable: true
-        SourceInstances:
-          type: array
-          items:
-            $ref: '#/components/schemas/SourceInstanceModel'
-          nullable: true
-        Entities:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-        NoncustodialInstances:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-      additionalProperties: false
-    StartJobResultActionResult:
-      type: object
-      properties:
-        Result:
-          $ref: '#/components/schemas/ActionResult'
-        Value:
-          $ref: '#/components/schemas/StartJobResult'
-      additionalProperties: false
-    CollectionJobModel:
-      type: object
-      properties:
-        ArtifactId:
-          type: integer
-          format: int32
-        Name:
-          type: string
-          nullable: true
-        Status:
-          type: string
-          nullable: true
-        Targets:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollectionJobTargetModel'
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     CriteriaDataType:
       enum:
@@ -647,6 +673,39 @@ components:
       - Decimal
       type: integer
       format: int32
-    ActionResult:
+    SelectedCollectionCriteriaModel:
       type: object
+      properties:
+        DataType:
+          type:
+          - string
+          - 'null'
+        FieldName:
+          type:
+          - string
+          - 'null'
+        Operator:
+          type:
+          - string
+          - 'null'
+        Value:
+          type:
+          - string
+          - 'null'
+        CriteriaDataType:
+          $ref: '#/components/schemas/CriteriaDataType'
       additionalProperties: false
+    CollectionJobModelActionResult:
+      type: object
+      properties:
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
+          $ref: '#/components/schemas/CollectionJobModel'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Relativity Identity Service (RIS) bearer token to authenticate: https://platform.relativity.com/RelativityOne/Content/REST_API/REST_API_authentication.htm#Bearertokenauthentication'
+      scheme: bearer
+      bearerFormat: JWT

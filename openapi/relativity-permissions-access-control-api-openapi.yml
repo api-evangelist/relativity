@@ -1,20 +1,26 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Permissions Access Control API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Permissions-access-control Permissions Access Control API
+  description: External API for managing role assignments in the Relativity Permissions service.
+  version: v1.0
 servers:
 - url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+  description: The URL prefix
+security:
+- OAuth: []
 tags:
 - name: Permissions Access Control
-  description: "External public API for managing role assignments.\r\nRole keys must use the r1_ prefix (e.g. r1_staging_viewer).\r\nEnd user token is required"
+  description: 'External public API for managing role assignments.
+
+    Role keys must use the r1_ prefix (e.g. r1_staging_viewer).
+
+    End user token is required'
 paths:
   /access-control/public/v1/role-assignments/{nodeType}/{nodeKey}:
     get:
       tags:
       - Permissions Access Control
-      summary: List role assignments on a node.
+      summary: List role assignments on a node
       parameters:
       - name: nodeType
         in: path
@@ -55,10 +61,12 @@ paths:
           description: Forbidden
         '500':
           description: Internal Server Error
+      operationId: getAccessControlPublicV1RoleAssignmentsByNodeTypeByNodeKey
+      x-operation-id-source: derived
     post:
       tags:
       - Permissions Access Control
-      summary: Batch assign and/or revoke roles on a node.
+      summary: Batch assign and/or revoke roles on a node
       parameters:
       - name: nodeType
         in: path
@@ -95,11 +103,13 @@ paths:
           description: Forbidden
         '500':
           description: Internal Server Error
+      operationId: postAccessControlPublicV1RoleAssignmentsByNodeTypeByNodeKey
+      x-operation-id-source: derived
   /access-control/public/v1/role-assignments/instance:
     get:
       tags:
       - Permissions Access Control
-      summary: List role assignments on the instance (tenant) node.
+      summary: List role assignments on the instance (tenant) node
       responses:
         '200':
           description: OK
@@ -127,10 +137,12 @@ paths:
           description: Forbidden
         '500':
           description: Internal Server Error
+      operationId: getAccessControlPublicV1RoleAssignmentsInstance
+      x-operation-id-source: derived
     post:
       tags:
       - Permissions Access Control
-      summary: Batch assign and/or revoke roles on the instance (tenant) node.
+      summary: Batch assign and/or revoke roles on the instance (tenant) node
       requestBody:
         description: The role assignment/revocation request.
         content:
@@ -154,6 +166,8 @@ paths:
           description: Forbidden
         '500':
           description: Internal Server Error
+      operationId: postAccessControlPublicV1RoleAssignmentsInstance
+      x-operation-id-source: derived
 components:
   schemas:
     ExternalRoleAssignmentPair:
@@ -172,6 +186,27 @@ components:
           description: The group identifier.
       additionalProperties: false
       description: A role and group pair used in external bulk operations.
+    ExternalBulkRoleAssignmentRequest:
+      type: object
+      properties:
+        assign:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRoleAssignmentPair'
+          description: Role assignments to apply. Role keys must use the r1_ prefix.
+        revoke:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRoleAssignmentPair'
+          description: Role assignments to revoke. Role keys must use the r1_ prefix.
+      additionalProperties: false
+      description: 'Request to batch assign and/or revoke roles via the external API.
+
+        Role keys must use the r1_ prefix (e.g. r1_staging_viewer).'
     RoleAssignment:
       required:
       - groupId
@@ -188,20 +223,9 @@ components:
           description: The group identifier.
       additionalProperties: false
       description: A single role assignment entry in the external API.
-    ExternalBulkRoleAssignmentRequest:
-      type: object
-      properties:
-        assign:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExternalRoleAssignmentPair'
-          description: Role assignments to apply. Role keys must use the r1_ prefix.
-          nullable: true
-        revoke:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExternalRoleAssignmentPair'
-          description: Role assignments to revoke. Role keys must use the r1_ prefix.
-          nullable: true
-      additionalProperties: false
-      description: "Request to batch assign and/or revoke roles via the external API.\r\nRole keys must use the r1_ prefix (e.g. r1_staging_viewer)."
+  securitySchemes:
+    OAuth:
+      type: http
+      description: Standard Authorization header using the OAuth scheme. Paste in token without Bearer prefix.
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,11 +1,16 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillingInsights API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity Billing Insights API
+  x-relativity-api-visibility: public
+  version: '1.0'
+  description: 'Operations tagged BillingInsights across 2 of this provider''s published API definitions: relativity-billing-v1-openapi.yml, relativity-billing-v2-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+- url: https://billing-insights.api.relativity.one/billing-drilldown-api
+  description: Production
+- url: https://services.vaus.relativityone.us/billing-drilldown-api/
+  description: Government
+security:
+- {}
 tags:
 - name: BillingInsights
 paths:
@@ -154,6 +159,13 @@ paths:
                   selector:
                     instanceID: 891b6552-6db5-459b-a983-1ed94225da52
                     workspaceArtifactID: 2005
+      operationId: getApiV1BillingInsightsHierarchyLookupByLevel
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v1/billing-insights/month-details:
     post:
       tags:
@@ -691,6 +703,13 @@ paths:
                 pagingResponse:
                   totalRecordCount: 2
                 status: OK
+      operationId: postApiV1BillingInsightsMonthDetails
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v1/billing-insights/users-details:
     post:
       tags:
@@ -1016,6 +1035,13 @@ paths:
                   collectionTimeUtc: '2021-05-29T12:15:00'
                 pagingResponse:
                   totalRecordCount: 2
+      operationId: postApiV1BillingInsightsUsersDetails
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-insights/hierarchy-lookup/{level}:
     get:
       tags:
@@ -1161,6 +1187,13 @@ paths:
                   selector:
                     instanceID: 891b6552-6db5-459b-a983-1ed94225da52
                     workspaceArtifactID: 2005
+      operationId: getApiV2BillingInsightsHierarchyLookupByLevel
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-insights/month-details:
     post:
       tags:
@@ -1704,6 +1737,13 @@ paths:
                 pagingResponse:
                   totalRecordCount: 2
                 status: OK
+      operationId: postApiV2BillingInsightsMonthDetails
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-insights/users-details:
     post:
       tags:
@@ -2029,46 +2069,24 @@ paths:
                   collectionTimeUtc: '2021-05-29T12:15:00'
                 pagingResponse:
                   totalRecordCount: 2
+      operationId: postApiV2BillingInsightsUsersDetails
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
 components:
   schemas:
-    FieldFilter:
-      type: object
-      properties:
-        fieldName:
-          type: string
-          description: Name of a field to which filtering will be applied
-          nullable: true
-        operator:
-          type: string
-          description: "Specifies a filtering operator\r\nList of possible values:\r\n- \"=\"\r\n- \"<\"\r\n- \">\"\r\n- \"<=\"\r\n- \">=\""
-          nullable: true
-        value:
-          type: string
-          description: Specifies a filter value
-          nullable: true
-      additionalProperties: false
-      description: Field filter information
-    Contract:
-      type: object
-      properties:
-        id:
-          type: string
-          description: ID of the contract
-          nullable: true
-        name:
-          type: string
-          description: Name of the contract
-          nullable: true
-      additionalProperties: false
-      description: Contract information
     GetMonthDetailsResponse:
       type: object
       properties:
         results:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/GetMonthDetailsResponseItem'
-          nullable: true
         pagingResponse:
           $ref: '#/components/schemas/PagingResponse'
         status:
@@ -2082,56 +2100,6 @@ components:
           - MissingMetricsGuid
           type: string
       additionalProperties: false
-    HierarchyItemSelector:
-      type: object
-      properties:
-        contractID:
-          type: string
-          nullable: true
-        instanceID:
-          type: string
-          nullable: true
-        clientArtifactID:
-          type: integer
-          format: int32
-          nullable: true
-        matterArtifactID:
-          type: integer
-          format: int32
-          nullable: true
-        workspaceArtifactID:
-          type: integer
-          format: int32
-          nullable: true
-      additionalProperties: false
-      description: "Specifies item to select.\r\ninstanceID_ must be provided, additionally depending on the chosen level must be provided _clientArtifactID_, _matterArtifactID_ or _workspaceArtifactID"
-    SingleUsageMetric:
-      type: object
-      properties:
-        collectionTimeUtc:
-          type: string
-          description: Date when the value was collected
-          format: date-time
-          nullable: true
-        metadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetricMetadata'
-          nullable: true
-        comment:
-          type: string
-          description: Additional information related to the current metric
-          nullable: true
-        subMetrics:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/SingleSubMetric'
-          nullable: true
-        reportedValue:
-          type: number
-          description: Value reported for the metric (current usage)
-          format: double
-      additionalProperties: false
     Money:
       type: object
       properties:
@@ -2140,264 +2108,137 @@ components:
           description: Monetary value
           format: double
         currency:
-          type: string
+          type:
+          - string
+          - 'null'
           description: ISO 4217 currency code
-          nullable: true
       additionalProperties: false
-    Workspace:
-      type: object
-      properties:
-        id:
-          type: string
-          description: ID of the workspace (GUID)
-          nullable: true
-        artifactID:
-          type: integer
-          description: Artifact ID of the workspace
-          format: int32
-        name:
-          type: string
-          description: Name of the workspace
-          nullable: true
-        activityStatus:
-          type: string
-          description: "Workspace status. Could be one of the following:\r\n- Active\r\n- Inactive\r\n- Archived\r\n- Deleted"
-          nullable: true
-        billableStatus:
-          type: string
-          description: "Specifies billable status of the workspace\r\nList of possible values:\r\n- Billable\r\n- Non-billable\r\n- Billable Plaintiff"
-          nullable: true
-        billableComment:
-          type: string
-          description: Additional information about billable status, populated when _billableStatus_ is _Non-billable_
-          nullable: true
-        anonymization:
-          type: string
-          description: "Flag that identifies if workspace data is hashed.\r\nIf the value is _Hashed_ then value of a _Name_ field is replaced with _ArtifactID_ value.\r\nList of possible values:\r\n- Hashed\r\n- None"
-          nullable: true
-        billableType:
-          type: string
-          description: "Specifies billable type of the workspace\r\nList of possible values:\r\n- Repository\r\n- Review\r\n- Cold Storage"
-          nullable: true
-        anonymizedFields:
-          type: object
-          additionalProperties:
-            type: string
-            nullable: true
-          description: Object that holds what type of workspace data is hashed.
-          nullable: true
-        projectType:
-          type: string
-          description: Object that holds what type of use case the workspace has.
-          nullable: true
-      additionalProperties: false
-      description: Workspace information
     GetUsersDetailsResponse:
       type: object
       properties:
         results:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/GetUsersDetailsResponseItem'
-          nullable: true
         pagingResponse:
           $ref: '#/components/schemas/PagingResponse'
       additionalProperties: false
-    Client:
+    ClientMatterData:
       type: object
       properties:
-        artifactID:
+        clientArtifactId:
           type: integer
-          description: Artifact ID of the client
           format: int32
-        name:
-          type: string
-          description: Name of the client
-          nullable: true
-        status:
-          type: string
-          description: Status of the client
-          nullable: true
-        anonymization:
-          type: string
-          description: "Flag that identifies if client data is hashed.\r\nIf the value is _Hashed_ then value of a _Name_ field is replaced with hash\r\nList of possible values:\r\n- Hashed\r\n- None"
-          nullable: true
-        anonymizedFields:
-          type: object
-          additionalProperties:
-            type: string
-            nullable: true
-          description: Dictionary that holds what type of client data is hashed.
-          nullable: true
-        number:
-          type: string
-          description: Number of the client
-          nullable: true
-      additionalProperties: false
-      description: Client information.
-    Matter:
-      type: object
-      properties:
-        artifactID:
+        matterArtifactId:
           type: integer
-          description: Artifact ID of the matter
           format: int32
-        name:
-          type: string
-          description: Name of the matter
-          nullable: true
-        anonymization:
-          type: string
-          description: "Flag that identifies if matter data is hashed.\r\nIf the value is _Hashed_ then value of a _Name_ field is replaced with hash\r\nList of possible values:\r\n- Hashed\r\n- None"
-          nullable: true
-        anonymizedFields:
-          type: object
-          additionalProperties:
-            type: string
-            nullable: true
-          description: Object that holds what type of matter data is hashed.
-          nullable: true
-        number:
-          type: string
-          description: Number of the matter
-          nullable: true
       additionalProperties: false
-      description: Matter information
-    Instance:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Instance ID (GUID)
-          nullable: true
-        name:
-          type: string
-          description: Instance name
-          nullable: true
-        pricingVisibility:
-          enum:
-          - Visible
-          - HiddenResoldInstance
-          - HiddenFixedContract
-          type: string
-          description: "Instance pricing visibility:\r\n- Visible : pricing details are visible\r\n- HiddenResoldInstance : pricing details are hidden due to resold of the instance\r\n- HiddenFixedContract : pricing details are hidden because of fixed contracts with zero rates"
-      additionalProperties: false
-      description: Instance information
-    GetMonthDetailsRequest:
-      type: object
-      properties:
-        dateKey:
-          type: string
-          description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
-          nullable: true
-          example: 202209
-        metricKeys:
-          type: array
-          items:
-            type: string
-          description: "An array of metric keys for which the data should be returned. If no metric keys are provided, no metrics will be returned.\r\nList of possible values:\r\n- Relativity_Storage_Review\r\n- Relativity_Storage_Repository\r\n- Relativity_Storage_ColdStorage\r\n- Relativity_Users_RelOne\r\n- Relativity_Users_Server\r\n- Relativity_Users_NonBillable\r\n- Relativity_Storage_Staging\r\n- Relativity_Translate\r\n- Relativity_PI_Detect\r\n- Relativity_DB_Response\r\n- Relativity_Contracts_Document\r\n- aiR_for_Review\r\n- aiR_for_Privilege\r\n- aiR_for_CaseStrategy.AppInstallation\r\n- aiR_for_CaseStrategy.WorkspaceOneTimeFee\r\n- aiR_for_CaseStrategy.Document\r\n- FOIA_Request\r\n- FOIA_DisclosureCenter_Storage\r\n- FOIA_ReadingRoom_Storage"
-          nullable: true
-        subMetricsSummaryKeys:
-          type: array
-          items:
-            type: string
-          description: "An array of submetric keys for subMetricsSummary fields for which the data should be returned.\r\nIf no submetric keys are provided, no submetrics will be returned under subMetricsSummary fields. Keep in mind that all submetrics under main metric keys (Review, Repo etc.) will be returned despite this parameter.\r\nList of possible values:\r\n- Relativity_Storage_TextOnlyDocuments\r\n- Relativity_Storage_Linked"
-          nullable: true
-        selectorLevel:
-          enum:
-          - Workspace
-          - Matter
-          - Client
-          - Instance
-          - Contract
-          type: string
-          description: "Specifies the hierarchy level for which _itemSelectors_ should apply. \r\nThe _itemSelectors_ contract level is not supported."
-        itemSelectors:
-          type: array
-          items:
-            $ref: '#/components/schemas/HierarchyItemSelector'
-          description: "Allows to filter the results.\r\nAn item selector uniquely identifies element in hierarchy. The following list specifies what property / properties should be set for each level:\r\n- Contract: _contractId_ [string]\r\n- Instance: _instanceId_[string]\r\n- Client: _instanceId_[string], _clientArtifactID_[int]\r\n- Matter: _instanceId_[string], _matterArtifactID_[int]\r\n- Workspace: _instanceId_[string], _workspaceArtifactID_[int]"
-          nullable: true
-        level:
-          enum:
-          - Workspace
-          - Matter
-          - Client
-          - Instance
-          - Contract
-          type: string
-          description: Specifies the hierarchy level for which the data should be returned
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldFilter'
-          description: Allows to specify filters that should be applied to the query.
-          nullable: true
-        order:
-          $ref: '#/components/schemas/FieldOrder'
-        pagingRequest:
-          $ref: '#/components/schemas/PagingRequest'
-        shouldUnhashData:
-          type: boolean
-          description: Specifies if the response should include unhashed data. Default value is false.
-      additionalProperties: false
-      description: Request body used in month-details API
-    PagingResponse:
-      type: object
-      properties:
-        totalRecordCount:
-          type: integer
-          description: If _PagingRequest.includeCount_ was set to true, total number of records will be returned
-          format: int32
-          nullable: true
-        continuationToken:
-          type: string
-          description: If the field is present it means that not the whole result set was included in the response and there are additional results to be retrieved
-          nullable: true
-      additionalProperties: false
-      description: "Paging information about the response. \r\nIf the caller wants to obtain the rest of the result set there should be subsequent request made with same parameters and _continuationToken_ included in the _PagingRequest.continuationToken_"
-    PagingRequest:
-      type: object
-      properties:
-        top:
-          type: integer
-          description: Return top N records
-          format: int32
-          nullable: true
-        skip:
-          type: integer
-          description: Exclude first N records
-          format: int32
-          nullable: true
-        maxItemCount:
-          type: integer
-          description: "Specifies maximum number of records that should be returned from the API\r\n- If there are more records to fetch, the _continuationToken_ is returned in the _pagingResponse_"
-          format: int32
-          nullable: true
-        includeCount:
-          type: boolean
-          description: Specifies that _totalRecordCount_ should be included in the _pagingResponse_
-          nullable: true
-        continuationToken:
-          type: string
-          nullable: true
-      additionalProperties: false
-      description: "Specifies paging options\r\n- _top_ and _skip_ values need to be either empty or populated. Specifying just a single value is considered a bad request.\r\n- if _top_ and _skip_ are specified and _maxItemCount_ is not specified, _continuationToken_ will not be returned.The API guarantees that all the records were populated, and there is no need to fetch additional records.\r\n- In all other cases, _continuationToken_ might be returned, indicating there are more records to fetch."
-    FieldOrder:
+    FieldFilter:
       type: object
       properties:
         fieldName:
-          type: string
-          description: "Specifies the field name which should be used for sorting the results.\r\nThe field matches the structure of the response payload, with the exception that all the property names should be upper case instead of lower case."
-          nullable: true
-        direction:
-          enum:
-          - Asc
-          - Desc
-          type: string
-          description: Specifies the sort direction
+          type:
+          - string
+          - 'null'
+          description: Name of a field to which filtering will be applied
+        operator:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies a filtering operator
+
+            List of possible values:
+
+            - "="
+
+            - "<"
+
+            - ">"
+
+            - "<="
+
+            - ">="'
+        value:
+          type:
+          - string
+          - 'null'
+          description: Specifies a filter value
       additionalProperties: false
-      description: Allows to specify order that should be applied to the query result
+      description: Field filter information
+    SinglePricedMetric:
+      type: object
+      properties:
+        collectionTimeUtc:
+          type:
+          - string
+          - 'null'
+          description: Date when the value was collected
+          format: date-time
+        metadata:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricMetadata'
+        comment:
+          type:
+          - string
+          - 'null'
+          description: Additional information related to the current metric
+        subMetrics:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/SingleSubMetric'
+        billableValue:
+          type: number
+          description: Value reported for the metric (billable usage)
+          format: double
+        amount:
+          $ref: '#/components/schemas/Money'
+        missingCostReason:
+          type:
+          - string
+          - 'null'
+          description: Reason for the missing cost if applicable.
+          example: "\n            Cost breakdown not available at this level of the hierarchy\n            "
+      additionalProperties: false
+    GetHierarchyLookupResponseItem:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the item
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if the name is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with hash
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        anonymizedFields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          description: Collection that holds what type of data is hashed.
+        selector:
+          $ref: '#/components/schemas/HierarchyItemSelector'
+      additionalProperties: false
     GetMonthDetailsResponseItem:
       type: object
       properties:
@@ -2412,91 +2253,627 @@ components:
         workspace:
           $ref: '#/components/schemas/Workspace'
         usageMetrics:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
             $ref: '#/components/schemas/SingleUsageMetric'
-          description: "Usage metric represents current usage of the data or in case if previous month is requested it will represent state from the last day of monthly report.\r\nEach property in this object is one of the _metricKeys_ specified in the request. If the usage metric does not exist for given item, it will be missing in the object."
-          nullable: true
+          description: 'Usage metric represents current usage of the data or in case if previous month is requested it will represent state from the last day of monthly report.
+
+            Each property in this object is one of the _metricKeys_ specified in the request. If the usage metric does not exist for given item, it will be missing in the object.'
         pricedMetrics:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
             $ref: '#/components/schemas/SinglePricedMetric'
-          description: "Priced metric represents billable data on the date when peak of the usage occurred. \r\nEach property in this object is one of the _metricKeys_ specified in the request. If the priced metric does not exist for given item, it will be missing in the object."
-          nullable: true
+          description: "Priced metric represents billable data on the date when peak of the usage occurred. \nEach property in this object is one of the _metricKeys_ specified in the request. If the priced metric does not exist for given item, it will be missing in the object."
         pricedMetricsSubMetricsSummary:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
             $ref: '#/components/schemas/SingleSubMetric'
-          description: "Submetrics related to the priced metric.\r\nEach property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for priced item, it will have zero Value in the object."
-          nullable: true
+          description: 'Submetrics related to the priced metric.
+
+            Each property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for priced item, it will have zero Value in the object.'
         usageMetricsSubMetricsSummary:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
             $ref: '#/components/schemas/SingleSubMetric'
-          description: "Submetrics related to the usage metric.\r\nEach property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for usage item, it will have zero Value in the object."
-          nullable: true
+          description: 'Submetrics related to the usage metric.
+
+            Each property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for usage item, it will have zero Value in the object.'
       additionalProperties: false
+    HierarchyItemSelector:
+      type: object
+      properties:
+        contractID:
+          type:
+          - string
+          - 'null'
+        instanceID:
+          type:
+          - string
+          - 'null'
+        clientArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        matterArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        workspaceArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+      description: 'Specifies item to select.
+
+        instanceID_ must be provided, additionally depending on the chosen level must be provided _clientArtifactID_, _matterArtifactID_ or _workspaceArtifactID'
+    Contract:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          description: ID of the contract
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the contract
+      additionalProperties: false
+      description: Contract information
+    PagingRequest:
+      type: object
+      properties:
+        top:
+          type:
+          - integer
+          - 'null'
+          description: Return top N records
+          format: int32
+        skip:
+          type:
+          - integer
+          - 'null'
+          description: Exclude first N records
+          format: int32
+        maxItemCount:
+          type:
+          - integer
+          - 'null'
+          description: 'Specifies maximum number of records that should be returned from the API
+
+            - If there are more records to fetch, the _continuationToken_ is returned in the _pagingResponse_'
+          format: int32
+        includeCount:
+          type:
+          - boolean
+          - 'null'
+          description: Specifies that _totalRecordCount_ should be included in the _pagingResponse_
+        continuationToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      description: 'Specifies paging options
+
+        - _top_ and _skip_ values need to be either empty or populated. Specifying just a single value is considered a bad request.
+
+        - if _top_ and _skip_ are specified and _maxItemCount_ is not specified, _continuationToken_ will not be returned.The API guarantees that all the records were populated, and there is no need to fetch additional records.
+
+        - In all other cases, _continuationToken_ might be returned, indicating there are more records to fetch.'
+    Workspace:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          description: ID of the workspace (GUID)
+        artifactID:
+          type: integer
+          description: Artifact ID of the workspace
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the workspace
+        activityStatus:
+          type:
+          - string
+          - 'null'
+          description: 'Workspace status. Could be one of the following:
+
+            - Active
+
+            - Inactive
+
+            - Archived
+
+            - Deleted'
+        billableStatus:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies billable status of the workspace
+
+            List of possible values:
+
+            - Billable
+
+            - Non-billable
+
+            - Billable Plaintiff'
+        billableComment:
+          type:
+          - string
+          - 'null'
+          description: Additional information about billable status, populated when _billableStatus_ is _Non-billable_
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if workspace data is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with _ArtifactID_ value.
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        billableType:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies billable type of the workspace
+
+            List of possible values:
+
+            - Repository
+
+            - Review
+
+            - Cold Storage'
+        anonymizedFields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          description: Object that holds what type of workspace data is hashed.
+        projectType:
+          type:
+          - string
+          - 'null'
+          description: Object that holds what type of use case the workspace has.
+      additionalProperties: false
+      description: Workspace information
+    Instance:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          description: Instance ID (GUID)
+        name:
+          type:
+          - string
+          - 'null'
+          description: Instance name
+        pricingVisibility:
+          enum:
+          - Visible
+          - HiddenResoldInstance
+          - HiddenFixedContract
+          type: string
+          description: 'Instance pricing visibility:
+
+            - Visible : pricing details are visible
+
+            - HiddenResoldInstance : pricing details are hidden due to resold of the instance
+
+            - HiddenFixedContract : pricing details are hidden because of fixed contracts with zero rates'
+      additionalProperties: false
+      description: Instance information
+    GetMonthDetailsRequest:
+      type: object
+      properties:
+        dateKey:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
+          example: 202209
+        metricKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: 'An array of metric keys for which the data should be returned. If no metric keys are provided, no metrics will be returned.
+
+            List of possible values:
+
+            - Relativity_Storage_Review
+
+            - Relativity_Storage_Repository
+
+            - Relativity_Storage_ColdStorage
+
+            - Relativity_Users_RelOne
+
+            - Relativity_Users_Server
+
+            - Relativity_Users_NonBillable
+
+            - Relativity_Storage_Staging
+
+            - Relativity_Translate
+
+            - Relativity_PI_Detect
+
+            - Relativity_DB_Response
+
+            - Relativity_Contracts_Document
+
+            - aiR_for_Review
+
+            - aiR_for_Privilege
+
+            - aiR_for_CaseStrategy.AppInstallation
+
+            - aiR_for_CaseStrategy.WorkspaceOneTimeFee
+
+            - aiR_for_CaseStrategy.Document
+
+            - FOIA_Request
+
+            - FOIA_DisclosureCenter_Storage
+
+            - FOIA_ReadingRoom_Storage'
+        subMetricsSummaryKeys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: 'An array of submetric keys for subMetricsSummary fields for which the data should be returned.
+
+            If no submetric keys are provided, no submetrics will be returned under subMetricsSummary fields. Keep in mind that all submetrics under main metric keys (Review, Repo etc.) will be returned despite this parameter.
+
+            List of possible values:
+
+            - Relativity_Storage_TextOnlyDocuments
+
+            - Relativity_Storage_Linked'
+        selectorLevel:
+          enum:
+          - Workspace
+          - Matter
+          - Client
+          - Instance
+          - Contract
+          type: string
+          description: "Specifies the hierarchy level for which _itemSelectors_ should apply. \nThe _itemSelectors_ contract level is not supported."
+        itemSelectors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/HierarchyItemSelector'
+          description: 'Allows to filter the results.
+
+            An item selector uniquely identifies element in hierarchy. The following list specifies what property / properties should be set for each level:
+
+            - Contract: _contractId_ [string]
+
+            - Instance: _instanceId_[string]
+
+            - Client: _instanceId_[string], _clientArtifactID_[int]
+
+            - Matter: _instanceId_[string], _matterArtifactID_[int]
+
+            - Workspace: _instanceId_[string], _workspaceArtifactID_[int]'
+        level:
+          enum:
+          - Workspace
+          - Matter
+          - Client
+          - Instance
+          - Contract
+          type: string
+          description: Specifies the hierarchy level for which the data should be returned
+        filters:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FieldFilter'
+          description: Allows to specify filters that should be applied to the query.
+        order:
+          $ref: '#/components/schemas/FieldOrder'
+        pagingRequest:
+          $ref: '#/components/schemas/PagingRequest'
+        shouldUnhashData:
+          type: boolean
+          description: Specifies if the response should include unhashed data. Default value is false.
+      additionalProperties: false
+      description: Request body used in month-details API
     GetUsersDetailsResponseItem:
       type: object
       properties:
         email:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Email address of the User. Uniquely identifies the User.
-          nullable: true
         userRole:
-          type: string
-          description: " Role of the User in Relativity. Possible values:\r\n- _Regular_\r\n- _Administrator_"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: ' Role of the User in Relativity. Possible values:
+
+            - _Regular_
+
+            - _Administrator_'
         billableStatus:
-          type: string
-          description: "Specifies Billable status of the User. Possible values:\r\n- _Billable RelativityOne_\r\n- _Billable Server_\r\n- _Non-billable_"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Specifies Billable status of the User. Possible values:
+
+            - _Billable RelativityOne_
+
+            - _Billable Server_
+
+            - _Non-billable_'
         lastLoginUtc:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Specifies the last login date for the given datekey.
           format: date-time
-          nullable: true
         userActivity:
-          type: string
-          description: "Specifies if the User was active (has logged in) in the month identified by datekey. Possible values:\r\n- _Active_\r\n- _Inactive_"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Specifies if the User was active (has logged in) in the month identified by datekey. Possible values:
+
+            - _Active_
+
+            - _Inactive_'
         userType:
-          type: string
-          description: "Specifies the type of the User. Possible values:\r\n- _Internal_\r\n- _External_"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Specifies the type of the User. Possible values:
+
+            - _Internal_
+
+            - _External_'
         anonymization:
-          type: string
-          description: "If the value is _Hashed_ then value of a _Email_ field is replaced with hash\r\nList of possible values:\r\n- Hashed\r\n- None"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'If the value is _Hashed_ then value of a _Email_ field is replaced with hash
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
         anonymizedFields:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
           description: Collection that holds what type of user data is hashed.
-          nullable: true
         comment:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Provides additional information about Billing data for the User
-          nullable: true
         instanceSpecificData:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
             $ref: '#/components/schemas/UserInstanceSpecificData'
           description: Describes instance-specific data of the User. Keys in the dictionary are lowercase Instance ids.
-          nullable: true
         workspaces:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
             $ref: '#/components/schemas/ClientMatterData'
           description: Collection that holds artifactIds of workspaces to which user has access and information about its' client and matter artifactId.
-          nullable: true
         collectionTimeUtc:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Date when the value was collected
           format: date-time
-          nullable: true
       additionalProperties: false
+    MetricMetadata:
+      type: object
+      properties:
+        metadataKey:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        data:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    SingleUsageMetric:
+      type: object
+      properties:
+        collectionTimeUtc:
+          type:
+          - string
+          - 'null'
+          description: Date when the value was collected
+          format: date-time
+        metadata:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricMetadata'
+        comment:
+          type:
+          - string
+          - 'null'
+          description: Additional information related to the current metric
+        subMetrics:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/SingleSubMetric'
+        reportedValue:
+          type: number
+          description: Value reported for the metric (current usage)
+          format: double
+      additionalProperties: false
+    PagingResponse:
+      type: object
+      properties:
+        totalRecordCount:
+          type:
+          - integer
+          - 'null'
+          description: If _PagingRequest.includeCount_ was set to true, total number of records will be returned
+          format: int32
+        continuationToken:
+          type:
+          - string
+          - 'null'
+          description: If the field is present it means that not the whole result set was included in the response and there are additional results to be retrieved
+      additionalProperties: false
+      description: "Paging information about the response. \nIf the caller wants to obtain the rest of the result set there should be subsequent request made with same parameters and _continuationToken_ included in the _PagingRequest.continuationToken_"
+    Client:
+      type: object
+      properties:
+        artifactID:
+          type: integer
+          description: Artifact ID of the client
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the client
+        status:
+          type:
+          - string
+          - 'null'
+          description: Status of the client
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if client data is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with hash
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        anonymizedFields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          description: Dictionary that holds what type of client data is hashed.
+        number:
+          type:
+          - string
+          - 'null'
+          description: Number of the client
+      additionalProperties: false
+      description: Client information.
+    UserInstanceSpecificData:
+      type: object
+      properties:
+        instance:
+          $ref: '#/components/schemas/Instance'
+        artifactID:
+          type: integer
+          description: ArtifactID of the User in particular instance.
+          format: int32
+        userRole:
+          type:
+          - string
+          - 'null'
+          description: Role of the User in this particular instance.
+        lastLoginUtc:
+          type:
+          - string
+          - 'null'
+          description: Specifies the last login date for this particular instance.
+          format: date-time
+      additionalProperties: false
+    GetHierarchyLookupResponse:
+      type: object
+      properties:
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GetHierarchyLookupResponseItem'
+      additionalProperties: false
+    FieldOrder:
+      type: object
+      properties:
+        fieldName:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies the field name which should be used for sorting the results.
+
+            The field matches the structure of the response payload, with the exception that all the property names should be upper case instead of lower case.'
+        direction:
+          enum:
+          - Asc
+          - Desc
+          type: string
+          description: Specifies the sort direction
+      additionalProperties: false
+      description: Allows to specify order that should be applied to the query result
     SingleSubMetric:
       type: object
       properties:
@@ -2505,27 +2882,60 @@ components:
           description: Value reported for the submetric
           format: double
         comment:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Comment associated with submetric
-          nullable: true
       additionalProperties: false
-    ClientMatterData:
+    Matter:
       type: object
       properties:
-        clientArtifactId:
+        artifactID:
           type: integer
+          description: Artifact ID of the matter
           format: int32
-        matterArtifactId:
-          type: integer
-          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the matter
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if matter data is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with hash
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        anonymizedFields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          description: Object that holds what type of matter data is hashed.
+        number:
+          type:
+          - string
+          - 'null'
+          description: Number of the matter
       additionalProperties: false
+      description: Matter information
     GetUsersDetailsRequest:
       type: object
       properties:
         dateKey:
-          type: string
+          type:
+          - string
+          - 'null'
           description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
-          nullable: true
           example: 202209
         selectorLevel:
           enum:
@@ -2536,16 +2946,18 @@ components:
           - Contract
           type: string
         itemSelectors:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/HierarchyItemSelector'
           description: Limits the results just to Users who have access to particular element in the hierarchy
-          nullable: true
         filters:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/FieldFilter'
-          nullable: true
         order:
           $ref: '#/components/schemas/FieldOrder'
         pagingRequest:
@@ -2558,154 +2970,107 @@ components:
           description: Specifies if the response should include unhashed data. Default value is false.
       additionalProperties: false
       description: Request body used in users-details API
-    GetHierarchyLookupResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/GetHierarchyLookupResponseItem'
-          nullable: true
-      additionalProperties: false
-    MetricMetadata:
-      type: object
-      properties:
-        metadataKey:
-          type: string
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        data:
-          type: object
-          additionalProperties:
-            type: string
-            nullable: true
-          nullable: true
-      additionalProperties: false
-    GetHierarchyLookupResponseItem:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the item
-          nullable: true
-        anonymization:
-          type: string
-          description: "Flag that identifies if the name is hashed.\r\nIf the value is _Hashed_ then value of a _Name_ field is replaced with hash\r\nList of possible values:\r\n- Hashed\r\n- None"
-          nullable: true
-        anonymizedFields:
-          type: object
-          additionalProperties:
-            type: string
-            nullable: true
-          description: Collection that holds what type of data is hashed.
-          nullable: true
-        selector:
-          $ref: '#/components/schemas/HierarchyItemSelector'
-      additionalProperties: false
-    UserInstanceSpecificData:
-      type: object
-      properties:
-        instance:
-          $ref: '#/components/schemas/Instance'
-        artifactID:
-          type: integer
-          description: ArtifactID of the User in particular instance.
-          format: int32
-        userRole:
-          type: string
-          description: Role of the User in this particular instance.
-          nullable: true
-        lastLoginUtc:
-          type: string
-          description: Specifies the last login date for this particular instance.
-          format: date-time
-          nullable: true
-      additionalProperties: false
-    SinglePricedMetric:
-      type: object
-      properties:
-        collectionTimeUtc:
-          type: string
-          description: Date when the value was collected
-          format: date-time
-          nullable: true
-        metadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetricMetadata'
-          nullable: true
-        comment:
-          type: string
-          description: Additional information related to the current metric
-          nullable: true
-        subMetrics:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/SingleSubMetric'
-          nullable: true
-        billableValue:
-          type: number
-          description: Value reported for the metric (billable usage)
-          format: double
-        amount:
-          $ref: '#/components/schemas/Money'
-        missingCostReason:
-          type: string
-          description: Reason for the missing cost if applicable.
-          nullable: true
-          example: "\r\n            Cost breakdown not available at this level of the hierarchy\r\n            "
-      additionalProperties: false
     Workspace_2:
       type: object
       properties:
         id:
-          type: string
+          type:
+          - string
+          - 'null'
           description: ID of the workspace (GUID)
-          nullable: true
         artifactID:
           type: integer
           description: Artifact ID of the workspace
           format: int32
         name:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Name of the workspace
-          nullable: true
         activityStatus:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Activity status
-          nullable: true
         workspaceStatus:
-          type: string
-          description: "Workspace status. Could be one of the following:\r\n- Active\r\n- Inactive\r\n- Archived\r\n- Deleted"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Workspace status. Could be one of the following:
+
+            - Active
+
+            - Inactive
+
+            - Archived
+
+            - Deleted'
         billableStatus:
-          type: string
-          description: "Specifies billable status of the workspace\r\nList of possible values:\r\n- Billable\r\n- Non-billable\r\n- Billable Plaintiff"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Specifies billable status of the workspace
+
+            List of possible values:
+
+            - Billable
+
+            - Non-billable
+
+            - Billable Plaintiff'
         billableComment:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Additional information about billable status, populated when _billableStatus_ is _Non-billable_
-          nullable: true
         anonymization:
-          type: string
-          description: "Flag that identifies if workspace data is hashed.\r\nIf the value is _Hashed_ then value of a _Name_ field is replaced with _ArtifactID_ value.\r\nList of possible values:\r\n- Hashed\r\n- None"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if workspace data is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with _ArtifactID_ value.
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
         billableType:
-          type: string
-          description: "Specifies billable type of the workspace\r\nList of possible values:\r\n- Repository\r\n- Review\r\n- Cold Storage"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Specifies billable type of the workspace
+
+            List of possible values:
+
+            - Repository
+
+            - Review
+
+            - Cold Storage'
         anonymizedFields:
-          type: object
+          type:
+          - object
+          - 'null'
           additionalProperties:
-            type: string
-            nullable: true
+            type:
+            - string
+            - 'null'
           description: Object that holds what type of workspace data is hashed.
-          nullable: true
         projectType:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Object that holds what type of use case the workspace has.
-          nullable: true
       additionalProperties: false
       description: Workspace information
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: JWT Authorization header using the Bearer scheme.
+      scheme: bearer
+      bearerFormat: JWT
+x-refined-from:
+- relativity-billing-v1-openapi.yml
+- relativity-billing-v2-openapi.yml

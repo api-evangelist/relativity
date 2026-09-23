@@ -1,8 +1,8 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Metrics Module API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity.Telemetry.Services.Metrics.V0 Metrics Module API
+  description: Relativity.Telemetry.Services.Metrics
+  version: V0
 servers:
 - url: /Relativity.REST/api
   description: The URL prefix for all Kepler services
@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IAPMManager - '
+      description: '[Private] IAPMManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IAPMManager.LogCountAsync
       parameters:
       - $ref: '#/components/parameters/count'
@@ -27,11 +27,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IAPM manager log count async
+      x-summary-source: derived
   /LogTimerAsync:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IAPMManager - '
+      description: '[Private] IAPMManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IAPMManager.LogTimerAsync
       parameters:
       - $ref: '#/components/parameters/milliseconds'
@@ -45,11 +47,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IAPM manager log timer async
+      x-summary-source: derived
   /LogTimerAsLongAsync:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IMetricsManager - '
+      description: '[Private] IMetricsManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IMetricsManager.LogTimerAsLongAsync
       parameters:
       - $ref: '#/components/parameters/bucket'
@@ -59,11 +63,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IMetrics manager log timer as long async
+      x-summary-source: derived
   /LogTimerAsDoubleAsync:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IMetricsManager - '
+      description: '[Private] IMetricsManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IMetricsManager.LogTimerAsDoubleAsync
       parameters:
       - $ref: '#/components/parameters/bucket'
@@ -73,11 +79,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IMetrics manager log timer as double async
+      x-summary-source: derived
   /LogPointInTimeStringAsync:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IMetricsManager - '
+      description: '[Private] IMetricsManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IMetricsManager.LogPointInTimeStringAsync
       parameters:
       - $ref: '#/components/parameters/bucket'
@@ -87,11 +95,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IMetrics manager log point in time string…
+      x-summary-source: derived
   /LogPointInTimeLongAsync:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IMetricsManager - '
+      description: '[Private] IMetricsManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IMetricsManager.LogPointInTimeLongAsync
       parameters:
       - $ref: '#/components/parameters/bucket'
@@ -101,11 +111,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IMetrics manager log point in time long…
+      x-summary-source: derived
   /LogPointInTimeDoubleAsync:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IMetricsManager - '
+      description: '[Private] IMetricsManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IMetricsManager.LogPointInTimeDoubleAsync
       parameters:
       - $ref: '#/components/parameters/bucket'
@@ -115,11 +127,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IMetrics manager log point in time double…
+      x-summary-source: derived
   /LogMetricsAsync:
     post:
       tags:
       - Metrics Module
-      description: '[Private] IMetricsManager - '
+      description: '[Private] IMetricsManager -'
       operationId: Relativity.Telemetry.Services.Metrics.IMetricsManager.LogMetricsAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -132,21 +146,56 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity telemetry services metrics IMetrics manager log metrics async
+      x-summary-source: derived
 components:
+  parameters:
+    milliseconds:
+      name: milliseconds
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: number
+    count:
+      name: count
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    value:
+      name: value
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    bucket:
+      name: bucket
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    workspaceGuid:
+      name: workspaceGuid
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
   schemas:
-    LogMetricsAsync_RequestBody:
-      title: LogMetricsAsync_RequestBody
-      type: object
-      properties:
-        metrics:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetricRef'
-    Object:
-      title: Object
-      type: object
-    LogCountAsync_RequestBody:
-      title: LogCountAsync_RequestBody
+    LogTimerAsync_RequestBody:
+      title: LogTimerAsync_RequestBody
       type: object
       properties:
         metric:
@@ -162,6 +211,20 @@ components:
           additionalProperties:
             title: Object
             type: object
+    LogCountAsync_RequestBody:
+      title: LogCountAsync_RequestBody
+      type: object
+      properties:
+        metric:
+          $ref: '#/components/schemas/APMMetric'
+    LogMetricsAsync_RequestBody:
+      title: LogMetricsAsync_RequestBody
+      type: object
+      properties:
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/MetricRef'
     MetricRef:
       title: MetricRef
       type: object
@@ -169,11 +232,13 @@ components:
         Bucket:
           type: string
         WorkspaceGuid:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ClientDomainGuid:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         WorkflowID:
           type: string
         MetricTarget:
@@ -193,53 +258,6 @@ components:
           type: string
         Value:
           $ref: '#/components/schemas/Object'
-    LogTimerAsync_RequestBody:
-      title: LogTimerAsync_RequestBody
+    Object:
+      title: Object
       type: object
-      properties:
-        metric:
-          $ref: '#/components/schemas/APMMetric'
-  parameters:
-    bucket:
-      name: bucket
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    value:
-      name: value
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    workspaceGuid:
-      name: workspaceGuid
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    count:
-      name: count
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    milliseconds:
-      name: milliseconds
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: number

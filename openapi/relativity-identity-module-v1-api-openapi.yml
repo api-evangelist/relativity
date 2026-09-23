@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Identity Module v1 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
+  title: Relativity.Identity Identity Module v1 API
+  description: Relativity.Identity Kepler Module
   version: V1
 servers:
 - url: /Relativity.REST/api
@@ -20,6 +20,8 @@ paths:
       responses:
         '200':
           description: Successful operation
+      summary: Relativity identity server V1 services interfaces IFederated instance manager…
+      x-summary-source: derived
   /Relativity-Identity/v1/federated-instances:
     get:
       tags:
@@ -125,6 +127,8 @@ paths:
       responses:
         '200':
           description: Successful operation
+      summary: Relativity identity server V1 services interfaces IO auth2 client manager get…
+      x-summary-source: derived
   /Relativity-Identity/v1/oauth2-clients:
     get:
       tags:
@@ -147,7 +151,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Create a new OAuth2 Client.
+      summary: Create a new OAuth2 Client
       description: '[Public] IOAuth2ClientManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IOAuth2ClientManager.CreateAsync
       parameters:
@@ -165,7 +169,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Save an OAuth2 Client.
+      summary: Save an OAuth2 Client
       description: '[Public] IOAuth2ClientManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IOAuth2ClientManager.SaveAsync
       parameters:
@@ -184,7 +188,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Read an OAuth2 Client by Id.
+      summary: Read an OAuth2 Client by Id
       description: '[Public] IOAuth2ClientManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IOAuth2ClientManager.ReadAsync
       parameters:
@@ -203,7 +207,7 @@ paths:
     delete:
       tags:
       - Identity Module v1
-      summary: Delete an OAuth2 Client.
+      summary: Delete an OAuth2 Client
       description: '[Public] IOAuth2ClientManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IOAuth2ClientManager.DeleteAsync
       parameters:
@@ -223,7 +227,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Generate a new secret for an OAuth2 Client.  All previous secrets are immediately invalidated.
+      summary: Generate a new secret for an OAuth2 Client.
       description: '[Public] IOAuth2ClientManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IOAuth2ClientManager.RegenerateSecretAsync
       parameters:
@@ -250,6 +254,8 @@ paths:
       responses:
         '200':
           description: Successful operation
+      summary: Relativity identity server V1 services interfaces IAuth provider type manager…
+      x-summary-source: derived
   /Relativity-Identity/v1/auth-provider-types:
     get:
       tags:
@@ -272,13 +278,13 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: "Updates a Provider Type, allowing you to enable or disable Provider Types\r\n            in the environment.  Disabling a Provider Type prevents all users from\r\n            using that protocol during login."
+      summary: Updates a Provider Type, allowing you to enable or disable Provider Types in…
       description: '[Public] IAuthProviderTypeManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IAuthProviderTypeManager.UpdateAsync
       parameters:
       - $ref: '#/components/parameters/X-CSRF-Header'
       requestBody:
-        description: "Updates a Provider Type, allowing you to enable or disable Provider Types\r\n            in the environment.  Disabling a Provider Type prevents all users from\r\n            using that protocol during login."
+        description: "Updates a Provider Type, allowing you to enable or disable Provider Types\n            in the environment.  Disabling a Provider Type prevents all users from\n            using that protocol during login."
         content:
           application/json:
             schema:
@@ -318,11 +324,13 @@ paths:
       responses:
         '200':
           description: Successful operation
+      summary: Relativity identity server V1 services interfaces IGroup manager get kepler…
+      x-summary-source: derived
   /Relativity-Identity/v1/groups:
     post:
       tags:
       - Identity Module v1
-      summary: Adds a user group to Relativity.
+      summary: Adds a user group to Relativity
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.CreateAsync
       parameters:
@@ -341,7 +349,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Retrieves advanced metadata for a user group, including its name, associated client, and other properties.
+      summary: Retrieves advanced metadata for a user group, including its name, associated…
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.ReadAsync
       parameters:
@@ -363,7 +371,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Modifies the properties of a user group.
+      summary: Modifies the properties of a user group
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.UpdateAsync
       parameters:
@@ -382,7 +390,7 @@ paths:
     delete:
       tags:
       - Identity Module v1
-      summary: Deletes a user group.
+      summary: Deletes a user group
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.DeleteAsync
       parameters:
@@ -402,7 +410,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Retrieves the list of users in a given group.
+      summary: Retrieves the list of users in a given group
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.QueryMembersAsync
       parameters:
@@ -422,7 +430,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Adds a list of users to a given group.
+      summary: Adds a list of users to a given group
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.AddMembersAsync
       parameters:
@@ -441,7 +449,7 @@ paths:
     delete:
       tags:
       - Identity Module v1
-      summary: Removes a list of users from a given group.
+      summary: Removes a list of users from a given group
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.RemoveMembersAsync
       parameters:
@@ -461,7 +469,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: ''
+      summary: Relativity identity server V1 services interfaces IGroup manager mass add users…
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.MassAddUsersToGroupsAsync
       parameters:
@@ -476,10 +484,11 @@ paths:
       responses:
         '200':
           description: Returns the results of a mass operation as a list of <see cref="T:Relativity.Identity.Server.V1.Shared.MassOperationResult" />.
+      x-summary-source: derived
     delete:
       tags:
       - Identity Module v1
-      summary: ''
+      summary: Relativity identity server V1 services interfaces IGroup manager mass remove…
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.MassRemoveUsersFromGroupsAsync
       parameters:
@@ -494,6 +503,7 @@ paths:
       responses:
         '200':
           description: Returns the results of a mass operation as a list of <see cref="T:Relativity.Identity.Server.V1.Shared.MassOperationResult" />.
+      x-summary-source: derived
   /Relativity-Identity/v1/groups/eligible-clients/query:
     post:
       tags:
@@ -517,7 +527,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Query for Users that are eligible to be members of a group.
+      summary: Query for Users that are eligible to be members of a group
       description: '[Public] IGroupManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IGroupManager.QueryEligibleUsersToAdd
       parameters:
@@ -544,11 +554,13 @@ paths:
       responses:
         '200':
           description: Successful operation
+      summary: Relativity identity server V1 services interfaces ILogin profile manager get…
+      x-summary-source: derived
   /Relativity-Identity/v1/users/{userID}/login-profile:
     get:
       tags:
       - Identity Module v1
-      summary: Get a Login Method Profile for a given user.
+      summary: Get a Login Method Profile for a given user
       description: '[Public] ILoginProfileManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.ILoginProfileManager.GetLoginProfileAsync
       parameters:
@@ -567,7 +579,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Save a Login Method profile.
+      summary: Save a Login Method profile
       description: '[Public] ILoginProfileManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.ILoginProfileManager.UpdateLoginProfileAsync
       parameters:
@@ -587,14 +599,14 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: "Explicitly set a user's password.  Note that admins are not allowed to reset \r\n            Relativity users' passwords by default. (see Remarks for more information)"
+      summary: Explicitly set a user's password.
       description: '[Public] ILoginProfileManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.ILoginProfileManager.SetPasswordAsync
       parameters:
       - $ref: '#/components/parameters/X-CSRF-Header'
       - $ref: '#/components/parameters/userID'
       requestBody:
-        description: "Explicitly set a user's password.  Note that admins are not allowed to reset \r\n            Relativity users' passwords by default. (see Remarks for more information)"
+        description: "Explicitly set a user's password.  Note that admins are not allowed to reset \n            Relativity users' passwords by default. (see Remarks for more information)"
         content:
           application/json:
             schema:
@@ -607,7 +619,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Sends an Invitation Workflow e-mail to the specified user.
+      summary: Sends an Invitation Workflow e-mail to the specified user
       description: '[Public] ILoginProfileManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.ILoginProfileManager.SendInvitationAsync
       parameters:
@@ -627,7 +639,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Sends an Invitation Workflow e-mail to each specified user.
+      summary: Sends an Invitation Workflow e-mail to each specified user
       description: '[Public] ILoginProfileManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.ILoginProfileManager.SendBulkInvitationAsync
       parameters:
@@ -646,7 +658,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Verifies an Invitation Workflow without sending an email.
+      summary: Verifies an Invitation Workflow without sending an email
       description: '[Public] ILoginProfileManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.ILoginProfileManager.VerifyBulkInvitationAsync
       parameters:
@@ -710,11 +722,13 @@ paths:
       responses:
         '200':
           description: Successful operation
+      summary: Relativity identity server V1 services interfaces IPermission manager get…
+      x-summary-source: derived
   /Relativity-Identity/v1/workspaces/{workspaceArtifactID}/groups/{groupID}/permissions:
     get:
       tags:
       - Identity Module v1
-      summary: Get Workspace Group Permissions.
+      summary: Get Workspace Group Permissions
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetWorkspaceGroupPermissionsAsync
       parameters:
@@ -734,7 +748,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Set Workspace Group Permissions.
+      summary: Set Workspace Group Permissions
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.SetWorkspaceGroupPermissionsAsync
       parameters:
@@ -755,7 +769,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Get Item Group Permissions.
+      summary: Get Item Group Permissions
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetItemGroupPermissionsAsync
       parameters:
@@ -776,7 +790,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Set Item Group Permissions.
+      summary: Set Item Group Permissions
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.SetItemGroupPermissionsAsync
       parameters:
@@ -798,7 +812,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Get Item Level Security settings for a given ArtifactID.
+      summary: Get Item Level Security settings for a given ArtifactID
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetItemLevelSecurityAsync
       parameters:
@@ -818,7 +832,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Set Item Level Security settings for a given ArtifactID.
+      summary: Set Item Level Security settings for a given ArtifactID
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.SetItemLevelSecurityAsync
       parameters:
@@ -839,14 +853,14 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: "Returns a dictionary of item-level security settings objects for the specified Relativity artifacts. \r\n            Inputs include the workspace ArtifactID and a collection of ArtifactIDs. \r\n            For admin artifacts, specify -1 as the workspace ArtifactID."
+      summary: Returns a dictionary of item-level security settings objects for the specified…
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetItemLevelSecurityListAsync
       parameters:
       - $ref: '#/components/parameters/X-CSRF-Header'
       - $ref: '#/components/parameters/workspaceArtifactID'
       requestBody:
-        description: "Returns a dictionary of item-level security settings objects for the specified Relativity artifacts. \r\n            Inputs include the workspace ArtifactID and a collection of ArtifactIDs. \r\n            For admin artifacts, specify -1 as the workspace ArtifactID."
+        description: "Returns a dictionary of item-level security settings objects for the specified Relativity artifacts. \n            Inputs include the workspace ArtifactID and a collection of ArtifactIDs. \n            For admin artifacts, specify -1 as the workspace ArtifactID."
         content:
           application/json:
             schema:
@@ -859,7 +873,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Get Workspace Group Users.
+      summary: Get Workspace Group Users
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetWorkspaceGroupUsersAsync
       parameters:
@@ -902,7 +916,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Get Item Group Users.
+      summary: Get Item Group Users
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetItemGroupUsersAsync
       parameters:
@@ -924,7 +938,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Asynchronously create a new permission.
+      summary: Asynchronously create a new permission
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.CreateSingleAsync
       parameters:
@@ -943,7 +957,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Asynchronously updates a Permission.
+      summary: Asynchronously updates a Permission
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.UpdateSingleAsync
       parameters:
@@ -963,7 +977,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Asynchronously queries for a subset of a collection of Permission instances.
+      summary: Asynchronously queries for a subset of a collection of Permission instances
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.QueryAsync
       parameters:
@@ -984,7 +998,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Asynchronously queries for a subset of a collection of Permission instances.
+      summary: Asynchronously queries for a subset of a collection of Permission instances
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.QueryAsync
       parameters:
@@ -1007,7 +1021,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Asynchronously read a single Permission instance.
+      summary: Asynchronously read a single Permission instance
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.ReadSingleAsync
       parameters:
@@ -1027,7 +1041,7 @@ paths:
     delete:
       tags:
       - Identity Module v1
-      summary: Asynchronously delets a Permission.
+      summary: Asynchronously delets a Permission
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.DeleteSingleAsync
       parameters:
@@ -1048,7 +1062,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Determines if the current user has access to workspace.
+      summary: Determines if the current user has access to workspace
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.HasAccessToWorkspaceAsync
       parameters:
@@ -1088,7 +1102,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Indicates a given permission is selected. (ItemLevelSecurity on an ArtifactID of a given permission ArtifactTypeID)
+      summary: Indicates a given permission is selected.
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetPermissionSelectedAsync
       parameters:
@@ -1109,14 +1123,14 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: "Returns the current user’s permission to the specified relativity artifacts as a dictionary that maps the ArtifactID to the permissions values. \r\n            Inputs include the workspace ArtifactID, a collection of PermissionRef objects, and a collection of ArtifactIDs. \r\n            To return admin-level artifact permissions, specify -1 as the workspace ArtifactID."
+      summary: Returns the current user’s permission to the specified relativity artifacts as…
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetPermissionSelectedListAsync
       parameters:
       - $ref: '#/components/parameters/X-CSRF-Header'
       - $ref: '#/components/parameters/workspaceArtifactID'
       requestBody:
-        description: "Returns the current user’s permission to the specified relativity artifacts as a dictionary that maps the ArtifactID to the permissions values. \r\n            Inputs include the workspace ArtifactID, a collection of PermissionRef objects, and a collection of ArtifactIDs. \r\n            To return admin-level artifact permissions, specify -1 as the workspace ArtifactID."
+        description: "Returns the current user’s permission to the specified relativity artifacts as a dictionary that maps the ArtifactID to the permissions values. \n            Inputs include the workspace ArtifactID, a collection of PermissionRef objects, and a collection of ArtifactIDs. \n            To return admin-level artifact permissions, specify -1 as the workspace ArtifactID."
         content:
           application/json:
             schema:
@@ -1150,7 +1164,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Indicates if a given admin permission is selected.
+      summary: Indicates if a given admin permission is selected
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetAdminOperationPermissionSelectedListAsync
       parameters:
@@ -1170,7 +1184,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Indicates a given permission is selected. (ItemLevelSecurity on an ArtifactID of a given permission ArtifactTypeID for a given Group)
+      summary: Indicates a given permission is selected.
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetPermissionSelectedForGroupAsync
       parameters:
@@ -1192,7 +1206,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Get a list of tabs for the group and the tab visibility state.
+      summary: Get a list of tabs for the group and the tab visibility state
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.GetGroupTabVisibilityAsync
       parameters:
@@ -1212,7 +1226,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Update the tab visibility state for a group.
+      summary: Update the tab visibility state for a group
       description: '[Public] IPermissionManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IPermissionManager.SetGroupTabVisibilityAsync
       parameters:
@@ -1240,11 +1254,13 @@ paths:
       responses:
         '200':
           description: Successful operation
+      summary: Relativity identity server V1 services interfaces IUser manager get kepler…
+      x-summary-source: derived
   /Relativity-Identity/v1/users/{userID}/query-groups:
     post:
       tags:
       - Identity Module v1
-      summary: ''
+      summary: Relativity identity server V1 services interfaces IUser manager query groups by…
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.QueryGroupsByUserAsync
       parameters:
@@ -1260,11 +1276,12 @@ paths:
       responses:
         '200':
           description: Returns the results of the executed query that contains visible groups where the user is a member.
+      x-summary-source: derived
   /Relativity-Identity/v1/users/query-eligible-groups:
     post:
       tags:
       - Identity Module v1
-      summary: Query for Groups that are eligible for adding at least one of specified users.
+      summary: Query for Groups that are eligible for adding at least one of specified users
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.QueryEligibleGroupsToAddUsersToAsync
       parameters:
@@ -1283,7 +1300,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Adds a single user to Relativity.
+      summary: Adds a single user to Relativity
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.CreateAsync
       parameters:
@@ -1302,7 +1319,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Retrieves advanced metadata for a user, including their Relativity access, name, email, and other properties.
+      summary: Retrieves advanced metadata for a user, including their Relativity access…
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.ReadAsync
       parameters:
@@ -1324,7 +1341,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Retrieves settings for the current user, including their name, email, and other properties.
+      summary: Retrieves settings for the current user, including their name, email, and other…
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.ReadSettingsAsync
       parameters:
@@ -1345,7 +1362,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Modifies the properties of a user.
+      summary: Modifies the properties of a user
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.UpdateAsync
       parameters:
@@ -1364,7 +1381,7 @@ paths:
     delete:
       tags:
       - Identity Module v1
-      summary: Deletes a user.
+      summary: Deletes a user
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.DeleteAsync
       parameters:
@@ -1384,7 +1401,7 @@ paths:
     put:
       tags:
       - Identity Module v1
-      summary: Modifies the user setting properties of the current user.
+      summary: Modifies the user setting properties of the current user
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.UpdateSettingsAsync
       parameters:
@@ -1422,7 +1439,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Gets a list of all users and their information for a given workspace.
+      summary: Gets a list of all users and their information for a given workspace
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.RetrieveAll
       parameters:
@@ -1442,7 +1459,7 @@ paths:
     post:
       tags:
       - Identity Module v1
-      summary: Gets a list of users and their information, and supports filtering, ordering, and paging these results.
+      summary: Gets a list of users and their information, and supports filtering, ordering…
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.RetrieveUsersBy
       parameters:
@@ -1462,7 +1479,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: 'Asynchronously retrieves the current user in the specified workspace. NOTE: User Artifact ID may differ for the same user in different workspaces.'
+      summary: Asynchronously retrieves the current user in the specified workspace.
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.RetrieveCurrentAsync
       parameters:
@@ -1482,7 +1499,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Asynchronously retrieves a list of all users in a workspace, including administrators and (optional) deleted users.
+      summary: Asynchronously retrieves a list of all users in a workspace, including…
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.ReadAllUsersAsync
       parameters:
@@ -1503,7 +1520,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: Asynchronously retrieves a list of all active users in a workspace. If the number of returned users exceeds the ChoiceLimitForUI setting, no users will be returned.
+      summary: Asynchronously retrieves a list of all active users in a workspace.
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.ReadActiveUsersAsync
       parameters:
@@ -1525,7 +1542,7 @@ paths:
     get:
       tags:
       - Identity Module v1
-      summary: ''
+      summary: Relativity identity server V1 services interfaces IUser manager retrieve all…
       description: '[Public] IUserManager'
       operationId: Relativity.Identity.Server.V1.Services.Interfaces.IUserManager.RetrieveAllWithRelativityAccessAsync
       parameters:
@@ -1541,36 +1558,9 @@ paths:
       responses:
         '200':
           description: No description set
+      x-summary-source: derived
 components:
   schemas:
-    DeleteAsync:
-      title: DeleteAsync
-      description: Remove a Federated Instance from this Relativity instance
-    VerifyBulkInvitationAsync:
-      title: VerifyBulkInvitationAsync
-      required:
-      - userIDList
-      properties:
-        userIDList:
-          type: array
-          items:
-            type: integer
-            format: System.Int32
-          description: The list of users
-      description: Verifies an Invitation Workflow without sending an email.
-    ReadAsync:
-      title: ReadAsync
-      description: Read a Federated Instance
-    RemoveMembersAsync:
-      title: RemoveMembersAsync
-      required:
-      - users
-      properties:
-        users:
-          type: array
-          items: {}
-          description: The list of identifiers for users to remove from the group.
-      description: Removes a list of users from a given group.
     SetItemLevelSecurityAsync:
       title: SetItemLevelSecurityAsync
       required:
@@ -1599,18 +1589,986 @@ components:
           additionalProperties: false
           description: ItemLevelSecurity.
       description: Set Item Level Security settings for a given ArtifactID.
-    GetAdminOperationPermissionSelectedListAsync:
-      title: GetAdminOperationPermissionSelectedListAsync
+    QueryMembersAsync:
+      title: QueryMembersAsync
       required:
-      - permissionIDs
+      - request
+      - start
+      - length
       properties:
-        permissionIDs:
+        request:
+          title: QueryRequest
+          required:
+          - ObjectType
+          - Condition
+          - Sorts
+          - RelationalField
+          - RowCondition
+          - SearchProviderCondition
+          - SampleParameters
+          - IncludeIDWindow
+          - RankSortOrder
+          - QueryHint
+          - Fields
+          - IsAdhocQuery
+          - ConvertNumberFieldValuesToString
+          - IncludeNameInQueryResult
+          - ExecutingSavedSearchID
+          - ExecutingViewID
+          - ActiveArtifactID
+          - MaxCharactersForLongTextValues
+          - LongTextBehavior
+          type: object
+          properties:
+            ObjectType:
+              required:
+              - ArtifactID
+              - Name
+              - Guid
+              - ArtifactTypeID
+              type: object
+              properties:
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                ArtifactTypeID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+            Condition:
+              type: string
+              description: ''
+              format: System.String
+            Sorts:
+              type: array
+              items: {}
+              description: ''
+            RelationalField:
+              required:
+              - ViewFieldID
+              - ArtifactID
+              - Guid
+              - Name
+              type: object
+              properties:
+                ViewFieldID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+            RowCondition:
+              type: string
+              description: ''
+              format: System.String
+            SearchProviderCondition:
+              required:
+              - SearchIndex
+              - Input
+              type: object
+              properties:
+                SearchIndex:
+                  required:
+                  - ArtifactID
+                  - Name
+                  type: object
+                  properties:
+                    ArtifactID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Name:
+                      type: string
+                      description: ''
+                      format: System.String
+                Input:
+                  type: string
+                  description: ''
+                  format: System.String
+            SampleParameters:
+              required:
+              - ExistingToken
+              - MarginOfError
+              - ConfidenceLevel
+              - FixedSampleSize
+              - SamplingPercentage
+              type: object
+              properties:
+                ExistingToken:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                MarginOfError:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                ConfidenceLevel:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                FixedSampleSize:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                SamplingPercentage:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+            IncludeIDWindow:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            RankSortOrder:
+              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
+              description: ''
+              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
+            QueryHint:
+              type: string
+              description: ''
+              format: System.String
+            Fields:
+              type: array
+              items: {}
+              description: ''
+            IsAdhocQuery:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ConvertNumberFieldValuesToString:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            IncludeNameInQueryResult:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingSavedSearchID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingViewID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ActiveArtifactID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            MaxCharactersForLongTextValues:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            LongTextBehavior:
+              type: object
+          additionalProperties: false
+          description: A QueryRequest object containing conditions, sorting order, fields and other information for the query.
+        start:
+          type: integer
+          description: Index of the first artifact in the returned QueryResultSet object.
+          format: integer
+        length:
+          type: integer
+          description: Number of items to return in the query result, starting with index in the start parameter.
+          format: integer
+      description: Retrieves the list of users in a given group.
+    UpdateSettingsAsync:
+      title: UpdateSettingsAsync
+      required:
+      - userSettingRequest
+      properties:
+        userSettingRequest:
+          title: UserSettingRequest
+          required:
+          - DefaultFilterVisibility
+          - DefaultSelectedFileType
+          - EmailAddress
+          - EmailPreference
+          - FirstName
+          - ItemListPageLength
+          - LastName
+          - SavedSearchDefaultsToPublic
+          - SkipDefaultPreference
+          type: object
+          properties:
+            DefaultFilterVisibility:
+              type: boolean
+              description: ''
+              format: System.Boolean
+            DefaultSelectedFileType:
+              type: object
+            EmailAddress:
+              type: string
+              description: ''
+              format: System.String
+            EmailPreference:
+              type: object
+            FirstName:
+              type: string
+              description: ''
+              format: System.String
+            ItemListPageLength:
+              type: integer
+              description: ''
+              format: System.Int32
+            LastName:
+              type: string
+              description: ''
+              format: System.String
+            SavedSearchDefaultsToPublic:
+              type: boolean
+              description: ''
+              format: System.Boolean
+            SkipDefaultPreference:
+              type: boolean
+              description: ''
+              format: System.Boolean
+          additionalProperties: false
+          description: The data about the user settings being updated.
+      description: Modifies the user setting properties of the current user.
+    GetPermissionSelectedListAsync:
+      title: GetPermissionSelectedListAsync
+      required:
+      - permissions
+      - artifactIDs
+      properties:
+        permissions:
+          type: array
+          items: {}
+          description: Collection of Permission references.
+        artifactIDs:
           type: array
           items:
             type: integer
             format: System.Int32
-          description: Collection of Permission identifiers.
-      description: Indicates if a given admin permission is selected.
+          description: Collection of Artifact IDs.
+      description: "Returns the current user’s permission to the specified relativity artifacts as a dictionary that maps the ArtifactID to the permissions values. \n            Inputs include the workspace ArtifactID, a collection of PermissionRef objects, and a collection of ArtifactIDs. \n            To return admin-level artifact permissions, specify -1 as the workspace ArtifactID."
+    ReadActiveUsersAsync:
+      title: ReadActiveUsersAsync
+      description: Asynchronously retrieves a list of all active users in a workspace. If the number of returned users exceeds the ChoiceLimitForUI setting, no users will be returned.
+    RetrieveUsersBy:
+      title: RetrieveUsersBy
+      required:
+      - query
+      - start
+      - length
+      properties:
+        query:
+          title: QueryRequest
+          required:
+          - ObjectType
+          - Condition
+          - Sorts
+          - RelationalField
+          - RowCondition
+          - SearchProviderCondition
+          - SampleParameters
+          - IncludeIDWindow
+          - RankSortOrder
+          - QueryHint
+          - Fields
+          - IsAdhocQuery
+          - ConvertNumberFieldValuesToString
+          - IncludeNameInQueryResult
+          - ExecutingSavedSearchID
+          - ExecutingViewID
+          - ActiveArtifactID
+          - MaxCharactersForLongTextValues
+          - LongTextBehavior
+          type: object
+          properties:
+            ObjectType:
+              required:
+              - ArtifactID
+              - Name
+              - Guid
+              - ArtifactTypeID
+              type: object
+              properties:
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                ArtifactTypeID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+            Condition:
+              type: string
+              description: ''
+              format: System.String
+            Sorts:
+              type: array
+              items: {}
+              description: ''
+            RelationalField:
+              required:
+              - ViewFieldID
+              - ArtifactID
+              - Guid
+              - Name
+              type: object
+              properties:
+                ViewFieldID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+            RowCondition:
+              type: string
+              description: ''
+              format: System.String
+            SearchProviderCondition:
+              required:
+              - SearchIndex
+              - Input
+              type: object
+              properties:
+                SearchIndex:
+                  required:
+                  - ArtifactID
+                  - Name
+                  type: object
+                  properties:
+                    ArtifactID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Name:
+                      type: string
+                      description: ''
+                      format: System.String
+                Input:
+                  type: string
+                  description: ''
+                  format: System.String
+            SampleParameters:
+              required:
+              - ExistingToken
+              - MarginOfError
+              - ConfidenceLevel
+              - FixedSampleSize
+              - SamplingPercentage
+              type: object
+              properties:
+                ExistingToken:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                MarginOfError:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                ConfidenceLevel:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                FixedSampleSize:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                SamplingPercentage:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+            IncludeIDWindow:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            RankSortOrder:
+              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
+              description: ''
+              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
+            QueryHint:
+              type: string
+              description: ''
+              format: System.String
+            Fields:
+              type: array
+              items: {}
+              description: ''
+            IsAdhocQuery:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ConvertNumberFieldValuesToString:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            IncludeNameInQueryResult:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingSavedSearchID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingViewID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ActiveArtifactID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            MaxCharactersForLongTextValues:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            LongTextBehavior:
+              type: object
+          additionalProperties: false
+          description: A QueryRequest object containing conditions, sorting order, and other information for the query.
+        start:
+          type: integer
+          description: Index of the first artifact in the returned UserInfoQueryResultSet object.
+          format: integer
+        length:
+          type: integer
+          description: Number of items to return in the query result, starting with index in the start parameter.
+          format: integer
+      description: Gets a list of users and their information, and supports filtering, ordering, and paging these results.
+    GetPermissionSelectedForGroupAsync:
+      title: GetPermissionSelectedForGroupAsync
+      required:
+      - permissions
+      properties:
+        permissions:
+          type: array
+          items: {}
+          description: Collection of Permission references.
+      description: Indicates a given permission is selected. (ArtifactTypeID for a given Group)
+    SaveProfileAsync:
+      title: SaveProfileAsync
+      required:
+      - profile
+      properties:
+        profile:
+          title: AuthProfile
+          required:
+          - ID
+          - SiteUri
+          - IsGlobal
+          - Description
+          - Password
+          - IntegratedAuthentication
+          - ActiveDirectory
+          - ClientCertificate
+          - RSA
+          - OpenIDConnectProviders
+          - SAML2Providers
+          type: object
+          properties:
+            ID:
+              type: integer
+              description: ''
+              format: System.Int32
+            SiteUri:
+              type: uri
+              description: ''
+              format: System.Uri
+            IsGlobal:
+              type: boolean
+              description: ''
+              format: System.Boolean
+            Description:
+              type: string
+              description: ''
+              format: System.String
+            Password:
+              required:
+              - Name
+              - IsEnabled
+              - MinimumPasswordLength
+              - MaximumPasswordLength
+              - MaximumPasswordAgeInDaysDefaultValue
+              - UsersCanChangePasswordDefaultValue
+              - AllowEmailPasswordRecovery
+              - PasswordRecoveryRequestLimit
+              - MaximumPasswordHistory
+              - MaximumInvalidLoginAttempts
+              - AdditionalWorkFactor
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                IsEnabled:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+                MinimumPasswordLength:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                MaximumPasswordLength:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                MaximumPasswordAgeInDaysDefaultValue:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                UsersCanChangePasswordDefaultValue:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+                AllowEmailPasswordRecovery:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+                PasswordRecoveryRequestLimit:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                MaximumPasswordHistory:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                MaximumInvalidLoginAttempts:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                AdditionalWorkFactor:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+            IntegratedAuthentication:
+              required:
+              - Name
+              - IsEnabled
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                IsEnabled:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+            ActiveDirectory:
+              required:
+              - Name
+              - IsEnabled
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                IsEnabled:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+            ClientCertificate:
+              required:
+              - Name
+              - Description
+              - IsEnabled
+              - DisplayOnLoginPage
+              - Caption
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                Description:
+                  type: string
+                  description: ''
+                  format: System.String
+                IsEnabled:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+                DisplayOnLoginPage:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+                Caption:
+                  type: string
+                  description: ''
+                  format: System.String
+            RSA:
+              required:
+              - Name
+              - IsEnabled
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                IsEnabled:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+            OpenIDConnectProviders:
+              type: array
+              items: {}
+              description: ''
+            SAML2Providers:
+              type: array
+              items: {}
+              description: ''
+          additionalProperties: false
+          description: The profile to save
+      description: Save an Auth Profile
+    SetItemGroupPermissionsAsync:
+      title: SetItemGroupPermissionsAsync
+      required:
+      - groupPermissions
+      properties:
+        groupPermissions:
+          title: GroupPermissions
+          required:
+          - ArtifactID
+          - GroupID
+          - ObjectPermissions
+          - TabVisibility
+          - BrowserPermissions
+          - MassActionPermissions
+          - AdminPermissions
+          - LastModified
+          type: object
+          properties:
+            ArtifactID:
+              type: integer
+              description: ''
+              format: System.Int32
+            GroupID:
+              type: integer
+              description: ''
+              format: System.Int32
+            ObjectPermissions:
+              type: array
+              items: {}
+              description: ''
+            TabVisibility:
+              type: array
+              items: {}
+              description: ''
+            BrowserPermissions:
+              type: array
+              items: {}
+              description: ''
+            MassActionPermissions:
+              type: array
+              items: {}
+              description: ''
+            AdminPermissions:
+              type: array
+              items: {}
+              description: ''
+            LastModified:
+              type: datetime
+              description: ''
+              format: System.DateTime
+          additionalProperties: false
+          description: Group Permissions.
+      description: Set Item Group Permissions.
+    GetWorkspaceGroupPermissionsAsync:
+      title: GetWorkspaceGroupPermissionsAsync
+      description: Get Workspace Group Permissions.
+    RetrieveAllWithRelativityAccessAsync:
+      title: RetrieveAllWithRelativityAccessAsync
+      description: ''
+    SetWorkspaceGroupPermissionsAsync:
+      title: SetWorkspaceGroupPermissionsAsync
+      required:
+      - groupPermissions
+      properties:
+        groupPermissions:
+          title: GroupPermissions
+          required:
+          - ArtifactID
+          - GroupID
+          - ObjectPermissions
+          - TabVisibility
+          - BrowserPermissions
+          - MassActionPermissions
+          - AdminPermissions
+          - LastModified
+          type: object
+          properties:
+            ArtifactID:
+              type: integer
+              description: ''
+              format: System.Int32
+            GroupID:
+              type: integer
+              description: ''
+              format: System.Int32
+            ObjectPermissions:
+              type: array
+              items: {}
+              description: ''
+            TabVisibility:
+              type: array
+              items: {}
+              description: ''
+            BrowserPermissions:
+              type: array
+              items: {}
+              description: ''
+            MassActionPermissions:
+              type: array
+              items: {}
+              description: ''
+            AdminPermissions:
+              type: array
+              items: {}
+              description: ''
+            LastModified:
+              type: datetime
+              description: ''
+              format: System.DateTime
+          additionalProperties: false
+          description: Group Permissions.
+      description: Set Workspace Group Permissions.
+    DeleteSingleAsync:
+      title: DeleteSingleAsync
+      description: Asynchronously delets a Permission.
+    QueryGroupsByUserAsync:
+      title: QueryGroupsByUserAsync
+      required:
+      - request
+      - start
+      - length
+      properties:
+        request:
+          title: QueryRequest
+          required:
+          - ObjectType
+          - Condition
+          - Sorts
+          - RelationalField
+          - RowCondition
+          - SearchProviderCondition
+          - SampleParameters
+          - IncludeIDWindow
+          - RankSortOrder
+          - QueryHint
+          - Fields
+          - IsAdhocQuery
+          - ConvertNumberFieldValuesToString
+          - IncludeNameInQueryResult
+          - ExecutingSavedSearchID
+          - ExecutingViewID
+          - ActiveArtifactID
+          - MaxCharactersForLongTextValues
+          - LongTextBehavior
+          type: object
+          properties:
+            ObjectType:
+              required:
+              - ArtifactID
+              - Name
+              - Guid
+              - ArtifactTypeID
+              type: object
+              properties:
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                ArtifactTypeID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+            Condition:
+              type: string
+              description: ''
+              format: System.String
+            Sorts:
+              type: array
+              items: {}
+              description: ''
+            RelationalField:
+              required:
+              - ViewFieldID
+              - ArtifactID
+              - Guid
+              - Name
+              type: object
+              properties:
+                ViewFieldID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+            RowCondition:
+              type: string
+              description: ''
+              format: System.String
+            SearchProviderCondition:
+              required:
+              - SearchIndex
+              - Input
+              type: object
+              properties:
+                SearchIndex:
+                  required:
+                  - ArtifactID
+                  - Name
+                  type: object
+                  properties:
+                    ArtifactID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Name:
+                      type: string
+                      description: ''
+                      format: System.String
+                Input:
+                  type: string
+                  description: ''
+                  format: System.String
+            SampleParameters:
+              required:
+              - ExistingToken
+              - MarginOfError
+              - ConfidenceLevel
+              - FixedSampleSize
+              - SamplingPercentage
+              type: object
+              properties:
+                ExistingToken:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                MarginOfError:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                ConfidenceLevel:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                FixedSampleSize:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                SamplingPercentage:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+            IncludeIDWindow:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            RankSortOrder:
+              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
+              description: ''
+              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
+            QueryHint:
+              type: string
+              description: ''
+              format: System.String
+            Fields:
+              type: array
+              items: {}
+              description: ''
+            IsAdhocQuery:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ConvertNumberFieldValuesToString:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            IncludeNameInQueryResult:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingSavedSearchID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingViewID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ActiveArtifactID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            MaxCharactersForLongTextValues:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            LongTextBehavior:
+              type: object
+          additionalProperties: false
+          description: A QueryRequest object containing conditions, sorting order, fields and other information for the query.
+        start:
+          type: integer
+          description: Index of the first artifact in the returned QueryResultSet object.
+          format: integer
+        length:
+          type: integer
+          description: Number of items to return in the query result, starting with index in the start parameter.
+          format: integer
+      description: ''
     QueryEligibleGroupsToAddUsersToAsync:
       title: QueryEligibleGroupsToAddUsersToAsync
       required:
@@ -1817,112 +2775,223 @@ components:
           items: {}
           description: A list of User identifiers.
       description: Query for Groups that are eligible for adding at least one of specified users.
-    GetAvailableTypesAsync:
-      title: GetAvailableTypesAsync
-      description: Gets all possible types for the User
-    SaveProfileAsync:
-      title: SaveProfileAsync
+    SendInvitationAsync:
+      title: SendInvitationAsync
+      description: Sends an Invitation Workflow e-mail to the specified user.
+    RetrieveAll:
+      title: RetrieveAll
+      description: Gets a list of all users and their information for a given workspace.
+    ReadSingleAsync:
+      title: ReadSingleAsync
+      description: Asynchronously read a single Permission instance.
+    MassRemoveUsersFromGroupsAsync:
+      title: MassRemoveUsersFromGroupsAsync
+      required:
+      - users
+      - groups
+      properties:
+        users:
+          type: array
+          items: {}
+          description: The list of identifiers for users to remove from the list of user group.
+        groups:
+          type: array
+          items: {}
+          description: The list of identifiers for groups where users are being removed.
+      description: ''
+    MassAddUsersToGroupsAsync:
+      title: MassAddUsersToGroupsAsync
+      required:
+      - users
+      - groups
+      properties:
+        users:
+          type: array
+          items: {}
+          description: The list of identifiers for users to add to the list of user groups.
+        groups:
+          type: array
+          items: {}
+          description: The list of identifiers for groups where users are being added.
+      description: ''
+    GetGroupTabVisibilityAsync:
+      title: GetGroupTabVisibilityAsync
+      description: Get a list of tabs for the group and the tab visibility state.
+    GetItemGroupPermissionsAsync:
+      title: GetItemGroupPermissionsAsync
+      description: Get Item Group Permissions.
+    GetItemLevelSecurityAsync:
+      title: GetItemLevelSecurityAsync
+      description: Get Item Level Security settings for a given ArtifactID.
+    UpdateSingleAsync:
+      title: UpdateSingleAsync
+      required:
+      - permissionDTO
+      properties:
+        permissionDTO:
+          title: Permission
+          required:
+          - Name
+          - ArtifactType
+          - PermissionID
+          - PermissionType
+          type: object
+          properties:
+            Name:
+              type: string
+              description: ''
+              format: System.String
+            ArtifactType:
+              required:
+              - ID
+              - Guids
+              type: object
+              properties:
+                ID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Guids:
+                  type: array
+                  items:
+                    type: guid
+                    format: System.Guid
+                  description: ''
+            PermissionID:
+              type: integer
+              description: ''
+              format: System.Int32
+            PermissionType:
+              required:
+              - ID
+              - Name
+              type: object
+              properties:
+                ID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+          additionalProperties: false
+          description: Permission DTO to update.
+      description: Asynchronously updates a Permission.
+    RetrieveCurrentAsync:
+      title: RetrieveCurrentAsync
+      description: 'Asynchronously retrieves the current user in the specified workspace. NOTE: User Artifact ID may differ for the same user in different workspaces.'
+    RegenerateSecretAsync:
+      title: RegenerateSecretAsync
+      description: Generate a new secret for an OAuth2 Client.  All previous secrets are immediately invalidated.
+    UpdateAsync:
+      title: UpdateAsync
+      required:
+      - instance
+      properties:
+        instance:
+          title: FederatedInstance
+          required:
+          - Name
+          - InstanceUrl
+          type: object
+          properties:
+            Name:
+              type: string
+              description: ''
+              format: System.String
+            InstanceUrl:
+              type: uri
+              description: ''
+              format: System.Uri
+          additionalProperties: false
+          description: The instance to update
+      description: Update an existing Federated Instance
+    IsUserInWorkspaceGroupAsync:
+      title: IsUserInWorkspaceGroupAsync
+      description: Determines if the given user is a member of the given workspace group
+    GetWorkspaceGroupUsersAsync:
+      title: GetWorkspaceGroupUsersAsync
+      description: Get Workspace Group Users.
+    ReadAsync:
+      title: ReadAsync
+      description: Read a Federated Instance
+    UpdateLoginProfileAsync:
+      title: UpdateLoginProfileAsync
       required:
       - profile
       properties:
         profile:
-          title: AuthProfile
+          title: LoginProfile
           required:
-          - ID
-          - SiteUri
-          - IsGlobal
-          - Description
+          - UserID
           - Password
           - IntegratedAuthentication
           - ActiveDirectory
           - ClientCertificate
           - RSA
-          - OpenIDConnectProviders
-          - SAML2Providers
+          - OpenIDConnectMethods
+          - SAML2Methods
           type: object
           properties:
-            ID:
+            UserID:
               type: integer
               description: ''
               format: System.Int32
-            SiteUri:
-              type: uri
-              description: ''
-              format: System.Uri
-            IsGlobal:
-              type: boolean
-              description: ''
-              format: System.Boolean
-            Description:
-              type: string
-              description: ''
-              format: System.String
             Password:
               required:
-              - Name
+              - Email
+              - InvalidLoginAttempts
               - IsEnabled
-              - MinimumPasswordLength
-              - MaximumPasswordLength
-              - MaximumPasswordAgeInDaysDefaultValue
-              - UsersCanChangePasswordDefaultValue
-              - AllowEmailPasswordRecovery
-              - PasswordRecoveryRequestLimit
-              - MaximumPasswordHistory
-              - MaximumInvalidLoginAttempts
-              - AdditionalWorkFactor
+              - MustResetPasswordOnNextLogin
+              - UserCanChangePassword
+              - PasswordExpirationInDays
+              - PasswordExpires
+              - TwoFactorInfo
+              - TwoFactorMode
               type: object
               properties:
-                Name:
+                Email:
                   type: string
                   description: ''
                   format: System.String
+                InvalidLoginAttempts:
+                  type: integer
+                  description: ''
+                  format: System.Int32
                 IsEnabled:
                   type: boolean
                   description: ''
                   format: System.Boolean
-                MinimumPasswordLength:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                MaximumPasswordLength:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                MaximumPasswordAgeInDaysDefaultValue:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                UsersCanChangePasswordDefaultValue:
+                MustResetPasswordOnNextLogin:
                   type: boolean
                   description: ''
                   format: System.Boolean
-                AllowEmailPasswordRecovery:
+                UserCanChangePassword:
                   type: boolean
                   description: ''
                   format: System.Boolean
-                PasswordRecoveryRequestLimit:
+                PasswordExpirationInDays:
                   type: integer
                   description: ''
                   format: System.Int32
-                MaximumPasswordHistory:
-                  type: integer
+                PasswordExpires:
+                  type: datetime
                   description: ''
-                  format: System.Int32
-                MaximumInvalidLoginAttempts:
-                  type: integer
+                  format: System.DateTime
+                TwoFactorInfo:
+                  type: string
                   description: ''
-                  format: System.Int32
-                AdditionalWorkFactor:
-                  type: integer
-                  description: ''
-                  format: System.Int32
+                  format: System.String
+                TwoFactorMode:
+                  type: object
             IntegratedAuthentication:
               required:
-              - Name
+              - Account
               - IsEnabled
               type: object
               properties:
-                Name:
+                Account:
                   type: string
                   description: ''
                   format: System.String
@@ -1932,11 +3001,11 @@ components:
                   format: System.Boolean
             ActiveDirectory:
               required:
-              - Name
+              - Account
               - IsEnabled
               type: object
               properties:
-                Name:
+                Account:
                   type: string
                   description: ''
                   format: System.String
@@ -1947,17 +3016,15 @@ components:
             ClientCertificate:
               required:
               - Name
-              - Description
+              - Subject
               - IsEnabled
-              - DisplayOnLoginPage
-              - Caption
               type: object
               properties:
                 Name:
                   type: string
                   description: ''
                   format: System.String
-                Description:
+                Subject:
                   type: string
                   description: ''
                   format: System.String
@@ -1965,21 +3032,13 @@ components:
                   type: boolean
                   description: ''
                   format: System.Boolean
-                DisplayOnLoginPage:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-                Caption:
-                  type: string
-                  description: ''
-                  format: System.String
             RSA:
               required:
-              - Name
+              - Subject
               - IsEnabled
               type: object
               properties:
-                Name:
+                Subject:
                   type: string
                   description: ''
                   format: System.String
@@ -1987,17 +3046,560 @@ components:
                   type: boolean
                   description: ''
                   format: System.Boolean
-            OpenIDConnectProviders:
+            OpenIDConnectMethods:
               type: array
               items: {}
               description: ''
-            SAML2Providers:
+            SAML2Methods:
               type: array
               items: {}
               description: ''
           additionalProperties: false
           description: The profile to save
-      description: Save an Auth Profile
+      description: Save a Login Method profile.
+    GetItemLevelSecurityListAsync:
+      title: GetItemLevelSecurityListAsync
+      required:
+      - artifactIDs
+      properties:
+        artifactIDs:
+          type: array
+          items:
+            type: integer
+            format: System.Int32
+          description: Collection of ArtifactIDs
+      description: "Returns a dictionary of item-level security settings objects for the specified Relativity artifacts. \n            Inputs include the workspace ArtifactID and a collection of ArtifactIDs. \n            For admin artifacts, specify -1 as the workspace ArtifactID."
+    GetPermissionSelectedAsync:
+      title: GetPermissionSelectedAsync
+      required:
+      - permissions
+      properties:
+        permissions:
+          type: array
+          items: {}
+          description: Collection of Permission references.
+      description: Indicates a given permission is selected. (ArtifactTypeID)
+    HasAccessToWorkspaceAsync:
+      title: HasAccessToWorkspaceAsync
+      description: Determines if the current user has access to workspace.
+    SetPasswordAsync:
+      title: SetPasswordAsync
+      required:
+      - password
+      properties:
+        password:
+          type: string
+          description: "The new password for the user.  Passwords must meet \n            the password complexity criteria configured for this environment."
+          format: string
+      description: "Explicitly set a user's password.  Note that admins are not allowed to reset \n            Relativity users' passwords by default. (see Remarks for more information)"
+    GetGlobalProfileAsync:
+      title: GetGlobalProfileAsync
+      description: Read the Global Auth Profile from the system
+    GetAvailableTypesAsync:
+      title: GetAvailableTypesAsync
+      description: Gets all possible types for the User
+    GetLoginProfileAsync:
+      title: GetLoginProfileAsync
+      description: Get a Login Method Profile for a given user.
+    AddMembersAsync:
+      title: AddMembersAsync
+      required:
+      - users
+      properties:
+        users:
+          type: array
+          items: {}
+          description: The list of identifiers for users to add to the group.
+      description: Adds a list of users to a given group.
+    SaveAsync:
+      title: SaveAsync
+      required:
+      - client
+      properties:
+        client:
+          title: OAuth2Client
+          required:
+          - AccessTokenLifetimeInMinutes
+          - Name
+          - Description
+          - Enabled
+          - Flow
+          - ID
+          - IsSystem
+          - RedirectUris
+          - Secret
+          - Scopes
+          - ContextUser
+          - Claims
+          type: object
+          properties:
+            AccessTokenLifetimeInMinutes:
+              type: integer
+              description: ''
+              format: System.Int32
+            Name:
+              type: string
+              description: ''
+              format: System.String
+            Description:
+              type: string
+              description: ''
+              format: System.String
+            Enabled:
+              type: boolean
+              description: ''
+              format: System.Boolean
+            Flow:
+              type: object
+            ID:
+              type: string
+              description: ''
+              format: System.String
+            IsSystem:
+              type: boolean
+              description: ''
+              format: System.Boolean
+            RedirectUris:
+              type: array
+              items:
+                type: uri
+                format: System.Uri
+              description: ''
+            Secret:
+              type: string
+              description: ''
+              format: System.String
+            Scopes:
+              type: array
+              items:
+                type: string
+                format: System.String
+              description: ''
+            ContextUser:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            Claims:
+              type: array
+              items: {}
+              description: ''
+          additionalProperties: false
+          description: The OAuth2 Client to save.
+      description: Save an OAuth2 Client.
+    RemoveMembersAsync:
+      title: RemoveMembersAsync
+      required:
+      - users
+      properties:
+        users:
+          type: array
+          items: {}
+          description: The list of identifiers for users to remove from the group.
+      description: Removes a list of users from a given group.
+    QueryAsync:
+      title: QueryAsync
+      required:
+      - query
+      properties:
+        query:
+          title: Query
+          required:
+          - Condition
+          - Sorts
+          - RelationalField
+          - RowCondition
+          - SearchProviderCondition
+          - ExecutingSavedSearchId
+          - SampleParameters
+          - IncludeIdWindow
+          - RankSortOrder
+          - QueryHint
+          type: object
+          properties:
+            Condition:
+              type: string
+              description: ''
+              format: System.String
+            Sorts:
+              type: array
+              items: {}
+              description: ''
+            RelationalField:
+              required:
+              - ViewFieldID
+              - ArtifactID
+              - Guid
+              - Name
+              type: object
+              properties:
+                ViewFieldID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+            RowCondition:
+              type: string
+              description: ''
+              format: System.String
+            SearchProviderCondition:
+              required:
+              - SearchIndex
+              - Input
+              type: object
+              properties:
+                SearchIndex:
+                  required:
+                  - ArtifactID
+                  - Name
+                  type: object
+                  properties:
+                    ArtifactID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Name:
+                      type: string
+                      description: ''
+                      format: System.String
+                Input:
+                  type: string
+                  description: ''
+                  format: System.String
+            ExecutingSavedSearchId:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            SampleParameters:
+              required:
+              - ExistingToken
+              - MarginOfError
+              - ConfidenceLevel
+              - FixedSampleSize
+              - SamplingPercentage
+              type: object
+              properties:
+                ExistingToken:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                MarginOfError:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                ConfidenceLevel:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                FixedSampleSize:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                SamplingPercentage:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+            IncludeIdWindow:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            RankSortOrder:
+              type: string
+              description: ''
+              format: System.String
+            QueryHint:
+              type: string
+              description: ''
+              format: System.String
+          additionalProperties: false
+          description: Search Query.
+      description: Asynchronously queries for a subset of a collection of Permission instances.
+    ReadSettingsAsync:
+      title: ReadSettingsAsync
+      description: Retrieves settings for the current user, including their name, email, and other properties.
+    VerifyBulkInvitationAsync:
+      title: VerifyBulkInvitationAsync
+      required:
+      - userIDList
+      properties:
+        userIDList:
+          type: array
+          items:
+            type: integer
+            format: System.Int32
+          description: The list of users
+      description: Verifies an Invitation Workflow without sending an email.
+    SetGroupTabVisibilityAsync:
+      title: SetGroupTabVisibilityAsync
+      required:
+      - tabVisibility
+      properties:
+        tabVisibility:
+          type: array
+          items: {}
+          description: The tab visibility state.
+      description: Update the tab visibility state for a group.
+    SendBulkInvitationAsync:
+      title: SendBulkInvitationAsync
+      required:
+      - userIDList
+      properties:
+        userIDList:
+          type: array
+          items:
+            type: integer
+            format: System.Int32
+          description: The list of users
+      description: Sends an Invitation Workflow e-mail to each specified user.
+    QueryEligibleClients:
+      title: QueryEligibleClients
+      required:
+      - request
+      - start
+      - length
+      properties:
+        request:
+          title: QueryRequest
+          required:
+          - ObjectType
+          - Condition
+          - Sorts
+          - RelationalField
+          - RowCondition
+          - SearchProviderCondition
+          - SampleParameters
+          - IncludeIDWindow
+          - RankSortOrder
+          - QueryHint
+          - Fields
+          - IsAdhocQuery
+          - ConvertNumberFieldValuesToString
+          - IncludeNameInQueryResult
+          - ExecutingSavedSearchID
+          - ExecutingViewID
+          - ActiveArtifactID
+          - MaxCharactersForLongTextValues
+          - LongTextBehavior
+          type: object
+          properties:
+            ObjectType:
+              required:
+              - ArtifactID
+              - Name
+              - Guid
+              - ArtifactTypeID
+              type: object
+              properties:
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                ArtifactTypeID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+            Condition:
+              type: string
+              description: ''
+              format: System.String
+            Sorts:
+              type: array
+              items: {}
+              description: ''
+            RelationalField:
+              required:
+              - ViewFieldID
+              - ArtifactID
+              - Guid
+              - Name
+              type: object
+              properties:
+                ViewFieldID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                ArtifactID:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                Guid:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                Name:
+                  type: string
+                  description: ''
+                  format: System.String
+            RowCondition:
+              type: string
+              description: ''
+              format: System.String
+            SearchProviderCondition:
+              required:
+              - SearchIndex
+              - Input
+              type: object
+              properties:
+                SearchIndex:
+                  required:
+                  - ArtifactID
+                  - Name
+                  type: object
+                  properties:
+                    ArtifactID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Name:
+                      type: string
+                      description: ''
+                      format: System.String
+                Input:
+                  type: string
+                  description: ''
+                  format: System.String
+            SampleParameters:
+              required:
+              - ExistingToken
+              - MarginOfError
+              - ConfidenceLevel
+              - FixedSampleSize
+              - SamplingPercentage
+              type: object
+              properties:
+                ExistingToken:
+                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+                  description: ''
+                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+                MarginOfError:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                ConfidenceLevel:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+                FixedSampleSize:
+                  type: integer
+                  description: ''
+                  format: System.Int32
+                SamplingPercentage:
+                  type: number
+                  description: ''
+                  format: System.Decimal
+            IncludeIDWindow:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            RankSortOrder:
+              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
+              description: ''
+              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
+            QueryHint:
+              type: string
+              description: ''
+              format: System.String
+            Fields:
+              type: array
+              items: {}
+              description: ''
+            IsAdhocQuery:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ConvertNumberFieldValuesToString:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            IncludeNameInQueryResult:
+              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingSavedSearchID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ExecutingViewID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            ActiveArtifactID:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            MaxCharactersForLongTextValues:
+              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
+              description: ''
+              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            LongTextBehavior:
+              type: object
+          additionalProperties: false
+          description: A QueryRequest object containing conditions, sorting order, fields and other information for the query.
+        start:
+          type: integer
+          description: Index of the first artifact in the returned QueryResultSet object.
+          format: integer
+        length:
+          type: integer
+          description: Number of items to return in the query result, starting with index in the start parameter.
+          format: integer
+      description: Query for Clients that are valid for the client property on group
+    DeleteAsync:
+      title: DeleteAsync
+      description: Remove a Federated Instance from this Relativity instance
+    GetAdminOperationPermissionSelectedListAsync:
+      title: GetAdminOperationPermissionSelectedListAsync
+      required:
+      - permissionIDs
+      properties:
+        permissionIDs:
+          type: array
+          items:
+            type: integer
+            format: System.Int32
+          description: Collection of Permission identifiers.
+      description: Indicates if a given admin permission is selected.
+    CreateAsync:
+      title: CreateAsync
+      required:
+      - instance
+      properties:
+        instance:
+          title: FederatedInstance
+          required:
+          - Name
+          - InstanceUrl
+          type: object
+          properties:
+            Name:
+              type: string
+              description: ''
+              format: System.String
+            InstanceUrl:
+              type: uri
+              description: ''
+              format: System.Uri
+          additionalProperties: false
+          description: The Federated Instance to create
+      description: Create a new Federated Instance
     QueryEligibleUsersToAdd:
       title: QueryEligibleUsersToAdd
       required:
@@ -2202,1505 +3804,6 @@ components:
     ReadAllAsync:
       title: ReadAllAsync
       description: Read all Federated Instances
-    RegenerateSecretAsync:
-      title: RegenerateSecretAsync
-      description: Generate a new secret for an OAuth2 Client.  All previous secrets are immediately invalidated.
-    GetItemLevelSecurityAsync:
-      title: GetItemLevelSecurityAsync
-      description: Get Item Level Security settings for a given ArtifactID.
-    ReadSettingsAsync:
-      title: ReadSettingsAsync
-      description: Retrieves settings for the current user, including their name, email, and other properties.
-    MassAddUsersToGroupsAsync:
-      title: MassAddUsersToGroupsAsync
-      required:
-      - users
-      - groups
-      properties:
-        users:
-          type: array
-          items: {}
-          description: The list of identifiers for users to add to the list of user groups.
-        groups:
-          type: array
-          items: {}
-          description: The list of identifiers for groups where users are being added.
-      description: ''
-    GetWorkspaceGroupUsersAsync:
-      title: GetWorkspaceGroupUsersAsync
-      description: Get Workspace Group Users.
-    SaveAsync:
-      title: SaveAsync
-      required:
-      - client
-      properties:
-        client:
-          title: OAuth2Client
-          required:
-          - AccessTokenLifetimeInMinutes
-          - Name
-          - Description
-          - Enabled
-          - Flow
-          - ID
-          - IsSystem
-          - RedirectUris
-          - Secret
-          - Scopes
-          - ContextUser
-          - Claims
-          type: object
-          properties:
-            AccessTokenLifetimeInMinutes:
-              type: integer
-              description: ''
-              format: System.Int32
-            Name:
-              type: string
-              description: ''
-              format: System.String
-            Description:
-              type: string
-              description: ''
-              format: System.String
-            Enabled:
-              type: boolean
-              description: ''
-              format: System.Boolean
-            Flow:
-              type: object
-            ID:
-              type: string
-              description: ''
-              format: System.String
-            IsSystem:
-              type: boolean
-              description: ''
-              format: System.Boolean
-            RedirectUris:
-              type: array
-              items:
-                type: uri
-                format: System.Uri
-              description: ''
-            Secret:
-              type: string
-              description: ''
-              format: System.String
-            Scopes:
-              type: array
-              items:
-                type: string
-                format: System.String
-              description: ''
-            ContextUser:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            Claims:
-              type: array
-              items: {}
-              description: ''
-          additionalProperties: false
-          description: The OAuth2 Client to save.
-      description: Save an OAuth2 Client.
-    QueryMembersAsync:
-      title: QueryMembersAsync
-      required:
-      - request
-      - start
-      - length
-      properties:
-        request:
-          title: QueryRequest
-          required:
-          - ObjectType
-          - Condition
-          - Sorts
-          - RelationalField
-          - RowCondition
-          - SearchProviderCondition
-          - SampleParameters
-          - IncludeIDWindow
-          - RankSortOrder
-          - QueryHint
-          - Fields
-          - IsAdhocQuery
-          - ConvertNumberFieldValuesToString
-          - IncludeNameInQueryResult
-          - ExecutingSavedSearchID
-          - ExecutingViewID
-          - ActiveArtifactID
-          - MaxCharactersForLongTextValues
-          - LongTextBehavior
-          type: object
-          properties:
-            ObjectType:
-              required:
-              - ArtifactID
-              - Name
-              - Guid
-              - ArtifactTypeID
-              type: object
-              properties:
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                ArtifactTypeID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-            Condition:
-              type: string
-              description: ''
-              format: System.String
-            Sorts:
-              type: array
-              items: {}
-              description: ''
-            RelationalField:
-              required:
-              - ViewFieldID
-              - ArtifactID
-              - Guid
-              - Name
-              type: object
-              properties:
-                ViewFieldID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-            RowCondition:
-              type: string
-              description: ''
-              format: System.String
-            SearchProviderCondition:
-              required:
-              - SearchIndex
-              - Input
-              type: object
-              properties:
-                SearchIndex:
-                  required:
-                  - ArtifactID
-                  - Name
-                  type: object
-                  properties:
-                    ArtifactID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Name:
-                      type: string
-                      description: ''
-                      format: System.String
-                Input:
-                  type: string
-                  description: ''
-                  format: System.String
-            SampleParameters:
-              required:
-              - ExistingToken
-              - MarginOfError
-              - ConfidenceLevel
-              - FixedSampleSize
-              - SamplingPercentage
-              type: object
-              properties:
-                ExistingToken:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                MarginOfError:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                ConfidenceLevel:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                FixedSampleSize:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                SamplingPercentage:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-            IncludeIDWindow:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            RankSortOrder:
-              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
-              description: ''
-              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
-            QueryHint:
-              type: string
-              description: ''
-              format: System.String
-            Fields:
-              type: array
-              items: {}
-              description: ''
-            IsAdhocQuery:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ConvertNumberFieldValuesToString:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            IncludeNameInQueryResult:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingSavedSearchID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingViewID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ActiveArtifactID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            MaxCharactersForLongTextValues:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            LongTextBehavior:
-              type: object
-          additionalProperties: false
-          description: A QueryRequest object containing conditions, sorting order, fields and other information for the query.
-        start:
-          type: integer
-          description: Index of the first artifact in the returned QueryResultSet object.
-          format: integer
-        length:
-          type: integer
-          description: Number of items to return in the query result, starting with index in the start parameter.
-          format: integer
-      description: Retrieves the list of users in a given group.
-    GetGlobalProfileAsync:
-      title: GetGlobalProfileAsync
-      description: Read the Global Auth Profile from the system
-    RetrieveCurrentAsync:
-      title: RetrieveCurrentAsync
-      description: 'Asynchronously retrieves the current user in the specified workspace. NOTE: User Artifact ID may differ for the same user in different workspaces.'
-    ReadActiveUsersAsync:
-      title: ReadActiveUsersAsync
-      description: Asynchronously retrieves a list of all active users in a workspace. If the number of returned users exceeds the ChoiceLimitForUI setting, no users will be returned.
-    GetItemGroupPermissionsAsync:
-      title: GetItemGroupPermissionsAsync
-      description: Get Item Group Permissions.
-    SetWorkspaceGroupPermissionsAsync:
-      title: SetWorkspaceGroupPermissionsAsync
-      required:
-      - groupPermissions
-      properties:
-        groupPermissions:
-          title: GroupPermissions
-          required:
-          - ArtifactID
-          - GroupID
-          - ObjectPermissions
-          - TabVisibility
-          - BrowserPermissions
-          - MassActionPermissions
-          - AdminPermissions
-          - LastModified
-          type: object
-          properties:
-            ArtifactID:
-              type: integer
-              description: ''
-              format: System.Int32
-            GroupID:
-              type: integer
-              description: ''
-              format: System.Int32
-            ObjectPermissions:
-              type: array
-              items: {}
-              description: ''
-            TabVisibility:
-              type: array
-              items: {}
-              description: ''
-            BrowserPermissions:
-              type: array
-              items: {}
-              description: ''
-            MassActionPermissions:
-              type: array
-              items: {}
-              description: ''
-            AdminPermissions:
-              type: array
-              items: {}
-              description: ''
-            LastModified:
-              type: datetime
-              description: ''
-              format: System.DateTime
-          additionalProperties: false
-          description: Group Permissions.
-      description: Set Workspace Group Permissions.
-    HasAccessToWorkspaceAsync:
-      title: HasAccessToWorkspaceAsync
-      description: Determines if the current user has access to workspace.
-    AddMembersAsync:
-      title: AddMembersAsync
-      required:
-      - users
-      properties:
-        users:
-          type: array
-          items: {}
-          description: The list of identifiers for users to add to the group.
-      description: Adds a list of users to a given group.
-    UpdateSettingsAsync:
-      title: UpdateSettingsAsync
-      required:
-      - userSettingRequest
-      properties:
-        userSettingRequest:
-          title: UserSettingRequest
-          required:
-          - DefaultFilterVisibility
-          - DefaultSelectedFileType
-          - EmailAddress
-          - EmailPreference
-          - FirstName
-          - ItemListPageLength
-          - LastName
-          - SavedSearchDefaultsToPublic
-          - SkipDefaultPreference
-          type: object
-          properties:
-            DefaultFilterVisibility:
-              type: boolean
-              description: ''
-              format: System.Boolean
-            DefaultSelectedFileType:
-              type: object
-            EmailAddress:
-              type: string
-              description: ''
-              format: System.String
-            EmailPreference:
-              type: object
-            FirstName:
-              type: string
-              description: ''
-              format: System.String
-            ItemListPageLength:
-              type: integer
-              description: ''
-              format: System.Int32
-            LastName:
-              type: string
-              description: ''
-              format: System.String
-            SavedSearchDefaultsToPublic:
-              type: boolean
-              description: ''
-              format: System.Boolean
-            SkipDefaultPreference:
-              type: boolean
-              description: ''
-              format: System.Boolean
-          additionalProperties: false
-          description: The data about the user settings being updated.
-      description: Modifies the user setting properties of the current user.
-    QueryGroupsByUserAsync:
-      title: QueryGroupsByUserAsync
-      required:
-      - request
-      - start
-      - length
-      properties:
-        request:
-          title: QueryRequest
-          required:
-          - ObjectType
-          - Condition
-          - Sorts
-          - RelationalField
-          - RowCondition
-          - SearchProviderCondition
-          - SampleParameters
-          - IncludeIDWindow
-          - RankSortOrder
-          - QueryHint
-          - Fields
-          - IsAdhocQuery
-          - ConvertNumberFieldValuesToString
-          - IncludeNameInQueryResult
-          - ExecutingSavedSearchID
-          - ExecutingViewID
-          - ActiveArtifactID
-          - MaxCharactersForLongTextValues
-          - LongTextBehavior
-          type: object
-          properties:
-            ObjectType:
-              required:
-              - ArtifactID
-              - Name
-              - Guid
-              - ArtifactTypeID
-              type: object
-              properties:
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                ArtifactTypeID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-            Condition:
-              type: string
-              description: ''
-              format: System.String
-            Sorts:
-              type: array
-              items: {}
-              description: ''
-            RelationalField:
-              required:
-              - ViewFieldID
-              - ArtifactID
-              - Guid
-              - Name
-              type: object
-              properties:
-                ViewFieldID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-            RowCondition:
-              type: string
-              description: ''
-              format: System.String
-            SearchProviderCondition:
-              required:
-              - SearchIndex
-              - Input
-              type: object
-              properties:
-                SearchIndex:
-                  required:
-                  - ArtifactID
-                  - Name
-                  type: object
-                  properties:
-                    ArtifactID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Name:
-                      type: string
-                      description: ''
-                      format: System.String
-                Input:
-                  type: string
-                  description: ''
-                  format: System.String
-            SampleParameters:
-              required:
-              - ExistingToken
-              - MarginOfError
-              - ConfidenceLevel
-              - FixedSampleSize
-              - SamplingPercentage
-              type: object
-              properties:
-                ExistingToken:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                MarginOfError:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                ConfidenceLevel:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                FixedSampleSize:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                SamplingPercentage:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-            IncludeIDWindow:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            RankSortOrder:
-              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
-              description: ''
-              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
-            QueryHint:
-              type: string
-              description: ''
-              format: System.String
-            Fields:
-              type: array
-              items: {}
-              description: ''
-            IsAdhocQuery:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ConvertNumberFieldValuesToString:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            IncludeNameInQueryResult:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingSavedSearchID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingViewID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ActiveArtifactID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            MaxCharactersForLongTextValues:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            LongTextBehavior:
-              type: object
-          additionalProperties: false
-          description: A QueryRequest object containing conditions, sorting order, fields and other information for the query.
-        start:
-          type: integer
-          description: Index of the first artifact in the returned QueryResultSet object.
-          format: integer
-        length:
-          type: integer
-          description: Number of items to return in the query result, starting with index in the start parameter.
-          format: integer
-      description: ''
-    QueryEligibleClients:
-      title: QueryEligibleClients
-      required:
-      - request
-      - start
-      - length
-      properties:
-        request:
-          title: QueryRequest
-          required:
-          - ObjectType
-          - Condition
-          - Sorts
-          - RelationalField
-          - RowCondition
-          - SearchProviderCondition
-          - SampleParameters
-          - IncludeIDWindow
-          - RankSortOrder
-          - QueryHint
-          - Fields
-          - IsAdhocQuery
-          - ConvertNumberFieldValuesToString
-          - IncludeNameInQueryResult
-          - ExecutingSavedSearchID
-          - ExecutingViewID
-          - ActiveArtifactID
-          - MaxCharactersForLongTextValues
-          - LongTextBehavior
-          type: object
-          properties:
-            ObjectType:
-              required:
-              - ArtifactID
-              - Name
-              - Guid
-              - ArtifactTypeID
-              type: object
-              properties:
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                ArtifactTypeID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-            Condition:
-              type: string
-              description: ''
-              format: System.String
-            Sorts:
-              type: array
-              items: {}
-              description: ''
-            RelationalField:
-              required:
-              - ViewFieldID
-              - ArtifactID
-              - Guid
-              - Name
-              type: object
-              properties:
-                ViewFieldID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-            RowCondition:
-              type: string
-              description: ''
-              format: System.String
-            SearchProviderCondition:
-              required:
-              - SearchIndex
-              - Input
-              type: object
-              properties:
-                SearchIndex:
-                  required:
-                  - ArtifactID
-                  - Name
-                  type: object
-                  properties:
-                    ArtifactID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Name:
-                      type: string
-                      description: ''
-                      format: System.String
-                Input:
-                  type: string
-                  description: ''
-                  format: System.String
-            SampleParameters:
-              required:
-              - ExistingToken
-              - MarginOfError
-              - ConfidenceLevel
-              - FixedSampleSize
-              - SamplingPercentage
-              type: object
-              properties:
-                ExistingToken:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                MarginOfError:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                ConfidenceLevel:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                FixedSampleSize:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                SamplingPercentage:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-            IncludeIDWindow:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            RankSortOrder:
-              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
-              description: ''
-              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
-            QueryHint:
-              type: string
-              description: ''
-              format: System.String
-            Fields:
-              type: array
-              items: {}
-              description: ''
-            IsAdhocQuery:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ConvertNumberFieldValuesToString:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            IncludeNameInQueryResult:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingSavedSearchID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingViewID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ActiveArtifactID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            MaxCharactersForLongTextValues:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            LongTextBehavior:
-              type: object
-          additionalProperties: false
-          description: A QueryRequest object containing conditions, sorting order, fields and other information for the query.
-        start:
-          type: integer
-          description: Index of the first artifact in the returned QueryResultSet object.
-          format: integer
-        length:
-          type: integer
-          description: Number of items to return in the query result, starting with index in the start parameter.
-          format: integer
-      description: Query for Clients that are valid for the client property on group
-    GetGroupTabVisibilityAsync:
-      title: GetGroupTabVisibilityAsync
-      description: Get a list of tabs for the group and the tab visibility state.
-    UpdateSingleAsync:
-      title: UpdateSingleAsync
-      required:
-      - permissionDTO
-      properties:
-        permissionDTO:
-          title: Permission
-          required:
-          - Name
-          - ArtifactType
-          - PermissionID
-          - PermissionType
-          type: object
-          properties:
-            Name:
-              type: string
-              description: ''
-              format: System.String
-            ArtifactType:
-              required:
-              - ID
-              - Guids
-              type: object
-              properties:
-                ID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Guids:
-                  type: array
-                  items:
-                    type: guid
-                    format: System.Guid
-                  description: ''
-            PermissionID:
-              type: integer
-              description: ''
-              format: System.Int32
-            PermissionType:
-              required:
-              - ID
-              - Name
-              type: object
-              properties:
-                ID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-          additionalProperties: false
-          description: Permission DTO to update.
-      description: Asynchronously updates a Permission.
-    GetPermissionSelectedAsync:
-      title: GetPermissionSelectedAsync
-      required:
-      - permissions
-      properties:
-        permissions:
-          type: array
-          items: {}
-          description: Collection of Permission references.
-      description: Indicates a given permission is selected. (ArtifactTypeID)
-    ReadSingleAsync:
-      title: ReadSingleAsync
-      description: Asynchronously read a single Permission instance.
-    UpdateLoginProfileAsync:
-      title: UpdateLoginProfileAsync
-      required:
-      - profile
-      properties:
-        profile:
-          title: LoginProfile
-          required:
-          - UserID
-          - Password
-          - IntegratedAuthentication
-          - ActiveDirectory
-          - ClientCertificate
-          - RSA
-          - OpenIDConnectMethods
-          - SAML2Methods
-          type: object
-          properties:
-            UserID:
-              type: integer
-              description: ''
-              format: System.Int32
-            Password:
-              required:
-              - Email
-              - InvalidLoginAttempts
-              - IsEnabled
-              - MustResetPasswordOnNextLogin
-              - UserCanChangePassword
-              - PasswordExpirationInDays
-              - PasswordExpires
-              - TwoFactorInfo
-              - TwoFactorMode
-              type: object
-              properties:
-                Email:
-                  type: string
-                  description: ''
-                  format: System.String
-                InvalidLoginAttempts:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                IsEnabled:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-                MustResetPasswordOnNextLogin:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-                UserCanChangePassword:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-                PasswordExpirationInDays:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                PasswordExpires:
-                  type: datetime
-                  description: ''
-                  format: System.DateTime
-                TwoFactorInfo:
-                  type: string
-                  description: ''
-                  format: System.String
-                TwoFactorMode:
-                  type: object
-            IntegratedAuthentication:
-              required:
-              - Account
-              - IsEnabled
-              type: object
-              properties:
-                Account:
-                  type: string
-                  description: ''
-                  format: System.String
-                IsEnabled:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-            ActiveDirectory:
-              required:
-              - Account
-              - IsEnabled
-              type: object
-              properties:
-                Account:
-                  type: string
-                  description: ''
-                  format: System.String
-                IsEnabled:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-            ClientCertificate:
-              required:
-              - Name
-              - Subject
-              - IsEnabled
-              type: object
-              properties:
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-                Subject:
-                  type: string
-                  description: ''
-                  format: System.String
-                IsEnabled:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-            RSA:
-              required:
-              - Subject
-              - IsEnabled
-              type: object
-              properties:
-                Subject:
-                  type: string
-                  description: ''
-                  format: System.String
-                IsEnabled:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-            OpenIDConnectMethods:
-              type: array
-              items: {}
-              description: ''
-            SAML2Methods:
-              type: array
-              items: {}
-              description: ''
-          additionalProperties: false
-          description: The profile to save
-      description: Save a Login Method profile.
-    SendBulkInvitationAsync:
-      title: SendBulkInvitationAsync
-      required:
-      - userIDList
-      properties:
-        userIDList:
-          type: array
-          items:
-            type: integer
-            format: System.Int32
-          description: The list of users
-      description: Sends an Invitation Workflow e-mail to each specified user.
-    MassRemoveUsersFromGroupsAsync:
-      title: MassRemoveUsersFromGroupsAsync
-      required:
-      - users
-      - groups
-      properties:
-        users:
-          type: array
-          items: {}
-          description: The list of identifiers for users to remove from the list of user group.
-        groups:
-          type: array
-          items: {}
-          description: The list of identifiers for groups where users are being removed.
-      description: ''
-    IsUserInWorkspaceGroupAsync:
-      title: IsUserInWorkspaceGroupAsync
-      description: Determines if the given user is a member of the given workspace group
-    GetPermissionSelectedForGroupAsync:
-      title: GetPermissionSelectedForGroupAsync
-      required:
-      - permissions
-      properties:
-        permissions:
-          type: array
-          items: {}
-          description: Collection of Permission references.
-      description: Indicates a given permission is selected. (ArtifactTypeID for a given Group)
-    GetLoginProfileAsync:
-      title: GetLoginProfileAsync
-      description: Get a Login Method Profile for a given user.
-    UpdateAsync:
-      title: UpdateAsync
-      required:
-      - instance
-      properties:
-        instance:
-          title: FederatedInstance
-          required:
-          - Name
-          - InstanceUrl
-          type: object
-          properties:
-            Name:
-              type: string
-              description: ''
-              format: System.String
-            InstanceUrl:
-              type: uri
-              description: ''
-              format: System.Uri
-          additionalProperties: false
-          description: The instance to update
-      description: Update an existing Federated Instance
-    QueryAsync:
-      title: QueryAsync
-      required:
-      - query
-      properties:
-        query:
-          title: Query
-          required:
-          - Condition
-          - Sorts
-          - RelationalField
-          - RowCondition
-          - SearchProviderCondition
-          - ExecutingSavedSearchId
-          - SampleParameters
-          - IncludeIdWindow
-          - RankSortOrder
-          - QueryHint
-          type: object
-          properties:
-            Condition:
-              type: string
-              description: ''
-              format: System.String
-            Sorts:
-              type: array
-              items: {}
-              description: ''
-            RelationalField:
-              required:
-              - ViewFieldID
-              - ArtifactID
-              - Guid
-              - Name
-              type: object
-              properties:
-                ViewFieldID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-            RowCondition:
-              type: string
-              description: ''
-              format: System.String
-            SearchProviderCondition:
-              required:
-              - SearchIndex
-              - Input
-              type: object
-              properties:
-                SearchIndex:
-                  required:
-                  - ArtifactID
-                  - Name
-                  type: object
-                  properties:
-                    ArtifactID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Name:
-                      type: string
-                      description: ''
-                      format: System.String
-                Input:
-                  type: string
-                  description: ''
-                  format: System.String
-            ExecutingSavedSearchId:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            SampleParameters:
-              required:
-              - ExistingToken
-              - MarginOfError
-              - ConfidenceLevel
-              - FixedSampleSize
-              - SamplingPercentage
-              type: object
-              properties:
-                ExistingToken:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                MarginOfError:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                ConfidenceLevel:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                FixedSampleSize:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                SamplingPercentage:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-            IncludeIdWindow:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            RankSortOrder:
-              type: string
-              description: ''
-              format: System.String
-            QueryHint:
-              type: string
-              description: ''
-              format: System.String
-          additionalProperties: false
-          description: Search Query.
-      description: Asynchronously queries for a subset of a collection of Permission instances.
-    RetrieveAll:
-      title: RetrieveAll
-      description: Gets a list of all users and their information for a given workspace.
-    RetrieveUsersBy:
-      title: RetrieveUsersBy
-      required:
-      - query
-      - start
-      - length
-      properties:
-        query:
-          title: QueryRequest
-          required:
-          - ObjectType
-          - Condition
-          - Sorts
-          - RelationalField
-          - RowCondition
-          - SearchProviderCondition
-          - SampleParameters
-          - IncludeIDWindow
-          - RankSortOrder
-          - QueryHint
-          - Fields
-          - IsAdhocQuery
-          - ConvertNumberFieldValuesToString
-          - IncludeNameInQueryResult
-          - ExecutingSavedSearchID
-          - ExecutingViewID
-          - ActiveArtifactID
-          - MaxCharactersForLongTextValues
-          - LongTextBehavior
-          type: object
-          properties:
-            ObjectType:
-              required:
-              - ArtifactID
-              - Name
-              - Guid
-              - ArtifactTypeID
-              type: object
-              properties:
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                ArtifactTypeID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-            Condition:
-              type: string
-              description: ''
-              format: System.String
-            Sorts:
-              type: array
-              items: {}
-              description: ''
-            RelationalField:
-              required:
-              - ViewFieldID
-              - ArtifactID
-              - Guid
-              - Name
-              type: object
-              properties:
-                ViewFieldID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                ArtifactID:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                Guid:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                Name:
-                  type: string
-                  description: ''
-                  format: System.String
-            RowCondition:
-              type: string
-              description: ''
-              format: System.String
-            SearchProviderCondition:
-              required:
-              - SearchIndex
-              - Input
-              type: object
-              properties:
-                SearchIndex:
-                  required:
-                  - ArtifactID
-                  - Name
-                  type: object
-                  properties:
-                    ArtifactID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Name:
-                      type: string
-                      description: ''
-                      format: System.String
-                Input:
-                  type: string
-                  description: ''
-                  format: System.String
-            SampleParameters:
-              required:
-              - ExistingToken
-              - MarginOfError
-              - ConfidenceLevel
-              - FixedSampleSize
-              - SamplingPercentage
-              type: object
-              properties:
-                ExistingToken:
-                  type: nullable`1[[system.guid, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-                  description: ''
-                  format: System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-                MarginOfError:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                ConfidenceLevel:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-                FixedSampleSize:
-                  type: integer
-                  description: ''
-                  format: System.Int32
-                SamplingPercentage:
-                  type: number
-                  description: ''
-                  format: System.Decimal
-            IncludeIDWindow:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            RankSortOrder:
-              type: nullable`1[[relativity.identity.server.v1.shared.sortenum, relativity.identity.server, version=11.3.0.0, culture=neutral, publickeytoken=null]]
-              description: ''
-              format: System.Nullable`1[[Relativity.Identity.Server.V1.Shared.SortEnum, Relativity.Identity.Server, Version=11.3.0.0, Culture=neutral, PublicKeyToken=null]]
-            QueryHint:
-              type: string
-              description: ''
-              format: System.String
-            Fields:
-              type: array
-              items: {}
-              description: ''
-            IsAdhocQuery:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ConvertNumberFieldValuesToString:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            IncludeNameInQueryResult:
-              type: nullable`1[[system.boolean, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingSavedSearchID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ExecutingViewID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            ActiveArtifactID:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            MaxCharactersForLongTextValues:
-              type: nullable`1[[system.int32, mscorlib, version=4.0.0.0, culture=neutral, publickeytoken=b77a5c561934e089]]
-              description: ''
-              format: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            LongTextBehavior:
-              type: object
-          additionalProperties: false
-          description: A QueryRequest object containing conditions, sorting order, and other information for the query.
-        start:
-          type: integer
-          description: Index of the first artifact in the returned UserInfoQueryResultSet object.
-          format: integer
-        length:
-          type: integer
-          description: Number of items to return in the query result, starting with index in the start parameter.
-          format: integer
-      description: Gets a list of users and their information, and supports filtering, ordering, and paging these results.
-    CreateAsync:
-      title: CreateAsync
-      required:
-      - instance
-      properties:
-        instance:
-          title: FederatedInstance
-          required:
-          - Name
-          - InstanceUrl
-          type: object
-          properties:
-            Name:
-              type: string
-              description: ''
-              format: System.String
-            InstanceUrl:
-              type: uri
-              description: ''
-              format: System.Uri
-          additionalProperties: false
-          description: The Federated Instance to create
-      description: Create a new Federated Instance
-    DeleteSingleAsync:
-      title: DeleteSingleAsync
-      description: Asynchronously delets a Permission.
-    GetPermissionSelectedListAsync:
-      title: GetPermissionSelectedListAsync
-      required:
-      - permissions
-      - artifactIDs
-      properties:
-        permissions:
-          type: array
-          items: {}
-          description: Collection of Permission references.
-        artifactIDs:
-          type: array
-          items:
-            type: integer
-            format: System.Int32
-          description: Collection of Artifact IDs.
-      description: "Returns the current user’s permission to the specified relativity artifacts as a dictionary that maps the ArtifactID to the permissions values. \r\n            Inputs include the workspace ArtifactID, a collection of PermissionRef objects, and a collection of ArtifactIDs. \r\n            To return admin-level artifact permissions, specify -1 as the workspace ArtifactID."
-    GetItemGroupUsersAsync:
-      title: GetItemGroupUsersAsync
-      description: Get Item Group Users.
-    RetrieveAllWithRelativityAccessAsync:
-      title: RetrieveAllWithRelativityAccessAsync
-      description: ''
-    SendInvitationAsync:
-      title: SendInvitationAsync
-      description: Sends an Invitation Workflow e-mail to the specified user.
     CreateSingleAsync:
       title: CreateSingleAsync
       required:
@@ -3756,144 +3859,24 @@ components:
           additionalProperties: false
           description: Permission DTO.
       description: Asynchronously create a new permission.
+    GetItemGroupUsersAsync:
+      title: GetItemGroupUsersAsync
+      description: Get Item Group Users.
     ReadAllUsersAsync:
       title: ReadAllUsersAsync
       description: Asynchronously retrieves a list of all users in a workspace, including administrators and (optional) deleted users.
-    SetGroupTabVisibilityAsync:
-      title: SetGroupTabVisibilityAsync
-      required:
-      - tabVisibility
-      properties:
-        tabVisibility:
-          type: array
-          items: {}
-          description: The tab visibility state.
-      description: Update the tab visibility state for a group.
-    GetItemLevelSecurityListAsync:
-      title: GetItemLevelSecurityListAsync
-      required:
-      - artifactIDs
-      properties:
-        artifactIDs:
-          type: array
-          items:
-            type: integer
-            format: System.Int32
-          description: Collection of ArtifactIDs
-      description: "Returns a dictionary of item-level security settings objects for the specified Relativity artifacts. \r\n            Inputs include the workspace ArtifactID and a collection of ArtifactIDs. \r\n            For admin artifacts, specify -1 as the workspace ArtifactID."
-    SetItemGroupPermissionsAsync:
-      title: SetItemGroupPermissionsAsync
-      required:
-      - groupPermissions
-      properties:
-        groupPermissions:
-          title: GroupPermissions
-          required:
-          - ArtifactID
-          - GroupID
-          - ObjectPermissions
-          - TabVisibility
-          - BrowserPermissions
-          - MassActionPermissions
-          - AdminPermissions
-          - LastModified
-          type: object
-          properties:
-            ArtifactID:
-              type: integer
-              description: ''
-              format: System.Int32
-            GroupID:
-              type: integer
-              description: ''
-              format: System.Int32
-            ObjectPermissions:
-              type: array
-              items: {}
-              description: ''
-            TabVisibility:
-              type: array
-              items: {}
-              description: ''
-            BrowserPermissions:
-              type: array
-              items: {}
-              description: ''
-            MassActionPermissions:
-              type: array
-              items: {}
-              description: ''
-            AdminPermissions:
-              type: array
-              items: {}
-              description: ''
-            LastModified:
-              type: datetime
-              description: ''
-              format: System.DateTime
-          additionalProperties: false
-          description: Group Permissions.
-      description: Set Item Group Permissions.
-    GetWorkspaceGroupPermissionsAsync:
-      title: GetWorkspaceGroupPermissionsAsync
-      description: Get Workspace Group Permissions.
-    SetPasswordAsync:
-      title: SetPasswordAsync
-      required:
-      - password
-      properties:
-        password:
-          type: string
-          description: "The new password for the user.  Passwords must meet \r\n            the password complexity criteria configured for this environment."
-          format: string
-      description: "Explicitly set a user's password.  Note that admins are not allowed to reset \r\n            Relativity users' passwords by default. (see Remarks for more information)"
   parameters:
-    groupArtifactID:
-      name: groupArtifactID
+    clientID:
+      name: clientID
       in: path
-      description: The group artifactID.
+      description: The ClientID of the OAuth2 Client to read.
       required: true
       schema:
-        type: integer
-    artifactID:
-      name: artifactID
+        type: string
+    start:
+      name: start
       in: path
-      description: Item ArtifactID.
-      required: true
-      schema:
-        type: integer
-    enforceChoiceLimitForUI:
-      name: enforceChoiceLimitForUI
-      in: path
-      description: If the list exceeds configured limit of users, no users will be returned.
-      required: true
-      schema:
-        type: boolean
-    includeCurrentUser:
-      name: includeCurrentUser
-      in: path
-      description: '[Optional - Default true] Include the current user in the results; False would be for instances like coding docs'
-      required: true
-      schema:
-        type: boolean
-    permissionID:
-      name: permissionID
-      in: path
-      description: ID of the Permission to Read.
-      required: true
-      schema:
-        type: integer
-    includeDeleted:
-      name: includeDeleted
-      in: path
-      description: '[Optional - Default false] Include Users flagged as deleted in the results'
-      required: true
-      schema:
-        type: boolean
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context.
+      description: Starting index for this query.
       required: true
       schema:
         type: integer
@@ -3904,20 +3887,6 @@ components:
       required: true
       schema:
         type: boolean
-    groupID:
-      name: groupID
-      in: path
-      description: The Artifact ID of the user group.
-      required: true
-      schema:
-        type: integer
-    includeActions:
-      name: includeActions
-      in: path
-      description: A Boolean value indicating whether to return a list of operations available to the user for this user group.
-      required: true
-      schema:
-        type: boolean
     queryToken:
       name: queryToken
       in: path
@@ -3925,36 +3894,6 @@ components:
       required: true
       schema:
         type: string
-    name:
-      name: name
-      in: path
-      description: The name of the Provider Type
-      required: true
-      schema:
-        type: string
-    X-CSRF-Header:
-      name: X-CSRF-Header
-      in: header
-      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
-      required: true
-      schema:
-        type: string
-        format: System.String
-        default: .
-    userID:
-      name: userID
-      in: path
-      description: The user id
-      required: true
-      schema:
-        type: integer
-    start:
-      name: start
-      in: path
-      description: Starting index for this query.
-      required: true
-      schema:
-        type: integer
     federatedInstanceName:
       name: federatedInstanceName
       in: path
@@ -3969,17 +3908,96 @@ components:
       required: true
       schema:
         type: integer
-    clientID:
-      name: clientID
+    includeCurrentUser:
+      name: includeCurrentUser
       in: path
-      description: The ClientID of the OAuth2 Client to read.
+      description: '[Optional - Default true] Include the current user in the results; False would be for instances like coding docs'
+      required: true
+      schema:
+        type: boolean
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
       required: true
       schema:
         type: string
+        format: System.String
+        default: .
+    groupArtifactID:
+      name: groupArtifactID
+      in: path
+      description: The group artifactID.
+      required: true
+      schema:
+        type: integer
+    permissionID:
+      name: permissionID
+      in: path
+      description: ID of the Permission to Read.
+      required: true
+      schema:
+        type: integer
+    includeActions:
+      name: includeActions
+      in: path
+      description: A Boolean value indicating whether to return a list of operations available to the user for this user group.
+      required: true
+      schema:
+        type: boolean
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: The ArtifactID of the workspace used to retrieve a list of all users. Use -1 to retrieve users from the admin-level context.
+      required: true
+      schema:
+        type: integer
+    includeDeleted:
+      name: includeDeleted
+      in: path
+      description: '[Optional - Default false] Include Users flagged as deleted in the results'
+      required: true
+      schema:
+        type: boolean
+    enforceChoiceLimitForUI:
+      name: enforceChoiceLimitForUI
+      in: path
+      description: If the list exceeds configured limit of users, no users will be returned.
+      required: true
+      schema:
+        type: boolean
+    name:
+      name: name
+      in: path
+      description: The name of the Provider Type
+      required: true
+      schema:
+        type: string
+    userID:
+      name: userID
+      in: path
+      description: The user id
+      required: true
+      schema:
+        type: integer
     workspaceArtifactID:
       name: workspaceArtifactID
       in: path
       description: Workspace ArtifactID.
+      required: true
+      schema:
+        type: integer
+    artifactID:
+      name: artifactID
+      in: path
+      description: Item ArtifactID.
+      required: true
+      schema:
+        type: integer
+    groupID:
+      name: groupID
+      in: path
+      description: The Artifact ID of the user group.
       required: true
       schema:
         type: integer

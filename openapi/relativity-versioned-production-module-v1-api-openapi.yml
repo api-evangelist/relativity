@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Versioned Production Module v1 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
+  title: Relativity.Productions.Services.V1 Versioned Production…
+  description: Relativity.Productions.Services
   version: V1
 servers:
 - url: /Relativity.REST/api
@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionDataSourceManager - '
+      description: '[Public] IProductionDataSourceManager -'
       operationId: Relativity.Productions.Services.V1.IProductionDataSourceManager.CreateSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -32,10 +32,12 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity productions services V1 IProduction data source manager create…
+      x-summary-source: derived
     put:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionDataSourceManager - '
+      description: '[Public] IProductionDataSourceManager -'
       operationId: Relativity.Productions.Services.V1.IProductionDataSourceManager.UpdateSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -50,11 +52,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction data source manager update…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/production-data-sources/{dataSourceID}:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionDataSourceManager - '
+      description: '[Public] IProductionDataSourceManager -'
       operationId: Relativity.Productions.Services.V1.IProductionDataSourceManager.ReadSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -68,10 +72,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionDataSource'
+      summary: Relativity productions services V1 IProduction data source manager read single…
+      x-summary-source: derived
     delete:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionDataSourceManager - '
+      description: '[Public] IProductionDataSourceManager -'
       operationId: Relativity.Productions.Services.V1.IProductionDataSourceManager.DeleteSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -80,11 +86,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction data source manager delete…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/production-data-sources/defaults:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionDataSourceManager - '
+      description: '[Public] IProductionDataSourceManager -'
       operationId: Relativity.Productions.Services.V1.IProductionDataSourceManager.GetProductionDataSourceDefaultFieldValues
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -96,11 +104,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionDataSourceDefaultFieldValues'
+      summary: Relativity productions services V1 IProduction data source manager get…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.CreateSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -118,10 +128,12 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity productions services V1 IProduction manager create single async
+      x-summary-source: derived
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetAllAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -136,11 +148,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Production'
+      summary: Relativity productions services V1 IProduction manager get all async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.ReadSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -154,10 +168,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Production'
+      summary: Relativity productions services V1 IProduction manager read single async
+      x-summary-source: derived
     delete:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.DeleteSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -166,11 +182,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction manager delete single async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/staging-errors:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.StagingErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -183,11 +201,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StagingErrors'
+      summary: Relativity productions services V1 IProduction manager staging errors async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/progress:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.ProgressAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -200,11 +220,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionProgress'
+      summary: Relativity productions services V1 IProduction manager progress async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/document-conflicts:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.DocumentConflictsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -217,10 +239,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionDocumentConflicts'
+      summary: Relativity productions services V1 IProduction manager document conflicts async
+      x-summary-source: derived
     delete:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.DeleteDocumentConflictsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -229,11 +253,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction manager delete document…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/re-productions:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetReproductionsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -248,11 +274,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ReproductionRef'
+      summary: Relativity productions services V1 IProduction manager get reproductions async
+      x-summary-source: derived
   ? /relativity-productions/v1/workspaces/{workspaceID}/database-tokens/{databaseToken}/reproduction-types/{reproductionType}/eligible-re-productions
   : get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionsEligibleForReproductionAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -268,11 +296,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ReproductionCandidate'
+      summary: Relativity productions services V1 IProduction manager get productions eligible…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/prerun-check:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.ProductionRunCheckAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -285,11 +315,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionRunCheckResult'
+      summary: Relativity productions services V1 IProduction manager production run check…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/defaults:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionDefaultFieldValues
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -301,11 +333,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionDefaultFieldValues'
+      summary: Relativity productions services V1 IProduction manager get production default…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/reproduction-jobs/{reproductionJobID}/stage-and-run:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.MassStageAndRunProductionsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -320,11 +354,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ProductionJobResult'
+      summary: Relativity productions services V1 IProduction manager mass stage and run…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/stage-and-run:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.MassStageAndRunAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -339,11 +375,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ProductionJobResult'
+      summary: Relativity productions services V1 IProduction manager mass stage and run async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/branding-errors:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetBrandingErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -358,11 +396,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/BrandingError'
+      summary: Relativity productions services V1 IProduction manager get branding errors async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/stage:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.StageProductionAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -376,11 +416,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionJobResult'
+      summary: Relativity productions services V1 IProduction manager stage production async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/run:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.RunProductionAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -395,11 +437,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionJobResult'
+      summary: Relativity productions services V1 IProduction manager run production async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/re-run:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.RerunProductionAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -408,11 +452,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction manager rerun production async
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/job-status:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetJobStatus
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -427,11 +473,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionJobStatusResult'
+      summary: Relativity productions services V1 IProduction manager get job status
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/produced-production:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProducedProductionsFromDocumentsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -447,11 +495,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ProductionSlim'
+      summary: Relativity productions services V1 IProduction manager get produced productions…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/tokens/{token}/produced-production:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProducedProductionsFromDocumentsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -467,11 +517,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ProductionSlim'
+      summary: Relativity productions services V1 IProduction manager get produced productions…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/status-details:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionStatusDetails
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -484,11 +536,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionStatusDetailsResult'
+      summary: Relativity productions services V1 IProduction manager get production status…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/production-restriction:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionRestrictionAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -500,10 +554,12 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity productions services V1 IProduction manager get production…
+      x-summary-source: derived
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.SetProductionRestrictionsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -512,11 +568,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction manager set production…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/production-images/token:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionImagesTokenAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -529,11 +587,13 @@ paths:
             application/json:
               schema:
                 type: string
+      summary: Relativity productions services V1 IProduction manager get production images…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/production-images/{token}:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionImagesAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -549,11 +609,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedImageFilesResult'
+      summary: Relativity productions services V1 IProduction manager get production images…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/production-images:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionImagesAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -567,11 +629,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImageFilesResult'
+      summary: Relativity productions services V1 IProduction manager get production images…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/reproduction-jobs/{reproductionJobID}/cancel:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.CancelReproductionJobAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -584,11 +648,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MassCancelResult'
+      summary: Relativity productions services V1 IProduction manager cancel reproduction job…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/productions/{productionID}/production-preview:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionManager - '
+      description: '[Public] IProductionManager -'
       operationId: Relativity.Productions.Services.V1.IProductionManager.GetProductionPreviewAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -601,11 +667,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IKeplerStream'
+      summary: Relativity productions services V1 IProduction manager get production preview…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/production-placeholders:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionPlaceholderManager - '
+      description: '[Public] IProductionPlaceholderManager -'
       operationId: Relativity.Productions.Services.V1.IProductionPlaceholderManager.CreateSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -623,10 +691,12 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity productions services V1 IProduction placeholder manager create…
+      x-summary-source: derived
     put:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionPlaceholderManager - '
+      description: '[Public] IProductionPlaceholderManager -'
       operationId: Relativity.Productions.Services.V1.IProductionPlaceholderManager.UpdateSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -640,11 +710,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction placeholder manager update…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/production-placeholders/{placeholderID}:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionPlaceholderManager - '
+      description: '[Public] IProductionPlaceholderManager -'
       operationId: Relativity.Productions.Services.V1.IProductionPlaceholderManager.ReadSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -657,10 +729,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionPlaceholder'
+      summary: Relativity productions services V1 IProduction placeholder manager read single…
+      x-summary-source: derived
     delete:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionPlaceholderManager - '
+      description: '[Public] IProductionPlaceholderManager -'
       operationId: Relativity.Productions.Services.V1.IProductionPlaceholderManager.DeleteSingleAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -669,11 +743,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity productions services V1 IProduction placeholder manager delete…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/production-placeholders/defaults:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionPlaceholderManager - '
+      description: '[Public] IProductionPlaceholderManager -'
       operationId: Relativity.Productions.Services.V1.IProductionPlaceholderManager.GetProductionPlaceholderDefaultFieldValues
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -685,11 +761,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductionPlaceholderDefaultFieldValues'
+      summary: Relativity productions services V1 IProduction placeholder manager get…
+      x-summary-source: derived
   /relativity-productions/v1/production-queue/mass-cancel:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionQueueManager - '
+      description: '[Public] IProductionQueueManager -'
       operationId: Relativity.Productions.Services.V1.IProductionQueueManager.MassCancelAsync
       parameters:
       - $ref: '#/components/parameters/databaseToken_Query'
@@ -701,11 +779,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MassProductionQueueResult'
+      summary: Relativity productions services V1 IProduction queue manager mass cancel async
+      x-summary-source: derived
   /relativity-productions/v1/production-queue/mass-retry:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionQueueManager - '
+      description: '[Public] IProductionQueueManager -'
       operationId: Relativity.Productions.Services.V1.IProductionQueueManager.MassRetryAsync
       parameters:
       - $ref: '#/components/parameters/databaseToken_Query'
@@ -717,11 +797,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MassProductionQueueResult'
+      summary: Relativity productions services V1 IProduction queue manager mass retry async
+      x-summary-source: derived
   /relativity-productions/v1/production-queue/mass-prioritize:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionQueueManager - '
+      description: '[Public] IProductionQueueManager -'
       operationId: Relativity.Productions.Services.V1.IProductionQueueManager.MassPrioritizeAsync
       parameters:
       - $ref: '#/components/parameters/databaseToken_Query'
@@ -734,11 +816,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MassProductionQueueResult'
+      summary: Relativity productions services V1 IProduction queue manager mass prioritize…
+      x-summary-source: derived
   /relativity-productions/v1/production-queue/production-jobs/cancel:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionQueueManager - '
+      description: '[Public] IProductionQueueManager -'
       operationId: Relativity.Productions.Services.V1.IProductionQueueManager.CancelJobAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -755,11 +839,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CancelJobResult'
+      summary: Relativity productions services V1 IProduction queue manager cancel job async
+      x-summary-source: derived
   /relativity-productions/v1/production-queue/production-jobs/mass-cancel:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionQueueManager - '
+      description: '[Public] IProductionQueueManager -'
       operationId: Relativity.Productions.Services.V1.IProductionQueueManager.MassCancelProductionJobsAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -778,11 +864,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MassCancelResult'
+      summary: Relativity productions services V1 IProduction queue manager mass cancel…
+      x-summary-source: derived
   /relativity-productions/v1/production-queue/production-jobs/mass-retry:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IProductionQueueManager - '
+      description: '[Public] IProductionQueueManager -'
       operationId: Relativity.Productions.Services.V1.IProductionQueueManager.RetryProductionJobsAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -801,11 +889,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MassRetryResult'
+      summary: Relativity productions services V1 IProduction queue manager retry production…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/re-productions/re-production-job:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IReproductionJobManager - '
+      description: '[Public] IReproductionJobManager -'
       operationId: Relativity.Productions.Services.V1.IReproductionJobManager.CreateReproductionJobAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -824,11 +914,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ReproductionJobResult'
+      summary: Relativity productions services V1 IReproduction job manager create…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/re-productions/re-production-job-with-documents:
     post:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IReproductionJobManager - '
+      description: '[Public] IReproductionJobManager -'
       operationId: Relativity.Productions.Services.V1.IReproductionJobManager.CreateReproductionJobAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -847,11 +939,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ReproductionJobResult'
+      summary: Relativity productions services V1 IReproduction job manager create…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/re-productions/{reproductionJobID}/status:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IReproductionJobManager - '
+      description: '[Public] IReproductionJobManager -'
       operationId: Relativity.Productions.Services.V1.IReproductionJobManager.GetReproductionStatusByReproductionJobIDAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -864,11 +958,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ReproductionStatusResult'
+      summary: Relativity productions services V1 IReproduction job manager get reproduction…
+      x-summary-source: derived
   /relativity-productions/v1/workspaces/{workspaceID}/re-productions/jobs:
     get:
       tags:
       - Versioned Production Module v1
-      description: '[Public] IReproductionJobManager - '
+      description: '[Public] IReproductionJobManager -'
       operationId: Relativity.Productions.Services.V1.IReproductionJobManager.GetReproductionJobIDsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -882,76 +978,132 @@ paths:
                 type: array
                 items:
                   type: integer
+      summary: Relativity productions services V1 IReproduction job manager get reproduction…
+      x-summary-source: derived
 components:
   schemas:
-    ProductionDataSourceDefaultFieldValues:
-      title: ProductionDataSourceDefaultFieldValues
+    ProductionJobRef:
+      title: ProductionJobRef
       type: object
       properties:
-        UseImagePlaceholder:
-          $ref: '#/components/schemas/DefaultFieldValue1'
-        BurnRedactions:
-          $ref: '#/components/schemas/DefaultFieldValue1'
-    ReproduceDocumentOptions:
-      title: ReproduceDocumentOptions
-      type: object
-      properties:
-        IncludeNatives:
-          type: boolean
-        BurnRedactions:
-          type: boolean
-        MarkupSetID:
+        WorkspaceID:
           type: integer
-    ProductionDetails:
-      title: ProductionDetails
-      type: object
-      properties:
-        EmailRecipients:
-          type: string
-        BrandingFont:
-          type: string
-        BrandingFontSize:
-          type: integer
-        ScaleBrandingFont:
-          type: boolean
-        WrapBrandingText:
-          type: boolean
-        PlaceholderImageFormat:
-          enum:
-          - Tiff
-          - Jpeg
-          type: string
-        FirstBatesValue:
-          type: string
-        LastBatesValue:
-          type: string
-        DateProduced:
-          type: string
-          format: date-time
-    ReplacePlaceholderWithDocumentOptions:
-      title: ReplacePlaceholderWithDocumentOptions
-      type: object
-      properties:
-        Delimiter:
-          type: string
-        NumberOfDigits:
-          type: integer
-        IncludeNatives:
-          type: boolean
-        BurnRedactions:
-          type: boolean
-        MarkupSetID:
-          type: integer
-    ReproductionRef:
-      title: ReproductionRef
-      type: object
-      properties:
-        IsDeleted:
-          type: boolean
         ProductionID:
+          type: integer
+        JobID:
+          type: integer
+    ProductionFooters:
+      title: ProductionFooters
+      type: object
+      properties:
+        Left:
+          $ref: '#/components/schemas/HeaderFooter'
+        Right:
+          $ref: '#/components/schemas/HeaderFooter'
+        Center:
+          $ref: '#/components/schemas/HeaderFooter'
+    MassCancelResult:
+      title: MassCancelResult
+      type: object
+      properties:
+        NumberOfJobsRequestedForCancel:
+          type: integer
+        NumberOfJobsCancelWasRequestedSuccessfully:
+          type: integer
+        CancelJobResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/CancelJobResult'
+        Errors:
+          type: array
+          items:
+            type: string
+    ProductionHeaders:
+      title: ProductionHeaders
+      type: object
+      properties:
+        Left:
+          $ref: '#/components/schemas/HeaderFooter'
+        Right:
+          $ref: '#/components/schemas/HeaderFooter'
+        Center:
+          $ref: '#/components/schemas/HeaderFooter'
+    MassProductionQueueResult:
+      title: MassProductionQueueResult
+      type: object
+      properties:
+        TotalJobsRequested:
+          type: integer
+        TotalJobsSuccessful:
+          type: integer
+        ProductionQueueResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductionQueueResult'
+        Errors:
+          type: array
+          items:
+            type: string
+    ProductionRunCheckResult:
+      title: ProductionRunCheckResult
+      type: object
+      properties:
+        ConflictMessage:
+          type: string
+        ProductionErrors:
+          type: array
+          items:
+            type: string
+        PlaceholderErrors:
+          type: array
+          items:
+            type: string
+        CanContinue:
+          type: boolean
+        ContinueMessage:
+          enum:
+          - Continue
+          - OverrideAndContinue
+          - CannotContinue
+          type: string
+    MassRetryResult:
+      title: MassRetryResult
+      type: object
+      properties:
+        NumberOfJobsRequestedForRetry:
+          type: integer
+        NumberOfJobsRetryWasRequestedSuccessfully:
+          type: integer
+        RetryJobResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/RetryJobResult'
+        Errors:
+          type: array
+          items:
+            type: string
+    MarkupSetRef:
+      title: MarkupSetRef
+      type: object
+      properties:
+        ArtifactID:
           type: integer
         Name:
           type: string
+    ProductionNumberingBase:
+      title: ProductionNumberingBase
+      type: object
+      properties:
+        NumberingType:
+          enum:
+          - PageLevel
+          - DocumentLevel
+          - OriginalImage
+          - ExistingProduction
+          - DocumentField
+          type: string
+        AttachmentRelationalField:
+          $ref: '#/components/schemas/FieldRef'
     ProductionQueueResult:
       title: ProductionQueueResult
       type: object
@@ -968,83 +1120,6 @@ components:
             type: string
         RequestSent:
           type: boolean
-    HeaderFooter:
-      title: HeaderFooter
-      type: object
-      properties:
-        Type:
-          enum:
-          - None
-          - ProductionBatesNumber
-          - Field
-          - FreeText
-          - OriginalImageNumber
-          - DocumentIdentifierAndPageNumber
-          - AdvancedFormatting
-          type: string
-        Field:
-          $ref: '#/components/schemas/FieldRef'
-        FreeText:
-          type: string
-        AdvancedFormatting:
-          type: string
-        FriendlyName:
-          type: string
-    ReproductionCandidate:
-      title: ReproductionCandidate
-      type: object
-      properties:
-        BeginBates:
-          type: string
-        EndBates:
-          type: string
-        DateProduced:
-          type: string
-        ProductionID:
-          type: integer
-        Name:
-          type: string
-    ProductionDataSource:
-      title: ProductionDataSource
-      type: object
-      properties:
-        ArtifactTypeID:
-          type: integer
-        ProductionType:
-          enum:
-          - ImagesOnly
-          - NativesOnly
-          - ImagesAndNatives
-          type: string
-        SavedSearch:
-          $ref: '#/components/schemas/SavedSearchRef'
-        UseImagePlaceholder:
-          enum:
-          - WhenNoImageExists
-          - NeverUseImagePlaceholder
-          - AlwaysUseImagePlaceholder
-          type: string
-        Placeholder:
-          $ref: '#/components/schemas/ProductionPlaceholderRef'
-        MarkupSet:
-          $ref: '#/components/schemas/MarkupSetRef'
-        BurnRedactions:
-          type: boolean
-        PlaceholderFileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/Byte'
-        PlaceholderFilename:
-          type: string
-        PlaceholderFileSize:
-          type: integer
-        PlaceholderFileID:
-          type: integer
-          nullable: true
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
     ProductionStatusResult:
       title: ProductionStatusResult
       type: object
@@ -1076,341 +1151,6 @@ components:
           - QueuedForBranding
           - StartingProduction
           - ErrorStartingProduction
-          type: string
-    ProductionRestrictions:
-      title: ProductionRestrictions
-      type: object
-      properties:
-        SavedSearchID:
-          type: integer
-        SavedSearchName:
-          type: string
-    ProductionNumberingBase:
-      title: ProductionNumberingBase
-      type: object
-      properties:
-        NumberingType:
-          enum:
-          - PageLevel
-          - DocumentLevel
-          - OriginalImage
-          - ExistingProduction
-          - DocumentField
-          type: string
-        AttachmentRelationalField:
-          $ref: '#/components/schemas/FieldRef'
-    ProductionProgress:
-      title: ProductionProgress
-      type: object
-      properties:
-        Status:
-          type: string
-        StartTime:
-          type: string
-          format: date-time
-        CurrentBrandingQueueLength:
-          type: integer
-        TotalBrandingQueueLength:
-          type: integer
-        TotalImages:
-          type: integer
-        ImagesToBeBranded:
-          type: integer
-        ImagesBranded:
-          type: integer
-        ImagesWithErrors:
-          type: integer
-        TotalDocuments:
-          type: integer
-        DocumentsWithImages:
-          type: integer
-        DocumentsWithPlaceHolders:
-          type: integer
-        DocumentsWithRedactions:
-          type: integer
-        DocumentsWithNatives:
-          type: integer
-        ImageSizeInGb:
-          type: number
-        ProductionRunDate:
-          type: string
-          format: date-time
-        BeginBates:
-          type: string
-        EndBates:
-          type: string
-    ReproductionOptions:
-      title: ReproductionOptions
-      type: object
-      properties:
-        ReproductionType:
-          enum:
-          - ReproduceDocument
-          - ReplaceDocumentWithPlaceholder
-          - ReplacePlaceholderWithDocument
-          type: string
-        ReproduceDocumentOptions:
-          $ref: '#/components/schemas/ReproduceDocumentOptions'
-        ReplaceDocumentWithPlaceholderOptions:
-          $ref: '#/components/schemas/ReplaceDocumentWithPlaceholderOptions'
-        ReplacePlaceholderWithDocumentOptions:
-          $ref: '#/components/schemas/ReplacePlaceholderWithDocumentOptions'
-    PagedImageFilesResult:
-      title: PagedImageFilesResult
-      type: object
-      properties:
-        TotalResultSet:
-          type: integer
-        ResultCount:
-          type: integer
-        PreviousPage:
-          type: string
-        NextPage:
-          type: string
-        ImageFiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImageFile'
-        Errors:
-          type: array
-          items:
-            type: string
-    ProductionPlaceholderRef:
-      title: ProductionPlaceholderRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    Byte:
-      title: Byte
-      type: object
-    CancelJobResult:
-      title: CancelJobResult
-      type: object
-      properties:
-        WorkspaceID:
-          type: integer
-        ProductionID:
-          type: integer
-        JobID:
-          type: integer
-        CancelSuccessfullySent:
-          type: boolean
-        Errors:
-          type: array
-          items:
-            type: string
-    BrandingError:
-      title: BrandingError
-      type: object
-      properties:
-        DocumentName:
-          type: string
-        DocumentID:
-          type: integer
-        FileID:
-          type: integer
-        ErrorMessage:
-          type: string
-    ProductionJobRef:
-      title: ProductionJobRef
-      type: object
-      properties:
-        WorkspaceID:
-          type: integer
-        ProductionID:
-          type: integer
-        JobID:
-          type: integer
-    MassRetryResult:
-      title: MassRetryResult
-      type: object
-      properties:
-        NumberOfJobsRequestedForRetry:
-          type: integer
-        NumberOfJobsRetryWasRequestedSuccessfully:
-          type: integer
-        RetryJobResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/RetryJobResult'
-        Errors:
-          type: array
-          items:
-            type: string
-    Sort:
-      title: Sort
-      type: object
-      properties:
-        FieldIdentifier:
-          $ref: '#/components/schemas/FieldRef'
-        Order:
-          type: integer
-        Direction:
-          enum:
-          - Ascending
-          - Descending
-          type: string
-    IKeplerStream:
-      title: IKeplerStream
-      type: object
-      properties:
-        ContentType:
-          type: string
-        ContentDisposition:
-          type: string
-        CacheControl:
-          type: string
-        StatusCode:
-          enum:
-          - Continue
-          - SwitchingProtocols
-          - OK
-          - Created
-          - Accepted
-          - NonAuthoritativeInformation
-          - NoContent
-          - ResetContent
-          - PartialContent
-          - MultipleChoices
-          - Ambiguous
-          - MovedPermanently
-          - Moved
-          - Found
-          - Redirect
-          - SeeOther
-          - RedirectMethod
-          - NotModified
-          - UseProxy
-          - Unused
-          - TemporaryRedirect
-          - RedirectKeepVerb
-          - BadRequest
-          - Unauthorized
-          - PaymentRequired
-          - Forbidden
-          - NotFound
-          - MethodNotAllowed
-          - NotAcceptable
-          - ProxyAuthenticationRequired
-          - RequestTimeout
-          - Conflict
-          - Gone
-          - LengthRequired
-          - PreconditionFailed
-          - RequestEntityTooLarge
-          - RequestUriTooLong
-          - UnsupportedMediaType
-          - RequestedRangeNotSatisfiable
-          - ExpectationFailed
-          - UpgradeRequired
-          - InternalServerError
-          - NotImplemented
-          - BadGateway
-          - ServiceUnavailable
-          - GatewayTimeout
-          - HttpVersionNotSupported
-          type: string
-          nullable: true
-        Headers:
-          type: array
-          items:
-            type: string
-            format: NameValueCollection
-    ProductionDefaultFieldValue1:
-      title: ProductionDefaultFieldValue`1
-      type: object
-      properties:
-        Guid:
-          type: string
-        ID:
-          type: integer
-        DefaultValue:
-          type: boolean
-    ProductionPlaceholder:
-      title: ProductionPlaceholder
-      type: object
-      properties:
-        ArtifactTypeID:
-          type: integer
-        PlaceholderType:
-          enum:
-          - Custom
-          - Image
-          - PDF
-          type: string
-        FileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/Byte'
-        Filename:
-          type: string
-        FileSize:
-          type: integer
-        FileID:
-          type: integer
-          nullable: true
-        CustomText:
-          type: string
-        Tokens:
-          type: string
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    RetryJobResult:
-      title: RetryJobResult
-      type: object
-      properties:
-        WorkspaceID:
-          type: integer
-        ProductionID:
-          type: integer
-        JobID:
-          type: integer
-        RetrySuccessfullySent:
-          type: boolean
-        Errors:
-          type: array
-          items:
-            type: string
-    FieldRef:
-      title: FieldRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        ViewFieldID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
-    ImageFilesResult:
-      title: ImageFilesResult
-      type: object
-      properties:
-        Count:
-          type: integer
-        ImageFiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImageFile'
-        Errors:
-          type: array
-          items:
-            type: string
-    MarkupSetRef:
-      title: MarkupSetRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
           type: string
     ProductionJobStatusResult:
       title: ProductionJobStatusResult
@@ -1463,19 +1203,147 @@ components:
           type: string
         LastRunError:
           type: string
-    ProductionSlim:
-      title: ProductionSlim
+    SavedSearchRef:
+      title: SavedSearchRef
       type: object
       properties:
-        FieldValues:
-          type: object
-          additionalProperties:
-            title: Object
-            type: object
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+        SearchType:
+          type: string
+    Production:
+      title: Production
+      type: object
+      properties:
+        DataSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductionDataSource'
+        Details:
+          $ref: '#/components/schemas/ProductionDetails'
+        Numbering:
+          $ref: '#/components/schemas/ProductionNumberingBase'
+        SortOrder:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sort'
+        Headers:
+          $ref: '#/components/schemas/ProductionHeaders'
+        Footers:
+          $ref: '#/components/schemas/ProductionFooters'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+        RelativityApplications:
+          type: array
+          items:
+            $ref: '#/components/schemas/RelativityApplicationRef'
+        ShouldCopyInstanceOnWorkspaceCreate:
+          type: boolean
+        ProductionMetadata:
+          $ref: '#/components/schemas/ProductionMetadata'
         ProductionID:
           type: integer
         Name:
           type: string
+    ProductionStatusDetailsResult:
+      title: ProductionStatusDetailsResult
+      type: object
+      properties:
+        StatusDetails:
+          type: object
+          additionalProperties:
+            title: Object
+            type: object
+    ReplaceDocumentWithPlaceholderOptions:
+      title: ReplaceDocumentWithPlaceholderOptions
+      type: object
+      properties:
+        PlaceholderID:
+          type: integer
+        IncludeNatives:
+          type: boolean
+    ProductionDataSource:
+      title: ProductionDataSource
+      type: object
+      properties:
+        ArtifactTypeID:
+          type: integer
+        ProductionType:
+          enum:
+          - ImagesOnly
+          - NativesOnly
+          - ImagesAndNatives
+          type: string
+        SavedSearch:
+          $ref: '#/components/schemas/SavedSearchRef'
+        UseImagePlaceholder:
+          enum:
+          - WhenNoImageExists
+          - NeverUseImagePlaceholder
+          - AlwaysUseImagePlaceholder
+          type: string
+        Placeholder:
+          $ref: '#/components/schemas/ProductionPlaceholderRef'
+        MarkupSet:
+          $ref: '#/components/schemas/MarkupSetRef'
+        BurnRedactions:
+          type: boolean
+        PlaceholderFileData:
+          type: array
+          items:
+            $ref: '#/components/schemas/Byte'
+        PlaceholderFilename:
+          type: string
+        PlaceholderFileSize:
+          type: integer
+        PlaceholderFileID:
+          type:
+          - integer
+          - 'null'
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ProductionDataSourceDefaultFieldValues:
+      title: ProductionDataSourceDefaultFieldValues
+      type: object
+      properties:
+        UseImagePlaceholder:
+          $ref: '#/components/schemas/DefaultFieldValue1'
+        BurnRedactions:
+          $ref: '#/components/schemas/DefaultFieldValue1'
+    RelativityApplicationRef:
+      title: RelativityApplicationRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+        Name:
+          type: string
+    ReproductionOptions:
+      title: ReproductionOptions
+      type: object
+      properties:
+        ReproductionType:
+          enum:
+          - ReproduceDocument
+          - ReplaceDocumentWithPlaceholder
+          - ReplacePlaceholderWithDocument
+          type: string
+        ReproduceDocumentOptions:
+          $ref: '#/components/schemas/ReproduceDocumentOptions'
+        ReplaceDocumentWithPlaceholderOptions:
+          $ref: '#/components/schemas/ReplaceDocumentWithPlaceholderOptions'
+        ReplacePlaceholderWithDocumentOptions:
+          $ref: '#/components/schemas/ReplacePlaceholderWithDocumentOptions'
     ImageFile:
       title: ImageFile
       type: object
@@ -1490,6 +1358,63 @@ components:
           type: boolean
         FileGuid:
           type: string
+    ImageFilesResult:
+      title: ImageFilesResult
+      type: object
+      properties:
+        Count:
+          type: integer
+        ImageFiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageFile'
+        Errors:
+          type: array
+          items:
+            type: string
+    ChoiceFieldValue:
+      title: ChoiceFieldValue
+      type: object
+      properties:
+        ID:
+          type: integer
+        Name:
+          type: string
+    Sort:
+      title: Sort
+      type: object
+      properties:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRef'
+        Order:
+          type: integer
+        Direction:
+          enum:
+          - Ascending
+          - Descending
+          type: string
+    HeaderFooter:
+      title: HeaderFooter
+      type: object
+      properties:
+        Type:
+          enum:
+          - None
+          - ProductionBatesNumber
+          - Field
+          - FreeText
+          - OriginalImageNumber
+          - DocumentIdentifierAndPageNumber
+          - AdvancedFormatting
+          type: string
+        Field:
+          $ref: '#/components/schemas/FieldRef'
+        FreeText:
+          type: string
+        AdvancedFormatting:
+          type: string
+        FriendlyName:
+          type: string
     DefaultFieldValue1:
       title: DefaultFieldValue`1
       type: object
@@ -1500,6 +1425,18 @@ components:
           type: integer
         DefaultValue:
           $ref: '#/components/schemas/ChoiceFieldValue'
+    BrandingError:
+      title: BrandingError
+      type: object
+      properties:
+        DocumentName:
+          type: string
+        DocumentID:
+          type: integer
+        FileID:
+          type: integer
+        ErrorMessage:
+          type: string
     ProductionMetadata:
       title: ProductionMetadata
       type: object
@@ -1573,75 +1510,22 @@ components:
           type: integer
         ProductionSavedSearch:
           $ref: '#/components/schemas/SavedSearchRef'
-    MassCancelResult:
-      title: MassCancelResult
+    CancelJobResult:
+      title: CancelJobResult
       type: object
       properties:
-        NumberOfJobsRequestedForCancel:
+        WorkspaceID:
           type: integer
-        NumberOfJobsCancelWasRequestedSuccessfully:
+        ProductionID:
           type: integer
-        CancelJobResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/CancelJobResult'
+        JobID:
+          type: integer
+        CancelSuccessfullySent:
+          type: boolean
         Errors:
           type: array
           items:
             type: string
-    Production:
-      title: Production
-      type: object
-      properties:
-        DataSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProductionDataSource'
-        Details:
-          $ref: '#/components/schemas/ProductionDetails'
-        Numbering:
-          $ref: '#/components/schemas/ProductionNumberingBase'
-        SortOrder:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sort'
-        Headers:
-          $ref: '#/components/schemas/ProductionHeaders'
-        Footers:
-          $ref: '#/components/schemas/ProductionFooters'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        RelativityApplications:
-          type: array
-          items:
-            $ref: '#/components/schemas/RelativityApplicationRef'
-        ShouldCopyInstanceOnWorkspaceCreate:
-          type: boolean
-        ProductionMetadata:
-          $ref: '#/components/schemas/ProductionMetadata'
-        ProductionID:
-          type: integer
-        Name:
-          type: string
-    Securable1:
-      title: Securable`1
-      type: object
-      properties:
-        Secured:
-          type: boolean
-        Value:
-          $ref: '#/components/schemas/UserRef'
-    ProductionStatusDetailsResult:
-      title: ProductionStatusDetailsResult
-      type: object
-      properties:
-        StatusDetails:
-          type: object
-          additionalProperties:
-            title: Object
-            type: object
     ReproductionStatusResult:
       title: ReproductionStatusResult
       type: object
@@ -1671,85 +1555,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProductionStatusResult'
-    ProductionDocumentConflicts:
-      title: ProductionDocumentConflicts
-      type: object
-      properties:
-        ProductionRestrictions:
-          $ref: '#/components/schemas/ProductionRestrictions'
-        DocumentIDs:
-          type: array
-          items:
-            type: integer
-        HasOverridePermission:
-          type: boolean
-    InnerReproductionJobResult:
-      title: InnerReproductionJobResult
-      type: object
-      properties:
-        ProductionID:
-          type: integer
-        ParentProductionID:
-          type: integer
-        Errors:
-          type: array
-          items:
-            type: string
-        Warnings:
-          type: array
-          items:
-            type: string
-        Messages:
-          type: array
-          items:
-            type: string
-    ReplaceDocumentWithPlaceholderOptions:
-      title: ReplaceDocumentWithPlaceholderOptions
-      type: object
-      properties:
-        PlaceholderID:
-          type: integer
-        IncludeNatives:
-          type: boolean
-    RelativityApplicationRef:
-      title: RelativityApplicationRef
+    FieldRef:
+      title: FieldRef
       type: object
       properties:
         ArtifactID:
+          type: integer
+        ViewFieldID:
           type: integer
         Guids:
           type: array
           items:
             type: string
         Name:
-          type: string
-    ProductionPlaceholderDefaultFieldValues:
-      title: ProductionPlaceholderDefaultFieldValues
-      type: object
-      properties:
-        Type:
-          $ref: '#/components/schemas/DefaultFieldValue1'
-    ProductionRunCheckResult:
-      title: ProductionRunCheckResult
-      type: object
-      properties:
-        ConflictMessage:
-          type: string
-        ProductionErrors:
-          type: array
-          items:
-            type: string
-        PlaceholderErrors:
-          type: array
-          items:
-            type: string
-        CanContinue:
-          type: boolean
-        ContinueMessage:
-          enum:
-          - Continue
-          - OverrideAndContinue
-          - CannotContinue
           type: string
     DuplicateDocument:
       title: DuplicateDocument
@@ -1761,6 +1579,116 @@ components:
           type: array
           items:
             type: string
+    ProductionProgress:
+      title: ProductionProgress
+      type: object
+      properties:
+        Status:
+          type: string
+        StartTime:
+          type: string
+          format: date-time
+        CurrentBrandingQueueLength:
+          type: integer
+        TotalBrandingQueueLength:
+          type: integer
+        TotalImages:
+          type: integer
+        ImagesToBeBranded:
+          type: integer
+        ImagesBranded:
+          type: integer
+        ImagesWithErrors:
+          type: integer
+        TotalDocuments:
+          type: integer
+        DocumentsWithImages:
+          type: integer
+        DocumentsWithPlaceHolders:
+          type: integer
+        DocumentsWithRedactions:
+          type: integer
+        DocumentsWithNatives:
+          type: integer
+        ImageSizeInGb:
+          type: number
+        ProductionRunDate:
+          type: string
+          format: date-time
+        BeginBates:
+          type: string
+        EndBates:
+          type: string
+    ProductionDetails:
+      title: ProductionDetails
+      type: object
+      properties:
+        EmailRecipients:
+          type: string
+        BrandingFont:
+          type: string
+        BrandingFontSize:
+          type: integer
+        ScaleBrandingFont:
+          type: boolean
+        WrapBrandingText:
+          type: boolean
+        PlaceholderImageFormat:
+          enum:
+          - Tiff
+          - Jpeg
+          type: string
+        FirstBatesValue:
+          type: string
+        LastBatesValue:
+          type: string
+        DateProduced:
+          type: string
+          format: date-time
+    ProductionDefaultFieldValue1:
+      title: ProductionDefaultFieldValue`1
+      type: object
+      properties:
+        Guid:
+          type: string
+        ID:
+          type: integer
+        DefaultValue:
+          type: boolean
+    UserRef:
+      title: UserRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    Securable1:
+      title: Securable`1
+      type: object
+      properties:
+        Secured:
+          type: boolean
+        Value:
+          $ref: '#/components/schemas/UserRef'
+    StagingErrors:
+      title: StagingErrors
+      type: object
+      properties:
+        ErroredDocumentCount:
+          type: integer
+        DuplicateDocuments:
+          type: array
+          items:
+            $ref: '#/components/schemas/DuplicateDocument'
+        ErrorMessage:
+          type: string
+    ProductionPlaceholderDefaultFieldValues:
+      title: ProductionPlaceholderDefaultFieldValues
+      type: object
+      properties:
+        Type:
+          $ref: '#/components/schemas/DefaultFieldValue1'
     ReproductionJobResult:
       title: ReproductionJobResult
       type: object
@@ -1789,6 +1717,73 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InnerReproductionJobResult'
+    IKeplerStream:
+      title: IKeplerStream
+      type: object
+      properties:
+        ContentType:
+          type: string
+        ContentDisposition:
+          type: string
+        CacheControl:
+          type: string
+        StatusCode:
+          enum:
+          - Continue
+          - SwitchingProtocols
+          - OK
+          - Created
+          - Accepted
+          - NonAuthoritativeInformation
+          - NoContent
+          - ResetContent
+          - PartialContent
+          - MultipleChoices
+          - Ambiguous
+          - MovedPermanently
+          - Moved
+          - Found
+          - Redirect
+          - SeeOther
+          - RedirectMethod
+          - NotModified
+          - UseProxy
+          - Unused
+          - TemporaryRedirect
+          - RedirectKeepVerb
+          - BadRequest
+          - Unauthorized
+          - PaymentRequired
+          - Forbidden
+          - NotFound
+          - MethodNotAllowed
+          - NotAcceptable
+          - ProxyAuthenticationRequired
+          - RequestTimeout
+          - Conflict
+          - Gone
+          - LengthRequired
+          - PreconditionFailed
+          - RequestEntityTooLarge
+          - RequestUriTooLong
+          - UnsupportedMediaType
+          - RequestedRangeNotSatisfiable
+          - ExpectationFailed
+          - UpgradeRequired
+          - InternalServerError
+          - NotImplemented
+          - BadGateway
+          - ServiceUnavailable
+          - GatewayTimeout
+          - HttpVersionNotSupported
+          type:
+          - string
+          - 'null'
+        Headers:
+          type: array
+          items:
+            type: string
+            format: NameValueCollection
     ProductionJobResult:
       title: ProductionJobResult
       type: object
@@ -1813,16 +1808,6 @@ components:
           type: integer
         WorkspaceID:
           type: integer
-    ProductionHeaders:
-      title: ProductionHeaders
-      type: object
-      properties:
-        Left:
-          $ref: '#/components/schemas/HeaderFooter'
-        Right:
-          $ref: '#/components/schemas/HeaderFooter'
-        Center:
-          $ref: '#/components/schemas/HeaderFooter'
     ProductionDefaultFieldValues:
       title: ProductionDefaultFieldValues
       type: object
@@ -1865,71 +1850,229 @@ components:
           $ref: '#/components/schemas/ProductionDefaultFieldValue1'
         SortOrderAscDesc5:
           $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-    ProductionFooters:
-      title: ProductionFooters
+    ReproductionCandidate:
+      title: ReproductionCandidate
       type: object
       properties:
-        Left:
-          $ref: '#/components/schemas/HeaderFooter'
-        Right:
-          $ref: '#/components/schemas/HeaderFooter'
-        Center:
-          $ref: '#/components/schemas/HeaderFooter'
-    MassProductionQueueResult:
-      title: MassProductionQueueResult
+        BeginBates:
+          type: string
+        EndBates:
+          type: string
+        DateProduced:
+          type: string
+        ProductionID:
+          type: integer
+        Name:
+          type: string
+    ReproductionRef:
+      title: ReproductionRef
       type: object
       properties:
-        TotalJobsRequested:
+        IsDeleted:
+          type: boolean
+        ProductionID:
           type: integer
-        TotalJobsSuccessful:
+        Name:
+          type: string
+    ReplacePlaceholderWithDocumentOptions:
+      title: ReplacePlaceholderWithDocumentOptions
+      type: object
+      properties:
+        Delimiter:
+          type: string
+        NumberOfDigits:
           type: integer
-        ProductionQueueResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProductionQueueResult'
+        IncludeNatives:
+          type: boolean
+        BurnRedactions:
+          type: boolean
+        MarkupSetID:
+          type: integer
+    ReproduceDocumentOptions:
+      title: ReproduceDocumentOptions
+      type: object
+      properties:
+        IncludeNatives:
+          type: boolean
+        BurnRedactions:
+          type: boolean
+        MarkupSetID:
+          type: integer
+    RetryJobResult:
+      title: RetryJobResult
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ProductionID:
+          type: integer
+        JobID:
+          type: integer
+        RetrySuccessfullySent:
+          type: boolean
         Errors:
           type: array
           items:
             type: string
-    UserRef:
-      title: UserRef
+    PagedImageFilesResult:
+      title: PagedImageFilesResult
       type: object
       properties:
-        ArtifactID:
+        TotalResultSet:
           type: integer
-        Name:
-          type: string
-    SavedSearchRef:
-      title: SavedSearchRef
-      type: object
-      properties:
-        ArtifactID:
+        ResultCount:
           type: integer
-        Name:
+        PreviousPage:
           type: string
-        SearchType:
+        NextPage:
           type: string
-    ChoiceFieldValue:
-      title: ChoiceFieldValue
-      type: object
-      properties:
-        ID:
-          type: integer
-        Name:
-          type: string
-    StagingErrors:
-      title: StagingErrors
-      type: object
-      properties:
-        ErroredDocumentCount:
-          type: integer
-        DuplicateDocuments:
+        ImageFiles:
           type: array
           items:
-            $ref: '#/components/schemas/DuplicateDocument'
-        ErrorMessage:
+            $ref: '#/components/schemas/ImageFile'
+        Errors:
+          type: array
+          items:
+            type: string
+    ProductionPlaceholderRef:
+      title: ProductionPlaceholderRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    Byte:
+      title: Byte
+      type: object
+    ProductionDocumentConflicts:
+      title: ProductionDocumentConflicts
+      type: object
+      properties:
+        ProductionRestrictions:
+          $ref: '#/components/schemas/ProductionRestrictions'
+        DocumentIDs:
+          type: array
+          items:
+            type: integer
+        HasOverridePermission:
+          type: boolean
+    InnerReproductionJobResult:
+      title: InnerReproductionJobResult
+      type: object
+      properties:
+        ProductionID:
+          type: integer
+        ParentProductionID:
+          type: integer
+        Errors:
+          type: array
+          items:
+            type: string
+        Warnings:
+          type: array
+          items:
+            type: string
+        Messages:
+          type: array
+          items:
+            type: string
+    ProductionRestrictions:
+      title: ProductionRestrictions
+      type: object
+      properties:
+        SavedSearchID:
+          type: integer
+        SavedSearchName:
+          type: string
+    ProductionSlim:
+      title: ProductionSlim
+      type: object
+      properties:
+        FieldValues:
+          type: object
+          additionalProperties:
+            title: Object
+            type: object
+        ProductionID:
+          type: integer
+        Name:
+          type: string
+    ProductionPlaceholder:
+      title: ProductionPlaceholder
+      type: object
+      properties:
+        ArtifactTypeID:
+          type: integer
+        PlaceholderType:
+          enum:
+          - Custom
+          - Image
+          - PDF
+          type: string
+        FileData:
+          type: array
+          items:
+            $ref: '#/components/schemas/Byte'
+        Filename:
+          type: string
+        FileSize:
+          type: integer
+        FileID:
+          type:
+          - integer
+          - 'null'
+        CustomText:
+          type: string
+        Tokens:
+          type: string
+        ArtifactID:
+          type: integer
+        Name:
           type: string
   parameters:
+    suppressWarnings:
+      name: suppressWarnings
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    databaseToken_Query:
+      name: databaseToken
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    reproductionJobID:
+      name: reproductionJobID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    overrideConflicts:
+      name: overrideConflicts
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    numberOfBrandingErrors:
+      name: numberOfBrandingErrors
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 10
+    token:
+      name: token
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
     productionRestrictionSearchID:
       name: productionRestrictionSearchID
       in: query
@@ -1937,13 +2080,42 @@ components:
       required: true
       schema:
         type: integer
-    databaseToken:
-      name: databaseToken
+    workspaceID:
+      name: workspaceID
       in: path
       description: ''
       required: true
       schema:
+        type: integer
+    skip:
+      name: skip
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 0
+    dataSourceID:
+      name: dataSourceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    placeholderID:
+      name: placeholderID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
         type: string
+        default: '-'
     excludeNonReproducible:
       name: excludeNonReproducible
       in: query
@@ -1951,8 +2123,82 @@ components:
       schema:
         type: boolean
         default: false
-    dataSourceID:
-      name: dataSourceID
+    dataSourceReadMode:
+      name: dataSourceReadMode
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 1
+    top:
+      name: top
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 100
+    databaseToken:
+      name: databaseToken
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    priority:
+      name: priority
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    automaticallyRun:
+      name: automaticallyRun
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    withPlaceholderImage:
+      name: withPlaceholderImage
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    documents:
+      name: documents
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    reproductionType:
+      name: reproductionType
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    includePercentages:
+      name: includePercentages
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    documentIDs:
+      name: documentIDs
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    productionID:
+      name: productionID
       in: path
       description: ''
       required: true
@@ -1967,148 +2213,3 @@ components:
         type: array
         items:
           type: integer
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    documentIDs:
-      name: documentIDs
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    overrideConflicts:
-      name: overrideConflicts
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    reproductionType:
-      name: reproductionType
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    top:
-      name: top
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 100
-    dataSourceReadMode:
-      name: dataSourceReadMode
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 1
-    placeholderID:
-      name: placeholderID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    databaseToken_Query:
-      name: databaseToken
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    skip:
-      name: skip
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 0
-    documents:
-      name: documents
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    reproductionJobID:
-      name: reproductionJobID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    token:
-      name: token
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    suppressWarnings:
-      name: suppressWarnings
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    withPlaceholderImage:
-      name: withPlaceholderImage
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    priority:
-      name: priority
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    numberOfBrandingErrors:
-      name: numberOfBrandingErrors
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 10
-    includePercentages:
-      name: includePercentages
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    productionID:
-      name: productionID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    automaticallyRun:
-      name: automaticallyRun
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'

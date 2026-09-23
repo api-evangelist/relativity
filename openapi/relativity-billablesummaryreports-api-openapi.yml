@@ -1,11 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillableSummaryReports API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Staging Reports Billable Summary Reports API
+  version: v4
 servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+- url: https://{host}/Relativity.REST/api/staging-insights
+  variables:
+    host:
+      default: host
+      description: Your RelativityOne tenant name
+security:
+- Bearer: []
 tags:
 - name: BillableSummaryReports
 paths:
@@ -91,6 +95,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV4BillableSummaryReportsFile
+      x-operation-id-source: derived
   /v4/billable-summary-reports:
     get:
       tags:
@@ -145,6 +151,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV4BillableSummaryReports
+      x-operation-id-source: derived
   /v4/billable-summary-reports/latest:
     get:
       tags:
@@ -188,6 +196,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV4BillableSummaryReportsLatest
+      x-operation-id-source: derived
   /v4/billable-summary-reports/directory-details:
     post:
       tags:
@@ -278,16 +288,61 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV4BillableSummaryReportsDirectoryDetails
+      x-operation-id-source: derived
 components:
   schemas:
-    BillableSummaryReportListResponse:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
-        reports:
-          type: array
-          items:
-            $ref: '#/components/schemas/BillableSummaryReport'
-          nullable: true
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    BillableSummaryReportDirectoryDetailsResponse:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        level:
+          type: integer
+          format: int32
+        sizeBytes:
+          type: integer
+          format: int64
+        files:
+          type: integer
+          format: int32
+        createdDateUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastModifiedDateUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
       additionalProperties: false
     BillableSummaryReportDirectoryDetailsRequest:
       required:
@@ -306,69 +361,43 @@ components:
           type: string
           description: Path within the container. Use an empty string ("") to target the container root. A value of "/" is normalized to the empty string and is therefore also treated as the container root.
       additionalProperties: false
-    BillableSummaryReportDirectoryDetailsResponse:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-        level:
-          type: integer
-          format: int32
-        sizeBytes:
-          type: integer
-          format: int64
-        files:
-          type: integer
-          format: int32
-        createdDateUtc:
-          type: string
-          format: date-time
-          nullable: true
-        lastModifiedDateUtc:
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    BillableSummaryReportPageResponse:
-      type: object
-      properties:
-        reports:
-          type: array
-          items:
-            $ref: '#/components/schemas/BillableSummaryReport'
-          nullable: true
-        totalCount:
-          type: integer
-          format: int32
-      additionalProperties: false
     BillableSummaryReport:
       type: object
       properties:
         container:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         date:
           type: string
           format: date-time
       additionalProperties: false
+    BillableSummaryReportPageResponse:
+      type: object
+      properties:
+        reports:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BillableSummaryReport'
+        totalCount:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BillableSummaryReportListResponse:
+      type: object
+      properties:
+        reports:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BillableSummaryReport'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example: "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT

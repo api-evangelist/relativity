@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Notifications Module v1 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
+  title: Relativity.Notifications.V1 Relativity Notifications Module…
+  description: Relativity.Notifications
   version: V1
 servers:
 - url: /Relativity.REST/api
@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - Relativity Notifications Module v1
-      description: '[Public] IEmailNotificationsManager - '
+      description: '[Public] IEmailNotificationsManager -'
       operationId: Relativity.Notifications.V1.IEmailNotificationsManager.SendEmailNotificationAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -30,6 +30,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EmailNotificationResponse'
+      summary: Relativity notifications V1 IEmail notifications manager send email…
+      x-summary-source: derived
 components:
   schemas:
     EmailNotificationStatus:
@@ -42,6 +44,14 @@ components:
           type: boolean
         Message:
           type: string
+    EmailNotificationResponse:
+      title: EmailNotificationResponse
+      type: object
+      properties:
+        EmailNotifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailNotificationStatus'
     EmailNotificationRequest:
       title: EmailNotificationRequest
       type: object
@@ -58,14 +68,6 @@ components:
           type: string
         IsBodyHtml:
           type: boolean
-    EmailNotificationResponse:
-      title: EmailNotificationResponse
-      type: object
-      properties:
-        EmailNotifications:
-          type: array
-          items:
-            $ref: '#/components/schemas/EmailNotificationStatus'
   parameters:
     x-csrf-header:
       name: x-csrf-header

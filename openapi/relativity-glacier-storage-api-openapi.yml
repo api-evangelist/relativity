@@ -1,11 +1,14 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Glacier Storage API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Glacier Storage API
+  description: The Glacier API provides a REST service that allows you to manage glacier storage operations. With this API you can create new glacier store to archive and monitor status. You can schedule restore operations and view reports. The API follows REST standards and provides asynchronous processing for data operations.
+  version: v1.0
+  x-relativity-api-visibility: public
 servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+- url: /glass
+  description: Glacier Advanced Access
+security:
+- oauth2: []
 tags:
 - name: Glacier Storage
 paths:
@@ -149,6 +152,101 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
+    GlacierReportResponse:
+      type: object
+      required:
+      - glacierId
+      - name
+      - createdAt
+      - inventoryReport
+      - downloadLink
+      properties:
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier
+          example: 987fcdeb-51a2-43d1-9876-543210fedcba
+        name:
+          type: string
+          description: The name of the glacier
+          example: project-archive-2024
+        createdAt:
+          type: string
+          format: date-time
+          description: When the glacier was created
+          example: '2024-01-15T10:30:00Z'
+        inventoryReport:
+          $ref: '#/components/schemas/InventoryReport'
+        downloadLink:
+          type: string
+          format: uri
+          description: Download link for the glacier inventory report
+          example: https://mystorageaccount.dfs.core.windows.net/glacier-reports?sv=2022-11-02&ss=bfqt&srt=sco&sp=rl&se=2025-10-02T00:00:00Z&st=2025-10-01T00:00:00Z&spr=https&sig=abc123XYZsignature%3D
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
+    InventoryReport:
+      type: object
+      required:
+      - glacierStoreEntityCount
+      - glacierStoreTotalEntitySize
+      properties:
+        glacierStoreEntityCount:
+          type: integer
+          description: Number of entities in the glacier
+          example: 1250
+        glacierStoreTotalEntitySize:
+          type: integer
+          format: int64
+          description: Total size of all entities in bytes
+          example: 5368709120
+    ListGlaciersResponse:
+      type: object
+      required:
+      - items
+      - page
+      - pageSize
+      - totalCount
+      - totalPages
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/GlacierListItem'
+          description: Array of glacier objects
+        page:
+          type: integer
+          description: Current page number
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 50
+        totalCount:
+          type: integer
+          description: Total number of glaciers
+          example: 125
+        totalPages:
+          type: integer
+          description: Total number of pages
+          example: 3
     GlacierListItem:
       type: object
       required:
@@ -181,98 +279,9 @@ components:
           - GLACIER_FAILED
           description: Current status of the glacier
           example: GLACIER_AVAILABLE
-    ListGlaciersResponse:
-      type: object
-      required:
-      - items
-      - page
-      - pageSize
-      - totalCount
-      - totalPages
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/GlacierListItem'
-          description: Array of glacier objects
-        page:
-          type: integer
-          description: Current page number
-          example: 1
-        pageSize:
-          type: integer
-          description: Number of items per page
-          example: 50
-        totalCount:
-          type: integer
-          description: Total number of glaciers
-          example: 125
-        totalPages:
-          type: integer
-          description: Total number of pages
-          example: 3
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          format: uri
-          description: A URI reference identifying the problem type
-        title:
-          type: string
-          description: A short, human-readable summary of the problem
-        status:
-          type: integer
-          description: The HTTP status code
-        detail:
-          type: string
-          description: A human-readable explanation specific to this occurrence
-        instance:
-          type: string
-          format: uri
-          description: A URI reference identifying the specific occurrence
-    GlacierReportResponse:
-      type: object
-      required:
-      - glacierId
-      - name
-      - createdAt
-      - inventoryReport
-      - downloadLink
-      properties:
-        glacierId:
-          type: string
-          format: uuid
-          description: The unique identifier of the glacier
-          example: 987fcdeb-51a2-43d1-9876-543210fedcba
-        name:
-          type: string
-          description: The name of the glacier
-          example: project-archive-2024
-        createdAt:
-          type: string
-          format: date-time
-          description: When the glacier was created
-          example: '2024-01-15T10:30:00Z'
-        inventoryReport:
-          $ref: '#/components/schemas/InventoryReport'
-        downloadLink:
-          type: string
-          format: uri
-          description: Download link for the glacier inventory report
-          example: https://mystorageaccount.dfs.core.windows.net/glacier-reports?sv=2022-11-02&ss=bfqt&srt=sco&sp=rl&se=2025-10-02T00:00:00Z&st=2025-10-01T00:00:00Z&spr=https&sig=abc123XYZsignature%3D
-    InventoryReport:
-      type: object
-      required:
-      - glacierStoreEntityCount
-      - glacierStoreTotalEntitySize
-      properties:
-        glacierStoreEntityCount:
-          type: integer
-          description: Number of entities in the glacier
-          example: 1250
-        glacierStoreTotalEntitySize:
-          type: integer
-          format: int64
-          description: Total size of all entities in bytes
-          example: 5368709120
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.relone.preview.com/oauth/token

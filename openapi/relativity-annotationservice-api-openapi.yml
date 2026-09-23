@@ -1,11 +1,8 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
-servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+  title: reviewservice (public) Annotation Service API
+security:
+- Bearer: []
 tags:
 - name: AnnotationService
 paths:
@@ -13,8 +10,10 @@ paths:
     post:
       tags:
       - AnnotationService
-      summary: Creates or updates redactions and highlights for a document in a workspace.
-      description: "This endpoint accepts a collection of annotations. New annotations are created and existing annotations are updated\r\nwhen their identifiers are provided."
+      summary: Creates or updates redactions and highlights for a document in a workspace
+      description: 'This endpoint accepts a collection of annotations. New annotations are created and existing annotations are updated
+
+        when their identifiers are provided.'
       parameters:
       - name: workspaceID
         in: path
@@ -53,11 +52,13 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.SaveAnnotationsReturnObject'
+      operationId: postV{version}WorkspacesByWorkspaceIDAnnotationsSave
+      x-operation-id-source: derived
   /v{version}/workspaces/{workspaceID}/Annotations/{documentID}/{markUpSetID}:
     get:
       tags:
       - AnnotationService
-      summary: Retrieves annotations for a document and markup set in a workspace.
+      summary: Retrieves annotations for a document and markup set in a workspace
       description: Returns the current annotation payload associated with the document image and markup set.
       parameters:
       - name: workspaceID
@@ -105,10 +106,12 @@ paths:
                 type: object
                 additionalProperties:
                   $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.AnnotationList'
+      operationId: getV{version}WorkspacesByWorkspaceIDAnnotationsByDocumentIDByMarkUpSetID
+      x-operation-id-source: derived
     delete:
       tags:
       - AnnotationService
-      summary: Deletes annotations for a document and markup set in a workspace.
+      summary: Deletes annotations for a document and markup set in a workspace
       description: Removes one or more annotations specified in the request body from the target document and markup set.
       parameters:
       - name: workspaceID
@@ -152,45 +155,10 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: deleteV{version}WorkspacesByWorkspaceIDAnnotationsByDocumentIDByMarkUpSetID
+      x-operation-id-source: derived
 components:
   schemas:
-    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.SaveAnnotationsReturnObject:
-      type: object
-      properties:
-        Success:
-          type: boolean
-        ErrorCode:
-          type: integer
-          format: int32
-        CustomErrorMessage:
-          type: string
-          nullable: true
-        AnnotationIDs:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.DeleteAnnotationsRequest:
-      type: object
-      properties:
-        annotationIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.SaveAnnotationsRequest:
-      type: object
-      properties:
-        annotations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
-          nullable: true
-      additionalProperties: false
     Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation:
       type: object
       properties:
@@ -221,78 +189,96 @@ components:
         DrawCrossLines:
           type: boolean
         FillA:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FillR:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FillG:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FillB:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         BorderStyle:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         BorderSize:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         BorderA:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         BorderR:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         BorderG:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         BorderB:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FontA:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FontR:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FontG:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FontB:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         FontName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         FontStyle:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ZOrder:
           type: integer
           format: int32
         Text:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         FontSize:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ImageWidth:
           type: integer
           format: int32
@@ -300,8 +286,9 @@ components:
           type: integer
           format: int32
         Guid:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         WorkspaceID:
           type: integer
           format: int32
@@ -323,16 +310,65 @@ components:
           type: integer
           format: int32
         CreatedOn:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.SaveAnnotationsRequest:
+      type: object
+      properties:
+        annotations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
       additionalProperties: false
     Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.AnnotationList:
       type: object
       properties:
         Annotations:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
-          nullable: true
       additionalProperties: false
+    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.SaveAnnotationsReturnObject:
+      type: object
+      properties:
+        Success:
+          type: boolean
+        ErrorCode:
+          type: integer
+          format: int32
+        CustomErrorMessage:
+          type:
+          - string
+          - 'null'
+        AnnotationIDs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.DeleteAnnotationsRequest:
+      type: object
+      properties:
+        annotationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example: "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT

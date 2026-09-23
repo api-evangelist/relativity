@@ -1,8 +1,8 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Client Side Libraries Module API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity.Import.Services Client Side Libraries Module API
+  description: Relativity.Import.Services
+  version: '1.0'
 servers:
 - url: /Relativity.REST/api
   description: The URL prefix for all Kepler services
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Client Side Libraries Module
-      summary: ''
+      summary: Import services V1 client side libraries controller get script
       description: Get a script by name.
       operationId: Import.Services.V1.ClientSideLibrariesController.GetScript
       parameters:
@@ -28,7 +28,26 @@ paths:
                 $ref: '#/components/schemas/ValueResponse.ScriptResult'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
 components:
+  parameters:
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .
+    fileName:
+      name: fileName
+      in: path
+      description: The name of the file to return.
+      required: true
+      schema:
+        type: string
+      example: CsvReader.js
   schemas:
     ValueResponse.ScriptResult:
       description: ValueResponse of ScriptResult type
@@ -59,21 +78,3 @@ components:
           type: string
           format: uuid
           example: 00000000-0000-0000-0000-000000000000
-  parameters:
-    X-CSRF-Header:
-      name: X-CSRF-Header
-      in: header
-      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
-      required: true
-      schema:
-        type: string
-        format: System.String
-        default: .
-    fileName:
-      name: fileName
-      in: path
-      description: The name of the file to return.
-      required: true
-      schema:
-        type: string
-      example: CsvReader.js

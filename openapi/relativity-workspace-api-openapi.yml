@@ -1,11 +1,14 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Workspace API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
-servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+  title: Service Workspace API
+  description: 'The Workspace Service API provides a REST service for managing workspace creation and maintenance.
+
+
+    The URL prefix for workspace services endpoints: https://\/api/workspace-service'
+  version: '1'
+  x-relativity-api-visibility: public
+security:
+- Bearer: []
 tags:
 - name: Workspace
 paths:
@@ -85,6 +88,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/KeplerProblemDetails'
+      operationId: getV1WorkspaceByWorkspaceId
+      x-operation-id-source: derived
     delete:
       tags:
       - Workspace
@@ -138,6 +143,8 @@ paths:
                 $ref: '#/components/schemas/KeplerProblemDetails'
         '500':
           description: Internal Server Error
+      operationId: deleteV1WorkspaceByWorkspaceId
+      x-operation-id-source: derived
     put:
       tags:
       - Workspace
@@ -246,6 +253,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/KeplerProblemDetails'
+      operationId: putV1WorkspaceByWorkspaceId
+      x-operation-id-source: derived
   /v1/workspace/{workspaceId}/{includeMetadata}/{includeActions}:
     get:
       tags:
@@ -332,70 +341,43 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/KeplerProblemDetails'
+      operationId: getV1WorkspaceByWorkspaceIdByIncludeMetadataByIncludeActions
+      x-operation-id-source: derived
 components:
   schemas:
     KeplerValidationError:
       type: object
       properties:
         PropertyName:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ErrorMessage:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
-    WorkspaceUpdateRequest:
+    KeplerProblemDetails:
       type: object
       properties:
-        DownloadHandlerUrl:
-          type: string
-          nullable: true
-        EnableDataGrid:
-          type: boolean
-          nullable: true
-        Matter:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        Name:
-          type: string
-          nullable: true
-        ProductionRestrictions:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        ResourcePool:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        DefaultFileRepository:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        DataGridFileRepository:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        DefaultCacheLocation:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        SqlServer:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        AzureCredentials:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        AzureFileSystemCredentials:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        SqlFullTextLanguage:
-          type: integer
-          format: int32
-          nullable: true
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Template:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        WorkspaceAdminGroup:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        UseCase:
-          type: string
-          nullable: true
-        Keywords:
-          type: string
-          nullable: true
-        Notes:
-          type: string
-          nullable: true
-        UserId:
-          type: integer
-          format: int32
+        ErrorType:
+          type:
+          - string
+          - 'null'
+        Identifier:
+          type:
+          - string
+          - 'null'
+        Message:
+          type:
+          - string
+          - 'null'
+        Errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/KeplerValidationError'
       additionalProperties: false
     DisplayableObjectIdentifierSecurable:
       type: object
@@ -405,29 +387,102 @@ components:
         Secured:
           type: boolean
       additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Action:
+      type: object
+      properties:
+        Name:
+          type:
+          - string
+          - 'null'
+        Verb:
+          type:
+          - string
+          - 'null'
+        Href:
+          type:
+          - string
+          - 'null'
+        IsAvailable:
+          type: boolean
+        Reason:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    DisplayableObjectIdentifier:
+      type: object
+      properties:
+        ArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Guids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        Name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     WorkspaceReadResponseV1:
       type: object
       properties:
         ArtifactID:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         Guids:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
             format: uuid
-          nullable: true
         Name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Client:
           $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
         ClientNumber:
           $ref: '#/components/schemas/StringSecurable'
         DownloadHandlerUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         EnableDataGrid:
           type: boolean
         Matter:
@@ -455,11 +510,13 @@ components:
         Status:
           $ref: '#/components/schemas/DisplayableObjectIdentifier'
         Keywords:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Notes:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         CreatedOn:
           type: string
           format: date-time
@@ -473,25 +530,29 @@ components:
         Meta:
           $ref: '#/components/schemas/Meta'
         Actions:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/Action'
-          nullable: true
         WorkspaceAdminGroup:
           $ref: '#/components/schemas/DisplayableObjectIdentifierSecurable'
         UseCase:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         JobID:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     StringSecurable:
       type: object
       properties:
         Value:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Secured:
           type: boolean
       additionalProperties: false
@@ -499,76 +560,17 @@ components:
       type: object
       properties:
         ArtifactID:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         Guids:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
             format: uuid
-          nullable: true
-      additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    DisplayableObjectIdentifier:
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-          format: int32
-          nullable: true
-        Guids:
-          type: array
-          items:
-            type: string
-            format: uuid
-          nullable: true
-        Name:
-          type: string
-          nullable: true
-      additionalProperties: false
-    NameIDPair:
-      type: object
-      properties:
-        ID:
-          type: integer
-          format: int32
-        Name:
-          type: string
-          nullable: true
-      additionalProperties: false
-    Meta:
-      type: object
-      properties:
-        Unsupported:
-          type: array
-          items:
-            type: string
-          nullable: true
-        ReadOnly:
-          type: array
-          items:
-            type: string
-          nullable: true
       additionalProperties: false
     ObjectIdentifierSecurable:
       type: object
@@ -578,25 +580,65 @@ components:
         Secured:
           type: boolean
       additionalProperties: false
-    Action:
+    WorkspaceUpdateRequest:
       type: object
       properties:
+        DownloadHandlerUrl:
+          type:
+          - string
+          - 'null'
+        EnableDataGrid:
+          type:
+          - boolean
+          - 'null'
+        Matter:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
         Name:
-          type: string
-          nullable: true
-        Verb:
-          type: string
-          nullable: true
-        Href:
-          type: string
-          nullable: true
-        IsAvailable:
-          type: boolean
-        Reason:
-          type: array
-          items:
-            type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
+        ProductionRestrictions:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        ResourcePool:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DefaultFileRepository:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DataGridFileRepository:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DefaultCacheLocation:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        SqlServer:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        AzureCredentials:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        AzureFileSystemCredentials:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        SqlFullTextLanguage:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Template:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        WorkspaceAdminGroup:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        UseCase:
+          type:
+          - string
+          - 'null'
+        Keywords:
+          type:
+          - string
+          - 'null'
+        Notes:
+          type:
+          - string
+          - 'null'
+        UserId:
+          type: integer
+          format: int32
       additionalProperties: false
     WorkspaceRequestEnvelope:
       required:
@@ -606,25 +648,41 @@ components:
         WorkspaceRequest:
           $ref: '#/components/schemas/WorkspaceUpdateRequest'
         LastModifiedOn:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
       additionalProperties: false
-    KeplerProblemDetails:
+    Meta:
       type: object
       properties:
-        ErrorType:
-          type: string
-          nullable: true
-        Identifier:
-          type: string
-          nullable: true
-        Message:
-          type: string
-          nullable: true
-        Errors:
-          type: array
+        Unsupported:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/KeplerValidationError'
-          nullable: true
+            type: string
+        ReadOnly:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
       additionalProperties: false
+    NameIDPair:
+      type: object
+      properties:
+        ID:
+          type: integer
+          format: int32
+        Name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example: "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT

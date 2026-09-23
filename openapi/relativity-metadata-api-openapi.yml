@@ -1,11 +1,17 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Metadata API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Usage Reports Metadata API
+  description: Usage Reports is the modern way to gather information and gain oversight across your instance instead of using Relativity scripts, such as Billing Statistics – RelativityOne Case Rollup.
+  version: v1
+  x-relativity-api-visibility: public
 servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+- url: https://{host}.relativity.one/api/usage-reports
+  variables:
+    host:
+      default: host
+      description: Your RelativityOne tenant name
+security:
+- Bearer: []
 tags:
 - name: Metadata
 paths:
@@ -40,8 +46,37 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      operationId: getV1Metadata
+      x-operation-id-source: derived
 components:
   schemas:
+    MetadataDto:
+      type: object
+      properties:
+        origins:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricOriginDto'
+      additionalProperties: false
+    MetricOriginDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        metrics:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricDto'
+      additionalProperties: false
     MetricDto:
       type: object
       properties:
@@ -49,11 +84,13 @@ components:
           type: string
           format: uuid
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         valueType:
           enum:
           - Text
@@ -76,47 +113,34 @@ components:
         isActive:
           type: boolean
       additionalProperties: false
-    MetadataDto:
-      type: object
-      properties:
-        origins:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetricOriginDto'
-          nullable: true
-      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
         type:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         title:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         status:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         detail:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         instance:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: {}
-    MetricOriginDto:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-          nullable: true
-        metrics:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetricDto'
-          nullable: true
-      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example: "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT

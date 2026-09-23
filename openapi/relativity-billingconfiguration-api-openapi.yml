@@ -1,11 +1,16 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService BillingConfiguration API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity Billing Configuration API
+  x-relativity-api-visibility: public
+  version: '1.0'
+  description: 'Operations tagged BillingConfiguration across 2 of this provider''s published API definitions: relativity-billing-v1-openapi.yml, relativity-billing-v2-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+- url: https://billing-insights.api.relativity.one/billing-drilldown-api
+  description: Production
+- url: https://services.vaus.relativityone.us/billing-drilldown-api/
+  description: Government
+security:
+- {}
 tags:
 - name: BillingConfiguration
 paths:
@@ -93,6 +98,13 @@ paths:
                   - name: ConversionRate
                     dateKey: '202307'
                     value: 30
+      operationId: postApiV1BillingConfigurationProductConfigurations
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v1/billing-configuration/package-consumption:
     post:
       tags:
@@ -123,6 +135,13 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/GetPackageConsumptionResponse'
+      operationId: postApiV1BillingConfigurationPackageConsumption
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v1/billing-configuration/available-products:
     post:
       tags:
@@ -183,6 +202,13 @@ paths:
                 results:
                 - metricKey: Relativity_Translate
                 - metricKey: aiR_for_Privilege
+      operationId: postApiV1BillingConfigurationAvailableProducts
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v1/billing-configuration/available-packages:
     post:
       tags:
@@ -291,6 +317,13 @@ paths:
                   metricKeys:
                   - aiR_for_Review
                   - aiR_for_Privilige
+      operationId: postApiV1BillingConfigurationAvailablePackages
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v1/billing-configuration/products-and-packages-availability:
     post:
       tags:
@@ -351,6 +384,13 @@ paths:
                 results:
                 - areProductsAvailable: true
                   arePackagesAvailable: true
+      operationId: postApiV1BillingConfigurationProductsAndPackagesAvailability
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-configuration/product-configurations:
     post:
       tags:
@@ -435,6 +475,13 @@ paths:
                   - name: ConversionRate
                     dateKey: '202307'
                     value: 30
+      operationId: postApiV2BillingConfigurationProductConfigurations
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-configuration/package-consumption:
     post:
       tags:
@@ -465,6 +512,13 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/GetPackageConsumptionResponse'
+      operationId: postApiV2BillingConfigurationPackageConsumption
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-configuration/available-products:
     post:
       tags:
@@ -525,6 +579,13 @@ paths:
                 results:
                 - metricKey: Relativity_Translate
                 - metricKey: aiR_for_Privilege
+      operationId: postApiV2BillingConfigurationAvailableProducts
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-configuration/available-packages:
     post:
       tags:
@@ -633,6 +694,13 @@ paths:
                   metricKeys:
                   - aiR_for_Review
                   - aiR_for_Privilige
+      operationId: postApiV2BillingConfigurationAvailablePackages
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
   /api/v2/billing-configuration/products-and-packages-availability:
     post:
       tags:
@@ -693,130 +761,178 @@ paths:
                 results:
                 - areProductsAvailable: true
                   arePackagesAvailable: true
+      operationId: postApiV2BillingConfigurationProductsAndPackagesAvailability
+      x-operation-id-source: derived
+    servers:
+    - url: https://billing-insights.api.relativity.one/billing-drilldown-api
+      description: Production
+    - url: https://services.vaus.relativityone.us/billing-drilldown-api/
+      description: Government
 components:
   schemas:
-    ProductConfigurationDetails:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the product
-          nullable: true
-        dateKey:
-          type: string
-          description: The Year and the month for which configuration details is returned
-          nullable: true
-        value:
-          description: Value reported for given product configuration
-          nullable: true
-      additionalProperties: false
     ProductDetails:
       type: object
       properties:
         metricKey:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAvailablePackagesResponse:
+      type: object
+      properties:
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/PackageDetails'
+          description: List of available packages
       additionalProperties: false
     GetProductConfigurationRequest:
       type: object
       properties:
         instanceID:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Specifies the instanceId for which the data should be returned
-          nullable: true
         dateKeys:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
           description: 'An array of years with months for which data should be returned. Format: ["YYYYMM"].'
-          nullable: true
           example:
           - 202208,202209
         metricKey:
-          type: string
-          description: "Specifies the metric key for which the data should be returned. If no metric key is provided, no metric will be returned.\r\nList of possible values:\r\n- Relativity_Translate\r\n- aiR_for_Review\r\n- aiR_for_Privilege\r\n- aiR_for_CaseStrategy.AppInstallation\r\n- aiR_for_CaseStrategy.WorkspaceOneTimeFee\r\n- aiR_for_CaseStrategy.Document\r\n- FOIA_Request\r\n- FOIA_DisclosureCenter_Storage\r\n- FOIA_ReadingRoom_Storage"
-          nullable: true
+          type:
+          - string
+          - 'null'
+          description: 'Specifies the metric key for which the data should be returned. If no metric key is provided, no metric will be returned.
+
+            List of possible values:
+
+            - Relativity_Translate
+
+            - aiR_for_Review
+
+            - aiR_for_Privilege
+
+            - aiR_for_CaseStrategy.AppInstallation
+
+            - aiR_for_CaseStrategy.WorkspaceOneTimeFee
+
+            - aiR_for_CaseStrategy.Document
+
+            - FOIA_Request
+
+            - FOIA_DisclosureCenter_Storage
+
+            - FOIA_ReadingRoom_Storage'
       additionalProperties: false
       description: Request body used in product-configuration API
-    GetAvailablePackagesResponse:
+    GetProductConfigurationResponse:
       type: object
       properties:
         results:
-          type: array
-          items:
-            $ref: '#/components/schemas/PackageDetails'
-          description: List of available packages
-          nullable: true
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items:
+              $ref: '#/components/schemas/ProductConfigurationDetails'
+          description: 'Product configuration.
+
+            Each property in this object is the _metricKey_ specified in the request.'
+      additionalProperties: false
+    ProductConfigurationDetails:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the product
+        dateKey:
+          type:
+          - string
+          - 'null'
+          description: The Year and the month for which configuration details is returned
+        value:
+          description: Value reported for given product configuration
       additionalProperties: false
     GetPackageConsumptionRequest:
       type: object
       properties:
         instanceID:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Specifies the instanceId for which the data should be returned
-          nullable: true
         metricKey:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Specifies the metric key for which the data should be returned. If no metric key is provided, no metric will be returned.
-          nullable: true
       additionalProperties: false
     GetAvailableProductsResponse:
       type: object
       properties:
         results:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/ProductDetails'
           description: List of available products
-          nullable: true
-      additionalProperties: false
-    GetProductsAndPackagesAvailabilityResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProductsAndPackagesAvailability'
-          description: Configuration of available extended products
-          nullable: true
       additionalProperties: false
     GetPackageConsumptionResponse:
       type: object
       properties:
         metricKey:
-          type: string
+          type:
+          - string
+          - 'null'
           description: MetricKey
-          nullable: true
         aggregationDateUtc:
           type: string
           description: Date when the recalculation of consumed packages was done
           format: date-time
         results:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/PackageConsumptionItem'
           description: List of package consumptions
-          nullable: true
       additionalProperties: false
     GetProductsAndPackagesAvailabilityRequest:
       type: object
       properties:
         instanceID:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Specifies the instanceId for which the data should be returned
-          nullable: true
         dateKey:
-          type: string
+          type:
+          - string
+          - 'null'
           description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
-          nullable: true
           example: 202209
       additionalProperties: false
     PackageDetails:
       type: object
       properties:
         packageType:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         startDate:
           type: string
           format: date-time
@@ -827,16 +943,18 @@ components:
           type: number
           format: double
         unitOfMeasure:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         overageRate:
           type: number
           format: double
         metricKeys:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
       additionalProperties: false
     ProductsAndPackagesAvailability:
       type: object
@@ -846,18 +964,16 @@ components:
         arePackagesAvailable:
           type: boolean
       additionalProperties: false
-    GetProductConfigurationResponse:
+    GetProductsAndPackagesAvailabilityResponse:
       type: object
       properties:
         results:
-          type: object
-          additionalProperties:
-            type: array
-            items:
-              $ref: '#/components/schemas/ProductConfigurationDetails'
-            nullable: true
-          description: "Product configuration.\r\nEach property in this object is the _metricKey_ specified in the request."
-          nullable: true
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ProductsAndPackagesAvailability'
+          description: Configuration of available extended products
       additionalProperties: false
     PackageConsumptionItem:
       type: object
@@ -867,7 +983,13 @@ components:
           - Free
           - Purchased
           type: string
-          description: "Type of the package\r\nList of possible values:\r\n- Free\r\n- Purchased"
+          description: 'Type of the package
+
+            List of possible values:
+
+            - Free
+
+            - Purchased'
         total:
           type: number
           description: Total units of the package
@@ -881,3 +1003,12 @@ components:
           description: Expiration date of the package
           format: date-time
       additionalProperties: false
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: JWT Authorization header using the Bearer scheme.
+      scheme: bearer
+      bearerFormat: JWT
+x-refined-from:
+- relativity-billing-v1-openapi.yml
+- relativity-billing-v2-openapi.yml

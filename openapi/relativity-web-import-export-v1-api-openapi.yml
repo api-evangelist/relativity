@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Web Import Export v1 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
+  title: Relativity.RIE.Contracts.Interfaces.V1 Web Import Export v1…
+  description: Relativity.RIE.Contracts.Interfaces
   version: V1
 servers:
 - url: /Relativity.REST/api
@@ -13,24 +13,28 @@ paths:
     get:
       tags:
       - Web Import Export v1
-      description: '[Public] IHealthCheckController - '
+      description: '[Public] IHealthCheckController -'
       operationId: Relativity.RIE.Contracts.Interfaces.V1.HealthCheck.IHealthCheckController.RunHealthCheckAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity RIE contracts interfaces V1 health check IHealth check controller…
+      x-summary-source: derived
   /Relativity.WebImportExport/v1/HealthCheck/RunS2HealthCheck:
     get:
       tags:
       - Web Import Export v1
-      description: '[Public] IHealthCheckController - '
+      description: '[Public] IHealthCheckController -'
       operationId: Relativity.RIE.Contracts.Interfaces.V1.HealthCheck.IHealthCheckController.RunS2HealthCheckAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity RIE contracts interfaces V1 health check IHealth check controller…
+      x-summary-source: derived
 components:
   parameters:
     x-csrf-header:

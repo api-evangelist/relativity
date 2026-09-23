@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Conceptual Analytics v1 API
+  title: Analytics.Conceptual.Service.Interfaces.Public.V1…
   description: Analytics.Conceptual.Service.Interfaces.Public
   version: V1
 servers:
@@ -26,6 +26,8 @@ paths:
       responses:
         '201':
           description: Successful Operation
+      summary: Analytics conceptual service interfaces public v1 IConceptual index service…
+      x-summary-source: derived
   /conceptual-analytics/v1/workspaces/{workspaceID}/indexes/{indexID}:
     get:
       tags:
@@ -38,6 +40,8 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Analytics conceptual service interfaces public v1 IConceptual index service…
+      x-summary-source: derived
     put:
       tags:
       - Conceptual Analytics v1
@@ -55,6 +59,8 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Analytics conceptual service interfaces public v1 IConceptual index service…
+      x-summary-source: derived
     delete:
       tags:
       - Conceptual Analytics v1
@@ -66,6 +72,8 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Analytics conceptual service interfaces public v1 IConceptual index service…
+      x-summary-source: derived
   /conceptual-analytics/v1/workspaces/{workspaceID}/indexes/{indexID}/status:
     get:
       tags:
@@ -78,6 +86,8 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Analytics conceptual service interfaces public v1 IConceptual index service get…
+      x-summary-source: derived
   /conceptual-analytics/v1/workspaces/{workspaceID}/indexes/{indexID}/job:
     post:
       tags:
@@ -91,6 +101,8 @@ paths:
       responses:
         '201':
           description: Successful Operation
+      summary: Analytics conceptual service interfaces public v1 IConceptual index service…
+      x-summary-source: derived
     delete:
       tags:
       - Conceptual Analytics v1
@@ -102,8 +114,24 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Analytics conceptual service interfaces public v1 IConceptual index service…
+      x-summary-source: derived
 components:
   parameters:
+    indexID:
+      name: indexID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
     jobType:
       name: jobType
       in: query
@@ -120,31 +148,7 @@ components:
         - Deactivate
         - TagDocuments
         type: string
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    indexID:
-      name: indexID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
   schemas:
-    ArtifactRef:
-      title: ArtifactRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
     ConceptualIndex:
       title: ConceptualIndex
       type: object
@@ -196,3 +200,13 @@ components:
           format: date-time
         InUseByCategorizationSet:
           type: boolean
+    ArtifactRef:
+      title: ArtifactRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string

@@ -1,10 +1,10 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService ArchiveJobs API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity.ARM.Services.Interfaces Archive Jobs API
+  description: Relativity.ARM.Services.Interfaces
+  version: V3
 servers:
-- url: /Relativity.REST/api
+- url: /Relativity.REST/api/relativity-arm
   description: The URL prefix for all Kepler services
 tags:
 - name: ArchiveJobs
@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - ArchiveJobs
-      summary: Asynchronously creates an instance of an Archive Job.
+      summary: Asynchronously creates an instance of an Archive Job
       requestBody:
         description: Archive job request containing workspace ID, archive directory, and configuration
         content:
@@ -41,11 +41,13 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal server error
+      operationId: postV3ArchiveJobs
+      x-operation-id-source: derived
   /v3/archive-jobs/{jobID}:
     get:
       tags:
       - ArchiveJobs
-      summary: Asynchronously read an instance of an Archive Job.
+      summary: Asynchronously read an instance of an Archive Job
       parameters:
       - name: jobID
         in: path
@@ -68,10 +70,12 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal server error
+      operationId: getV3ArchiveJobsByJobID
+      x-operation-id-source: derived
     put:
       tags:
       - ArchiveJobs
-      summary: Asynchronously updates an instance of an Archive Job.
+      summary: Asynchronously updates an instance of an Archive Job
       parameters:
       - name: jobID
         in: path
@@ -112,10 +116,12 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal server error
+      operationId: putV3ArchiveJobsByJobID
+      x-operation-id-source: derived
     delete:
       tags:
       - ArchiveJobs
-      summary: Asynchronously deletes an instance of an Archive Job.
+      summary: Asynchronously deletes an instance of an Archive Job
       parameters:
       - name: jobID
         in: path
@@ -134,50 +140,110 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal server error
+      operationId: deleteV3ArchiveJobsByJobID
+      x-operation-id-source: derived
 components:
   schemas:
+    NotificationOptions:
+      type: object
+      properties:
+        notifyJobRunner:
+          type: boolean
+          description: 'Gets or sets a value indicating whether to notify both creator and runner.
+
+            When true, notifications are sent to both creator and executor.'
+        additionalRecipients:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: Gets or sets the list of additional recipient emails.
+      additionalProperties: false
+      description: ARM Job notification options
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    UpdateArchiveJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for Archive Job update
+    ArchiveJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest'
+      additionalProperties: false
+      description: Request to create new Archive job
     ArchiveJobResponse:
       type: object
       properties:
         jobID:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Gets or sets the Job id.
-          nullable: true
         jobName:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Gets or sets the Job name.
-          nullable: true
         archivePath:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Gets or sets the path to the archive.
-          nullable: true
         workspaceID:
           type: integer
           description: Gets or sets the Workspace id.
           format: int32
         scheduledStartTime:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Gets or sets scheduled start time.
           format: date-time
-          nullable: true
         jobDetails:
           $ref: '#/components/schemas/JobDetails'
         excludedMigrators:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
           description: Gets or sets the migrators excluded from this archive job.
-          nullable: true
         migratorOptions:
-          type: object
-          additionalProperties:
-            nullable: true
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
           description: 'Gets or sets per-migrator configuration used for this job.
 
             Key = migrator name,
 
             Value = JSON  with migrator-specific parameters.'
-          nullable: true
         notificationOptions:
           $ref: '#/components/schemas/NotificationOptions'
         uiJobActionsLocked:
@@ -185,6 +251,16 @@ components:
           description: Gets or sets a value indicating whether this job ui actions are locked.
       additionalProperties: false
       description: Response with Archive Job
+    CreateArchiveJobResponse:
+      type: object
+      properties:
+        jobID:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets the created Job id.
+      additionalProperties: false
+      description: Response for Archive Job creation
     JobActions:
       type: object
       properties:
@@ -193,15 +269,39 @@ components:
           description: Date and time when the action was performed
           format: date-time
         type:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Type of action performed
-          nullable: true
         userName:
-          type: string
+          type:
+          - string
+          - 'null'
           description: User who performed the action
-          nullable: true
       additionalProperties: false
       description: Represents an action performed on a job
+    JobPriority:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: Job priority levels
+      format: int32
+    JobDetails:
+      type: object
+      properties:
+        priority:
+          $ref: '#/components/schemas/JobPriority'
+        actionsHistory:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/JobActions'
+          description: Gets or sets job action history.
+      additionalProperties: false
+      description: ARM Job details
     ArchiveJobRequest:
       type: object
       properties:
@@ -210,24 +310,27 @@ components:
           description: Gets or sets the Workspace id.
           format: int32
         archiveDirectory:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Gets or sets ARM Archive Directory
-          nullable: true
         scheduledStartTime:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Gets or sets scheduled start time.
           format: date-time
-          nullable: true
         jobPriority:
           $ref: '#/components/schemas/JobPriority'
         excludedMigrators:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
           description: 'Gets or sets the list of migrators to exclude from execution.
 
             If null or empty, all available migrators execute with default parameters.'
-          nullable: true
           example:
           - ExtensionData
           - Invariant
@@ -239,9 +342,10 @@ components:
           - Audit
           - Database
         migratorOptions:
-          type: object
-          additionalProperties:
-            nullable: true
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
           description: 'Gets or sets generic per-migrator configuration.
 
             Key = migrator name
@@ -251,7 +355,6 @@ components:
             If a migrator is not listed here, it runs with defaults.
 
             If null, all non-excluded migrators use default configuration.'
-          nullable: true
           example:
             Common:
               FileFirstFlow:
@@ -266,80 +369,3 @@ components:
           description: Gets or sets a value indicating whether this job ui actions are locked
       additionalProperties: false
       description: Request to create new Archive job
-    JobPriority:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: Job priority levels
-      format: int32
-    ArchiveJobRequestWrapper:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest'
-      additionalProperties: false
-      description: Request to create new Archive job
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    UpdateArchiveJobResponse:
-      type: object
-      additionalProperties: false
-      description: Response for Archive Job update
-    JobDetails:
-      type: object
-      properties:
-        priority:
-          $ref: '#/components/schemas/JobPriority'
-        actionsHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobActions'
-          description: Gets or sets job action history.
-          nullable: true
-      additionalProperties: false
-      description: ARM Job details
-    NotificationOptions:
-      type: object
-      properties:
-        notifyJobRunner:
-          type: boolean
-          description: 'Gets or sets a value indicating whether to notify both creator and runner.
-
-            When true, notifications are sent to both creator and executor.'
-        additionalRecipients:
-          type: array
-          items:
-            type: string
-          description: Gets or sets the list of additional recipient emails.
-          nullable: true
-      additionalProperties: false
-      description: ARM Job notification options
-    CreateArchiveJobResponse:
-      type: object
-      properties:
-        jobID:
-          type: string
-          description: Gets or sets the created Job id.
-          nullable: true
-      additionalProperties: false
-      description: Response for Archive Job creation

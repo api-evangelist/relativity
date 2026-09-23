@@ -1,11 +1,23 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Reports API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity Reports API
+  x-refined-note:
+  - x-relativity-api-visibility differs across the merged source definitions and was not carried
+  version: '1.0'
+  description: 'Operations tagged Reports across 2 of this provider''s published API definitions: relativity-staging-reports-openapi.yml, relativity-usage-reports-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+- url: https://{host}/Relativity.REST/api/staging-insights
+  variables:
+    host:
+      default: host
+      description: Your RelativityOne tenant name
+- url: https://{host}.relativity.one/api/usage-reports
+  variables:
+    host:
+      default: host
+      description: Your RelativityOne tenant name
+security:
+- Bearer: []
 tags:
 - name: Reports
 paths:
@@ -87,6 +99,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV4Reports
+      x-operation-id-source: derived
     get:
       tags:
       - Reports
@@ -162,6 +176,14 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV4Reports
+      x-operation-id-source: derived
+    servers:
+    - url: https://{host}/Relativity.REST/api/staging-insights
+      variables:
+        host:
+          default: host
+          description: Your RelativityOne tenant name
   /v4/Reports/{id}:
     get:
       tags:
@@ -224,6 +246,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV4ReportsById
+      x-operation-id-source: derived
     delete:
       tags:
       - Reports
@@ -275,6 +299,14 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: deleteV4ReportsById
+      x-operation-id-source: derived
+    servers:
+    - url: https://{host}/Relativity.REST/api/staging-insights
+      variables:
+        host:
+          default: host
+          description: Your RelativityOne tenant name
   /v4/Reports/{id}/file:
     get:
       tags:
@@ -328,6 +360,14 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV4ReportsByIdFile
+      x-operation-id-source: derived
+    servers:
+    - url: https://{host}/Relativity.REST/api/staging-insights
+      variables:
+        host:
+          default: host
+          description: Your RelativityOne tenant name
   /v1/Reports/{id}:
     get:
       tags:
@@ -390,6 +430,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      operationId: getV1ReportsById
+      x-operation-id-source: derived
     delete:
       tags:
       - Reports
@@ -451,6 +493,14 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      operationId: deleteV1ReportsById
+      x-operation-id-source: derived
+    servers:
+    - url: https://{host}.relativity.one/api/usage-reports
+      variables:
+        host:
+          default: host
+          description: Your RelativityOne tenant name
   /v1/Reports/{id}/details:
     get:
       tags:
@@ -527,6 +577,14 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '503':
           description: Server Error
+      operationId: getV1ReportsByIdDetails
+      x-operation-id-source: derived
+    servers:
+    - url: https://{host}.relativity.one/api/usage-reports
+      variables:
+        host:
+          default: host
+          description: Your RelativityOne tenant name
   /v1/Reports:
     get:
       tags:
@@ -582,6 +640,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      operationId: getV1Reports
+      x-operation-id-source: derived
     post:
       tags:
       - Reports
@@ -635,6 +695,14 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      operationId: postV1Reports
+      x-operation-id-source: derived
+    servers:
+    - url: https://{host}.relativity.one/api/usage-reports
+      variables:
+        host:
+          default: host
+          description: Your RelativityOne tenant name
   /v1/Reports/download/{id}:
     get:
       tags:
@@ -699,26 +767,188 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '503':
           description: Server Error
+      operationId: getV1ReportsDownloadById
+      x-operation-id-source: derived
+    servers:
+    - url: https://{host}.relativity.one/api/usage-reports
+      variables:
+        host:
+          default: host
+          description: Your RelativityOne tenant name
 components:
   schemas:
-    CreateReportRequestDto:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
-        name:
-          type: string
-          nullable: true
-        dateRange:
-          $ref: '#/components/schemas/DateRangeDto'
-        fields:
-          type: array
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    ReportJobsResponse:
+      type: object
+      properties:
+        reportJobs:
+          type:
+          - array
+          - 'null'
           items:
-            type: string
-            format: uuid
-          nullable: true
-        dataMaxPrecision:
-          type: boolean
-          nullable: true
+            $ref: '#/components/schemas/ReportJobResponse'
+        paging:
+          $ref: '#/components/schemas/Page'
       additionalProperties: false
+    ReportJobResponse:
+      type: object
+      properties:
+        reportId:
+          type: string
+          format: uuid
+        path:
+          type:
+          - string
+          - 'null'
+        createdOn:
+          type: string
+          format: date-time
+        state:
+          type:
+          - string
+          - 'null'
+        includeFiles:
+          type: boolean
+        depth:
+          $ref: '#/components/schemas/ReportDepth'
+        useSnapshot:
+          type: boolean
+        captureStart:
+          type: string
+          format: date-time
+        captureEnd:
+          type: string
+          format: date-time
+        reportCategory:
+          $ref: '#/components/schemas/ReportCategory'
+        reportDate:
+          type:
+          - string
+          - 'null'
+          description: For Summary reports, the source CSV date (YYYYMMDD); otherwise null.
+        errorMessage:
+          type:
+          - string
+          - 'null'
+          description: Sanitized, user-facing failure reason. Populated only when `state` is `Failed` (see Failure reporting in the implementation notes); null otherwise. Omitted from the JSON payload when null.
+      additionalProperties: false
+    Page:
+      required:
+      - limit
+      - start
+      type: object
+      properties:
+        start:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+        limit:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+      additionalProperties: false
+    ReportDepth:
+      enum:
+      - TopLevelOnly
+      - OneLevelDeep
+      - TwoLevelsDeep
+      - FullHierarchy
+      type: string
+    DirectoryReportRequest:
+      required:
+      - depth
+      - path
+      type: object
+      properties:
+        path:
+          minLength: 1
+          type: string
+        includeFiles:
+          type: boolean
+        depth:
+          $ref: '#/components/schemas/ReportDepth'
+        useSnapshot:
+          type: boolean
+        date:
+          pattern: ^\d{8}$
+          type:
+          - string
+          - 'null'
+          description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
+      additionalProperties: false
+    ReportCategory:
+      enum:
+      - DetailedReport
+      - SummaryReport
+      type: string
+    ReportResponse:
+      type: object
+      properties:
+        reportId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    ReportsDto:
+      type: object
+      properties:
+        reports:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ReportDto'
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     DateRangeDto:
       type: object
       properties:
@@ -729,13 +959,51 @@ components:
           type: string
           format: date-time
       additionalProperties: false
-    ReportDepth:
-      enum:
-      - TopLevelOnly
-      - OneLevelDeep
-      - TwoLevelsDeep
-      - FullHierarchy
-      type: string
+    ReportDetailsDto:
+      type: object
+      properties:
+        fields:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        items:
+          type:
+          - array
+          - 'null'
+          items: {}
+        currentPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CreateReportRequestDto:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        dateRange:
+          $ref: '#/components/schemas/DateRangeDto'
+        fields:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        dataMaxPrecision:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
     ReportDto:
       type: object
       properties:
@@ -746,16 +1014,18 @@ components:
           type: string
           format: uuid
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         dateRange:
           $ref: '#/components/schemas/DateRangeDto'
         fields:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
             format: uuid
-          nullable: true
         type:
           enum:
           - Workspace
@@ -776,165 +1046,6 @@ components:
         dataMaxPrecision:
           type: boolean
         version:
-          type: integer
-          format: int32
-      additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    ReportJobResponse:
-      type: object
-      properties:
-        reportId:
-          type: string
-          format: uuid
-        path:
-          type: string
-          nullable: true
-        createdOn:
-          type: string
-          format: date-time
-        state:
-          type: string
-          nullable: true
-        includeFiles:
-          type: boolean
-        depth:
-          $ref: '#/components/schemas/ReportDepth'
-        useSnapshot:
-          type: boolean
-        captureStart:
-          type: string
-          format: date-time
-        captureEnd:
-          type: string
-          format: date-time
-        reportCategory:
-          $ref: '#/components/schemas/ReportCategory'
-        reportDate:
-          type: string
-          nullable: true
-          description: For Summary reports, the source CSV date (YYYYMMDD); otherwise null.
-        errorMessage:
-          type: string
-          nullable: true
-          description: Sanitized, user-facing failure reason. Populated only when `state` is `Failed` (see Failure reporting in the implementation notes); null otherwise. Omitted from the JSON payload when null.
-      additionalProperties: false
-    ReportDetailsDto:
-      type: object
-      properties:
-        fields:
-          type: array
-          items:
-            type: string
-          nullable: true
-        items:
-          type: array
-          items: {}
-          nullable: true
-        currentPage:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        totalItems:
-          type: integer
-          format: int32
-      additionalProperties: false
-    DirectoryReportRequest:
-      required:
-      - depth
-      - path
-      type: object
-      properties:
-        path:
-          minLength: 1
-          type: string
-        includeFiles:
-          type: boolean
-        depth:
-          $ref: '#/components/schemas/ReportDepth'
-        useSnapshot:
-          type: boolean
-        date:
-          pattern: ^\d{8}$
-          type: string
-          nullable: true
-          description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
-      additionalProperties: false
-    ReportCategory:
-      enum:
-      - DetailedReport
-      - SummaryReport
-      type: string
-    ReportsDto:
-      type: object
-      properties:
-        reports:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReportDto'
-          nullable: true
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    ReportResponse:
-      type: object
-      properties:
-        reportId:
-          type: string
-          format: uuid
-      additionalProperties: false
-    Page:
-      required:
-      - limit
-      - start
-      type: object
-      properties:
-        start:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-        limit:
-          maximum: 2147483647
-          minimum: 1
           type: integer
           format: int32
       additionalProperties: false
@@ -967,14 +1078,12 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    ReportJobsResponse:
-      type: object
-      properties:
-        reportJobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReportJobResponse'
-          nullable: true
-        paging:
-          $ref: '#/components/schemas/Page'
-      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example: "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT
+x-refined-from:
+- relativity-staging-reports-openapi.yml
+- relativity-usage-reports-openapi.yml

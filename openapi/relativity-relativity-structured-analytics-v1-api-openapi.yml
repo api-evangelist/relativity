@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Relativity Structured Analytics v1 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
+  title: Relativity.StructuredAnalytics.Jobs.V1 Relativity…
+  description: Relativity.StructuredAnalytics.Jobs
   version: V1
 servers:
 - url: /Relativity.REST/api
@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RunAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -32,10 +32,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OperationResult'
+      summary: Relativity structured analytics V1 jobs IJob manager run async
+      x-summary-source: derived
     get:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetStatusAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -48,11 +50,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Status'
+      summary: Relativity structured analytics V1 jobs IJob manager get status async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/prep:
     post:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RunAnalysisPreparationAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -65,11 +69,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OperationResult'
+      summary: Relativity structured analytics V1 jobs IJob manager run analysis preparation…
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/copy-to-legacy:
     post:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RunCopyToLegacyAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -82,10 +88,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OperationResult'
+      summary: Relativity structured analytics V1 jobs IJob manager run copy to legacy async
+      x-summary-source: derived
     delete:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.CancelCopyToLegacyAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -98,11 +106,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OperationResult'
+      summary: Relativity structured analytics V1 jobs IJob manager cancel copy to legacy async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/:
     delete:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.CancelAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -116,11 +126,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OperationResult'
+      summary: Relativity structured analytics V1 jobs IJob manager cancel async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/retry:
     post:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RetryErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -133,11 +145,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OperationResult'
+      summary: Relativity structured analytics V1 jobs IJob manager retry errors async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/tmq:
     get:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetTMQEntryAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -150,11 +164,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MasterJob'
+      summary: Relativity structured analytics V1 jobs IJob manager get TMQ entry async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/errors:
     get:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -171,11 +187,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/StructuredAnalyticsSetError'
+      summary: Relativity structured analytics V1 jobs IJob manager get errors async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/doc-errors:
     get:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetDocumentErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -192,10 +210,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DocumentError'
+      summary: Relativity structured analytics V1 jobs IJob manager get document errors async
+      x-summary-source: derived
     post:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetDocumentErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -214,11 +234,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SASDocumentErrorsResponseObject'
+      summary: Relativity structured analytics V1 jobs IJob manager get document errors async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/sets/{sasArtifactID}/jobs/valid-tasks:
     get:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.GetValidTasksAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -231,11 +253,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidTaskResult'
+      summary: Relativity structured analytics V1 jobs IJob manager get valid tasks async
+      x-summary-source: derived
   /relativity-structured-analytics/v1/workspaces/{workspaceID}/choices:
     delete:
       tags:
       - Relativity Structured Analytics v1
-      description: '[Public] IJobManager - '
+      description: '[Public] IJobManager -'
       operationId: Relativity.StructuredAnalytics.V1.Jobs.IJobManager.RemoveAllChoicesAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -247,52 +271,67 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OperationResult'
+      summary: Relativity structured analytics V1 jobs IJob manager remove all choices async
+      x-summary-source: derived
 components:
-  parameters:
-    wait:
-      name: wait
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    start:
-      name: start
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 0
-    sasArtifactID:
-      name: sasArtifactID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    length:
-      name: length
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 0
   schemas:
+    EmailThreadingStatistics:
+      title: EmailThreadingStatistics
+      type: object
+      properties:
+        EmailsAnalyzed:
+          type: integer
+        InclusiveEmails:
+          type: integer
+        DocumentsAnalyzed:
+          type: integer
+    MasterJob:
+      title: MasterJob
+      type: object
+      properties:
+        TaskID:
+          type: integer
+        WorkspaceID:
+          type: integer
+        ResourceGroupID:
+          type: integer
+        Status:
+          type: integer
+        JobArtifactID:
+          type: integer
+        Handled:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        DBLocation:
+          type: string
+        Retries:
+          type: integer
+        PopulateAll:
+          type: boolean
+        AnalyzeAll:
+          type: boolean
+        StatusAtCancel:
+          type: integer
+        UpgradeStatusComplete:
+          type:
+          - boolean
+          - 'null'
+        InitiatorGuid:
+          type:
+          - string
+          - 'null'
+    SASDocumentErrorsResponseObject:
+      title: SASDocumentErrorsResponseObject
+      type: object
+      properties:
+        DocumentErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentError'
+        TotalCount:
+          type: integer
     DocumentError:
       title: DocumentError
       type: object
@@ -322,6 +361,49 @@ components:
         DateErrored:
           type: string
           format: date-time
+    ValidTaskResult:
+      title: ValidTaskResult
+      type: object
+      properties:
+        ValidTasks:
+          type: array
+          items:
+            enum:
+            - CANCEL_ANALYSIS
+            - RETRY_ERRORS
+            - GET_SET_ERRORS
+            - GET_DOCUMENT_ERRORS
+            - COPY_TO_LEGACY
+            - COPY_TO_LEGACY_CANCEL
+            - PREPARE_ANALYSIS
+            - RUN_ANALYSIS
+            type: string
+        CopyToLegacyQualified:
+          type: boolean
+    TextualNearDuplicatesStatistics:
+      title: TextualNearDuplicatesStatistics
+      type: object
+      properties:
+        AverageSimilarityPercentage:
+          type: number
+        GroupsCount:
+          type: integer
+        DocumentsAnalyzed:
+          type: integer
+    Status:
+      title: Status
+      type: object
+      properties:
+        JobName:
+          type: string
+        JobState:
+          $ref: '#/components/schemas/JobState'
+        OperationState:
+          type: array
+          items:
+            $ref: '#/components/schemas/OperationState'
+        JobResults:
+          $ref: '#/components/schemas/JobResults'
     OperationState:
       title: OperationState
       type: object
@@ -365,116 +447,38 @@ components:
           - Unknown
           type: string
         LastActivity:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-    Status:
-      title: Status
+    NameNormalizationStatistics:
+      title: NameNormalizationStatistics
       type: object
       properties:
-        JobName:
-          type: string
-        JobState:
-          $ref: '#/components/schemas/JobState'
-        OperationState:
-          type: array
-          items:
-            $ref: '#/components/schemas/OperationState'
-        JobResults:
-          $ref: '#/components/schemas/JobResults'
-    MasterJob:
-      title: MasterJob
+        AliasesIdentified:
+          type: integer
+        NewAliasesImported:
+          type: integer
+    OperationResult:
+      title: OperationResult
       type: object
       properties:
-        TaskID:
-          type: integer
-        WorkspaceID:
-          type: integer
-        ResourceGroupID:
-          type: integer
-        Status:
-          type: integer
-        JobArtifactID:
-          type: integer
-        Handled:
-          type: string
-          format: date-time
-          nullable: true
-        DBLocation:
-          type: string
-        Retries:
-          type: integer
-        PopulateAll:
+        IsSuccess:
           type: boolean
-        AnalyzeAll:
-          type: boolean
-        StatusAtCancel:
-          type: integer
-        UpgradeStatusComplete:
-          type: boolean
-          nullable: true
-        InitiatorGuid:
-          type: string
-          nullable: true
-    ValidTaskResult:
-      title: ValidTaskResult
-      type: object
-      properties:
-        ValidTasks:
-          type: array
-          items:
-            enum:
-            - CANCEL_ANALYSIS
-            - RETRY_ERRORS
-            - GET_SET_ERRORS
-            - GET_DOCUMENT_ERRORS
-            - COPY_TO_LEGACY
-            - COPY_TO_LEGACY_CANCEL
-            - PREPARE_ANALYSIS
-            - RUN_ANALYSIS
-            type: string
-        CopyToLegacyQualified:
-          type: boolean
-    TextualNearDuplicatesStatistics:
-      title: TextualNearDuplicatesStatistics
-      type: object
-      properties:
-        AverageSimilarityPercentage:
-          type: number
-        GroupsCount:
-          type: integer
-        DocumentsAnalyzed:
-          type: integer
-    AnalysisSettings:
-      title: AnalysisSettings
-      type: object
-      properties:
-        PopulateAll:
-          type: boolean
-        AnalyzeAll:
-          type: boolean
-    StructuredAnalyticsSetError:
-      title: StructuredAnalyticsSetError
-      type: object
-      properties:
-        FullText:
-          type: string
         Message:
           type: string
-        Server:
-          type: string
-        Source:
-          type: string
-    SASDocumentErrorsResponseObject:
-      title: SASDocumentErrorsResponseObject
+    JobResults:
+      title: JobResults
       type: object
       properties:
-        DocumentErrors:
-          type: array
-          items:
-            $ref: '#/components/schemas/DocumentError'
-        TotalCount:
+        DocumentsAnalyzed:
           type: integer
+        EmailThreadingStats:
+          $ref: '#/components/schemas/EmailThreadingStatistics'
+        NameNormalizationStats:
+          $ref: '#/components/schemas/NameNormalizationStatistics'
+        TextualNearDupeStats:
+          $ref: '#/components/schemas/TextualNearDuplicatesStatistics'
     JobState:
       title: JobState
       type: object
@@ -522,8 +526,9 @@ components:
         IsCanceling:
           type: boolean
         IsQueued:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         IsUnknown:
           type: boolean
         PhaseProgressPercentage:
@@ -532,6 +537,26 @@ components:
           type: integer
         OperationTimeElapsed:
           type: integer
+    StructuredAnalyticsSetError:
+      title: StructuredAnalyticsSetError
+      type: object
+      properties:
+        FullText:
+          type: string
+        Message:
+          type: string
+        Server:
+          type: string
+        Source:
+          type: string
+    AnalysisSettings:
+      title: AnalysisSettings
+      type: object
+      properties:
+        PopulateAll:
+          type: boolean
+        AnalyzeAll:
+          type: boolean
     SASDocumentErrorsRequestObject:
       title: SASDocumentErrorsRequestObject
       type: object
@@ -548,41 +573,47 @@ components:
           type: integer
         Length:
           type: integer
-    EmailThreadingStatistics:
-      title: EmailThreadingStatistics
-      type: object
-      properties:
-        EmailsAnalyzed:
-          type: integer
-        InclusiveEmails:
-          type: integer
-        DocumentsAnalyzed:
-          type: integer
-    OperationResult:
-      title: OperationResult
-      type: object
-      properties:
-        IsSuccess:
-          type: boolean
-        Message:
-          type: string
-    JobResults:
-      title: JobResults
-      type: object
-      properties:
-        DocumentsAnalyzed:
-          type: integer
-        EmailThreadingStats:
-          $ref: '#/components/schemas/EmailThreadingStatistics'
-        NameNormalizationStats:
-          $ref: '#/components/schemas/NameNormalizationStatistics'
-        TextualNearDupeStats:
-          $ref: '#/components/schemas/TextualNearDuplicatesStatistics'
-    NameNormalizationStatistics:
-      title: NameNormalizationStatistics
-      type: object
-      properties:
-        AliasesIdentified:
-          type: integer
-        NewAliasesImported:
-          type: integer
+  parameters:
+    sasArtifactID:
+      name: sasArtifactID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    start:
+      name: start
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 0
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    wait:
+      name: wait
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    length:
+      name: length
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 0

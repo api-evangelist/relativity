@@ -1,10 +1,10 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService JobInformation API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity.ARM.Services.Interfaces Job Information API
+  description: Relativity.ARM.Services.Interfaces
+  version: V3
 servers:
-- url: /Relativity.REST/api
+- url: /Relativity.REST/api/relativity-arm
   description: The URL prefix for all Kepler services
 tags:
 - name: JobInformation
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - JobInformation
-      summary: Asynchronously retrieves the current status and progress of a job.
+      summary: Asynchronously retrieves the current status and progress of a job
       parameters:
       - name: jobID
         in: path
@@ -36,8 +36,47 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: Internal server error
+      operationId: getV3JobsByJobIDStatus
+      x-operation-id-source: derived
 components:
   schemas:
+    JobProgressResponse:
+      type: object
+      properties:
+        jobId:
+          type:
+          - string
+          - 'null'
+          description: Unique identifier of the job
+        jobState:
+          $ref: '#/components/schemas/JobProgressStatus'
+      additionalProperties: false
+      description: Response containing job progress information
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     JobProgressStatus:
       enum:
       - 0
@@ -50,34 +89,3 @@ components:
       type: integer
       description: Job progress status values
       format: int32
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    JobProgressResponse:
-      type: object
-      properties:
-        jobId:
-          type: string
-          description: Unique identifier of the job
-          nullable: true
-        jobState:
-          $ref: '#/components/schemas/JobProgressStatus'
-      additionalProperties: false
-      description: Response containing job progress information

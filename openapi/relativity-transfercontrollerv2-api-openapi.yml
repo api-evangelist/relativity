@@ -1,11 +1,8 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService TransferControllerV2 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
-servers:
-- url: /Relativity.REST/api
-  description: The URL prefix for all Kepler services
+  title: Relativity Transfer Service Transfer Controller V2 API
+security:
+- Bearer: []
 tags:
 - name: TransferControllerV2
 paths:
@@ -33,6 +30,10 @@ paths:
       responses:
         '200':
           description: Success
+      summary: Create transfer jobs
+      x-summary-source: derived
+      operationId: postV2TransferJobs
+      x-operation-id-source: derived
   /v2/transfer/jobs/{jobId}:
     get:
       tags:
@@ -62,6 +63,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/GetJobResultV2'
+      summary: Get transfer jobs by job id
+      x-summary-source: derived
+      operationId: getV2TransferJobsByJobId
+      x-operation-id-source: derived
     delete:
       tags:
       - TransferControllerV2
@@ -80,6 +85,10 @@ paths:
       responses:
         '200':
           description: Success
+      summary: Delete transfer jobs by job id
+      x-summary-source: derived
+      operationId: deleteV2TransferJobsByJobId
+      x-operation-id-source: derived
   /v2/transfer/jobs/{jobId}/qc:
     get:
       tags:
@@ -109,15 +118,132 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/GetTokenResult'
+      summary: Get transfer jobs by job id qc
+      x-summary-source: derived
+      operationId: getV2TransferJobsByJobIdQc
+      x-operation-id-source: derived
 components:
   schemas:
+    TransferStatistics:
+      type: object
+      properties:
+        successfulFiles:
+          type: integer
+          format: int64
+        failedFiles:
+          type: integer
+          format: int64
+        skippedFiles:
+          type: integer
+          format: int64
+        successfulBytes:
+          type: integer
+          format: int64
+        failedBytes:
+          type: integer
+          format: int64
+        skippedBytes:
+          type: integer
+          format: int64
+        successfulEmptyDirectories:
+          type: integer
+          format: int64
+        failedEmptyDirectories:
+          type: integer
+          format: int64
+        skippedEmptyDirectories:
+          type: integer
+          format: int64
+      additionalProperties: false
     GetTokenResult:
       type: object
       properties:
         sasUrl:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uri
-          nullable: true
+      additionalProperties: false
+    EnumerationStatistics:
+      type: object
+      properties:
+        totalFiles:
+          type: integer
+          format: int64
+        totalSize:
+          type: integer
+          format: int64
+        totalEmptyDirectories:
+          type: integer
+          format: int64
+        status:
+          type:
+          - string
+          - 'null'
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetJobResultV2:
+      type: object
+      properties:
+        transferStatus:
+          type:
+          - string
+          - 'null'
+        transferJobID:
+          type: string
+          format: uuid
+        destinationFullPath:
+          type:
+          - string
+          - 'null'
+        sourceFullPath:
+          type:
+          - string
+          - 'null'
+        tags:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        eta:
+          $ref: '#/components/schemas/TimeSpan'
+        transferStatistics:
+          $ref: '#/components/schemas/TransferStatistics'
+        enumerationStatistics:
+          $ref: '#/components/schemas/EnumerationStatistics'
+        transferType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CreateTransferRequestV2:
+      type: object
+      properties:
+        destinationPath:
+          type:
+          - string
+          - 'null'
+        sourcePath:
+          type:
+          - string
+          - 'null'
+        tags:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        transferType:
+          type:
+          - string
+          - 'null'
+        transferJobID:
+          type: string
+          format: uuid
       additionalProperties: false
     TimeSpan:
       type: object
@@ -182,104 +308,9 @@ components:
           format: double
           readOnly: true
       additionalProperties: false
-    TransferStatistics:
-      type: object
-      properties:
-        successfulFiles:
-          type: integer
-          format: int64
-        failedFiles:
-          type: integer
-          format: int64
-        skippedFiles:
-          type: integer
-          format: int64
-        successfulBytes:
-          type: integer
-          format: int64
-        failedBytes:
-          type: integer
-          format: int64
-        skippedBytes:
-          type: integer
-          format: int64
-        successfulEmptyDirectories:
-          type: integer
-          format: int64
-        failedEmptyDirectories:
-          type: integer
-          format: int64
-        skippedEmptyDirectories:
-          type: integer
-          format: int64
-      additionalProperties: false
-    GetJobResultV2:
-      type: object
-      properties:
-        transferStatus:
-          type: string
-          nullable: true
-        transferJobID:
-          type: string
-          format: uuid
-        destinationFullPath:
-          type: string
-          nullable: true
-        sourceFullPath:
-          type: string
-          nullable: true
-        tags:
-          type: object
-          additionalProperties:
-            type: string
-          nullable: true
-        eta:
-          $ref: '#/components/schemas/TimeSpan'
-        transferStatistics:
-          $ref: '#/components/schemas/TransferStatistics'
-        enumerationStatistics:
-          $ref: '#/components/schemas/EnumerationStatistics'
-        transferType:
-          type: string
-          nullable: true
-      additionalProperties: false
-    CreateTransferRequestV2:
-      type: object
-      properties:
-        destinationPath:
-          type: string
-          nullable: true
-        sourcePath:
-          type: string
-          nullable: true
-        tags:
-          type: object
-          additionalProperties:
-            type: string
-          nullable: true
-        transferType:
-          type: string
-          nullable: true
-        transferJobID:
-          type: string
-          format: uuid
-      additionalProperties: false
-    EnumerationStatistics:
-      type: object
-      properties:
-        totalFiles:
-          type: integer
-          format: int64
-        totalSize:
-          type: integer
-          format: int64
-        totalEmptyDirectories:
-          type: integer
-          format: int64
-        status:
-          type: string
-          nullable: true
-        error:
-          type: string
-          nullable: true
-      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Standard Authorization header using the Bearer scheme. Example: "bearer {token}"'
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,8 +1,8 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Import Job Module API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: Relativity.Import.Services Import Job Module API
+  description: Relativity.Import.Services
+  version: '1.0'
 servers:
 - url: /Relativity.REST/api
   description: The URL prefix for all Kepler services
@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller create async
       description: Create import job.
       operationId: Import.Services.V1.ImportJobController.CreateAsync
       parameters:
@@ -36,11 +36,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/cancel/:
     post:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller cancel async
       description: Cancel import job.
       operationId: Import.Services.V1.ImportJobController.CancelAsync
       parameters:
@@ -56,11 +57,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/begin/:
     post:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller begin async
       description: Begin import job.
       operationId: Import.Services.V1.ImportJobController.BeginAsync
       parameters:
@@ -76,11 +78,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/end/:
     post:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller end async
       description: End import job.
       operationId: Import.Services.V1.ImportJobController.EndAsync
       parameters:
@@ -96,11 +99,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/pause/:
     post:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller pause async
       description: Pause import job.
       operationId: Import.Services.V1.ImportJobController.PauseAsync
       parameters:
@@ -116,11 +120,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/resume/:
     post:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller resume async
       description: Resume previously paused import job.
       operationId: Import.Services.V1.ImportJobController.ResumeAsync
       parameters:
@@ -136,11 +141,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/progress/:
     get:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller get progress async
       description: Get import job progress.
       operationId: Import.Services.V1.ImportJobController.GetProgressAsync
       parameters:
@@ -156,11 +162,12 @@ paths:
                 $ref: '#/components/schemas/ValueResponse.ImportProgress'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/details/:
     get:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller get details async
       description: Get import job details.
       operationId: Import.Services.V1.ImportJobController.GetDetailsAsync
       parameters:
@@ -176,11 +183,12 @@ paths:
                 $ref: '#/components/schemas/ValueResponse.ImportDetails'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/jobs/:
     get:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller get jobs async
       description: Get import jobs which exist in workspace.
       operationId: Import.Services.V1.ImportJobController.GetJobsAsync
       parameters:
@@ -197,11 +205,12 @@ paths:
                 $ref: '#/components/schemas/ValueResponse.ImportJobs'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/location:
     get:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller get default location for workspace…
       description: Gets the default location for the import files upload.
       operationId: Import.Services.V1.ImportJobController.GetDefaultLocationForWorkspaceAsync
       parameters:
@@ -216,11 +225,12 @@ paths:
                 $ref: '#/components/schemas/ValueResponse.String'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
   /import-service/v1/workspaces/{workspaceID}/import-jobs/{importJobID}/location:
     get:
       tags:
       - Import Job Module
-      summary: ''
+      summary: Import services V1 import job controller get default location for job async
       description: Gets the default location for the import files upload.
       operationId: Import.Services.V1.ImportJobController.GetDefaultLocationForJobAsync
       parameters:
@@ -236,8 +246,18 @@ paths:
                 $ref: '#/components/schemas/ValueResponse.String'
         '400':
           description: Bad Request. Validation exception.
+      x-summary-source: derived
 components:
   schemas:
+    ValueResponse.String:
+      description: ValueResponse of string type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: string
+            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
+      - $ref: '#/components/schemas/Response'
     Response:
       type: object
       properties:
@@ -299,33 +319,6 @@ components:
                 format: date-time
                 example: '2021-11-30T09:17:19.81'
       - $ref: '#/components/schemas/Response'
-    ValueResponse.String:
-      description: ValueResponse of string type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            type: string
-            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
-      - $ref: '#/components/schemas/Response'
-    ValueResponse.ImportProgress:
-      description: ValueResponse of ImportProgress type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            type: object
-            properties:
-              RecordsInDataSources:
-                type: integer
-                example: 11
-              ImportedRecords:
-                type: integer
-                example: 10
-              ErrorRecords:
-                type: integer
-                example: 1
-      - $ref: '#/components/schemas/Response'
     ValueResponse.ImportJobs:
       description: ValueResponse of ImportJobs type
       allOf:
@@ -359,23 +352,25 @@ components:
           type: string
           description: External correlation ID.
           example: c0r31ati0n_ID
+    ValueResponse.ImportProgress:
+      description: ValueResponse of ImportProgress type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: object
+            properties:
+              RecordsInDataSources:
+                type: integer
+                example: 11
+              ImportedRecords:
+                type: integer
+                example: 10
+              ErrorRecords:
+                type: integer
+                example: 1
+      - $ref: '#/components/schemas/Response'
   parameters:
-    start:
-      name: start
-      in: query
-      description: Index from which import jobs will be read.
-      required: true
-      schema:
-        type: integer
-      example: '0'
-    length:
-      name: length
-      in: query
-      description: Number of returned import jobs in workspace.
-      required: true
-      schema:
-        type: integer
-      example: 10
     X-CSRF-Header:
       name: X-CSRF-Header
       in: header
@@ -385,6 +380,22 @@ components:
         type: string
         format: System.String
         default: .
+    start:
+      name: start
+      in: query
+      description: Index from which import jobs will be read.
+      required: true
+      schema:
+        type: integer
+      example: '0'
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: Workspace identification number.
+      required: true
+      schema:
+        type: integer
+      example: 10000
     importJobID:
       name: importJobID
       in: path
@@ -394,11 +405,11 @@ components:
         type: string
         format: uuid
       example: 00000000-0000-0000-0000-000000000000
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: Workspace identification number.
+    length:
+      name: length
+      in: query
+      description: Number of returned import jobs in workspace.
       required: true
       schema:
         type: integer
-      example: 10000
+      example: 10

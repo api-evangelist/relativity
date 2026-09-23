@@ -336,70 +336,7 @@ artifacts:
   json-ld/relativity-context.jsonld:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-08-28T221322.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-23T094130.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-23T182523.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-26T223651.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-27T083119.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-27T190208.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-28T115055.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-28T170848.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-28T172558.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-28T192327.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-28T200725.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-31T133250.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-31T151044.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-31T162206.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-07-31T202106.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-01T163141.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-01T163302.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-01T171935.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-03T113057.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-03T161012.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-04T083143.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-05T153418.yml:
+  kin/checks-2026-09-05T072335.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-08-06T210741.yml:
@@ -483,21 +420,165 @@ artifacts:
   kin/score-2026-08-28T221322.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-08-29T213958.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-08-29T230545.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-08-30T203505.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-08-30T220315.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-08-31T223420.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-01T063623.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-01T210448.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-01T222808.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-02T211804.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-02T224043.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-03T161828.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-03T174231.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-04T062714.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-04T212454.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-04T224856.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T055819.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T072335.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  openapi/_original/relativity-analytics-conceptual-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-arm-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-arm-v3-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-automated-workflows-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-billing-v1-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-billing-v2-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-collect-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-dtsearch-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-environment-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-glacier-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-identity-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-imaging-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-import-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-infrastructure-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-legal-hold-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-mass-operations-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-notifications-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-object-manager-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-permissions-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-pivot-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-processing-v1-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-processing-v2-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-productions-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-review-service-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-rie-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-staging-reports-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-structured-analytics-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-telemetry-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-transfer-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-usage-reports-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
+  openapi/_original/relativity-workspace-openapi.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
   openapi/relativity-annotationservice-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-archivejobs-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-arm-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-arm-module-v3-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-billablesummaryreports-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-billingconfiguration-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -505,143 +586,143 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/relativity-client-side-libraries-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-coldstorage-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-collectapi-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-conceptual-analytics-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-data-visualization-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/relativity-directory-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-document-configuration-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-documentviewerservice-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-dtsearchindex-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-export-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/relativity-glacier-jobs-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-glacier-restore-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-glacier-storage-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-glacier-store-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-health-check-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-identity-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-import-job-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-import-source-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-jobactions-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-jobinformation-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-legal-hold-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-metadata-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-metrics-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-object-manager-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-objectmanagerapi-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-permissions-access-control-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-persistenthighlightservice-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-processing-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-processing-module-v2-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-rdo-configuration-module-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-relativity-automated-workflows-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-relativity-environment-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-relativity-infrastructure-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-relativity-mass-operation-module-v2-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-relativity-notifications-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-relativity-pivot-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-relativity-structured-analytics-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-reports-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-restorejobs-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-shortmessageviewerservice-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-transfercontrollerv2-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-versioned-imaging-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-versioned-production-module-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-web-import-export-v1-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-workspace-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/relativity-workspacejob-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/relativity-plans-pricing.yml:
     method: unknown
     evidence: no authorship recorded

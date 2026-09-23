@@ -1,8 +1,8 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Legal Hold Module API
-  description: Analytics.Conceptual.Service.Interfaces.Public
-  version: V1
+  title: kCura.LegalHold.Services.V0 Legal Hold Module API
+  description: kCura.LegalHold.Services
+  version: V0
 servers:
 - url: /Relativity.REST/api
   description: The URL prefix for all Kepler services
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] ICustodianPortalAuthUrlManager - '
+      description: '[Private] ICustodianPortalAuthUrlManager -'
       operationId: kCura.LegalHold.Services.ICustodianPortalAuthUrlManager.GetPortalRedirectUrl
       parameters:
       - $ref: '#/components/parameters/workspaceId'
@@ -26,11 +26,13 @@ paths:
             application/json:
               schema:
                 type: string
+      summary: K cura legal hold services ICustodian portal auth url manager get portal…
+      x-summary-source: derived
   /custodian-request-manager/ActiveCustodianSummary:
     get:
       tags:
       - Legal Hold Module
-      description: '[Public] ICustodianRequestManager - '
+      description: '[Public] ICustodianRequestManager -'
       operationId: kCura.LegalHold.Services.ICustodianRequestManager.ActiveCustodianSummary
       parameters:
       - $ref: '#/components/parameters/workspaceId'
@@ -46,11 +48,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ActiveCustodianSummary'
+      summary: K cura legal hold services ICustodian request manager active custodian summary
+      x-summary-source: derived
   /workspace/{workspaceId}/GetRedirectUriAsync:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] IGoogleAuthorizationManager - '
+      description: '[Private] IGoogleAuthorizationManager -'
       operationId: kCura.LegalHold.Services.IGoogleAuthorizationManager.GetRedirectUriAsync
       parameters:
       - $ref: '#/components/parameters/workspaceId_Path'
@@ -63,11 +67,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UrlRedirectModel'
+      summary: K cura legal hold services IGoogle authorization manager get redirect uri async
+      x-summary-source: derived
   /workspace/{workspaceId}/GoogleMail/HandleAuthenticationRedirect:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] IGoogleAuthorizationManager - '
+      description: '[Private] IGoogleAuthorizationManager -'
       operationId: kCura.LegalHold.Services.IGoogleAuthorizationManager.ProcessGSuiteAuthRedirectAsync
       parameters:
       - $ref: '#/components/parameters/workspaceId_Path'
@@ -82,11 +88,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenericMessageResponseModel'
+      summary: K cura legal hold services IGoogle authorization manager process GSuite auth…
+      x-summary-source: derived
   /graph-auth-response:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] IGraphAuthorizationManager - '
+      description: '[Private] IGraphAuthorizationManager -'
       operationId: kCura.LegalHold.Services.IGraphAuthorizationManager.AuthorizeMicrosoftGraph
       parameters:
       - $ref: '#/components/parameters/code'
@@ -99,11 +107,13 @@ paths:
             application/json:
               schema:
                 type: string
+      summary: K cura legal hold services IGraph authorization manager authorize microsoft…
+      x-summary-source: derived
   /authorized-user/{workspaceId}:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] IGraphAuthorizationManager - '
+      description: '[Private] IGraphAuthorizationManager -'
       operationId: kCura.LegalHold.Services.IGraphAuthorizationManager.GetAuthorizedUser
       parameters:
       - $ref: '#/components/parameters/workspaceId_Path'
@@ -115,11 +125,13 @@ paths:
             application/json:
               schema:
                 type: string
+      summary: K cura legal hold services IGraph authorization manager get authorized user
+      x-summary-source: derived
   /preservation/{projectArtifactId}/getCustodians:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] IPreservationManager - '
+      description: '[Private] IPreservationManager -'
       operationId: kCura.LegalHold.Services.IPreservationManager.GetCustodiansAsync
       parameters:
       - $ref: '#/components/parameters/projectArtifactId'
@@ -134,11 +146,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ArtifactIDCollection'
+      summary: K cura legal hold services IPreservation manager get custodians async
+      x-summary-source: derived
   /preservation/IsInstalled/{workspaceId}:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] IPreservationManager - '
+      description: '[Private] IPreservationManager -'
       operationId: kCura.LegalHold.Services.IPreservationManager.InstalledAsync
       parameters:
       - $ref: '#/components/parameters/workspaceId_Path'
@@ -150,11 +164,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LegalHoldApplicationInstallResponse'
+      summary: K cura legal hold services IPreservation manager installed async
+      x-summary-source: derived
   /health-check:
     get:
       tags:
       - Legal Hold Module
-      description: '[Internal] IPostDeployHealthCheckManager - '
+      description: '[Internal] IPostDeployHealthCheckManager -'
       operationId: kCura.LegalHold.Services.IPostDeployHealthCheckManager.HealthCheckAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -165,11 +181,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HttpResponseMessage'
+      summary: K cura legal hold services IPost deploy health check manager health check async
+      x-summary-source: derived
   /toggles/{toggleName}/is-enabled:
     get:
       tags:
       - Legal Hold Module
-      description: '[Internal] IToggleManager - '
+      description: '[Internal] IToggleManager -'
       operationId: kCura.LegalHold.Services.IToggleManager.IsEnabled
       parameters:
       - $ref: '#/components/parameters/toggleName'
@@ -181,11 +199,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+      summary: K cura legal hold services IToggle manager is enabled
+      x-summary-source: derived
   /SettingsManagement/workspace/{workspaceId}/ValidateEmailSettings:
     get:
       tags:
       - Legal Hold Module
-      description: '[Internal] ISettingsProcessor - '
+      description: '[Internal] ISettingsProcessor -'
       operationId: kCura.LegalHold.Services.ISettingsProcessor.ValidateEmailSettings
       parameters:
       - $ref: '#/components/parameters/workspaceId_Path'
@@ -199,11 +219,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidationSettings'
+      summary: K cura legal hold services ISettings processor validate email settings
+      x-summary-source: derived
   /workload-discovery/{guid}/workload:
     get:
       tags:
       - Legal Hold Module
-      description: '[Internal] IWorkloadDiscoveryManager - '
+      description: '[Internal] IWorkloadDiscoveryManager -'
       operationId: kCura.LegalHold.Services.IWorkloadDiscoveryManager.GetAgentWorkloadAsync
       parameters:
       - $ref: '#/components/parameters/guid'
@@ -215,11 +237,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Workload'
+      summary: K cura legal hold services IWorkload discovery manager get agent workload async
+      x-summary-source: derived
   /workspace/{workspaceArtifactId}/communication/{communicationArtifactId}/layout-state:
     get:
       tags:
       - Legal Hold Module
-      description: '[Private] ICommunicationManager - '
+      description: '[Private] ICommunicationManager -'
       operationId: kCura.LegalHold.Services.ICommunicationManager.GetCommunicationLayoutState
       parameters:
       - $ref: '#/components/parameters/workspaceArtifactId'
@@ -232,11 +256,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CommunicationLayoutStateModel'
+      summary: K cura legal hold services ICommunication manager get communication layout state
+      x-summary-source: derived
   /workspace/{workspaceArtifactId}/communication/{communicationArtifactId}/acknowledge-on-behalf:
     post:
       tags:
       - Legal Hold Module
-      description: '[Private] ICommunicationManager - '
+      description: '[Private] ICommunicationManager -'
       operationId: kCura.LegalHold.Services.ICommunicationManager.AcknowledgeOnBehalf
       parameters:
       - $ref: '#/components/parameters/workspaceArtifactId'
@@ -251,171 +277,10 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: K cura legal hold services ICommunication manager acknowledge on behalf
+      x-summary-source: derived
 components:
-  parameters:
-    workspaceId:
-      name: workspaceId
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    toggleName:
-      name: toggleName
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    pageSize:
-      name: pageSize
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 100
-    projectArtifactId:
-      name: projectArtifactId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    scope:
-      name: scope
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    startingIndex:
-      name: startingIndex
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    communicationArtifactId:
-      name: communicationArtifactId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    emailAddress:
-      name: emailAddress
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    workspaceArtifactId:
-      name: workspaceArtifactId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    sendTestEmail:
-      name: sendTestEmail
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: boolean
-    workspaceId_Path:
-      name: workspaceId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    authenticationType:
-      name: authenticationType
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    code:
-      name: code
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    length:
-      name: length
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    settingsType:
-      name: settingsType
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    guid:
-      name: guid
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    state:
-      name: state
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
   schemas:
-    LegalHoldApplicationInstallResponse:
-      title: LegalHoldApplicationInstallResponse
-      type: object
-      properties:
-        Error:
-          type: string
-        Results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationInstallSearchItem'
-        Summary:
-          $ref: '#/components/schemas/InstallStatusSummary'
-        CurrentStartIndex:
-          type: integer
-        ResultCount:
-          type: integer
-        TotalCount:
-          type: integer
-        FirstPage:
-          $ref: '#/components/schemas/Action'
-        PreviousPage:
-          $ref: '#/components/schemas/Action'
-        NextPage:
-          $ref: '#/components/schemas/Action'
-        LastPage:
-          $ref: '#/components/schemas/Action'
-    Int16:
-      title: Int16
-      type: object
-    UrlRedirectModel:
-      title: UrlRedirectModel
-      type: object
-      properties:
-        Url:
-          type: string
     Version:
       title: Version
       type: object
@@ -432,70 +297,6 @@ components:
           $ref: '#/components/schemas/Int16'
         MinorRevision:
           $ref: '#/components/schemas/Int16'
-    HttpContent:
-      title: HttpContent
-      type: object
-      properties:
-        Headers:
-          type: array
-          items:
-            type: string
-            format: HttpContentHeaders
-    InstallStatus:
-      title: InstallStatus
-      type: object
-      properties:
-        Code:
-          enum:
-          - Unknown
-          - Pending
-          - InProgress
-          - Failed
-          - Completed
-          - Canceled
-          type: string
-        Message:
-          type: string
-        Details:
-          type: string
-        GetDetailsAction:
-          $ref: '#/components/schemas/Action'
-        RetryInstallAction:
-          $ref: '#/components/schemas/Action'
-        CancelInstallAction:
-          $ref: '#/components/schemas/Action'
-    HttpMethod:
-      title: HttpMethod
-      type: object
-      properties:
-        Get:
-          $ref: '#/components/schemas/HttpMethod'
-        Put:
-          $ref: '#/components/schemas/HttpMethod'
-        Post:
-          $ref: '#/components/schemas/HttpMethod'
-        Delete:
-          $ref: '#/components/schemas/HttpMethod'
-        Head:
-          $ref: '#/components/schemas/HttpMethod'
-        Options:
-          $ref: '#/components/schemas/HttpMethod'
-        Trace:
-          $ref: '#/components/schemas/HttpMethod'
-        Method:
-          type: string
-    ArtifactIDCollection:
-      title: ArtifactIDCollection
-      type: object
-      properties:
-        Error:
-          type: string
-        TotalCount:
-          type: integer
-        ArtifactIDs:
-          type: array
-          items:
-            type: integer
     HttpResponseMessage:
       title: HttpResponseMessage
       type: object
@@ -565,46 +366,6 @@ components:
           $ref: '#/components/schemas/HttpRequestMessage'
         IsSuccessStatusCode:
           type: boolean
-    GenericMessageResponseModel:
-      title: GenericMessageResponseModel
-      type: object
-      properties:
-        Message:
-          type: string
-        Success:
-          type: boolean
-    ValidationSettings:
-      title: ValidationSettings
-      type: object
-      properties:
-        Message:
-          type: string
-        Status:
-          enum:
-          - Success
-          - Failure
-          - NotApplicable
-          type: string
-    InstallStatusSummary:
-      title: InstallStatusSummary
-      type: object
-      properties:
-        Other:
-          type: integer
-        Pending:
-          type: integer
-        InProgress:
-          type: integer
-        Failed:
-          type: integer
-        Completed:
-          type: integer
-        Canceled:
-          type: integer
-        TotalActiveInstalls:
-          type: integer
-        Total:
-          type: integer
     Workload:
       title: Workload
       type: object
@@ -619,15 +380,65 @@ components:
           - XL
           - XXL
           type: string
-    AcknowledgeOnBehalfModel:
-      title: AcknowledgeOnBehalfModel
+    ValidationSettings:
+      title: ValidationSettings
       type: object
       properties:
-        ArtifactIds:
-          type: array
-          items:
-            type: integer
-        Reason:
+        Message:
+          type: string
+        Status:
+          enum:
+          - Success
+          - Failure
+          - NotApplicable
+          type: string
+    HttpMethod:
+      title: HttpMethod
+      type: object
+      properties:
+        Get:
+          $ref: '#/components/schemas/HttpMethod'
+        Put:
+          $ref: '#/components/schemas/HttpMethod'
+        Post:
+          $ref: '#/components/schemas/HttpMethod'
+        Delete:
+          $ref: '#/components/schemas/HttpMethod'
+        Head:
+          $ref: '#/components/schemas/HttpMethod'
+        Options:
+          $ref: '#/components/schemas/HttpMethod'
+        Trace:
+          $ref: '#/components/schemas/HttpMethod'
+        Method:
+          type: string
+    UrlRedirectModel:
+      title: UrlRedirectModel
+      type: object
+      properties:
+        Url:
+          type: string
+    ActiveCustodianSummary:
+      title: ActiveCustodianSummary
+      type: object
+      properties:
+        ProjectID:
+          type: integer
+        FullName:
+          type: string
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        EmailAddress:
+          type: string
+        EmployeeNumber:
+          type: string
+        UniqueID:
+          type: string
+        ErrorMessage:
+          type: string
+        CustodianRole:
           type: string
     Action:
       title: Action
@@ -645,6 +456,122 @@ components:
           type: array
           items:
             type: string
+    HttpContent:
+      title: HttpContent
+      type: object
+      properties:
+        Headers:
+          type: array
+          items:
+            type: string
+            format: HttpContentHeaders
+    InstallStatus:
+      title: InstallStatus
+      type: object
+      properties:
+        Code:
+          enum:
+          - Unknown
+          - Pending
+          - InProgress
+          - Failed
+          - Completed
+          - Canceled
+          type: string
+        Message:
+          type: string
+        Details:
+          type: string
+        GetDetailsAction:
+          $ref: '#/components/schemas/Action'
+        RetryInstallAction:
+          $ref: '#/components/schemas/Action'
+        CancelInstallAction:
+          $ref: '#/components/schemas/Action'
+    ApplicationInstallSearchItem:
+      title: ApplicationInstallSearchItem
+      type: object
+      properties:
+        ApplicationInstallID:
+          type: integer
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        WorkspaceIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        ClientIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        MatterIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        Message:
+          type: string
+        RootFolderID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+        Version:
+          type: string
+        IsOutOfDate:
+          type: boolean
+        InstalledBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        StartedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        CompletedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+    HttpRequestMessage:
+      title: HttpRequestMessage
+      type: object
+      properties:
+        Version:
+          $ref: '#/components/schemas/Version'
+        Content:
+          $ref: '#/components/schemas/HttpContent'
+        Method:
+          $ref: '#/components/schemas/HttpMethod'
+        RequestUri:
+          $ref: '#/components/schemas/Uri'
+        Headers:
+          type: array
+          items:
+            type: string
+            format: HttpRequestHeaders
+        Properties:
+          type: object
+          additionalProperties:
+            title: Object
+            type: object
+    LegalHoldApplicationInstallResponse:
+      title: LegalHoldApplicationInstallResponse
+      type: object
+      properties:
+        Error:
+          type: string
+        Results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationInstallSearchItem'
+        Summary:
+          $ref: '#/components/schemas/InstallStatusSummary'
+        CurrentStartIndex:
+          type: integer
+        ResultCount:
+          type: integer
+        TotalCount:
+          type: integer
+        FirstPage:
+          $ref: '#/components/schemas/Action'
+        PreviousPage:
+          $ref: '#/components/schemas/Action'
+        NextPage:
+          $ref: '#/components/schemas/Action'
+        LastPage:
+          $ref: '#/components/schemas/Action'
     Uri:
       title: Uri
       type: object
@@ -701,87 +628,6 @@ components:
           type: boolean
         UserInfo:
           type: string
-    CommunicationLayoutStateModel:
-      title: CommunicationLayoutStateModel
-      type: object
-    ApplicationInstallSearchItem:
-      title: ApplicationInstallSearchItem
-      type: object
-      properties:
-        ApplicationInstallID:
-          type: integer
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        WorkspaceIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        ClientIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        MatterIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        Message:
-          type: string
-        RootFolderID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
-        Version:
-          type: string
-        IsOutOfDate:
-          type: boolean
-        InstalledBy:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        StartedOn:
-          type: string
-          format: date-time
-          nullable: true
-        CompletedOn:
-          type: string
-          format: date-time
-          nullable: true
-    HttpRequestMessage:
-      title: HttpRequestMessage
-      type: object
-      properties:
-        Version:
-          $ref: '#/components/schemas/Version'
-        Content:
-          $ref: '#/components/schemas/HttpContent'
-        Method:
-          $ref: '#/components/schemas/HttpMethod'
-        RequestUri:
-          $ref: '#/components/schemas/Uri'
-        Headers:
-          type: array
-          items:
-            type: string
-            format: HttpRequestHeaders
-        Properties:
-          type: object
-          additionalProperties:
-            title: Object
-            type: object
-    ActiveCustodianSummary:
-      title: ActiveCustodianSummary
-      type: object
-      properties:
-        ProjectID:
-          type: integer
-        FullName:
-          type: string
-        FirstName:
-          type: string
-        LastName:
-          type: string
-        EmailAddress:
-          type: string
-        EmployeeNumber:
-          type: string
-        UniqueID:
-          type: string
-        ErrorMessage:
-          type: string
-        CustodianRole:
-          type: string
     DisplayableObjectIdentifier:
       title: DisplayableObjectIdentifier
       type: object
@@ -794,3 +640,187 @@ components:
           type: array
           items:
             type: string
+    InstallStatusSummary:
+      title: InstallStatusSummary
+      type: object
+      properties:
+        Other:
+          type: integer
+        Pending:
+          type: integer
+        InProgress:
+          type: integer
+        Failed:
+          type: integer
+        Completed:
+          type: integer
+        Canceled:
+          type: integer
+        TotalActiveInstalls:
+          type: integer
+        Total:
+          type: integer
+    Int16:
+      title: Int16
+      type: object
+    ArtifactIDCollection:
+      title: ArtifactIDCollection
+      type: object
+      properties:
+        Error:
+          type: string
+        TotalCount:
+          type: integer
+        ArtifactIDs:
+          type: array
+          items:
+            type: integer
+    GenericMessageResponseModel:
+      title: GenericMessageResponseModel
+      type: object
+      properties:
+        Message:
+          type: string
+        Success:
+          type: boolean
+    AcknowledgeOnBehalfModel:
+      title: AcknowledgeOnBehalfModel
+      type: object
+      properties:
+        ArtifactIds:
+          type: array
+          items:
+            type: integer
+        Reason:
+          type: string
+    CommunicationLayoutStateModel:
+      title: CommunicationLayoutStateModel
+      type: object
+  parameters:
+    workspaceId_Path:
+      name: workspaceId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceArtifactId:
+      name: workspaceArtifactId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    authenticationType:
+      name: authenticationType
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    code:
+      name: code
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    scope:
+      name: scope
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    pageSize:
+      name: pageSize
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 100
+    sendTestEmail:
+      name: sendTestEmail
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: boolean
+    state:
+      name: state
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    settingsType:
+      name: settingsType
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    guid:
+      name: guid
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    workspaceId:
+      name: workspaceId
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    length:
+      name: length
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    projectArtifactId:
+      name: projectArtifactId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    emailAddress:
+      name: emailAddress
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    communicationArtifactId:
+      name: communicationArtifactId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    startingIndex:
+      name: startingIndex
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    toggleName:
+      name: toggleName
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string

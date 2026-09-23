@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Versioned Imaging Module v1 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
+  title: Relativity.Imaging.Services.Interfaces.V1 Versioned Imaging…
+  description: Relativity.Imaging.Services.Interfaces
   version: V1
 servers:
 - url: /Relativity.REST/api
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IApplicationFieldCodeManager - '
+      description: '[Public] IApplicationFieldCodeManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.ReadAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -26,10 +26,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationFieldCode'
+      summary: Relativity imaging services interfaces V1 IApplication field code manager read…
+      x-summary-source: derived
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IApplicationFieldCodeManager - '
+      description: '[Public] IApplicationFieldCodeManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.UpdateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -48,10 +50,12 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IApplication field code manager…
+      x-summary-source: derived
     delete:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IApplicationFieldCodeManager - '
+      description: '[Public] IApplicationFieldCodeManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.DeleteAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -64,11 +68,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+      summary: Relativity imaging services interfaces V1 IApplication field code manager…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/application-field-codes/:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IApplicationFieldCodeManager - '
+      description: '[Public] IApplicationFieldCodeManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IApplicationFieldCodeManager.CreateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -86,11 +92,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IApplication field code manager…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/documents/{documentID}/status:
     get:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IDocumentStatusManager - '
+      description: '[Public] IDocumentStatusManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IDocumentStatusManager.GetStatusAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -103,22 +111,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DocumentStatusResponse'
+      summary: Relativity imaging services interfaces V1 IDocument status manager get status…
+      x-summary-source: derived
   /relativity-imaging/v1/environment/jobs/inactive-jobs:
     delete:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingEnvironmentManager - '
+      description: '[Public] IImagingEnvironmentManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingEnvironmentManager.CleanupInactiveJobsAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity imaging services interfaces V1 IImaging environment manager cleanup…
+      x-summary-source: derived
   /relativity-imaging/v1/environment/jobs/mass-imaging-max-size:
     get:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingEnvironmentManager - '
+      description: '[Public] IImagingEnvironmentManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingEnvironmentManager.GetMaxMassImagingJobSizeAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -129,11 +141,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IImaging environment manager get max…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-sets/{imagingSetID}/run:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingJobManager - '
+      description: '[Public] IImagingJobManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.RunImagingSetAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -152,11 +166,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImagingSetResponse'
+      summary: Relativity imaging services interfaces V1 IImaging job manager run imaging set…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-sets/{imagingSetID}/retry-errors:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingJobManager - '
+      description: '[Public] IImagingJobManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.RetryImagingSetErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -175,11 +191,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImagingSetResponse'
+      summary: Relativity imaging services interfaces V1 IImaging job manager retry imaging…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/jobs/{imagingJobID}/stop:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingJobManager - '
+      description: '[Public] IImagingJobManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.StopImagingJobAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -198,11 +216,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StopImagingJobResponse'
+      summary: Relativity imaging services interfaces V1 IImaging job manager stop imaging job…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/documents/{documentArtifactID}/image:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingJobManager - '
+      description: '[Public] IImagingJobManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.ImageDocumentAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -221,11 +241,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImageOnTheFlyResponse'
+      summary: Relativity imaging services interfaces V1 IImaging job manager image document…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/documents/mass-image:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingJobManager - '
+      description: '[Public] IImagingJobManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.MassImageDocumentsByMassProcessIdAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -243,11 +265,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MassImagingResponse'
+      summary: Relativity imaging services interfaces V1 IImaging job manager mass image…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/jobs/{imagingJobID}/priority:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingJobManager - '
+      description: '[Public] IImagingJobManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingJobManager.UpdateJobPriorityAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -266,11 +290,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UpdateJobPriorityResponse'
+      summary: Relativity imaging services interfaces V1 IImaging job manager update job…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-profiles/basic:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingProfileManager - '
+      description: '[Public] IImagingProfileManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.CreateBasicImagingProfileAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -288,11 +314,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IImaging profile manager create basic…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-profiles/native:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingProfileManager - '
+      description: '[Public] IImagingProfileManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.CreateNativeImagingProfileAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -310,11 +338,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IImaging profile manager create…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-profiles/{imagingProfileID}:
     get:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingProfileManager - '
+      description: '[Public] IImagingProfileManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.ReadAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -327,10 +357,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImagingProfile'
+      summary: Relativity imaging services interfaces V1 IImaging profile manager read async
+      x-summary-source: derived
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingProfileManager - '
+      description: '[Public] IImagingProfileManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.UpdateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -349,10 +381,12 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IImaging profile manager update async
+      x-summary-source: derived
     delete:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingProfileManager - '
+      description: '[Public] IImagingProfileManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingProfileManager.DeleteAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -361,11 +395,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity imaging services interfaces V1 IImaging profile manager delete async
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-sets/:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingSetManager - '
+      description: '[Public] IImagingSetManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.CreateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -383,11 +419,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IImaging set manager create async
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-sets/{imagingSetID}:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingSetManager - '
+      description: '[Public] IImagingSetManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.UpdateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -406,10 +444,12 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity imaging services interfaces V1 IImaging set manager update async
+      x-summary-source: derived
     get:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingSetManager - '
+      description: '[Public] IImagingSetManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.ReadAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -422,10 +462,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImagingSet'
+      summary: Relativity imaging services interfaces V1 IImaging set manager read async
+      x-summary-source: derived
     delete:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingSetManager - '
+      description: '[Public] IImagingSetManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.DeleteAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -434,11 +476,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity imaging services interfaces V1 IImaging set manager delete async
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-sets/{imagingSetID}/release-images:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingSetManager - '
+      description: '[Public] IImagingSetManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.ReleaseImagingSetAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -447,11 +491,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity imaging services interfaces V1 IImaging set manager release imaging…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-sets/{imagingSetID}/hide-images:
     post:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingSetManager - '
+      description: '[Public] IImagingSetManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.HideImagingSetAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -460,11 +506,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity imaging services interfaces V1 IImaging set manager hide imaging set…
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/imaging-sets/{imagingSetID}/status:
     get:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] IImagingSetManager - '
+      description: '[Public] IImagingSetManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.IImagingSetManager.GetStatusAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -477,11 +525,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImagingSetStatusResponse'
+      summary: Relativity imaging services interfaces V1 IImaging set manager get status async
+      x-summary-source: derived
   /relativity-imaging/v1/workspaces/{workspaceID}/native-types/{nativeTypeID}:
     get:
       tags:
       - Versioned Imaging Module v1
-      description: '[Public] INativeTypeManager - '
+      description: '[Public] INativeTypeManager -'
       operationId: Relativity.Imaging.Services.Interfaces.V1.INativeTypeManager.ReadAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -494,68 +544,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NativeType'
+      summary: Relativity imaging services interfaces V1 INative type manager read async
+      x-summary-source: derived
 components:
   schemas:
-    NativeType:
-      title: NativeType
+    PresentationOptions:
+      title: PresentationOptions
       type: object
       properties:
-        BasicCategory:
+        ShowSpeakerNotes:
+          type: boolean
+        SlideOrientation:
           enum:
-          - Other
-          - Database
-          - Graphic
-          - Multimedia
-          - Spreadsheet
-          - WordProcessor
+          - OriginalSetting
+          - Portrait
+          - Landscape
           type: string
-        NativeCategory:
-          enum:
-          - Other
-          - Spreadsheet
-          - Email
-          - WordProcessor
-          - Presentation
-          - Html
-          type: string
-          nullable: true
-        UseNativeImaging:
-          type: boolean
-        RestrictedFromImagingByDefault:
-          type: boolean
-        FileTypeID:
-          type: integer
-        PreventNativeDownload:
-          type: boolean
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    DocumentStatusResponse:
-      title: DocumentStatusResponse
+    ImagingSetResponse:
+      title: ImagingSetResponse
       type: object
       properties:
-        ImageCount:
+        ImagingJobID:
           type: integer
-        Error:
-          $ref: '#/components/schemas/DocumentError'
-        Warnings:
-          type: array
-          items:
-            $ref: '#/components/schemas/DocumentWarning'
-        HasImages:
-          type: string
-    ImagingSetUpdateRequest:
-      title: ImagingSetUpdateRequest
+    ImagingSet:
+      title: ImagingSet
       type: object
       properties:
-        Name:
-          type: string
-        ImagingProfileID:
-          type: integer
+        ImagingProfile:
+          $ref: '#/components/schemas/ImagingProfileRef'
         DataSourceID:
           type: integer
         EmailNotificationRecipients:
+          type: string
+        Status:
+          $ref: '#/components/schemas/ImagingSetStatus'
+        ArtifactID:
+          type: integer
+        Name:
           type: string
     NativeImagingEngineOptions:
       title: NativeImagingEngineOptions
@@ -569,11 +594,13 @@ components:
           - Jpeg
           type: string
         RenderColorPagesToJpeg:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         MaxPagesPerDoc:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         DitheringAlgorithm:
           enum:
           - Clustered6X6
@@ -584,15 +611,27 @@ components:
           - Dispersed16X16
           - FloydAndSteinberg
           - Threshold
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         DitheringThreshold:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         TimeZoneFieldOnDocument:
           $ref: '#/components/schemas/FieldRef'
         LastModifiedDateOnDocument:
           $ref: '#/components/schemas/FieldRef'
+    UpdateJobPriorityRequest:
+      title: UpdateJobPriorityRequest
+      type: object
+      properties:
+        Priority:
+          type: integer
+        OriginationID:
+          type:
+          - string
+          - 'null'
     NativeTypeRef:
       title: NativeTypeRef
       type: object
@@ -600,6 +639,146 @@ components:
         ArtifactID:
           type: integer
         Name:
+          type: string
+    ImagingProfileUpdateRequest:
+      title: ImagingProfileUpdateRequest
+      type: object
+      properties:
+        ImagingMethod:
+          enum:
+          - Basic
+          - Native
+          type: string
+        NativeOptions:
+          $ref: '#/components/schemas/NativeImagingEngineOptions'
+        SpreadsheetOptions:
+          $ref: '#/components/schemas/SpreadsheetOptions'
+        EmailOptions:
+          $ref: '#/components/schemas/EmailOptions'
+        WordProcessingOptions:
+          $ref: '#/components/schemas/WordProcessingOptions'
+        PresentationOptions:
+          $ref: '#/components/schemas/PresentationOptions'
+        HtmlOptions:
+          $ref: '#/components/schemas/HtmlOptions'
+        ApplicationFieldCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationFieldCodeRef'
+        Name:
+          type: string
+        BasicOptions:
+          $ref: '#/components/schemas/BasicImagingEngineOptions'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+        NativeTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NativeTypeRef'
+    NativeImagingProfileCreateRequest:
+      title: NativeImagingProfileCreateRequest
+      type: object
+      properties:
+        NativeOptions:
+          $ref: '#/components/schemas/NativeImagingEngineOptions'
+        SpreadsheetOptions:
+          $ref: '#/components/schemas/SpreadsheetOptions'
+        EmailOptions:
+          $ref: '#/components/schemas/EmailOptions'
+        WordProcessingOptions:
+          $ref: '#/components/schemas/WordProcessingOptions'
+        PresentationOptions:
+          $ref: '#/components/schemas/PresentationOptions'
+        HtmlOptions:
+          $ref: '#/components/schemas/HtmlOptions'
+        ApplicationFieldCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationFieldCodeRef'
+        Name:
+          type: string
+        BasicOptions:
+          $ref: '#/components/schemas/BasicImagingEngineOptions'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+        NativeTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NativeTypeRef'
+    StopImagingJobResponse:
+      title: StopImagingJobResponse
+      type: object
+      properties:
+        Success:
+          type: boolean
+        ErrorMessage:
+          type: string
+    BasicImagingEngineOptions:
+      title: BasicImagingEngineOptions
+      type: object
+      properties:
+        ImageOutputDpi:
+          type: integer
+        BasicImageFormat:
+          enum:
+          - Tiff
+          - Jpeg
+          type: string
+        ImageSize:
+          enum:
+          - OriginalSetting
+          - Letter
+          - A4
+          - Legal
+          - Custom
+          type: string
+        MaximumImageHeight:
+          type:
+          - number
+          - 'null'
+        MaximumImageWidth:
+          type:
+          - number
+          - 'null'
+        BasicWordIncludeComments:
+          type:
+          - boolean
+          - 'null'
+        BasicPowerPointIncludeComments:
+          type:
+          - boolean
+          - 'null'
+        BasicPowerPointShowSpeakerNotes:
+          type:
+          - boolean
+          - 'null'
+        WordIncludeTrackChanges:
+          type:
+          - boolean
+          - 'null'
+    ImagingSetUpdateRequest:
+      title: ImagingSetUpdateRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        ImagingProfileID:
+          type: integer
+        DataSourceID:
+          type: integer
+        EmailNotificationRecipients:
+          type: string
+    UpdateJobPriorityResponse:
+      title: UpdateJobPriorityResponse
+      type: object
+      properties:
+        Success:
+          type: boolean
+        ErrorMessage:
           type: string
     DocumentError:
       title: DocumentError
@@ -609,6 +788,236 @@ components:
           type: string
         Status:
           type: string
+    MassImagingResponse:
+      title: MassImagingResponse
+      type: object
+      properties:
+        ImagingJobID:
+          type: integer
+    ImagingProfileRef:
+      title: ImagingProfileRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    HtmlOptions:
+      title: HtmlOptions
+      type: object
+      properties:
+        RemoveNonBreakingSpaceCodes:
+          type: boolean
+    ApplicationFieldCode:
+      title: ApplicationFieldCode
+      type: object
+      properties:
+        FieldCode:
+          type: string
+        Application:
+          enum:
+          - NotSet
+          - MicrosoftWord
+          - MicrosoftExcel
+          - MicrosoftPowerpoint
+          - MicrosoftVisio
+          type: string
+        Option:
+          enum:
+          - NotSet
+          - DocumentDefault
+          - ShowFieldCode
+          - ShowNothing
+          - ReplaceWithRelativityField
+          type: string
+        RelativityField:
+          $ref: '#/components/schemas/FieldRef'
+        ImagingProfiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImagingProfileRef'
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ImagingSetStatus:
+      title: ImagingSetStatus
+      type: object
+      properties:
+        ImageCompletion:
+          type: string
+        ImageQCReviewStatus:
+          type: string
+        LastRunError:
+          type: string
+        QCEnabledOnLastRun:
+          type:
+          - boolean
+          - 'null'
+        Status:
+          type: string
+        CompletionRate:
+          type: string
+        StartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+    FieldRef:
+      title: FieldRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        ViewFieldID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+        Name:
+          type: string
+    MassImageRequest:
+      title: MassImageRequest
+      type: object
+      properties:
+        ProfileID:
+          type: integer
+        MassProcessID:
+          type: string
+        SourceType:
+          enum:
+          - Native
+          - RenderedPdf
+          type: string
+        OriginationID:
+          type:
+          - string
+          - 'null'
+    BasicImagingProfileCreateRequest:
+      title: BasicImagingProfileCreateRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        BasicOptions:
+          $ref: '#/components/schemas/BasicImagingEngineOptions'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+        NativeTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NativeTypeRef'
+    StopImagingJobRequest:
+      title: StopImagingJobRequest
+      type: object
+      properties:
+        OriginationID:
+          type:
+          - string
+          - 'null'
+    ApplicationFieldCodeRef:
+      title: ApplicationFieldCodeRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ImagingSetCreateRequest:
+      title: ImagingSetCreateRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        ImagingProfileID:
+          type: integer
+        DataSourceID:
+          type: integer
+        EmailNotificationRecipients:
+          type: string
+    ImagingSetStatusResponse:
+      title: ImagingSetStatusResponse
+      type: object
+      properties:
+        Status:
+          type: string
+        LastRunError:
+          type: string
+        QcReviewEnabledOnLastRun:
+          type: boolean
+        JobGuid:
+          type:
+          - string
+          - 'null'
+        JobType:
+          type: integer
+        JobStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        NumberOfDocuments:
+          type:
+          - integer
+          - 'null'
+        NumberOfDocumentsHidden:
+          type:
+          - integer
+          - 'null'
+        NumberOfDocumentsViewable:
+          type:
+          - integer
+          - 'null'
+        NumberOfDocumentsWithWarnings:
+          type:
+          - integer
+          - 'null'
+        SubmittedByUserId:
+          type:
+          - integer
+          - 'null'
+        JobStatus:
+          enum:
+          - Default
+          - Created
+          - CancelRequested
+          - PickedUpByAgent
+          - SubmittedToInvariant
+          - Invalid
+          type: string
+        JobPriority:
+          type:
+          - integer
+          - 'null'
+        JobExists:
+          type: boolean
+        NumberOfDocumentsCompleted:
+          type:
+          - integer
+          - 'null'
+        NumberOfDocumentsSkipped:
+          type:
+          - integer
+          - 'null'
+        NumberOfDocumentsWaiting:
+          type:
+          - integer
+          - 'null'
+        NumberOfDocumentsErrored:
+          type:
+          - integer
+          - 'null'
+        NumberOfDocumentsSubmitted:
+          type:
+          - integer
+          - 'null'
+        JobArtifactId:
+          type:
+          - integer
+          - 'null'
     ApplicationFieldCodeRequest:
       title: ApplicationFieldCodeRequest
       type: object
@@ -637,49 +1046,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ImagingProfileRef'
-    ImagingProfileRef:
-      title: ImagingProfileRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    ImageOnTheFlyRequest:
-      title: ImageOnTheFlyRequest
-      type: object
-      properties:
-        ProfileID:
-          type: integer
-        AlternateNativeLocation:
-          type: string
-        RemoveAlternateNativeAfterImaging:
-          type: boolean
-        OriginationID:
-          type: string
-          nullable: true
-    HtmlOptions:
-      title: HtmlOptions
-      type: object
-      properties:
-        RemoveNonBreakingSpaceCodes:
-          type: boolean
-    ImagingSet:
-      title: ImagingSet
-      type: object
-      properties:
-        ImagingProfile:
-          $ref: '#/components/schemas/ImagingProfileRef'
-        DataSourceID:
-          type: integer
-        EmailNotificationRecipients:
-          type: string
-        Status:
-          $ref: '#/components/schemas/ImagingSetStatus'
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
     ImagingProfile:
       title: ImagingProfile
       type: object
@@ -719,112 +1085,20 @@ components:
           type: integer
         Name:
           type: string
-    PresentationOptions:
-      title: PresentationOptions
+    ImageOnTheFlyRequest:
+      title: ImageOnTheFlyRequest
       type: object
       properties:
-        ShowSpeakerNotes:
-          type: boolean
-        SlideOrientation:
-          enum:
-          - OriginalSetting
-          - Portrait
-          - Landscape
-          type: string
-    EmailOptions:
-      title: EmailOptions
-      type: object
-      properties:
-        Orientation:
-          enum:
-          - Portrait
-          - Landscape
-          type: string
-        ResizeImagesToFitPage:
-          type: boolean
-        ResizeTablesToFitPage:
-          type: boolean
-        SplitTablesToFitPageWidth:
-          type: boolean
-        DownloadImagesFromInternet:
-          type: boolean
-        ClearIndentations:
-          type: boolean
-        DetectCharacterEncoding:
-          type: boolean
-        DisplaySmtpAddresses:
-          type: boolean
-        ShowMessageTypeInHeader:
-          type: boolean
-    BasicImagingEngineOptions:
-      title: BasicImagingEngineOptions
-      type: object
-      properties:
-        ImageOutputDpi:
+        ProfileID:
           type: integer
-        BasicImageFormat:
-          enum:
-          - Tiff
-          - Jpeg
+        AlternateNativeLocation:
           type: string
-        ImageSize:
-          enum:
-          - OriginalSetting
-          - Letter
-          - A4
-          - Legal
-          - Custom
-          type: string
-        MaximumImageHeight:
-          type: number
-          nullable: true
-        MaximumImageWidth:
-          type: number
-          nullable: true
-        BasicWordIncludeComments:
+        RemoveAlternateNativeAfterImaging:
           type: boolean
-          nullable: true
-        BasicPowerPointIncludeComments:
-          type: boolean
-          nullable: true
-        BasicPowerPointShowSpeakerNotes:
-          type: boolean
-          nullable: true
-        WordIncludeTrackChanges:
-          type: boolean
-          nullable: true
-    NativeImagingProfileCreateRequest:
-      title: NativeImagingProfileCreateRequest
-      type: object
-      properties:
-        NativeOptions:
-          $ref: '#/components/schemas/NativeImagingEngineOptions'
-        SpreadsheetOptions:
-          $ref: '#/components/schemas/SpreadsheetOptions'
-        EmailOptions:
-          $ref: '#/components/schemas/EmailOptions'
-        WordProcessingOptions:
-          $ref: '#/components/schemas/WordProcessingOptions'
-        PresentationOptions:
-          $ref: '#/components/schemas/PresentationOptions'
-        HtmlOptions:
-          $ref: '#/components/schemas/HtmlOptions'
-        ApplicationFieldCodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationFieldCodeRef'
-        Name:
-          type: string
-        BasicOptions:
-          $ref: '#/components/schemas/BasicImagingEngineOptions'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        NativeTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeTypeRef'
+        OriginationID:
+          type:
+          - string
+          - 'null'
     SpreadsheetOptions:
       title: SpreadsheetOptions
       type: object
@@ -877,17 +1151,21 @@ components:
         UnhideHiddenWorksheets:
           type: boolean
         LimitToPages:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         ZoomLevelPercentage:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         FitToPagesWide:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         FitToPagesTall:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         Formatting:
           type: array
           items:
@@ -904,37 +1182,42 @@ components:
             - RemoveBackgroundFillColors
             - SetTextColorToBlack
             type: string
-    MassImageRequest:
-      title: MassImageRequest
+    NativeType:
+      title: NativeType
       type: object
       properties:
-        ProfileID:
-          type: integer
-        MassProcessID:
-          type: string
-        SourceType:
+        BasicCategory:
           enum:
-          - Native
-          - RenderedPdf
+          - Other
+          - Database
+          - Graphic
+          - Multimedia
+          - Spreadsheet
+          - WordProcessor
           type: string
-        OriginationID:
-          type: string
-          nullable: true
-    UpdateJobPriorityRequest:
-      title: UpdateJobPriorityRequest
-      type: object
-      properties:
-        Priority:
+        NativeCategory:
+          enum:
+          - Other
+          - Spreadsheet
+          - Email
+          - WordProcessor
+          - Presentation
+          - Html
+          type:
+          - string
+          - 'null'
+        UseNativeImaging:
+          type: boolean
+        RestrictedFromImagingByDefault:
+          type: boolean
+        FileTypeID:
           type: integer
-        OriginationID:
-          type: string
-          nullable: true
-    ImagingSetResponse:
-      title: ImagingSetResponse
-      type: object
-      properties:
-        ImagingJobID:
+        PreventNativeDownload:
+          type: boolean
+        ArtifactID:
           type: integer
+        Name:
+          type: string
     WordProcessingOptions:
       title: WordProcessingOptions
       type: object
@@ -955,6 +1238,51 @@ components:
             - FieldCodes
             - HiddenText
             type: string
+    DocumentStatusResponse:
+      title: DocumentStatusResponse
+      type: object
+      properties:
+        ImageCount:
+          type: integer
+        Error:
+          $ref: '#/components/schemas/DocumentError'
+        Warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentWarning'
+        HasImages:
+          type: string
+    EmailOptions:
+      title: EmailOptions
+      type: object
+      properties:
+        Orientation:
+          enum:
+          - Portrait
+          - Landscape
+          type: string
+        ResizeImagesToFitPage:
+          type: boolean
+        ResizeTablesToFitPage:
+          type: boolean
+        SplitTablesToFitPageWidth:
+          type: boolean
+        DownloadImagesFromInternet:
+          type: boolean
+        ClearIndentations:
+          type: boolean
+        DetectCharacterEncoding:
+          type: boolean
+        DisplaySmtpAddresses:
+          type: boolean
+        ShowMessageTypeInHeader:
+          type: boolean
+    ImageOnTheFlyResponse:
+      title: ImageOnTheFlyResponse
+      type: object
+      properties:
+        ImagingJobID:
+          type: integer
     DocumentWarning:
       title: DocumentWarning
       type: object
@@ -963,267 +1291,21 @@ components:
           type: string
         Type:
           type: string
-    MassImagingResponse:
-      title: MassImagingResponse
-      type: object
-      properties:
-        ImagingJobID:
-          type: integer
-    UpdateJobPriorityResponse:
-      title: UpdateJobPriorityResponse
-      type: object
-      properties:
-        Success:
-          type: boolean
-        ErrorMessage:
-          type: string
-    ApplicationFieldCode:
-      title: ApplicationFieldCode
-      type: object
-      properties:
-        FieldCode:
-          type: string
-        Application:
-          enum:
-          - NotSet
-          - MicrosoftWord
-          - MicrosoftExcel
-          - MicrosoftPowerpoint
-          - MicrosoftVisio
-          type: string
-        Option:
-          enum:
-          - NotSet
-          - DocumentDefault
-          - ShowFieldCode
-          - ShowNothing
-          - ReplaceWithRelativityField
-          type: string
-        RelativityField:
-          $ref: '#/components/schemas/FieldRef'
-        ImagingProfiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImagingProfileRef'
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    ImagingSetCreateRequest:
-      title: ImagingSetCreateRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        ImagingProfileID:
-          type: integer
-        DataSourceID:
-          type: integer
-        EmailNotificationRecipients:
-          type: string
-    ImagingProfileUpdateRequest:
-      title: ImagingProfileUpdateRequest
-      type: object
-      properties:
-        ImagingMethod:
-          enum:
-          - Basic
-          - Native
-          type: string
-        NativeOptions:
-          $ref: '#/components/schemas/NativeImagingEngineOptions'
-        SpreadsheetOptions:
-          $ref: '#/components/schemas/SpreadsheetOptions'
-        EmailOptions:
-          $ref: '#/components/schemas/EmailOptions'
-        WordProcessingOptions:
-          $ref: '#/components/schemas/WordProcessingOptions'
-        PresentationOptions:
-          $ref: '#/components/schemas/PresentationOptions'
-        HtmlOptions:
-          $ref: '#/components/schemas/HtmlOptions'
-        ApplicationFieldCodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationFieldCodeRef'
-        Name:
-          type: string
-        BasicOptions:
-          $ref: '#/components/schemas/BasicImagingEngineOptions'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        NativeTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeTypeRef'
-    ApplicationFieldCodeRef:
-      title: ApplicationFieldCodeRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
     ImagingSetRequest:
       title: ImagingSetRequest
       type: object
       properties:
         QcEnabled:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         OriginationID:
-          type: string
-          nullable: true
-    StopImagingJobRequest:
-      title: StopImagingJobRequest
-      type: object
-      properties:
-        OriginationID:
-          type: string
-          nullable: true
-    ImagingSetStatusResponse:
-      title: ImagingSetStatusResponse
-      type: object
-      properties:
-        Status:
-          type: string
-        LastRunError:
-          type: string
-        QcReviewEnabledOnLastRun:
-          type: boolean
-        JobGuid:
-          type: string
-          nullable: true
-        JobType:
-          type: integer
-        JobStartTime:
-          type: string
-          format: date-time
-          nullable: true
-        NumberOfDocuments:
-          type: integer
-          nullable: true
-        NumberOfDocumentsHidden:
-          type: integer
-          nullable: true
-        NumberOfDocumentsViewable:
-          type: integer
-          nullable: true
-        NumberOfDocumentsWithWarnings:
-          type: integer
-          nullable: true
-        SubmittedByUserId:
-          type: integer
-          nullable: true
-        JobStatus:
-          enum:
-          - Default
-          - Created
-          - CancelRequested
-          - PickedUpByAgent
-          - SubmittedToInvariant
-          - Invalid
-          type: string
-        JobPriority:
-          type: integer
-          nullable: true
-        JobExists:
-          type: boolean
-        NumberOfDocumentsCompleted:
-          type: integer
-          nullable: true
-        NumberOfDocumentsSkipped:
-          type: integer
-          nullable: true
-        NumberOfDocumentsWaiting:
-          type: integer
-          nullable: true
-        NumberOfDocumentsErrored:
-          type: integer
-          nullable: true
-        NumberOfDocumentsSubmitted:
-          type: integer
-          nullable: true
-        JobArtifactId:
-          type: integer
-          nullable: true
-    ImageOnTheFlyResponse:
-      title: ImageOnTheFlyResponse
-      type: object
-      properties:
-        ImagingJobID:
-          type: integer
-    ImagingSetStatus:
-      title: ImagingSetStatus
-      type: object
-      properties:
-        ImageCompletion:
-          type: string
-        ImageQCReviewStatus:
-          type: string
-        LastRunError:
-          type: string
-        QCEnabledOnLastRun:
-          type: boolean
-          nullable: true
-        Status:
-          type: string
-        CompletionRate:
-          type: string
-        StartTime:
-          type: string
-          format: date-time
-          nullable: true
-    StopImagingJobResponse:
-      title: StopImagingJobResponse
-      type: object
-      properties:
-        Success:
-          type: boolean
-        ErrorMessage:
-          type: string
-    BasicImagingProfileCreateRequest:
-      title: BasicImagingProfileCreateRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        BasicOptions:
-          $ref: '#/components/schemas/BasicImagingEngineOptions'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        NativeTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeTypeRef'
-    FieldRef:
-      title: FieldRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        ViewFieldID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
+          type:
+          - string
+          - 'null'
   parameters:
-    imagingJobID:
-      name: imagingJobID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    imagingSetID:
-      name: imagingSetID
+    documentArtifactID:
+      name: documentArtifactID
       in: path
       description: ''
       required: true
@@ -1250,15 +1332,15 @@ components:
       required: true
       schema:
         type: integer
-    workspaceID:
-      name: workspaceID
+    applicationFieldCodeID:
+      name: applicationFieldCodeID
       in: path
       description: ''
       required: true
       schema:
         type: integer
-    documentArtifactID:
-      name: documentArtifactID
+    imagingJobID:
+      name: imagingJobID
       in: path
       description: ''
       required: true
@@ -1272,8 +1354,15 @@ components:
       schema:
         type: string
         default: '-'
-    applicationFieldCodeID:
-      name: applicationFieldCodeID
+    imagingSetID:
+      name: imagingSetID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceID:
+      name: workspaceID
       in: path
       description: ''
       required: true

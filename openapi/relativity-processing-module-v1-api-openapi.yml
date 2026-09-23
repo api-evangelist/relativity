@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Analytics.Conceptual.Service.Interfaces.Public.V1 AnnotationService Processing Module v1 API
-  description: Analytics.Conceptual.Service.Interfaces.Public
+  title: Relativity.Processing.V1 Processing Module v1 API
+  description: Relativity.Processing
   version: V1
 servers:
 - url: /Relativity.REST/api
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFileDeletionManager - '
+      description: '[Public] IFileDeletionManager -'
       operationId: Relativity.Processing.V1.Services.IFileDeletionManager.ProcessFilesToDeleteAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -30,11 +30,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetProcessedFilesToDeleteResponse'
+      summary: Relativity processing V1 services IFile deletion manager process files to…
+      x-summary-source: derived
   /relativity-processing/v1/file-deletion/confirm-processed-files-deletion:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IFileDeletionManager - '
+      description: '[Public] IFileDeletionManager -'
       operationId: Relativity.Processing.V1.Services.IFileDeletionManager.ConfirmProcessedFilesDeletionAsync
       parameters:
       - $ref: '#/components/parameters/x-csrf-header'
@@ -47,11 +49,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity processing V1 services IFile deletion manager confirm processed…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings:
     put:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.UpdateExternalMappingAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -65,11 +69,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity processing V1 services IField mapping manager update external…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/auto/guids:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetAutoMappedFieldGuidsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -83,11 +89,13 @@ paths:
                 type: array
                 items:
                   type: string
+      summary: Relativity processing V1 services IField mapping manager get auto mapped field…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/available:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.IsFieldMappingAvailableAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -99,11 +107,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+      summary: Relativity processing V1 services IField mapping manager is field mapping…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/invariant:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetInvariantFieldsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -123,11 +133,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/MappableSourceField'
+      summary: Relativity processing V1 services IField mapping manager get invariant fields…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/pages:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetInvariantFieldsPaginatedAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -145,11 +157,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FieldMappingResponse'
+      summary: Relativity processing V1 services IField mapping manager get invariant fields…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/metadata-fields:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetMetadataFieldsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -167,11 +181,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FieldMappingResponse'
+      summary: Relativity processing V1 services IField mapping manager get metadata fields…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/other-fields:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetOtherFieldsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -189,11 +205,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FieldMappingResponse'
+      summary: Relativity processing V1 services IField mapping manager get other fields async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/source-field:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetMappableSourceFieldAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -211,11 +229,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MappableSourceField'
+      summary: Relativity processing V1 services IField mapping manager get mappable source…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/external:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.ReadExternalMappingAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -233,11 +253,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExternalMapping'
+      summary: Relativity processing V1 services IField mapping manager read external mapping…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/data-sources/{dataSourceID}/field-mappings/relativity:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetAllMappedFieldsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -258,11 +280,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ExternalMapping'
+      summary: Relativity processing V1 services IField mapping manager get all mapped fields…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/catalog-fields:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetCatalogFieldsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -276,11 +300,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/CatalogField'
+      summary: Relativity processing V1 services IField mapping manager get catalog fields…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/invariant-catalog-field-mapping:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetInvariantFieldCatalogMapping
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -295,11 +321,13 @@ paths:
                 additionalProperties:
                   type: string
                 format: Guid
+      summary: Relativity processing V1 services IField mapping manager get invariant field…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/get-mappable-fields:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.GetNewMappableFieldsNonPaginatedAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -317,11 +345,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MappableFieldsResponse'
+      summary: Relativity processing V1 services IField mapping manager get new mappable…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/validate-type:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.ValidateFieldTypeMappingAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -339,11 +369,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+      summary: Relativity processing V1 services IField mapping manager validate field type…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/validate-length:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.ValidateFieldLengthAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -361,11 +393,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+      summary: Relativity processing V1 services IField mapping manager validate field length…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/field-mappings/validate-fields:
     put:
       tags:
       - Processing Module v1
-      description: '[Public] IFieldMappingManager - '
+      description: '[Public] IFieldMappingManager -'
       operationId: Relativity.Processing.V1.Services.IFieldMappingManager.ValidateFieldObjectsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -383,11 +417,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+      summary: Relativity processing V1 services IField mapping manager validate field objects…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/documents/{fileID}/metadata:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDocumentManager - '
+      description: '[Public] IProcessingDocumentManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDocumentManager.GetDocumentMetadataAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -400,11 +436,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingMetadataResponse'
+      summary: Relativity processing V1 services IProcessing document manager get document…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/documents/{fileID}/errors:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDocumentManager - '
+      description: '[Public] IProcessingDocumentManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDocumentManager.GetDocumentErrorHistoryAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -423,11 +461,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingDocumentErrorHistoryResponse'
+      summary: Relativity processing V1 services IProcessing document manager get document…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/documents/retry:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDocumentManager - '
+      description: '[Public] IProcessingDocumentManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDocumentManager.RetryDeleteDocumentAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -441,11 +481,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing document manager retry delete…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/documents/retry-errors:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDocumentManager - '
+      description: '[Public] IProcessingDocumentManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDocumentManager.RetryDocumentErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -459,11 +501,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing document manager retry document…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/documents/publish:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDocumentManager - '
+      description: '[Public] IProcessingDocumentManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDocumentManager.PublishDocumentsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -477,11 +521,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing document manager publish…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/documents/get-publish-job-errors:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDocumentManager - '
+      description: '[Public] IProcessingDocumentManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDocumentManager.GetPublishJobErrorsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -499,11 +545,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PublishJobErrorInfoResponse'
+      summary: Relativity processing V1 services IProcessing document manager get publish job…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/documents/count:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDocumentManager - '
+      description: '[Public] IProcessingDocumentManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDocumentManager.RetrievePublishableDocumentCountAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -521,11 +569,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity processing V1 services IProcessing document manager retrieve…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.CreateExpressionFilterAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -543,10 +593,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingFilter'
+      summary: Relativity processing V1 services IProcessing filter manager create expression…
+      x-summary-source: derived
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.GetFiltersAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -560,11 +612,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ProcessingFilter'
+      summary: Relativity processing V1 services IProcessing filter manager get filters async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/{filterID}/apply:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.ApplyFilterAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -583,11 +637,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity processing V1 services IProcessing filter manager apply filter async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/results/{filterID}:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.GetFilterResultAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -606,11 +662,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingFilterData'
+      summary: Relativity processing V1 services IProcessing filter manager get filter result…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/data-sources/{dataSourceID}/filters:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.GetFiltersByDataSourceAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -625,11 +683,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ProcessingFilter'
+      summary: Relativity processing V1 services IProcessing filter manager get filters by…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/{filterID}:
     put:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.UpdateExpressionFilterAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -648,10 +708,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingFilter'
+      summary: Relativity processing V1 services IProcessing filter manager update expression…
+      x-summary-source: derived
     delete:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.DeleteFilterAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -660,11 +722,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing filter manager delete filter async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/documents:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.GetDiscoveredDocumentsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -682,11 +746,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingFilterData'
+      summary: Relativity processing V1 services IProcessing filter manager get discovered…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/document-ids:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.GetDiscoveredDocumentIdsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -704,11 +770,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingFileIdResults'
+      summary: Relativity processing V1 services IProcessing filter manager get discovered…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/csvs:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.PrepareDiscoveredDocumentListAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -726,11 +794,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrepareDiscoveredDocumentListResponse'
+      summary: Relativity processing V1 services IProcessing filter manager prepare discovered…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/pivot-discovered-documents:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.PivotOnDiscoveredDocumentsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -750,11 +820,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/GetDiscoveredDocumentsWithPivotOnResponse'
+      summary: Relativity processing V1 services IProcessing filter manager pivot on…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/filters/csvs/{requestGuid}:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingFilterManager - '
+      description: '[Public] IProcessingFilterManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingFilterManager.DownloadDiscoveredDocumentListAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -767,11 +839,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IKeplerStream'
+      summary: Relativity processing V1 services IProcessing filter manager download…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/custodians/{custodianID}:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingCustodianManager - '
+      description: '[Public] IProcessingCustodianManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingCustodianManager.ReadAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -784,10 +858,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingCustodian'
+      summary: Relativity processing V1 services IProcessing custodian manager read async
+      x-summary-source: derived
     put:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingCustodianManager - '
+      description: '[Public] IProcessingCustodianManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingCustodianManager.UpdateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -806,11 +882,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity processing V1 services IProcessing custodian manager update async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/custodians:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingCustodianManager - '
+      description: '[Public] IProcessingCustodianManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingCustodianManager.CreateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -828,11 +906,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity processing V1 services IProcessing custodian manager create async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/data-sources/{dataSourceID}:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDataSourceManager - '
+      description: '[Public] IProcessingDataSourceManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDataSourceManager.ReadAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -845,10 +925,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingDataSource'
+      summary: Relativity processing V1 services IProcessing data source manager read async
+      x-summary-source: derived
     put:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDataSourceManager - '
+      description: '[Public] IProcessingDataSourceManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDataSourceManager.UpdateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -863,11 +945,13 @@ paths:
       responses:
         '200':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing data source manager update async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/data-sources:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDataSourceManager - '
+      description: '[Public] IProcessingDataSourceManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDataSourceManager.CreateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -885,11 +969,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity processing V1 services IProcessing data source manager create async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/data-sources/{processingDataSourceID}/delete-validation:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDataSourceManager - '
+      description: '[Public] IProcessingDataSourceManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDataSourceManager.ValidateDeleteAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -902,11 +988,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DataSourceValidateDeleteResponse'
+      summary: Relativity processing V1 services IProcessing data source manager validate…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/data-sources/source-location-paths:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDataSourceManager - '
+      description: '[Public] IProcessingDataSourceManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDataSourceManager.RetrieveProcessingDataSourceInputPathsForWorkspaceAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -920,11 +1008,13 @@ paths:
                 type: array
                 items:
                   type: string
+      summary: Relativity processing V1 services IProcessing data source manager retrieve…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/data-sources/profile-presets/{profileId}:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingDataSourceManager - '
+      description: '[Public] IProcessingDataSourceManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingDataSourceManager.RetrieveDefaultsFromProcessingProfile
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -937,11 +1027,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DefaultProcessingDataSourceOptionsResponse'
+      summary: Relativity processing V1 services IProcessing data source manager retrieve…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-jobs/{processingSetID}/cancel:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingJobManager - '
+      description: '[Public] IProcessingJobManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingJobManager.SubmitCancelJobAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -950,11 +1042,13 @@ paths:
       responses:
         '201':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing job manager submit cancel job…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-jobs/{processingSetID}/discover:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingJobManager - '
+      description: '[Public] IProcessingJobManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingJobManager.SubmitDiscoveryJobsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -963,11 +1057,13 @@ paths:
       responses:
         '201':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing job manager submit discovery jobs…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-jobs/{processingSetID}/inventory:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingJobManager - '
+      description: '[Public] IProcessingJobManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingJobManager.SubmitInventoryJobsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -976,11 +1072,13 @@ paths:
       responses:
         '201':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing job manager submit inventory jobs…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-jobs/{processingSetID}/publish:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingJobManager - '
+      description: '[Public] IProcessingJobManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingJobManager.SubmitPublishJobsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -989,11 +1087,13 @@ paths:
       responses:
         '201':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing job manager submit publish jobs…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-jobs/{processingSetID}/retry-errors:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingJobManager - '
+      description: '[Public] IProcessingJobManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingJobManager.SubmitRetryErrorsJobsAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -1002,11 +1102,13 @@ paths:
       responses:
         '201':
           description: Successful Operation
+      summary: Relativity processing V1 services IProcessing job manager submit retry errors…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-sets/{processingSetID}:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingSetManager - '
+      description: '[Public] IProcessingSetManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingSetManager.ReadAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -1019,10 +1121,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingSet'
+      summary: Relativity processing V1 services IProcessing set manager read async
+      x-summary-source: derived
     put:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingSetManager - '
+      description: '[Public] IProcessingSetManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingSetManager.UpdateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -1041,11 +1145,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity processing V1 services IProcessing set manager update async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-sets:
     post:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingSetManager - '
+      description: '[Public] IProcessingSetManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingSetManager.CreateAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -1063,11 +1169,13 @@ paths:
             application/json:
               schema:
                 type: integer
+      summary: Relativity processing V1 services IProcessing set manager create async
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-sets/documents:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingSetManager - '
+      description: '[Public] IProcessingSetManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingSetManager.GetDocumentAggregates
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -1085,11 +1193,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingSetDocumentInfoSummary'
+      summary: Relativity processing V1 services IProcessing set manager get document…
+      x-summary-source: derived
   /relativity-processing/v1/workspaces/{workspaceID}/processing-sets/{processingSetID}/summary:
     get:
       tags:
       - Processing Module v1
-      description: '[Public] IProcessingSetManager - '
+      description: '[Public] IProcessingSetManager -'
       operationId: Relativity.Processing.V1.Services.IProcessingSetManager.GetSummaryDataAsync
       parameters:
       - $ref: '#/components/parameters/workspaceID'
@@ -1102,125 +1212,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessingSetSummaryData'
+      summary: Relativity processing V1 services IProcessing set manager get summary data async
+      x-summary-source: derived
 components:
   schemas:
-    PivotOnOption:
-      title: PivotOnOption
+    GetDiscoveredDocumentsRequest:
+      title: GetDiscoveredDocumentsRequest
       type: object
       properties:
-        GroupByProperty:
-          enum:
-          - ContainerID
-          - ProcessingFileId
-          - FileSize
-          - ParentDocumentId
-          - DiscoverGroupId
-          - ContainerName
-          - ContainerExtension
-          - IngestionError
-          - ExtractedTextLocation
-          - FileName
-          - FileExtension
-          - FileType
-          - FolderPath
-          - ImportSource
-          - LogicalPath
-          - MD5Hash
-          - DocumentErrorMessage
-          - OriginalPath
-          - SHA1Hash
-          - SHA256Hash
-          - TextExtractionMethod
-          - VirtualPath
-          - IsContainer
-          - IsEmbedded
-          - OfficeEmbeddedItems
-          - Unprocessable
-          - IsPublished
-          - CustodianArtifactId
-          - DataSourceArtifactId
-          - CustodianName
-          - DataSourceName
-          - IsDeleted
-          - ErrorMessage
-          - SenderDomain
-          - SortDate
-          - ErrorCategory
-          - ErrorPhase
-          - ErrorStatus
-          - DedupeStatus
-          - StorageId
-          - Severity
-          - ProcessingDupeHash
-          type: string
-        GroupByOrdering:
-          enum:
-          - Descending
-          - Ascending
-          type: string
-        GroupByCount:
+        StartingPointOfResult:
           type: integer
-        PivotOnProperty:
-          enum:
-          - ContainerID
-          - ProcessingFileId
-          - FileSize
-          - ParentDocumentId
-          - DiscoverGroupId
-          - ContainerName
-          - ContainerExtension
-          - IngestionError
-          - ExtractedTextLocation
-          - FileName
-          - FileExtension
-          - FileType
-          - FolderPath
-          - ImportSource
-          - LogicalPath
-          - MD5Hash
-          - DocumentErrorMessage
-          - OriginalPath
-          - SHA1Hash
-          - SHA256Hash
-          - TextExtractionMethod
-          - VirtualPath
-          - IsContainer
-          - IsEmbedded
-          - OfficeEmbeddedItems
-          - Unprocessable
-          - IsPublished
-          - CustodianArtifactId
-          - DataSourceArtifactId
-          - CustodianName
-          - DataSourceName
-          - IsDeleted
-          - ErrorMessage
-          - SenderDomain
-          - SortDate
-          - ErrorCategory
-          - ErrorPhase
-          - ErrorStatus
-          - DedupeStatus
-          - StorageId
-          - Severity
-          - ProcessingDupeHash
-          type: string
-          nullable: true
-        PivotOnOrdering:
-          enum:
-          - Descending
-          - Ascending
-          type: string
-        PivotOnCount:
+        NumberOfResults:
           type: integer
-    ProcessingSetRef:
-      title: ProcessingSetRef
+        Expression:
+          type: string
+        AuditedSourceID:
+          type: integer
+        SortingOptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SortOption'
+        ExcludeTotalCount:
+          type: boolean
+        IncludeDuplicateHash:
+          type: boolean
+    RetryDeleteDocumentAsync_RequestBody:
+      title: RetryDeleteDocumentAsync_RequestBody
       type: object
       properties:
-        ProcessingSetID:
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
+    ProcessingMetadataResponse:
+      title: ProcessingMetadataResponse
+      type: object
+      properties:
+        ProcessingFileID:
           type: integer
-        Name:
+        WorkspaceArtifactID:
+          type: integer
+        MetadataJson:
           type: string
+        Errors:
+          type: array
+          items:
+            type: string
     ReadExternalMappingAsync_RequestBody:
       title: ReadExternalMappingAsync_RequestBody
       type: object
@@ -1229,98 +1264,36 @@ components:
           type: integer
         fieldSource:
           type: string
-    ProcessingFilterResult:
-      title: ProcessingFilterResult
+    CreateAsync_RequestBody:
+      title: CreateAsync_RequestBody
       type: object
       properties:
-        ContainerExtension:
-          type: string
-        ContainerID:
-          type: integer
-        ContainerName:
-          type: string
-        CustodianArtifactId:
-          type: integer
-        CustodianName:
-          type: string
-        DataSourceArtifactId:
-          type: integer
-        DataSourceName:
-          type: string
-        DiscoverGroupId:
-          type: integer
-        ErrorMessage:
-          type: string
-        ErrorCategory:
-          type: string
-        ErrorPhase:
-          type: string
-        ExtractedTextLocation:
-          type: string
-        FileExtension:
-          type: string
-        FileName:
-          type: string
-        FileSize:
-          type: integer
-        FileType:
-          type: string
-        FolderPath:
-          type: string
-        ImportSource:
-          type: string
-        IsContainer:
-          type: boolean
-        IsDeleted:
-          type: boolean
-        IsEmbedded:
-          type: boolean
-        IsPublished:
-          type: boolean
-        LogicalPath:
-          type: string
-        MD5Hash:
-          type: string
-        OfficeEmbeddedItems:
-          type: boolean
-        OriginalPath:
-          type: string
-        ParentDocumentId:
-          type: integer
-        ProcessingFileId:
-          type: integer
-        SHA1Hash:
-          type: string
-        SHA256Hash:
-          type: string
-        TextExtractionMethod:
-          type: string
-        Unprocessable:
-          type: boolean
-        VirtualPath:
-          type: string
-        SenderDomain:
-          type: string
-        SortDate:
-          type: string
-          format: date-time
-          nullable: true
-        ErrorStatus:
-          type: string
-        DedupeStatus:
-          type: string
-        StorageId:
-          type: string
-        Severity:
-          type: string
-        ProcessingDupeHash:
-          type: string
-    ApplyFilterAsync_RequestBody:
-      title: ApplyFilterAsync_RequestBody
+        custodian:
+          $ref: '#/components/schemas/ProcessingCustodian'
+    GetNewMappableFieldsNonPaginatedAsync_RequestBody:
+      title: GetNewMappableFieldsNonPaginatedAsync_RequestBody
       type: object
       properties:
-        request:
-          $ref: '#/components/schemas/ApplyProcessingFilterRequest'
+        metadataFieldCount:
+          type: integer
+    PublishJobErrorInfoResponse:
+      title: PublishJobErrorInfoResponse
+      type: object
+      properties:
+        ErroredJobCount:
+          type: integer
+        ErroredFileCount:
+          type: integer
+        GroupIdsWithJobErrors:
+          type: array
+          items:
+            type: integer
+        ErrorArtifactIds:
+          type: array
+          items:
+            type: integer
+        GroupIdsCheckedCount:
+          type: integer
     ProcessingCustodian:
       title: ProcessingCustodian
       type: object
@@ -1348,8 +1321,8 @@ components:
           type: integer
         Name:
           type: string
-    CreateProcessingExpressionFilterRequest:
-      title: CreateProcessingExpressionFilterRequest
+    UpdateProcessingExpressionFilterRequest:
+      title: UpdateProcessingExpressionFilterRequest
       type: object
       properties:
         FilterName:
@@ -1362,112 +1335,50 @@ components:
           type: string
         IncludeFamily:
           type: boolean
-    ProcessingSet:
-      title: ProcessingSet
+    ApplyProcessingFilterRequest:
+      title: ApplyProcessingFilterRequest
       type: object
       properties:
-        EmailNotificationRecipients:
-          type: array
-          items:
-            type: string
-        Profile:
-          $ref: '#/components/schemas/ProcessingProfileRef'
-        ProcessingSetID:
+        Priority:
           type: integer
-        Name:
+    ProcessFilesToDeleteAsync_RequestBody:
+      title: ProcessFilesToDeleteAsync_RequestBody
+      type: object
+      properties:
+        fileRequestSize:
+          type: integer
+    RetrievePublishableDocumentCountAsync_RequestBody:
+      title: RetrievePublishableDocumentCountAsync_RequestBody
+      type: object
+      properties:
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
+    FileData:
+      title: FileData
+      type: object
+      properties:
+        FilePath:
           type: string
-    PrepareDiscoveredDocumentListAsync_RequestBody:
-      title: PrepareDiscoveredDocumentListAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/GetDiscoveredDocumentListRequest'
-    GetMetadataFieldsAsync_RequestBody:
-      title: GetMetadataFieldsAsync_RequestBody
-      type: object
-      properties:
-        skip:
+        FolderDepth:
           type: integer
-        top:
-          type: integer
-        fieldMappingRequest:
-          $ref: '#/components/schemas/FieldMappingRequest'
-    UpdateAsync_RequestBody:
-      title: UpdateAsync_RequestBody
+    ProcessingFileIdResults:
+      title: ProcessingFileIdResults
       type: object
       properties:
-        custodian:
-          $ref: '#/components/schemas/ProcessingCustodian'
-    PrepareDiscoveredDocumentListResponse:
-      title: PrepareDiscoveredDocumentListResponse
-      type: object
-      properties:
-        Guid:
-          type: string
-    CreateAsync_RequestBody:
-      title: CreateAsync_RequestBody
-      type: object
-      properties:
-        custodian:
-          $ref: '#/components/schemas/ProcessingCustodian'
-    GetNewMappableFieldsNonPaginatedAsync_RequestBody:
-      title: GetNewMappableFieldsNonPaginatedAsync_RequestBody
-      type: object
-      properties:
-        metadataFieldCount:
+        FilterID:
           type: integer
-    GetDocumentAggregates_RequestBody:
-      title: GetDocumentAggregates_RequestBody
-      type: object
-      properties:
-        skip:
+        TotalCount:
           type: integer
-        top:
-          type: integer
-        sortColumnName:
-          type: string
-        sortDescending:
-          type: boolean
-    ValidateFieldTypeMappingAsync_RequestBody:
-      title: ValidateFieldTypeMappingAsync_RequestBody
-      type: object
-      properties:
-        fieldDataTypeId:
-          type: integer
-        sourceType:
-          type: string
-    PublishJobErrorInfoResponse:
-      title: PublishJobErrorInfoResponse
-      type: object
-      properties:
-        ErroredJobCount:
-          type: integer
-        ErroredFileCount:
-          type: integer
-        GroupIdsWithJobErrors:
+        Results:
           type: array
           items:
             type: integer
-        ErrorArtifactIds:
-          type: array
-          items:
-            type: integer
-        GroupIdsCheckedCount:
-          type: integer
-    ProcessingMetadataResponse:
-      title: ProcessingMetadataResponse
+    PublishDocumentsAsync_RequestBody:
+      title: PublishDocumentsAsync_RequestBody
       type: object
       properties:
-        ProcessingFileID:
-          type: integer
-        WorkspaceArtifactID:
-          type: integer
-        MetadataJson:
-          type: string
-        Errors:
-          type: array
-          items:
-            type: string
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
     FieldSortingOption:
       title: FieldSortingOption
       type: object
@@ -1484,108 +1395,117 @@ components:
           - Asc
           - Desc
           type: string
-    GetDiscoveredDocumentsWithPivotOnRequest:
-      title: GetDiscoveredDocumentsWithPivotOnRequest
-      type: object
-      properties:
-        Expression:
-          type: string
-        PivotOnOption:
-          $ref: '#/components/schemas/PivotOnOption'
-    GetFilterResultAsync_RequestBody:
-      title: GetFilterResultAsync_RequestBody
+    GetMetadataFieldsAsync_RequestBody:
+      title: GetMetadataFieldsAsync_RequestBody
       type: object
       properties:
         skip:
           type: integer
         top:
           type: integer
-    IKeplerStream:
-      title: IKeplerStream
+        fieldMappingRequest:
+          $ref: '#/components/schemas/FieldMappingRequest'
+    ValidateFieldTypeMappingAsync_RequestBody:
+      title: ValidateFieldTypeMappingAsync_RequestBody
       type: object
       properties:
-        ContentType:
+        fieldDataTypeId:
+          type: integer
+        sourceType:
           type: string
-        ContentDisposition:
+    MappableSourceField:
+      title: MappableSourceField
+      type: object
+      properties:
+        Category:
           type: string
-        CacheControl:
+        SourceName:
           type: string
-        StatusCode:
-          enum:
-          - Continue
-          - SwitchingProtocols
-          - OK
-          - Created
-          - Accepted
-          - NonAuthoritativeInformation
-          - NoContent
-          - ResetContent
-          - PartialContent
-          - MultipleChoices
-          - Ambiguous
-          - MovedPermanently
-          - Moved
-          - Found
-          - Redirect
-          - SeeOther
-          - RedirectMethod
-          - NotModified
-          - UseProxy
-          - Unused
-          - TemporaryRedirect
-          - RedirectKeepVerb
-          - BadRequest
-          - Unauthorized
-          - PaymentRequired
-          - Forbidden
-          - NotFound
-          - MethodNotAllowed
-          - NotAcceptable
-          - ProxyAuthenticationRequired
-          - RequestTimeout
-          - Conflict
-          - Gone
-          - LengthRequired
-          - PreconditionFailed
-          - RequestEntityTooLarge
-          - RequestUriTooLong
-          - UnsupportedMediaType
-          - RequestedRangeNotSatisfiable
-          - ExpectationFailed
-          - UpgradeRequired
-          - InternalServerError
-          - NotImplemented
-          - BadGateway
-          - ServiceUnavailable
-          - GatewayTimeout
-          - HttpVersionNotSupported
+        FriendlyName:
           type: string
-          nullable: true
-        Headers:
+        Description:
+          type: string
+        DataType:
+          type: string
+        MappedFields:
           type: array
           items:
             type: string
-            format: NameValueCollection
-    GetMappableSourceFieldAsync_RequestBody:
-      title: GetMappableSourceFieldAsync_RequestBody
+        Length:
+          type: integer
+    ProcessingDocumentErrorHistoryResponse:
+      title: ProcessingDocumentErrorHistoryResponse
       type: object
       properties:
-        sourceName:
+        TotalCount:
+          type: integer
+        DocumentErrorHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessingDocumentErrorInfo'
+    PivotOnDiscoveredDocumentsAsync_RequestBody:
+      title: PivotOnDiscoveredDocumentsAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/GetDiscoveredDocumentsWithPivotOnRequest'
+    GetAllMappedFieldsAsync_RequestBody:
+      title: GetAllMappedFieldsAsync_RequestBody
+      type: object
+      properties:
+        fieldsToAppend:
+          type: array
+          items:
+            type: string
+    FieldFilter:
+      title: FieldFilter
+      type: object
+      properties:
+        NameFilter:
           type: string
-    RetryDeleteDocumentAsync_RequestBody:
-      title: RetryDeleteDocumentAsync_RequestBody
+        DataTypeFilter:
+          type: string
+        DescriptionFilter:
+          type: string
+        RelativityFieldNameFilter:
+          type: string
+        SourceNameFilter:
+          type: string
+    UpdateExternalMappingAsync_RequestBody:
+      title: UpdateExternalMappingAsync_RequestBody
       type: object
       properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    GetDocumentErrorHistoryAsync_RequestBody:
-      title: GetDocumentErrorHistoryAsync_RequestBody
+        fieldID:
+          type: integer
+        model:
+          $ref: '#/components/schemas/ExternalMapping'
+        validation:
+          type: boolean
+          default: true
+    ProcessingFilter:
+      title: ProcessingFilter
       type: object
       properties:
-        skip:
+        FilterID:
           type: integer
-        top:
+        FilterName:
+          type: string
+        Type:
+          type: string
+    ProcessingSet:
+      title: ProcessingSet
+      type: object
+      properties:
+        EmailNotificationRecipients:
+          type: array
+          items:
+            type: string
+        Profile:
+          $ref: '#/components/schemas/ProcessingProfileRef'
+        ProcessingSetID:
           type: integer
+        Name:
+          type: string
     ProcessingDataSource:
       title: ProcessingDataSource
       type: object
@@ -1739,108 +1659,136 @@ components:
         TimeZone:
           type: integer
         IsStartNumberVisible:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
         StartNumber:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         LevelTwoStartNumber:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         LevelThreeStartNumber:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         LevelFourStartNumber:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         ProcessingDataSourceID:
           type: integer
         Name:
           type: string
-    DefaultProcessingDataSourceOptionsResponse:
-      title: DefaultProcessingDataSourceOptionsResponse
-      type: object
-      properties:
-        OcrLanguages:
-          type: array
-          items:
-            type: string
-        TimeZone:
-          type: integer
-        DocumentNumberingPrefix:
-          type: string
-        DefaultDestinationFolder:
-          type: integer
-        NumberingType:
-          type: string
-        DefaultStartNumber:
-          type: integer
-          nullable: true
-    ValidateFieldLengthAsync_RequestBody:
-      title: ValidateFieldLengthAsync_RequestBody
-      type: object
-      properties:
-        fieldLength:
-          type: integer
-          nullable: true
-        fieldDataTypeId:
-          type: integer
-        sourceLength:
-          type: integer
-    ProcessingFileIdResults:
-      title: ProcessingFileIdResults
-      type: object
-      properties:
-        FilterID:
-          type: integer
-        TotalCount:
-          type: integer
-        Results:
-          type: array
-          items:
-            type: integer
-    UpdateExpressionFilterAsync_RequestBody:
-      title: UpdateExpressionFilterAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/UpdateProcessingExpressionFilterRequest'
-    GetInvariantFieldsPaginatedAsync_RequestBody:
-      title: GetInvariantFieldsPaginatedAsync_RequestBody
+    GetFilterResultAsync_RequestBody:
+      title: GetFilterResultAsync_RequestBody
       type: object
       properties:
         skip:
           type: integer
         top:
           type: integer
-        fieldMappingRequest:
-          $ref: '#/components/schemas/FieldMappingRequest'
-    GetDiscoveredDocumentsAsync_RequestBody:
-      title: GetDiscoveredDocumentsAsync_RequestBody
+    GetPublishJobErrorsAsync_RequestBody:
+      title: GetPublishJobErrorsAsync_RequestBody
+      type: object
+      properties:
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
+    ProcessingFilterResult:
+      title: ProcessingFilterResult
+      type: object
+      properties:
+        ContainerExtension:
+          type: string
+        ContainerID:
+          type: integer
+        ContainerName:
+          type: string
+        CustodianArtifactId:
+          type: integer
+        CustodianName:
+          type: string
+        DataSourceArtifactId:
+          type: integer
+        DataSourceName:
+          type: string
+        DiscoverGroupId:
+          type: integer
+        ErrorMessage:
+          type: string
+        ErrorCategory:
+          type: string
+        ErrorPhase:
+          type: string
+        ExtractedTextLocation:
+          type: string
+        FileExtension:
+          type: string
+        FileName:
+          type: string
+        FileSize:
+          type: integer
+        FileType:
+          type: string
+        FolderPath:
+          type: string
+        ImportSource:
+          type: string
+        IsContainer:
+          type: boolean
+        IsDeleted:
+          type: boolean
+        IsEmbedded:
+          type: boolean
+        IsPublished:
+          type: boolean
+        LogicalPath:
+          type: string
+        MD5Hash:
+          type: string
+        OfficeEmbeddedItems:
+          type: boolean
+        OriginalPath:
+          type: string
+        ParentDocumentId:
+          type: integer
+        ProcessingFileId:
+          type: integer
+        SHA1Hash:
+          type: string
+        SHA256Hash:
+          type: string
+        TextExtractionMethod:
+          type: string
+        Unprocessable:
+          type: boolean
+        VirtualPath:
+          type: string
+        SenderDomain:
+          type: string
+        SortDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ErrorStatus:
+          type: string
+        DedupeStatus:
+          type: string
+        StorageId:
+          type: string
+        Severity:
+          type: string
+        ProcessingDupeHash:
+          type: string
+    UpdateExpressionFilterAsync_RequestBody:
+      title: UpdateExpressionFilterAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/GetDiscoveredDocumentsRequest'
-    GetDiscoveredDocumentsRequest:
-      title: GetDiscoveredDocumentsRequest
-      type: object
-      properties:
-        StartingPointOfResult:
-          type: integer
-        NumberOfResults:
-          type: integer
-        Expression:
-          type: string
-        AuditedSourceID:
-          type: integer
-        SortingOptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/SortOption'
-        ExcludeTotalCount:
-          type: boolean
-        IncludeDuplicateHash:
-          type: boolean
+          $ref: '#/components/schemas/UpdateProcessingExpressionFilterRequest'
     MappableFieldNonPaginated:
       title: MappableFieldNonPaginated
       type: object
@@ -1851,40 +1799,216 @@ components:
           type: string
         Category:
           type: string
-    GetDiscoveredDocumentsWithPivotOnResponse:
-      title: GetDiscoveredDocumentsWithPivotOnResponse
-      type: object
-      properties:
-        GroupByIdentifier:
-          type: string
-        PivotOnIdentifier:
-          type: string
-        ResultCount:
-          type: integer
-    ProcessingSetDocumentInfoSummary:
-      title: ProcessingSetDocumentInfoSummary
-      type: object
-      properties:
-        TotalPublishedDocuments:
-          type: integer
-        TotalPublishedDocumentSizeInBytes:
-          type: number
-        TotalProcessingSets:
-          type: integer
-        ProcessingSetDocumentInfo:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessingSetDocumentInfo'
-    GetOtherFieldsAsync_RequestBody:
-      title: GetOtherFieldsAsync_RequestBody
+    GetDocumentAggregates_RequestBody:
+      title: GetDocumentAggregates_RequestBody
       type: object
       properties:
         skip:
           type: integer
         top:
           type: integer
-        fieldMappingRequest:
-          $ref: '#/components/schemas/FieldMappingRequest'
+        sortColumnName:
+          type: string
+        sortDescending:
+          type: boolean
+    DataSourceValidateDeleteResponse:
+      title: DataSourceValidateDeleteResponse
+      type: object
+      properties:
+        CanDelete:
+          type: boolean
+        Reasons:
+          type: array
+          items:
+            type: string
+    ConfirmProcessedFilesDeletionAsync_RequestBody:
+      title: ConfirmProcessedFilesDeletionAsync_RequestBody
+      type: object
+      properties:
+        requestGuid:
+          type: string
+    MappableFieldsResponse:
+      title: MappableFieldsResponse
+      type: object
+      properties:
+        MappableFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/MappableFieldNonPaginated'
+    PivotOnOption:
+      title: PivotOnOption
+      type: object
+      properties:
+        GroupByProperty:
+          enum:
+          - ContainerID
+          - ProcessingFileId
+          - FileSize
+          - ParentDocumentId
+          - DiscoverGroupId
+          - ContainerName
+          - ContainerExtension
+          - IngestionError
+          - ExtractedTextLocation
+          - FileName
+          - FileExtension
+          - FileType
+          - FolderPath
+          - ImportSource
+          - LogicalPath
+          - MD5Hash
+          - DocumentErrorMessage
+          - OriginalPath
+          - SHA1Hash
+          - SHA256Hash
+          - TextExtractionMethod
+          - VirtualPath
+          - IsContainer
+          - IsEmbedded
+          - OfficeEmbeddedItems
+          - Unprocessable
+          - IsPublished
+          - CustodianArtifactId
+          - DataSourceArtifactId
+          - CustodianName
+          - DataSourceName
+          - IsDeleted
+          - ErrorMessage
+          - SenderDomain
+          - SortDate
+          - ErrorCategory
+          - ErrorPhase
+          - ErrorStatus
+          - DedupeStatus
+          - StorageId
+          - Severity
+          - ProcessingDupeHash
+          type: string
+        GroupByOrdering:
+          enum:
+          - Descending
+          - Ascending
+          type: string
+        GroupByCount:
+          type: integer
+        PivotOnProperty:
+          enum:
+          - ContainerID
+          - ProcessingFileId
+          - FileSize
+          - ParentDocumentId
+          - DiscoverGroupId
+          - ContainerName
+          - ContainerExtension
+          - IngestionError
+          - ExtractedTextLocation
+          - FileName
+          - FileExtension
+          - FileType
+          - FolderPath
+          - ImportSource
+          - LogicalPath
+          - MD5Hash
+          - DocumentErrorMessage
+          - OriginalPath
+          - SHA1Hash
+          - SHA256Hash
+          - TextExtractionMethod
+          - VirtualPath
+          - IsContainer
+          - IsEmbedded
+          - OfficeEmbeddedItems
+          - Unprocessable
+          - IsPublished
+          - CustodianArtifactId
+          - DataSourceArtifactId
+          - CustodianName
+          - DataSourceName
+          - IsDeleted
+          - ErrorMessage
+          - SenderDomain
+          - SortDate
+          - ErrorCategory
+          - ErrorPhase
+          - ErrorStatus
+          - DedupeStatus
+          - StorageId
+          - Severity
+          - ProcessingDupeHash
+          type:
+          - string
+          - 'null'
+        PivotOnOrdering:
+          enum:
+          - Descending
+          - Ascending
+          type: string
+        PivotOnCount:
+          type: integer
+    GetDiscoveredDocumentListRequest:
+      title: GetDiscoveredDocumentListRequest
+      type: object
+      properties:
+        Expression:
+          type: string
+        FileIDs:
+          type: array
+          items:
+            type: integer
+        Columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExportColumn'
+        SortingOptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SortOption'
+        Culture:
+          type: string
+    ApplyFilterAsync_RequestBody:
+      title: ApplyFilterAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ApplyProcessingFilterRequest'
+    GetDiscoveredDocumentsWithPivotOnRequest:
+      title: GetDiscoveredDocumentsWithPivotOnRequest
+      type: object
+      properties:
+        Expression:
+          type: string
+        PivotOnOption:
+          $ref: '#/components/schemas/PivotOnOption'
+    ProcessingDocumentsRequest:
+      title: ProcessingDocumentsRequest
+      type: object
+      properties:
+        ProcessingFileIDs:
+          type: array
+          items:
+            type: integer
+        Expression:
+          type: string
+    GetDocumentErrorHistoryAsync_RequestBody:
+      title: GetDocumentErrorHistoryAsync_RequestBody
+      type: object
+      properties:
+        skip:
+          type: integer
+        top:
+          type: integer
+    ValidateFieldLengthAsync_RequestBody:
+      title: ValidateFieldLengthAsync_RequestBody
+      type: object
+      properties:
+        fieldLength:
+          type:
+          - integer
+          - 'null'
+        fieldDataTypeId:
+          type: integer
+        sourceLength:
+          type: integer
     GetInvariantFieldsAsync_RequestBody:
       title: GetInvariantFieldsAsync_RequestBody
       type: object
@@ -1892,19 +2016,20 @@ components:
         catalogFieldsOnly:
           type: boolean
           default: false
-    ProcessFilesToDeleteAsync_RequestBody:
-      title: ProcessFilesToDeleteAsync_RequestBody
+    PrepareDiscoveredDocumentListResponse:
+      title: PrepareDiscoveredDocumentListResponse
       type: object
       properties:
-        fileRequestSize:
-          type: integer
+        Guid:
+          type: string
     CatalogField:
       title: CatalogField
       type: object
       properties:
         ArtifactId:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         CatalogFieldGuid:
           type: string
         FieldName:
@@ -1917,28 +2042,38 @@ components:
           type: integer
         Category:
           type: string
-    FieldMappingRequest:
-      title: FieldMappingRequest
+    ProcessingProfileRef:
+      title: ProcessingProfileRef
       type: object
       properties:
-        Filter:
-          $ref: '#/components/schemas/FieldFilter'
-        SortingOption:
-          $ref: '#/components/schemas/FieldSortingOption'
-    RetryDocumentErrorsAsync_RequestBody:
-      title: RetryDocumentErrorsAsync_RequestBody
+        ProcessingProfileID:
+          type: integer
+        Name:
+          type: string
+        IsNew:
+          type: boolean
+    ProcessingFilterData:
+      title: ProcessingFilterData
       type: object
       properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    ValidateFieldObjectsAsync_RequestBody:
-      title: ValidateFieldObjectsAsync_RequestBody
+        FilterID:
+          type: integer
+        TotalCount:
+          type: integer
+        Results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessingFilterResult'
+    GetOtherFieldsAsync_RequestBody:
+      title: GetOtherFieldsAsync_RequestBody
       type: object
       properties:
-        model:
-          $ref: '#/components/schemas/ExternalMapping'
-        sourceField:
-          $ref: '#/components/schemas/MappableSourceField'
+        skip:
+          type: integer
+        top:
+          type: integer
+        fieldMappingRequest:
+          $ref: '#/components/schemas/FieldMappingRequest'
     ProcessingSetDocumentInfo:
       title: ProcessingSetDocumentInfo
       type: object
@@ -1954,176 +2089,12 @@ components:
           type: integer
         PublishedDocumentSizeInBytes:
           type: number
-    DataSourceValidateDeleteResponse:
-      title: DataSourceValidateDeleteResponse
-      type: object
-      properties:
-        CanDelete:
-          type: boolean
-        Reasons:
-          type: array
-          items:
-            type: string
-    ExternalMapping:
-      title: ExternalMapping
-      type: object
-      properties:
-        MappingID:
-          type: integer
-        FieldID:
-          type: integer
-          nullable: true
-        FieldGuid:
-          type: string
-          nullable: true
-        RelativityFieldName:
-          type: string
-        FieldTypeID:
-          type: integer
-        EnableDataGrid:
-          type: boolean
-        ExternalFieldName:
-          type: string
-        ExternalFieldSource:
-          type: string
-        FriendlyName:
-          type: string
-        UseUnicodeEncoding:
-          type: boolean
-        CatalogLength:
-          type: integer
-          nullable: true
-        CurrentLength:
-          type: integer
-          nullable: true
-        ObjectTypeID:
-          type: integer
-        IsArtifactBaseField:
-          type: boolean
-        FieldCategory:
-          type: integer
-        AssociativeArtifactTypeID:
-          type: integer
-          nullable: true
-    ProcessingDocumentsRequest:
-      title: ProcessingDocumentsRequest
-      type: object
-      properties:
-        ProcessingFileIDs:
-          type: array
-          items:
-            type: integer
-        Expression:
-          type: string
-    MappableSourceField:
-      title: MappableSourceField
-      type: object
-      properties:
-        Category:
-          type: string
-        SourceName:
-          type: string
-        FriendlyName:
-          type: string
-        Description:
-          type: string
-        DataType:
-          type: string
-        MappedFields:
-          type: array
-          items:
-            type: string
-        Length:
-          type: integer
-    RetrievePublishableDocumentCountAsync_RequestBody:
-      title: RetrievePublishableDocumentCountAsync_RequestBody
-      type: object
-      properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    FieldMappingResponse:
-      title: FieldMappingResponse
-      type: object
-      properties:
-        TotalCount:
-          type: integer
-        MappableFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/MappableSourceField'
-    ProcessingSetState:
-      title: ProcessingSetState
-      type: object
-      properties:
-        ProcessingSetID:
-          type: integer
-        InventoryStatus:
-          type: string
-        DiscoverStatus:
-          type: string
-        PublishStatus:
-          type: string
-        Canceled:
-          type: boolean
-        ProcessingProfileID:
-          type: integer
-    GetAllMappedFieldsAsync_RequestBody:
-      title: GetAllMappedFieldsAsync_RequestBody
-      type: object
-      properties:
-        fieldsToAppend:
-          type: array
-          items:
-            type: string
-    GetDiscoveredDocumentIdsAsync_RequestBody:
-      title: GetDiscoveredDocumentIdsAsync_RequestBody
+    GetDiscoveredDocumentsAsync_RequestBody:
+      title: GetDiscoveredDocumentsAsync_RequestBody
       type: object
       properties:
         request:
           $ref: '#/components/schemas/GetDiscoveredDocumentsRequest'
-    UpdateExternalMappingAsync_RequestBody:
-      title: UpdateExternalMappingAsync_RequestBody
-      type: object
-      properties:
-        fieldID:
-          type: integer
-        model:
-          $ref: '#/components/schemas/ExternalMapping'
-        validation:
-          type: boolean
-          default: true
-    PivotOnDiscoveredDocumentsAsync_RequestBody:
-      title: PivotOnDiscoveredDocumentsAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/GetDiscoveredDocumentsWithPivotOnRequest'
-    FieldFilter:
-      title: FieldFilter
-      type: object
-      properties:
-        NameFilter:
-          type: string
-        DataTypeFilter:
-          type: string
-        DescriptionFilter:
-          type: string
-        RelativityFieldNameFilter:
-          type: string
-        SourceNameFilter:
-          type: string
-    ProcessingFilterData:
-      title: ProcessingFilterData
-      type: object
-      properties:
-        FilterID:
-          type: integer
-        TotalCount:
-          type: integer
-        Results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessingFilterResult'
     ProcessingDocumentErrorInfo:
       title: ProcessingDocumentErrorInfo
       type: object
@@ -2163,26 +2134,177 @@ components:
           type: boolean
         IsStoreValid:
           type: boolean
-    GetDiscoveredDocumentListRequest:
-      title: GetDiscoveredDocumentListRequest
+    PrepareDiscoveredDocumentListAsync_RequestBody:
+      title: PrepareDiscoveredDocumentListAsync_RequestBody
       type: object
       properties:
-        Expression:
+        request:
+          $ref: '#/components/schemas/GetDiscoveredDocumentListRequest'
+    IKeplerStream:
+      title: IKeplerStream
+      type: object
+      properties:
+        ContentType:
           type: string
-        FileIDs:
+        ContentDisposition:
+          type: string
+        CacheControl:
+          type: string
+        StatusCode:
+          enum:
+          - Continue
+          - SwitchingProtocols
+          - OK
+          - Created
+          - Accepted
+          - NonAuthoritativeInformation
+          - NoContent
+          - ResetContent
+          - PartialContent
+          - MultipleChoices
+          - Ambiguous
+          - MovedPermanently
+          - Moved
+          - Found
+          - Redirect
+          - SeeOther
+          - RedirectMethod
+          - NotModified
+          - UseProxy
+          - Unused
+          - TemporaryRedirect
+          - RedirectKeepVerb
+          - BadRequest
+          - Unauthorized
+          - PaymentRequired
+          - Forbidden
+          - NotFound
+          - MethodNotAllowed
+          - NotAcceptable
+          - ProxyAuthenticationRequired
+          - RequestTimeout
+          - Conflict
+          - Gone
+          - LengthRequired
+          - PreconditionFailed
+          - RequestEntityTooLarge
+          - RequestUriTooLong
+          - UnsupportedMediaType
+          - RequestedRangeNotSatisfiable
+          - ExpectationFailed
+          - UpgradeRequired
+          - InternalServerError
+          - NotImplemented
+          - BadGateway
+          - ServiceUnavailable
+          - GatewayTimeout
+          - HttpVersionNotSupported
+          type:
+          - string
+          - 'null'
+        Headers:
+          type: array
+          items:
+            type: string
+            format: NameValueCollection
+    GetDiscoveredDocumentsWithPivotOnResponse:
+      title: GetDiscoveredDocumentsWithPivotOnResponse
+      type: object
+      properties:
+        GroupByIdentifier:
+          type: string
+        PivotOnIdentifier:
+          type: string
+        ResultCount:
+          type: integer
+    CreateProcessingExpressionFilterRequest:
+      title: CreateProcessingExpressionFilterRequest
+      type: object
+      properties:
+        FilterName:
+          type: string
+        DataSourceIDs:
           type: array
           items:
             type: integer
-        Columns:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExportColumn'
-        SortingOptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/SortOption'
-        Culture:
+        Expression:
           type: string
+        IncludeFamily:
+          type: boolean
+    CreateExpressionFilterAsync_RequestBody:
+      title: CreateExpressionFilterAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/CreateProcessingExpressionFilterRequest'
+    GetInvariantFieldsPaginatedAsync_RequestBody:
+      title: GetInvariantFieldsPaginatedAsync_RequestBody
+      type: object
+      properties:
+        skip:
+          type: integer
+        top:
+          type: integer
+        fieldMappingRequest:
+          $ref: '#/components/schemas/FieldMappingRequest'
+    ExternalMapping:
+      title: ExternalMapping
+      type: object
+      properties:
+        MappingID:
+          type: integer
+        FieldID:
+          type:
+          - integer
+          - 'null'
+        FieldGuid:
+          type:
+          - string
+          - 'null'
+        RelativityFieldName:
+          type: string
+        FieldTypeID:
+          type: integer
+        EnableDataGrid:
+          type: boolean
+        ExternalFieldName:
+          type: string
+        ExternalFieldSource:
+          type: string
+        FriendlyName:
+          type: string
+        UseUnicodeEncoding:
+          type: boolean
+        CatalogLength:
+          type:
+          - integer
+          - 'null'
+        CurrentLength:
+          type:
+          - integer
+          - 'null'
+        ObjectTypeID:
+          type: integer
+        IsArtifactBaseField:
+          type: boolean
+        FieldCategory:
+          type: integer
+        AssociativeArtifactTypeID:
+          type:
+          - integer
+          - 'null'
+    GetProcessedFilesToDeleteResponse:
+      title: GetProcessedFilesToDeleteResponse
+      type: object
+      properties:
+        RequestGuid:
+          type: string
+        Files:
+          type: array
+          items:
+            $ref: '#/components/schemas/FileData'
+        WorkspaceId:
+          type: integer
     ExportColumn:
       title: ExportColumn
       type: object
@@ -2234,24 +2356,68 @@ components:
           type: string
         Header:
           type: string
-    ApplyProcessingFilterRequest:
-      title: ApplyProcessingFilterRequest
-      type: object
-      properties:
-        Priority:
-          type: integer
-    PublishDocumentsAsync_RequestBody:
-      title: PublishDocumentsAsync_RequestBody
+    RetryDocumentErrorsAsync_RequestBody:
+      title: RetryDocumentErrorsAsync_RequestBody
       type: object
       properties:
         documentsRequest:
           $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    CreateExpressionFilterAsync_RequestBody:
-      title: CreateExpressionFilterAsync_RequestBody
+    GetMappableSourceFieldAsync_RequestBody:
+      title: GetMappableSourceFieldAsync_RequestBody
+      type: object
+      properties:
+        sourceName:
+          type: string
+    ProcessingSetDocumentInfoSummary:
+      title: ProcessingSetDocumentInfoSummary
+      type: object
+      properties:
+        TotalPublishedDocuments:
+          type: integer
+        TotalPublishedDocumentSizeInBytes:
+          type: number
+        TotalProcessingSets:
+          type: integer
+        ProcessingSetDocumentInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessingSetDocumentInfo'
+    FieldMappingResponse:
+      title: FieldMappingResponse
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+        MappableFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/MappableSourceField'
+    DefaultProcessingDataSourceOptionsResponse:
+      title: DefaultProcessingDataSourceOptionsResponse
+      type: object
+      properties:
+        OcrLanguages:
+          type: array
+          items:
+            type: string
+        TimeZone:
+          type: integer
+        DocumentNumberingPrefix:
+          type: string
+        DefaultDestinationFolder:
+          type: integer
+        NumberingType:
+          type: string
+        DefaultStartNumber:
+          type:
+          - integer
+          - 'null'
+    GetDiscoveredDocumentIdsAsync_RequestBody:
+      title: GetDiscoveredDocumentIdsAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/CreateProcessingExpressionFilterRequest'
+          $ref: '#/components/schemas/GetDiscoveredDocumentsRequest'
     SortOption:
       title: SortOption
       type: object
@@ -2306,100 +2472,55 @@ components:
           - Descending
           - Ascending
           type: string
-    ProcessingFilter:
-      title: ProcessingFilter
+    ProcessingSetState:
+      title: ProcessingSetState
       type: object
       properties:
-        FilterID:
+        ProcessingSetID:
           type: integer
-        FilterName:
+        InventoryStatus:
           type: string
-        Type:
+        DiscoverStatus:
           type: string
-    UpdateProcessingExpressionFilterRequest:
-      title: UpdateProcessingExpressionFilterRequest
-      type: object
-      properties:
-        FilterName:
+        PublishStatus:
           type: string
-        DataSourceIDs:
-          type: array
-          items:
-            type: integer
-        Expression:
-          type: string
-        IncludeFamily:
+        Canceled:
           type: boolean
-    MappableFieldsResponse:
-      title: MappableFieldsResponse
-      type: object
-      properties:
-        MappableFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/MappableFieldNonPaginated'
-    ConfirmProcessedFilesDeletionAsync_RequestBody:
-      title: ConfirmProcessedFilesDeletionAsync_RequestBody
-      type: object
-      properties:
-        requestGuid:
-          type: string
-    GetProcessedFilesToDeleteResponse:
-      title: GetProcessedFilesToDeleteResponse
-      type: object
-      properties:
-        RequestGuid:
-          type: string
-        Files:
-          type: array
-          items:
-            $ref: '#/components/schemas/FileData'
-        WorkspaceId:
-          type: integer
-    FileData:
-      title: FileData
-      type: object
-      properties:
-        FilePath:
-          type: string
-        FolderDepth:
-          type: integer
-    ProcessingProfileRef:
-      title: ProcessingProfileRef
-      type: object
-      properties:
         ProcessingProfileID:
+          type: integer
+    UpdateAsync_RequestBody:
+      title: UpdateAsync_RequestBody
+      type: object
+      properties:
+        custodian:
+          $ref: '#/components/schemas/ProcessingCustodian'
+    ProcessingSetRef:
+      title: ProcessingSetRef
+      type: object
+      properties:
+        ProcessingSetID:
           type: integer
         Name:
           type: string
-        IsNew:
-          type: boolean
-    GetPublishJobErrorsAsync_RequestBody:
-      title: GetPublishJobErrorsAsync_RequestBody
+    ValidateFieldObjectsAsync_RequestBody:
+      title: ValidateFieldObjectsAsync_RequestBody
       type: object
       properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    ProcessingDocumentErrorHistoryResponse:
-      title: ProcessingDocumentErrorHistoryResponse
+        model:
+          $ref: '#/components/schemas/ExternalMapping'
+        sourceField:
+          $ref: '#/components/schemas/MappableSourceField'
+    FieldMappingRequest:
+      title: FieldMappingRequest
       type: object
       properties:
-        TotalCount:
-          type: integer
-        DocumentErrorHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessingDocumentErrorInfo'
+        Filter:
+          $ref: '#/components/schemas/FieldFilter'
+        SortingOption:
+          $ref: '#/components/schemas/FieldSortingOption'
   parameters:
-    fileID:
-      name: fileID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    dataSourceID:
-      name: dataSourceID
+    processingDataSourceID:
+      name: processingDataSourceID
       in: path
       description: ''
       required: true
@@ -2412,13 +2533,6 @@ components:
       required: true
       schema:
         type: integer
-    processingSetID:
-      name: processingSetID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
     workspaceID:
       name: workspaceID
       in: path
@@ -2426,6 +2540,35 @@ components:
       required: true
       schema:
         type: integer
+    dataSourceID:
+      name: dataSourceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    processingSetID:
+      name: processingSetID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    requestGuid:
+      name: requestGuid
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
     filterID:
       name: filterID
       in: path
@@ -2440,25 +2583,10 @@ components:
       required: true
       schema:
         type: integer
-    requestGuid:
-      name: requestGuid
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    processingDataSourceID:
-      name: processingDataSourceID
+    fileID:
+      name: fileID
       in: path
       description: ''
       required: true
       schema:
         type: integer
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
