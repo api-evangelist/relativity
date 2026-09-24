@@ -68,8 +68,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -99,8 +97,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -130,8 +126,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -161,8 +155,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -193,8 +185,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -224,8 +214,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -255,8 +243,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -287,8 +273,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -320,8 +304,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -351,8 +333,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -383,8 +363,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -414,8 +392,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -447,8 +423,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -479,8 +453,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -511,8 +483,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -542,8 +512,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -573,8 +541,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -604,8 +570,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -635,8 +599,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -666,8 +628,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -697,8 +657,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -728,8 +686,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -759,8 +715,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -790,8 +744,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -821,8 +773,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -852,8 +802,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -883,8 +831,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -914,8 +860,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -947,8 +891,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -979,8 +921,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1011,8 +951,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1042,8 +980,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1073,8 +1009,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1105,8 +1039,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1137,8 +1069,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1170,8 +1100,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1203,8 +1131,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1236,8 +1162,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1269,8 +1193,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1301,8 +1223,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1334,8 +1254,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1365,8 +1283,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1397,8 +1313,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1428,8 +1342,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1461,8 +1373,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1494,8 +1404,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1525,8 +1433,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1556,8 +1462,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1587,8 +1491,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1629,8 +1531,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
@@ -1660,8 +1560,6 @@ apis:
   - type: FinOps
     url: >-
       https://raw.githubusercontent.com/api-evangelist/relativity/refs/heads/main/finops/relativity-finops.yml
-  - type: GraphQL
-    url: graphql/relativity-graphql.md
   - type: Documentation
     url: >-
       https://platform.relativity.com/RelativityOne/Content/Relativity_Platform/Platform_APIs.htm
