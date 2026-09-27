@@ -145,167 +145,7 @@ paths:
         '200':
           description: No description set
 components:
-  parameters:
-    X-CSRF-Header:
-      name: X-CSRF-Header
-      in: header
-      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
-      required: true
-      schema:
-        type: string
-        format: System.String
-        default: .
-    tabArtifactID:
-      name: tabArtifactID
-      in: path
-      description: No description set for this parameter
-      required: true
-      schema:
-        type: integer
-    includeMetadata:
-      name: includeMetadata
-      in: query
-      description: No description set for this parameter
-      required: true
-      schema:
-        type: boolean
-    includeActions:
-      name: includeActions
-      in: query
-      description: No description set for this parameter
-      required: true
-      schema:
-        type: boolean
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: No description set for this parameter
-      required: true
-      schema:
-        type: integer
   schemas:
-    CreateAsync:
-      title: CreateAsync
-      required:
-      - tabRequest
-      properties:
-        tabRequest:
-          title: TabRequest
-          required:
-          - Name
-          - Order
-          - ObjectType
-          - Link
-          - IsShownInSidebar
-          - RelativityApplications
-          - Parent
-          type: object
-          properties:
-            Name:
-              type: string
-              description: ''
-              format: System.String
-            Order:
-              type: integer
-              description: ''
-              format: System.Int32
-            ObjectType:
-              type: object
-              properties:
-                Secured:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-                Value:
-                  type: object
-                  required:
-                  - ArtifactTypeID
-                  properties:
-                    ArtifactTypeID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Name:
-                      type: string
-                      description: ''
-                      format: System.String
-                    ArtifactID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Guids:
-                      type: array
-                      items:
-                        type: string
-                        format: System.Guid
-                  description: ''
-                  format: Relativity.Shared.V1.Models.DisplayableObjectTypeIdentifier
-              description: ''
-              format: Relativity.Shared.V1.Models.Securable`1[[Relativity.Shared.V1.Models.DisplayableObjectTypeIdentifier, Relativity.Shared, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]]
-            Link:
-              type: string
-              description: ''
-              format: System.String
-            IsDefault:
-              type: boolean
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            IsVisible:
-              type: boolean
-              description: ''
-              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
-            IsShownInSidebar:
-              type: boolean
-              description: ''
-              format: System.Boolean
-            RelativityApplications:
-              type: array
-              items:
-                type: object
-                properties:
-                  ArtifactID:
-                    type: integer
-                    description: ''
-                    format: System.Int32
-                  Guids:
-                    type: array
-                    items:
-                      type: string
-                      format: System.Guid
-                format: Relativity.Shared.V1.Models.ObjectIdentifier
-              description: ''
-            LinkType:
-              type: string
-              format: Relativity.Services.Interfaces.DataVisualization.V1.Tab.Models.TabLinkTypeEnum
-            Parent:
-              type: object
-              properties:
-                Secured:
-                  type: boolean
-                  description: ''
-                  format: System.Boolean
-                Value:
-                  type: object
-                  properties:
-                    ArtifactID:
-                      type: integer
-                      description: ''
-                      format: System.Int32
-                    Guids:
-                      type: array
-                      items:
-                        type: string
-                        format: System.Guid
-                  description: ''
-                  format: Relativity.Shared.V1.Models.ObjectIdentifier
-              description: ''
-              format: Relativity.Shared.V1.Models.Securable`1[[Relativity.Shared.V1.Models.ObjectIdentifier, Relativity.Shared, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]]
-            IconIdentifier:
-              type: string
-              description: ''
-              format: System.String
-          additionalProperties: false
-      description: ''
     UpdateAsync:
       title: UpdateAsync
       required:
@@ -431,3 +271,163 @@ components:
           type: string
           format: System.DateTime
       description: ''
+    CreateAsync:
+      title: CreateAsync
+      required:
+      - tabRequest
+      properties:
+        tabRequest:
+          title: TabRequest
+          required:
+          - Name
+          - Order
+          - ObjectType
+          - Link
+          - IsShownInSidebar
+          - RelativityApplications
+          - Parent
+          type: object
+          properties:
+            Name:
+              type: string
+              description: ''
+              format: System.String
+            Order:
+              type: integer
+              description: ''
+              format: System.Int32
+            ObjectType:
+              type: object
+              properties:
+                Secured:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+                Value:
+                  type: object
+                  required:
+                  - ArtifactTypeID
+                  properties:
+                    ArtifactTypeID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Name:
+                      type: string
+                      description: ''
+                      format: System.String
+                    ArtifactID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Guids:
+                      type: array
+                      items:
+                        type: string
+                        format: System.Guid
+                  description: ''
+                  format: Relativity.Shared.V1.Models.DisplayableObjectTypeIdentifier
+              description: ''
+              format: Relativity.Shared.V1.Models.Securable`1[[Relativity.Shared.V1.Models.DisplayableObjectTypeIdentifier, Relativity.Shared, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]]
+            Link:
+              type: string
+              description: ''
+              format: System.String
+            IsDefault:
+              type: boolean
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            IsVisible:
+              type: boolean
+              description: ''
+              format: System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+            IsShownInSidebar:
+              type: boolean
+              description: ''
+              format: System.Boolean
+            RelativityApplications:
+              type: array
+              items:
+                type: object
+                properties:
+                  ArtifactID:
+                    type: integer
+                    description: ''
+                    format: System.Int32
+                  Guids:
+                    type: array
+                    items:
+                      type: string
+                      format: System.Guid
+                format: Relativity.Shared.V1.Models.ObjectIdentifier
+              description: ''
+            LinkType:
+              type: string
+              format: Relativity.Services.Interfaces.DataVisualization.V1.Tab.Models.TabLinkTypeEnum
+            Parent:
+              type: object
+              properties:
+                Secured:
+                  type: boolean
+                  description: ''
+                  format: System.Boolean
+                Value:
+                  type: object
+                  properties:
+                    ArtifactID:
+                      type: integer
+                      description: ''
+                      format: System.Int32
+                    Guids:
+                      type: array
+                      items:
+                        type: string
+                        format: System.Guid
+                  description: ''
+                  format: Relativity.Shared.V1.Models.ObjectIdentifier
+              description: ''
+              format: Relativity.Shared.V1.Models.Securable`1[[Relativity.Shared.V1.Models.ObjectIdentifier, Relativity.Shared, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]]
+            IconIdentifier:
+              type: string
+              description: ''
+              format: System.String
+          additionalProperties: false
+      description: ''
+  parameters:
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .
+    includeActions:
+      name: includeActions
+      in: query
+      description: No description set for this parameter
+      required: true
+      schema:
+        type: boolean
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: No description set for this parameter
+      required: true
+      schema:
+        type: integer
+    includeMetadata:
+      name: includeMetadata
+      in: query
+      description: No description set for this parameter
+      required: true
+      schema:
+        type: boolean
+    tabArtifactID:
+      name: tabArtifactID
+      in: path
+      description: No description set for this parameter
+      required: true
+      schema:
+        type: integer

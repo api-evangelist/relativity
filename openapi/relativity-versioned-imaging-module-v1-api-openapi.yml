@@ -548,135 +548,26 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    PresentationOptions:
-      title: PresentationOptions
+    ImagingSetUpdateRequest:
+      title: ImagingSetUpdateRequest
       type: object
       properties:
-        ShowSpeakerNotes:
-          type: boolean
-        SlideOrientation:
-          enum:
-          - OriginalSetting
-          - Portrait
-          - Landscape
+        Name:
           type: string
-    ImagingSetResponse:
-      title: ImagingSetResponse
-      type: object
-      properties:
-        ImagingJobID:
+        ImagingProfileID:
           type: integer
-    ImagingSet:
-      title: ImagingSet
-      type: object
-      properties:
-        ImagingProfile:
-          $ref: '#/components/schemas/ImagingProfileRef'
         DataSourceID:
           type: integer
         EmailNotificationRecipients:
           type: string
-        Status:
-          $ref: '#/components/schemas/ImagingSetStatus'
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    NativeImagingEngineOptions:
-      title: NativeImagingEngineOptions
-      type: object
-      properties:
-        ImageOutputDpi:
-          type: integer
-        NativeImageFormat:
-          enum:
-          - Tiff
-          - Jpeg
-          type: string
-        RenderColorPagesToJpeg:
-          type:
-          - boolean
-          - 'null'
-        MaxPagesPerDoc:
-          type:
-          - integer
-          - 'null'
-        DitheringAlgorithm:
-          enum:
-          - Clustered6X6
-          - Clustered8X8
-          - Clustered16X16
-          - Dispersed4X4
-          - Dispersed8X8
-          - Dispersed16X16
-          - FloydAndSteinberg
-          - Threshold
-          type:
-          - string
-          - 'null'
-        DitheringThreshold:
-          type:
-          - integer
-          - 'null'
-        TimeZoneFieldOnDocument:
-          $ref: '#/components/schemas/FieldRef'
-        LastModifiedDateOnDocument:
-          $ref: '#/components/schemas/FieldRef'
-    UpdateJobPriorityRequest:
-      title: UpdateJobPriorityRequest
-      type: object
-      properties:
-        Priority:
-          type: integer
-        OriginationID:
-          type:
-          - string
-          - 'null'
-    NativeTypeRef:
-      title: NativeTypeRef
+    ImagingProfileRef:
+      title: ImagingProfileRef
       type: object
       properties:
         ArtifactID:
           type: integer
         Name:
           type: string
-    ImagingProfileUpdateRequest:
-      title: ImagingProfileUpdateRequest
-      type: object
-      properties:
-        ImagingMethod:
-          enum:
-          - Basic
-          - Native
-          type: string
-        NativeOptions:
-          $ref: '#/components/schemas/NativeImagingEngineOptions'
-        SpreadsheetOptions:
-          $ref: '#/components/schemas/SpreadsheetOptions'
-        EmailOptions:
-          $ref: '#/components/schemas/EmailOptions'
-        WordProcessingOptions:
-          $ref: '#/components/schemas/WordProcessingOptions'
-        PresentationOptions:
-          $ref: '#/components/schemas/PresentationOptions'
-        HtmlOptions:
-          $ref: '#/components/schemas/HtmlOptions'
-        ApplicationFieldCodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationFieldCodeRef'
-        Name:
-          type: string
-        BasicOptions:
-          $ref: '#/components/schemas/BasicImagingEngineOptions'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        NativeTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeTypeRef'
     NativeImagingProfileCreateRequest:
       title: NativeImagingProfileCreateRequest
       type: object
@@ -709,105 +600,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/NativeTypeRef'
-    StopImagingJobResponse:
-      title: StopImagingJobResponse
-      type: object
-      properties:
-        Success:
-          type: boolean
-        ErrorMessage:
-          type: string
-    BasicImagingEngineOptions:
-      title: BasicImagingEngineOptions
-      type: object
-      properties:
-        ImageOutputDpi:
-          type: integer
-        BasicImageFormat:
-          enum:
-          - Tiff
-          - Jpeg
-          type: string
-        ImageSize:
-          enum:
-          - OriginalSetting
-          - Letter
-          - A4
-          - Legal
-          - Custom
-          type: string
-        MaximumImageHeight:
-          type:
-          - number
-          - 'null'
-        MaximumImageWidth:
-          type:
-          - number
-          - 'null'
-        BasicWordIncludeComments:
-          type:
-          - boolean
-          - 'null'
-        BasicPowerPointIncludeComments:
-          type:
-          - boolean
-          - 'null'
-        BasicPowerPointShowSpeakerNotes:
-          type:
-          - boolean
-          - 'null'
-        WordIncludeTrackChanges:
-          type:
-          - boolean
-          - 'null'
-    ImagingSetUpdateRequest:
-      title: ImagingSetUpdateRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        ImagingProfileID:
-          type: integer
-        DataSourceID:
-          type: integer
-        EmailNotificationRecipients:
-          type: string
-    UpdateJobPriorityResponse:
-      title: UpdateJobPriorityResponse
-      type: object
-      properties:
-        Success:
-          type: boolean
-        ErrorMessage:
-          type: string
-    DocumentError:
-      title: DocumentError
-      type: object
-      properties:
-        Message:
-          type: string
-        Status:
-          type: string
-    MassImagingResponse:
-      title: MassImagingResponse
-      type: object
-      properties:
-        ImagingJobID:
-          type: integer
-    ImagingProfileRef:
-      title: ImagingProfileRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    HtmlOptions:
-      title: HtmlOptions
-      type: object
-      properties:
-        RemoveNonBreakingSpaceCodes:
-          type: boolean
     ApplicationFieldCode:
       title: ApplicationFieldCode
       type: object
@@ -839,104 +631,6 @@ components:
         ArtifactID:
           type: integer
         Name:
-          type: string
-    ImagingSetStatus:
-      title: ImagingSetStatus
-      type: object
-      properties:
-        ImageCompletion:
-          type: string
-        ImageQCReviewStatus:
-          type: string
-        LastRunError:
-          type: string
-        QCEnabledOnLastRun:
-          type:
-          - boolean
-          - 'null'
-        Status:
-          type: string
-        CompletionRate:
-          type: string
-        StartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-    FieldRef:
-      title: FieldRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        ViewFieldID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
-    MassImageRequest:
-      title: MassImageRequest
-      type: object
-      properties:
-        ProfileID:
-          type: integer
-        MassProcessID:
-          type: string
-        SourceType:
-          enum:
-          - Native
-          - RenderedPdf
-          type: string
-        OriginationID:
-          type:
-          - string
-          - 'null'
-    BasicImagingProfileCreateRequest:
-      title: BasicImagingProfileCreateRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        BasicOptions:
-          $ref: '#/components/schemas/BasicImagingEngineOptions'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        NativeTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeTypeRef'
-    StopImagingJobRequest:
-      title: StopImagingJobRequest
-      type: object
-      properties:
-        OriginationID:
-          type:
-          - string
-          - 'null'
-    ApplicationFieldCodeRef:
-      title: ApplicationFieldCodeRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    ImagingSetCreateRequest:
-      title: ImagingSetCreateRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        ImagingProfileID:
-          type: integer
-        DataSourceID:
-          type: integer
-        EmailNotificationRecipients:
           type: string
     ImagingSetStatusResponse:
       title: ImagingSetStatusResponse
@@ -1018,6 +712,89 @@ components:
           type:
           - integer
           - 'null'
+    ImagingSetResponse:
+      title: ImagingSetResponse
+      type: object
+      properties:
+        ImagingJobID:
+          type: integer
+    FieldRef:
+      title: FieldRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        ViewFieldID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+        Name:
+          type: string
+    ImagingSetRequest:
+      title: ImagingSetRequest
+      type: object
+      properties:
+        QcEnabled:
+          type:
+          - boolean
+          - 'null'
+        OriginationID:
+          type:
+          - string
+          - 'null'
+    ImageOnTheFlyResponse:
+      title: ImageOnTheFlyResponse
+      type: object
+      properties:
+        ImagingJobID:
+          type: integer
+    ApplicationFieldCodeRef:
+      title: ApplicationFieldCodeRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    HtmlOptions:
+      title: HtmlOptions
+      type: object
+      properties:
+        RemoveNonBreakingSpaceCodes:
+          type: boolean
+    ImagingSetStatus:
+      title: ImagingSetStatus
+      type: object
+      properties:
+        ImageCompletion:
+          type: string
+        ImageQCReviewStatus:
+          type: string
+        LastRunError:
+          type: string
+        QCEnabledOnLastRun:
+          type:
+          - boolean
+          - 'null'
+        Status:
+          type: string
+        CompletionRate:
+          type: string
+        StartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+    DocumentError:
+      title: DocumentError
+      type: object
+      properties:
+        Message:
+          type: string
+        Status:
+          type: string
     ApplicationFieldCodeRequest:
       title: ApplicationFieldCodeRequest
       type: object
@@ -1046,6 +823,163 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ImagingProfileRef'
+    MassImageRequest:
+      title: MassImageRequest
+      type: object
+      properties:
+        ProfileID:
+          type: integer
+        MassProcessID:
+          type: string
+        SourceType:
+          enum:
+          - Native
+          - RenderedPdf
+          type: string
+        OriginationID:
+          type:
+          - string
+          - 'null'
+    NativeImagingEngineOptions:
+      title: NativeImagingEngineOptions
+      type: object
+      properties:
+        ImageOutputDpi:
+          type: integer
+        NativeImageFormat:
+          enum:
+          - Tiff
+          - Jpeg
+          type: string
+        RenderColorPagesToJpeg:
+          type:
+          - boolean
+          - 'null'
+        MaxPagesPerDoc:
+          type:
+          - integer
+          - 'null'
+        DitheringAlgorithm:
+          enum:
+          - Clustered6X6
+          - Clustered8X8
+          - Clustered16X16
+          - Dispersed4X4
+          - Dispersed8X8
+          - Dispersed16X16
+          - FloydAndSteinberg
+          - Threshold
+          type:
+          - string
+          - 'null'
+        DitheringThreshold:
+          type:
+          - integer
+          - 'null'
+        TimeZoneFieldOnDocument:
+          $ref: '#/components/schemas/FieldRef'
+        LastModifiedDateOnDocument:
+          $ref: '#/components/schemas/FieldRef'
+    DocumentWarning:
+      title: DocumentWarning
+      type: object
+      properties:
+        Message:
+          type: string
+        Type:
+          type: string
+    BasicImagingEngineOptions:
+      title: BasicImagingEngineOptions
+      type: object
+      properties:
+        ImageOutputDpi:
+          type: integer
+        BasicImageFormat:
+          enum:
+          - Tiff
+          - Jpeg
+          type: string
+        ImageSize:
+          enum:
+          - OriginalSetting
+          - Letter
+          - A4
+          - Legal
+          - Custom
+          type: string
+        MaximumImageHeight:
+          type:
+          - number
+          - 'null'
+        MaximumImageWidth:
+          type:
+          - number
+          - 'null'
+        BasicWordIncludeComments:
+          type:
+          - boolean
+          - 'null'
+        BasicPowerPointIncludeComments:
+          type:
+          - boolean
+          - 'null'
+        BasicPowerPointShowSpeakerNotes:
+          type:
+          - boolean
+          - 'null'
+        WordIncludeTrackChanges:
+          type:
+          - boolean
+          - 'null'
+    StopImagingJobRequest:
+      title: StopImagingJobRequest
+      type: object
+      properties:
+        OriginationID:
+          type:
+          - string
+          - 'null'
+    EmailOptions:
+      title: EmailOptions
+      type: object
+      properties:
+        Orientation:
+          enum:
+          - Portrait
+          - Landscape
+          type: string
+        ResizeImagesToFitPage:
+          type: boolean
+        ResizeTablesToFitPage:
+          type: boolean
+        SplitTablesToFitPageWidth:
+          type: boolean
+        DownloadImagesFromInternet:
+          type: boolean
+        ClearIndentations:
+          type: boolean
+        DetectCharacterEncoding:
+          type: boolean
+        DisplaySmtpAddresses:
+          type: boolean
+        ShowMessageTypeInHeader:
+          type: boolean
+    BasicImagingProfileCreateRequest:
+      title: BasicImagingProfileCreateRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        BasicOptions:
+          $ref: '#/components/schemas/BasicImagingEngineOptions'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+        NativeTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NativeTypeRef'
     ImagingProfile:
       title: ImagingProfile
       type: object
@@ -1085,20 +1019,132 @@ components:
           type: integer
         Name:
           type: string
-    ImageOnTheFlyRequest:
-      title: ImageOnTheFlyRequest
+    ImagingSetCreateRequest:
+      title: ImagingSetCreateRequest
       type: object
       properties:
-        ProfileID:
-          type: integer
-        AlternateNativeLocation:
+        Name:
           type: string
-        RemoveAlternateNativeAfterImaging:
-          type: boolean
+        ImagingProfileID:
+          type: integer
+        DataSourceID:
+          type: integer
+        EmailNotificationRecipients:
+          type: string
+    UpdateJobPriorityRequest:
+      title: UpdateJobPriorityRequest
+      type: object
+      properties:
+        Priority:
+          type: integer
         OriginationID:
           type:
           - string
           - 'null'
+    MassImagingResponse:
+      title: MassImagingResponse
+      type: object
+      properties:
+        ImagingJobID:
+          type: integer
+    DocumentStatusResponse:
+      title: DocumentStatusResponse
+      type: object
+      properties:
+        ImageCount:
+          type: integer
+        Error:
+          $ref: '#/components/schemas/DocumentError'
+        Warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentWarning'
+        HasImages:
+          type: string
+    ImagingSet:
+      title: ImagingSet
+      type: object
+      properties:
+        ImagingProfile:
+          $ref: '#/components/schemas/ImagingProfileRef'
+        DataSourceID:
+          type: integer
+        EmailNotificationRecipients:
+          type: string
+        Status:
+          $ref: '#/components/schemas/ImagingSetStatus'
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    WordProcessingOptions:
+      title: WordProcessingOptions
+      type: object
+      properties:
+        ShowTrackChanges:
+          type: boolean
+        PageOrientation:
+          enum:
+          - OriginalSetting
+          - Portrait
+          - Landscape
+          type: string
+        Include:
+          type: array
+          items:
+            enum:
+            - Comments
+            - FieldCodes
+            - HiddenText
+            type: string
+    PresentationOptions:
+      title: PresentationOptions
+      type: object
+      properties:
+        ShowSpeakerNotes:
+          type: boolean
+        SlideOrientation:
+          enum:
+          - OriginalSetting
+          - Portrait
+          - Landscape
+          type: string
+    NativeType:
+      title: NativeType
+      type: object
+      properties:
+        BasicCategory:
+          enum:
+          - Other
+          - Database
+          - Graphic
+          - Multimedia
+          - Spreadsheet
+          - WordProcessor
+          type: string
+        NativeCategory:
+          enum:
+          - Other
+          - Spreadsheet
+          - Email
+          - WordProcessor
+          - Presentation
+          - Html
+          type:
+          - string
+          - 'null'
+        UseNativeImaging:
+          type: boolean
+        RestrictedFromImagingByDefault:
+          type: boolean
+        FileTypeID:
+          type: integer
+        PreventNativeDownload:
+          type: boolean
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
     SpreadsheetOptions:
       title: SpreadsheetOptions
       type: object
@@ -1182,165 +1228,84 @@ components:
             - RemoveBackgroundFillColors
             - SetTextColorToBlack
             type: string
-    NativeType:
-      title: NativeType
+    NativeTypeRef:
+      title: NativeTypeRef
       type: object
       properties:
-        BasicCategory:
-          enum:
-          - Other
-          - Database
-          - Graphic
-          - Multimedia
-          - Spreadsheet
-          - WordProcessor
-          type: string
-        NativeCategory:
-          enum:
-          - Other
-          - Spreadsheet
-          - Email
-          - WordProcessor
-          - Presentation
-          - Html
-          type:
-          - string
-          - 'null'
-        UseNativeImaging:
-          type: boolean
-        RestrictedFromImagingByDefault:
-          type: boolean
-        FileTypeID:
-          type: integer
-        PreventNativeDownload:
-          type: boolean
         ArtifactID:
           type: integer
         Name:
           type: string
-    WordProcessingOptions:
-      title: WordProcessingOptions
+    ImagingProfileUpdateRequest:
+      title: ImagingProfileUpdateRequest
       type: object
       properties:
-        ShowTrackChanges:
-          type: boolean
-        PageOrientation:
+        ImagingMethod:
           enum:
-          - OriginalSetting
-          - Portrait
-          - Landscape
+          - Basic
+          - Native
           type: string
-        Include:
+        NativeOptions:
+          $ref: '#/components/schemas/NativeImagingEngineOptions'
+        SpreadsheetOptions:
+          $ref: '#/components/schemas/SpreadsheetOptions'
+        EmailOptions:
+          $ref: '#/components/schemas/EmailOptions'
+        WordProcessingOptions:
+          $ref: '#/components/schemas/WordProcessingOptions'
+        PresentationOptions:
+          $ref: '#/components/schemas/PresentationOptions'
+        HtmlOptions:
+          $ref: '#/components/schemas/HtmlOptions'
+        ApplicationFieldCodes:
           type: array
           items:
-            enum:
-            - Comments
-            - FieldCodes
-            - HiddenText
-            type: string
-    DocumentStatusResponse:
-      title: DocumentStatusResponse
-      type: object
-      properties:
-        ImageCount:
-          type: integer
-        Error:
-          $ref: '#/components/schemas/DocumentError'
-        Warnings:
+            $ref: '#/components/schemas/ApplicationFieldCodeRef'
+        Name:
+          type: string
+        BasicOptions:
+          $ref: '#/components/schemas/BasicImagingEngineOptions'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+        NativeTypes:
           type: array
           items:
-            $ref: '#/components/schemas/DocumentWarning'
-        HasImages:
-          type: string
-    EmailOptions:
-      title: EmailOptions
+            $ref: '#/components/schemas/NativeTypeRef'
+    StopImagingJobResponse:
+      title: StopImagingJobResponse
       type: object
       properties:
-        Orientation:
-          enum:
-          - Portrait
-          - Landscape
+        Success:
+          type: boolean
+        ErrorMessage:
           type: string
-        ResizeImagesToFitPage:
-          type: boolean
-        ResizeTablesToFitPage:
-          type: boolean
-        SplitTablesToFitPageWidth:
-          type: boolean
-        DownloadImagesFromInternet:
-          type: boolean
-        ClearIndentations:
-          type: boolean
-        DetectCharacterEncoding:
-          type: boolean
-        DisplaySmtpAddresses:
-          type: boolean
-        ShowMessageTypeInHeader:
-          type: boolean
-    ImageOnTheFlyResponse:
-      title: ImageOnTheFlyResponse
+    UpdateJobPriorityResponse:
+      title: UpdateJobPriorityResponse
       type: object
       properties:
-        ImagingJobID:
+        Success:
+          type: boolean
+        ErrorMessage:
+          type: string
+    ImageOnTheFlyRequest:
+      title: ImageOnTheFlyRequest
+      type: object
+      properties:
+        ProfileID:
           type: integer
-    DocumentWarning:
-      title: DocumentWarning
-      type: object
-      properties:
-        Message:
+        AlternateNativeLocation:
           type: string
-        Type:
-          type: string
-    ImagingSetRequest:
-      title: ImagingSetRequest
-      type: object
-      properties:
-        QcEnabled:
-          type:
-          - boolean
-          - 'null'
+        RemoveAlternateNativeAfterImaging:
+          type: boolean
         OriginationID:
           type:
           - string
           - 'null'
   parameters:
-    documentArtifactID:
-      name: documentArtifactID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    documentID:
-      name: documentID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
     imagingProfileID:
       name: imagingProfileID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    nativeTypeID:
-      name: nativeTypeID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    applicationFieldCodeID:
-      name: applicationFieldCodeID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    imagingJobID:
-      name: imagingJobID
       in: path
       description: ''
       required: true
@@ -1354,6 +1319,27 @@ components:
       schema:
         type: string
         default: '-'
+    documentArtifactID:
+      name: documentArtifactID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    applicationFieldCodeID:
+      name: applicationFieldCodeID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    nativeTypeID:
+      name: nativeTypeID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
     imagingSetID:
       name: imagingSetID
       in: path
@@ -1363,6 +1349,20 @@ components:
         type: integer
     workspaceID:
       name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    documentID:
+      name: documentID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    imagingJobID:
+      name: imagingJobID
       in: path
       description: ''
       required: true

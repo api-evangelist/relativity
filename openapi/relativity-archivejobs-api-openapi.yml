@@ -144,123 +144,18 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    NotificationOptions:
-      type: object
-      properties:
-        notifyJobRunner:
-          type: boolean
-          description: 'Gets or sets a value indicating whether to notify both creator and runner.
-
-            When true, notifications are sent to both creator and executor.'
-        additionalRecipients:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          description: Gets or sets the list of additional recipient emails.
-      additionalProperties: false
-      description: ARM Job notification options
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
     UpdateArchiveJobResponse:
       type: object
       additionalProperties: false
       description: Response for Archive Job update
-    ArchiveJobRequestWrapper:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest'
-      additionalProperties: false
-      description: Request to create new Archive job
-    ArchiveJobResponse:
-      type: object
-      properties:
-        jobID:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets the Job id.
-        jobName:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets the Job name.
-        archivePath:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets the path to the archive.
-        workspaceID:
-          type: integer
-          description: Gets or sets the Workspace id.
-          format: int32
-        scheduledStartTime:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets scheduled start time.
-          format: date-time
-        jobDetails:
-          $ref: '#/components/schemas/JobDetails'
-        excludedMigrators:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          description: Gets or sets the migrators excluded from this archive job.
-        migratorOptions:
-          type:
-          - object
-          - 'null'
-          additionalProperties: {}
-          description: 'Gets or sets per-migrator configuration used for this job.
-
-            Key = migrator name,
-
-            Value = JSON  with migrator-specific parameters.'
-        notificationOptions:
-          $ref: '#/components/schemas/NotificationOptions'
-        uiJobActionsLocked:
-          type: boolean
-          description: Gets or sets a value indicating whether this job ui actions are locked.
-      additionalProperties: false
-      description: Response with Archive Job
-    CreateArchiveJobResponse:
-      type: object
-      properties:
-        jobID:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets the created Job id.
-      additionalProperties: false
-      description: Response for Archive Job creation
+    JobPriority:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: Job priority levels
+      format: int32
     JobActions:
       type: object
       properties:
@@ -280,28 +175,13 @@ components:
           description: User who performed the action
       additionalProperties: false
       description: Represents an action performed on a job
-    JobPriority:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: Job priority levels
-      format: int32
-    JobDetails:
+    ArchiveJobRequestWrapper:
       type: object
       properties:
-        priority:
-          $ref: '#/components/schemas/JobPriority'
-        actionsHistory:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/JobActions'
-          description: Gets or sets job action history.
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest'
       additionalProperties: false
-      description: ARM Job details
+      description: Request to create new Archive job
     ArchiveJobRequest:
       type: object
       properties:
@@ -369,3 +249,123 @@ components:
           description: Gets or sets a value indicating whether this job ui actions are locked
       additionalProperties: false
       description: Request to create new Archive job
+    ArchiveJobResponse:
+      type: object
+      properties:
+        jobID:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets the Job id.
+        jobName:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets the Job name.
+        archivePath:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets the path to the archive.
+        workspaceID:
+          type: integer
+          description: Gets or sets the Workspace id.
+          format: int32
+        scheduledStartTime:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets scheduled start time.
+          format: date-time
+        jobDetails:
+          $ref: '#/components/schemas/JobDetails'
+        excludedMigrators:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: Gets or sets the migrators excluded from this archive job.
+        migratorOptions:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+          description: 'Gets or sets per-migrator configuration used for this job.
+
+            Key = migrator name,
+
+            Value = JSON  with migrator-specific parameters.'
+        notificationOptions:
+          $ref: '#/components/schemas/NotificationOptions'
+        uiJobActionsLocked:
+          type: boolean
+          description: Gets or sets a value indicating whether this job ui actions are locked.
+      additionalProperties: false
+      description: Response with Archive Job
+    JobDetails:
+      type: object
+      properties:
+        priority:
+          $ref: '#/components/schemas/JobPriority'
+        actionsHistory:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/JobActions'
+          description: Gets or sets job action history.
+      additionalProperties: false
+      description: ARM Job details
+    CreateArchiveJobResponse:
+      type: object
+      properties:
+        jobID:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets the created Job id.
+      additionalProperties: false
+      description: Response for Archive Job creation
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    NotificationOptions:
+      type: object
+      properties:
+        notifyJobRunner:
+          type: boolean
+          description: 'Gets or sets a value indicating whether to notify both creator and runner.
+
+            When true, notifications are sent to both creator and executor.'
+        additionalRecipients:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: Gets or sets the list of additional recipient emails.
+      additionalProperties: false
+      description: ARM Job notification options

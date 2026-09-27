@@ -40,6 +40,18 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    JobProgressStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      description: Job progress status values
+      format: int32
     JobProgressResponse:
       type: object
       properties:
@@ -77,15 +89,3 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    JobProgressStatus:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      type: integer
-      description: Job progress status values
-      format: int32

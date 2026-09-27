@@ -173,7 +173,7 @@ paths:
       tags:
       - DtSearchIndex Module v1
       description: '[Public] IDtSearchIndexManager -'
-      operationId: Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexShareLocationAsync
+      operationId: getRelativityDtsearchV1WorkspacesByWorkspaceIDByResourcePoolIDIndexShares
       parameters:
       - $ref: '#/components/parameters/workspaceID'
       - $ref: '#/components/parameters/resourcePoolID'
@@ -189,6 +189,8 @@ paths:
                   $ref: '#/components/schemas/NameIDPair'
       summary: Relativity DT search V1 DT search index manager IDt search index manager get…
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.GetIndexShareLocationAsync
   /relativity-dtsearch/v1/workspaces/{workspaceID}/dtsearch-indexes/all:
     get:
       tags:
@@ -752,7 +754,7 @@ paths:
       tags:
       - DtSearchIndex Module v1
       description: '[Public] IDtSearchIndexManager -'
-      operationId: Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.ReadAsync
+      operationId: getRelativityDtsearchV1WorkspacesByWorkspaceIDDtsearchIndexesByDtSearchArtifactIDByIncludeMetaDataByIncludeActions
       parameters:
       - $ref: '#/components/parameters/workspaceID'
       - $ref: '#/components/parameters/dtSearchArtifactID'
@@ -768,6 +770,8 @@ paths:
                 $ref: '#/components/schemas/DtSearchIndexResponse'
       summary: Relativity DT search V1 DT search index manager IDt search index manager read…
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Relativity.DTSearch.V1.DTSearchIndexManager.IDtSearchIndexManager.ReadAsync
   /relativity-dtsearch/v1/workspaces/{workspaceID}/dtsearch-indexes/{dtSearchArtifactID}/delete-index:
     delete:
       tags:
@@ -875,89 +879,12 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    FullBuildIndexAsync_RequestBody:
-      title: FullBuildIndexAsync_RequestBody
+    IncrementalBuildIndexAsync_RequestBody:
+      title: IncrementalBuildIndexAsync_RequestBody
       type: object
       properties:
         isActive:
           type: boolean
-    GetFilteredDocumentErrorsAsync_RequestBody:
-      title: GetFilteredDocumentErrorsAsync_RequestBody
-      type: object
-      properties:
-        filterRequest:
-          $ref: '#/components/schemas/DtSearchIndexFilterRequest'
-    Workload:
-      title: Workload
-      type: object
-      properties:
-        Size:
-          enum:
-          - None
-          - One
-          - S
-          - M
-          - L
-          - XL
-          - XXL
-          type: string
-    DtSearchIndexFilterRequest:
-      title: DtSearchIndexFilterRequest
-      type: object
-      properties:
-        Start:
-          type: integer
-        Length:
-          type: integer
-        Sort:
-          $ref: '#/components/schemas/DtSearchIndexSort'
-        Filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/DtSearchIndexFilter'
-    DtSearchQueueAdmin:
-      title: DtSearchQueueAdmin
-      type: object
-      properties:
-        WorkspaceId:
-          type: integer
-        Status:
-          type: string
-        JobType:
-          type: string
-        Priority:
-          type: integer
-        SubmittedDate:
-          type: string
-          format: date-time
-        DtSearchIndexArtifactId:
-          type: integer
-        JobID:
-          type: string
-    CreateAsync_RequestBody:
-      title: CreateAsync_RequestBody
-      type: object
-      properties:
-        dtSearchIndexRequest:
-          $ref: '#/components/schemas/DtSearchIndexRequest'
-    DtSearchQueueAdminFilterSort:
-      title: DtSearchQueueAdminFilterSort
-      type: object
-      properties:
-        Field:
-          type: string
-        Direction:
-          type: string
-    DtSearchIndexStatus:
-      title: DtSearchIndexStatus
-      type: object
-      properties:
-        ID:
-          type: integer
-        Status:
-          type: string
-        DetailedStatus:
-          type: string
     DtSearchIndexStatisticsResponse:
       title: DtSearchIndexStatisticsResponse
       type: object
@@ -974,11 +901,247 @@ components:
           type: string
         BuildTime:
           type: string
-    DtSearchSubIndexTableResponse:
-      title: DtSearchSubIndexTableResponse
+    DtSearchIndexStatus:
+      title: DtSearchIndexStatus
       type: object
       properties:
-        TotalCount:
+        ID:
+          type: integer
+        Status:
+          type: string
+        DetailedStatus:
+          type: string
+    DtSearchQueueAdminFilterRequest:
+      title: DtSearchQueueAdminFilterRequest
+      type: object
+      properties:
+        Filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/DtSearchQueueAdminFilter'
+        Sort:
+          $ref: '#/components/schemas/DtSearchQueueAdminFilterSort'
+        Start:
+          type: integer
+        Length:
+          type: integer
+    DtSearchIndexFilter:
+      title: DtSearchIndexFilter
+      type: object
+      properties:
+        Condition:
+          type: array
+          items:
+            $ref: '#/components/schemas/DtSearchIndexFilterCondition'
+        Field:
+          type: string
+        isAdvanced:
+          type: boolean
+    GetAllIndexesInWorkspaceFilteredAsync_RequestBody:
+      title: GetAllIndexesInWorkspaceFilteredAsync_RequestBody
+      type: object
+      properties:
+        filterRequest:
+          $ref: '#/components/schemas/DtSearchIndexFilterRequest'
+    DtSearchIndexJobProgressResponse:
+      title: DtSearchIndexJobProgressResponse
+      type: object
+      properties:
+        IndexName:
+          type: string
+        JobType:
+          type: string
+        JobStatus:
+          type: string
+        JobStage:
+          type: integer
+        IsStageInError:
+          type: boolean
+        TotalIndexed:
+          type: integer
+        TotalErrored:
+          type: integer
+        TotalSkipped:
+          type: integer
+        ProgressPercentage:
+          type: number
+        JobDurationString:
+          type: string
+        IndexBuildDurationString:
+          type: string
+        ErrorMessage:
+          type: string
+        CanActivate:
+          type: boolean
+        RetriesExist:
+          type: boolean
+        DocProgress:
+          type: array
+          items:
+            $ref: '#/components/schemas/DtSearchDocumentProgressResponse'
+        SubIndexEngineJobStates:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubIndexEngineJobStateResponse'
+        QueuePosition:
+          type: integer
+    TimeSpan:
+      title: TimeSpan
+      type: object
+      properties:
+        Ticks:
+          type: integer
+        Days:
+          type: integer
+        Hours:
+          type: integer
+        Milliseconds:
+          type: integer
+        Minutes:
+          type: integer
+        Seconds:
+          type: integer
+        TotalDays:
+          type: number
+        TotalHours:
+          type: number
+        TotalMilliseconds:
+          type: number
+        TotalMinutes:
+          type: number
+        TotalSeconds:
+          type: number
+    DtSearchIndexSort:
+      title: DtSearchIndexSort
+      type: object
+      properties:
+        Field:
+          type: string
+        Order:
+          type: integer
+        Direction:
+          type: string
+    DtSearchSubIndexResponse:
+      title: DtSearchSubIndexResponse
+      type: object
+      properties:
+        DtSearchIndexId:
+          type: integer
+        DtSearchSubIndexId:
+          type: integer
+        BuildStatus:
+          type: string
+        WorkerAgent:
+          type: string
+        IsWorkerAgentEnabled:
+          type: string
+        RepositoryName:
+          type: string
+        IndexLocation:
+          type: string
+        SubIndexLocation:
+          type: string
+        IndexedDocumentCount:
+          type: integer
+        TotalDocumentCount:
+          type: integer
+        ErroredDocumentCount:
+          type: integer
+        FragmentationLevel:
+          type: integer
+        ErrorMessage:
+          type: string
+    DtSearchResourceWorkerCount:
+      title: DtSearchResourceWorkerCount
+      type: object
+      properties:
+        DisabledWorkersInResourcePoolCount:
+          type: integer
+        DisabledWorkersInInstance:
+          type: integer
+        EnabledWorkersInResourcePoolCount:
+          type: integer
+        EnabledWorkersInInstance:
+          type: integer
+    SwapIndexAsync_RequestBody:
+      title: SwapIndexAsync_RequestBody
+      type: object
+      properties:
+        oldSearchProviderID:
+          type: integer
+        newSearchProviderID:
+          type: integer
+    DtSearchIndexFilterCondition:
+      title: DtSearchIndexFilterCondition
+      type: object
+      properties:
+        DisplayValue:
+          type: array
+          items:
+            type: string
+        Operator:
+          type: string
+        Value:
+          type: array
+          items:
+            type: string
+    DtSearchQueueAdminServiceResponse:
+      title: DtSearchQueueAdminServiceResponse
+      type: object
+      properties:
+        DtSearchQueueAdminRows:
+          type: array
+          items:
+            $ref: '#/components/schemas/DtSearchQueueAdmin'
+        Total:
+          type: integer
+    DtSearchQueueAdminFilter:
+      title: DtSearchQueueAdminFilter
+      type: object
+      properties:
+        Conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DtSearchQueueAdminFilterCondition'
+        Field:
+          type: string
+        isAdvanced:
+          type: boolean
+    CreateAsync_RequestBody:
+      title: CreateAsync_RequestBody
+      type: object
+      properties:
+        dtSearchIndexRequest:
+          $ref: '#/components/schemas/DtSearchIndexRequest'
+    DtSearchQueueAdminFilterSort:
+      title: DtSearchQueueAdminFilterSort
+      type: object
+      properties:
+        Field:
+          type: string
+        Direction:
+          type: string
+    GetFilteredDocumentErrorsAsync_RequestBody:
+      title: GetFilteredDocumentErrorsAsync_RequestBody
+      type: object
+      properties:
+        filterRequest:
+          $ref: '#/components/schemas/DtSearchIndexFilterRequest'
+    NameIDPair:
+      title: NameIDPair
+      type: object
+      properties:
+        Name:
+          type: string
+        ID:
+          type: integer
+    SubIndexJobStateDetailsResponse:
+      title: SubIndexJobStateDetailsResponse
+      type: object
+      properties:
+        IndexingStepName:
+          type: string
+        MergeProgressPercent:
           type: integer
     DtSearchIndexServiceResponse:
       title: DtSearchIndexServiceResponse
@@ -990,9 +1153,18 @@ components:
             $ref: '#/components/schemas/DtSearchIndex'
         Total:
           type: integer
-    DtSearchQueueAdminUpdateRequest:
-      title: DtSearchQueueAdminUpdateRequest
+    CurrentIndexDetailsAsync_RequestBody:
+      title: CurrentIndexDetailsAsync_RequestBody
       type: object
+      properties:
+        filterRequest:
+          $ref: '#/components/schemas/DtSearchIndexFilterRequest'
+    SetDtSearchIndexLocationToNullAsync_RequestBody:
+      title: SetDtSearchIndexLocationToNullAsync_RequestBody
+      type: object
+      properties:
+        workspaceArtifactID:
+          type: integer
     DateTimeOffset:
       title: DateTimeOffset
       type: object
@@ -1047,208 +1219,14 @@ components:
           $ref: '#/components/schemas/TimeSpan'
         Year:
           type: integer
-    BuildIndexAsync_RequestBody:
-      title: BuildIndexAsync_RequestBody
+    DeleteSubIndex_RequestBody:
+      title: DeleteSubIndex_RequestBody
       type: object
       properties:
-        isActive:
-          type: boolean
-    DtSearchIndexDocumentErrorResponse:
-      title: DtSearchIndexDocumentErrorResponse
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        DocumentFriendlyName:
-          type: string
-        ErrorMessage:
-          type: string
-    DtSearchIndexFilterCondition:
-      title: DtSearchIndexFilterCondition
-      type: object
-      properties:
-        DisplayValue:
+        dtSearchSubIndexIDs:
           type: array
           items:
-            type: string
-        Operator:
-          type: string
-        Value:
-          type: array
-          items:
-            type: string
-    DtSearchQueueAdminFilterRequest:
-      title: DtSearchQueueAdminFilterRequest
-      type: object
-      properties:
-        Filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/DtSearchQueueAdminFilter'
-        Sort:
-          $ref: '#/components/schemas/DtSearchQueueAdminFilterSort'
-        Start:
-          type: integer
-        Length:
-          type: integer
-    DtSearchResourceWorkerCount:
-      title: DtSearchResourceWorkerCount
-      type: object
-      properties:
-        DisabledWorkersInResourcePoolCount:
-          type: integer
-        DisabledWorkersInInstance:
-          type: integer
-        EnabledWorkersInResourcePoolCount:
-          type: integer
-        EnabledWorkersInInstance:
-          type: integer
-    SubIndexJobStateDetailsResponse:
-      title: SubIndexJobStateDetailsResponse
-      type: object
-      properties:
-        IndexingStepName:
-          type: string
-        MergeProgressPercent:
-          type: integer
-    SwapIndexAsync_RequestBody:
-      title: SwapIndexAsync_RequestBody
-      type: object
-      properties:
-        oldSearchProviderID:
-          type: integer
-        newSearchProviderID:
-          type: integer
-    SubIndexEngineJobStateResponse:
-      title: SubIndexEngineJobStateResponse
-      type: object
-      properties:
-        IndexID:
-          type: integer
-        SubIndexID:
-          type: integer
-        JobID:
-          type: string
-        JobState:
-          $ref: '#/components/schemas/SubIndexJobStateDetailsResponse'
-        UpdatedDate:
-          $ref: '#/components/schemas/DateTimeOffset'
-    GetAllJobsFilteredAsync_RequestBody:
-      title: GetAllJobsFilteredAsync_RequestBody
-      type: object
-      properties:
-        filterRequest:
-          $ref: '#/components/schemas/DtSearchQueueAdminFilterRequest'
-    DtSearchQueueAdminServiceResponse:
-      title: DtSearchQueueAdminServiceResponse
-      type: object
-      properties:
-        DtSearchQueueAdminRows:
-          type: array
-          items:
-            $ref: '#/components/schemas/DtSearchQueueAdmin'
-        Total:
-          type: integer
-    DtSearchDocumentProgressResponse:
-      title: DtSearchDocumentProgressResponse
-      type: object
-      properties:
-        IndexID:
-          type: integer
-        ArtifactID:
-          type: integer
-        SubIndexID:
-          type: integer
-        StartTimeUTC:
-          type: string
-          format: date-time
-        SizeInBytes:
-          type: integer
-    UpdateJobPriorityAsync_RequestBody:
-      title: UpdateJobPriorityAsync_RequestBody
-      type: object
-      properties:
-        updateRequest:
-          $ref: '#/components/schemas/DtSearchQueueAdminUpdateRequest'
-    DtSearchIndexJobProgressResponse:
-      title: DtSearchIndexJobProgressResponse
-      type: object
-      properties:
-        IndexName:
-          type: string
-        JobType:
-          type: string
-        JobStatus:
-          type: string
-        JobStage:
-          type: integer
-        IsStageInError:
-          type: boolean
-        TotalIndexed:
-          type: integer
-        TotalErrored:
-          type: integer
-        TotalSkipped:
-          type: integer
-        ProgressPercentage:
-          type: number
-        JobDurationString:
-          type: string
-        IndexBuildDurationString:
-          type: string
-        ErrorMessage:
-          type: string
-        CanActivate:
-          type: boolean
-        RetriesExist:
-          type: boolean
-        DocProgress:
-          type: array
-          items:
-            $ref: '#/components/schemas/DtSearchDocumentProgressResponse'
-        SubIndexEngineJobStates:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubIndexEngineJobStateResponse'
-        QueuePosition:
-          type: integer
-    DtSearchIndexOptionDetailsResponse:
-      title: DtSearchIndexOptionDetailsResponse
-      type: object
-      properties:
-        AlphabetInSql:
-          type: boolean
-        AlphabetOnDisk:
-          type: boolean
-        AlphabetMatchesDefault:
-          type: boolean
-        AlphabetIsDirty:
-          type: boolean
-        NoiseWordsInSql:
-          type: boolean
-        NoiseWordsOnDisk:
-          type: boolean
-        NoiseWordsMatchDefault:
-          type: boolean
-        NoiseWordsAreDirty:
-          type: boolean
-        IndexIsCorrupted:
-          type: boolean
-    IncrementalBuildIndexAsync_RequestBody:
-      title: IncrementalBuildIndexAsync_RequestBody
-      type: object
-      properties:
-        isActive:
-          type: boolean
-    DtSearchIndexDocumentErrorFilteredResponse:
-      title: DtSearchIndexDocumentErrorFilteredResponse
-      type: object
-    SetDtSearchIndexLocationToEmptyStringAsync_RequestBody:
-      title: SetDtSearchIndexLocationToEmptyStringAsync_RequestBody
-      type: object
-      properties:
-        workspaceArtifactID:
-          type: integer
+            type: integer
     DtSearchIndexRequest:
       title: DtSearchIndexRequest
       type: object
@@ -1291,115 +1269,95 @@ components:
           type:
           - integer
           - 'null'
-    TimeSpan:
-      title: TimeSpan
+    DtSearchIndexOptionDetailsResponse:
+      title: DtSearchIndexOptionDetailsResponse
       type: object
       properties:
-        Ticks:
-          type: integer
-        Days:
-          type: integer
-        Hours:
-          type: integer
-        Milliseconds:
-          type: integer
-        Minutes:
-          type: integer
-        Seconds:
-          type: integer
-        TotalDays:
-          type: number
-        TotalHours:
-          type: number
-        TotalMilliseconds:
-          type: number
-        TotalMinutes:
-          type: number
-        TotalSeconds:
-          type: number
-    CurrentIndexDetailsAsync_RequestBody:
-      title: CurrentIndexDetailsAsync_RequestBody
+        AlphabetInSql:
+          type: boolean
+        AlphabetOnDisk:
+          type: boolean
+        AlphabetMatchesDefault:
+          type: boolean
+        AlphabetIsDirty:
+          type: boolean
+        NoiseWordsInSql:
+          type: boolean
+        NoiseWordsOnDisk:
+          type: boolean
+        NoiseWordsMatchDefault:
+          type: boolean
+        NoiseWordsAreDirty:
+          type: boolean
+        IndexIsCorrupted:
+          type: boolean
+    UpdateJobPriorityAsync_RequestBody:
+      title: UpdateJobPriorityAsync_RequestBody
+      type: object
+      properties:
+        updateRequest:
+          $ref: '#/components/schemas/DtSearchQueueAdminUpdateRequest'
+    DtSearchQueueAdminUpdateRequest:
+      title: DtSearchQueueAdminUpdateRequest
+      type: object
+    GetAllJobsFilteredAsync_RequestBody:
+      title: GetAllJobsFilteredAsync_RequestBody
       type: object
       properties:
         filterRequest:
-          $ref: '#/components/schemas/DtSearchIndexFilterRequest'
-    DtSearchIndexResponse:
-      title: DtSearchIndexResponse
-      type: object
-    GetAllIndexesInWorkspaceFilteredAsync_RequestBody:
-      title: GetAllIndexesInWorkspaceFilteredAsync_RequestBody
+          $ref: '#/components/schemas/DtSearchQueueAdminFilterRequest'
+    DtSearchIndexDocumentErrorResponse:
+      title: DtSearchIndexDocumentErrorResponse
       type: object
       properties:
-        filterRequest:
-          $ref: '#/components/schemas/DtSearchIndexFilterRequest'
-    NameIDPair:
-      title: NameIDPair
-      type: object
-      properties:
-        Name:
-          type: string
-        ID:
+        ArtifactID:
           type: integer
-    DtSearchIndexFilter:
-      title: DtSearchIndexFilter
+        DocumentFriendlyName:
+          type: string
+        ErrorMessage:
+          type: string
+    ThresholdCompressIndexAsync_RequestBody:
+      title: ThresholdCompressIndexAsync_RequestBody
       type: object
       properties:
-        Condition:
-          type: array
-          items:
-            $ref: '#/components/schemas/DtSearchIndexFilterCondition'
-        Field:
-          type: string
-        isAdvanced:
+        isActive:
           type: boolean
-    DtSearchIndexSort:
-      title: DtSearchIndexSort
+    Workload:
+      title: Workload
       type: object
       properties:
-        Field:
+        Size:
+          enum:
+          - None
+          - One
+          - S
+          - M
+          - L
+          - XL
+          - XXL
           type: string
-        Order:
+    DtSearchIndexDocumentErrorFilteredResponse:
+      title: DtSearchIndexDocumentErrorFilteredResponse
+      type: object
+    DtSearchQueueAdmin:
+      title: DtSearchQueueAdmin
+      type: object
+      properties:
+        WorkspaceId:
           type: integer
-        Direction:
+        Status:
           type: string
-    DtSearchQueueAdminFilter:
-      title: DtSearchQueueAdminFilter
-      type: object
-      properties:
-        Conditions:
-          type: array
-          items:
-            $ref: '#/components/schemas/DtSearchQueueAdminFilterCondition'
-        Field:
+        JobType:
           type: string
-        isAdvanced:
-          type: boolean
-    SetDtSearchIndexLocationToNullAsync_RequestBody:
-      title: SetDtSearchIndexLocationToNullAsync_RequestBody
-      type: object
-      properties:
-        workspaceArtifactID:
+        Priority:
           type: integer
-    UpdateAsync_RequestBody:
-      title: UpdateAsync_RequestBody
-      type: object
-      properties:
-        dtSearchIndexRequest:
-          $ref: '#/components/schemas/DtSearchIndexRequest'
-    DtSearchQueueAdminFilterCondition:
-      title: DtSearchQueueAdminFilterCondition
-      type: object
-      properties:
-        DisplayValue:
-          type: array
-          items:
-            type: string
-        Operator:
+        SubmittedDate:
           type: string
-        Value:
-          type: array
-          items:
-            type: string
+          format: date-time
+        DtSearchIndexArtifactId:
+          type: integer
+        JobID:
+          type: string
     DtSearchIndex:
       title: DtSearchIndex
       type: object
@@ -1415,67 +1373,99 @@ components:
           format: date-time
         SearchableSetName:
           type: string
-    DtSearchSubIndexResponse:
-      title: DtSearchSubIndexResponse
+    DtSearchSubIndexTableResponse:
+      title: DtSearchSubIndexTableResponse
       type: object
       properties:
-        DtSearchIndexId:
+        TotalCount:
           type: integer
-        DtSearchSubIndexId:
+    SubIndexEngineJobStateResponse:
+      title: SubIndexEngineJobStateResponse
+      type: object
+      properties:
+        IndexID:
           type: integer
-        BuildStatus:
-          type: string
-        WorkerAgent:
-          type: string
-        IsWorkerAgentEnabled:
-          type: string
-        RepositoryName:
-          type: string
-        IndexLocation:
-          type: string
-        SubIndexLocation:
-          type: string
-        IndexedDocumentCount:
+        SubIndexID:
           type: integer
-        TotalDocumentCount:
-          type: integer
-        ErroredDocumentCount:
-          type: integer
-        FragmentationLevel:
-          type: integer
-        ErrorMessage:
+        JobID:
           type: string
-    ThresholdCompressIndexAsync_RequestBody:
-      title: ThresholdCompressIndexAsync_RequestBody
+        JobState:
+          $ref: '#/components/schemas/SubIndexJobStateDetailsResponse'
+        UpdatedDate:
+          $ref: '#/components/schemas/DateTimeOffset'
+    FullBuildIndexAsync_RequestBody:
+      title: FullBuildIndexAsync_RequestBody
       type: object
       properties:
         isActive:
           type: boolean
-    DeleteSubIndex_RequestBody:
-      title: DeleteSubIndex_RequestBody
+    SetDtSearchIndexLocationToEmptyStringAsync_RequestBody:
+      title: SetDtSearchIndexLocationToEmptyStringAsync_RequestBody
       type: object
       properties:
-        dtSearchSubIndexIDs:
+        workspaceArtifactID:
+          type: integer
+    DtSearchQueueAdminFilterCondition:
+      title: DtSearchQueueAdminFilterCondition
+      type: object
+      properties:
+        DisplayValue:
           type: array
           items:
-            type: integer
+            type: string
+        Operator:
+          type: string
+        Value:
+          type: array
+          items:
+            type: string
+    BuildIndexAsync_RequestBody:
+      title: BuildIndexAsync_RequestBody
+      type: object
+      properties:
+        isActive:
+          type: boolean
+    DtSearchDocumentProgressResponse:
+      title: DtSearchDocumentProgressResponse
+      type: object
+      properties:
+        IndexID:
+          type: integer
+        ArtifactID:
+          type: integer
+        SubIndexID:
+          type: integer
+        StartTimeUTC:
+          type: string
+          format: date-time
+        SizeInBytes:
+          type: integer
+    DtSearchIndexFilterRequest:
+      title: DtSearchIndexFilterRequest
+      type: object
+      properties:
+        Start:
+          type: integer
+        Length:
+          type: integer
+        Sort:
+          $ref: '#/components/schemas/DtSearchIndexSort'
+        Filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/DtSearchIndexFilter'
+    UpdateAsync_RequestBody:
+      title: UpdateAsync_RequestBody
+      type: object
+      properties:
+        dtSearchIndexRequest:
+          $ref: '#/components/schemas/DtSearchIndexRequest'
+    DtSearchIndexResponse:
+      title: DtSearchIndexResponse
+      type: object
   parameters:
-    resourcePoolID:
-      name: resourcePoolID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    searchableSetID:
-      name: searchableSetID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    includeMetaData:
-      name: includeMetaData
+    includeActions:
+      name: includeActions
       in: path
       description: ''
       required: true
@@ -1489,27 +1479,6 @@ components:
       schema:
         type: string
         default: '-'
-    dtSearchArtifactID:
-      name: dtSearchArtifactID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    includeActions:
-      name: includeActions
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: boolean
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
     agentGuid:
       name: agentGuid
       in: path
@@ -1517,3 +1486,38 @@ components:
       required: true
       schema:
         type: string
+    includeMetaData:
+      name: includeMetaData
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: boolean
+    resourcePoolID:
+      name: resourcePoolID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    dtSearchArtifactID:
+      name: dtSearchArtifactID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    searchableSetID:
+      name: searchableSetID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer

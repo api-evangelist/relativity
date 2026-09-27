@@ -463,26 +463,32 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CollectionJobModel:
+    CriteriaDataType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      x-enumNames:
+      - Unknown
+      - String
+      - Integer
+      - Date
+      - Boolean
+      - Guid
+      - Decimal
+      type: integer
+      format: int32
+    StartJobResultActionResult:
       type: object
       properties:
-        ArtifactId:
-          type: integer
-          format: int32
-        Name:
-          type:
-          - string
-          - 'null'
-        Status:
-          type:
-          - string
-          - 'null'
-        Targets:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/CollectionJobTargetModel'
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
+          $ref: '#/components/schemas/StartJobResult'
       additionalProperties: false
     CreateCollectionAPIModel:
       type: object
@@ -551,50 +557,35 @@ components:
             type: integer
             format: int32
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    StringListActionResult:
+    CollectionJobModelActionResult:
       type: object
       properties:
         Result:
           $ref: '#/components/schemas/ActionResult'
         Value:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
+          $ref: '#/components/schemas/CollectionJobModel'
       additionalProperties: false
-    StartJobResultActionResult:
+    SelectedCollectionCriteriaModel:
       type: object
       properties:
-        Result:
-          $ref: '#/components/schemas/ActionResult'
+        DataType:
+          type:
+          - string
+          - 'null'
+        FieldName:
+          type:
+          - string
+          - 'null'
+        Operator:
+          type:
+          - string
+          - 'null'
         Value:
-          $ref: '#/components/schemas/StartJobResult'
+          type:
+          - string
+          - 'null'
+        CriteriaDataType:
+          $ref: '#/components/schemas/CriteriaDataType'
       additionalProperties: false
     StartJobResult:
       type: object
@@ -606,18 +597,17 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    SourceInstanceModel:
+    StringListActionResult:
       type: object
       properties:
-        ArtifactId:
-          type: integer
-          format: int32
-        Criteria:
+        Result:
+          $ref: '#/components/schemas/ActionResult'
+        Value:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/SelectedCollectionCriteriaModel'
+            type: string
       additionalProperties: false
     ActionResult:
       type: object
@@ -654,55 +644,65 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    CriteriaDataType:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      x-enumNames:
-      - Unknown
-      - String
-      - Integer
-      - Date
-      - Boolean
-      - Guid
-      - Decimal
-      type: integer
-      format: int32
-    SelectedCollectionCriteriaModel:
+    CollectionJobModel:
       type: object
       properties:
-        DataType:
+        ArtifactId:
+          type: integer
+          format: int32
+        Name:
           type:
           - string
           - 'null'
-        FieldName:
+        Status:
           type:
           - string
           - 'null'
-        Operator:
+        Targets:
           type:
-          - string
+          - array
           - 'null'
-        Value:
-          type:
-          - string
-          - 'null'
-        CriteriaDataType:
-          $ref: '#/components/schemas/CriteriaDataType'
+          items:
+            $ref: '#/components/schemas/CollectionJobTargetModel'
       additionalProperties: false
-    CollectionJobModelActionResult:
+    SourceInstanceModel:
       type: object
       properties:
-        Result:
-          $ref: '#/components/schemas/ActionResult'
-        Value:
-          $ref: '#/components/schemas/CollectionJobModel'
+        ArtifactId:
+          type: integer
+          format: int32
+        Criteria:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SelectedCollectionCriteriaModel'
       additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: http

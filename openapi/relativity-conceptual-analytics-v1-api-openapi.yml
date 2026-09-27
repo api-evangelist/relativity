@@ -117,37 +117,6 @@ paths:
       summary: Analytics conceptual service interfaces public v1 IConceptual index service…
       x-summary-source: derived
 components:
-  parameters:
-    indexID:
-      name: indexID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    jobType:
-      name: jobType
-      in: query
-      description: ''
-      required: true
-      schema:
-        enum:
-        - FullPopulation
-        - IncrementalPopulation
-        - RetryErrors
-        - RemoveDocumentsInError
-        - Build
-        - Activate
-        - Deactivate
-        - TagDocuments
-        type: string
   schemas:
     ConceptualIndex:
       title: ConceptualIndex
@@ -210,3 +179,34 @@ components:
           type: array
           items:
             type: string
+  parameters:
+    jobType:
+      name: jobType
+      in: query
+      description: ''
+      required: true
+      schema:
+        enum:
+        - FullPopulation
+        - IncrementalPopulation
+        - RetryErrors
+        - RemoveDocumentsInError
+        - Build
+        - Activate
+        - Deactivate
+        - TagDocuments
+        type: string
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    indexID:
+      name: indexID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer

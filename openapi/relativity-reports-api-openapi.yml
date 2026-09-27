@@ -777,31 +777,28 @@ paths:
           description: Your RelativityOne tenant name
 components:
   schemas:
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
+    DirectoryReportRequest:
+      required:
+      - depth
+      - path
       type: object
       properties:
-        type:
+        path:
+          minLength: 1
+          type: string
+        includeFiles:
+          type: boolean
+        depth:
+          $ref: '#/components/schemas/ReportDepth'
+        useSnapshot:
+          type: boolean
+        date:
+          pattern: ^\d{8}$
           type:
           - string
           - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+          description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
+      additionalProperties: false
     ReportJobsResponse:
       type: object
       properties:
@@ -813,6 +810,37 @@ components:
             $ref: '#/components/schemas/ReportJobResponse'
         paging:
           $ref: '#/components/schemas/Page'
+      additionalProperties: false
+    ReportResponse:
+      type: object
+      properties:
+        reportId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    ReportDepth:
+      enum:
+      - TopLevelOnly
+      - OneLevelDeep
+      - TwoLevelsDeep
+      - FullHierarchy
+      type: string
+    Page:
+      required:
+      - limit
+      - start
+      type: object
+      properties:
+        start:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+        limit:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
       additionalProperties: false
     ReportJobResponse:
       type: object
@@ -856,75 +884,7 @@ components:
           - 'null'
           description: Sanitized, user-facing failure reason. Populated only when `state` is `Failed` (see Failure reporting in the implementation notes); null otherwise. Omitted from the JSON payload when null.
       additionalProperties: false
-    Page:
-      required:
-      - limit
-      - start
-      type: object
-      properties:
-        start:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-        limit:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-      additionalProperties: false
-    ReportDepth:
-      enum:
-      - TopLevelOnly
-      - OneLevelDeep
-      - TwoLevelsDeep
-      - FullHierarchy
-      type: string
-    DirectoryReportRequest:
-      required:
-      - depth
-      - path
-      type: object
-      properties:
-        path:
-          minLength: 1
-          type: string
-        includeFiles:
-          type: boolean
-        depth:
-          $ref: '#/components/schemas/ReportDepth'
-        useSnapshot:
-          type: boolean
-        date:
-          pattern: ^\d{8}$
-          type:
-          - string
-          - 'null'
-          description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
-      additionalProperties: false
-    ReportCategory:
-      enum:
-      - DetailedReport
-      - SummaryReport
-      type: string
-    ReportResponse:
-      type: object
-      properties:
-        reportId:
-          type: string
-          format: uuid
-      additionalProperties: false
-    ReportsDto:
-      type: object
-      properties:
-        reports:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ReportDto'
-      additionalProperties: false
-    ProblemDetails:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
         type:
@@ -949,6 +909,11 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    ReportCategory:
+      enum:
+      - DetailedReport
+      - SummaryReport
+      type: string
     DateRangeDto:
       type: object
       properties:
@@ -958,6 +923,56 @@ components:
         to:
           type: string
           format: date-time
+      additionalProperties: false
+    Stream:
+      type: object
+      properties:
+        canRead:
+          type: boolean
+          readOnly: true
+        canWrite:
+          type: boolean
+          readOnly: true
+        canSeek:
+          type: boolean
+          readOnly: true
+        canTimeout:
+          type: boolean
+          readOnly: true
+        length:
+          type: integer
+          format: int64
+          readOnly: true
+        position:
+          type: integer
+          format: int64
+        readTimeout:
+          type: integer
+          format: int32
+        writeTimeout:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CreateReportRequestDto:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        dateRange:
+          $ref: '#/components/schemas/DateRangeDto'
+        fields:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        dataMaxPrecision:
+          type:
+          - boolean
+          - 'null'
       additionalProperties: false
     ReportDetailsDto:
       type: object
@@ -983,26 +998,15 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    CreateReportRequestDto:
+    ReportsDto:
       type: object
       properties:
-        name:
-          type:
-          - string
-          - 'null'
-        dateRange:
-          $ref: '#/components/schemas/DateRangeDto'
-        fields:
+        reports:
           type:
           - array
           - 'null'
           items:
-            type: string
-            format: uuid
-        dataMaxPrecision:
-          type:
-          - boolean
-          - 'null'
+            $ref: '#/components/schemas/ReportDto'
       additionalProperties: false
     ReportDto:
       type: object
@@ -1049,35 +1053,31 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Stream:
+    ProblemDetails:
       type: object
       properties:
-        canRead:
-          type: boolean
-          readOnly: true
-        canWrite:
-          type: boolean
-          readOnly: true
-        canSeek:
-          type: boolean
-          readOnly: true
-        canTimeout:
-          type: boolean
-          readOnly: true
-        length:
-          type: integer
-          format: int64
-          readOnly: true
-        position:
-          type: integer
-          format: int64
-        readTimeout:
-          type: integer
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
           format: int32
-        writeTimeout:
-          type: integer
-          format: int32
-      additionalProperties: false
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: http

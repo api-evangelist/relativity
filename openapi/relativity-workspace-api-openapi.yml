@@ -345,73 +345,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    KeplerValidationError:
+    NameIDPair:
       type: object
       properties:
-        PropertyName:
-          type:
-          - string
-          - 'null'
-        ErrorMessage:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    KeplerProblemDetails:
-      type: object
-      properties:
-        ErrorType:
-          type:
-          - string
-          - 'null'
-        Identifier:
-          type:
-          - string
-          - 'null'
-        Message:
-          type:
-          - string
-          - 'null'
-        Errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/KeplerValidationError'
-      additionalProperties: false
-    DisplayableObjectIdentifierSecurable:
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        Secured:
-          type: boolean
-      additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
+        ID:
+          type: integer
           format: int32
-        detail:
+        Name:
           type:
           - string
           - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+      additionalProperties: false
     Action:
       type: object
       properties:
@@ -436,6 +380,27 @@ components:
           items:
             type: string
       additionalProperties: false
+    DisplayableObjectIdentifierSecurable:
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        Secured:
+          type: boolean
+      additionalProperties: false
+    WorkspaceRequestEnvelope:
+      required:
+      - WorkspaceRequest
+      type: object
+      properties:
+        WorkspaceRequest:
+          $ref: '#/components/schemas/WorkspaceUpdateRequest'
+        LastModifiedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
     DisplayableObjectIdentifier:
       type: object
       properties:
@@ -452,6 +417,116 @@ components:
             type: string
             format: uuid
         Name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    WorkspaceUpdateRequest:
+      type: object
+      properties:
+        DownloadHandlerUrl:
+          type:
+          - string
+          - 'null'
+        EnableDataGrid:
+          type:
+          - boolean
+          - 'null'
+        Matter:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        Name:
+          type:
+          - string
+          - 'null'
+        ProductionRestrictions:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        ResourcePool:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DefaultFileRepository:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DataGridFileRepository:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        DefaultCacheLocation:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        SqlServer:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        AzureCredentials:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        AzureFileSystemCredentials:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        SqlFullTextLanguage:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Template:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        WorkspaceAdminGroup:
+          $ref: '#/components/schemas/ObjectIdentifierSecurable'
+        UseCase:
+          type:
+          - string
+          - 'null'
+        Keywords:
+          type:
+          - string
+          - 'null'
+        Notes:
+          type:
+          - string
+          - 'null'
+        UserId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ObjectIdentifier:
+      type: object
+      properties:
+        ArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Guids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+    KeplerProblemDetails:
+      type: object
+      properties:
+        ErrorType:
+          type:
+          - string
+          - 'null'
+        Identifier:
+          type:
+          - string
+          - 'null'
+        Message:
+          type:
+          - string
+          - 'null'
+        Errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/KeplerValidationError'
+      additionalProperties: false
+    KeplerValidationError:
+      type: object
+      properties:
+        PropertyName:
+          type:
+          - string
+          - 'null'
+        ErrorMessage:
           type:
           - string
           - 'null'
@@ -546,32 +621,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    StringSecurable:
-      type: object
-      properties:
-        Value:
-          type:
-          - string
-          - 'null'
-        Secured:
-          type: boolean
-      additionalProperties: false
-    ObjectIdentifier:
-      type: object
-      properties:
-        ArtifactID:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        Guids:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-      additionalProperties: false
     ObjectIdentifierSecurable:
       type: object
       properties:
@@ -579,79 +628,6 @@ components:
           $ref: '#/components/schemas/ObjectIdentifier'
         Secured:
           type: boolean
-      additionalProperties: false
-    WorkspaceUpdateRequest:
-      type: object
-      properties:
-        DownloadHandlerUrl:
-          type:
-          - string
-          - 'null'
-        EnableDataGrid:
-          type:
-          - boolean
-          - 'null'
-        Matter:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        Name:
-          type:
-          - string
-          - 'null'
-        ProductionRestrictions:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        ResourcePool:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        DefaultFileRepository:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        DataGridFileRepository:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        DefaultCacheLocation:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        SqlServer:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        AzureCredentials:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        AzureFileSystemCredentials:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        SqlFullTextLanguage:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Template:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        WorkspaceAdminGroup:
-          $ref: '#/components/schemas/ObjectIdentifierSecurable'
-        UseCase:
-          type:
-          - string
-          - 'null'
-        Keywords:
-          type:
-          - string
-          - 'null'
-        Notes:
-          type:
-          - string
-          - 'null'
-        UserId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    WorkspaceRequestEnvelope:
-      required:
-      - WorkspaceRequest
-      type: object
-      properties:
-        WorkspaceRequest:
-          $ref: '#/components/schemas/WorkspaceUpdateRequest'
-        LastModifiedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
       additionalProperties: false
     Meta:
       type: object
@@ -669,17 +645,41 @@ components:
           items:
             type: string
       additionalProperties: false
-    NameIDPair:
+    StringSecurable:
       type: object
       properties:
-        ID:
-          type: integer
-          format: int32
-        Name:
+        Value:
           type:
           - string
           - 'null'
+        Secured:
+          type: boolean
       additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: http

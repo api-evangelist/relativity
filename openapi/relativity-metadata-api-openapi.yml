@@ -60,23 +60,31 @@ components:
           items:
             $ref: '#/components/schemas/MetricOriginDto'
       additionalProperties: false
-    MetricOriginDto:
+    ProblemDetails:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        name:
+        type:
           type:
           - string
           - 'null'
-        metrics:
+        title:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/MetricDto'
-      additionalProperties: false
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     MetricDto:
       type: object
       properties:
@@ -113,31 +121,23 @@ components:
         isActive:
           type: boolean
       additionalProperties: false
-    ProblemDetails:
+    MetricOriginDto:
       type: object
       properties:
-        type:
+        id:
+          type: string
+          format: uuid
+        name:
           type:
           - string
           - 'null'
-        title:
+        metrics:
           type:
-          - string
+          - array
           - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+          items:
+            $ref: '#/components/schemas/MetricDto'
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: http

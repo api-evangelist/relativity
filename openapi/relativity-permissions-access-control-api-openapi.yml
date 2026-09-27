@@ -170,6 +170,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    RoleAssignment:
+      required:
+      - groupId
+      - roleKey
+      type: object
+      properties:
+        roleKey:
+          minLength: 1
+          type: string
+          description: The role key with r1_ prefix (e.g. r1_staging_viewer).
+        groupId:
+          minLength: 1
+          type: string
+          description: The group identifier.
+      additionalProperties: false
+      description: A single role assignment entry in the external API.
     ExternalRoleAssignmentPair:
       required:
       - groupId
@@ -207,22 +223,6 @@ components:
       description: 'Request to batch assign and/or revoke roles via the external API.
 
         Role keys must use the r1_ prefix (e.g. r1_staging_viewer).'
-    RoleAssignment:
-      required:
-      - groupId
-      - roleKey
-      type: object
-      properties:
-        roleKey:
-          minLength: 1
-          type: string
-          description: The role key with r1_ prefix (e.g. r1_staging_viewer).
-        groupId:
-          minLength: 1
-          type: string
-          description: The group identifier.
-      additionalProperties: false
-      description: A single role assignment entry in the external API.
   securitySchemes:
     OAuth:
       type: http

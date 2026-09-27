@@ -34,16 +34,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EmailNotificationStatus:
-      title: EmailNotificationStatus
-      type: object
-      properties:
-        Recipient:
-          type: string
-        IsSent:
-          type: boolean
-        Message:
-          type: string
     EmailNotificationResponse:
       title: EmailNotificationResponse
       type: object
@@ -68,6 +58,16 @@ components:
           type: string
         IsBodyHtml:
           type: boolean
+    EmailNotificationStatus:
+      title: EmailNotificationStatus
+      type: object
+      properties:
+        Recipient:
+          type: string
+        IsSent:
+          type: boolean
+        Message:
+          type: string
   parameters:
     x-csrf-header:
       name: x-csrf-header

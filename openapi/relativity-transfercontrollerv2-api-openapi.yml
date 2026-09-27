@@ -124,46 +124,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    TransferStatistics:
-      type: object
-      properties:
-        successfulFiles:
-          type: integer
-          format: int64
-        failedFiles:
-          type: integer
-          format: int64
-        skippedFiles:
-          type: integer
-          format: int64
-        successfulBytes:
-          type: integer
-          format: int64
-        failedBytes:
-          type: integer
-          format: int64
-        skippedBytes:
-          type: integer
-          format: int64
-        successfulEmptyDirectories:
-          type: integer
-          format: int64
-        failedEmptyDirectories:
-          type: integer
-          format: int64
-        skippedEmptyDirectories:
-          type: integer
-          format: int64
-      additionalProperties: false
-    GetTokenResult:
-      type: object
-      properties:
-        sasUrl:
-          type:
-          - string
-          - 'null'
-          format: uri
-      additionalProperties: false
     EnumerationStatistics:
       type: object
       properties:
@@ -220,6 +180,15 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    GetTokenResult:
+      type: object
+      properties:
+        sasUrl:
+          type:
+          - string
+          - 'null'
+          format: uri
+      additionalProperties: false
     CreateTransferRequestV2:
       type: object
       properties:
@@ -244,6 +213,37 @@ components:
         transferJobID:
           type: string
           format: uuid
+      additionalProperties: false
+    TransferStatistics:
+      type: object
+      properties:
+        successfulFiles:
+          type: integer
+          format: int64
+        failedFiles:
+          type: integer
+          format: int64
+        skippedFiles:
+          type: integer
+          format: int64
+        successfulBytes:
+          type: integer
+          format: int64
+        failedBytes:
+          type: integer
+          format: int64
+        skippedBytes:
+          type: integer
+          format: int64
+        successfulEmptyDirectories:
+          type: integer
+          format: int64
+        failedEmptyDirectories:
+          type: integer
+          format: int64
+        skippedEmptyDirectories:
+          type: integer
+          format: int64
       additionalProperties: false
     TimeSpan:
       type: object

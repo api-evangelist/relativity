@@ -770,13 +770,13 @@ paths:
       description: Government
 components:
   schemas:
-    ProductDetails:
+    ProductsAndPackagesAvailability:
       type: object
       properties:
-        metricKey:
-          type:
-          - string
-          - 'null'
+        areProductsAvailable:
+          type: boolean
+        arePackagesAvailable:
+          type: boolean
       additionalProperties: false
     GetAvailablePackagesResponse:
       type: object
@@ -788,6 +788,14 @@ components:
           items:
             $ref: '#/components/schemas/PackageDetails'
           description: List of available packages
+      additionalProperties: false
+    ProductDetails:
+      type: object
+      properties:
+        metricKey:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     GetProductConfigurationRequest:
       type: object
@@ -833,6 +841,34 @@ components:
             - FOIA_ReadingRoom_Storage'
       additionalProperties: false
       description: Request body used in product-configuration API
+    PackageConsumptionItem:
+      type: object
+      properties:
+        type:
+          enum:
+          - Free
+          - Purchased
+          type: string
+          description: 'Type of the package
+
+            List of possible values:
+
+            - Free
+
+            - Purchased'
+        total:
+          type: number
+          description: Total units of the package
+          format: double
+        consumed:
+          type: number
+          description: Consumed units of the package
+          format: double
+        expirationDateUtc:
+          type: string
+          description: Expiration date of the package
+          format: date-time
+      additionalProperties: false
     GetProductConfigurationResponse:
       type: object
       properties:
@@ -849,6 +885,32 @@ components:
           description: 'Product configuration.
 
             Each property in this object is the _metricKey_ specified in the request.'
+      additionalProperties: false
+    GetProductsAndPackagesAvailabilityRequest:
+      type: object
+      properties:
+        instanceID:
+          type:
+          - string
+          - 'null'
+          description: Specifies the instanceId for which the data should be returned
+        dateKey:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
+          example: 202209
+      additionalProperties: false
+    GetAvailableProductsResponse:
+      type: object
+      properties:
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ProductDetails'
+          description: List of available products
       additionalProperties: false
     ProductConfigurationDetails:
       type: object
@@ -880,17 +942,6 @@ components:
           - 'null'
           description: Specifies the metric key for which the data should be returned. If no metric key is provided, no metric will be returned.
       additionalProperties: false
-    GetAvailableProductsResponse:
-      type: object
-      properties:
-        results:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ProductDetails'
-          description: List of available products
-      additionalProperties: false
     GetPackageConsumptionResponse:
       type: object
       properties:
@@ -911,20 +962,16 @@ components:
             $ref: '#/components/schemas/PackageConsumptionItem'
           description: List of package consumptions
       additionalProperties: false
-    GetProductsAndPackagesAvailabilityRequest:
+    GetProductsAndPackagesAvailabilityResponse:
       type: object
       properties:
-        instanceID:
+        results:
           type:
-          - string
+          - array
           - 'null'
-          description: Specifies the instanceId for which the data should be returned
-        dateKey:
-          type:
-          - string
-          - 'null'
-          description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
-          example: 202209
+          items:
+            $ref: '#/components/schemas/ProductsAndPackagesAvailability'
+          description: Configuration of available extended products
       additionalProperties: false
     PackageDetails:
       type: object
@@ -955,53 +1002,6 @@ components:
           - 'null'
           items:
             type: string
-      additionalProperties: false
-    ProductsAndPackagesAvailability:
-      type: object
-      properties:
-        areProductsAvailable:
-          type: boolean
-        arePackagesAvailable:
-          type: boolean
-      additionalProperties: false
-    GetProductsAndPackagesAvailabilityResponse:
-      type: object
-      properties:
-        results:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ProductsAndPackagesAvailability'
-          description: Configuration of available extended products
-      additionalProperties: false
-    PackageConsumptionItem:
-      type: object
-      properties:
-        type:
-          enum:
-          - Free
-          - Purchased
-          type: string
-          description: 'Type of the package
-
-            List of possible values:
-
-            - Free
-
-            - Purchased'
-        total:
-          type: number
-          description: Total units of the package
-          format: double
-        consumed:
-          type: number
-          description: Consumed units of the package
-          format: double
-        expirationDateUtc:
-          type: string
-          description: Expiration date of the package
-          format: date-time
       additionalProperties: false
   securitySchemes:
     bearerAuth:

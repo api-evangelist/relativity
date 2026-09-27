@@ -500,93 +500,19 @@ paths:
           description: Successful Operation
       deprecated: true
 components:
-  parameters:
-    jobExecutionID:
-      name: jobExecutionID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    workspaceId:
-      name: workspaceId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    taskId:
-      name: taskId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    jobExecutionId:
-      name: jobExecutionId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    jobID:
-      name: jobID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
   schemas:
-    GroupMap_V1:
-      title: GroupMap_V1
+    ApplicationSettingsResponse_V1:
+      title: ApplicationSettingsResponse_V1
       type: object
-    ProcessingOptions_V1:
-      title: ProcessingOptions_V1
+    TimeSpan_V1:
+      title: TimeSpan_V1
+      type: object
+    IArmArchiveInformationManager_V1_ReadAsync_RequestBody:
+      title: IArmArchiveInformationManager_V1_ReadAsync_RequestBody
       type: object
       properties:
-        IncludeProcessing:
-          type: boolean
-        IncludeProcessingFiles:
-          type: boolean
-        ProcessingMissingFileBehavior:
-          enum:
-          - SkipFile
-          - StopJob
+        archivePath:
           type: string
-    IArmRestoreJobManager_V1_CreateAsync_RequestBody:
-      title: IArmRestoreJobManager_V1_CreateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RestoreJobRequest_V1'
-    IArmArchiveJobManager_V1_UpdateAsync_RequestBody:
-      title: IArmArchiveJobManager_V1_UpdateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest_V1'
-    DependencyUserAction_V1:
-      title: DependencyUserAction_V1
-      type: object
-    QualityCheckResult_V1:
-      title: QualityCheckResult_V1
-      type: object
-      properties:
-        Type:
-          type: string
-        Status:
-          type: string
-    GroupMapping_V1:
-      title: GroupMapping_V1
-      type: object
     JobStatistics_V1:
       title: JobStatistics_V1
       type: object
@@ -601,107 +527,68 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ArchiveItemStatistics_V1'
-    IArmMoveJobManager_V1_CreateAsync_RequestBody:
-      title: IArmMoveJobManager_V1_CreateAsync_RequestBody
+    ExtendedWorkspaceDataOptions_V1:
+      title: ExtendedWorkspaceDataOptions_V1
       type: object
       properties:
-        request:
-          $ref: '#/components/schemas/MoveJobRequest_V1'
-    RestoreJobResponse_V1:
-      title: RestoreJobResponse_V1
+        IncludeExtendedWorkspaceData:
+          type: boolean
+        ApplicationErrorExportBehavior:
+          enum:
+          - SkipApplication
+          - StopJob
+          type: string
+    DatabaseOptions_V1:
+      title: DatabaseOptions_V1
       type: object
       properties:
-        JobID:
+        IncludeDatabaseBackup:
+          type: boolean
+        CustomDatabasePath:
+          type: string
+    QualityCheckResult_V1:
+      title: QualityCheckResult_V1
+      type: object
+      properties:
+        Type:
+          type: string
+        Status:
+          type: string
+    AdditionalFilesDirectoriesResponse_V1:
+      title: AdditionalFilesDirectoriesResponse_V1
+      type: object
+      properties:
+        WorkspaceId:
           type: integer
-        JobName:
+        AdditionalFilesDirectories:
+          type: array
+          items:
+            type: string
+    ArchiveItemStatistics_V1:
+      title: ArchiveItemStatistics_V1
+      type: object
+      properties:
+        ItemTypeName:
           type: string
-        JobExecutionID:
-          type: integer
-        JobExecutionGuid:
-          type: string
-        ArchivePath:
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        SourceWorkspace:
-          type: string
-        DestinationWorkspaceID:
+        SourceItemCount:
           type:
           - integer
           - 'null'
-        ExistingTargetDatabase:
-          type: string
-        JobDetails:
-          $ref: '#/components/schemas/JobDetails_V1'
-        DestinationOptions:
-          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
-        MigratorsDestinationOptions:
-          $ref: '#/components/schemas/MigratorsDestinationOptions_V1'
-        AdvancedFileOptions:
-          $ref: '#/components/schemas/AdvancedFileOptions_V1'
-        UserMappings:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserMap_V1'
-        GroupMappings:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupMap_V1'
-        Applications:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationSettingsResponse_V1'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V1'
-        UiJobActionsLocked:
-          type: boolean
-        IsFilesFirstFlow:
-          type: boolean
-    UserMap_V1:
-      title: UserMap_V1
-      type: object
-    MatterInfo_V1:
-      title: MatterInfo_V1
-      type: object
-      properties:
-        Name:
-          type: string
-        Number:
-          type: string
-    AdvancedFileOptions_V1:
-      title: AdvancedFileOptions_V1
-      type: object
-      properties:
-        ReferenceFilesAsArchiveLinks:
-          type: boolean
-        UpdateRepositoryFilePaths:
-          type: boolean
-        UpdateLinkedFilePaths:
-          type: boolean
-        AdditionalFilesDirectoryPath:
-          type: string
-    NotificationOptions_V1:
-      title: NotificationOptions_V1
-      type: object
-    DestinationOptions_V1:
-      title: DestinationOptions_V1
-      type: object
-      properties:
-        ResourcePoolID:
-          type: integer
-        DatabaseServerID:
-          type: integer
-        CacheLocationID:
-          type: integer
-        FileRepositoryID:
-          type: integer
-        UseDefaultWorkspaceConfiguration:
+        DestinationItemCount:
           type:
-          - boolean
+          - integer
           - 'null'
+        MissingItemsCount:
+          type:
+          - integer
+          - 'null'
+        MalwareItemsCount:
+          type:
+          - integer
+          - 'null'
+    UserMapping_V1:
+      title: UserMapping_V1
+      type: object
     IKeplerStream_V1:
       title: IKeplerStream_V1
       type: object
@@ -789,327 +676,6 @@ components:
           items:
             type: string
             format: NameValueCollection
-    JobDetails_V1:
-      title: JobDetails_V1
-      type: object
-    RestoreJobRequest_V1:
-      title: RestoreJobRequest_V1
-      type: object
-      properties:
-        ArchivePath:
-          type: string
-        JobPriority:
-          enum:
-          - Low
-          - Medium
-          - High
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        ExistingTargetDatabase:
-          type: string
-        DestinationOptions:
-          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
-        MigratorsDestinationOptions:
-          $ref: '#/components/schemas/MigratorsDestinationOptions_V1'
-        AdvancedFileOptions:
-          $ref: '#/components/schemas/AdvancedFileOptions_V1'
-        UserMapping:
-          $ref: '#/components/schemas/UserMapping_V1'
-        GroupMapping:
-          $ref: '#/components/schemas/GroupMapping_V1'
-        Applications:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationSettings_V1'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V1'
-        FileShareOptions:
-          $ref: '#/components/schemas/FileShareOptions_V1'
-        UiJobActionsLocked:
-          type: boolean
-        IncludeQualityCheck:
-          type: boolean
-        IsFilesFirstFlow:
-          type: boolean
-    JobStage_V1:
-      title: JobStage_V1
-      type: object
-      properties:
-        Name:
-          type: string
-        Order:
-          type: integer
-        NumberOfSucceededTasks:
-          type:
-          - integer
-          - 'null'
-        NumberOfFailedTasks:
-          type:
-          - integer
-          - 'null'
-        TotalNumberOfTasks:
-          type:
-          - integer
-          - 'null'
-        TimeStarted:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        TimeElapsed:
-          $ref: '#/components/schemas/TimeSpan_V1'
-        PercentComplete:
-          type: integer
-        Errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobStageError_V1'
-        UserActions:
-          type: array
-          items:
-            $ref: '#/components/schemas/DependencyUserAction_V1'
-    AdditionalFilesDirectoriesResponse_V1:
-      title: AdditionalFilesDirectoriesResponse_V1
-      type: object
-      properties:
-        WorkspaceId:
-          type: integer
-        AdditionalFilesDirectories:
-          type: array
-          items:
-            type: string
-    IArmArchiveJobManager_V1_CreateAsync_RequestBody:
-      title: IArmArchiveJobManager_V1_CreateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest_V1'
-    FileShareOptions_V1:
-      title: FileShareOptions_V1
-      type: object
-      properties:
-        Fqdn:
-          type: string
-        SecretPath:
-          type: string
-    MoveJobRequest_V1:
-      title: MoveJobRequest_V1
-      type: object
-      properties:
-        SourceWorkspaceID:
-          type: integer
-        JobPriority:
-          enum:
-          - Low
-          - Medium
-          - High
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        FileOptions:
-          $ref: '#/components/schemas/MoveFileOptions_V1'
-        DatabaseOptions:
-          $ref: '#/components/schemas/DatabaseOptions_V1'
-        DestinationOptions:
-          $ref: '#/components/schemas/DestinationOptions_V1'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V1'
-        UiJobActionsLocked:
-          type: boolean
-    SourceOptions_V1:
-      title: SourceOptions_V1
-      type: object
-      properties:
-        WorkspaceID:
-          type: integer
-        ResourcePoolID:
-          type: integer
-        DatabaseServerID:
-          type: integer
-        CacheLocationID:
-          type: integer
-        FileRepositoryID:
-          type: integer
-    ArchiveJobResponse_V1:
-      title: ArchiveJobResponse_V1
-      type: object
-      properties:
-        JobID:
-          type: integer
-        JobName:
-          type: string
-        JobExecutionID:
-          type: integer
-        JobExecutionGuid:
-          type: string
-        ArchivePath:
-          type: string
-        WorkspaceID:
-          type: integer
-        WorkspaceName:
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        JobDetails:
-          $ref: '#/components/schemas/JobDetails_V1'
-        MigratorOptions:
-          $ref: '#/components/schemas/MigratorOptions_V1'
-        FileOptions:
-          $ref: '#/components/schemas/FileOptions_V1'
-        ProcessingOptions:
-          $ref: '#/components/schemas/ProcessingOptions_V1'
-        ExtendedWorkspaceDataOptions:
-          $ref: '#/components/schemas/ExtendedWorkspaceDataOptions_V1'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V1'
-        UiJobActionsLocked:
-          type: boolean
-    MigratorsDestinationOptions_V1:
-      title: MigratorsDestinationOptions_V1
-      type: object
-    ArchiveItemStatistics_V1:
-      title: ArchiveItemStatistics_V1
-      type: object
-      properties:
-        ItemTypeName:
-          type: string
-        SourceItemCount:
-          type:
-          - integer
-          - 'null'
-        DestinationItemCount:
-          type:
-          - integer
-          - 'null'
-        MissingItemsCount:
-          type:
-          - integer
-          - 'null'
-        MalwareItemsCount:
-          type:
-          - integer
-          - 'null'
-    IArmRestoreJobManager_V1_UpdateAsync_RequestBody:
-      title: IArmRestoreJobManager_V1_UpdateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RestoreJobRequest_V1'
-    ApplicationSettings_V1:
-      title: ApplicationSettings_V1
-      type: object
-      properties:
-        Guid:
-          type: string
-        ShouldRestore:
-          type: boolean
-    IArmArchiveInformationManager_V1_ReadAsync_RequestBody:
-      title: IArmArchiveInformationManager_V1_ReadAsync_RequestBody
-      type: object
-      properties:
-        archivePath:
-          type: string
-    IArmDatabaseRestoreJobManager_V1_UpdateAsync_RequestBody:
-      title: IArmDatabaseRestoreJobManager_V1_UpdateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/DatabaseRestoreJobRequest_V1'
-    TimeSpan_V1:
-      title: TimeSpan_V1
-      type: object
-    DatabaseOptions_V1:
-      title: DatabaseOptions_V1
-      type: object
-      properties:
-        IncludeDatabaseBackup:
-          type: boolean
-        CustomDatabasePath:
-          type: string
-    ArchiveJobRequest_V1:
-      title: ArchiveJobRequest_V1
-      type: object
-      properties:
-        WorkspaceID:
-          type: integer
-        ArchiveDirectory:
-          type: string
-        JobPriority:
-          enum:
-          - Low
-          - Medium
-          - High
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        MigratorOptions:
-          $ref: '#/components/schemas/MigratorOptions_V1'
-        FileOptions:
-          $ref: '#/components/schemas/FileOptions_V1'
-        ProcessingOptions:
-          $ref: '#/components/schemas/ProcessingOptions_V1'
-        ExtendedWorkspaceDataOptions:
-          $ref: '#/components/schemas/ExtendedWorkspaceDataOptions_V1'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V1'
-        UiJobActionsLocked:
-          type: boolean
-        UseDefaultArchiveDirectory:
-          type: boolean
-    IArmDatabaseRestoreJobManager_V1_CreateAsync_RequestBody:
-      title: IArmDatabaseRestoreJobManager_V1_CreateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/DatabaseRestoreJobRequest_V1'
-    ArchiveInformationResponse_V1:
-      title: ArchiveInformationResponse_V1
-      type: object
-      properties:
-        Client:
-          $ref: '#/components/schemas/ClientInfo_V1'
-        Matter:
-          $ref: '#/components/schemas/MatterInfo_V1'
-    DatabaseRestoreJobRequest_V1:
-      title: DatabaseRestoreJobRequest_V1
-      type: object
-      properties:
-        SourceDatabase:
-          type: string
-        JobPriority:
-          enum:
-          - Low
-          - Medium
-          - High
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        DestinationOptions:
-          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
-        UserMapping:
-          $ref: '#/components/schemas/UserMapping_V1'
-        GroupMapping:
-          $ref: '#/components/schemas/GroupMapping_V1'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V1'
-        UiJobActionsLocked:
-          type: boolean
     JobStageError_V1:
       title: JobStageError_V1
       type: object
@@ -1118,85 +684,6 @@ components:
           type: string
         Exception:
           type: string
-    ApplicationSettingsResponse_V1:
-      title: ApplicationSettingsResponse_V1
-      type: object
-    DatabaseRestoreJobResponse_V1:
-      title: DatabaseRestoreJobResponse_V1
-      type: object
-      properties:
-        JobID:
-          type: integer
-        JobName:
-          type: string
-        JobExecutionID:
-          type: integer
-        JobExecutionGuid:
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        DestinationWorkspaceID:
-          type:
-          - integer
-          - 'null'
-        JobDetails:
-          $ref: '#/components/schemas/JobDetails_V1'
-        DestinationOptions:
-          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
-        UserMappings:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserMap_V1'
-        GroupMappings:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupMap_V1'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V1'
-        UiJobActionsLocked:
-          type: boolean
-    MoveFileOptions_V1:
-      title: MoveFileOptions_V1
-      type: object
-      properties:
-        LinkToExistingDocuments:
-          type: boolean
-        MissingFileBehavior:
-          enum:
-          - SkipFile
-          - StopJob
-          type: string
-        LinkedFileBehavior:
-          enum:
-          - LeaveInPlace
-          - CopyToRepository
-          - MoveToRepository
-          type: string
-    ExtendedWorkspaceDataOptions_V1:
-      title: ExtendedWorkspaceDataOptions_V1
-      type: object
-      properties:
-        IncludeExtendedWorkspaceData:
-          type: boolean
-        ApplicationErrorExportBehavior:
-          enum:
-          - SkipApplication
-          - StopJob
-          type: string
-    ClientInfo_V1:
-      title: ClientInfo_V1
-      type: object
-      properties:
-        Name:
-          type: string
-        Number:
-          type: string
-    UserMapping_V1:
-      title: UserMapping_V1
-      type: object
     ArmJobStatusResponse_V1:
       title: ArmJobStatusResponse_V1
       type: object
@@ -1249,12 +736,260 @@ components:
           format: date-time
         TimeElapsed:
           $ref: '#/components/schemas/TimeSpan_V1'
-    RestoreDestinationOptions_V1:
-      title: RestoreDestinationOptions_V1
+    ClientInfo_V1:
+      title: ClientInfo_V1
       type: object
-    FileOptions_V1:
-      title: FileOptions_V1
+      properties:
+        Name:
+          type: string
+        Number:
+          type: string
+    JobStage_V1:
+      title: JobStage_V1
       type: object
+      properties:
+        Name:
+          type: string
+        Order:
+          type: integer
+        NumberOfSucceededTasks:
+          type:
+          - integer
+          - 'null'
+        NumberOfFailedTasks:
+          type:
+          - integer
+          - 'null'
+        TotalNumberOfTasks:
+          type:
+          - integer
+          - 'null'
+        TimeStarted:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        TimeElapsed:
+          $ref: '#/components/schemas/TimeSpan_V1'
+        PercentComplete:
+          type: integer
+        Errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobStageError_V1'
+        UserActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DependencyUserAction_V1'
+    IArmArchiveJobManager_V1_CreateAsync_RequestBody:
+      title: IArmArchiveJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest_V1'
+    RestoreJobRequest_V1:
+      title: RestoreJobRequest_V1
+      type: object
+      properties:
+        ArchivePath:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ExistingTargetDatabase:
+          type: string
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        MigratorsDestinationOptions:
+          $ref: '#/components/schemas/MigratorsDestinationOptions_V1'
+        AdvancedFileOptions:
+          $ref: '#/components/schemas/AdvancedFileOptions_V1'
+        UserMapping:
+          $ref: '#/components/schemas/UserMapping_V1'
+        GroupMapping:
+          $ref: '#/components/schemas/GroupMapping_V1'
+        Applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationSettings_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        FileShareOptions:
+          $ref: '#/components/schemas/FileShareOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+        IncludeQualityCheck:
+          type: boolean
+        IsFilesFirstFlow:
+          type: boolean
+    UserMap_V1:
+      title: UserMap_V1
+      type: object
+    IArmArchiveJobManager_V1_UpdateAsync_RequestBody:
+      title: IArmArchiveJobManager_V1_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest_V1'
+    IArmDatabaseRestoreJobManager_V1_CreateAsync_RequestBody:
+      title: IArmDatabaseRestoreJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/DatabaseRestoreJobRequest_V1'
+    MoveJobRequest_V1:
+      title: MoveJobRequest_V1
+      type: object
+      properties:
+        SourceWorkspaceID:
+          type: integer
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        FileOptions:
+          $ref: '#/components/schemas/MoveFileOptions_V1'
+        DatabaseOptions:
+          $ref: '#/components/schemas/DatabaseOptions_V1'
+        DestinationOptions:
+          $ref: '#/components/schemas/DestinationOptions_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    IArmRestoreJobManager_V1_CreateAsync_RequestBody:
+      title: IArmRestoreJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest_V1'
+    DestinationOptions_V1:
+      title: DestinationOptions_V1
+      type: object
+      properties:
+        ResourcePoolID:
+          type: integer
+        DatabaseServerID:
+          type: integer
+        CacheLocationID:
+          type: integer
+        FileRepositoryID:
+          type: integer
+        UseDefaultWorkspaceConfiguration:
+          type:
+          - boolean
+          - 'null'
+    IArmDatabaseRestoreJobManager_V1_UpdateAsync_RequestBody:
+      title: IArmDatabaseRestoreJobManager_V1_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/DatabaseRestoreJobRequest_V1'
+    SourceOptions_V1:
+      title: SourceOptions_V1
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ResourcePoolID:
+          type: integer
+        DatabaseServerID:
+          type: integer
+        CacheLocationID:
+          type: integer
+        FileRepositoryID:
+          type: integer
+    DatabaseRestoreJobResponse_V1:
+      title: DatabaseRestoreJobResponse_V1
+      type: object
+      properties:
+        JobID:
+          type: integer
+        JobName:
+          type: string
+        JobExecutionID:
+          type: integer
+        JobExecutionGuid:
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        DestinationWorkspaceID:
+          type:
+          - integer
+          - 'null'
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V1'
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        UserMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserMap_V1'
+        GroupMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupMap_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    MatterInfo_V1:
+      title: MatterInfo_V1
+      type: object
+      properties:
+        Name:
+          type: string
+        Number:
+          type: string
+    IArmMoveJobManager_V1_CreateAsync_RequestBody:
+      title: IArmMoveJobManager_V1_CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MoveJobRequest_V1'
+    ApplicationSettings_V1:
+      title: ApplicationSettings_V1
+      type: object
+      properties:
+        Guid:
+          type: string
+        ShouldRestore:
+          type: boolean
+    MoveFileOptions_V1:
+      title: MoveFileOptions_V1
+      type: object
+      properties:
+        LinkToExistingDocuments:
+          type: boolean
+        MissingFileBehavior:
+          enum:
+          - SkipFile
+          - StopJob
+          type: string
+        LinkedFileBehavior:
+          enum:
+          - LeaveInPlace
+          - CopyToRepository
+          - MoveToRepository
+          type: string
     MigratorOptions_V1:
       title: MigratorOptions_V1
       type: object
@@ -1271,6 +1006,24 @@ components:
           type: boolean
         IncludeQualityCheck:
           type: boolean
+    AdvancedFileOptions_V1:
+      title: AdvancedFileOptions_V1
+      type: object
+      properties:
+        ReferenceFilesAsArchiveLinks:
+          type: boolean
+        UpdateRepositoryFilePaths:
+          type: boolean
+        UpdateLinkedFilePaths:
+          type: boolean
+        AdditionalFilesDirectoryPath:
+          type: string
+    JobDetails_V1:
+      title: JobDetails_V1
+      type: object
+    RestoreDestinationOptions_V1:
+      title: RestoreDestinationOptions_V1
+      type: object
     MoveJobResponse_V1:
       title: MoveJobResponse_V1
       type: object
@@ -1302,9 +1055,256 @@ components:
           $ref: '#/components/schemas/NotificationOptions_V1'
         UiJobActionsLocked:
           type: boolean
+    NotificationOptions_V1:
+      title: NotificationOptions_V1
+      type: object
+    ArchiveJobResponse_V1:
+      title: ArchiveJobResponse_V1
+      type: object
+      properties:
+        JobID:
+          type: integer
+        JobName:
+          type: string
+        JobExecutionID:
+          type: integer
+        JobExecutionGuid:
+          type: string
+        ArchivePath:
+          type: string
+        WorkspaceID:
+          type: integer
+        WorkspaceName:
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V1'
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V1'
+        FileOptions:
+          $ref: '#/components/schemas/FileOptions_V1'
+        ProcessingOptions:
+          $ref: '#/components/schemas/ProcessingOptions_V1'
+        ExtendedWorkspaceDataOptions:
+          $ref: '#/components/schemas/ExtendedWorkspaceDataOptions_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    IArmRestoreJobManager_V1_UpdateAsync_RequestBody:
+      title: IArmRestoreJobManager_V1_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest_V1'
+    GroupMap_V1:
+      title: GroupMap_V1
+      type: object
+    ArchiveInformationResponse_V1:
+      title: ArchiveInformationResponse_V1
+      type: object
+      properties:
+        Client:
+          $ref: '#/components/schemas/ClientInfo_V1'
+        Matter:
+          $ref: '#/components/schemas/MatterInfo_V1'
+    ProcessingOptions_V1:
+      title: ProcessingOptions_V1
+      type: object
+      properties:
+        IncludeProcessing:
+          type: boolean
+        IncludeProcessingFiles:
+          type: boolean
+        ProcessingMissingFileBehavior:
+          enum:
+          - SkipFile
+          - StopJob
+          type: string
+    FileOptions_V1:
+      title: FileOptions_V1
+      type: object
+    GroupMapping_V1:
+      title: GroupMapping_V1
+      type: object
+    MigratorsDestinationOptions_V1:
+      title: MigratorsDestinationOptions_V1
+      type: object
     IArmMoveJobManager_V1_UpdateAsync_RequestBody:
       title: IArmMoveJobManager_V1_UpdateAsync_RequestBody
       type: object
       properties:
         request:
           $ref: '#/components/schemas/MoveJobRequest_V1'
+    DatabaseRestoreJobRequest_V1:
+      title: DatabaseRestoreJobRequest_V1
+      type: object
+      properties:
+        SourceDatabase:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        UserMapping:
+          $ref: '#/components/schemas/UserMapping_V1'
+        GroupMapping:
+          $ref: '#/components/schemas/GroupMapping_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+    ArchiveJobRequest_V1:
+      title: ArchiveJobRequest_V1
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ArchiveDirectory:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V1'
+        FileOptions:
+          $ref: '#/components/schemas/FileOptions_V1'
+        ProcessingOptions:
+          $ref: '#/components/schemas/ProcessingOptions_V1'
+        ExtendedWorkspaceDataOptions:
+          $ref: '#/components/schemas/ExtendedWorkspaceDataOptions_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+        UseDefaultArchiveDirectory:
+          type: boolean
+    FileShareOptions_V1:
+      title: FileShareOptions_V1
+      type: object
+      properties:
+        Fqdn:
+          type: string
+        SecretPath:
+          type: string
+    DependencyUserAction_V1:
+      title: DependencyUserAction_V1
+      type: object
+    RestoreJobResponse_V1:
+      title: RestoreJobResponse_V1
+      type: object
+      properties:
+        JobID:
+          type: integer
+        JobName:
+          type: string
+        JobExecutionID:
+          type: integer
+        JobExecutionGuid:
+          type: string
+        ArchivePath:
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        SourceWorkspace:
+          type: string
+        DestinationWorkspaceID:
+          type:
+          - integer
+          - 'null'
+        ExistingTargetDatabase:
+          type: string
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V1'
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V1'
+        MigratorsDestinationOptions:
+          $ref: '#/components/schemas/MigratorsDestinationOptions_V1'
+        AdvancedFileOptions:
+          $ref: '#/components/schemas/AdvancedFileOptions_V1'
+        UserMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserMap_V1'
+        GroupMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupMap_V1'
+        Applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationSettingsResponse_V1'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V1'
+        UiJobActionsLocked:
+          type: boolean
+        IsFilesFirstFlow:
+          type: boolean
+  parameters:
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    jobExecutionId:
+      name: jobExecutionId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    jobID:
+      name: jobID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    taskId:
+      name: taskId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    jobExecutionID:
+      name: jobExecutionID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceId:
+      name: workspaceId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer

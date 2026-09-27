@@ -65,35 +65,6 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
-    ErrorDetail:
-      type: object
-      required:
-      - message
-      properties:
-        message:
-          type: string
-          description: Error message
-          example: Source directory not found
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          format: uri
-          description: A URI reference identifying the problem type
-        title:
-          type: string
-          description: A short, human-readable summary of the problem
-        status:
-          type: integer
-          description: The HTTP status code
-        detail:
-          type: string
-          description: A human-readable explanation specific to this occurrence
-        instance:
-          type: string
-          format: uri
-          description: A URI reference identifying the specific occurrence
     InventoryReport:
       type: object
       required:
@@ -109,6 +80,15 @@ components:
           format: int64
           description: Total size of all entities in bytes
           example: 5368709120
+    ErrorDetail:
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          type: string
+          description: Error message
+          example: Source directory not found
     GlacierRestoreStatusResponse:
       type: object
       required:
@@ -165,6 +145,26 @@ components:
           items:
             $ref: '#/components/schemas/ErrorDetail'
           description: Collection of error objects with message details (only present for failed restores)
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
     GlacierStoreStatusResponse:
       type: object
       required:

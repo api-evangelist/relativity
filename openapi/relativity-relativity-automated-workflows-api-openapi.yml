@@ -139,336 +139,7 @@ paths:
       operationId: postRelativityAutomatedWorkflowsV2LanguageExpressionsRun
       x-operation-id-source: derived
 components:
-  requestBodies:
-    RunExpressionRequest:
-      content:
-        application/json:
-          schema:
-            type: object
-            required:
-            - Expression
-            - Context
-            properties:
-              Expression:
-                type: string
-                description: The expression to compile and run
-              Context:
-                type: object
-                description: The context to run the expression against. Here you limit what you allow the expression to see or what inputs you wants to use to run the expression against. If you don't know what this means, check the Language documentation
-    TriggerRequestModel:
-      content:
-        application/json:
-          schema:
-            type: object
-            required:
-            - model
-            properties:
-              model:
-                anyOf:
-                - $ref: '#/components/schemas/TriggerModel'
-    ActionRequestModel:
-      content:
-        application/json:
-          schema:
-            type: object
-            required:
-            - model
-            properties:
-              model:
-                anyOf:
-                - $ref: '#/components/schemas/ActionModel'
   schemas:
-    TriggerModel:
-      type: object
-      title: The root schema
-      description: The root schema comprises the entire JSON document.
-      default: {}
-      required:
-      - Label
-      - ID
-      - Version
-      - Inputs
-      - States
-      - SelectableAsInitialTrigger
-      properties:
-        Label:
-          type: string
-          title: The Label schema
-          description: An explanation about the purpose of this instance.
-        ID:
-          type: string
-          title: The ID schema
-          description: An explanation about the purpose of this instance.
-        Version:
-          type: integer
-          title: The Version schema
-          description: An explanation about the purpose of this instance.
-          default: 1
-          minimum: 1
-        Inputs:
-          type: array
-          title: The Inputs schema
-          description: An explanation about the purpose of this instance.
-          default: []
-          items:
-            anyOf:
-            - type: object
-              title: The first anyOf schema
-              description: An explanation about the purpose of this instance.
-              default: {}
-              required:
-              - Label
-              - ID
-              - UIElementType
-              - InputSources
-              - Properties
-              properties:
-                Label:
-                  type: string
-                  title: The Label schema
-                  description: An explanation about the purpose of this instance.
-                  default: ''
-                ID:
-                  type: string
-                  title: The ID schema
-                  description: An explanation about the purpose of this instance.
-                  default: ''
-                UIElementType:
-                  type: string
-                  title: The UIElementType schema
-                  description: An explanation about the purpose of this instance.
-                  default: ''
-                InputSources:
-                  type: array
-                  title: The InputSources schema
-                  description: An explanation about the purpose of this instance.
-                  default: []
-                  items:
-                    anyOf:
-                    - type: object
-                      title: The first anyOf schema
-                      description: An explanation about the purpose of this instance.
-                      default: {}
-                      required:
-                      - Label
-                      - Value
-                      properties:
-                        Label:
-                          type: string
-                          title: The Label schema
-                          description: An explanation about the purpose of this instance.
-                          default: ''
-                        Value:
-                          type: string
-                          title: The Value schema
-                          description: An explanation about the purpose of this instance.
-                          default: ''
-                      additionalProperties: true
-                    - type: object
-                      title: The second anyOf schema
-                      description: An explanation about the purpose of this instance.
-                      default: {}
-                      required:
-                      - Label
-                      - Value
-                      - Children
-                      properties:
-                        Label:
-                          type: string
-                          title: The Label schema
-                          description: An explanation about the purpose of this instance.
-                          default: ''
-                        Value:
-                          type: string
-                          title: The Value schema
-                          description: An explanation about the purpose of this instance.
-                          default: ''
-                        Children:
-                          type: array
-                          title: The Children schema
-                          description: An explanation about the purpose of this instance.
-                          default: []
-                          items:
-                            anyOf:
-                            - type: object
-                              title: The first anyOf schema
-                              description: An explanation about the purpose of this instance.
-                              default: {}
-                              required:
-                              - ID
-                              - UIElementType
-                              - InputSources
-                              - Properties
-                              properties:
-                                ID:
-                                  type: string
-                                  title: The ID schema
-                                  description: An explanation about the purpose of this instance.
-                                  default: ''
-                                UIElementType:
-                                  type: string
-                                  title: The UIElementType schema
-                                  description: An explanation about the purpose of this instance.
-                                  default: ''
-                                InputSources:
-                                  type: array
-                                  title: The InputSources schema
-                                  description: An explanation about the purpose of this instance.
-                                  default: []
-                                  items:
-                                    anyOf:
-                                    - type: object
-                                      title: The first anyOf schema
-                                      description: An explanation about the purpose of this instance.
-                                      default: {}
-                                      required:
-                                      - Label
-                                      - Value
-                                      properties:
-                                        Label:
-                                          type: string
-                                          title: The Label schema
-                                          description: An explanation about the purpose of this instance.
-                                          default: ''
-                                        Value:
-                                          type: string
-                                          title: The Value schema
-                                          description: An explanation about the purpose of this instance.
-                                          default: ''
-                                      additionalProperties: true
-                                Properties:
-                                  type: object
-                                  title: The Properties schema
-                                  description: An explanation about the purpose of this instance.
-                                  default: {}
-                                  additionalProperties: true
-                              additionalProperties: true
-                      additionalProperties: true
-                Properties:
-                  type: object
-                  title: The Properties schema
-                  description: An explanation about the purpose of this instance.
-                  default: {}
-                  additionalProperties: true
-                HttpInputSource:
-                  $ref: '#/components/schemas/HttpInputSourceDefinition'
-                InputUIRedirectPath:
-                  $ref: '#/components/schemas/RedirectPath'
-              additionalProperties: true
-        States:
-          type: array
-          title: The States schema
-          description: An explanation about the purpose of this instance.
-          default: []
-          items:
-            anyOf:
-            - type: string
-              title: The first anyOf schema
-              description: An explanation about the purpose of this instance.
-              default: ''
-        SelectableAsInitialTrigger:
-          type: boolean
-          title: The SelectableAsInitialTrigger schema
-          description: An explanation about the purpose of this instance.
-          default: false
-      additionalProperties: true
-    GenericResponse:
-      type: object
-      title: Generic Response Wrapper
-      default:
-        Success: false
-      required:
-      - Success
-      - Messages
-      properties:
-        Success:
-          type: boolean
-          title: Indication of Successful Result
-          default: false
-        Messages:
-          type: array
-          title: Array of String Messages useful for Diagnostics
-          default: []
-          items:
-            anyOf:
-            - type: string
-        Error:
-          title: Error Object, Array or Primitive
-          default: null
-        Result:
-          title: Any Result Object, Array or Primitive
-          default: {}
-          items:
-            anyOf:
-            - $ref: '#/components/schemas/TriggerModel'
-            - $ref: '#/components/schemas/ActionModel'
-    HttpInputSourceDefinition:
-      type: object
-      title: HTTP Input Source Definition
-      description: 'HTTP GET endpoint used as a dynamic input source.
-
-        Can be set alongside ObjectManagerQueryInputSource to enable RDO
-
-        fallback if the HTTP endpoint fails.
-
-        '
-      properties:
-        Url:
-          type: string
-          description: 'Path-only URL of the GET endpoint. Must contain
-
-            the `{workspaceId}` placeholder, which AW substitutes at runtime.
-
-            '
-          example: /api/v1/workspaces/{workspaceId}/imaging-profiles
-        Headers:
-          type: object
-          description: 'Optional custom headers to include in the GET request.
-
-            A flat map of header name to header value (string).
-
-            '
-          additionalProperties:
-            type: string
-          example:
-            x-api-version: '1'
-        CidAuth:
-          $ref: '#/components/schemas/CidAuth'
-          description: 'CID authorization details declared when the integrator registered
-
-            their service with CID during BFF setup. AW uses these to
-
-            authenticate requests to the endpoint.
-
-            '
-    RedirectPath:
-      type: object
-      title: Redirect Path
-      description: 'CDN-hosted MFE path for a custom input UI. AW builds the full path
-
-        as `/{MfeAppName}/{Path}`, adding slashes where missing.
-
-        '
-      properties:
-        MfeAppName:
-          type: string
-          description: 'The MFE app name as registered on the CDN.
-
-            Must be the first path segment.
-
-            '
-          example: mfe-applet-name
-        Path:
-          type: string
-          description: 'Optional additional path segments after the app name.
-
-            Supports `{workspaceId}` and `{objectId}` placeholder tokens,
-
-            which AW substitutes at runtime.
-
-            '
-          example: workspaces/{workspaceId}/objects/{objectId}/select
-      additionalProperties: false
     ActionModel:
       type: object
       title: The root schema
@@ -844,6 +515,283 @@ components:
               additionalProperties: true
           additionalProperties: true
       additionalProperties: true
+    HttpInputSourceDefinition:
+      type: object
+      title: HTTP Input Source Definition
+      description: 'HTTP GET endpoint used as a dynamic input source.
+
+        Can be set alongside ObjectManagerQueryInputSource to enable RDO
+
+        fallback if the HTTP endpoint fails.
+
+        '
+      properties:
+        Url:
+          type: string
+          description: 'Path-only URL of the GET endpoint. Must contain
+
+            the `{workspaceId}` placeholder, which AW substitutes at runtime.
+
+            '
+          example: /api/v1/workspaces/{workspaceId}/imaging-profiles
+        Headers:
+          type: object
+          description: 'Optional custom headers to include in the GET request.
+
+            A flat map of header name to header value (string).
+
+            '
+          additionalProperties:
+            type: string
+          example:
+            x-api-version: '1'
+        CidAuth:
+          $ref: '#/components/schemas/CidAuth'
+          description: 'CID authorization details declared when the integrator registered
+
+            their service with CID during BFF setup. AW uses these to
+
+            authenticate requests to the endpoint.
+
+            '
+    RedirectPath:
+      type: object
+      title: Redirect Path
+      description: 'CDN-hosted MFE path for a custom input UI. AW builds the full path
+
+        as `/{MfeAppName}/{Path}`, adding slashes where missing.
+
+        '
+      properties:
+        MfeAppName:
+          type: string
+          description: 'The MFE app name as registered on the CDN.
+
+            Must be the first path segment.
+
+            '
+          example: mfe-applet-name
+        Path:
+          type: string
+          description: 'Optional additional path segments after the app name.
+
+            Supports `{workspaceId}` and `{objectId}` placeholder tokens,
+
+            which AW substitutes at runtime.
+
+            '
+          example: workspaces/{workspaceId}/objects/{objectId}/select
+      additionalProperties: false
+    ExpressionRunResult:
+      type: object
+      required:
+      - Success
+      properties:
+        Success:
+          type: boolean
+          description: Indicates the Expression Compiled and Ran Successfully
+        Expression:
+          type: string
+          description: A normalized based on the expression given in the Request
+        ExpressionResult:
+          description: The result value the expression returns
+        Error:
+          type: object
+          description: Error occurred while compiling or running the expression
+    TriggerModel:
+      type: object
+      title: The root schema
+      description: The root schema comprises the entire JSON document.
+      default: {}
+      required:
+      - Label
+      - ID
+      - Version
+      - Inputs
+      - States
+      - SelectableAsInitialTrigger
+      properties:
+        Label:
+          type: string
+          title: The Label schema
+          description: An explanation about the purpose of this instance.
+        ID:
+          type: string
+          title: The ID schema
+          description: An explanation about the purpose of this instance.
+        Version:
+          type: integer
+          title: The Version schema
+          description: An explanation about the purpose of this instance.
+          default: 1
+          minimum: 1
+        Inputs:
+          type: array
+          title: The Inputs schema
+          description: An explanation about the purpose of this instance.
+          default: []
+          items:
+            anyOf:
+            - type: object
+              title: The first anyOf schema
+              description: An explanation about the purpose of this instance.
+              default: {}
+              required:
+              - Label
+              - ID
+              - UIElementType
+              - InputSources
+              - Properties
+              properties:
+                Label:
+                  type: string
+                  title: The Label schema
+                  description: An explanation about the purpose of this instance.
+                  default: ''
+                ID:
+                  type: string
+                  title: The ID schema
+                  description: An explanation about the purpose of this instance.
+                  default: ''
+                UIElementType:
+                  type: string
+                  title: The UIElementType schema
+                  description: An explanation about the purpose of this instance.
+                  default: ''
+                InputSources:
+                  type: array
+                  title: The InputSources schema
+                  description: An explanation about the purpose of this instance.
+                  default: []
+                  items:
+                    anyOf:
+                    - type: object
+                      title: The first anyOf schema
+                      description: An explanation about the purpose of this instance.
+                      default: {}
+                      required:
+                      - Label
+                      - Value
+                      properties:
+                        Label:
+                          type: string
+                          title: The Label schema
+                          description: An explanation about the purpose of this instance.
+                          default: ''
+                        Value:
+                          type: string
+                          title: The Value schema
+                          description: An explanation about the purpose of this instance.
+                          default: ''
+                      additionalProperties: true
+                    - type: object
+                      title: The second anyOf schema
+                      description: An explanation about the purpose of this instance.
+                      default: {}
+                      required:
+                      - Label
+                      - Value
+                      - Children
+                      properties:
+                        Label:
+                          type: string
+                          title: The Label schema
+                          description: An explanation about the purpose of this instance.
+                          default: ''
+                        Value:
+                          type: string
+                          title: The Value schema
+                          description: An explanation about the purpose of this instance.
+                          default: ''
+                        Children:
+                          type: array
+                          title: The Children schema
+                          description: An explanation about the purpose of this instance.
+                          default: []
+                          items:
+                            anyOf:
+                            - type: object
+                              title: The first anyOf schema
+                              description: An explanation about the purpose of this instance.
+                              default: {}
+                              required:
+                              - ID
+                              - UIElementType
+                              - InputSources
+                              - Properties
+                              properties:
+                                ID:
+                                  type: string
+                                  title: The ID schema
+                                  description: An explanation about the purpose of this instance.
+                                  default: ''
+                                UIElementType:
+                                  type: string
+                                  title: The UIElementType schema
+                                  description: An explanation about the purpose of this instance.
+                                  default: ''
+                                InputSources:
+                                  type: array
+                                  title: The InputSources schema
+                                  description: An explanation about the purpose of this instance.
+                                  default: []
+                                  items:
+                                    anyOf:
+                                    - type: object
+                                      title: The first anyOf schema
+                                      description: An explanation about the purpose of this instance.
+                                      default: {}
+                                      required:
+                                      - Label
+                                      - Value
+                                      properties:
+                                        Label:
+                                          type: string
+                                          title: The Label schema
+                                          description: An explanation about the purpose of this instance.
+                                          default: ''
+                                        Value:
+                                          type: string
+                                          title: The Value schema
+                                          description: An explanation about the purpose of this instance.
+                                          default: ''
+                                      additionalProperties: true
+                                Properties:
+                                  type: object
+                                  title: The Properties schema
+                                  description: An explanation about the purpose of this instance.
+                                  default: {}
+                                  additionalProperties: true
+                              additionalProperties: true
+                      additionalProperties: true
+                Properties:
+                  type: object
+                  title: The Properties schema
+                  description: An explanation about the purpose of this instance.
+                  default: {}
+                  additionalProperties: true
+                HttpInputSource:
+                  $ref: '#/components/schemas/HttpInputSourceDefinition'
+                InputUIRedirectPath:
+                  $ref: '#/components/schemas/RedirectPath'
+              additionalProperties: true
+        States:
+          type: array
+          title: The States schema
+          description: An explanation about the purpose of this instance.
+          default: []
+          items:
+            anyOf:
+            - type: string
+              title: The first anyOf schema
+              description: An explanation about the purpose of this instance.
+              default: ''
+        SelectableAsInitialTrigger:
+          type: boolean
+          title: The SelectableAsInitialTrigger schema
+          description: An explanation about the purpose of this instance.
+          default: false
+      additionalProperties: true
     CidAuth:
       type: object
       title: CID Authorization
@@ -867,19 +815,71 @@ components:
           example:
           - read
       additionalProperties: false
-    ExpressionRunResult:
+    GenericResponse:
       type: object
+      title: Generic Response Wrapper
+      default:
+        Success: false
       required:
       - Success
+      - Messages
       properties:
         Success:
           type: boolean
-          description: Indicates the Expression Compiled and Ran Successfully
-        Expression:
-          type: string
-          description: A normalized based on the expression given in the Request
-        ExpressionResult:
-          description: The result value the expression returns
+          title: Indication of Successful Result
+          default: false
+        Messages:
+          type: array
+          title: Array of String Messages useful for Diagnostics
+          default: []
+          items:
+            anyOf:
+            - type: string
         Error:
-          type: object
-          description: Error occurred while compiling or running the expression
+          title: Error Object, Array or Primitive
+          default: null
+        Result:
+          title: Any Result Object, Array or Primitive
+          default: {}
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/TriggerModel'
+            - $ref: '#/components/schemas/ActionModel'
+  requestBodies:
+    ActionRequestModel:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+            - model
+            properties:
+              model:
+                anyOf:
+                - $ref: '#/components/schemas/ActionModel'
+    TriggerRequestModel:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+            - model
+            properties:
+              model:
+                anyOf:
+                - $ref: '#/components/schemas/TriggerModel'
+    RunExpressionRequest:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+            - Expression
+            - Context
+            properties:
+              Expression:
+                type: string
+                description: The expression to compile and run
+              Context:
+                type: object
+                description: The context to run the expression against. Here you limit what you allow the expression to see or what inputs you wants to use to run the expression against. If you don't know what this means, check the Language documentation

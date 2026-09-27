@@ -200,15 +200,22 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ValueResponse.String:
-      description: ValueResponse of string type
-      allOf:
-      - type: object
-        properties:
-          Value:
+    DataSources:
+      type: object
+      properties:
+        Jobs:
+          type: array
+          items:
             type: string
-            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
-      - $ref: '#/components/schemas/Response'
+            format: uuid
+          uniqueItems: true
+          description: Jobs sources ids.
+          example:
+          - 1D2F6FF7-D3BA-49D4-BAF0-808533EE5233
+          - 00000000-0000-0000-0000-000000000000
+        TotalCount:
+          type: integer
+          example: 2
     ImportErrors:
       type: object
       properties:
@@ -237,20 +244,64 @@ components:
           description: Returns true if there is more records for a given Data Source(NumberOfSkippedRecords + NumberOfRecords < TotalCount).
           type: boolean
           example: false
-    ImportError:
+    ValueResponse.String:
+      description: ValueResponse of string type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: string
+            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
+      - $ref: '#/components/schemas/Response'
+    DataSourceType:
+      type: string
+      description: Type of the input load file
+      example: Opticon
+      enum:
+      - Unknown
+      - Opticon
+      - LoadFile
+    DataSourceDetails:
+      description: DataSourceDetails type
       type: object
       properties:
-        ErrorDetails:
-          type: array
-          items:
-            $ref: '#/components/schemas/ErrorDetail'
-          description: Gets or sets collection of error details.
-        LineNumber:
-          type: integer
-          example: 1
-        ObjectIdentifier:
-          type: string
-          description: Document identifier
+        State:
+          $ref: '#/components/schemas/DataSourceState'
+        DataSourceSettings:
+          $ref: '#/components/schemas/DataSourceSettings'
+        IsParentFolderDeleted:
+          type: boolean
+          description: Gets or sets a value indicating whether the source load file's parent folder is deleted.
+          example: true
+        JobLevelErrors:
+          $ref: '#/components/schemas/ImportError'
+    ValueResponse.StringArray:
+      description: ValueResponse of string[] type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: array
+            items:
+              type: string
+            description: Names of columns.
+            example:
+            - Column1
+            - Column2
+      - $ref: '#/components/schemas/Response'
+    DataSourceState:
+      type: string
+      example: New
+      enum:
+      - Unknown
+      - New
+      - Scheduled
+      - PendingInserting
+      - Inserting
+      - Canceled
+      - Failed
+      - CompletedWithItemErrors
+      - Completed
     ValueResponse.ImportErrors:
       description: ValueResponse of ImportErrors type
       allOf:
@@ -258,31 +309,6 @@ components:
         properties:
           Value:
             $ref: '#/components/schemas/ImportErrors'
-      - $ref: '#/components/schemas/Response'
-    Response:
-      type: object
-      properties:
-        IsSuccess:
-          type: boolean
-          example: true
-        ErrorMessage:
-          type: string
-          example: ''
-        ErrorCode:
-          type: string
-          example: ''
-        ImportJobID:
-          description: Import job identification GUID number.
-          type: string
-          format: uuid
-          example: 00000000-0000-0000-0000-000000000000
-    ValueResponse.DataSourceDetails:
-      description: ValueResponse of DataSourceDetails type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            $ref: '#/components/schemas/DataSourceDetails'
       - $ref: '#/components/schemas/Response'
     ErrorDetail:
       type: object
@@ -308,6 +334,39 @@ components:
           additionalProperties:
             type: string
           description: Gets dictionary (key/value pairs of strings) of properties of a given errors. Structure of this dictionary is defined for each error code.
+    DataSourceEndOfLine:
+      type: string
+      description: Line ending standard of the load file
+      example: Windows
+      enum:
+      - Windows
+      - Linux
+      - Mac
+    Response:
+      type: object
+      properties:
+        IsSuccess:
+          type: boolean
+          example: true
+        ErrorMessage:
+          type: string
+          example: ''
+        ErrorCode:
+          type: string
+          example: ''
+        ImportJobID:
+          description: Import job identification GUID number.
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+    ValueResponse.DataSourceDetails:
+      description: ValueResponse of DataSourceDetails type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            $ref: '#/components/schemas/DataSourceDetails'
+      - $ref: '#/components/schemas/Response'
     DataSourceSettings:
       type: object
       description: Settings for the data source.
@@ -359,27 +418,14 @@ components:
           type: string
           description: 'Represents the culture info used to parse dates from load file. Defined as a language tag - based on RFC 4646 and BCP 47. ex: \en-US\", \"pl-PL\". When not specified invariant culture will be used by default.'
           example: en-US
-    DataSourceState:
-      type: string
-      example: New
-      enum:
-      - Unknown
-      - New
-      - Scheduled
-      - PendingInserting
-      - Inserting
-      - Canceled
-      - Failed
-      - CompletedWithItemErrors
-      - Completed
-    DataSourceType:
-      type: string
-      description: Type of the input load file
-      example: Opticon
-      enum:
-      - Unknown
-      - Opticon
-      - LoadFile
+    ValueResponse.DataSources:
+      description: ValueResponse of DataSources type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            $ref: '#/components/schemas/DataSources'
+      - $ref: '#/components/schemas/Response'
     ValueResponse.ImportProgress:
       description: ValueResponse of ImportProgress type
       allOf:
@@ -398,66 +444,20 @@ components:
                 type: integer
                 example: 1
       - $ref: '#/components/schemas/Response'
-    DataSourceDetails:
-      description: DataSourceDetails type
+    ImportError:
       type: object
       properties:
-        State:
-          $ref: '#/components/schemas/DataSourceState'
-        DataSourceSettings:
-          $ref: '#/components/schemas/DataSourceSettings'
-        IsParentFolderDeleted:
-          type: boolean
-          description: Gets or sets a value indicating whether the source load file's parent folder is deleted.
-          example: true
-        JobLevelErrors:
-          $ref: '#/components/schemas/ImportError'
-    ValueResponse.DataSources:
-      description: ValueResponse of DataSources type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            $ref: '#/components/schemas/DataSources'
-      - $ref: '#/components/schemas/Response'
-    ValueResponse.StringArray:
-      description: ValueResponse of string[] type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            type: array
-            items:
-              type: string
-            description: Names of columns.
-            example:
-            - Column1
-            - Column2
-      - $ref: '#/components/schemas/Response'
-    DataSourceEndOfLine:
-      type: string
-      description: Line ending standard of the load file
-      example: Windows
-      enum:
-      - Windows
-      - Linux
-      - Mac
-    DataSources:
-      type: object
-      properties:
-        Jobs:
+        ErrorDetails:
           type: array
           items:
-            type: string
-            format: uuid
-          uniqueItems: true
-          description: Jobs sources ids.
-          example:
-          - 1D2F6FF7-D3BA-49D4-BAF0-808533EE5233
-          - 00000000-0000-0000-0000-000000000000
-        TotalCount:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: Gets or sets collection of error details.
+        LineNumber:
           type: integer
-          example: 2
+          example: 1
+        ObjectIdentifier:
+          type: string
+          description: Document identifier
     createDataSourceSettingsRequest:
       type: object
       description: Object of type DataSourceSettings.
@@ -465,27 +465,27 @@ components:
         dataSourceSettings:
           $ref: '#/components/schemas/DataSourceSettings'
   parameters:
-    start:
-      name: start
-      in: query
-      description: Index from which import jobs will be read.
-      required: true
-      schema:
-        type: integer
-      example: '0'
-    importJobID:
-      name: importJobID
+    sourceID:
+      name: sourceID
       in: path
-      description: Import job identification GUID.
+      description: Source identification GUID.
       required: true
       schema:
         type: string
         format: uuid
       example: 00000000-0000-0000-0000-000000000000
-    sourceID:
-      name: sourceID
+    length:
+      name: length
+      in: query
+      description: Number of returned import jobs in workspace.
+      required: true
+      schema:
+        type: integer
+      example: 10
+    importJobID:
+      name: importJobID
       in: path
-      description: Source identification GUID.
+      description: Import job identification GUID.
       required: true
       schema:
         type: string
@@ -508,11 +508,11 @@ components:
       schema:
         type: integer
       example: 10000
-    length:
-      name: length
+    start:
+      name: start
       in: query
-      description: Number of returned import jobs in workspace.
+      description: Index from which import jobs will be read.
       required: true
       schema:
         type: integer
-      example: 10
+      example: '0'

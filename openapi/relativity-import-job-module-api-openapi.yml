@@ -249,45 +249,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ValueResponse.String:
-      description: ValueResponse of string type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            type: string
-            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
-      - $ref: '#/components/schemas/Response'
-    Response:
-      type: object
-      properties:
-        IsSuccess:
-          type: boolean
-          example: true
-        ErrorMessage:
-          type: string
-          example: ''
-        ErrorCode:
-          type: string
-          example: ''
-        ImportJobID:
-          description: Import job identification GUID number.
-          type: string
-          format: uuid
-          example: 00000000-0000-0000-0000-000000000000
-    ImportState:
-      type: string
-      example: New
-      enum:
-      - Unknown
-      - New
-      - Configured
-      - ValidationErrors
-      - InProgress
-      - Paused
-      - Canceled
-      - Failed
-      - Completed
     ValueResponse.ImportDetails:
       description: ValueResponse of ImportDetails type
       allOf:
@@ -319,6 +280,39 @@ components:
                 format: date-time
                 example: '2021-11-30T09:17:19.81'
       - $ref: '#/components/schemas/Response'
+    ValueResponse.String:
+      description: ValueResponse of string type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: string
+            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
+      - $ref: '#/components/schemas/Response'
+    ImportState:
+      type: string
+      example: New
+      enum:
+      - Unknown
+      - New
+      - Configured
+      - ValidationErrors
+      - InProgress
+      - Paused
+      - Canceled
+      - Failed
+      - Completed
+    createJobBodyRequest:
+      type: object
+      properties:
+        applicationName:
+          type: string
+          description: Application name.
+          example: importini
+        correlationID:
+          type: string
+          description: External correlation ID.
+          example: c0r31ati0n_ID
     ValueResponse.ImportJobs:
       description: ValueResponse of ImportJobs type
       allOf:
@@ -341,17 +335,6 @@ components:
                 type: integer
                 example: 2
       - $ref: '#/components/schemas/Response'
-    createJobBodyRequest:
-      type: object
-      properties:
-        applicationName:
-          type: string
-          description: Application name.
-          example: importini
-        correlationID:
-          type: string
-          description: External correlation ID.
-          example: c0r31ati0n_ID
     ValueResponse.ImportProgress:
       description: ValueResponse of ImportProgress type
       allOf:
@@ -370,7 +353,32 @@ components:
                 type: integer
                 example: 1
       - $ref: '#/components/schemas/Response'
+    Response:
+      type: object
+      properties:
+        IsSuccess:
+          type: boolean
+          example: true
+        ErrorMessage:
+          type: string
+          example: ''
+        ErrorCode:
+          type: string
+          example: ''
+        ImportJobID:
+          description: Import job identification GUID number.
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
   parameters:
+    length:
+      name: length
+      in: query
+      description: Number of returned import jobs in workspace.
+      required: true
+      schema:
+        type: integer
+      example: 10
     X-CSRF-Header:
       name: X-CSRF-Header
       in: header
@@ -380,14 +388,6 @@ components:
         type: string
         format: System.String
         default: .
-    start:
-      name: start
-      in: query
-      description: Index from which import jobs will be read.
-      required: true
-      schema:
-        type: integer
-      example: '0'
     workspaceID:
       name: workspaceID
       in: path
@@ -405,11 +405,11 @@ components:
         type: string
         format: uuid
       example: 00000000-0000-0000-0000-000000000000
-    length:
-      name: length
+    start:
+      name: start
       in: query
-      description: Number of returned import jobs in workspace.
+      description: Index from which import jobs will be read.
       required: true
       schema:
         type: integer
-      example: 10
+      example: '0'

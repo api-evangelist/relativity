@@ -88,6 +88,18 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
+    ValidationProblemDetails:
+      allOf:
+      - $ref: '#/components/schemas/ProblemDetails'
+      - type: object
+        properties:
+          errors:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+            description: Field-specific validation errors
     StartGlacierStoreResponse:
       type: object
       required:
@@ -104,18 +116,6 @@ components:
           format: uuid
           description: The unique identifier of the created glacier
           example: 987fcdeb-51a2-43d1-9876-543210fedcba
-    ValidationProblemDetails:
-      allOf:
-      - $ref: '#/components/schemas/ProblemDetails'
-      - type: object
-        properties:
-          errors:
-            type: object
-            additionalProperties:
-              type: array
-              items:
-                type: string
-            description: Field-specific validation errors
     StartGlacierStoreRequest:
       type: object
       required:

@@ -299,38 +299,306 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    QueryResultSlim:
-      title: QueryResultSlim
+    FieldValuePair:
+      title: FieldValuePair
       type: object
       properties:
-        TotalCount:
-          type: integer
-        Objects:
-          type: array
-          items:
-            $ref: '#/components/schemas/RelativityObjectSlim'
-        IDWindow:
-          type: array
-          items:
-            type: integer
-        CurrentStartIndex:
-          type: integer
-        ResultCount:
-          type: integer
-        ObjectType:
-          $ref: '#/components/schemas/ObjectType'
-        SampleDetails:
-          $ref: '#/components/schemas/SampleDetails'
-        RankWindow:
-          type: array
-          items:
-            type: number
-        RelationalField:
+        Value:
+          $ref: '#/components/schemas/Object'
+        Field:
           $ref: '#/components/schemas/Field'
+    Dependency:
+      title: Dependency
+      type: object
+      properties:
+        ObjectType:
+          $ref: '#/components/schemas/Securable1'
+        Action:
+          type: string
+        Count:
+          $ref: '#/components/schemas/Securable1'
+        Connection:
+          $ref: '#/components/schemas/Securable1'
+        HierarchicLevel:
+          type: integer
+    InitializeExportAsync_RequestBody:
+      title: InitializeExportAsync_RequestBody
+      type: object
+      properties:
+        queryRequest:
+          $ref: '#/components/schemas/QueryRequest'
+    ReadOptions:
+      title: ReadOptions
+      type: object
+      properties:
+        MaxCharactersForLongTextValues:
+          type:
+          - integer
+          - 'null'
+        LongTextBehavior:
+          enum:
+          - Default
+          - Tokenized
+          - DefaultWithErrors
+          - TokenizedWithErrors
+          type: string
+        FieldTypesToReturnAsString:
+          type: array
+          items:
+            enum:
+            - FixedLengthText
+            - WholeNumber
+            - Date
+            - YesNo
+            - LongText
+            - SingleChoice
+            - Decimal
+            - Currency
+            - MultipleChoice
+            - File
+            - SingleObject
+            - User
+            - MultipleObject
+            - Empty
+            type: string
+        CallingContext:
+          $ref: '#/components/schemas/CallingContext'
+    UpdateLongTextFromStreamAsync_RequestBody:
+      title: UpdateLongTextFromStreamAsync_RequestBody
+      type: object
+      properties:
+        updateLongTextFromStreamRequest:
+          $ref: '#/components/schemas/UpdateLongTextFromStreamRequest'
+        keplerStream:
+          $ref: '#/components/schemas/IKeplerStream'
+    RelativityObject:
+      title: RelativityObject
+      type: object
+      properties:
+        ParentObject:
+          $ref: '#/components/schemas/RelativityObjectRef'
+        Name:
+          type: string
+        FieldValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldValuePair'
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+        Item:
+          $ref: '#/components/schemas/FieldValuePair'
+    CreateRequest:
+      title: CreateRequest
+      type: object
+      properties:
+        ParentObject:
+          $ref: '#/components/schemas/RelativityObjectRef'
+        ObjectType:
+          $ref: '#/components/schemas/ObjectTypeRef'
+        FieldValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldRefValuePair'
+    EventHandlerRef:
+      title: EventHandlerRef
+      type: object
+      properties:
+        ClassName:
+          type: string
+        EventHandlerType:
+          enum:
+          - PostSave
+          - PreCascadeDelete
+          - PreDelete
+          - PreLoad
+          - PreMassDelete
+          - PreSave
+          type: string
+        Application:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+    Object:
+      title: Object
+      type: object
+    GetDependencyListAsync_RequestBody:
+      title: GetDependencyListAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/DependencyListByObjectIdentifiersRequest'
+    DeleteReport:
+      title: DeleteReport
+      type: object
+      properties:
+        DeletedItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeleteItem'
+    RelativityObjectRef:
+      title: RelativityObjectRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Guid:
+          type:
+          - string
+          - 'null'
+    FieldRef:
+      title: FieldRef
+      type: object
+      properties:
+        ViewFieldID:
+          type: integer
+        ArtifactID:
+          type: integer
+        Guid:
+          type:
+          - string
+          - 'null'
+        Name:
+          type: string
+    ExportInitializationResults:
+      title: ExportInitializationResults
+      type: object
+      properties:
+        RunID:
+          type: string
+        RecordCount:
+          type: integer
+        FieldData:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldMetadata'
+    ObjectTypeRef:
+      title: ObjectTypeRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+        Guid:
+          type:
+          - string
+          - 'null'
+        ArtifactTypeID:
+          type: integer
+    QuerySlimAsync_RequestBody:
+      title: QuerySlimAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/QueryRequest'
+    UpdateRequest:
+      title: UpdateRequest
+      type: object
+      properties:
+        Object:
+          $ref: '#/components/schemas/RelativityObjectRef'
+        FieldValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldRefValuePair'
+        ObjectVersionToken:
+          type: string
+    ObjectType:
+      title: ObjectType
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+        Guids:
+          type: array
+          items:
+            type: string
+        ArtifactTypeID:
+          type: integer
+    DeleteResult:
+      title: DeleteResult
+      type: object
+      properties:
+        Report:
+          $ref: '#/components/schemas/DeleteReport'
+    SampleDetails:
+      title: SampleDetails
+      type: object
+      properties:
+        SampleSize:
+          type:
+          - integer
+          - 'null'
+        UniverseSize:
+          type:
+          - integer
+          - 'null'
+        Token:
+          type: string
+    ReadRequest:
+      title: ReadRequest
+      type: object
+      properties:
+        Object:
+          $ref: '#/components/schemas/RelativityObjectRef'
         Fields:
           type: array
           items:
-            $ref: '#/components/schemas/Field'
+            $ref: '#/components/schemas/FieldRef'
+    Field:
+      title: Field
+      type: object
+      properties:
+        FieldCategory:
+          enum:
+          - Generic
+          - FullText
+          - Identifier
+          - Reflected
+          - Comments
+          - Relational
+          - ProductionMarker
+          - AutoCreate
+          - FileSize
+          - FolderName
+          - FileInfo
+          - ParentArtifact
+          - MarkupSetMarker
+          - GenericSystem
+          - MultiReflected
+          - Batch
+          type: string
+        FieldType:
+          enum:
+          - FixedLengthText
+          - WholeNumber
+          - Date
+          - YesNo
+          - LongText
+          - SingleChoice
+          - Decimal
+          - Currency
+          - MultipleChoice
+          - File
+          - SingleObject
+          - User
+          - MultipleObject
+          - Empty
+          type: string
+        ViewFieldID:
+          type: integer
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+        Name:
+          type: string
     UpdateResult:
       title: UpdateResult
       type: object
@@ -339,6 +607,63 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EventHandlerStatus'
+    CreateResult:
+      title: CreateResult
+      type: object
+      properties:
+        Object:
+          $ref: '#/components/schemas/RelativityObject'
+        EventHandlerStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventHandlerStatus'
+    DeleteAsync_RequestBody:
+      title: DeleteAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/DeleteRequest'
+    QueryAsync_RequestBody:
+      title: QueryAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/QueryRequest'
+    Sort:
+      title: Sort
+      type: object
+      properties:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRef'
+        Order:
+          type: integer
+        Direction:
+          enum:
+          - Ascending
+          - Descending
+          type: string
+    FieldRefValuePair:
+      title: FieldRefValuePair
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/Object'
+        Field:
+          $ref: '#/components/schemas/FieldRef'
+    OperationOptions:
+      title: OperationOptions
+      type: object
+      properties:
+        CallingContext:
+          $ref: '#/components/schemas/CallingContext'
+    CreateAsync_RequestBody:
+      title: CreateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/CreateRequest'
+        operationOptions:
+          $ref: '#/components/schemas/OperationOptions'
     UpdateOptions:
       title: UpdateOptions
       type: object
@@ -418,164 +743,6 @@ components:
           items:
             type: string
             format: NameValueCollection
-    ReadAsync_RequestBody:
-      title: ReadAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ReadRequest'
-        readOptions:
-          $ref: '#/components/schemas/ReadOptions'
-    Object:
-      title: Object
-      type: object
-    CreateAsync_RequestBody:
-      title: CreateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/CreateRequest'
-        operationOptions:
-          $ref: '#/components/schemas/OperationOptions'
-    Dependency:
-      title: Dependency
-      type: object
-      properties:
-        ObjectType:
-          $ref: '#/components/schemas/Securable1'
-        Action:
-          type: string
-        Count:
-          $ref: '#/components/schemas/Securable1'
-        Connection:
-          $ref: '#/components/schemas/Securable1'
-        HierarchicLevel:
-          type: integer
-    RelativityObjectSlim:
-      title: RelativityObjectSlim
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Values:
-          type: array
-          items:
-            $ref: '#/components/schemas/Object'
-    EventHandlerStatus:
-      title: EventHandlerStatus
-      type: object
-      properties:
-        Success:
-          type: boolean
-        Message:
-          type: string
-        FailingEventHandler:
-          $ref: '#/components/schemas/EventHandlerRef'
-    FieldValuePair:
-      title: FieldValuePair
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/Object'
-        Field:
-          $ref: '#/components/schemas/Field'
-    GetDependencyListAsync_RequestBody:
-      title: GetDependencyListAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/DependencyListByObjectIdentifiersRequest'
-    UpdateLongTextFromStreamAsync_RequestBody:
-      title: UpdateLongTextFromStreamAsync_RequestBody
-      type: object
-      properties:
-        updateLongTextFromStreamRequest:
-          $ref: '#/components/schemas/UpdateLongTextFromStreamRequest'
-        keplerStream:
-          $ref: '#/components/schemas/IKeplerStream'
-    StreamLongTextAsync_RequestBody:
-      title: StreamLongTextAsync_RequestBody
-      type: object
-      properties:
-        exportObject:
-          $ref: '#/components/schemas/RelativityObjectRef'
-        longTextField:
-          $ref: '#/components/schemas/FieldRef'
-    EventHandlerRef:
-      title: EventHandlerRef
-      type: object
-      properties:
-        ClassName:
-          type: string
-        EventHandlerType:
-          enum:
-          - PostSave
-          - PreCascadeDelete
-          - PreDelete
-          - PreLoad
-          - PreMassDelete
-          - PreSave
-          type: string
-        Application:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-    ExportInitializationResults:
-      title: ExportInitializationResults
-      type: object
-      properties:
-        RunID:
-          type: string
-        RecordCount:
-          type: integer
-        FieldData:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldMetadata'
-    DeleteResult:
-      title: DeleteResult
-      type: object
-      properties:
-        Report:
-          $ref: '#/components/schemas/DeleteReport'
-    QueryAsync_RequestBody:
-      title: QueryAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/QueryRequest'
-    LayoutRef:
-      title: LayoutRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Guid:
-          type:
-          - string
-          - 'null'
-    CreateRequest:
-      title: CreateRequest
-      type: object
-      properties:
-        ParentObject:
-          $ref: '#/components/schemas/RelativityObjectRef'
-        ObjectType:
-          $ref: '#/components/schemas/ObjectTypeRef'
-        FieldValues:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldRefValuePair'
-    InitializeExportAsync_RequestBody:
-      title: InitializeExportAsync_RequestBody
-      type: object
-      properties:
-        queryRequest:
-          $ref: '#/components/schemas/QueryRequest'
-    QuerySlimAsync_RequestBody:
-      title: QuerySlimAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/QueryRequest'
     DeleteItem:
       title: DeleteItem
       type: object
@@ -588,18 +755,77 @@ components:
           type: integer
         Connection:
           type: string
-    UpdateRequest:
-      title: UpdateRequest
+    EventHandlerStatus:
+      title: EventHandlerStatus
+      type: object
+      properties:
+        Success:
+          type: boolean
+        Message:
+          type: string
+        FailingEventHandler:
+          $ref: '#/components/schemas/EventHandlerRef'
+    Securable1:
+      title: Securable`1
+      type: object
+      properties:
+        Secured:
+          type: boolean
+        Value:
+          type: string
+    RelativityObjectSlim:
+      title: RelativityObjectSlim
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Values:
+          type: array
+          items:
+            $ref: '#/components/schemas/Object'
+    DependencyListByObjectIdentifiersRequest:
+      title: DependencyListByObjectIdentifiersRequest
+      type: object
+      properties:
+        Objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/RelativityObjectRef'
+    CallingContext:
+      title: CallingContext
+      type: object
+      properties:
+        Layout:
+          $ref: '#/components/schemas/LayoutRef'
+        Referrer:
+          type: string
+        PageMode:
+          enum:
+          - Unknown
+          - View
+          - Edit
+          - List
+          type: string
+    ReadResult:
+      title: ReadResult
+      type: object
+      properties:
+        Message:
+          type: string
+        FailingEventHandler:
+          $ref: '#/components/schemas/EventHandlerRef'
+        Object:
+          $ref: '#/components/schemas/RelativityObject'
+        ObjectType:
+          $ref: '#/components/schemas/ObjectType'
+        ObjectVersionToken:
+          type: string
+    DeleteRequest:
+      title: DeleteRequest
       type: object
       properties:
         Object:
           $ref: '#/components/schemas/RelativityObjectRef'
-        FieldValues:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldRefValuePair'
-        ObjectVersionToken:
-          type: string
     QueryResult:
       title: QueryResult
       type: object
@@ -628,118 +854,103 @@ components:
             type: number
         RelationalField:
           $ref: '#/components/schemas/Field'
-    ObjectTypeRef:
-      title: ObjectTypeRef
+    SampleParameters:
+      title: SampleParameters
       type: object
       properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-        Guid:
+        ExistingToken:
           type:
           - string
           - 'null'
-        ArtifactTypeID:
+        MarginOfError:
+          type: number
+        ConfidenceLevel:
+          type: number
+        FixedSampleSize:
           type: integer
-    DeleteReport:
-      title: DeleteReport
+        SamplingPercentage:
+          type: number
+    QueryResultSlim:
+      title: QueryResultSlim
       type: object
       properties:
-        DeletedItems:
+        TotalCount:
+          type: integer
+        Objects:
           type: array
           items:
-            $ref: '#/components/schemas/DeleteItem'
-    FieldRef:
-      title: FieldRef
+            $ref: '#/components/schemas/RelativityObjectSlim'
+        IDWindow:
+          type: array
+          items:
+            type: integer
+        CurrentStartIndex:
+          type: integer
+        ResultCount:
+          type: integer
+        ObjectType:
+          $ref: '#/components/schemas/ObjectType'
+        SampleDetails:
+          $ref: '#/components/schemas/SampleDetails'
+        RankWindow:
+          type: array
+          items:
+            type: number
+        RelationalField:
+          $ref: '#/components/schemas/Field'
+        Fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/Field'
+    LayoutRef:
+      title: LayoutRef
       type: object
       properties:
-        ViewFieldID:
-          type: integer
         ArtifactID:
           type: integer
         Guid:
           type:
           - string
           - 'null'
-        Name:
-          type: string
-    DeleteAsync_RequestBody:
-      title: DeleteAsync_RequestBody
+    FieldMetadata:
+      title: FieldMetadata
       type: object
       properties:
-        request:
-          $ref: '#/components/schemas/DeleteRequest'
-    ReadResult:
-      title: ReadResult
-      type: object
-      properties:
-        Message:
-          type: string
-        FailingEventHandler:
-          $ref: '#/components/schemas/EventHandlerRef'
-        Object:
-          $ref: '#/components/schemas/RelativityObject'
-        ObjectType:
-          $ref: '#/components/schemas/ObjectType'
-        ObjectVersionToken:
-          type: string
-    DisplayableObjectIdentifier:
-      title: DisplayableObjectIdentifier
-      type: object
-      properties:
-        Name:
+        FieldType:
+          enum:
+          - FixedLengthText
+          - WholeNumber
+          - Date
+          - YesNo
+          - LongText
+          - SingleChoice
+          - Decimal
+          - Currency
+          - MultipleChoice
+          - File
+          - SingleObject
+          - User
+          - MultipleObject
+          - Empty
           type: string
         ArtifactID:
+          type: integer
+        ViewFieldID:
           type: integer
         Guids:
           type: array
           items:
             type: string
-    SearchIndexRef:
-      title: SearchIndexRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
         Name:
           type: string
-    ReadOptions:
-      title: ReadOptions
+    StreamLongTextAsync_RequestBody:
+      title: StreamLongTextAsync_RequestBody
       type: object
       properties:
-        MaxCharactersForLongTextValues:
-          type:
-          - integer
-          - 'null'
-        LongTextBehavior:
-          enum:
-          - Default
-          - Tokenized
-          - DefaultWithErrors
-          - TokenizedWithErrors
-          type: string
-        FieldTypesToReturnAsString:
-          type: array
-          items:
-            enum:
-            - FixedLengthText
-            - WholeNumber
-            - Date
-            - YesNo
-            - LongText
-            - SingleChoice
-            - Decimal
-            - Currency
-            - MultipleChoice
-            - File
-            - SingleObject
-            - User
-            - MultipleObject
-            - Empty
-            type: string
-        CallingContext:
-          $ref: '#/components/schemas/CallingContext'
+        exportObject:
+          $ref: '#/components/schemas/RelativityObjectRef'
+        longTextField:
+          $ref: '#/components/schemas/FieldRef'
     QueryRequest:
       title: QueryRequest
       type: object
@@ -812,139 +1023,6 @@ components:
           - DefaultWithErrors
           - TokenizedWithErrors
           type: string
-    RelativityObject:
-      title: RelativityObject
-      type: object
-      properties:
-        ParentObject:
-          $ref: '#/components/schemas/RelativityObjectRef'
-        Name:
-          type: string
-        FieldValues:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldValuePair'
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Item:
-          $ref: '#/components/schemas/FieldValuePair'
-    SampleDetails:
-      title: SampleDetails
-      type: object
-      properties:
-        SampleSize:
-          type:
-          - integer
-          - 'null'
-        UniverseSize:
-          type:
-          - integer
-          - 'null'
-        Token:
-          type: string
-    OperationOptions:
-      title: OperationOptions
-      type: object
-      properties:
-        CallingContext:
-          $ref: '#/components/schemas/CallingContext'
-    SearchProviderCondition:
-      title: SearchProviderCondition
-      type: object
-      properties:
-        SearchIndex:
-          $ref: '#/components/schemas/SearchIndexRef'
-        Input:
-          type: string
-    ObjectType:
-      title: ObjectType
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-        Guids:
-          type: array
-          items:
-            type: string
-        ArtifactTypeID:
-          type: integer
-    DeleteRequest:
-      title: DeleteRequest
-      type: object
-      properties:
-        Object:
-          $ref: '#/components/schemas/RelativityObjectRef'
-    SampleParameters:
-      title: SampleParameters
-      type: object
-      properties:
-        ExistingToken:
-          type:
-          - string
-          - 'null'
-        MarginOfError:
-          type: number
-        ConfidenceLevel:
-          type: number
-        FixedSampleSize:
-          type: integer
-        SamplingPercentage:
-          type: number
-    FieldMetadata:
-      title: FieldMetadata
-      type: object
-      properties:
-        FieldType:
-          enum:
-          - FixedLengthText
-          - WholeNumber
-          - Date
-          - YesNo
-          - LongText
-          - SingleChoice
-          - Decimal
-          - Currency
-          - MultipleChoice
-          - File
-          - SingleObject
-          - User
-          - MultipleObject
-          - Empty
-          type: string
-        ArtifactID:
-          type: integer
-        ViewFieldID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
-    Securable1:
-      title: Securable`1
-      type: object
-      properties:
-        Secured:
-          type: boolean
-        Value:
-          type: string
-    RelativityObjectRef:
-      title: RelativityObjectRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Guid:
-          type:
-          - string
-          - 'null'
     UpdateLongTextFromStreamRequest:
       title: UpdateLongTextFromStreamRequest
       type: object
@@ -953,56 +1031,42 @@ components:
           $ref: '#/components/schemas/RelativityObjectRef'
         Field:
           $ref: '#/components/schemas/FieldRef'
-    Field:
-      title: Field
+    DisplayableObjectIdentifier:
+      title: DisplayableObjectIdentifier
       type: object
       properties:
-        FieldCategory:
-          enum:
-          - Generic
-          - FullText
-          - Identifier
-          - Reflected
-          - Comments
-          - Relational
-          - ProductionMarker
-          - AutoCreate
-          - FileSize
-          - FolderName
-          - FileInfo
-          - ParentArtifact
-          - MarkupSetMarker
-          - GenericSystem
-          - MultiReflected
-          - Batch
+        Name:
           type: string
-        FieldType:
-          enum:
-          - FixedLengthText
-          - WholeNumber
-          - Date
-          - YesNo
-          - LongText
-          - SingleChoice
-          - Decimal
-          - Currency
-          - MultipleChoice
-          - File
-          - SingleObject
-          - User
-          - MultipleObject
-          - Empty
-          type: string
-        ViewFieldID:
-          type: integer
         ArtifactID:
           type: integer
         Guids:
           type: array
           items:
             type: string
+    SearchIndexRef:
+      title: SearchIndexRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
         Name:
           type: string
+    SearchProviderCondition:
+      title: SearchProviderCondition
+      type: object
+      properties:
+        SearchIndex:
+          $ref: '#/components/schemas/SearchIndexRef'
+        Input:
+          type: string
+    ReadAsync_RequestBody:
+      title: ReadAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ReadRequest'
+        readOptions:
+          $ref: '#/components/schemas/ReadOptions'
     UpdateAsync_RequestBody:
       title: UpdateAsync_RequestBody
       type: object
@@ -1011,74 +1075,39 @@ components:
           $ref: '#/components/schemas/UpdateRequest'
         operationOptions:
           $ref: '#/components/schemas/UpdateOptions'
-    FieldRefValuePair:
-      title: FieldRefValuePair
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/Object'
-        Field:
-          $ref: '#/components/schemas/FieldRef'
-    CreateResult:
-      title: CreateResult
-      type: object
-      properties:
-        Object:
-          $ref: '#/components/schemas/RelativityObject'
-        EventHandlerStatuses:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventHandlerStatus'
-    CallingContext:
-      title: CallingContext
-      type: object
-      properties:
-        Layout:
-          $ref: '#/components/schemas/LayoutRef'
-        Referrer:
-          type: string
-        PageMode:
-          enum:
-          - Unknown
-          - View
-          - Edit
-          - List
-          type: string
-    ReadRequest:
-      title: ReadRequest
-      type: object
-      properties:
-        Object:
-          $ref: '#/components/schemas/RelativityObjectRef'
-        Fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldRef'
-    Sort:
-      title: Sort
-      type: object
-      properties:
-        FieldIdentifier:
-          $ref: '#/components/schemas/FieldRef'
-        Order:
-          type: integer
-        Direction:
-          enum:
-          - Ascending
-          - Descending
-          type: string
-    DependencyListByObjectIdentifiersRequest:
-      title: DependencyListByObjectIdentifiersRequest
-      type: object
-      properties:
-        Objects:
-          type: array
-          items:
-            $ref: '#/components/schemas/RelativityObjectRef'
   parameters:
-    start:
-      name: start
+    batchSize:
+      name: batchSize
       in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    length:
+      name: length
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    runID:
+      name: runID
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    workspaceID:
+      name: workspaceID
+      in: path
       description: ''
       required: true
       schema:
@@ -1097,37 +1126,8 @@ components:
       required: true
       schema:
         type: integer
-    batchSize:
-      name: batchSize
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    runID:
-      name: runID
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    length:
-      name: length
+    start:
+      name: start
       in: query
       description: ''
       required: true

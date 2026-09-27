@@ -92,14 +92,6 @@ components:
             type: string
             format: uuid
       additionalProperties: false
-    ObjectIdentifierSecurable:
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Secured:
-          type: boolean
-      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
@@ -125,6 +117,14 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    ObjectIdentifierSecurable:
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Secured:
+          type: boolean
+      additionalProperties: false
     WorkspaceColdStorageStatusResponse:
       type: object
       properties:
