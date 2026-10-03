@@ -170,22 +170,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    RoleAssignment:
-      required:
-      - groupId
-      - roleKey
-      type: object
-      properties:
-        roleKey:
-          minLength: 1
-          type: string
-          description: The role key with r1_ prefix (e.g. r1_staging_viewer).
-        groupId:
-          minLength: 1
-          type: string
-          description: The group identifier.
-      additionalProperties: false
-      description: A single role assignment entry in the external API.
     ExternalRoleAssignmentPair:
       required:
       - groupId
@@ -202,6 +186,22 @@ components:
           description: The group identifier.
       additionalProperties: false
       description: A role and group pair used in external bulk operations.
+    RoleAssignment:
+      required:
+      - groupId
+      - roleKey
+      type: object
+      properties:
+        roleKey:
+          minLength: 1
+          type: string
+          description: The role key with r1_ prefix (e.g. r1_staging_viewer).
+        groupId:
+          minLength: 1
+          type: string
+          description: The group identifier.
+      additionalProperties: false
+      description: A single role assignment entry in the external API.
     ExternalBulkRoleAssignmentRequest:
       type: object
       properties:

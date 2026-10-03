@@ -49,25 +49,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Relativity.DocumentViewer.Domain.ConversionType:
-      enum:
-      - None
-      - Native
-      - Image
-      - Production
-      - Transcript
-      - HTMLImage
-      - HTMLProduction
-      - Text
-      - ProducedNative
-      - PDF
-      type: string
-    Reviewservice.Api.V2.Models.ViewerContentKeyRequest:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.V2.GetViewerContentKeyRequest'
-      additionalProperties: false
     Relativity.DocumentViewer.Domain.DTOs.V2.GetViewerContentKeyRequest:
       type: object
       properties:
@@ -88,13 +69,6 @@ components:
         Options:
           $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.GetViewerContentKeyOptions'
       additionalProperties: false
-    Review.Shared.PriorityLevel:
-      enum:
-      - None
-      - OnTheFly
-      - ConvertAhead
-      - MassConvert
-      type: string
     Relativity.DocumentViewer.Domain.DTOs.ViewerContentKey:
       type: object
       properties:
@@ -187,6 +161,32 @@ components:
         CorrelationId:
           type: string
           format: uuid
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.ConversionType:
+      enum:
+      - None
+      - Native
+      - Image
+      - Production
+      - Transcript
+      - HTMLImage
+      - HTMLProduction
+      - Text
+      - ProducedNative
+      - PDF
+      type: string
+    Review.Shared.PriorityLevel:
+      enum:
+      - None
+      - OnTheFly
+      - ConvertAhead
+      - MassConvert
+      type: string
+    Reviewservice.Api.V2.Models.ViewerContentKeyRequest:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.V2.GetViewerContentKeyRequest'
       additionalProperties: false
   securitySchemes:
     Bearer:

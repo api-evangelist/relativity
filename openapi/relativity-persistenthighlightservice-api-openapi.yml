@@ -193,18 +193,55 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Relativity.DocumentViewer.Domain.DTOs.AddHighlightTermsToSetRequest:
+    Reviewservice.Api.V2.Models.AddPersistentHighlightTermsRequest:
       type: object
       properties:
-        Term:
+        workspaceId:
+          type: integer
+          description: Gets or sets workspaceId.
+          format: int32
+        persistentHighlightSetId:
+          type: integer
+          description: Gets or sets persistentHighlightSetId.
+          format: int32
+        terms:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.AddHighlightTermsToSetRequest'
+          description: Gets or sets terms.
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO:
+      type: object
+      properties:
+        SetID:
           type:
           - string
           - 'null'
-        BackgroundColor:
+        SetName:
           type:
           - string
           - 'null'
-        ForegroundColor:
+        Expanded:
+          type: boolean
+        Selected:
+          type: boolean
+        PersistentHighlightSetID:
+          type: integer
+          format: int64
+        PersistentHighlightTerms:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.PersistentHighlightTerm'
+        Order:
+          type: integer
+          format: int32
+        HasEditPermission:
+          type: boolean
+        Syntax:
           type:
           - string
           - 'null'
@@ -271,58 +308,21 @@ components:
         action:
           $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.PersistentHighlightStateAction'
       additionalProperties: false
-    Relativity.DocumentViewer.Services.V2.PersistentHighlightSetDTO:
+    Relativity.DocumentViewer.Domain.DTOs.AddHighlightTermsToSetRequest:
       type: object
       properties:
-        SetID:
+        Term:
           type:
           - string
           - 'null'
-        SetName:
+        BackgroundColor:
           type:
           - string
           - 'null'
-        Expanded:
-          type: boolean
-        Selected:
-          type: boolean
-        PersistentHighlightSetID:
-          type: integer
-          format: int64
-        PersistentHighlightTerms:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.PersistentHighlightTerm'
-        Order:
-          type: integer
-          format: int32
-        HasEditPermission:
-          type: boolean
-        Syntax:
+        ForegroundColor:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.AddPersistentHighlightTermsRequest:
-      type: object
-      properties:
-        workspaceId:
-          type: integer
-          description: Gets or sets workspaceId.
-          format: int32
-        persistentHighlightSetId:
-          type: integer
-          description: Gets or sets persistentHighlightSetId.
-          format: int32
-        terms:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.AddHighlightTermsToSetRequest'
-          description: Gets or sets terms.
       additionalProperties: false
   securitySchemes:
     Bearer:

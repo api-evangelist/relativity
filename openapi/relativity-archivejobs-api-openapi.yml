@@ -144,44 +144,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    UpdateArchiveJobResponse:
-      type: object
-      additionalProperties: false
-      description: Response for Archive Job update
-    JobPriority:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: Job priority levels
-      format: int32
-    JobActions:
-      type: object
-      properties:
-        date:
-          type: string
-          description: Date and time when the action was performed
-          format: date-time
-        type:
-          type:
-          - string
-          - 'null'
-          description: Type of action performed
-        userName:
-          type:
-          - string
-          - 'null'
-          description: User who performed the action
-      additionalProperties: false
-      description: Represents an action performed on a job
-    ArchiveJobRequestWrapper:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest'
-      additionalProperties: false
-      description: Request to create new Archive job
     ArchiveJobRequest:
       type: object
       properties:
@@ -249,6 +211,62 @@ components:
           description: Gets or sets a value indicating whether this job ui actions are locked
       additionalProperties: false
       description: Request to create new Archive job
+    NotificationOptions:
+      type: object
+      properties:
+        notifyJobRunner:
+          type: boolean
+          description: 'Gets or sets a value indicating whether to notify both creator and runner.
+
+            When true, notifications are sent to both creator and executor.'
+        additionalRecipients:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: Gets or sets the list of additional recipient emails.
+      additionalProperties: false
+      description: ARM Job notification options
+    CreateArchiveJobResponse:
+      type: object
+      properties:
+        jobID:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets the created Job id.
+      additionalProperties: false
+      description: Response for Archive Job creation
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    UpdateArchiveJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for Archive Job update
     ArchiveJobResponse:
       type: object
       properties:
@@ -303,6 +321,14 @@ components:
           description: Gets or sets a value indicating whether this job ui actions are locked.
       additionalProperties: false
       description: Response with Archive Job
+    JobPriority:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: Job priority levels
+      format: int32
     JobDetails:
       type: object
       properties:
@@ -317,55 +343,29 @@ components:
           description: Gets or sets job action history.
       additionalProperties: false
       description: ARM Job details
-    CreateArchiveJobResponse:
+    JobActions:
       type: object
       properties:
-        jobID:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets the created Job id.
-      additionalProperties: false
-      description: Response for Archive Job creation
-    ProblemDetails:
-      type: object
-      properties:
+        date:
+          type: string
+          description: Date and time when the action was performed
+          format: date-time
         type:
           type:
           - string
           - 'null'
-        title:
+          description: Type of action performed
+        userName:
           type:
           - string
           - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    NotificationOptions:
+          description: User who performed the action
+      additionalProperties: false
+      description: Represents an action performed on a job
+    ArchiveJobRequestWrapper:
       type: object
       properties:
-        notifyJobRunner:
-          type: boolean
-          description: 'Gets or sets a value indicating whether to notify both creator and runner.
-
-            When true, notifications are sent to both creator and executor.'
-        additionalRecipients:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          description: Gets or sets the list of additional recipient emails.
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest'
       additionalProperties: false
-      description: ARM Job notification options
+      description: Request to create new Archive job

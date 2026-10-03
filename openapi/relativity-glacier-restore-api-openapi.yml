@@ -89,44 +89,6 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
-    ValidationProblemDetails:
-      allOf:
-      - $ref: '#/components/schemas/ProblemDetails'
-      - type: object
-        properties:
-          errors:
-            type: object
-            additionalProperties:
-              type: array
-              items:
-                type: string
-            description: Field-specific validation errors
-    StartGlacierRestoreRequest:
-      type: object
-      required:
-      - destinationLocation
-      properties:
-        destinationLocation:
-          type: string
-          minLength: 10
-          description: Specify the destination location to restore from Glacier. The location should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM.
-          example: t001/ARM/RestoreLocation1
-    StartGlacierRestoreResponse:
-      type: object
-      required:
-      - jobId
-      - glacierId
-      properties:
-        jobId:
-          type: string
-          format: uuid
-          description: The unique identifier of the created job
-          example: 456e7890-f12a-34b5-c678-901234567890
-        glacierId:
-          type: string
-          format: uuid
-          description: The unique identifier of the glacier to restore
-          example: 456e7890-f12a-34b5-c678-901234567890
     ProblemDetails:
       type: object
       properties:
@@ -147,6 +109,44 @@ components:
           type: string
           format: uri
           description: A URI reference identifying the specific occurrence
+    StartGlacierRestoreResponse:
+      type: object
+      required:
+      - jobId
+      - glacierId
+      properties:
+        jobId:
+          type: string
+          format: uuid
+          description: The unique identifier of the created job
+          example: 456e7890-f12a-34b5-c678-901234567890
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier to restore
+          example: 456e7890-f12a-34b5-c678-901234567890
+    StartGlacierRestoreRequest:
+      type: object
+      required:
+      - destinationLocation
+      properties:
+        destinationLocation:
+          type: string
+          minLength: 10
+          description: Specify the destination location to restore from Glacier. The location should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM.
+          example: t001/ARM/RestoreLocation1
+    ValidationProblemDetails:
+      allOf:
+      - $ref: '#/components/schemas/ProblemDetails'
+      - type: object
+        properties:
+          errors:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+            description: Field-specific validation errors
   securitySchemes:
     oauth2:
       type: oauth2

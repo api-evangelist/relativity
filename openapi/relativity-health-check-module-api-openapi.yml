@@ -29,16 +29,6 @@ paths:
           description: Bad Request. Validation exception.
       x-summary-source: derived
 components:
-  schemas:
-    HealthCheckResult:
-      type: object
-      properties:
-        IsHealthy:
-          type: boolean
-          example: true
-        Message:
-          type: string
-          example: Import.Services is Healthy
   parameters:
     X-CSRF-Header:
       name: X-CSRF-Header
@@ -49,3 +39,13 @@ components:
         type: string
         format: System.String
         default: .
+  schemas:
+    HealthCheckResult:
+      type: object
+      properties:
+        IsHealthy:
+          type: boolean
+          example: true
+        Message:
+          type: string
+          example: Import.Services is Healthy

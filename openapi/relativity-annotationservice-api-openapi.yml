@@ -159,6 +159,57 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.AnnotationList:
+      type: object
+      properties:
+        Annotations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.SaveAnnotationsReturnObject:
+      type: object
+      properties:
+        Success:
+          type: boolean
+        ErrorCode:
+          type: integer
+          format: int32
+        CustomErrorMessage:
+          type:
+          - string
+          - 'null'
+        AnnotationIDs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.SaveAnnotationsRequest:
+      type: object
+      properties:
+        annotations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.DeleteAnnotationsRequest:
+      type: object
+      properties:
+        annotationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
     Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation:
       type: object
       properties:
@@ -314,57 +365,6 @@ components:
           - string
           - 'null'
           format: date-time
-      additionalProperties: false
-    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.AnnotationList:
-      type: object
-      properties:
-        Annotations:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.DeleteAnnotationsRequest:
-      type: object
-      properties:
-        annotationIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: integer
-            format: int32
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.SaveAnnotationsRequest:
-      type: object
-      properties:
-        annotations:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
-      additionalProperties: false
-    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.SaveAnnotationsReturnObject:
-      type: object
-      properties:
-        Success:
-          type: boolean
-        ErrorCode:
-          type: integer
-          format: int32
-        CustomErrorMessage:
-          type:
-          - string
-          - 'null'
-        AnnotationIDs:
-          type:
-          - array
-          - 'null'
-          items:
-            type: integer
-            format: int32
       additionalProperties: false
   securitySchemes:
     Bearer:

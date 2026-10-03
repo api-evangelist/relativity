@@ -247,58 +247,73 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse:
+    Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo:
       type: object
       properties:
-        Status:
-          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType'
-        Errors:
+        Id:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
-        Warnings:
+        Name:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
+        Email:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
-    Reviewservice.Api.V2.Models.GetAttachmentInfoRequest:
+    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails:
       type: object
       properties:
-        attachmentIDs:
+        LineNumber:
+          type: integer
+          format: int32
+        LinePosition:
+          type: integer
+          format: int32
+        Message:
+          type:
+          - string
+          - 'null'
+        Submessages:
           type:
           - array
           - 'null'
           items:
             type: string
+        ErrorCode:
+          $ref: '#/components/schemas/Relativity.RSMFU.Validator.RSMFValidatorErrorCode'
       additionalProperties: false
-    Reviewservice.Api.V2.Models.GetParticipantInfoRequest:
+    Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType:
+      enum:
+      - Passed
+      - Failed
+      - PassedWithWarnings
+      type: string
+    Relativity.DocumentViewer.Services.V2.SliceRequest:
       type: object
       properties:
-        participantRequests:
+        EventIndexes:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo'
+            type: integer
+            format: int32
+        Options:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequestOptions'
+        CorrelationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
       additionalProperties: false
-    Relativity.DocumentViewer.Services.V2.AttachmentInfo:
+    Reviewservice.Api.V2.Models.SliceRSMFRequest:
       type: object
       properties:
-        AttachmentId:
-          type:
-          - string
-          - 'null'
-        DocumentArtifactId:
-          type: integer
-          format: int32
-        FileGuid:
-          type:
-          - string
-          - 'null'
+        sliceRequest:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequest'
       additionalProperties: false
     Relativity.RSMFU.Validator.RSMFValidatorErrorCode:
       enum:
@@ -353,6 +368,27 @@ components:
       - ManifestEventReadReceiptMissingTimeZone
       - ManifestUnknownObjectMissingTimeZone
       type: string
+    Relativity.DocumentViewer.Services.V2.SliceRequestOptions:
+      type: object
+      properties:
+        CreateAttachments:
+          type:
+          - boolean
+          - 'null'
+        SourceLayoutID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PreserveAllParticipants:
+          type:
+          - boolean
+          - 'null'
+        EmailConfirmation:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
     Relativity.DocumentViewer.Services.V2.ParticipantResponseInfo:
       type: object
       properties:
@@ -375,94 +411,58 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Relativity.DocumentViewer.Services.V2.SliceRequest:
+    Reviewservice.Api.V2.Models.GetParticipantInfoRequest:
       type: object
       properties:
-        EventIndexes:
+        participantRequests:
           type:
           - array
           - 'null'
           items:
-            type: integer
-            format: int32
-        Options:
-          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequestOptions'
-        CorrelationId:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo'
+      additionalProperties: false
+    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse:
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType'
+        Errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
+        Warnings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.AttachmentInfo:
+      type: object
+      properties:
+        AttachmentId:
           type:
           - string
           - 'null'
-          format: uuid
-      additionalProperties: false
-    Relativity.DocumentViewer.Services.V2.SliceRequestOptions:
-      type: object
-      properties:
-        CreateAttachments:
-          type:
-          - boolean
-          - 'null'
-        SourceLayoutID:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        PreserveAllParticipants:
-          type:
-          - boolean
-          - 'null'
-        EmailConfirmation:
-          type:
-          - boolean
-          - 'null'
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.SliceRSMFRequest:
-      type: object
-      properties:
-        sliceRequest:
-          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequest'
-      additionalProperties: false
-    Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo:
-      type: object
-      properties:
-        Id:
-          type:
-          - string
-          - 'null'
-        Name:
-          type:
-          - string
-          - 'null'
-        Email:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType:
-      enum:
-      - Passed
-      - Failed
-      - PassedWithWarnings
-      type: string
-    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails:
-      type: object
-      properties:
-        LineNumber:
+        DocumentArtifactId:
           type: integer
           format: int32
-        LinePosition:
-          type: integer
-          format: int32
-        Message:
+        FileGuid:
           type:
           - string
           - 'null'
-        Submessages:
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.GetAttachmentInfoRequest:
+      type: object
+      properties:
+        attachmentIDs:
           type:
           - array
           - 'null'
           items:
             type: string
-        ErrorCode:
-          $ref: '#/components/schemas/Relativity.RSMFU.Validator.RSMFValidatorErrorCode'
       additionalProperties: false
   securitySchemes:
     Bearer:

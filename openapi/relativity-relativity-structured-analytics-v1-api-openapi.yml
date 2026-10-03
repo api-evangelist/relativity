@@ -277,132 +277,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    TextualNearDuplicatesStatistics:
-      title: TextualNearDuplicatesStatistics
-      type: object
-      properties:
-        AverageSimilarityPercentage:
-          type: number
-        GroupsCount:
-          type: integer
-        DocumentsAnalyzed:
-          type: integer
-    MasterJob:
-      title: MasterJob
-      type: object
-      properties:
-        TaskID:
-          type: integer
-        WorkspaceID:
-          type: integer
-        ResourceGroupID:
-          type: integer
-        Status:
-          type: integer
-        JobArtifactID:
-          type: integer
-        Handled:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        DBLocation:
-          type: string
-        Retries:
-          type: integer
-        PopulateAll:
-          type: boolean
-        AnalyzeAll:
-          type: boolean
-        StatusAtCancel:
-          type: integer
-        UpgradeStatusComplete:
-          type:
-          - boolean
-          - 'null'
-        InitiatorGuid:
-          type:
-          - string
-          - 'null'
-    NameNormalizationStatistics:
-      title: NameNormalizationStatistics
-      type: object
-      properties:
-        AliasesIdentified:
-          type: integer
-        NewAliasesImported:
-          type: integer
-    StructuredAnalyticsSetError:
-      title: StructuredAnalyticsSetError
-      type: object
-      properties:
-        FullText:
-          type: string
-        Message:
-          type: string
-        Server:
-          type: string
-        Source:
-          type: string
-    JobResults:
-      title: JobResults
-      type: object
-      properties:
-        DocumentsAnalyzed:
-          type: integer
-        EmailThreadingStats:
-          $ref: '#/components/schemas/EmailThreadingStatistics'
-        NameNormalizationStats:
-          $ref: '#/components/schemas/NameNormalizationStatistics'
-        TextualNearDupeStats:
-          $ref: '#/components/schemas/TextualNearDuplicatesStatistics'
-    DocumentError:
-      title: DocumentError
-      type: object
-      properties:
-        DocumentArtifactID:
-          type: integer
-        DocumentIdentifier:
-          type: string
-        Message:
-          type: string
-        Operations:
-          type: array
-          items:
-            enum:
-            - EmailThreading
-            - TextualNearDuplicateID
-            - LanguageID
-            - RepeatedContentID
-            - NameNormalizationID
-            type: string
-        Status:
-          enum:
-          - IncludedInSet
-          - RemovedFromSet
-          - DataWarning
-          type: string
-        DateErrored:
-          type: string
-          format: date-time
-    EmailThreadingStatistics:
-      title: EmailThreadingStatistics
-      type: object
-      properties:
-        EmailsAnalyzed:
-          type: integer
-        InclusiveEmails:
-          type: integer
-        DocumentsAnalyzed:
-          type: integer
-    OperationResult:
-      title: OperationResult
-      type: object
-      properties:
-        IsSuccess:
-          type: boolean
-        Message:
-          type: string
     JobState:
       title: JobState
       type: object
@@ -461,41 +335,50 @@ components:
           type: integer
         OperationTimeElapsed:
           type: integer
-    SASDocumentErrorsRequestObject:
-      title: SASDocumentErrorsRequestObject
+    Status:
+      title: Status
       type: object
       properties:
-        Sorts:
+        JobName:
+          type: string
+        JobState:
+          $ref: '#/components/schemas/JobState'
+        OperationState:
           type: array
           items:
-            type: string
-        Filters:
-          type: array
-          items:
-            type: string
-        Start:
-          type: integer
-        Length:
-          type: integer
-    ValidTaskResult:
-      title: ValidTaskResult
+            $ref: '#/components/schemas/OperationState'
+        JobResults:
+          $ref: '#/components/schemas/JobResults'
+    SASDocumentErrorsResponseObject:
+      title: SASDocumentErrorsResponseObject
       type: object
       properties:
-        ValidTasks:
+        DocumentErrors:
           type: array
           items:
-            enum:
-            - CANCEL_ANALYSIS
-            - RETRY_ERRORS
-            - GET_SET_ERRORS
-            - GET_DOCUMENT_ERRORS
-            - COPY_TO_LEGACY
-            - COPY_TO_LEGACY_CANCEL
-            - PREPARE_ANALYSIS
-            - RUN_ANALYSIS
-            type: string
-        CopyToLegacyQualified:
-          type: boolean
+            $ref: '#/components/schemas/DocumentError'
+        TotalCount:
+          type: integer
+    NameNormalizationStatistics:
+      title: NameNormalizationStatistics
+      type: object
+      properties:
+        AliasesIdentified:
+          type: integer
+        NewAliasesImported:
+          type: integer
+    JobResults:
+      title: JobResults
+      type: object
+      properties:
+        DocumentsAnalyzed:
+          type: integer
+        EmailThreadingStats:
+          $ref: '#/components/schemas/EmailThreadingStatistics'
+        NameNormalizationStats:
+          $ref: '#/components/schemas/NameNormalizationStatistics'
+        TextualNearDupeStats:
+          $ref: '#/components/schemas/TextualNearDuplicatesStatistics'
     OperationState:
       title: OperationState
       type: object
@@ -543,6 +426,74 @@ components:
           - string
           - 'null'
           format: date-time
+    TextualNearDuplicatesStatistics:
+      title: TextualNearDuplicatesStatistics
+      type: object
+      properties:
+        AverageSimilarityPercentage:
+          type: number
+        GroupsCount:
+          type: integer
+        DocumentsAnalyzed:
+          type: integer
+    EmailThreadingStatistics:
+      title: EmailThreadingStatistics
+      type: object
+      properties:
+        EmailsAnalyzed:
+          type: integer
+        InclusiveEmails:
+          type: integer
+        DocumentsAnalyzed:
+          type: integer
+    ValidTaskResult:
+      title: ValidTaskResult
+      type: object
+      properties:
+        ValidTasks:
+          type: array
+          items:
+            enum:
+            - CANCEL_ANALYSIS
+            - RETRY_ERRORS
+            - GET_SET_ERRORS
+            - GET_DOCUMENT_ERRORS
+            - COPY_TO_LEGACY
+            - COPY_TO_LEGACY_CANCEL
+            - PREPARE_ANALYSIS
+            - RUN_ANALYSIS
+            type: string
+        CopyToLegacyQualified:
+          type: boolean
+    DocumentError:
+      title: DocumentError
+      type: object
+      properties:
+        DocumentArtifactID:
+          type: integer
+        DocumentIdentifier:
+          type: string
+        Message:
+          type: string
+        Operations:
+          type: array
+          items:
+            enum:
+            - EmailThreading
+            - TextualNearDuplicateID
+            - LanguageID
+            - RepeatedContentID
+            - NameNormalizationID
+            type: string
+        Status:
+          enum:
+          - IncludedInSet
+          - RemovedFromSet
+          - DataWarning
+          type: string
+        DateErrored:
+          type: string
+          format: date-time
     AnalysisSettings:
       title: AnalysisSettings
       type: object
@@ -551,29 +502,78 @@ components:
           type: boolean
         AnalyzeAll:
           type: boolean
-    Status:
-      title: Status
+    StructuredAnalyticsSetError:
+      title: StructuredAnalyticsSetError
       type: object
       properties:
-        JobName:
+        FullText:
           type: string
-        JobState:
-          $ref: '#/components/schemas/JobState'
-        OperationState:
-          type: array
-          items:
-            $ref: '#/components/schemas/OperationState'
-        JobResults:
-          $ref: '#/components/schemas/JobResults'
-    SASDocumentErrorsResponseObject:
-      title: SASDocumentErrorsResponseObject
+        Message:
+          type: string
+        Server:
+          type: string
+        Source:
+          type: string
+    OperationResult:
+      title: OperationResult
       type: object
       properties:
-        DocumentErrors:
+        IsSuccess:
+          type: boolean
+        Message:
+          type: string
+    MasterJob:
+      title: MasterJob
+      type: object
+      properties:
+        TaskID:
+          type: integer
+        WorkspaceID:
+          type: integer
+        ResourceGroupID:
+          type: integer
+        Status:
+          type: integer
+        JobArtifactID:
+          type: integer
+        Handled:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        DBLocation:
+          type: string
+        Retries:
+          type: integer
+        PopulateAll:
+          type: boolean
+        AnalyzeAll:
+          type: boolean
+        StatusAtCancel:
+          type: integer
+        UpgradeStatusComplete:
+          type:
+          - boolean
+          - 'null'
+        InitiatorGuid:
+          type:
+          - string
+          - 'null'
+    SASDocumentErrorsRequestObject:
+      title: SASDocumentErrorsRequestObject
+      type: object
+      properties:
+        Sorts:
           type: array
           items:
-            $ref: '#/components/schemas/DocumentError'
-        TotalCount:
+            type: string
+        Filters:
+          type: array
+          items:
+            type: string
+        Start:
+          type: integer
+        Length:
           type: integer
   parameters:
     x-csrf-header:
@@ -584,6 +584,13 @@ components:
       schema:
         type: string
         default: '-'
+    sasArtifactID:
+      name: sasArtifactID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
     wait:
       name: wait
       in: query
@@ -600,13 +607,6 @@ components:
         default: 0
     workspaceID:
       name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    sasArtifactID:
-      name: sasArtifactID
       in: path
       description: ''
       required: true

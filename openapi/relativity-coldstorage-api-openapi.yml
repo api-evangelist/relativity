@@ -117,14 +117,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    ObjectIdentifierSecurable:
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Secured:
-          type: boolean
-      additionalProperties: false
     WorkspaceColdStorageStatusResponse:
       type: object
       properties:
@@ -150,6 +142,14 @@ components:
           - string
           - 'null'
           format: date-time
+      additionalProperties: false
+    ObjectIdentifierSecurable:
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Secured:
+          type: boolean
       additionalProperties: false
   securitySchemes:
     Bearer:

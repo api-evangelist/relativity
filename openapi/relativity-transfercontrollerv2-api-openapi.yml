@@ -124,26 +124,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    EnumerationStatistics:
+    GetTokenResult:
       type: object
       properties:
-        totalFiles:
-          type: integer
-          format: int64
-        totalSize:
-          type: integer
-          format: int64
-        totalEmptyDirectories:
-          type: integer
-          format: int64
-        status:
+        sasUrl:
           type:
           - string
           - 'null'
-        error:
-          type:
-          - string
-          - 'null'
+          format: uri
       additionalProperties: false
     GetJobResultV2:
       type: object
@@ -179,71 +167,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    GetTokenResult:
-      type: object
-      properties:
-        sasUrl:
-          type:
-          - string
-          - 'null'
-          format: uri
-      additionalProperties: false
-    CreateTransferRequestV2:
-      type: object
-      properties:
-        destinationPath:
-          type:
-          - string
-          - 'null'
-        sourcePath:
-          type:
-          - string
-          - 'null'
-        tags:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type: string
-        transferType:
-          type:
-          - string
-          - 'null'
-        transferJobID:
-          type: string
-          format: uuid
-      additionalProperties: false
-    TransferStatistics:
-      type: object
-      properties:
-        successfulFiles:
-          type: integer
-          format: int64
-        failedFiles:
-          type: integer
-          format: int64
-        skippedFiles:
-          type: integer
-          format: int64
-        successfulBytes:
-          type: integer
-          format: int64
-        failedBytes:
-          type: integer
-          format: int64
-        skippedBytes:
-          type: integer
-          format: int64
-        successfulEmptyDirectories:
-          type: integer
-          format: int64
-        failedEmptyDirectories:
-          type: integer
-          format: int64
-        skippedEmptyDirectories:
-          type: integer
-          format: int64
       additionalProperties: false
     TimeSpan:
       type: object
@@ -307,6 +230,83 @@ components:
           type: number
           format: double
           readOnly: true
+      additionalProperties: false
+    TransferStatistics:
+      type: object
+      properties:
+        successfulFiles:
+          type: integer
+          format: int64
+        failedFiles:
+          type: integer
+          format: int64
+        skippedFiles:
+          type: integer
+          format: int64
+        successfulBytes:
+          type: integer
+          format: int64
+        failedBytes:
+          type: integer
+          format: int64
+        skippedBytes:
+          type: integer
+          format: int64
+        successfulEmptyDirectories:
+          type: integer
+          format: int64
+        failedEmptyDirectories:
+          type: integer
+          format: int64
+        skippedEmptyDirectories:
+          type: integer
+          format: int64
+      additionalProperties: false
+    CreateTransferRequestV2:
+      type: object
+      properties:
+        destinationPath:
+          type:
+          - string
+          - 'null'
+        sourcePath:
+          type:
+          - string
+          - 'null'
+        tags:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        transferType:
+          type:
+          - string
+          - 'null'
+        transferJobID:
+          type: string
+          format: uuid
+      additionalProperties: false
+    EnumerationStatistics:
+      type: object
+      properties:
+        totalFiles:
+          type: integer
+          format: int64
+        totalSize:
+          type: integer
+          format: int64
+        totalEmptyDirectories:
+          type: integer
+          format: int64
+        status:
+          type:
+          - string
+          - 'null'
+        error:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
   securitySchemes:
     Bearer:

@@ -60,120 +60,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    OverlaySettings:
-      type: object
-      properties:
-        Mode:
-          $ref: '#/components/schemas/OverlayMode'
-          description: Indicates whether records should be appended or overlaid.
-        KeyField:
-          type: string
-          description: Represents a key field that is set only on Overwrite mode.
-          example: KeyField
-        MultiFieldOverlayBehaviour:
-          $ref: '#/components/schemas/MultiFieldOverlayBehaviour'
-          description: Indicates the method for overlay imports with multiple choice and multiple object fields.
-    OverlayMode:
+    MultiFieldOverlayBehaviour:
       type: string
-      example: Overlay
+      example: UseRelativityDefaults
       enum:
       - Unknown
-      - Overlay
-      - AppendOverlay
-    FolderSettings:
-      type: object
-      properties:
-        RootFolderID:
-          type: integer
-          description: Indicates the Import Destination folder under which documents and objects, as well as folders containing documents or objects, are built.
-          example: 1003663
-        FolderPathColumnIndex:
-          type:
-          - integer
-          - 'null'
-          description: The index of the column in the data source (count from zero) which contains the folder path.
-          example: 2
-    FieldsSettings:
-      type: object
-      properties:
-        FieldMappings:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldMapping'
-    ValueResponse.ImportDocumentSettings:
-      description: ValueResponse of ImportDocumentSettings type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            $ref: '#/components/schemas/ImportDocumentSettings'
-      - $ref: '#/components/schemas/Response'
-    createDocumentConfigurationRequest:
-      type: object
-      description: Object of type ImportDocumentSettings.
-      properties:
-        importSettings:
-          $ref: '#/components/schemas/ImportDocumentSettings'
-    ImageSettings:
-      type: object
-      properties:
-        ProductionID:
-          type: integer
-          description: Indicates a valid ArtifactID for a production set. Optional.
-          example: 1003663
-        PageNumbering:
-          $ref: '#/components/schemas/PageNumbering'
-          description: Determines whether a page number is automatically appended to a page-level identifier. When this property is set to True, a new incremental number (such as 01, 02) is added to the page-level identifier, creating a unique page number.
-        LoadExtractedText:
-          type: boolean
-          description: Determines whether Extracted Text should be loaded together with images if Extracted Text file is available.
-          example: true
-    FieldMapping:
-      type: object
-      properties:
-        ColumnIndex:
-          type: integer
-          description: The index of the column in the data source (count from zero).
-          example: 4
-        Field:
-          type: string
-          description: The name of the field in the Workspace.
-          example: one
-        ContainsID:
-          type: boolean
-          description: Indicates whether SingleObject or MultiObject field type contains ArtifactID or the actual text identifier.
-          example: false
-        ContainsFilePath:
-          type: boolean
-          description: Indicates whether the Extracted Text field contains a path to the extracted text file or contains the actual extracted text.
-          example: false
-        MayContainTranscript:
-          type: boolean
-          description: Indicates whether the field may contain a path to the transcript file (.csv or .txt).
-          example: false
-    PageNumbering:
-      type: string
-      example: AutoNumberImages
-      enum:
-      - Unknown
-      - AutoNumberImages
-      - ReadPageIDsFromInput
-    NativeSettings:
-      type: object
-      example: null
-      properties:
-        FilePathColumnIndex:
-          type:
-          - integer
-          - 'null'
-          description: The index of the column in the data source (count from zero) which contains path to the native file. Required.
-          example: 0
-        FileNameColumnIndex:
-          type:
-          - integer
-          - 'null'
-          description: The index of the column in the data source (count from zero) which contains native file name metadata. If property is not set, value is retrieved from file.
-          example: 1
+      - UseRelativityDefaults
+      - MergeAll
+      - ReplaceAll
     ImportDocumentSettings:
       type: object
       properties:
@@ -209,32 +103,121 @@ components:
           type: string
           format: uuid
           example: 00000000-0000-0000-0000-000000000000
-    MultiFieldOverlayBehaviour:
+    ValueResponse.ImportDocumentSettings:
+      description: ValueResponse of ImportDocumentSettings type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            $ref: '#/components/schemas/ImportDocumentSettings'
+      - $ref: '#/components/schemas/Response'
+    FieldMapping:
+      type: object
+      properties:
+        ColumnIndex:
+          type: integer
+          description: The index of the column in the data source (count from zero).
+          example: 4
+        Field:
+          type: string
+          description: The name of the field in the Workspace.
+          example: one
+        ContainsID:
+          type: boolean
+          description: Indicates whether SingleObject or MultiObject field type contains ArtifactID or the actual text identifier.
+          example: false
+        ContainsFilePath:
+          type: boolean
+          description: Indicates whether the Extracted Text field contains a path to the extracted text file or contains the actual extracted text.
+          example: false
+        MayContainTranscript:
+          type: boolean
+          description: Indicates whether the field may contain a path to the transcript file (.csv or .txt).
+          example: false
+    NativeSettings:
+      type: object
+      example: null
+      properties:
+        FilePathColumnIndex:
+          type:
+          - integer
+          - 'null'
+          description: The index of the column in the data source (count from zero) which contains path to the native file. Required.
+          example: 0
+        FileNameColumnIndex:
+          type:
+          - integer
+          - 'null'
+          description: The index of the column in the data source (count from zero) which contains native file name metadata. If property is not set, value is retrieved from file.
+          example: 1
+    createDocumentConfigurationRequest:
+      type: object
+      description: Object of type ImportDocumentSettings.
+      properties:
+        importSettings:
+          $ref: '#/components/schemas/ImportDocumentSettings'
+    OverlayMode:
       type: string
-      example: UseRelativityDefaults
+      example: Overlay
       enum:
       - Unknown
-      - UseRelativityDefaults
-      - MergeAll
-      - ReplaceAll
+      - Overlay
+      - AppendOverlay
+    FolderSettings:
+      type: object
+      properties:
+        RootFolderID:
+          type: integer
+          description: Indicates the Import Destination folder under which documents and objects, as well as folders containing documents or objects, are built.
+          example: 1003663
+        FolderPathColumnIndex:
+          type:
+          - integer
+          - 'null'
+          description: The index of the column in the data source (count from zero) which contains the folder path.
+          example: 2
+    PageNumbering:
+      type: string
+      example: AutoNumberImages
+      enum:
+      - Unknown
+      - AutoNumberImages
+      - ReadPageIDsFromInput
+    OverlaySettings:
+      type: object
+      properties:
+        Mode:
+          $ref: '#/components/schemas/OverlayMode'
+          description: Indicates whether records should be appended or overlaid.
+        KeyField:
+          type: string
+          description: Represents a key field that is set only on Overwrite mode.
+          example: KeyField
+        MultiFieldOverlayBehaviour:
+          $ref: '#/components/schemas/MultiFieldOverlayBehaviour'
+          description: Indicates the method for overlay imports with multiple choice and multiple object fields.
+    FieldsSettings:
+      type: object
+      properties:
+        FieldMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldMapping'
+    ImageSettings:
+      type: object
+      properties:
+        ProductionID:
+          type: integer
+          description: Indicates a valid ArtifactID for a production set. Optional.
+          example: 1003663
+        PageNumbering:
+          $ref: '#/components/schemas/PageNumbering'
+          description: Determines whether a page number is automatically appended to a page-level identifier. When this property is set to True, a new incremental number (such as 01, 02) is added to the page-level identifier, creating a unique page number.
+        LoadExtractedText:
+          type: boolean
+          description: Determines whether Extracted Text should be loaded together with images if Extracted Text file is available.
+          example: true
   parameters:
-    X-CSRF-Header:
-      name: X-CSRF-Header
-      in: header
-      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
-      required: true
-      schema:
-        type: string
-        format: System.String
-        default: .
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: Workspace identification number.
-      required: true
-      schema:
-        type: integer
-      example: 10000
     importJobID:
       name: importJobID
       in: path
@@ -244,3 +227,20 @@ components:
         type: string
         format: uuid
       example: 00000000-0000-0000-0000-000000000000
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: Workspace identification number.
+      required: true
+      schema:
+        type: integer
+      example: 10000
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .

@@ -175,52 +175,8 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    SortVersion:
-      title: SortVersion
-      type: object
-      properties:
-        FullVersion:
-          type: integer
-        SortId:
-          type: string
-    Module:
-      title: Module
-      type: object
-      properties:
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        MDStreamVersion:
-          type: integer
-        FullyQualifiedName:
-          type: string
-        ModuleVersionId:
-          type: string
-        MetadataToken:
-          type: integer
-        ScopeName:
-          type: string
-        Name:
-          type: string
-        Assembly:
-          $ref: '#/components/schemas/Assembly'
-        ModuleHandle:
-          $ref: '#/components/schemas/ModuleHandle'
-    StructLayoutAttribute:
-      title: StructLayoutAttribute
-      type: object
-      properties:
-        Value:
-          enum:
-          - Sequential
-          - Explicit
-          - Auto
-          type: string
-        TypeId:
-          $ref: '#/components/schemas/Object'
-    EventInfo:
-      title: EventInfo
+    MethodInfo:
+      title: MethodInfo
       type: object
       properties:
         MemberType:
@@ -235,24 +191,106 @@ components:
           - NestedType
           - All
           type: string
+        ReturnType:
+          $ref: '#/components/schemas/Type'
+        ReturnParameter:
+          $ref: '#/components/schemas/ParameterInfo'
+        ReturnTypeCustomAttributes:
+          $ref: '#/components/schemas/ICustomAttributeProvider'
+        MethodImplementationFlags:
+          enum:
+          - IL
+          - Managed
+          - Native
+          - OPTIL
+          - Runtime
+          - CodeTypeMask
+          - Unmanaged
+          - ManagedMask
+          - NoInlining
+          - ForwardRef
+          - Synchronized
+          - NoOptimization
+          - PreserveSig
+          - AggressiveInlining
+          - SecurityMitigations
+          - InternalCall
+          - MaxMethodImplVal
+          type: string
+        MethodHandle:
+          $ref: '#/components/schemas/RuntimeMethodHandle'
         Attributes:
           enum:
-          - None
+          - ReuseSlot
+          - PrivateScope
+          - Private
+          - FamANDAssem
+          - Assembly
+          - Family
+          - FamORAssem
+          - Public
+          - MemberAccessMask
+          - UnmanagedExport
+          - Static
+          - Final
+          - Virtual
+          - HideBySig
+          - NewSlot
+          - VtableLayoutMask
+          - CheckAccessOnOverride
+          - Abstract
           - SpecialName
-          - ReservedMask
           - RTSpecialName
+          - PinvokeImpl
+          - HasSecurity
+          - RequireSecObject
+          - ReservedMask
           type: string
-        AddMethod:
-          $ref: '#/components/schemas/MethodInfo'
-        RemoveMethod:
-          $ref: '#/components/schemas/MethodInfo'
-        RaiseMethod:
-          $ref: '#/components/schemas/MethodInfo'
-        EventHandlerType:
-          $ref: '#/components/schemas/Type'
+        CallingConvention:
+          enum:
+          - Standard
+          - VarArgs
+          - Any
+          - HasThis
+          - ExplicitThis
+          type: string
+        IsGenericMethodDefinition:
+          type: boolean
+        ContainsGenericParameters:
+          type: boolean
+        IsGenericMethod:
+          type: boolean
+        IsSecurityCritical:
+          type: boolean
+        IsSecuritySafeCritical:
+          type: boolean
+        IsSecurityTransparent:
+          type: boolean
+        IsPublic:
+          type: boolean
+        IsPrivate:
+          type: boolean
+        IsFamily:
+          type: boolean
+        IsAssembly:
+          type: boolean
+        IsFamilyAndAssembly:
+          type: boolean
+        IsFamilyOrAssembly:
+          type: boolean
+        IsStatic:
+          type: boolean
+        IsFinal:
+          type: boolean
+        IsVirtual:
+          type: boolean
+        IsHideBySig:
+          type: boolean
+        IsAbstract:
+          type: boolean
         IsSpecialName:
           type: boolean
-        IsMulticast:
+        IsConstructor:
           type: boolean
         Name:
           type: string
@@ -268,186 +306,14 @@ components:
           type: integer
         Module:
           $ref: '#/components/schemas/Module'
-    DataTable:
-      title: DataTable
+    CustomAttributeTypedArgument:
+      title: CustomAttributeTypedArgument
       type: object
       properties:
-        CaseSensitive:
-          type: boolean
-        IsInitialized:
-          type: boolean
-        RemotingFormat:
-          enum:
-          - Xml
-          - Binary
-          type: string
-        ChildRelations:
-          type: array
-          items:
-            type: string
-            format: DataRelationCollection
-        Columns:
-          type: array
-          items:
-            type: string
-            format: DataColumnCollection
-        Constraints:
-          type: array
-          items:
-            type: string
-            format: ConstraintCollection
-        DataSet:
-          $ref: '#/components/schemas/DataSet'
-        DefaultView:
-          type: array
-          items:
-            type: string
-            format: DataView
-        DisplayExpression:
-          type: string
-        ExtendedProperties:
-          type: array
-          items:
-            type: string
-            format: PropertyCollection
-        HasErrors:
-          type: boolean
-        Locale:
-          $ref: '#/components/schemas/CultureInfo'
-        MinimumCapacity:
-          type: integer
-        ParentRelations:
-          type: array
-          items:
-            type: string
-            format: DataRelationCollection
-        PrimaryKey:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataColumn'
-        Rows:
-          type: array
-          items:
-            type: string
-            format: DataRowCollection
-        TableName:
-          type: string
-        Namespace:
-          type: string
-        Prefix:
-          type: string
-        Site:
-          $ref: '#/components/schemas/ISite'
-        Container:
-          $ref: '#/components/schemas/IContainer'
-        DesignMode:
-          type: boolean
-    CultureInfo:
-      title: CultureInfo
-      type: object
-      properties:
-        CurrentCulture:
-          $ref: '#/components/schemas/CultureInfo'
-        CurrentUICulture:
-          $ref: '#/components/schemas/CultureInfo'
-        InstalledUICulture:
-          $ref: '#/components/schemas/CultureInfo'
-        DefaultThreadCurrentCulture:
-          $ref: '#/components/schemas/CultureInfo'
-        DefaultThreadCurrentUICulture:
-          $ref: '#/components/schemas/CultureInfo'
-        InvariantCulture:
-          $ref: '#/components/schemas/CultureInfo'
-        Parent:
-          $ref: '#/components/schemas/CultureInfo'
-        LCID:
-          type: integer
-        KeyboardLayoutId:
-          type: integer
-        Name:
-          type: string
-        IetfLanguageTag:
-          type: string
-        DisplayName:
-          type: string
-        NativeName:
-          type: string
-        EnglishName:
-          type: string
-        TwoLetterISOLanguageName:
-          type: string
-        ThreeLetterISOLanguageName:
-          type: string
-        ThreeLetterWindowsLanguageName:
-          type: string
-        CompareInfo:
-          $ref: '#/components/schemas/CompareInfo'
-        TextInfo:
-          $ref: '#/components/schemas/TextInfo'
-        IsNeutralCulture:
-          type: boolean
-        CultureTypes:
-          enum:
-          - NeutralCultures
-          - SpecificCultures
-          - InstalledWin32Cultures
-          - AllCultures
-          - UserCustomCulture
-          - ReplacementCultures
-          - WindowsOnlyCultures
-          - FrameworkCultures
-          type: string
-        NumberFormat:
-          $ref: '#/components/schemas/NumberFormatInfo'
-        DateTimeFormat:
-          $ref: '#/components/schemas/DateTimeFormatInfo'
-        Calendar:
-          $ref: '#/components/schemas/Calendar'
-        OptionalCalendars:
-          type: array
-          items:
-            $ref: '#/components/schemas/Calendar'
-        UseUserOverride:
-          type: boolean
-        IsReadOnly:
-          type: boolean
-    ICustomAttributeProvider:
-      title: ICustomAttributeProvider
-      type: object
-    RuntimeFieldHandle:
-      title: RuntimeFieldHandle
-      type: object
-      properties:
+        ArgumentType:
+          $ref: '#/components/schemas/Type'
         Value:
-          $ref: '#/components/schemas/IntPtr'
-    Calendar:
-      title: Calendar
-      type: object
-      properties:
-        MinSupportedDateTime:
-          type: string
-          format: date-time
-        MaxSupportedDateTime:
-          type: string
-          format: date-time
-        AlgorithmType:
-          enum:
-          - Unknown
-          - SolarCalendar
-          - LunarCalendar
-          - LunisolarCalendar
-          type: string
-        IsReadOnly:
-          type: boolean
-        Eras:
-          type: array
-          items:
-            type: integer
-        TwoDigitYearMax:
-          type: integer
-    Object:
-      title: Object
-      type: object
+          $ref: '#/components/schemas/Object'
     PropertyInfo:
       title: PropertyInfo
       type: object
@@ -501,56 +367,6 @@ components:
           type: integer
         Module:
           $ref: '#/components/schemas/Module'
-    CustomAttributeTypedArgument:
-      title: CustomAttributeTypedArgument
-      type: object
-      properties:
-        ArgumentType:
-          $ref: '#/components/schemas/Type'
-        Value:
-          $ref: '#/components/schemas/Object'
-    PivotSettings:
-      title: PivotSettings
-      type: object
-      properties:
-        ObjectSetQuery:
-          $ref: '#/components/schemas/Query'
-        ArtifactTypeID:
-          type: integer
-        GroupBy:
-          $ref: '#/components/schemas/FieldRef'
-        PivotOn:
-          $ref: '#/components/schemas/FieldRef'
-        GroupByDateGrouping:
-          enum:
-          - Date
-          - Month
-          - Year
-          - YearMonth
-          - Week
-          - TwoWeeks
-          type: string
-        PivotOnDateGrouping:
-          enum:
-          - Date
-          - Month
-          - Year
-          - YearMonth
-          - Week
-          - TwoWeeks
-          type: string
-        MaximumNumberOfColumns:
-          type: integer
-        MaximumNumberOfRows:
-          type: integer
-        Timeout:
-          type: integer
-        RawDataOnly:
-          type: boolean
-        ConvertNumberFieldValuesToString:
-          type:
-          - boolean
-          - 'null'
     PivotExportResult:
       title: PivotExportResult
       type: object
@@ -575,22 +391,44 @@ components:
             type: string
         Name:
           type: string
-    CompareInfo:
-      title: CompareInfo
-      type: object
-      properties:
-        Name:
-          type: string
-        LCID:
-          type: integer
-        Version:
-          $ref: '#/components/schemas/SortVersion'
     IntPtr:
       title: IntPtr
       type: object
       properties:
         Size:
           type: integer
+    DisplayableObjectTypeIdentifier:
+      title: DisplayableObjectTypeIdentifier
+      type: object
+      properties:
+        ArtifactTypeID:
+          type: integer
+        Name:
+          type: string
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+    RuntimeMethodHandle:
+      title: RuntimeMethodHandle
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/IntPtr'
+    ISite:
+      title: ISite
+      type: object
+      properties:
+        Component:
+          $ref: '#/components/schemas/IComponent'
+        Container:
+          $ref: '#/components/schemas/IContainer'
+        DesignMode:
+          type: boolean
+        Name:
+          type: string
     Dashboard:
       title: Dashboard
       type: object
@@ -627,6 +465,18 @@ components:
           type: string
         CellRatio:
           type: number
+    StructLayoutAttribute:
+      title: StructLayoutAttribute
+      type: object
+      properties:
+        Value:
+          enum:
+          - Sequential
+          - Explicit
+          - Auto
+          type: string
+        TypeId:
+          $ref: '#/components/schemas/Object'
     PivotResultSet:
       title: PivotResultSet
       type: object
@@ -647,6 +497,436 @@ components:
           type: array
           items:
             type: string
+    Assembly:
+      title: Assembly
+      type: object
+      properties:
+        CodeBase:
+          type: string
+        EscapedCodeBase:
+          type: string
+        FullName:
+          type: string
+        EntryPoint:
+          $ref: '#/components/schemas/MethodInfo'
+        ExportedTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Type'
+        DefinedTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TypeInfo'
+        Evidence:
+          type: array
+          items:
+            type: string
+            format: Evidence
+        PermissionSet:
+          type: array
+          items:
+            type: string
+            format: PermissionSet
+        IsFullyTrusted:
+          type: boolean
+        SecurityRuleSet:
+          enum:
+          - None
+          - Level1
+          - Level2
+          type: string
+        ManifestModule:
+          $ref: '#/components/schemas/Module'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        ReflectionOnly:
+          type: boolean
+        Modules:
+          type: array
+          items:
+            $ref: '#/components/schemas/Module'
+        Location:
+          type: string
+        ImageRuntimeVersion:
+          type: string
+        GlobalAssemblyCache:
+          type: boolean
+        HostContext:
+          type: integer
+        IsDynamic:
+          type: boolean
+    HeaderSettings:
+      title: HeaderSettings
+      type: object
+      properties:
+        IncludeWorkspace:
+          type: boolean
+        IncludeView:
+          type: boolean
+        IncludeDashboard:
+          type: boolean
+        IncludeUser:
+          type: boolean
+        IncludeLogo:
+          type: boolean
+        IncludeDateAndTime:
+          type: boolean
+    SortVersion:
+      title: SortVersion
+      type: object
+      properties:
+        FullVersion:
+          type: integer
+        SortId:
+          type: string
+    ConstructorInfo:
+      title: ConstructorInfo
+      type: object
+      properties:
+        MemberType:
+          enum:
+          - Constructor
+          - Event
+          - Field
+          - Method
+          - Property
+          - TypeInfo
+          - Custom
+          - NestedType
+          - All
+          type: string
+        MethodImplementationFlags:
+          enum:
+          - IL
+          - Managed
+          - Native
+          - OPTIL
+          - Runtime
+          - CodeTypeMask
+          - Unmanaged
+          - ManagedMask
+          - NoInlining
+          - ForwardRef
+          - Synchronized
+          - NoOptimization
+          - PreserveSig
+          - AggressiveInlining
+          - SecurityMitigations
+          - InternalCall
+          - MaxMethodImplVal
+          type: string
+        MethodHandle:
+          $ref: '#/components/schemas/RuntimeMethodHandle'
+        Attributes:
+          enum:
+          - ReuseSlot
+          - PrivateScope
+          - Private
+          - FamANDAssem
+          - Assembly
+          - Family
+          - FamORAssem
+          - Public
+          - MemberAccessMask
+          - UnmanagedExport
+          - Static
+          - Final
+          - Virtual
+          - HideBySig
+          - NewSlot
+          - VtableLayoutMask
+          - CheckAccessOnOverride
+          - Abstract
+          - SpecialName
+          - RTSpecialName
+          - PinvokeImpl
+          - HasSecurity
+          - RequireSecObject
+          - ReservedMask
+          type: string
+        CallingConvention:
+          enum:
+          - Standard
+          - VarArgs
+          - Any
+          - HasThis
+          - ExplicitThis
+          type: string
+        IsGenericMethodDefinition:
+          type: boolean
+        ContainsGenericParameters:
+          type: boolean
+        IsGenericMethod:
+          type: boolean
+        IsSecurityCritical:
+          type: boolean
+        IsSecuritySafeCritical:
+          type: boolean
+        IsSecurityTransparent:
+          type: boolean
+        IsPublic:
+          type: boolean
+        IsPrivate:
+          type: boolean
+        IsFamily:
+          type: boolean
+        IsAssembly:
+          type: boolean
+        IsFamilyAndAssembly:
+          type: boolean
+        IsFamilyOrAssembly:
+          type: boolean
+        IsStatic:
+          type: boolean
+        IsFinal:
+          type: boolean
+        IsVirtual:
+          type: boolean
+        IsHideBySig:
+          type: boolean
+        IsAbstract:
+          type: boolean
+        IsSpecialName:
+          type: boolean
+        IsConstructor:
+          type: boolean
+        Name:
+          type: string
+        DeclaringType:
+          $ref: '#/components/schemas/Type'
+        ReflectedType:
+          $ref: '#/components/schemas/Type'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        MetadataToken:
+          type: integer
+        Module:
+          $ref: '#/components/schemas/Module'
+    RuntimeFieldHandle:
+      title: RuntimeFieldHandle
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/IntPtr'
+    SampleParameters:
+      title: SampleParameters
+      type: object
+      properties:
+        ExistingToken:
+          type: string
+        MarginOfError:
+          type: number
+        ConfidenceLevel:
+          type: number
+        FixedSampleSize:
+          type: integer
+        SamplingPercentage:
+          type: number
+    Calendar:
+      title: Calendar
+      type: object
+      properties:
+        MinSupportedDateTime:
+          type: string
+          format: date-time
+        MaxSupportedDateTime:
+          type: string
+          format: date-time
+        AlgorithmType:
+          enum:
+          - Unknown
+          - SolarCalendar
+          - LunarCalendar
+          - LunisolarCalendar
+          type: string
+        IsReadOnly:
+          type: boolean
+        Eras:
+          type: array
+          items:
+            type: integer
+        TwoDigitYearMax:
+          type: integer
+    CompareInfo:
+      title: CompareInfo
+      type: object
+      properties:
+        Name:
+          type: string
+        LCID:
+          type: integer
+        Version:
+          $ref: '#/components/schemas/SortVersion'
+    ParameterInfo:
+      title: ParameterInfo
+      type: object
+      properties:
+        ParameterType:
+          $ref: '#/components/schemas/Type'
+        Name:
+          type: string
+        HasDefaultValue:
+          type: boolean
+        DefaultValue:
+          $ref: '#/components/schemas/Object'
+        RawDefaultValue:
+          $ref: '#/components/schemas/Object'
+        Position:
+          type: integer
+        Attributes:
+          enum:
+          - None
+          - In
+          - Out
+          - Lcid
+          - Retval
+          - Optional
+          - HasDefault
+          - HasFieldMarshal
+          - Reserved3
+          - Reserved4
+          - ReservedMask
+          type: string
+        Member:
+          $ref: '#/components/schemas/MemberInfo'
+        IsIn:
+          type: boolean
+        IsOut:
+          type: boolean
+        IsLcid:
+          type: boolean
+        IsRetval:
+          type: boolean
+        IsOptional:
+          type: boolean
+        MetadataToken:
+          type: integer
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+    DashboardPivot:
+      title: DashboardPivot
+      type: object
+      properties:
+        PivotProfileID:
+          type:
+          - integer
+          - 'null'
+        PivotSettings:
+          $ref: '#/components/schemas/PivotProfile'
+        Top:
+          type: integer
+        Left:
+          type: integer
+        Width:
+          type: integer
+        Height:
+          type: integer
+    FieldInfo:
+      title: FieldInfo
+      type: object
+      properties:
+        MemberType:
+          enum:
+          - Constructor
+          - Event
+          - Field
+          - Method
+          - Property
+          - TypeInfo
+          - Custom
+          - NestedType
+          - All
+          type: string
+        FieldHandle:
+          $ref: '#/components/schemas/RuntimeFieldHandle'
+        FieldType:
+          $ref: '#/components/schemas/Type'
+        Attributes:
+          enum:
+          - PrivateScope
+          - Private
+          - FamANDAssem
+          - Assembly
+          - Family
+          - FamORAssem
+          - Public
+          - FieldAccessMask
+          - Static
+          - InitOnly
+          - Literal
+          - NotSerialized
+          - HasFieldRVA
+          - SpecialName
+          - RTSpecialName
+          - HasFieldMarshal
+          - PinvokeImpl
+          - HasDefault
+          - ReservedMask
+          type: string
+        IsPublic:
+          type: boolean
+        IsPrivate:
+          type: boolean
+        IsFamily:
+          type: boolean
+        IsAssembly:
+          type: boolean
+        IsFamilyAndAssembly:
+          type: boolean
+        IsFamilyOrAssembly:
+          type: boolean
+        IsStatic:
+          type: boolean
+        IsInitOnly:
+          type: boolean
+        IsLiteral:
+          type: boolean
+        IsNotSerialized:
+          type: boolean
+        IsSpecialName:
+          type: boolean
+        IsPinvokeImpl:
+          type: boolean
+        IsSecurityCritical:
+          type: boolean
+        IsSecuritySafeCritical:
+          type: boolean
+        IsSecurityTransparent:
+          type: boolean
+        Name:
+          type: string
+        DeclaringType:
+          $ref: '#/components/schemas/Type'
+        ReflectedType:
+          $ref: '#/components/schemas/Type'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        MetadataToken:
+          type: integer
+        Module:
+          $ref: '#/components/schemas/Module'
+    ModuleHandle:
+      title: ModuleHandle
+      type: object
+      properties:
+        MDStreamVersion:
+          type: integer
+    SearchProviderCondition:
+      title: SearchProviderCondition
+      type: object
+      properties:
+        SearchIndex:
+          $ref: '#/components/schemas/SearchIndexRef'
+        Input:
+          type: string
     DateTimeFormatInfo:
       title: DateTimeFormatInfo
       type: object
@@ -733,6 +1013,778 @@ components:
           type: array
           items:
             type: string
+    Sort:
+      title: Sort
+      type: object
+      properties:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRef'
+        Order:
+          type: integer
+        Direction:
+          enum:
+          - Ascending
+          - Descending
+          type: string
+    ToggleOptions:
+      title: ToggleOptions
+      type: object
+      properties:
+        ShowBlankValues:
+          type: boolean
+        ShowGrandTotal:
+          type: boolean
+        ShowLegend:
+          type: boolean
+        RotateLabels:
+          type: boolean
+        StaggerLabels:
+          type: boolean
+        ShowLabels:
+          type: boolean
+        ShowSubChart:
+          type: boolean
+    Query:
+      title: Query
+      type: object
+      properties:
+        Condition:
+          type: string
+        Sorts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sort'
+        RelationalField:
+          $ref: '#/components/schemas/FieldRef'
+        RowCondition:
+          type: string
+        SearchProviderCondition:
+          $ref: '#/components/schemas/SearchProviderCondition'
+        ExecutingSavedSearchID:
+          type:
+          - integer
+          - 'null'
+        SampleParameters:
+          $ref: '#/components/schemas/SampleParameters'
+        IncludeIDWindow:
+          type:
+          - boolean
+          - 'null'
+        RankSortOrder:
+          type: string
+        QueryHint:
+          type: string
+    MethodBase:
+      title: MethodBase
+      type: object
+      properties:
+        MethodImplementationFlags:
+          enum:
+          - IL
+          - Managed
+          - Native
+          - OPTIL
+          - Runtime
+          - CodeTypeMask
+          - Unmanaged
+          - ManagedMask
+          - NoInlining
+          - ForwardRef
+          - Synchronized
+          - NoOptimization
+          - PreserveSig
+          - AggressiveInlining
+          - SecurityMitigations
+          - InternalCall
+          - MaxMethodImplVal
+          type: string
+        MethodHandle:
+          $ref: '#/components/schemas/RuntimeMethodHandle'
+        Attributes:
+          enum:
+          - ReuseSlot
+          - PrivateScope
+          - Private
+          - FamANDAssem
+          - Assembly
+          - Family
+          - FamORAssem
+          - Public
+          - MemberAccessMask
+          - UnmanagedExport
+          - Static
+          - Final
+          - Virtual
+          - HideBySig
+          - NewSlot
+          - VtableLayoutMask
+          - CheckAccessOnOverride
+          - Abstract
+          - SpecialName
+          - RTSpecialName
+          - PinvokeImpl
+          - HasSecurity
+          - RequireSecObject
+          - ReservedMask
+          type: string
+        CallingConvention:
+          enum:
+          - Standard
+          - VarArgs
+          - Any
+          - HasThis
+          - ExplicitThis
+          type: string
+        IsGenericMethodDefinition:
+          type: boolean
+        ContainsGenericParameters:
+          type: boolean
+        IsGenericMethod:
+          type: boolean
+        IsSecurityCritical:
+          type: boolean
+        IsSecuritySafeCritical:
+          type: boolean
+        IsSecurityTransparent:
+          type: boolean
+        IsPublic:
+          type: boolean
+        IsPrivate:
+          type: boolean
+        IsFamily:
+          type: boolean
+        IsAssembly:
+          type: boolean
+        IsFamilyAndAssembly:
+          type: boolean
+        IsFamilyOrAssembly:
+          type: boolean
+        IsStatic:
+          type: boolean
+        IsFinal:
+          type: boolean
+        IsVirtual:
+          type: boolean
+        IsHideBySig:
+          type: boolean
+        IsAbstract:
+          type: boolean
+        IsSpecialName:
+          type: boolean
+        IsConstructor:
+          type: boolean
+        MemberType:
+          enum:
+          - Constructor
+          - Event
+          - Field
+          - Method
+          - Property
+          - TypeInfo
+          - Custom
+          - NestedType
+          - All
+          type: string
+        Name:
+          type: string
+        DeclaringType:
+          $ref: '#/components/schemas/Type'
+        ReflectedType:
+          $ref: '#/components/schemas/Type'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        MetadataToken:
+          type: integer
+        Module:
+          $ref: '#/components/schemas/Module'
+    IContainer:
+      title: IContainer
+      type: object
+      properties:
+        Components:
+          type: array
+          items:
+            type: string
+            format: ComponentCollection
+    DataColumn:
+      title: DataColumn
+      type: object
+      properties:
+        AllowDBNull:
+          type: boolean
+        AutoIncrement:
+          type: boolean
+        AutoIncrementSeed:
+          type: integer
+        AutoIncrementStep:
+          type: integer
+        Caption:
+          type: string
+        ColumnName:
+          type: string
+        Prefix:
+          type: string
+        DataType:
+          $ref: '#/components/schemas/Type'
+        DateTimeMode:
+          enum:
+          - Local
+          - Unspecified
+          - UnspecifiedLocal
+          - Utc
+          type: string
+        DefaultValue:
+          $ref: '#/components/schemas/Object'
+        Expression:
+          type: string
+        ExtendedProperties:
+          type: array
+          items:
+            type: string
+            format: PropertyCollection
+        MaxLength:
+          type: integer
+        Namespace:
+          type: string
+        Ordinal:
+          type: integer
+        ReadOnly:
+          type: boolean
+        Table:
+          $ref: '#/components/schemas/DataTable'
+        Unique:
+          type: boolean
+        ColumnMapping:
+          enum:
+          - Element
+          - Attribute
+          - SimpleContent
+          - Hidden
+          type: string
+        Site:
+          $ref: '#/components/schemas/ISite'
+        Container:
+          $ref: '#/components/schemas/IContainer'
+        DesignMode:
+          type: boolean
+    CustomAttributeData:
+      title: CustomAttributeData
+      type: object
+      properties:
+        AttributeType:
+          $ref: '#/components/schemas/Type'
+        Constructor:
+          $ref: '#/components/schemas/ConstructorInfo'
+        ConstructorArguments:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeTypedArgument'
+        NamedArguments:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeNamedArgument'
+    SearchIndexRef:
+      title: SearchIndexRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ICustomAttributeProvider:
+      title: ICustomAttributeProvider
+      type: object
+    CustomAttributeNamedArgument:
+      title: CustomAttributeNamedArgument
+      type: object
+      properties:
+        MemberInfo:
+          $ref: '#/components/schemas/MemberInfo'
+        TypedValue:
+          $ref: '#/components/schemas/CustomAttributeTypedArgument'
+        MemberName:
+          type: string
+        IsField:
+          type: boolean
+    Binder:
+      title: Binder
+      type: object
+    CultureInfo:
+      title: CultureInfo
+      type: object
+      properties:
+        CurrentCulture:
+          $ref: '#/components/schemas/CultureInfo'
+        CurrentUICulture:
+          $ref: '#/components/schemas/CultureInfo'
+        InstalledUICulture:
+          $ref: '#/components/schemas/CultureInfo'
+        DefaultThreadCurrentCulture:
+          $ref: '#/components/schemas/CultureInfo'
+        DefaultThreadCurrentUICulture:
+          $ref: '#/components/schemas/CultureInfo'
+        InvariantCulture:
+          $ref: '#/components/schemas/CultureInfo'
+        Parent:
+          $ref: '#/components/schemas/CultureInfo'
+        LCID:
+          type: integer
+        KeyboardLayoutId:
+          type: integer
+        Name:
+          type: string
+        IetfLanguageTag:
+          type: string
+        DisplayName:
+          type: string
+        NativeName:
+          type: string
+        EnglishName:
+          type: string
+        TwoLetterISOLanguageName:
+          type: string
+        ThreeLetterISOLanguageName:
+          type: string
+        ThreeLetterWindowsLanguageName:
+          type: string
+        CompareInfo:
+          $ref: '#/components/schemas/CompareInfo'
+        TextInfo:
+          $ref: '#/components/schemas/TextInfo'
+        IsNeutralCulture:
+          type: boolean
+        CultureTypes:
+          enum:
+          - NeutralCultures
+          - SpecificCultures
+          - InstalledWin32Cultures
+          - AllCultures
+          - UserCustomCulture
+          - ReplacementCultures
+          - WindowsOnlyCultures
+          - FrameworkCultures
+          type: string
+        NumberFormat:
+          $ref: '#/components/schemas/NumberFormatInfo'
+        DateTimeFormat:
+          $ref: '#/components/schemas/DateTimeFormatInfo'
+        Calendar:
+          $ref: '#/components/schemas/Calendar'
+        OptionalCalendars:
+          type: array
+          items:
+            $ref: '#/components/schemas/Calendar'
+        UseUserOverride:
+          type: boolean
+        IsReadOnly:
+          type: boolean
+    PivotSettings:
+      title: PivotSettings
+      type: object
+      properties:
+        ObjectSetQuery:
+          $ref: '#/components/schemas/Query'
+        ArtifactTypeID:
+          type: integer
+        GroupBy:
+          $ref: '#/components/schemas/FieldRef'
+        PivotOn:
+          $ref: '#/components/schemas/FieldRef'
+        GroupByDateGrouping:
+          enum:
+          - Date
+          - Month
+          - Year
+          - YearMonth
+          - Week
+          - TwoWeeks
+          type: string
+        PivotOnDateGrouping:
+          enum:
+          - Date
+          - Month
+          - Year
+          - YearMonth
+          - Week
+          - TwoWeeks
+          type: string
+        MaximumNumberOfColumns:
+          type: integer
+        MaximumNumberOfRows:
+          type: integer
+        Timeout:
+          type: integer
+        RawDataOnly:
+          type: boolean
+        ConvertNumberFieldValuesToString:
+          type:
+          - boolean
+          - 'null'
+    Type:
+      title: Type
+      type: object
+      properties:
+        MemberType:
+          enum:
+          - Constructor
+          - Event
+          - Field
+          - Method
+          - Property
+          - TypeInfo
+          - Custom
+          - NestedType
+          - All
+          type: string
+        DeclaringType:
+          $ref: '#/components/schemas/Type'
+        DeclaringMethod:
+          $ref: '#/components/schemas/MethodBase'
+        ReflectedType:
+          $ref: '#/components/schemas/Type'
+        StructLayoutAttribute:
+          $ref: '#/components/schemas/StructLayoutAttribute'
+        GUID:
+          type: string
+        DefaultBinder:
+          $ref: '#/components/schemas/Binder'
+        Module:
+          $ref: '#/components/schemas/Module'
+        Assembly:
+          $ref: '#/components/schemas/Assembly'
+        TypeHandle:
+          $ref: '#/components/schemas/RuntimeTypeHandle'
+        FullName:
+          type: string
+        Namespace:
+          type: string
+        AssemblyQualifiedName:
+          type: string
+        BaseType:
+          $ref: '#/components/schemas/Type'
+        TypeInitializer:
+          $ref: '#/components/schemas/ConstructorInfo'
+        IsNested:
+          type: boolean
+        Attributes:
+          enum:
+          - NotPublic
+          - AutoLayout
+          - AnsiClass
+          - Class
+          - Public
+          - NestedPublic
+          - NestedPrivate
+          - NestedFamily
+          - NestedAssembly
+          - NestedFamANDAssem
+          - NestedFamORAssem
+          - VisibilityMask
+          - SequentialLayout
+          - ExplicitLayout
+          - LayoutMask
+          - Interface
+          - ClassSemanticsMask
+          - Abstract
+          - Sealed
+          - SpecialName
+          - RTSpecialName
+          - Import
+          - Serializable
+          - WindowsRuntime
+          - UnicodeClass
+          - AutoClass
+          - StringFormatMask
+          - CustomFormatClass
+          - HasSecurity
+          - ReservedMask
+          - BeforeFieldInit
+          - CustomFormatMask
+          type: string
+        GenericParameterAttributes:
+          enum:
+          - None
+          - Covariant
+          - Contravariant
+          - VarianceMask
+          - ReferenceTypeConstraint
+          - NotNullableValueTypeConstraint
+          - DefaultConstructorConstraint
+          - SpecialConstraintMask
+          type: string
+        IsVisible:
+          type: boolean
+        IsNotPublic:
+          type: boolean
+        IsPublic:
+          type: boolean
+        IsNestedPublic:
+          type: boolean
+        IsNestedPrivate:
+          type: boolean
+        IsNestedFamily:
+          type: boolean
+        IsNestedAssembly:
+          type: boolean
+        IsNestedFamANDAssem:
+          type: boolean
+        IsNestedFamORAssem:
+          type: boolean
+        IsAutoLayout:
+          type: boolean
+        IsLayoutSequential:
+          type: boolean
+        IsExplicitLayout:
+          type: boolean
+        IsClass:
+          type: boolean
+        IsInterface:
+          type: boolean
+        IsValueType:
+          type: boolean
+        IsAbstract:
+          type: boolean
+        IsSealed:
+          type: boolean
+        IsEnum:
+          type: boolean
+        IsSpecialName:
+          type: boolean
+        IsImport:
+          type: boolean
+        IsSerializable:
+          type: boolean
+        IsAnsiClass:
+          type: boolean
+        IsUnicodeClass:
+          type: boolean
+        IsAutoClass:
+          type: boolean
+        IsArray:
+          type: boolean
+        IsGenericType:
+          type: boolean
+        IsGenericTypeDefinition:
+          type: boolean
+        IsConstructedGenericType:
+          type: boolean
+        IsGenericParameter:
+          type: boolean
+        GenericParameterPosition:
+          type: integer
+        ContainsGenericParameters:
+          type: boolean
+        IsByRef:
+          type: boolean
+        IsPointer:
+          type: boolean
+        IsPrimitive:
+          type: boolean
+        IsCOMObject:
+          type: boolean
+        HasElementType:
+          type: boolean
+        IsContextful:
+          type: boolean
+        IsMarshalByRef:
+          type: boolean
+        GenericTypeArguments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Type'
+        IsSecurityCritical:
+          type: boolean
+        IsSecuritySafeCritical:
+          type: boolean
+        IsSecurityTransparent:
+          type: boolean
+        UnderlyingSystemType:
+          $ref: '#/components/schemas/Type'
+        Name:
+          type: string
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        MetadataToken:
+          type: integer
+    DataTable:
+      title: DataTable
+      type: object
+      properties:
+        CaseSensitive:
+          type: boolean
+        IsInitialized:
+          type: boolean
+        RemotingFormat:
+          enum:
+          - Xml
+          - Binary
+          type: string
+        ChildRelations:
+          type: array
+          items:
+            type: string
+            format: DataRelationCollection
+        Columns:
+          type: array
+          items:
+            type: string
+            format: DataColumnCollection
+        Constraints:
+          type: array
+          items:
+            type: string
+            format: ConstraintCollection
+        DataSet:
+          $ref: '#/components/schemas/DataSet'
+        DefaultView:
+          type: array
+          items:
+            type: string
+            format: DataView
+        DisplayExpression:
+          type: string
+        ExtendedProperties:
+          type: array
+          items:
+            type: string
+            format: PropertyCollection
+        HasErrors:
+          type: boolean
+        Locale:
+          $ref: '#/components/schemas/CultureInfo'
+        MinimumCapacity:
+          type: integer
+        ParentRelations:
+          type: array
+          items:
+            type: string
+            format: DataRelationCollection
+        PrimaryKey:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataColumn'
+        Rows:
+          type: array
+          items:
+            type: string
+            format: DataRowCollection
+        TableName:
+          type: string
+        Namespace:
+          type: string
+        Prefix:
+          type: string
+        Site:
+          $ref: '#/components/schemas/ISite'
+        Container:
+          $ref: '#/components/schemas/IContainer'
+        DesignMode:
+          type: boolean
+    Module:
+      title: Module
+      type: object
+      properties:
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        MDStreamVersion:
+          type: integer
+        FullyQualifiedName:
+          type: string
+        ModuleVersionId:
+          type: string
+        MetadataToken:
+          type: integer
+        ScopeName:
+          type: string
+        Name:
+          type: string
+        Assembly:
+          $ref: '#/components/schemas/Assembly'
+        ModuleHandle:
+          $ref: '#/components/schemas/ModuleHandle'
+    TextInfo:
+      title: TextInfo
+      type: object
+      properties:
+        ANSICodePage:
+          type: integer
+        OEMCodePage:
+          type: integer
+        MacCodePage:
+          type: integer
+        EBCDICCodePage:
+          type: integer
+        LCID:
+          type: integer
+        CultureName:
+          type: string
+        IsReadOnly:
+          type: boolean
+        ListSeparator:
+          type: string
+        IsRightToLeft:
+          type: boolean
+    EventInfo:
+      title: EventInfo
+      type: object
+      properties:
+        MemberType:
+          enum:
+          - Constructor
+          - Event
+          - Field
+          - Method
+          - Property
+          - TypeInfo
+          - Custom
+          - NestedType
+          - All
+          type: string
+        Attributes:
+          enum:
+          - None
+          - SpecialName
+          - ReservedMask
+          - RTSpecialName
+          type: string
+        AddMethod:
+          $ref: '#/components/schemas/MethodInfo'
+        RemoveMethod:
+          $ref: '#/components/schemas/MethodInfo'
+        RaiseMethod:
+          $ref: '#/components/schemas/MethodInfo'
+        EventHandlerType:
+          $ref: '#/components/schemas/Type'
+        IsSpecialName:
+          type: boolean
+        IsMulticast:
+          type: boolean
+        Name:
+          type: string
+        DeclaringType:
+          $ref: '#/components/schemas/Type'
+        ReflectedType:
+          $ref: '#/components/schemas/Type'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        MetadataToken:
+          type: integer
+        Module:
+          $ref: '#/components/schemas/Module'
+    RuntimeTypeHandle:
+      title: RuntimeTypeHandle
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/IntPtr'
     NumberFormatInfo:
       title: NumberFormatInfo
       type: object
@@ -809,22 +1861,106 @@ components:
           - None
           - NativeNational
           type: string
-    ModuleHandle:
-      title: ModuleHandle
+    DataSet:
+      title: DataSet
       type: object
       properties:
-        MDStreamVersion:
+        RemotingFormat:
+          enum:
+          - Xml
+          - Binary
+          type: string
+        SchemaSerializationMode:
+          enum:
+          - IncludeSchema
+          - ExcludeSchema
+          type: string
+        CaseSensitive:
+          type: boolean
+        DefaultViewManager:
+          type: array
+          items:
+            type: string
+            format: DataViewManager
+        EnforceConstraints:
+          type: boolean
+        DataSetName:
+          type: string
+        Namespace:
+          type: string
+        Prefix:
+          type: string
+        ExtendedProperties:
+          type: array
+          items:
+            type: string
+            format: PropertyCollection
+        HasErrors:
+          type: boolean
+        IsInitialized:
+          type: boolean
+        Locale:
+          $ref: '#/components/schemas/CultureInfo'
+        Site:
+          $ref: '#/components/schemas/ISite'
+        Relations:
+          type: array
+          items:
+            type: string
+            format: DataRelationCollection
+        Tables:
+          type: array
+          items:
+            type: string
+            format: DataTableCollection
+        Container:
+          $ref: '#/components/schemas/IContainer'
+        DesignMode:
+          type: boolean
+    MemberInfo:
+      title: MemberInfo
+      type: object
+      properties:
+        MemberType:
+          enum:
+          - Constructor
+          - Event
+          - Field
+          - Method
+          - Property
+          - TypeInfo
+          - Custom
+          - NestedType
+          - All
+          type: string
+        Name:
+          type: string
+        DeclaringType:
+          $ref: '#/components/schemas/Type'
+        ReflectedType:
+          $ref: '#/components/schemas/Type'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomAttributeData'
+        MetadataToken:
           type: integer
-    DashboardPivot:
-      title: DashboardPivot
+        Module:
+          $ref: '#/components/schemas/Module'
+    IComponent:
+      title: IComponent
       type: object
       properties:
-        PivotProfileID:
-          type:
-          - integer
-          - 'null'
-        PivotSettings:
-          $ref: '#/components/schemas/PivotProfile'
+        Site:
+          $ref: '#/components/schemas/ISite'
+    DashboardImage:
+      title: DashboardImage
+      type: object
+      properties:
+        ImageBase64Encoded:
+          type: string
+        Name:
+          type: string
         Top:
           type: integer
         Left:
@@ -1055,6 +2191,9 @@ components:
             $ref: '#/components/schemas/CustomAttributeData'
         MetadataToken:
           type: integer
+    Object:
+      title: Object
+      type: object
     PivotProfile:
       title: PivotProfile
       type: object
@@ -1156,1145 +2295,6 @@ components:
           $ref: '#/components/schemas/DisplayableObjectTypeIdentifier'
         Name:
           type: string
-    Sort:
-      title: Sort
-      type: object
-      properties:
-        FieldIdentifier:
-          $ref: '#/components/schemas/FieldRef'
-        Order:
-          type: integer
-        Direction:
-          enum:
-          - Ascending
-          - Descending
-          type: string
-    DashboardImage:
-      title: DashboardImage
-      type: object
-      properties:
-        ImageBase64Encoded:
-          type: string
-        Name:
-          type: string
-        Top:
-          type: integer
-        Left:
-          type: integer
-        Width:
-          type: integer
-        Height:
-          type: integer
-    DataSet:
-      title: DataSet
-      type: object
-      properties:
-        RemotingFormat:
-          enum:
-          - Xml
-          - Binary
-          type: string
-        SchemaSerializationMode:
-          enum:
-          - IncludeSchema
-          - ExcludeSchema
-          type: string
-        CaseSensitive:
-          type: boolean
-        DefaultViewManager:
-          type: array
-          items:
-            type: string
-            format: DataViewManager
-        EnforceConstraints:
-          type: boolean
-        DataSetName:
-          type: string
-        Namespace:
-          type: string
-        Prefix:
-          type: string
-        ExtendedProperties:
-          type: array
-          items:
-            type: string
-            format: PropertyCollection
-        HasErrors:
-          type: boolean
-        IsInitialized:
-          type: boolean
-        Locale:
-          $ref: '#/components/schemas/CultureInfo'
-        Site:
-          $ref: '#/components/schemas/ISite'
-        Relations:
-          type: array
-          items:
-            type: string
-            format: DataRelationCollection
-        Tables:
-          type: array
-          items:
-            type: string
-            format: DataTableCollection
-        Container:
-          $ref: '#/components/schemas/IContainer'
-        DesignMode:
-          type: boolean
-    MethodBase:
-      title: MethodBase
-      type: object
-      properties:
-        MethodImplementationFlags:
-          enum:
-          - IL
-          - Managed
-          - Native
-          - OPTIL
-          - Runtime
-          - CodeTypeMask
-          - Unmanaged
-          - ManagedMask
-          - NoInlining
-          - ForwardRef
-          - Synchronized
-          - NoOptimization
-          - PreserveSig
-          - AggressiveInlining
-          - SecurityMitigations
-          - InternalCall
-          - MaxMethodImplVal
-          type: string
-        MethodHandle:
-          $ref: '#/components/schemas/RuntimeMethodHandle'
-        Attributes:
-          enum:
-          - ReuseSlot
-          - PrivateScope
-          - Private
-          - FamANDAssem
-          - Assembly
-          - Family
-          - FamORAssem
-          - Public
-          - MemberAccessMask
-          - UnmanagedExport
-          - Static
-          - Final
-          - Virtual
-          - HideBySig
-          - NewSlot
-          - VtableLayoutMask
-          - CheckAccessOnOverride
-          - Abstract
-          - SpecialName
-          - RTSpecialName
-          - PinvokeImpl
-          - HasSecurity
-          - RequireSecObject
-          - ReservedMask
-          type: string
-        CallingConvention:
-          enum:
-          - Standard
-          - VarArgs
-          - Any
-          - HasThis
-          - ExplicitThis
-          type: string
-        IsGenericMethodDefinition:
-          type: boolean
-        ContainsGenericParameters:
-          type: boolean
-        IsGenericMethod:
-          type: boolean
-        IsSecurityCritical:
-          type: boolean
-        IsSecuritySafeCritical:
-          type: boolean
-        IsSecurityTransparent:
-          type: boolean
-        IsPublic:
-          type: boolean
-        IsPrivate:
-          type: boolean
-        IsFamily:
-          type: boolean
-        IsAssembly:
-          type: boolean
-        IsFamilyAndAssembly:
-          type: boolean
-        IsFamilyOrAssembly:
-          type: boolean
-        IsStatic:
-          type: boolean
-        IsFinal:
-          type: boolean
-        IsVirtual:
-          type: boolean
-        IsHideBySig:
-          type: boolean
-        IsAbstract:
-          type: boolean
-        IsSpecialName:
-          type: boolean
-        IsConstructor:
-          type: boolean
-        MemberType:
-          enum:
-          - Constructor
-          - Event
-          - Field
-          - Method
-          - Property
-          - TypeInfo
-          - Custom
-          - NestedType
-          - All
-          type: string
-        Name:
-          type: string
-        DeclaringType:
-          $ref: '#/components/schemas/Type'
-        ReflectedType:
-          $ref: '#/components/schemas/Type'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        MetadataToken:
-          type: integer
-        Module:
-          $ref: '#/components/schemas/Module'
-    ISite:
-      title: ISite
-      type: object
-      properties:
-        Component:
-          $ref: '#/components/schemas/IComponent'
-        Container:
-          $ref: '#/components/schemas/IContainer'
-        DesignMode:
-          type: boolean
-        Name:
-          type: string
-    CustomAttributeData:
-      title: CustomAttributeData
-      type: object
-      properties:
-        AttributeType:
-          $ref: '#/components/schemas/Type'
-        Constructor:
-          $ref: '#/components/schemas/ConstructorInfo'
-        ConstructorArguments:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeTypedArgument'
-        NamedArguments:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeNamedArgument'
-    MethodInfo:
-      title: MethodInfo
-      type: object
-      properties:
-        MemberType:
-          enum:
-          - Constructor
-          - Event
-          - Field
-          - Method
-          - Property
-          - TypeInfo
-          - Custom
-          - NestedType
-          - All
-          type: string
-        ReturnType:
-          $ref: '#/components/schemas/Type'
-        ReturnParameter:
-          $ref: '#/components/schemas/ParameterInfo'
-        ReturnTypeCustomAttributes:
-          $ref: '#/components/schemas/ICustomAttributeProvider'
-        MethodImplementationFlags:
-          enum:
-          - IL
-          - Managed
-          - Native
-          - OPTIL
-          - Runtime
-          - CodeTypeMask
-          - Unmanaged
-          - ManagedMask
-          - NoInlining
-          - ForwardRef
-          - Synchronized
-          - NoOptimization
-          - PreserveSig
-          - AggressiveInlining
-          - SecurityMitigations
-          - InternalCall
-          - MaxMethodImplVal
-          type: string
-        MethodHandle:
-          $ref: '#/components/schemas/RuntimeMethodHandle'
-        Attributes:
-          enum:
-          - ReuseSlot
-          - PrivateScope
-          - Private
-          - FamANDAssem
-          - Assembly
-          - Family
-          - FamORAssem
-          - Public
-          - MemberAccessMask
-          - UnmanagedExport
-          - Static
-          - Final
-          - Virtual
-          - HideBySig
-          - NewSlot
-          - VtableLayoutMask
-          - CheckAccessOnOverride
-          - Abstract
-          - SpecialName
-          - RTSpecialName
-          - PinvokeImpl
-          - HasSecurity
-          - RequireSecObject
-          - ReservedMask
-          type: string
-        CallingConvention:
-          enum:
-          - Standard
-          - VarArgs
-          - Any
-          - HasThis
-          - ExplicitThis
-          type: string
-        IsGenericMethodDefinition:
-          type: boolean
-        ContainsGenericParameters:
-          type: boolean
-        IsGenericMethod:
-          type: boolean
-        IsSecurityCritical:
-          type: boolean
-        IsSecuritySafeCritical:
-          type: boolean
-        IsSecurityTransparent:
-          type: boolean
-        IsPublic:
-          type: boolean
-        IsPrivate:
-          type: boolean
-        IsFamily:
-          type: boolean
-        IsAssembly:
-          type: boolean
-        IsFamilyAndAssembly:
-          type: boolean
-        IsFamilyOrAssembly:
-          type: boolean
-        IsStatic:
-          type: boolean
-        IsFinal:
-          type: boolean
-        IsVirtual:
-          type: boolean
-        IsHideBySig:
-          type: boolean
-        IsAbstract:
-          type: boolean
-        IsSpecialName:
-          type: boolean
-        IsConstructor:
-          type: boolean
-        Name:
-          type: string
-        DeclaringType:
-          $ref: '#/components/schemas/Type'
-        ReflectedType:
-          $ref: '#/components/schemas/Type'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        MetadataToken:
-          type: integer
-        Module:
-          $ref: '#/components/schemas/Module'
-    FieldInfo:
-      title: FieldInfo
-      type: object
-      properties:
-        MemberType:
-          enum:
-          - Constructor
-          - Event
-          - Field
-          - Method
-          - Property
-          - TypeInfo
-          - Custom
-          - NestedType
-          - All
-          type: string
-        FieldHandle:
-          $ref: '#/components/schemas/RuntimeFieldHandle'
-        FieldType:
-          $ref: '#/components/schemas/Type'
-        Attributes:
-          enum:
-          - PrivateScope
-          - Private
-          - FamANDAssem
-          - Assembly
-          - Family
-          - FamORAssem
-          - Public
-          - FieldAccessMask
-          - Static
-          - InitOnly
-          - Literal
-          - NotSerialized
-          - HasFieldRVA
-          - SpecialName
-          - RTSpecialName
-          - HasFieldMarshal
-          - PinvokeImpl
-          - HasDefault
-          - ReservedMask
-          type: string
-        IsPublic:
-          type: boolean
-        IsPrivate:
-          type: boolean
-        IsFamily:
-          type: boolean
-        IsAssembly:
-          type: boolean
-        IsFamilyAndAssembly:
-          type: boolean
-        IsFamilyOrAssembly:
-          type: boolean
-        IsStatic:
-          type: boolean
-        IsInitOnly:
-          type: boolean
-        IsLiteral:
-          type: boolean
-        IsNotSerialized:
-          type: boolean
-        IsSpecialName:
-          type: boolean
-        IsPinvokeImpl:
-          type: boolean
-        IsSecurityCritical:
-          type: boolean
-        IsSecuritySafeCritical:
-          type: boolean
-        IsSecurityTransparent:
-          type: boolean
-        Name:
-          type: string
-        DeclaringType:
-          $ref: '#/components/schemas/Type'
-        ReflectedType:
-          $ref: '#/components/schemas/Type'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        MetadataToken:
-          type: integer
-        Module:
-          $ref: '#/components/schemas/Module'
-    IComponent:
-      title: IComponent
-      type: object
-      properties:
-        Site:
-          $ref: '#/components/schemas/ISite'
-    ToggleOptions:
-      title: ToggleOptions
-      type: object
-      properties:
-        ShowBlankValues:
-          type: boolean
-        ShowGrandTotal:
-          type: boolean
-        ShowLegend:
-          type: boolean
-        RotateLabels:
-          type: boolean
-        StaggerLabels:
-          type: boolean
-        ShowLabels:
-          type: boolean
-        ShowSubChart:
-          type: boolean
-    IContainer:
-      title: IContainer
-      type: object
-      properties:
-        Components:
-          type: array
-          items:
-            type: string
-            format: ComponentCollection
-    SampleParameters:
-      title: SampleParameters
-      type: object
-      properties:
-        ExistingToken:
-          type: string
-        MarginOfError:
-          type: number
-        ConfidenceLevel:
-          type: number
-        FixedSampleSize:
-          type: integer
-        SamplingPercentage:
-          type: number
-    ConstructorInfo:
-      title: ConstructorInfo
-      type: object
-      properties:
-        MemberType:
-          enum:
-          - Constructor
-          - Event
-          - Field
-          - Method
-          - Property
-          - TypeInfo
-          - Custom
-          - NestedType
-          - All
-          type: string
-        MethodImplementationFlags:
-          enum:
-          - IL
-          - Managed
-          - Native
-          - OPTIL
-          - Runtime
-          - CodeTypeMask
-          - Unmanaged
-          - ManagedMask
-          - NoInlining
-          - ForwardRef
-          - Synchronized
-          - NoOptimization
-          - PreserveSig
-          - AggressiveInlining
-          - SecurityMitigations
-          - InternalCall
-          - MaxMethodImplVal
-          type: string
-        MethodHandle:
-          $ref: '#/components/schemas/RuntimeMethodHandle'
-        Attributes:
-          enum:
-          - ReuseSlot
-          - PrivateScope
-          - Private
-          - FamANDAssem
-          - Assembly
-          - Family
-          - FamORAssem
-          - Public
-          - MemberAccessMask
-          - UnmanagedExport
-          - Static
-          - Final
-          - Virtual
-          - HideBySig
-          - NewSlot
-          - VtableLayoutMask
-          - CheckAccessOnOverride
-          - Abstract
-          - SpecialName
-          - RTSpecialName
-          - PinvokeImpl
-          - HasSecurity
-          - RequireSecObject
-          - ReservedMask
-          type: string
-        CallingConvention:
-          enum:
-          - Standard
-          - VarArgs
-          - Any
-          - HasThis
-          - ExplicitThis
-          type: string
-        IsGenericMethodDefinition:
-          type: boolean
-        ContainsGenericParameters:
-          type: boolean
-        IsGenericMethod:
-          type: boolean
-        IsSecurityCritical:
-          type: boolean
-        IsSecuritySafeCritical:
-          type: boolean
-        IsSecurityTransparent:
-          type: boolean
-        IsPublic:
-          type: boolean
-        IsPrivate:
-          type: boolean
-        IsFamily:
-          type: boolean
-        IsAssembly:
-          type: boolean
-        IsFamilyAndAssembly:
-          type: boolean
-        IsFamilyOrAssembly:
-          type: boolean
-        IsStatic:
-          type: boolean
-        IsFinal:
-          type: boolean
-        IsVirtual:
-          type: boolean
-        IsHideBySig:
-          type: boolean
-        IsAbstract:
-          type: boolean
-        IsSpecialName:
-          type: boolean
-        IsConstructor:
-          type: boolean
-        Name:
-          type: string
-        DeclaringType:
-          $ref: '#/components/schemas/Type'
-        ReflectedType:
-          $ref: '#/components/schemas/Type'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        MetadataToken:
-          type: integer
-        Module:
-          $ref: '#/components/schemas/Module'
-    MemberInfo:
-      title: MemberInfo
-      type: object
-      properties:
-        MemberType:
-          enum:
-          - Constructor
-          - Event
-          - Field
-          - Method
-          - Property
-          - TypeInfo
-          - Custom
-          - NestedType
-          - All
-          type: string
-        Name:
-          type: string
-        DeclaringType:
-          $ref: '#/components/schemas/Type'
-        ReflectedType:
-          $ref: '#/components/schemas/Type'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        MetadataToken:
-          type: integer
-        Module:
-          $ref: '#/components/schemas/Module'
-    ParameterInfo:
-      title: ParameterInfo
-      type: object
-      properties:
-        ParameterType:
-          $ref: '#/components/schemas/Type'
-        Name:
-          type: string
-        HasDefaultValue:
-          type: boolean
-        DefaultValue:
-          $ref: '#/components/schemas/Object'
-        RawDefaultValue:
-          $ref: '#/components/schemas/Object'
-        Position:
-          type: integer
-        Attributes:
-          enum:
-          - None
-          - In
-          - Out
-          - Lcid
-          - Retval
-          - Optional
-          - HasDefault
-          - HasFieldMarshal
-          - Reserved3
-          - Reserved4
-          - ReservedMask
-          type: string
-        Member:
-          $ref: '#/components/schemas/MemberInfo'
-        IsIn:
-          type: boolean
-        IsOut:
-          type: boolean
-        IsLcid:
-          type: boolean
-        IsRetval:
-          type: boolean
-        IsOptional:
-          type: boolean
-        MetadataToken:
-          type: integer
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-    DisplayableObjectTypeIdentifier:
-      title: DisplayableObjectTypeIdentifier
-      type: object
-      properties:
-        ArtifactTypeID:
-          type: integer
-        Name:
-          type: string
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-    Query:
-      title: Query
-      type: object
-      properties:
-        Condition:
-          type: string
-        Sorts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sort'
-        RelationalField:
-          $ref: '#/components/schemas/FieldRef'
-        RowCondition:
-          type: string
-        SearchProviderCondition:
-          $ref: '#/components/schemas/SearchProviderCondition'
-        ExecutingSavedSearchID:
-          type:
-          - integer
-          - 'null'
-        SampleParameters:
-          $ref: '#/components/schemas/SampleParameters'
-        IncludeIDWindow:
-          type:
-          - boolean
-          - 'null'
-        RankSortOrder:
-          type: string
-        QueryHint:
-          type: string
-    CustomAttributeNamedArgument:
-      title: CustomAttributeNamedArgument
-      type: object
-      properties:
-        MemberInfo:
-          $ref: '#/components/schemas/MemberInfo'
-        TypedValue:
-          $ref: '#/components/schemas/CustomAttributeTypedArgument'
-        MemberName:
-          type: string
-        IsField:
-          type: boolean
-    RuntimeTypeHandle:
-      title: RuntimeTypeHandle
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/IntPtr'
-    TextInfo:
-      title: TextInfo
-      type: object
-      properties:
-        ANSICodePage:
-          type: integer
-        OEMCodePage:
-          type: integer
-        MacCodePage:
-          type: integer
-        EBCDICCodePage:
-          type: integer
-        LCID:
-          type: integer
-        CultureName:
-          type: string
-        IsReadOnly:
-          type: boolean
-        ListSeparator:
-          type: string
-        IsRightToLeft:
-          type: boolean
-    Type:
-      title: Type
-      type: object
-      properties:
-        MemberType:
-          enum:
-          - Constructor
-          - Event
-          - Field
-          - Method
-          - Property
-          - TypeInfo
-          - Custom
-          - NestedType
-          - All
-          type: string
-        DeclaringType:
-          $ref: '#/components/schemas/Type'
-        DeclaringMethod:
-          $ref: '#/components/schemas/MethodBase'
-        ReflectedType:
-          $ref: '#/components/schemas/Type'
-        StructLayoutAttribute:
-          $ref: '#/components/schemas/StructLayoutAttribute'
-        GUID:
-          type: string
-        DefaultBinder:
-          $ref: '#/components/schemas/Binder'
-        Module:
-          $ref: '#/components/schemas/Module'
-        Assembly:
-          $ref: '#/components/schemas/Assembly'
-        TypeHandle:
-          $ref: '#/components/schemas/RuntimeTypeHandle'
-        FullName:
-          type: string
-        Namespace:
-          type: string
-        AssemblyQualifiedName:
-          type: string
-        BaseType:
-          $ref: '#/components/schemas/Type'
-        TypeInitializer:
-          $ref: '#/components/schemas/ConstructorInfo'
-        IsNested:
-          type: boolean
-        Attributes:
-          enum:
-          - NotPublic
-          - AutoLayout
-          - AnsiClass
-          - Class
-          - Public
-          - NestedPublic
-          - NestedPrivate
-          - NestedFamily
-          - NestedAssembly
-          - NestedFamANDAssem
-          - NestedFamORAssem
-          - VisibilityMask
-          - SequentialLayout
-          - ExplicitLayout
-          - LayoutMask
-          - Interface
-          - ClassSemanticsMask
-          - Abstract
-          - Sealed
-          - SpecialName
-          - RTSpecialName
-          - Import
-          - Serializable
-          - WindowsRuntime
-          - UnicodeClass
-          - AutoClass
-          - StringFormatMask
-          - CustomFormatClass
-          - HasSecurity
-          - ReservedMask
-          - BeforeFieldInit
-          - CustomFormatMask
-          type: string
-        GenericParameterAttributes:
-          enum:
-          - None
-          - Covariant
-          - Contravariant
-          - VarianceMask
-          - ReferenceTypeConstraint
-          - NotNullableValueTypeConstraint
-          - DefaultConstructorConstraint
-          - SpecialConstraintMask
-          type: string
-        IsVisible:
-          type: boolean
-        IsNotPublic:
-          type: boolean
-        IsPublic:
-          type: boolean
-        IsNestedPublic:
-          type: boolean
-        IsNestedPrivate:
-          type: boolean
-        IsNestedFamily:
-          type: boolean
-        IsNestedAssembly:
-          type: boolean
-        IsNestedFamANDAssem:
-          type: boolean
-        IsNestedFamORAssem:
-          type: boolean
-        IsAutoLayout:
-          type: boolean
-        IsLayoutSequential:
-          type: boolean
-        IsExplicitLayout:
-          type: boolean
-        IsClass:
-          type: boolean
-        IsInterface:
-          type: boolean
-        IsValueType:
-          type: boolean
-        IsAbstract:
-          type: boolean
-        IsSealed:
-          type: boolean
-        IsEnum:
-          type: boolean
-        IsSpecialName:
-          type: boolean
-        IsImport:
-          type: boolean
-        IsSerializable:
-          type: boolean
-        IsAnsiClass:
-          type: boolean
-        IsUnicodeClass:
-          type: boolean
-        IsAutoClass:
-          type: boolean
-        IsArray:
-          type: boolean
-        IsGenericType:
-          type: boolean
-        IsGenericTypeDefinition:
-          type: boolean
-        IsConstructedGenericType:
-          type: boolean
-        IsGenericParameter:
-          type: boolean
-        GenericParameterPosition:
-          type: integer
-        ContainsGenericParameters:
-          type: boolean
-        IsByRef:
-          type: boolean
-        IsPointer:
-          type: boolean
-        IsPrimitive:
-          type: boolean
-        IsCOMObject:
-          type: boolean
-        HasElementType:
-          type: boolean
-        IsContextful:
-          type: boolean
-        IsMarshalByRef:
-          type: boolean
-        GenericTypeArguments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Type'
-        IsSecurityCritical:
-          type: boolean
-        IsSecuritySafeCritical:
-          type: boolean
-        IsSecurityTransparent:
-          type: boolean
-        UnderlyingSystemType:
-          $ref: '#/components/schemas/Type'
-        Name:
-          type: string
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        MetadataToken:
-          type: integer
-    Assembly:
-      title: Assembly
-      type: object
-      properties:
-        CodeBase:
-          type: string
-        EscapedCodeBase:
-          type: string
-        FullName:
-          type: string
-        EntryPoint:
-          $ref: '#/components/schemas/MethodInfo'
-        ExportedTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Type'
-        DefinedTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/TypeInfo'
-        Evidence:
-          type: array
-          items:
-            type: string
-            format: Evidence
-        PermissionSet:
-          type: array
-          items:
-            type: string
-            format: PermissionSet
-        IsFullyTrusted:
-          type: boolean
-        SecurityRuleSet:
-          enum:
-          - None
-          - Level1
-          - Level2
-          type: string
-        ManifestModule:
-          $ref: '#/components/schemas/Module'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomAttributeData'
-        ReflectionOnly:
-          type: boolean
-        Modules:
-          type: array
-          items:
-            $ref: '#/components/schemas/Module'
-        Location:
-          type: string
-        ImageRuntimeVersion:
-          type: string
-        GlobalAssemblyCache:
-          type: boolean
-        HostContext:
-          type: integer
-        IsDynamic:
-          type: boolean
-    RuntimeMethodHandle:
-      title: RuntimeMethodHandle
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/IntPtr'
-    SearchIndexRef:
-      title: SearchIndexRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    SearchProviderCondition:
-      title: SearchProviderCondition
-      type: object
-      properties:
-        SearchIndex:
-          $ref: '#/components/schemas/SearchIndexRef'
-        Input:
-          type: string
-    DataColumn:
-      title: DataColumn
-      type: object
-      properties:
-        AllowDBNull:
-          type: boolean
-        AutoIncrement:
-          type: boolean
-        AutoIncrementSeed:
-          type: integer
-        AutoIncrementStep:
-          type: integer
-        Caption:
-          type: string
-        ColumnName:
-          type: string
-        Prefix:
-          type: string
-        DataType:
-          $ref: '#/components/schemas/Type'
-        DateTimeMode:
-          enum:
-          - Local
-          - Unspecified
-          - UnspecifiedLocal
-          - Utc
-          type: string
-        DefaultValue:
-          $ref: '#/components/schemas/Object'
-        Expression:
-          type: string
-        ExtendedProperties:
-          type: array
-          items:
-            type: string
-            format: PropertyCollection
-        MaxLength:
-          type: integer
-        Namespace:
-          type: string
-        Ordinal:
-          type: integer
-        ReadOnly:
-          type: boolean
-        Table:
-          $ref: '#/components/schemas/DataTable'
-        Unique:
-          type: boolean
-        ColumnMapping:
-          enum:
-          - Element
-          - Attribute
-          - SimpleContent
-          - Hidden
-          type: string
-        Site:
-          $ref: '#/components/schemas/ISite'
-        Container:
-          $ref: '#/components/schemas/IContainer'
-        DesignMode:
-          type: boolean
-    Binder:
-      title: Binder
-      type: object
-    HeaderSettings:
-      title: HeaderSettings
-      type: object
-      properties:
-        IncludeWorkspace:
-          type: boolean
-        IncludeView:
-          type: boolean
-        IncludeDashboard:
-          type: boolean
-        IncludeUser:
-          type: boolean
-        IncludeLogo:
-          type: boolean
-        IncludeDateAndTime:
-          type: boolean
   parameters:
     x-csrf-header:
       name: x-csrf-header
@@ -2304,13 +2304,6 @@ components:
       schema:
         type: string
         default: '-'
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
     artifactTypeID:
       name: artifactTypeID
       in: path
@@ -2320,6 +2313,13 @@ components:
         type: integer
     pivotProfileID:
       name: pivotProfileID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceID:
+      name: workspaceID
       in: path
       description: ''
       required: true

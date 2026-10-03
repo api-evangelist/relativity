@@ -777,71 +777,6 @@ paths:
           description: Your RelativityOne tenant name
 components:
   schemas:
-    DirectoryReportRequest:
-      required:
-      - depth
-      - path
-      type: object
-      properties:
-        path:
-          minLength: 1
-          type: string
-        includeFiles:
-          type: boolean
-        depth:
-          $ref: '#/components/schemas/ReportDepth'
-        useSnapshot:
-          type: boolean
-        date:
-          pattern: ^\d{8}$
-          type:
-          - string
-          - 'null'
-          description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
-      additionalProperties: false
-    ReportJobsResponse:
-      type: object
-      properties:
-        reportJobs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ReportJobResponse'
-        paging:
-          $ref: '#/components/schemas/Page'
-      additionalProperties: false
-    ReportResponse:
-      type: object
-      properties:
-        reportId:
-          type: string
-          format: uuid
-      additionalProperties: false
-    ReportDepth:
-      enum:
-      - TopLevelOnly
-      - OneLevelDeep
-      - TwoLevelsDeep
-      - FullHierarchy
-      type: string
-    Page:
-      required:
-      - limit
-      - start
-      type: object
-      properties:
-        start:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-        limit:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-      additionalProperties: false
     ReportJobResponse:
       type: object
       properties:
@@ -884,6 +819,64 @@ components:
           - 'null'
           description: Sanitized, user-facing failure reason. Populated only when `state` is `Failed` (see Failure reporting in the implementation notes); null otherwise. Omitted from the JSON payload when null.
       additionalProperties: false
+    ReportResponse:
+      type: object
+      properties:
+        reportId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    DirectoryReportRequest:
+      required:
+      - depth
+      - path
+      type: object
+      properties:
+        path:
+          minLength: 1
+          type: string
+        includeFiles:
+          type: boolean
+        depth:
+          $ref: '#/components/schemas/ReportDepth'
+        useSnapshot:
+          type: boolean
+        date:
+          pattern: ^\d{8}$
+          type:
+          - string
+          - 'null'
+          description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
+      additionalProperties: false
+    ReportJobsResponse:
+      type: object
+      properties:
+        reportJobs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ReportJobResponse'
+        paging:
+          $ref: '#/components/schemas/Page'
+      additionalProperties: false
+    Page:
+      required:
+      - limit
+      - start
+      type: object
+      properties:
+        start:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+        limit:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -909,6 +902,13 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    ReportDepth:
+      enum:
+      - TopLevelOnly
+      - OneLevelDeep
+      - TwoLevelsDeep
+      - FullHierarchy
+      type: string
     ReportCategory:
       enum:
       - DetailedReport
@@ -974,6 +974,41 @@ components:
           - boolean
           - 'null'
       additionalProperties: false
+    ReportsDto:
+      type: object
+      properties:
+        reports:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ReportDto'
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     ReportDetailsDto:
       type: object
       properties:
@@ -997,16 +1032,6 @@ components:
         totalItems:
           type: integer
           format: int32
-      additionalProperties: false
-    ReportsDto:
-      type: object
-      properties:
-        reports:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ReportDto'
       additionalProperties: false
     ReportDto:
       type: object
@@ -1053,31 +1078,6 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: http

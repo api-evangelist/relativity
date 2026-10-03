@@ -96,6 +96,23 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Page:
+      required:
+      - limit
+      - start
+      type: object
+      properties:
+        start:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+        limit:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -121,23 +138,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Page:
-      required:
-      - limit
-      - start
-      type: object
-      properties:
-        start:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-        limit:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-      additionalProperties: false
     DirectoryListRequest:
       required:
       - path

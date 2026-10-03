@@ -152,6 +152,21 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
+    InventoryReport:
+      type: object
+      required:
+      - glacierStoreEntityCount
+      - glacierStoreTotalEntitySize
+      properties:
+        glacierStoreEntityCount:
+          type: integer
+          description: Number of entities in the glacier
+          example: 1250
+        glacierStoreTotalEntitySize:
+          type: integer
+          format: int64
+          description: Total size of all entities in bytes
+          example: 5368709120
     ListGlaciersResponse:
       type: object
       required:
@@ -182,36 +197,26 @@ components:
           type: integer
           description: Total number of pages
           example: 3
-    GlacierReportResponse:
+    ProblemDetails:
       type: object
-      required:
-      - glacierId
-      - name
-      - createdAt
-      - inventoryReport
-      - downloadLink
       properties:
-        glacierId:
-          type: string
-          format: uuid
-          description: The unique identifier of the glacier
-          example: 987fcdeb-51a2-43d1-9876-543210fedcba
-        name:
-          type: string
-          description: The name of the glacier
-          example: project-archive-2024
-        createdAt:
-          type: string
-          format: date-time
-          description: When the glacier was created
-          example: '2024-01-15T10:30:00Z'
-        inventoryReport:
-          $ref: '#/components/schemas/InventoryReport'
-        downloadLink:
+        type:
           type: string
           format: uri
-          description: Download link for the glacier inventory report
-          example: https://mystorageaccount.dfs.core.windows.net/glacier-reports?sv=2022-11-02&ss=bfqt&srt=sco&sp=rl&se=2025-10-02T00:00:00Z&st=2025-10-01T00:00:00Z&spr=https&sig=abc123XYZsignature%3D
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
     GlacierListItem:
       type: object
       required:
@@ -244,41 +249,36 @@ components:
           - GLACIER_FAILED
           description: Current status of the glacier
           example: GLACIER_AVAILABLE
-    InventoryReport:
+    GlacierReportResponse:
       type: object
       required:
-      - glacierStoreEntityCount
-      - glacierStoreTotalEntitySize
+      - glacierId
+      - name
+      - createdAt
+      - inventoryReport
+      - downloadLink
       properties:
-        glacierStoreEntityCount:
-          type: integer
-          description: Number of entities in the glacier
-          example: 1250
-        glacierStoreTotalEntitySize:
-          type: integer
-          format: int64
-          description: Total size of all entities in bytes
-          example: 5368709120
-    ProblemDetails:
-      type: object
-      properties:
-        type:
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier
+          example: 987fcdeb-51a2-43d1-9876-543210fedcba
+        name:
+          type: string
+          description: The name of the glacier
+          example: project-archive-2024
+        createdAt:
+          type: string
+          format: date-time
+          description: When the glacier was created
+          example: '2024-01-15T10:30:00Z'
+        inventoryReport:
+          $ref: '#/components/schemas/InventoryReport'
+        downloadLink:
           type: string
           format: uri
-          description: A URI reference identifying the problem type
-        title:
-          type: string
-          description: A short, human-readable summary of the problem
-        status:
-          type: integer
-          description: The HTTP status code
-        detail:
-          type: string
-          description: A human-readable explanation specific to this occurrence
-        instance:
-          type: string
-          format: uri
-          description: A URI reference identifying the specific occurrence
+          description: Download link for the glacier inventory report
+          example: https://mystorageaccount.dfs.core.windows.net/glacier-reports?sv=2022-11-02&ss=bfqt&srt=sco&sp=rl&se=2025-10-02T00:00:00Z&st=2025-10-01T00:00:00Z&spr=https&sig=abc123XYZsignature%3D
   securitySchemes:
     oauth2:
       type: oauth2
