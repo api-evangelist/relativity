@@ -777,6 +777,18 @@ paths:
           description: Your RelativityOne tenant name
 components:
   schemas:
+    ReportJobsResponse:
+      type: object
+      properties:
+        reportJobs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ReportJobResponse'
+        paging:
+          $ref: '#/components/schemas/Page'
+      additionalProperties: false
     ReportJobResponse:
       type: object
       properties:
@@ -848,18 +860,6 @@ components:
           - 'null'
           description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
       additionalProperties: false
-    ReportJobsResponse:
-      type: object
-      properties:
-        reportJobs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ReportJobResponse'
-        paging:
-          $ref: '#/components/schemas/Page'
-      additionalProperties: false
     Page:
       required:
       - limit
@@ -877,6 +877,11 @@ components:
           type: integer
           format: int32
       additionalProperties: false
+    ReportCategory:
+      enum:
+      - DetailedReport
+      - SummaryReport
+      type: string
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -909,20 +914,29 @@ components:
       - TwoLevelsDeep
       - FullHierarchy
       type: string
-    ReportCategory:
-      enum:
-      - DetailedReport
-      - SummaryReport
-      type: string
-    DateRangeDto:
+    ReportDetailsDto:
       type: object
       properties:
-        from:
-          type: string
-          format: date-time
-        to:
-          type: string
-          format: date-time
+        fields:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        items:
+          type:
+          - array
+          - 'null'
+          items: {}
+        currentPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
       additionalProperties: false
     Stream:
       type: object
@@ -953,26 +967,15 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    CreateReportRequestDto:
+    DateRangeDto:
       type: object
       properties:
-        name:
-          type:
-          - string
-          - 'null'
-        dateRange:
-          $ref: '#/components/schemas/DateRangeDto'
-        fields:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-        dataMaxPrecision:
-          type:
-          - boolean
-          - 'null'
+        from:
+          type: string
+          format: date-time
+        to:
+          type: string
+          format: date-time
       additionalProperties: false
     ReportsDto:
       type: object
@@ -983,55 +986,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/ReportDto'
-      additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    ReportDetailsDto:
-      type: object
-      properties:
-        fields:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        items:
-          type:
-          - array
-          - 'null'
-          items: {}
-        currentPage:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        totalItems:
-          type: integer
-          format: int32
       additionalProperties: false
     ReportDto:
       type: object
@@ -1078,6 +1032,52 @@ components:
           type: integer
           format: int32
       additionalProperties: false
+    CreateReportRequestDto:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        dateRange:
+          $ref: '#/components/schemas/DateRangeDto'
+        fields:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        dataMaxPrecision:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: http

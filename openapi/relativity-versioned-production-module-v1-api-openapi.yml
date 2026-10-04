@@ -987,512 +987,63 @@ paths:
       summary: Relativity productions services V1 IReproduction job manager get reproduction…
       x-summary-source: derived
 components:
-  parameters:
-    productionRestrictionSearchID:
-      name: productionRestrictionSearchID
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    reproductionType:
-      name: reproductionType
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    dataSourceID:
-      name: dataSourceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    productionID:
-      name: productionID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    overrideConflicts:
-      name: overrideConflicts
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    priority:
-      name: priority
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    documents:
-      name: documents
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    top:
-      name: top
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 100
-    dataSourceReadMode:
-      name: dataSourceReadMode
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 1
-    databaseToken:
-      name: databaseToken
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    excludeNonReproducible:
-      name: excludeNonReproducible
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    reproductionJobID:
-      name: reproductionJobID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    automaticallyRun:
-      name: automaticallyRun
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    withPlaceholderImage:
-      name: withPlaceholderImage
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    productionIDs:
-      name: productionIDs
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    documentIDs:
-      name: documentIDs
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    numberOfBrandingErrors:
-      name: numberOfBrandingErrors
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 10
-    suppressWarnings:
-      name: suppressWarnings
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    token:
-      name: token
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    includePercentages:
-      name: includePercentages
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    databaseToken_Query:
-      name: databaseToken
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    skip:
-      name: skip
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 0
-    placeholderID:
-      name: placeholderID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
   schemas:
-    ProductionStatusResult:
-      title: ProductionStatusResult
+    FieldRef:
+      title: FieldRef
       type: object
       properties:
         ArtifactID:
           type: integer
-        Status:
-          enum:
-          - New
-          - Staging
-          - Staged
-          - StagingError
-          - Waiting
-          - Producing
-          - Branding
-          - Produced
-          - Error
-          - ProducedWithErrors
-          - ProducingCreatingPlaceholderImages
-          - ProducingCreatingAndApplyingBatesNumbers
-          - ProducingCreatingBrandingQueueRecords
-          - StagingRunningSavedSearches
-          - StagingCleaningUpData
-          - StagingCreatingProductionInformationRecords
-          - Canceling
-          - ProducingCleaningExistingFiles
-          - QueuedForStaging
-          - QueuedForProduction
-          - QueuedForBranding
-          - StartingProduction
-          - ErrorStartingProduction
-          type: string
-    ProductionSlim:
-      title: ProductionSlim
-      type: object
-      properties:
-        FieldValues:
-          type: object
-          additionalProperties:
-            title: Object
-            type: object
-        ProductionID:
+        ViewFieldID:
           type: integer
+        Guids:
+          type: array
+          items:
+            type: string
         Name:
           type: string
-    ReproductionRef:
-      title: ReproductionRef
+    ProductionDefaultFieldValues:
+      title: ProductionDefaultFieldValues
       type: object
       properties:
-        IsDeleted:
-          type: boolean
-        ProductionID:
-          type: integer
-        Name:
-          type: string
-    InnerReproductionJobResult:
-      title: InnerReproductionJobResult
-      type: object
-      properties:
-        ProductionID:
-          type: integer
-        ParentProductionID:
-          type: integer
-        Errors:
-          type: array
-          items:
-            type: string
-        Warnings:
-          type: array
-          items:
-            type: string
-        Messages:
-          type: array
-          items:
-            type: string
-    ReplacePlaceholderWithDocumentOptions:
-      title: ReplacePlaceholderWithDocumentOptions
-      type: object
-      properties:
-        Delimiter:
-          type: string
-        NumberOfDigits:
-          type: integer
-        IncludeNatives:
-          type: boolean
-        BurnRedactions:
-          type: boolean
-        MarkupSetID:
-          type: integer
-    ProductionJobResult:
-      title: ProductionJobResult
-      type: object
-      properties:
-        JobID:
-          type: integer
-        Errors:
-          type: array
-          items:
-            type: string
-        Messages:
-          type: array
-          items:
-            type: string
-        Warnings:
-          type: array
-          items:
-            type: string
-        WasJobCreated:
-          type: boolean
-        ProductionID:
-          type: integer
-        WorkspaceID:
-          type: integer
-    Sort:
-      title: Sort
-      type: object
-      properties:
-        FieldIdentifier:
-          $ref: '#/components/schemas/FieldRef'
-        Order:
-          type: integer
-        Direction:
-          enum:
-          - Ascending
-          - Descending
-          type: string
-    PagedImageFilesResult:
-      title: PagedImageFilesResult
-      type: object
-      properties:
-        TotalResultSet:
-          type: integer
-        ResultCount:
-          type: integer
-        PreviousPage:
-          type: string
-        NextPage:
-          type: string
-        ImageFiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImageFile'
-        Errors:
-          type: array
-          items:
-            type: string
-    ProductionDataSource:
-      title: ProductionDataSource
-      type: object
-      properties:
-        ArtifactTypeID:
-          type: integer
-        ProductionType:
-          enum:
-          - ImagesOnly
-          - NativesOnly
-          - ImagesAndNatives
-          type: string
-        SavedSearch:
-          $ref: '#/components/schemas/SavedSearchRef'
-        UseImagePlaceholder:
-          enum:
-          - WhenNoImageExists
-          - NeverUseImagePlaceholder
-          - AlwaysUseImagePlaceholder
-          type: string
-        Placeholder:
-          $ref: '#/components/schemas/ProductionPlaceholderRef'
-        MarkupSet:
-          $ref: '#/components/schemas/MarkupSetRef'
-        BurnRedactions:
-          type: boolean
-        PlaceholderFileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/Byte'
-        PlaceholderFilename:
-          type: string
-        PlaceholderFileSize:
-          type: integer
-        PlaceholderFileID:
-          type:
-          - integer
-          - 'null'
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    ProductionFooters:
-      title: ProductionFooters
-      type: object
-      properties:
-        Left:
-          $ref: '#/components/schemas/HeaderFooter'
-        Right:
-          $ref: '#/components/schemas/HeaderFooter'
-        Center:
-          $ref: '#/components/schemas/HeaderFooter'
-    ProductionDefaultFieldValue1:
-      title: ProductionDefaultFieldValue`1
-      type: object
-      properties:
-        Guid:
-          type: string
-        ID:
-          type: integer
-        DefaultValue:
-          type: boolean
-    BrandingError:
-      title: BrandingError
-      type: object
-      properties:
-        DocumentName:
-          type: string
-        DocumentID:
-          type: integer
-        FileID:
-          type: integer
-        ErrorMessage:
-          type: string
-    DuplicateDocument:
-      title: DuplicateDocument
-      type: object
-      properties:
-        Name:
-          type: string
-        DataSourceNames:
-          type: array
-          items:
-            type: string
-    ChoiceFieldValue:
-      title: ChoiceFieldValue
-      type: object
-      properties:
-        ID:
-          type: integer
-        Name:
-          type: string
-    Securable1:
-      title: Securable`1
-      type: object
-      properties:
-        Secured:
-          type: boolean
-        Value:
-          $ref: '#/components/schemas/UserRef'
-    ImageFilesResult:
-      title: ImageFilesResult
-      type: object
-      properties:
-        Count:
-          type: integer
-        ImageFiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImageFile'
-        Errors:
-          type: array
-          items:
-            type: string
-    ReplaceDocumentWithPlaceholderOptions:
-      title: ReplaceDocumentWithPlaceholderOptions
-      type: object
-      properties:
-        PlaceholderID:
-          type: integer
-        IncludeNatives:
-          type: boolean
-    DefaultFieldValue1:
-      title: DefaultFieldValue`1
-      type: object
-      properties:
-        Guid:
-          type: string
-        ID:
-          type: integer
-        DefaultValue:
-          $ref: '#/components/schemas/ChoiceFieldValue'
-    ProductionDocumentConflicts:
-      title: ProductionDocumentConflicts
-      type: object
-      properties:
-        ProductionRestrictions:
-          $ref: '#/components/schemas/ProductionRestrictions'
-        DocumentIDs:
-          type: array
-          items:
-            type: integer
-        HasOverridePermission:
-          type: boolean
-    ProductionPlaceholder:
-      title: ProductionPlaceholder
-      type: object
-      properties:
-        ArtifactTypeID:
-          type: integer
-        PlaceholderType:
-          enum:
-          - Custom
-          - Image
-          - PDF
-          type: string
-        FileData:
-          type: array
-          items:
-            $ref: '#/components/schemas/Byte'
-        Filename:
-          type: string
-        FileSize:
-          type: integer
-        FileID:
-          type:
-          - integer
-          - 'null'
-        CustomText:
-          type: string
-        Tokens:
-          type: string
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
+        ScaleBrandingFont:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        BrandingFont:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        BrandingFontSize:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        PlaceholderImageFormat:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        CopyProductionOnWorkspaceCreate:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        WrapBrandingText:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        NumberingType:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        StartNumber:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        NumberOfDigitsForDocumentNumbering:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        IncludePageNumbers:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        DocumentPageSeparator:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        NumberOfDigitsForPageNumbering:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        StartNumberOnSecondPage:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        MergeExistingSet:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        SortOrderAscDesc1:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        SortOrderAscDesc2:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        SortOrderAscDesc3:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        SortOrderAscDesc4:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
+        SortOrderAscDesc5:
+          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
     ReproductionOptions:
       title: ReproductionOptions
       type: object
@@ -1509,56 +1060,84 @@ components:
           $ref: '#/components/schemas/ReplaceDocumentWithPlaceholderOptions'
         ReplacePlaceholderWithDocumentOptions:
           $ref: '#/components/schemas/ReplacePlaceholderWithDocumentOptions'
-    ProductionJobRef:
-      title: ProductionJobRef
+    ProductionStatusDetailsResult:
+      title: ProductionStatusDetailsResult
       type: object
       properties:
-        WorkspaceID:
-          type: integer
-        ProductionID:
-          type: integer
-        JobID:
-          type: integer
-    ProductionRestrictions:
-      title: ProductionRestrictions
-      type: object
-      properties:
-        SavedSearchID:
-          type: integer
-        SavedSearchName:
-          type: string
-    RetryJobResult:
-      title: RetryJobResult
-      type: object
-      properties:
-        WorkspaceID:
-          type: integer
-        ProductionID:
-          type: integer
-        JobID:
-          type: integer
-        RetrySuccessfullySent:
-          type: boolean
-        Errors:
-          type: array
-          items:
-            type: string
-    ProductionDataSourceDefaultFieldValues:
-      title: ProductionDataSourceDefaultFieldValues
-      type: object
-      properties:
-        UseImagePlaceholder:
-          $ref: '#/components/schemas/DefaultFieldValue1'
-        BurnRedactions:
-          $ref: '#/components/schemas/DefaultFieldValue1'
-    UserRef:
-      title: UserRef
+        StatusDetails:
+          type: object
+          additionalProperties:
+            title: Object
+            type: object
+    SavedSearchRef:
+      title: SavedSearchRef
       type: object
       properties:
         ArtifactID:
           type: integer
         Name:
           type: string
+        SearchType:
+          type: string
+    ProductionFooters:
+      title: ProductionFooters
+      type: object
+      properties:
+        Left:
+          $ref: '#/components/schemas/HeaderFooter'
+        Right:
+          $ref: '#/components/schemas/HeaderFooter'
+        Center:
+          $ref: '#/components/schemas/HeaderFooter'
+    MassCancelResult:
+      title: MassCancelResult
+      type: object
+      properties:
+        NumberOfJobsRequestedForCancel:
+          type: integer
+        NumberOfJobsCancelWasRequestedSuccessfully:
+          type: integer
+        CancelJobResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/CancelJobResult'
+        Errors:
+          type: array
+          items:
+            type: string
+    ImageFilesResult:
+      title: ImageFilesResult
+      type: object
+      properties:
+        Count:
+          type: integer
+        ImageFiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageFile'
+        Errors:
+          type: array
+          items:
+            type: string
+    Byte:
+      title: Byte
+      type: object
+    CancelJobResult:
+      title: CancelJobResult
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ProductionID:
+          type: integer
+        JobID:
+          type: integer
+        CancelSuccessfullySent:
+          type: boolean
+        Errors:
+          type: array
+          items:
+            type: string
     ProductionJobStatusResult:
       title: ProductionJobStatusResult
       type: object
@@ -1610,32 +1189,463 @@ components:
           type: string
         LastRunError:
           type: string
-    MassCancelResult:
-      title: MassCancelResult
+    ProductionNumberingBase:
+      title: ProductionNumberingBase
       type: object
       properties:
-        NumberOfJobsRequestedForCancel:
+        NumberingType:
+          enum:
+          - PageLevel
+          - DocumentLevel
+          - OriginalImage
+          - ExistingProduction
+          - DocumentField
+          type: string
+        AttachmentRelationalField:
+          $ref: '#/components/schemas/FieldRef'
+    ReproductionRef:
+      title: ReproductionRef
+      type: object
+      properties:
+        IsDeleted:
+          type: boolean
+        ProductionID:
           type: integer
-        NumberOfJobsCancelWasRequestedSuccessfully:
+        Name:
+          type: string
+    ReproductionCandidate:
+      title: ReproductionCandidate
+      type: object
+      properties:
+        BeginBates:
+          type: string
+        EndBates:
+          type: string
+        DateProduced:
+          type: string
+        ProductionID:
           type: integer
-        CancelJobResults:
+        Name:
+          type: string
+    ProductionPlaceholder:
+      title: ProductionPlaceholder
+      type: object
+      properties:
+        ArtifactTypeID:
+          type: integer
+        PlaceholderType:
+          enum:
+          - Custom
+          - Image
+          - PDF
+          type: string
+        FileData:
           type: array
           items:
-            $ref: '#/components/schemas/CancelJobResult'
+            $ref: '#/components/schemas/Byte'
+        Filename:
+          type: string
+        FileSize:
+          type: integer
+        FileID:
+          type:
+          - integer
+          - 'null'
+        CustomText:
+          type: string
+        Tokens:
+          type: string
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ProductionQueueResult:
+      title: ProductionQueueResult
+      type: object
+      properties:
+        JobID:
+          type: integer
+        ProductionID:
+          type: integer
+        WorkspaceID:
+          type: integer
         Errors:
           type: array
           items:
             type: string
-    ReproduceDocumentOptions:
-      title: ReproduceDocumentOptions
+        RequestSent:
+          type: boolean
+    ProductionDocumentConflicts:
+      title: ProductionDocumentConflicts
       type: object
       properties:
+        ProductionRestrictions:
+          $ref: '#/components/schemas/ProductionRestrictions'
+        DocumentIDs:
+          type: array
+          items:
+            type: integer
+        HasOverridePermission:
+          type: boolean
+    ImageFile:
+      title: ImageFile
+      type: object
+      properties:
+        DocumentID:
+          type: integer
+        FileID:
+          type: integer
+        PageNumber:
+          type: integer
+        HasRedactions:
+          type: boolean
+        FileGuid:
+          type: string
+    IKeplerStream:
+      title: IKeplerStream
+      type: object
+      properties:
+        ContentType:
+          type: string
+        ContentDisposition:
+          type: string
+        CacheControl:
+          type: string
+        StatusCode:
+          enum:
+          - Continue
+          - SwitchingProtocols
+          - OK
+          - Created
+          - Accepted
+          - NonAuthoritativeInformation
+          - NoContent
+          - ResetContent
+          - PartialContent
+          - MultipleChoices
+          - Ambiguous
+          - MovedPermanently
+          - Moved
+          - Found
+          - Redirect
+          - SeeOther
+          - RedirectMethod
+          - NotModified
+          - UseProxy
+          - Unused
+          - TemporaryRedirect
+          - RedirectKeepVerb
+          - BadRequest
+          - Unauthorized
+          - PaymentRequired
+          - Forbidden
+          - NotFound
+          - MethodNotAllowed
+          - NotAcceptable
+          - ProxyAuthenticationRequired
+          - RequestTimeout
+          - Conflict
+          - Gone
+          - LengthRequired
+          - PreconditionFailed
+          - RequestEntityTooLarge
+          - RequestUriTooLong
+          - UnsupportedMediaType
+          - RequestedRangeNotSatisfiable
+          - ExpectationFailed
+          - UpgradeRequired
+          - InternalServerError
+          - NotImplemented
+          - BadGateway
+          - ServiceUnavailable
+          - GatewayTimeout
+          - HttpVersionNotSupported
+          type:
+          - string
+          - 'null'
+        Headers:
+          type: array
+          items:
+            type: string
+            format: NameValueCollection
+    StagingErrors:
+      title: StagingErrors
+      type: object
+      properties:
+        ErroredDocumentCount:
+          type: integer
+        DuplicateDocuments:
+          type: array
+          items:
+            $ref: '#/components/schemas/DuplicateDocument'
+        ErrorMessage:
+          type: string
+    ReplaceDocumentWithPlaceholderOptions:
+      title: ReplaceDocumentWithPlaceholderOptions
+      type: object
+      properties:
+        PlaceholderID:
+          type: integer
         IncludeNatives:
           type: boolean
+    ProductionDataSourceDefaultFieldValues:
+      title: ProductionDataSourceDefaultFieldValues
+      type: object
+      properties:
+        UseImagePlaceholder:
+          $ref: '#/components/schemas/DefaultFieldValue1'
+        BurnRedactions:
+          $ref: '#/components/schemas/DefaultFieldValue1'
+    Sort:
+      title: Sort
+      type: object
+      properties:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRef'
+        Order:
+          type: integer
+        Direction:
+          enum:
+          - Ascending
+          - Descending
+          type: string
+    ProductionStatusResult:
+      title: ProductionStatusResult
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Status:
+          enum:
+          - New
+          - Staging
+          - Staged
+          - StagingError
+          - Waiting
+          - Producing
+          - Branding
+          - Produced
+          - Error
+          - ProducedWithErrors
+          - ProducingCreatingPlaceholderImages
+          - ProducingCreatingAndApplyingBatesNumbers
+          - ProducingCreatingBrandingQueueRecords
+          - StagingRunningSavedSearches
+          - StagingCleaningUpData
+          - StagingCreatingProductionInformationRecords
+          - Canceling
+          - ProducingCleaningExistingFiles
+          - QueuedForStaging
+          - QueuedForProduction
+          - QueuedForBranding
+          - StartingProduction
+          - ErrorStartingProduction
+          type: string
+    ProductionDataSource:
+      title: ProductionDataSource
+      type: object
+      properties:
+        ArtifactTypeID:
+          type: integer
+        ProductionType:
+          enum:
+          - ImagesOnly
+          - NativesOnly
+          - ImagesAndNatives
+          type: string
+        SavedSearch:
+          $ref: '#/components/schemas/SavedSearchRef'
+        UseImagePlaceholder:
+          enum:
+          - WhenNoImageExists
+          - NeverUseImagePlaceholder
+          - AlwaysUseImagePlaceholder
+          type: string
+        Placeholder:
+          $ref: '#/components/schemas/ProductionPlaceholderRef'
+        MarkupSet:
+          $ref: '#/components/schemas/MarkupSetRef'
         BurnRedactions:
           type: boolean
-        MarkupSetID:
+        PlaceholderFileData:
+          type: array
+          items:
+            $ref: '#/components/schemas/Byte'
+        PlaceholderFilename:
+          type: string
+        PlaceholderFileSize:
           type: integer
+        PlaceholderFileID:
+          type:
+          - integer
+          - 'null'
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ChoiceFieldValue:
+      title: ChoiceFieldValue
+      type: object
+      properties:
+        ID:
+          type: integer
+        Name:
+          type: string
+    MassProductionQueueResult:
+      title: MassProductionQueueResult
+      type: object
+      properties:
+        TotalJobsRequested:
+          type: integer
+        TotalJobsSuccessful:
+          type: integer
+        ProductionQueueResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductionQueueResult'
+        Errors:
+          type: array
+          items:
+            type: string
+    RelativityApplicationRef:
+      title: RelativityApplicationRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+        Name:
+          type: string
+    ProductionPlaceholderDefaultFieldValues:
+      title: ProductionPlaceholderDefaultFieldValues
+      type: object
+      properties:
+        Type:
+          $ref: '#/components/schemas/DefaultFieldValue1'
+    HeaderFooter:
+      title: HeaderFooter
+      type: object
+      properties:
+        Type:
+          enum:
+          - None
+          - ProductionBatesNumber
+          - Field
+          - FreeText
+          - OriginalImageNumber
+          - DocumentIdentifierAndPageNumber
+          - AdvancedFormatting
+          type: string
+        Field:
+          $ref: '#/components/schemas/FieldRef'
+        FreeText:
+          type: string
+        AdvancedFormatting:
+          type: string
+        FriendlyName:
+          type: string
+    MarkupSetRef:
+      title: MarkupSetRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ReproductionJobResult:
+      title: ReproductionJobResult
+      type: object
+      properties:
+        ReproductionJobID:
+          type: integer
+        Errors:
+          type: array
+          items:
+            type: string
+        Messages:
+          type: array
+          items:
+            type: string
+        Warnings:
+          type: array
+          items:
+            type: string
+        WasJobCreated:
+          type: boolean
+        ProductionsCreated:
+          type: array
+          items:
+            type: integer
+        Results:
+          type: array
+          items:
+            $ref: '#/components/schemas/InnerReproductionJobResult'
+    Securable1:
+      title: Securable`1
+      type: object
+      properties:
+        Secured:
+          type: boolean
+        Value:
+          $ref: '#/components/schemas/UserRef'
+    ProductionDetails:
+      title: ProductionDetails
+      type: object
+      properties:
+        EmailRecipients:
+          type: string
+        BrandingFont:
+          type: string
+        BrandingFontSize:
+          type: integer
+        ScaleBrandingFont:
+          type: boolean
+        WrapBrandingText:
+          type: boolean
+        PlaceholderImageFormat:
+          enum:
+          - Tiff
+          - Jpeg
+          type: string
+        FirstBatesValue:
+          type: string
+        LastBatesValue:
+          type: string
+        DateProduced:
+          type: string
+          format: date-time
+    ReproductionStatusResult:
+      title: ReproductionStatusResult
+      type: object
+      properties:
+        Errors:
+          type: array
+          items:
+            type: string
+        Messages:
+          type: array
+          items:
+            type: string
+        Warnings:
+          type: array
+          items:
+            type: string
+        ReproductionStatus:
+          enum:
+          - Created
+          - Running
+          - RunningWithErrors
+          - Completed
+          - CompletedWithErrors
+          - DoesNotExist
+          type: string
+        ProductionStatusResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductionStatusResult'
     ProductionRunCheckResult:
       title: ProductionRunCheckResult
       type: object
@@ -1658,127 +1668,32 @@ components:
           - OverrideAndContinue
           - CannotContinue
           type: string
-    RelativityApplicationRef:
-      title: RelativityApplicationRef
+    RetryJobResult:
+      title: RetryJobResult
       type: object
       properties:
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
-    ProductionStatusDetailsResult:
-      title: ProductionStatusDetailsResult
-      type: object
-      properties:
-        StatusDetails:
-          type: object
-          additionalProperties:
-            title: Object
-            type: object
-    Production:
-      title: Production
-      type: object
-      properties:
-        DataSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProductionDataSource'
-        Details:
-          $ref: '#/components/schemas/ProductionDetails'
-        Numbering:
-          $ref: '#/components/schemas/ProductionNumberingBase'
-        SortOrder:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sort'
-        Headers:
-          $ref: '#/components/schemas/ProductionHeaders'
-        Footers:
-          $ref: '#/components/schemas/ProductionFooters'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        RelativityApplications:
-          type: array
-          items:
-            $ref: '#/components/schemas/RelativityApplicationRef'
-        ShouldCopyInstanceOnWorkspaceCreate:
-          type: boolean
-        ProductionMetadata:
-          $ref: '#/components/schemas/ProductionMetadata'
-        ProductionID:
-          type: integer
-        Name:
-          type: string
-    ProductionQueueResult:
-      title: ProductionQueueResult
-      type: object
-      properties:
-        JobID:
-          type: integer
-        ProductionID:
-          type: integer
         WorkspaceID:
           type: integer
+        ProductionID:
+          type: integer
+        JobID:
+          type: integer
+        RetrySuccessfullySent:
+          type: boolean
         Errors:
           type: array
           items:
             type: string
-        RequestSent:
+    ReproduceDocumentOptions:
+      title: ReproduceDocumentOptions
+      type: object
+      properties:
+        IncludeNatives:
           type: boolean
-    ProductionDefaultFieldValues:
-      title: ProductionDefaultFieldValues
-      type: object
-      properties:
-        ScaleBrandingFont:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        BrandingFont:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        BrandingFontSize:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        PlaceholderImageFormat:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        CopyProductionOnWorkspaceCreate:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        WrapBrandingText:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        NumberingType:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        StartNumber:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        NumberOfDigitsForDocumentNumbering:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        IncludePageNumbers:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        DocumentPageSeparator:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        NumberOfDigitsForPageNumbering:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        StartNumberOnSecondPage:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        MergeExistingSet:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        SortOrderAscDesc1:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        SortOrderAscDesc2:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        SortOrderAscDesc3:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        SortOrderAscDesc4:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-        SortOrderAscDesc5:
-          $ref: '#/components/schemas/ProductionDefaultFieldValue1'
-    ProductionPlaceholderDefaultFieldValues:
-      title: ProductionPlaceholderDefaultFieldValues
-      type: object
-      properties:
-        Type:
-          $ref: '#/components/schemas/DefaultFieldValue1'
+        BurnRedactions:
+          type: boolean
+        MarkupSetID:
+          type: integer
     ProductionMetadata:
       title: ProductionMetadata
       type: object
@@ -1852,162 +1767,34 @@ components:
           type: integer
         ProductionSavedSearch:
           $ref: '#/components/schemas/SavedSearchRef'
-    ProductionPlaceholderRef:
-      title: ProductionPlaceholderRef
+    UserRef:
+      title: UserRef
       type: object
       properties:
         ArtifactID:
           type: integer
         Name:
           type: string
-    ProductionNumberingBase:
-      title: ProductionNumberingBase
+    InnerReproductionJobResult:
+      title: InnerReproductionJobResult
       type: object
       properties:
-        NumberingType:
-          enum:
-          - PageLevel
-          - DocumentLevel
-          - OriginalImage
-          - ExistingProduction
-          - DocumentField
-          type: string
-        AttachmentRelationalField:
-          $ref: '#/components/schemas/FieldRef'
-    ReproductionJobResult:
-      title: ReproductionJobResult
-      type: object
-      properties:
-        ReproductionJobID:
-          type: integer
-        Errors:
-          type: array
-          items:
-            type: string
-        Messages:
-          type: array
-          items:
-            type: string
-        Warnings:
-          type: array
-          items:
-            type: string
-        WasJobCreated:
-          type: boolean
-        ProductionsCreated:
-          type: array
-          items:
-            type: integer
-        Results:
-          type: array
-          items:
-            $ref: '#/components/schemas/InnerReproductionJobResult'
-    ReproductionStatusResult:
-      title: ReproductionStatusResult
-      type: object
-      properties:
-        Errors:
-          type: array
-          items:
-            type: string
-        Messages:
-          type: array
-          items:
-            type: string
-        Warnings:
-          type: array
-          items:
-            type: string
-        ReproductionStatus:
-          enum:
-          - Created
-          - Running
-          - RunningWithErrors
-          - Completed
-          - CompletedWithErrors
-          - DoesNotExist
-          type: string
-        ProductionStatusResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProductionStatusResult'
-    MarkupSetRef:
-      title: MarkupSetRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    MassProductionQueueResult:
-      title: MassProductionQueueResult
-      type: object
-      properties:
-        TotalJobsRequested:
-          type: integer
-        TotalJobsSuccessful:
-          type: integer
-        ProductionQueueResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProductionQueueResult'
-        Errors:
-          type: array
-          items:
-            type: string
-    FieldRef:
-      title: FieldRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        ViewFieldID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
-    Byte:
-      title: Byte
-      type: object
-    ProductionHeaders:
-      title: ProductionHeaders
-      type: object
-      properties:
-        Left:
-          $ref: '#/components/schemas/HeaderFooter'
-        Right:
-          $ref: '#/components/schemas/HeaderFooter'
-        Center:
-          $ref: '#/components/schemas/HeaderFooter'
-    StagingErrors:
-      title: StagingErrors
-      type: object
-      properties:
-        ErroredDocumentCount:
-          type: integer
-        DuplicateDocuments:
-          type: array
-          items:
-            $ref: '#/components/schemas/DuplicateDocument'
-        ErrorMessage:
-          type: string
-    ReproductionCandidate:
-      title: ReproductionCandidate
-      type: object
-      properties:
-        BeginBates:
-          type: string
-        EndBates:
-          type: string
-        DateProduced:
-          type: string
         ProductionID:
           type: integer
-        Name:
-          type: string
+        ParentProductionID:
+          type: integer
+        Errors:
+          type: array
+          items:
+            type: string
+        Warnings:
+          type: array
+          items:
+            type: string
+        Messages:
+          type: array
+          items:
+            type: string
     MassRetryResult:
       title: MassRetryResult
       type: object
@@ -2024,145 +1811,16 @@ components:
           type: array
           items:
             type: string
-    HeaderFooter:
-      title: HeaderFooter
+    DefaultFieldValue1:
+      title: DefaultFieldValue`1
       type: object
       properties:
-        Type:
-          enum:
-          - None
-          - ProductionBatesNumber
-          - Field
-          - FreeText
-          - OriginalImageNumber
-          - DocumentIdentifierAndPageNumber
-          - AdvancedFormatting
+        Guid:
           type: string
-        Field:
-          $ref: '#/components/schemas/FieldRef'
-        FreeText:
-          type: string
-        AdvancedFormatting:
-          type: string
-        FriendlyName:
-          type: string
-    ImageFile:
-      title: ImageFile
-      type: object
-      properties:
-        DocumentID:
+        ID:
           type: integer
-        FileID:
-          type: integer
-        PageNumber:
-          type: integer
-        HasRedactions:
-          type: boolean
-        FileGuid:
-          type: string
-    SavedSearchRef:
-      title: SavedSearchRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-        SearchType:
-          type: string
-    IKeplerStream:
-      title: IKeplerStream
-      type: object
-      properties:
-        ContentType:
-          type: string
-        ContentDisposition:
-          type: string
-        CacheControl:
-          type: string
-        StatusCode:
-          enum:
-          - Continue
-          - SwitchingProtocols
-          - OK
-          - Created
-          - Accepted
-          - NonAuthoritativeInformation
-          - NoContent
-          - ResetContent
-          - PartialContent
-          - MultipleChoices
-          - Ambiguous
-          - MovedPermanently
-          - Moved
-          - Found
-          - Redirect
-          - SeeOther
-          - RedirectMethod
-          - NotModified
-          - UseProxy
-          - Unused
-          - TemporaryRedirect
-          - RedirectKeepVerb
-          - BadRequest
-          - Unauthorized
-          - PaymentRequired
-          - Forbidden
-          - NotFound
-          - MethodNotAllowed
-          - NotAcceptable
-          - ProxyAuthenticationRequired
-          - RequestTimeout
-          - Conflict
-          - Gone
-          - LengthRequired
-          - PreconditionFailed
-          - RequestEntityTooLarge
-          - RequestUriTooLong
-          - UnsupportedMediaType
-          - RequestedRangeNotSatisfiable
-          - ExpectationFailed
-          - UpgradeRequired
-          - InternalServerError
-          - NotImplemented
-          - BadGateway
-          - ServiceUnavailable
-          - GatewayTimeout
-          - HttpVersionNotSupported
-          type:
-          - string
-          - 'null'
-        Headers:
-          type: array
-          items:
-            type: string
-            format: NameValueCollection
-    ProductionDetails:
-      title: ProductionDetails
-      type: object
-      properties:
-        EmailRecipients:
-          type: string
-        BrandingFont:
-          type: string
-        BrandingFontSize:
-          type: integer
-        ScaleBrandingFont:
-          type: boolean
-        WrapBrandingText:
-          type: boolean
-        PlaceholderImageFormat:
-          enum:
-          - Tiff
-          - Jpeg
-          type: string
-        FirstBatesValue:
-          type: string
-        LastBatesValue:
-          type: string
-        DateProduced:
-          type: string
-          format: date-time
+        DefaultValue:
+          $ref: '#/components/schemas/ChoiceFieldValue'
     ProductionProgress:
       title: ProductionProgress
       type: object
@@ -2203,8 +1861,153 @@ components:
           type: string
         EndBates:
           type: string
-    CancelJobResult:
-      title: CancelJobResult
+    ProductionHeaders:
+      title: ProductionHeaders
+      type: object
+      properties:
+        Left:
+          $ref: '#/components/schemas/HeaderFooter'
+        Right:
+          $ref: '#/components/schemas/HeaderFooter'
+        Center:
+          $ref: '#/components/schemas/HeaderFooter'
+    BrandingError:
+      title: BrandingError
+      type: object
+      properties:
+        DocumentName:
+          type: string
+        DocumentID:
+          type: integer
+        FileID:
+          type: integer
+        ErrorMessage:
+          type: string
+    ProductionJobResult:
+      title: ProductionJobResult
+      type: object
+      properties:
+        JobID:
+          type: integer
+        Errors:
+          type: array
+          items:
+            type: string
+        Messages:
+          type: array
+          items:
+            type: string
+        Warnings:
+          type: array
+          items:
+            type: string
+        WasJobCreated:
+          type: boolean
+        ProductionID:
+          type: integer
+        WorkspaceID:
+          type: integer
+    ProductionRestrictions:
+      title: ProductionRestrictions
+      type: object
+      properties:
+        SavedSearchID:
+          type: integer
+        SavedSearchName:
+          type: string
+    ProductionPlaceholderRef:
+      title: ProductionPlaceholderRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ReplacePlaceholderWithDocumentOptions:
+      title: ReplacePlaceholderWithDocumentOptions
+      type: object
+      properties:
+        Delimiter:
+          type: string
+        NumberOfDigits:
+          type: integer
+        IncludeNatives:
+          type: boolean
+        BurnRedactions:
+          type: boolean
+        MarkupSetID:
+          type: integer
+    ProductionDefaultFieldValue1:
+      title: ProductionDefaultFieldValue`1
+      type: object
+      properties:
+        Guid:
+          type: string
+        ID:
+          type: integer
+        DefaultValue:
+          type: boolean
+    Production:
+      title: Production
+      type: object
+      properties:
+        DataSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductionDataSource'
+        Details:
+          $ref: '#/components/schemas/ProductionDetails'
+        Numbering:
+          $ref: '#/components/schemas/ProductionNumberingBase'
+        SortOrder:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sort'
+        Headers:
+          $ref: '#/components/schemas/ProductionHeaders'
+        Footers:
+          $ref: '#/components/schemas/ProductionFooters'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+        RelativityApplications:
+          type: array
+          items:
+            $ref: '#/components/schemas/RelativityApplicationRef'
+        ShouldCopyInstanceOnWorkspaceCreate:
+          type: boolean
+        ProductionMetadata:
+          $ref: '#/components/schemas/ProductionMetadata'
+        ProductionID:
+          type: integer
+        Name:
+          type: string
+    ProductionSlim:
+      title: ProductionSlim
+      type: object
+      properties:
+        FieldValues:
+          type: object
+          additionalProperties:
+            title: Object
+            type: object
+        ProductionID:
+          type: integer
+        Name:
+          type: string
+    DuplicateDocument:
+      title: DuplicateDocument
+      type: object
+      properties:
+        Name:
+          type: string
+        DataSourceNames:
+          type: array
+          items:
+            type: string
+    ProductionJobRef:
+      title: ProductionJobRef
       type: object
       properties:
         WorkspaceID:
@@ -2213,9 +2016,206 @@ components:
           type: integer
         JobID:
           type: integer
-        CancelSuccessfullySent:
-          type: boolean
+    PagedImageFilesResult:
+      title: PagedImageFilesResult
+      type: object
+      properties:
+        TotalResultSet:
+          type: integer
+        ResultCount:
+          type: integer
+        PreviousPage:
+          type: string
+        NextPage:
+          type: string
+        ImageFiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageFile'
         Errors:
           type: array
           items:
             type: string
+  parameters:
+    documentIDs:
+      name: documentIDs
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    documents:
+      name: documents
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    withPlaceholderImage:
+      name: withPlaceholderImage
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    priority:
+      name: priority
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    automaticallyRun:
+      name: automaticallyRun
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    productionRestrictionSearchID:
+      name: productionRestrictionSearchID
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    suppressWarnings:
+      name: suppressWarnings
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    overrideConflicts:
+      name: overrideConflicts
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    includePercentages:
+      name: includePercentages
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    reproductionType:
+      name: reproductionType
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    skip:
+      name: skip
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 0
+    dataSourceID:
+      name: dataSourceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    top:
+      name: top
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 100
+    token:
+      name: token
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    reproductionJobID:
+      name: reproductionJobID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    numberOfBrandingErrors:
+      name: numberOfBrandingErrors
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 10
+    productionIDs:
+      name: productionIDs
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    excludeNonReproducible:
+      name: excludeNonReproducible
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    databaseToken_Query:
+      name: databaseToken
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    databaseToken:
+      name: databaseToken
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    dataSourceReadMode:
+      name: dataSourceReadMode
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 1
+    productionID:
+      name: productionID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    placeholderID:
+      name: placeholderID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer

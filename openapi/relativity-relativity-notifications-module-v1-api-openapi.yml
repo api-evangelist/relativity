@@ -34,6 +34,24 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    EmailNotificationResponse:
+      title: EmailNotificationResponse
+      type: object
+      properties:
+        EmailNotifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailNotificationStatus'
+    EmailNotificationStatus:
+      title: EmailNotificationStatus
+      type: object
+      properties:
+        Recipient:
+          type: string
+        IsSent:
+          type: boolean
+        Message:
+          type: string
     EmailNotificationRequest:
       title: EmailNotificationRequest
       type: object
@@ -50,24 +68,6 @@ components:
           type: string
         IsBodyHtml:
           type: boolean
-    EmailNotificationStatus:
-      title: EmailNotificationStatus
-      type: object
-      properties:
-        Recipient:
-          type: string
-        IsSent:
-          type: boolean
-        Message:
-          type: string
-    EmailNotificationResponse:
-      title: EmailNotificationResponse
-      type: object
-      properties:
-        EmailNotifications:
-          type: array
-          items:
-            $ref: '#/components/schemas/EmailNotificationStatus'
   parameters:
     x-csrf-header:
       name: x-csrf-header

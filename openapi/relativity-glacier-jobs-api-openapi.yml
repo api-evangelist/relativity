@@ -65,6 +65,77 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
+    GlacierRestoreStatusResponse:
+      type: object
+      required:
+      - status
+      - jobType
+      - glacierId
+      - tenantId
+      - glacierName
+      - destinationLocation
+      - scheduledAt
+      properties:
+        status:
+          type: string
+          enum:
+          - RESTORE_SCHEDULED
+          - RESTORE_IN_PROGRESS
+          - RESTORE_COMPLETED
+          - RESTORE_FAILED
+          description: Current status of the glacier restore
+        jobType:
+          type: string
+          enum:
+          - STORE
+          - RESTORE
+          description: The type of job
+        glacierId:
+          type: string
+          format: uuid
+          description: The unique identifier of the glacier restore job
+        tenantId:
+          type: string
+          format: uuid
+          description: The tenant identifier
+        glacierName:
+          type: string
+          description: The name of the glacier to restore from
+        destinationLocation:
+          type: string
+          description: The destination location for restore operations
+        scheduledAt:
+          type: string
+          format: date-time
+          description: When the restore was scheduled
+        completedAt:
+          type: string
+          format: date-time
+          description: When the restore was completed (only present for completed restores)
+        failedAt:
+          type: string
+          format: date-time
+          description: When the restore failed (only present for failed restores)
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+          description: Collection of error objects with message details (only present for failed restores)
+    InventoryReport:
+      type: object
+      required:
+      - glacierStoreEntityCount
+      - glacierStoreTotalEntitySize
+      properties:
+        glacierStoreEntityCount:
+          type: integer
+          description: Number of entities in the glacier
+          example: 1250
+        glacierStoreTotalEntitySize:
+          type: integer
+          format: int64
+          description: Total size of all entities in bytes
+          example: 5368709120
     GlacierStoreStatusResponse:
       type: object
       required:
@@ -127,21 +198,6 @@ components:
           items:
             $ref: '#/components/schemas/ErrorDetail'
           description: Collection of error objects with message details (only present for failed stores)
-    InventoryReport:
-      type: object
-      required:
-      - glacierStoreEntityCount
-      - glacierStoreTotalEntitySize
-      properties:
-        glacierStoreEntityCount:
-          type: integer
-          description: Number of entities in the glacier
-          example: 1250
-        glacierStoreTotalEntitySize:
-          type: integer
-          format: int64
-          description: Total size of all entities in bytes
-          example: 5368709120
     ProblemDetails:
       type: object
       properties:
@@ -162,62 +218,6 @@ components:
           type: string
           format: uri
           description: A URI reference identifying the specific occurrence
-    GlacierRestoreStatusResponse:
-      type: object
-      required:
-      - status
-      - jobType
-      - glacierId
-      - tenantId
-      - glacierName
-      - destinationLocation
-      - scheduledAt
-      properties:
-        status:
-          type: string
-          enum:
-          - RESTORE_SCHEDULED
-          - RESTORE_IN_PROGRESS
-          - RESTORE_COMPLETED
-          - RESTORE_FAILED
-          description: Current status of the glacier restore
-        jobType:
-          type: string
-          enum:
-          - STORE
-          - RESTORE
-          description: The type of job
-        glacierId:
-          type: string
-          format: uuid
-          description: The unique identifier of the glacier restore job
-        tenantId:
-          type: string
-          format: uuid
-          description: The tenant identifier
-        glacierName:
-          type: string
-          description: The name of the glacier to restore from
-        destinationLocation:
-          type: string
-          description: The destination location for restore operations
-        scheduledAt:
-          type: string
-          format: date-time
-          description: When the restore was scheduled
-        completedAt:
-          type: string
-          format: date-time
-          description: When the restore was completed (only present for completed restores)
-        failedAt:
-          type: string
-          format: date-time
-          description: When the restore failed (only present for failed restores)
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/ErrorDetail'
-          description: Collection of error objects with message details (only present for failed restores)
     ErrorDetail:
       type: object
       required:

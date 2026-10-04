@@ -118,20 +118,6 @@ paths:
       x-summary-source: derived
 components:
   parameters:
-    indexID:
-      name: indexID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
     jobType:
       name: jobType
       in: query
@@ -148,17 +134,21 @@ components:
         - Deactivate
         - TagDocuments
         type: string
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    indexID:
+      name: indexID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
   schemas:
-    ArtifactRef:
-      title: ArtifactRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
     ConceptualIndex:
       title: ConceptualIndex
       type: object
@@ -210,3 +200,13 @@ components:
           format: date-time
         InUseByCategorizationSet:
           type: boolean
+    ArtifactRef:
+      title: ArtifactRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string

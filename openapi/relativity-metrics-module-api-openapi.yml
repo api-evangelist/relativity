@@ -150,14 +150,21 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    LogMetricsAsync_RequestBody:
-      title: LogMetricsAsync_RequestBody
+    LogCountAsync_RequestBody:
+      title: LogCountAsync_RequestBody
       type: object
       properties:
-        metrics:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetricRef'
+        metric:
+          $ref: '#/components/schemas/APMMetric'
+    Object:
+      title: Object
+      type: object
+    LogTimerAsync_RequestBody:
+      title: LogTimerAsync_RequestBody
+      type: object
+      properties:
+        metric:
+          $ref: '#/components/schemas/APMMetric'
     APMMetric:
       title: APMMetric
       type: object
@@ -169,15 +176,14 @@ components:
           additionalProperties:
             title: Object
             type: object
-    Object:
-      title: Object
-      type: object
-    LogCountAsync_RequestBody:
-      title: LogCountAsync_RequestBody
+    LogMetricsAsync_RequestBody:
+      title: LogMetricsAsync_RequestBody
       type: object
       properties:
-        metric:
-          $ref: '#/components/schemas/APMMetric'
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/MetricRef'
     MetricRef:
       title: MetricRef
       type: object
@@ -211,22 +217,30 @@ components:
           type: string
         Value:
           $ref: '#/components/schemas/Object'
-    LogTimerAsync_RequestBody:
-      title: LogTimerAsync_RequestBody
-      type: object
-      properties:
-        metric:
-          $ref: '#/components/schemas/APMMetric'
   parameters:
-    bucket:
-      name: bucket
+    count:
+      name: count
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceGuid:
+      name: workspaceGuid
       in: query
       description: ''
       required: true
       schema:
         type: string
-    workspaceGuid:
-      name: workspaceGuid
+    value:
+      name: value
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    bucket:
+      name: bucket
       in: query
       description: ''
       required: true
@@ -247,17 +261,3 @@ components:
       required: true
       schema:
         type: number
-    count:
-      name: count
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    value:
-      name: value
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string

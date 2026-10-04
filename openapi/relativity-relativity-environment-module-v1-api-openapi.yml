@@ -2382,75 +2382,115 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    SqlFullTextLanguageOptions:
-      title: SqlFullTextLanguageOptions
+    ValidationResult:
+      title: ValidationResult
       type: object
       properties:
-        DefaultLanguageLcid:
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        WorkspaceIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Success:
+          type: boolean
+        Errors:
+          type: array
+          items:
+            type: string
+        Conflicts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationInstallConflict'
+    FieldRef:
+      title: FieldRef
+      type: object
+      properties:
+        ArtifactID:
           type: integer
-        Languages:
+        ViewFieldID:
+          type: integer
+        Guids:
           type: array
           items:
-            $ref: '#/components/schemas/NameIDPair'
-    ApplicationHostingStatusResponse:
-      title: ApplicationHostingStatusResponse
+            type: string
+        Name:
+          type: string
+    InstallApplicationRequest:
+      title: InstallApplicationRequest
       type: object
       properties:
-        CustomPages:
+        WorkspaceIDs:
           type: array
           items:
-            $ref: '#/components/schemas/CustomPageHostingStatusResponse'
-        KeplerServices:
+            type: integer
+        UnlockApplications:
+          type: boolean
+        ConflictResolutions:
           type: array
           items:
-            $ref: '#/components/schemas/KeplerServiceStatusResponse'
-        State:
-          enum:
-          - Ready
-          - Pending
-          - OutOfDate
-          - Unavailable
+            $ref: '#/components/schemas/ApplicationInstallConflictResolution'
+    GetInstallStatusResponse:
+      title: GetInstallStatusResponse
+      type: object
+      properties:
+        ApplicationInstallID:
+          type: integer
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        WorkspaceIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        WorkspaceName:
           type: string
+        Client:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        Matter:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
         Message:
           type: string
-        Actions:
+        RootFolderID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+        ValidationResult:
+          $ref: '#/components/schemas/InstallValidationResult'
+        Version:
+          type: string
+        IsOutOfDate:
+          type: boolean
+        ValidationMessages:
           type: array
           items:
-            $ref: '#/components/schemas/Action'
-    Sort:
-      title: Sort
-      type: object
-      properties:
-        FieldIdentifier:
-          $ref: '#/components/schemas/FieldRef'
-        Order:
-          type: integer
-        Direction:
-          enum:
-          - Ascending
-          - Descending
-          type: string
-    CreateErrorRequest:
-      title: CreateErrorRequest
-      type: object
-      properties:
-        FullError:
-          type: string
-        Message:
-          type: string
-        Server:
-          type: string
-        Source:
-          type: string
-        URL:
-          type: string
-        StepsToReproduce:
-          type: string
-        SendNotification:
+            type: string
+        Errors:
+          type: array
+          items:
+            type: none
+        InstalledBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        StartedOn:
           type:
-          - boolean
+          - string
           - 'null'
-        Workspace:
+          format: date-time
+        CompletedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ExceptionCategory:
+          type: string
+        FailedTask:
+          type: string
+        GetCurrentInstallStatus:
+          $ref: '#/components/schemas/Action'
+    CancelApplicationInstallResponse:
+      title: CancelApplicationInstallResponse
+      type: object
+      properties:
+        Results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CancelApplicationInstallResult'
+        ApplicationIdentifier:
           $ref: '#/components/schemas/ObjectIdentifier'
     NameValidationRequest:
       title: NameValidationRequest
@@ -2469,153 +2509,116 @@ components:
           type: string
         Value:
           type: string
-    ApplicationInstallSearchItem:
-      title: ApplicationInstallSearchItem
+    UpdateLibraryApplicationRequest:
+      title: UpdateLibraryApplicationRequest
       type: object
       properties:
-        ApplicationInstallID:
-          type: integer
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        WorkspaceIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        ClientIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        MatterIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        Message:
-          type: string
-        RootFolderID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
-        SchemaVersion:
-          type: string
-        IsOutOfDate:
+        IgnoreVersion:
           type: boolean
-        InstalledBy:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        StartedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        CompletedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-    InstallStatusSummary:
-      title: InstallStatusSummary
-      type: object
-      properties:
-        Other:
-          type: integer
-        Pending:
-          type: integer
-        InProgress:
-          type: integer
-        Failed:
-          type: integer
-        Completed:
-          type: integer
-        Canceled:
-          type: integer
-        TotalActiveInstalls:
-          type: integer
-        Total:
-          type: integer
-    KeplerServiceStatusResponse:
-      title: KeplerServiceStatusResponse
-      type: object
-      properties:
-        State:
-          enum:
-          - Ready
-          - Pending
-          - OutOfDate
-          - Unavailable
-          type: string
-        Message:
-          type: string
-        Actions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Action'
-    PackageDetailsResponse:
-      title: PackageDetailsResponse
-      type: object
-      properties:
-        Name:
-          type: string
-        PackageGUID:
-          type: string
-        ApplicationGUID:
-          type: string
-        Version:
-          type: string
-        SchemaVersion:
-          type: string
+        CreateIfMissing:
+          type: boolean
+        RefreshCustomPages:
+          type: boolean
         FileName:
           type: string
-        UserFriendlyURL:
-          type: string
-        TreeView:
-          type: string
-        IsGlobalApplication:
-          type: boolean
-        IsDeprecated:
-          type: boolean
-    ResourceFileAgentType:
-      title: ResourceFileAgentType
+    SampleDetails:
+      title: SampleDetails
       type: object
       properties:
-        Name:
+        SampleSize:
+          type:
+          - integer
+          - 'null'
+        UniverseSize:
+          type:
+          - integer
+          - 'null'
+        Token:
           type: string
-        FullNamespace:
-          type: string
-    GetOutdatedWorkspacesResponse:
-      title: GetOutdatedWorkspacesResponse
+    ApplicationInstallConflict:
+      title: ApplicationInstallConflict
       type: object
       properties:
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        IsGlobalApplication:
-          type: boolean
-        OutdatedWorkspacesCount:
-          type: integer
-        UpdateOutdatedApplications:
-          $ref: '#/components/schemas/Action'
-        UpdateOutdatedApplicationsPayload:
-          $ref: '#/components/schemas/InstallApplicationAllRequest'
-    UpdateLibraryApplicationResponse:
-      title: UpdateLibraryApplicationResponse
-      type: object
-      properties:
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Actions:
+        ConflictArtifactIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        Description:
+          type: string
+        ApplicationComponentType:
+          enum:
+          - Unknown
+          - Choice
+          - Field
+          - Layout
+          - ObjectType
+          - ObjectRule
+          - EventHandler
+          - Tab
+          - View
+          - Script
+          - Instance
+          - CustomPage
+          - AgentType
+          - InstallEventHandler
+          - ResourceFile
+          - MassOperation
+          - MasterAgentType
+          - SavedSearch
+          - SearchProvider
+          - Dashboard
+          type: string
+        ConflictType:
+          enum:
+          - Unknown
+          - LockedApplication
+          - Name
+          - FriendlyName
+          type: string
+        ConflictApplicationIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        ResolutionOptions:
           type: array
           items:
-            $ref: '#/components/schemas/Action'
-        ApplicationInstallID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
+            $ref: '#/components/schemas/ApplicationInstallConflictResolution'
+    InstallApplicationResponse:
+      title: InstallApplicationResponse
+      type: object
+      properties:
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
         Messages:
           type: array
           items:
             type: string
-    SecurableList_1:
-      title: SecurableList`1
-      type: object
-      properties:
-        HasSecuredItems:
-          type: boolean
-        ViewableItems:
+        Results:
           type: array
           items:
-            $ref: '#/components/schemas/EligibleApplication'
+            $ref: '#/components/schemas/InstallApplicationResult'
+    InstallStatus:
+      title: InstallStatus
+      type: object
+      properties:
+        Code:
+          enum:
+          - Unknown
+          - Pending
+          - InProgress
+          - Failed
+          - Completed
+          - Canceled
+          type: string
+        Message:
+          type: string
+        Details:
+          type: string
+        GetDetailsAction:
+          $ref: '#/components/schemas/Action'
+        RetryInstallAction:
+          $ref: '#/components/schemas/Action'
+        CancelInstallAction:
+          $ref: '#/components/schemas/Action'
+    Object:
+      title: Object
+      type: object
     InstanceSettingRequest:
       title: InstanceSettingRequest
       type: object
@@ -2655,36 +2658,244 @@ components:
           type: string
         Notes:
           type: string
-    SampleParameters:
-      title: SampleParameters
-      type: object
-      properties:
-        ExistingToken:
-          type:
-          - string
-          - 'null'
-        MarginOfError:
-          type: number
-        ConfidenceLevel:
-          type: number
-        FixedSampleSize:
-          type: integer
-        SamplingPercentage:
-          type: number
-    ObjectType:
-      title: ObjectType
+    RelativityObjectSlim:
+      title: RelativityObjectSlim
       type: object
       properties:
         ArtifactID:
           type: integer
+        Values:
+          type: array
+          items:
+            $ref: '#/components/schemas/Object'
+    CancelApplicationInstallResult:
+      title: CancelApplicationInstallResult
+      type: object
+      properties:
+        IsSuccessful:
+          type: boolean
+        WorkspaceIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        ApplicationInstallID:
+          type: integer
+        Message:
+          type: string
+    Action:
+      title: Action
+      type: object
+      properties:
         Name:
           type: string
+        Href:
+          type: string
+        Verb:
+          type: string
+        IsAvailable:
+          type: boolean
+        Reason:
+          type: array
+          items:
+            type: string
+    ResourceFileEventHandler:
+      title: ResourceFileEventHandler
+      type: object
+      properties:
+        Name:
+          type: string
+        Description:
+          type: string
+        Type:
+          type: string
+    ResourceFileRequest:
+      title: ResourceFileRequest
+      type: object
+      properties:
+        Application:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        FileName:
+          type: string
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    InstallStatusSummary:
+      title: InstallStatusSummary
+      type: object
+      properties:
+        Other:
+          type: integer
+        Pending:
+          type: integer
+        InProgress:
+          type: integer
+        Failed:
+          type: integer
+        Completed:
+          type: integer
+        Canceled:
+          type: integer
+        TotalActiveInstalls:
+          type: integer
+        Total:
+          type: integer
+    CreateErrorRequest:
+      title: CreateErrorRequest
+      type: object
+      properties:
+        FullError:
+          type: string
+        Message:
+          type: string
+        Server:
+          type: string
+        Source:
+          type: string
+        URL:
+          type: string
+        StepsToReproduce:
+          type: string
+        SendNotification:
+          type:
+          - boolean
+          - 'null'
+        Workspace:
+          $ref: '#/components/schemas/ObjectIdentifier'
+    Field:
+      title: Field
+      type: object
+      properties:
+        FieldCategory:
+          enum:
+          - Generic
+          - FullText
+          - Identifier
+          - Reflected
+          - Comments
+          - Relational
+          - ProductionMarker
+          - AutoCreate
+          - FileSize
+          - FolderName
+          - FileInfo
+          - ParentArtifact
+          - MarkupSetMarker
+          - GenericSystem
+          - MultiReflected
+          - Batch
+          type: string
+        FieldType:
+          enum:
+          - FixedLengthText
+          - WholeNumber
+          - Date
+          - YesNo
+          - LongText
+          - SingleChoice
+          - Decimal
+          - Currency
+          - MultipleChoice
+          - File
+          - SingleObject
+          - User
+          - MultipleObject
+          - Empty
+          type: string
+        ViewFieldID:
+          type: integer
+        ArtifactID:
+          type: integer
         Guids:
           type: array
           items:
             type: string
-        ArtifactTypeID:
+        Name:
+          type: string
+    NameIDPair:
+      title: NameIDPair
+      type: object
+      properties:
+        Name:
+          type: string
+        ID:
           type: integer
+    PackageDetailsResponse:
+      title: PackageDetailsResponse
+      type: object
+      properties:
+        Name:
+          type: string
+        PackageGUID:
+          type: string
+        ApplicationGUID:
+          type: string
+        Version:
+          type: string
+        SchemaVersion:
+          type: string
+        FileName:
+          type: string
+        UserFriendlyURL:
+          type: string
+        TreeView:
+          type: string
+        IsGlobalApplication:
+          type: boolean
+        IsDeprecated:
+          type: boolean
+    InstallApplicationAllRequest:
+      title: InstallApplicationAllRequest
+      type: object
+      properties:
+        Mode:
+          enum:
+          - Unknown
+          - ForceInstall
+          - UpgradeOnly
+          type: string
+        UnlockApplications:
+          type: boolean
+    ContentsResponse:
+      title: ContentsResponse
+      type: object
+      properties:
+        ContentsKey:
+          type: string
+    ApplicationInstallSearchItem:
+      title: ApplicationInstallSearchItem
+      type: object
+      properties:
+        ApplicationInstallID:
+          type: integer
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        WorkspaceIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        ClientIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        MatterIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        Message:
+          type: string
+        RootFolderID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+        SchemaVersion:
+          type: string
+        IsOutOfDate:
+          type: boolean
+        InstalledBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        StartedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        CompletedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
     CustomPageHostingStatusResponse:
       title: CustomPageHostingStatusResponse
       type: object
@@ -2754,18 +2965,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Action'
-    DisplayableObjectIdentifier:
-      title: DisplayableObjectIdentifier
-      type: object
-      properties:
-        Name:
-          type: string
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
     QueryRequest:
       title: QueryRequest
       type: object
@@ -2838,231 +3037,6 @@ components:
           - DefaultWithErrors
           - TokenizedWithErrors
           type: string
-    Meta:
-      title: Meta
-      type: object
-      properties:
-        Unsupported:
-          type: array
-          items:
-            type: string
-        ReadOnly:
-          type: array
-          items:
-            type: string
-    InstallApplicationRequest:
-      title: InstallApplicationRequest
-      type: object
-      properties:
-        WorkspaceIDs:
-          type: array
-          items:
-            type: integer
-        UnlockApplications:
-          type: boolean
-        ConflictResolutions:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationInstallConflictResolution'
-    InstallApplicationResponse:
-      title: InstallApplicationResponse
-      type: object
-      properties:
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Messages:
-          type: array
-          items:
-            type: string
-        Results:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstallApplicationResult'
-    ResourceFileService:
-      title: ResourceFileService
-      type: object
-      properties:
-        Name:
-          type: string
-        ServiceRoute:
-          type: string
-        Version:
-          type: string
-    SampleDetails:
-      title: SampleDetails
-      type: object
-      properties:
-        SampleSize:
-          type:
-          - integer
-          - 'null'
-        UniverseSize:
-          type:
-          - integer
-          - 'null'
-        Token:
-          type: string
-    InstallStatus:
-      title: InstallStatus
-      type: object
-      properties:
-        Code:
-          enum:
-          - Unknown
-          - Pending
-          - InProgress
-          - Failed
-          - Completed
-          - Canceled
-          type: string
-        Message:
-          type: string
-        Details:
-          type: string
-        GetDetailsAction:
-          $ref: '#/components/schemas/Action'
-        RetryInstallAction:
-          $ref: '#/components/schemas/Action'
-        CancelInstallAction:
-          $ref: '#/components/schemas/Action'
-    InstallValidationResult:
-      title: InstallValidationResult
-      type: object
-      properties:
-        RetryInstallAction:
-          $ref: '#/components/schemas/Action'
-        RetryInstallRequestTemplate:
-          $ref: '#/components/schemas/InstallApplicationRequest'
-        InstallConflicts:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationInstallConflict'
-    ResourceFileRequest:
-      title: ResourceFileRequest
-      type: object
-      properties:
-        Application:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        FileName:
-          type: string
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    CreateLibraryApplicationResponse:
-      title: CreateLibraryApplicationResponse
-      type: object
-      properties:
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Actions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Action'
-        ApplicationInstallID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
-    ResourceFileMassOperation:
-      title: ResourceFileMassOperation
-      type: object
-      properties:
-        Name:
-          type: string
-        Description:
-          type: string
-    WorkspaceSummary:
-      title: WorkspaceSummary
-      type: object
-      properties:
-        DocumentCount:
-          type: integer
-        FileSize:
-          type: integer
-    SearchProviderCondition:
-      title: SearchProviderCondition
-      type: object
-      properties:
-        SearchIndex:
-          $ref: '#/components/schemas/SearchIndexRef'
-        Input:
-          type: string
-    ApplicationInstallSearchResponse:
-      title: ApplicationInstallSearchResponse
-      type: object
-      properties:
-        Results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationInstallSearchItem'
-        Summary:
-          $ref: '#/components/schemas/InstallStatusSummary'
-        CurrentStartIndex:
-          type: integer
-        ResultCount:
-          type: integer
-        TotalCount:
-          type: integer
-        FirstPage:
-          $ref: '#/components/schemas/Action'
-        PreviousPage:
-          $ref: '#/components/schemas/Action'
-        NextPage:
-          $ref: '#/components/schemas/Action'
-        LastPage:
-          $ref: '#/components/schemas/Action'
-    Securable_1:
-      title: Securable`1
-      type: object
-      properties:
-        Secured:
-          type: boolean
-        Value:
-          $ref: '#/components/schemas/ObjectIdentifier'
-    ApplicationInstallConflict:
-      title: ApplicationInstallConflict
-      type: object
-      properties:
-        ConflictArtifactIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        Description:
-          type: string
-        ApplicationComponentType:
-          enum:
-          - Unknown
-          - Choice
-          - Field
-          - Layout
-          - ObjectType
-          - ObjectRule
-          - EventHandler
-          - Tab
-          - View
-          - Script
-          - Instance
-          - CustomPage
-          - AgentType
-          - InstallEventHandler
-          - ResourceFile
-          - MassOperation
-          - MasterAgentType
-          - SavedSearch
-          - SearchProvider
-          - Dashboard
-          type: string
-        ConflictType:
-          enum:
-          - Unknown
-          - LockedApplication
-          - Name
-          - FriendlyName
-          type: string
-        ConflictApplicationIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        ResolutionOptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationInstallConflictResolution'
     InstallApplicationResult:
       title: InstallApplicationResult
       type: object
@@ -3077,278 +3051,6 @@ components:
             type: string
         InstallStatus:
           $ref: '#/components/schemas/InstallStatus'
-    CancelApplicationInstallResponse:
-      title: CancelApplicationInstallResponse
-      type: object
-      properties:
-        Results:
-          type: array
-          items:
-            $ref: '#/components/schemas/CancelApplicationInstallResult'
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-    ObjectIdentifier:
-      title: ObjectIdentifier
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-    ApplicationInstallConflictResolution:
-      title: ApplicationInstallConflictResolution
-      type: object
-      properties:
-        WorkspaceID:
-          type: integer
-        ConflictArtifactID:
-          type: integer
-        ApplicationComponentType:
-          enum:
-          - Unknown
-          - Choice
-          - Field
-          - Layout
-          - ObjectType
-          - ObjectRule
-          - EventHandler
-          - Tab
-          - View
-          - Script
-          - Instance
-          - CustomPage
-          - AgentType
-          - InstallEventHandler
-          - ResourceFile
-          - MassOperation
-          - MasterAgentType
-          - SavedSearch
-          - SearchProvider
-          - Dashboard
-          type: string
-        ResolutionType:
-          enum:
-          - Unknown
-          - Rename
-          - RenameRelationalFriendlyName
-          - MapField
-          - UnlockAssociatedApplications
-          type: string
-        ConflictApplicationID:
-          type:
-          - integer
-          - 'null'
-        FieldIdentifiers:
-          type: array
-          items:
-            type: string
-        Value:
-          type: string
-    Field:
-      title: Field
-      type: object
-      properties:
-        FieldCategory:
-          enum:
-          - Generic
-          - FullText
-          - Identifier
-          - Reflected
-          - Comments
-          - Relational
-          - ProductionMarker
-          - AutoCreate
-          - FileSize
-          - FolderName
-          - FileInfo
-          - ParentArtifact
-          - MarkupSetMarker
-          - GenericSystem
-          - MultiReflected
-          - Batch
-          type: string
-        FieldType:
-          enum:
-          - FixedLengthText
-          - WholeNumber
-          - Date
-          - YesNo
-          - LongText
-          - SingleChoice
-          - Decimal
-          - Currency
-          - MultipleChoice
-          - File
-          - SingleObject
-          - User
-          - MultipleObject
-          - Empty
-          type: string
-        ViewFieldID:
-          type: integer
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
-    ContentsResponse:
-      title: ContentsResponse
-      type: object
-      properties:
-        ContentsKey:
-          type: string
-    QueryOptions:
-      title: QueryOptions
-      type: object
-      properties:
-        Condition:
-          type: string
-        Sorts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sort'
-    FieldRef:
-      title: FieldRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        ViewFieldID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
-          type: string
-    GetApplicationInstallDetailsResponse:
-      title: GetApplicationInstallDetailsResponse
-      type: object
-      properties:
-        CurrentStartIndex:
-          type: integer
-        ResultCount:
-          type: integer
-        TotalCount:
-          type: integer
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        ApplicationInstallID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
-        Messages:
-          type: array
-          items:
-            type: string
-        Details:
-          type: array
-          items:
-            type: none
-        FirstPage:
-          $ref: '#/components/schemas/Action'
-        PreviousPage:
-          $ref: '#/components/schemas/Action'
-        NextPage:
-          $ref: '#/components/schemas/Action'
-        LastPage:
-          $ref: '#/components/schemas/Action'
-    RelativityObjectSlim:
-      title: RelativityObjectSlim
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Values:
-          type: array
-          items:
-            $ref: '#/components/schemas/Object'
-    EligibleApplication:
-      title: EligibleApplication
-      type: object
-      properties:
-        ObjectIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        IsGlobalApplication:
-          type: boolean
-        Version:
-          type: string
-        SchemaVersion:
-          type: string
-        FileName:
-          type: string
-        UserFriendlyURL:
-          type: string
-        Required:
-          enum:
-          - Optional
-          - Required
-          - RequiredIfPresent
-          - Unknown
-          type: string
-    WorkspaceRequest:
-      title: WorkspaceRequest
-      type: object
-      properties:
-        DownloadHandlerUrl:
-          type: string
-        EnableDataGrid:
-          type: boolean
-        Matter:
-          $ref: '#/components/schemas/Securable_1'
-        Name:
-          type: string
-        ProductionRestrictions:
-          $ref: '#/components/schemas/Securable_1'
-        ResourcePool:
-          $ref: '#/components/schemas/Securable_1'
-        DefaultFileRepository:
-          $ref: '#/components/schemas/Securable_1'
-        DataGridFileRepository:
-          $ref: '#/components/schemas/Securable_1'
-        DefaultCacheLocation:
-          $ref: '#/components/schemas/Securable_1'
-        SqlServer:
-          $ref: '#/components/schemas/Securable_1'
-        AzureCredentials:
-          $ref: '#/components/schemas/Securable_1'
-        AzureFileSystemCredentials:
-          $ref: '#/components/schemas/Securable_1'
-        SqlFullTextLanguage:
-          type: integer
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Template:
-          $ref: '#/components/schemas/Securable_1'
-        WorkspaceAdminGroup:
-          $ref: '#/components/schemas/Securable_1'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    NameIDPair:
-      title: NameIDPair
-      type: object
-      properties:
-        Name:
-          type: string
-        ID:
-          type: integer
-    ResourceFileEventHandler:
-      title: ResourceFileEventHandler
-      type: object
-      properties:
-        Name:
-          type: string
-        Description:
-          type: string
-        Type:
-          type: string
     NameValidationResponse:
       title: NameValidationResponse
       type: object
@@ -3370,212 +3072,14 @@ components:
           type: array
           items:
             type: string
-    ObjectTypeRef:
-      title: ObjectTypeRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-        Guid:
-          type:
-          - string
-          - 'null'
-        ArtifactTypeID:
-          type: integer
-    GetInstallStatusResponse:
-      title: GetInstallStatusResponse
-      type: object
-      properties:
-        ApplicationInstallID:
-          type: integer
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        WorkspaceIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        WorkspaceName:
-          type: string
-        Client:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        Matter:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        Message:
-          type: string
-        RootFolderID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
-        ValidationResult:
-          $ref: '#/components/schemas/InstallValidationResult'
-        Version:
-          type: string
-        IsOutOfDate:
-          type: boolean
-        ValidationMessages:
-          type: array
-          items:
-            type: string
-        Errors:
-          type: array
-          items:
-            type: none
-        InstalledBy:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        StartedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        CompletedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        ExceptionCategory:
-          type: string
-        FailedTask:
-          type: string
-        GetCurrentInstallStatus:
-          $ref: '#/components/schemas/Action'
-    Action:
-      title: Action
+    ResourceFileAgentType:
+      title: ResourceFileAgentType
       type: object
       properties:
         Name:
           type: string
-        Href:
+        FullNamespace:
           type: string
-        Verb:
-          type: string
-        IsAvailable:
-          type: boolean
-        Reason:
-          type: array
-          items:
-            type: string
-    ValidationResult:
-      title: ValidationResult
-      type: object
-      properties:
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        WorkspaceIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Success:
-          type: boolean
-        Errors:
-          type: array
-          items:
-            type: string
-        Conflicts:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationInstallConflict'
-    ResourceFileResponse:
-      title: ResourceFileResponse
-      type: object
-      properties:
-        ObjectIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Application:
-          $ref: '#/components/schemas/Securable_1'
-        FileName:
-          type: string
-        CompanyName:
-          type: string
-        Copyright:
-          type: string
-        AgentTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceFileAgentType'
-        EventHandlers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceFileEventHandler'
-        MassOperations:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceFileMassOperation'
-        Services:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceFileService'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-        CreatedOn:
-          type: string
-          format: date-time
-        CreatedBy:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        LastModifiedBy:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        LastModifiedOn:
-          type: string
-          format: date-time
-        Meta:
-          $ref: '#/components/schemas/Meta'
-        Actions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Action'
-    CancelApplicationInstallResult:
-      title: CancelApplicationInstallResult
-      type: object
-      properties:
-        IsSuccessful:
-          type: boolean
-        WorkspaceIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        ApplicationInstallID:
-          type: integer
-        Message:
-          type: string
-    SearchIndexRef:
-      title: SearchIndexRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    CancelLibraryInstallResponse:
-      title: CancelLibraryInstallResponse
-      type: object
-      properties:
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        IsSuccessful:
-          type: boolean
-        ApplicationInstallID:
-          type: integer
-        Message:
-          type: string
-    InstallApplicationAllRequest:
-      title: InstallApplicationAllRequest
-      type: object
-      properties:
-        Mode:
-          enum:
-          - Unknown
-          - ForceInstall
-          - UpgradeOnly
-          type: string
-        UnlockApplications:
-          type: boolean
-    RetryLibraryInstallResponse:
-      title: RetryLibraryInstallResponse
-      type: object
-      properties:
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        ApplicationInstallID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
     IKeplerStream:
       title: IKeplerStream
       type: object
@@ -3642,18 +3146,301 @@ components:
           type: array
           items:
             type: string
-    UpdateLibraryApplicationRequest:
-      title: UpdateLibraryApplicationRequest
+    RetryLibraryInstallResponse:
+      title: RetryLibraryInstallResponse
       type: object
       properties:
-        IgnoreVersion:
-          type: boolean
-        CreateIfMissing:
-          type: boolean
-        RefreshCustomPages:
-          type: boolean
-        FileName:
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        ApplicationInstallID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+    ObjectTypeRef:
+      title: ObjectTypeRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
           type: string
+        Guid:
+          type:
+          - string
+          - 'null'
+        ArtifactTypeID:
+          type: integer
+    CancelLibraryInstallResponse:
+      title: CancelLibraryInstallResponse
+      type: object
+      properties:
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        IsSuccessful:
+          type: boolean
+        ApplicationInstallID:
+          type: integer
+        Message:
+          type: string
+    SearchIndexRef:
+      title: SearchIndexRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ObjectType:
+      title: ObjectType
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+        Guids:
+          type: array
+          items:
+            type: string
+        ArtifactTypeID:
+          type: integer
+    DisplayableObjectIdentifier:
+      title: DisplayableObjectIdentifier
+      type: object
+      properties:
+        Name:
+          type: string
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+    MatterRequest:
+      title: MatterRequest
+      type: object
+      properties:
+        Client:
+          $ref: '#/components/schemas/Securable_1'
+        Status:
+          $ref: '#/components/schemas/Securable_1'
+        Name:
+          type: string
+        Number:
+          type: string
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    ApplicationHostingStatusResponse:
+      title: ApplicationHostingStatusResponse
+      type: object
+      properties:
+        CustomPages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomPageHostingStatusResponse'
+        KeplerServices:
+          type: array
+          items:
+            $ref: '#/components/schemas/KeplerServiceStatusResponse'
+        State:
+          enum:
+          - Ready
+          - Pending
+          - OutOfDate
+          - Unavailable
+          type: string
+        Message:
+          type: string
+        Actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Action'
+    WorkspaceSummary:
+      title: WorkspaceSummary
+      type: object
+      properties:
+        DocumentCount:
+          type: integer
+        FileSize:
+          type: integer
+    CreateLibraryApplicationResponse:
+      title: CreateLibraryApplicationResponse
+      type: object
+      properties:
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Action'
+        ApplicationInstallID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+    Sort:
+      title: Sort
+      type: object
+      properties:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRef'
+        Order:
+          type: integer
+        Direction:
+          enum:
+          - Ascending
+          - Descending
+          type: string
+    ApplicationInstallConflictResolution:
+      title: ApplicationInstallConflictResolution
+      type: object
+      properties:
+        WorkspaceID:
+          type: integer
+        ConflictArtifactID:
+          type: integer
+        ApplicationComponentType:
+          enum:
+          - Unknown
+          - Choice
+          - Field
+          - Layout
+          - ObjectType
+          - ObjectRule
+          - EventHandler
+          - Tab
+          - View
+          - Script
+          - Instance
+          - CustomPage
+          - AgentType
+          - InstallEventHandler
+          - ResourceFile
+          - MassOperation
+          - MasterAgentType
+          - SavedSearch
+          - SearchProvider
+          - Dashboard
+          type: string
+        ResolutionType:
+          enum:
+          - Unknown
+          - Rename
+          - RenameRelationalFriendlyName
+          - MapField
+          - UnlockAssociatedApplications
+          type: string
+        ConflictApplicationID:
+          type:
+          - integer
+          - 'null'
+        FieldIdentifiers:
+          type: array
+          items:
+            type: string
+        Value:
+          type: string
+    SqlFullTextLanguageOptions:
+      title: SqlFullTextLanguageOptions
+      type: object
+      properties:
+        DefaultLanguageLcid:
+          type: integer
+        Languages:
+          type: array
+          items:
+            $ref: '#/components/schemas/NameIDPair'
+    GetApplicationInstallDetailsResponse:
+      title: GetApplicationInstallDetailsResponse
+      type: object
+      properties:
+        CurrentStartIndex:
+          type: integer
+        ResultCount:
+          type: integer
+        TotalCount:
+          type: integer
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        ApplicationInstallID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+        Messages:
+          type: array
+          items:
+            type: string
+        Details:
+          type: array
+          items:
+            type: none
+        FirstPage:
+          $ref: '#/components/schemas/Action'
+        PreviousPage:
+          $ref: '#/components/schemas/Action'
+        NextPage:
+          $ref: '#/components/schemas/Action'
+        LastPage:
+          $ref: '#/components/schemas/Action'
+    ObjectIdentifier:
+      title: ObjectIdentifier
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+    Meta:
+      title: Meta
+      type: object
+      properties:
+        Unsupported:
+          type: array
+          items:
+            type: string
+        ReadOnly:
+          type: array
+          items:
+            type: string
+    ApplicationInstallSearchResponse:
+      title: ApplicationInstallSearchResponse
+      type: object
+      properties:
+        Results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationInstallSearchItem'
+        Summary:
+          $ref: '#/components/schemas/InstallStatusSummary'
+        CurrentStartIndex:
+          type: integer
+        ResultCount:
+          type: integer
+        TotalCount:
+          type: integer
+        FirstPage:
+          $ref: '#/components/schemas/Action'
+        PreviousPage:
+          $ref: '#/components/schemas/Action'
+        NextPage:
+          $ref: '#/components/schemas/Action'
+        LastPage:
+          $ref: '#/components/schemas/Action'
+    InstallValidationResult:
+      title: InstallValidationResult
+      type: object
+      properties:
+        RetryInstallAction:
+          $ref: '#/components/schemas/Action'
+        RetryInstallRequestTemplate:
+          $ref: '#/components/schemas/InstallApplicationRequest'
+        InstallConflicts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationInstallConflict'
     QueryResultSlim:
       title: QueryResultSlim
       type: object
@@ -3686,25 +3473,238 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Field'
-    MatterRequest:
-      title: MatterRequest
+    ResourceFileMassOperation:
+      title: ResourceFileMassOperation
       type: object
       properties:
-        Client:
-          $ref: '#/components/schemas/Securable_1'
-        Status:
-          $ref: '#/components/schemas/Securable_1'
         Name:
           type: string
-        Number:
+        Description:
           type: string
+    GetOutdatedWorkspacesResponse:
+      title: GetOutdatedWorkspacesResponse
+      type: object
+      properties:
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        IsGlobalApplication:
+          type: boolean
+        OutdatedWorkspacesCount:
+          type: integer
+        UpdateOutdatedApplications:
+          $ref: '#/components/schemas/Action'
+        UpdateOutdatedApplicationsPayload:
+          $ref: '#/components/schemas/InstallApplicationAllRequest'
+    SecurableList_1:
+      title: SecurableList`1
+      type: object
+      properties:
+        HasSecuredItems:
+          type: boolean
+        ViewableItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/EligibleApplication'
+    EligibleApplication:
+      title: EligibleApplication
+      type: object
+      properties:
+        ObjectIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        IsGlobalApplication:
+          type: boolean
+        Version:
+          type: string
+        SchemaVersion:
+          type: string
+        FileName:
+          type: string
+        UserFriendlyURL:
+          type: string
+        Required:
+          enum:
+          - Optional
+          - Required
+          - RequiredIfPresent
+          - Unknown
+          type: string
+    ResourceFileService:
+      title: ResourceFileService
+      type: object
+      properties:
+        Name:
+          type: string
+        ServiceRoute:
+          type: string
+        Version:
+          type: string
+    KeplerServiceStatusResponse:
+      title: KeplerServiceStatusResponse
+      type: object
+      properties:
+        State:
+          enum:
+          - Ready
+          - Pending
+          - OutOfDate
+          - Unavailable
+          type: string
+        Message:
+          type: string
+        Actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Action'
+    ResourceFileResponse:
+      title: ResourceFileResponse
+      type: object
+      properties:
+        ObjectIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Application:
+          $ref: '#/components/schemas/Securable_1'
+        FileName:
+          type: string
+        CompanyName:
+          type: string
+        Copyright:
+          type: string
+        AgentTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceFileAgentType'
+        EventHandlers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceFileEventHandler'
+        MassOperations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceFileMassOperation'
+        Services:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceFileService'
         Keywords:
           type: string
         Notes:
           type: string
-    Object:
-      title: Object
+        CreatedOn:
+          type: string
+          format: date-time
+        CreatedBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        LastModifiedBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        LastModifiedOn:
+          type: string
+          format: date-time
+        Meta:
+          $ref: '#/components/schemas/Meta'
+        Actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Action'
+    SampleParameters:
+      title: SampleParameters
       type: object
+      properties:
+        ExistingToken:
+          type:
+          - string
+          - 'null'
+        MarginOfError:
+          type: number
+        ConfidenceLevel:
+          type: number
+        FixedSampleSize:
+          type: integer
+        SamplingPercentage:
+          type: number
+    UpdateLibraryApplicationResponse:
+      title: UpdateLibraryApplicationResponse
+      type: object
+      properties:
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Action'
+        ApplicationInstallID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+        Messages:
+          type: array
+          items:
+            type: string
+    Securable_1:
+      title: Securable`1
+      type: object
+      properties:
+        Secured:
+          type: boolean
+        Value:
+          $ref: '#/components/schemas/ObjectIdentifier'
+    SearchProviderCondition:
+      title: SearchProviderCondition
+      type: object
+      properties:
+        SearchIndex:
+          $ref: '#/components/schemas/SearchIndexRef'
+        Input:
+          type: string
+    WorkspaceRequest:
+      title: WorkspaceRequest
+      type: object
+      properties:
+        DownloadHandlerUrl:
+          type: string
+        EnableDataGrid:
+          type: boolean
+        Matter:
+          $ref: '#/components/schemas/Securable_1'
+        Name:
+          type: string
+        ProductionRestrictions:
+          $ref: '#/components/schemas/Securable_1'
+        ResourcePool:
+          $ref: '#/components/schemas/Securable_1'
+        DefaultFileRepository:
+          $ref: '#/components/schemas/Securable_1'
+        DataGridFileRepository:
+          $ref: '#/components/schemas/Securable_1'
+        DefaultCacheLocation:
+          $ref: '#/components/schemas/Securable_1'
+        SqlServer:
+          $ref: '#/components/schemas/Securable_1'
+        AzureCredentials:
+          $ref: '#/components/schemas/Securable_1'
+        AzureFileSystemCredentials:
+          $ref: '#/components/schemas/Securable_1'
+        SqlFullTextLanguage:
+          type: integer
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Template:
+          $ref: '#/components/schemas/Securable_1'
+        WorkspaceAdminGroup:
+          $ref: '#/components/schemas/Securable_1'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    QueryOptions:
+      title: QueryOptions
+      type: object
+      properties:
+        Condition:
+          type: string
+        Sorts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sort'
   parameters:
     includeMetadata:
       name: includeMetadata
@@ -3713,15 +3713,63 @@ components:
       required: true
       schema:
         type: boolean
-    applicationGuid:
-      name: applicationGuid
+    groupID:
+      name: groupID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    length:
+      name: length
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    packageGuid:
+      name: packageGuid
       in: path
       description: ''
       required: true
       schema:
         type: string
-    applicationInstallID:
-      name: applicationInstallID
+    workspaceIDs:
+      name: workspaceIDs
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    includeActions:
+      name: includeActions
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: boolean
+    matterID:
+      name: matterID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    targetWorkspaces:
+      name: targetWorkspaces
+      in: query
+      description: ''
+      required: true
+      schema:
+        enum:
+        - Unknown
+        - ForceInstall
+        - UpgradeOnly
+        type: string
+    workspaceID:
+      name: workspaceID
       in: path
       description: ''
       required: true
@@ -3741,6 +3789,50 @@ components:
       required: true
       schema:
         type: string
+    applicationInstallIDs:
+      name: applicationInstallIDs
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: array
+        items:
+          type: integer
+    applicationGuid:
+      name: applicationGuid
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    contentsKey:
+      name: contentsKey
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    resourceFileID:
+      name: resourceFileID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    resourcePoolID:
+      name: resourcePoolID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    workspaceId:
+      name: workspaceId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
     applicationID:
       name: applicationID
       in: path
@@ -3755,41 +3847,6 @@ components:
       required: true
       schema:
         type: integer
-    includeActions:
-      name: includeActions
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: boolean
-    workspaceId:
-      name: workspaceId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    length:
-      name: length
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    packageGuid:
-      name: packageGuid
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
     fileName:
       name: fileName
       in: query
@@ -3797,65 +3854,8 @@ components:
       required: true
       schema:
         type: string
-    resourceFileID:
-      name: resourceFileID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    applicationInstallIDs:
-      name: applicationInstallIDs
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    workspaceIDs:
-      name: workspaceIDs
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: array
-        items:
-          type: integer
-    groupID:
-      name: groupID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    resourcePoolID:
-      name: resourcePoolID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    targetWorkspaces:
-      name: targetWorkspaces
-      in: query
-      description: ''
-      required: true
-      schema:
-        enum:
-        - Unknown
-        - ForceInstall
-        - UpgradeOnly
-        type: string
-    contentsKey:
-      name: contentsKey
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    matterID:
-      name: matterID
+    applicationInstallID:
+      name: applicationInstallID
       in: path
       description: ''
       required: true

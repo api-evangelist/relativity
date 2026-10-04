@@ -150,6 +150,35 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    WorkspaceCreateJobResponse:
+      type: object
+      properties:
+        JobId:
+          type: string
+          format: uuid
+        WorkspaceArtifactId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TotalNumberOfSteps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        CurrentStep:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        JobState:
+          type:
+          - string
+          - 'null'
+        Attempt:
+          type: integer
+          format: int32
+      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
@@ -175,6 +204,15 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    WorkspaceCreateEnqueueResponse:
+      required:
+      - JobId
+      type: object
+      properties:
+        JobId:
+          type: string
+          format: uuid
+      additionalProperties: false
     WorkspaceCreateRequestDto:
       required:
       - Name
@@ -219,44 +257,6 @@ components:
           - integer
           - 'null'
           format: int32
-      additionalProperties: false
-    WorkspaceCreateJobResponse:
-      type: object
-      properties:
-        JobId:
-          type: string
-          format: uuid
-        WorkspaceArtifactId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        TotalNumberOfSteps:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        CurrentStep:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        JobState:
-          type:
-          - string
-          - 'null'
-        Attempt:
-          type: integer
-          format: int32
-      additionalProperties: false
-    WorkspaceCreateEnqueueResponse:
-      required:
-      - JobId
-      type: object
-      properties:
-        JobId:
-          type: string
-          format: uuid
       additionalProperties: false
   securitySchemes:
     Bearer:

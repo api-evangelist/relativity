@@ -144,64 +144,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    RestoreJobRequestWrapper:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RestoreJobRequest'
-      additionalProperties: false
-      description: Request to create new Restore job V3
-    RestoreJobRequest:
-      type: object
-      properties:
-        archivePath:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets path to the archive
-        jobPriority:
-          $ref: '#/components/schemas/JobPriority'
-        scheduledStartTime:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets scheduled start time.
-          format: date-time
-        existingTargetDatabase:
-          type:
-          - string
-          - 'null'
-          description: 'Gets or sets existing target database.
-
-            Required if archive doesn''t have a database backup'
-        destinationOptions:
-          $ref: '#/components/schemas/RestoreDestinationOptions'
-        migratorOptions:
-          type:
-          - object
-          - 'null'
-          additionalProperties: {}
-          description: 'Gets or sets generic per-migrator configuration.
-
-            Value = JSON string with migrator-specific parameters.
-
-            If null, all migrators use default configuration.'
-        notificationOptions:
-          $ref: '#/components/schemas/NotificationOptions'
-        uiJobActionsLocked:
-          type: boolean
-          description: Gets or sets a value indicating whether this job ui actions are locked
-      additionalProperties: false
-      description: Request to create new Restore job V3
-    RestoreDestinationOptions:
-      type: object
-      properties:
-        matterID:
-          type: integer
-          description: Gets or sets a matter that the restored workspace will use.
-          format: int32
-      additionalProperties: false
-      description: V3 Restore Job destination options
     RestoreJobResponse:
       type: object
       properties:
@@ -263,6 +205,16 @@ components:
           description: Gets or sets a value indicating whether this job ui actions are locked.
       additionalProperties: false
       description: Response with Restore Job V3
+    CreateRestoreJobResponse:
+      type: object
+      properties:
+        jobID:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets the created Job id.
+      additionalProperties: false
+      description: Response for Restore Job creation
     NotificationOptions:
       type: object
       properties:
@@ -280,6 +232,109 @@ components:
           description: Gets or sets the list of additional recipient emails.
       additionalProperties: false
       description: ARM Job notification options
+    UpdateRestoreJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for Restore Job update
+    RestoreJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest'
+      additionalProperties: false
+      description: Request to create new Restore job V3
+    JobPriority:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: Job priority levels
+      format: int32
+    RestoreJobRequest:
+      type: object
+      properties:
+        archivePath:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets path to the archive
+        jobPriority:
+          $ref: '#/components/schemas/JobPriority'
+        scheduledStartTime:
+          type:
+          - string
+          - 'null'
+          description: Gets or sets scheduled start time.
+          format: date-time
+        existingTargetDatabase:
+          type:
+          - string
+          - 'null'
+          description: 'Gets or sets existing target database.
+
+            Required if archive doesn''t have a database backup'
+        destinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions'
+        migratorOptions:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+          description: 'Gets or sets generic per-migrator configuration.
+
+            Value = JSON string with migrator-specific parameters.
+
+            If null, all migrators use default configuration.'
+        notificationOptions:
+          $ref: '#/components/schemas/NotificationOptions'
+        uiJobActionsLocked:
+          type: boolean
+          description: Gets or sets a value indicating whether this job ui actions are locked
+      additionalProperties: false
+      description: Request to create new Restore job V3
+    JobDetails:
+      type: object
+      properties:
+        priority:
+          $ref: '#/components/schemas/JobPriority'
+        actionsHistory:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/JobActions'
+          description: Gets or sets job action history.
+      additionalProperties: false
+      description: ARM Job details
+    JobActions:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date and time when the action was performed
+          format: date-time
+        type:
+          type:
+          - string
+          - 'null'
+          description: Type of action performed
+        userName:
+          type:
+          - string
+          - 'null'
+          description: User who performed the action
+      additionalProperties: false
+      description: Represents an action performed on a job
+    RestoreDestinationOptions:
+      type: object
+      properties:
+        matterID:
+          type: integer
+          description: Gets or sets a matter that the restored workspace will use.
+          format: int32
+      additionalProperties: false
+      description: V3 Restore Job destination options
     ProblemDetails:
       type: object
       properties:
@@ -305,58 +360,3 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    JobActions:
-      type: object
-      properties:
-        date:
-          type: string
-          description: Date and time when the action was performed
-          format: date-time
-        type:
-          type:
-          - string
-          - 'null'
-          description: Type of action performed
-        userName:
-          type:
-          - string
-          - 'null'
-          description: User who performed the action
-      additionalProperties: false
-      description: Represents an action performed on a job
-    JobDetails:
-      type: object
-      properties:
-        priority:
-          $ref: '#/components/schemas/JobPriority'
-        actionsHistory:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/JobActions'
-          description: Gets or sets job action history.
-      additionalProperties: false
-      description: ARM Job details
-    JobPriority:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: Job priority levels
-      format: int32
-    UpdateRestoreJobResponse:
-      type: object
-      additionalProperties: false
-      description: Response for Restore Job update
-    CreateRestoreJobResponse:
-      type: object
-      properties:
-        jobID:
-          type:
-          - string
-          - 'null'
-          description: Gets or sets the created Job id.
-      additionalProperties: false
-      description: Response for Restore Job creation

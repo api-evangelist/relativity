@@ -88,6 +88,36 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
+    StartGlacierStoreRequest:
+      type: object
+      required:
+      - sourceLocation
+      - glacierName
+      properties:
+        sourceLocation:
+          type: string
+          minLength: 10
+          description: Specify the source location to be archived in Glacier. The folder should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM. Only one item is accepted.
+          example: t001/ARM/TestLocation-1
+        glacierName:
+          type: string
+          minLength: 1
+          maxLength: 100
+          pattern: ^[a-z0-9-]+$
+          description: The name of the glacier storage
+          example: project-archive-2024
+    ValidationProblemDetails:
+      allOf:
+      - $ref: '#/components/schemas/ProblemDetails'
+      - type: object
+        properties:
+          errors:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+            description: Field-specific validation errors
     ProblemDetails:
       type: object
       properties:
@@ -108,24 +138,6 @@ components:
           type: string
           format: uri
           description: A URI reference identifying the specific occurrence
-    StartGlacierStoreRequest:
-      type: object
-      required:
-      - sourceLocation
-      - glacierName
-      properties:
-        sourceLocation:
-          type: string
-          minLength: 10
-          description: Specify the source location to be archived in Glacier. The folder should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM. Only one item is accepted.
-          example: t001/ARM/TestLocation-1
-        glacierName:
-          type: string
-          minLength: 1
-          maxLength: 100
-          pattern: ^[a-z0-9-]+$
-          description: The name of the glacier storage
-          example: project-archive-2024
     StartGlacierStoreResponse:
       type: object
       required:
@@ -142,18 +154,6 @@ components:
           format: uuid
           description: The unique identifier of the created glacier
           example: 987fcdeb-51a2-43d1-9876-543210fedcba
-    ValidationProblemDetails:
-      allOf:
-      - $ref: '#/components/schemas/ProblemDetails'
-      - type: object
-        properties:
-          errors:
-            type: object
-            additionalProperties:
-              type: array
-              items:
-                type: string
-            description: Field-specific validation errors
   securitySchemes:
     oauth2:
       type: oauth2

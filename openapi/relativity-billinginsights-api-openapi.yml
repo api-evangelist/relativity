@@ -2078,103 +2078,105 @@ paths:
       description: Government
 components:
   schemas:
-    GetUsersDetailsResponseItem:
+    FieldOrder:
       type: object
       properties:
-        email:
+        fieldName:
           type:
           - string
           - 'null'
-          description: Email address of the User. Uniquely identifies the User.
-        userRole:
+          description: 'Specifies the field name which should be used for sorting the results.
+
+            The field matches the structure of the response payload, with the exception that all the property names should be upper case instead of lower case.'
+        direction:
+          enum:
+          - Asc
+          - Desc
+          type: string
+          description: Specifies the sort direction
+      additionalProperties: false
+      description: Allows to specify order that should be applied to the query result
+    ClientMatterData:
+      type: object
+      properties:
+        clientArtifactId:
+          type: integer
+          format: int32
+        matterArtifactId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Instance:
+      type: object
+      properties:
+        id:
           type:
           - string
           - 'null'
-          description: ' Role of the User in Relativity. Possible values:
-
-            - _Regular_
-
-            - _Administrator_'
-        billableStatus:
+          description: Instance ID (GUID)
+        name:
           type:
           - string
           - 'null'
-          description: 'Specifies Billable status of the User. Possible values:
+          description: Instance name
+        pricingVisibility:
+          enum:
+          - Visible
+          - HiddenResoldInstance
+          - HiddenFixedContract
+          type: string
+          description: 'Instance pricing visibility:
 
-            - _Billable RelativityOne_
+            - Visible : pricing details are visible
 
-            - _Billable Server_
+            - HiddenResoldInstance : pricing details are hidden due to resold of the instance
 
-            - _Non-billable_'
-        lastLoginUtc:
-          type:
-          - string
-          - 'null'
-          description: Specifies the last login date for the given datekey.
-          format: date-time
-        userActivity:
-          type:
-          - string
-          - 'null'
-          description: 'Specifies if the User was active (has logged in) in the month identified by datekey. Possible values:
-
-            - _Active_
-
-            - _Inactive_'
-        userType:
-          type:
-          - string
-          - 'null'
-          description: 'Specifies the type of the User. Possible values:
-
-            - _Internal_
-
-            - _External_'
-        anonymization:
-          type:
-          - string
-          - 'null'
-          description: 'If the value is _Hashed_ then value of a _Email_ field is replaced with hash
-
-            List of possible values:
-
-            - Hashed
-
-            - None'
-        anonymizedFields:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type:
-            - string
-            - 'null'
-          description: Collection that holds what type of user data is hashed.
+            - HiddenFixedContract : pricing details are hidden because of fixed contracts with zero rates'
+      additionalProperties: false
+      description: Instance information
+    SingleSubMetric:
+      type: object
+      properties:
+        value:
+          type: number
+          description: Value reported for the submetric
+          format: double
         comment:
           type:
           - string
           - 'null'
-          description: Provides additional information about Billing data for the User
-        instanceSpecificData:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/UserInstanceSpecificData'
-          description: Describes instance-specific data of the User. Keys in the dictionary are lowercase Instance ids.
-        workspaces:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/ClientMatterData'
-          description: Collection that holds artifactIds of workspaces to which user has access and information about its' client and matter artifactId.
+          description: Comment associated with submetric
+      additionalProperties: false
+    SingleUsageMetric:
+      type: object
+      properties:
         collectionTimeUtc:
           type:
           - string
           - 'null'
           description: Date when the value was collected
           format: date-time
+        metadata:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricMetadata'
+        comment:
+          type:
+          - string
+          - 'null'
+          description: Additional information related to the current metric
+        subMetrics:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/SingleSubMetric'
+        reportedValue:
+          type: number
+          description: Value reported for the metric (current usage)
+          format: double
       additionalProperties: false
     SinglePricedMetric:
       type: object
@@ -2214,314 +2216,6 @@ components:
           - 'null'
           description: Reason for the missing cost if applicable.
           example: "\n            Cost breakdown not available at this level of the hierarchy\n            "
-      additionalProperties: false
-    GetUsersDetailsResponse:
-      type: object
-      properties:
-        results:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/GetUsersDetailsResponseItem'
-        pagingResponse:
-          $ref: '#/components/schemas/PagingResponse'
-      additionalProperties: false
-    Workspace:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-          description: ID of the workspace (GUID)
-        artifactID:
-          type: integer
-          description: Artifact ID of the workspace
-          format: int32
-        name:
-          type:
-          - string
-          - 'null'
-          description: Name of the workspace
-        activityStatus:
-          type:
-          - string
-          - 'null'
-          description: 'Workspace status. Could be one of the following:
-
-            - Active
-
-            - Inactive
-
-            - Archived
-
-            - Deleted'
-        billableStatus:
-          type:
-          - string
-          - 'null'
-          description: 'Specifies billable status of the workspace
-
-            List of possible values:
-
-            - Billable
-
-            - Non-billable
-
-            - Billable Plaintiff'
-        billableComment:
-          type:
-          - string
-          - 'null'
-          description: Additional information about billable status, populated when _billableStatus_ is _Non-billable_
-        anonymization:
-          type:
-          - string
-          - 'null'
-          description: 'Flag that identifies if workspace data is hashed.
-
-            If the value is _Hashed_ then value of a _Name_ field is replaced with _ArtifactID_ value.
-
-            List of possible values:
-
-            - Hashed
-
-            - None'
-        billableType:
-          type:
-          - string
-          - 'null'
-          description: 'Specifies billable type of the workspace
-
-            List of possible values:
-
-            - Repository
-
-            - Review
-
-            - Cold Storage'
-        anonymizedFields:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type:
-            - string
-            - 'null'
-          description: Object that holds what type of workspace data is hashed.
-        projectType:
-          type:
-          - string
-          - 'null'
-          description: Object that holds what type of use case the workspace has.
-      additionalProperties: false
-      description: Workspace information
-    Matter:
-      type: object
-      properties:
-        artifactID:
-          type: integer
-          description: Artifact ID of the matter
-          format: int32
-        name:
-          type:
-          - string
-          - 'null'
-          description: Name of the matter
-        anonymization:
-          type:
-          - string
-          - 'null'
-          description: 'Flag that identifies if matter data is hashed.
-
-            If the value is _Hashed_ then value of a _Name_ field is replaced with hash
-
-            List of possible values:
-
-            - Hashed
-
-            - None'
-        anonymizedFields:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type:
-            - string
-            - 'null'
-          description: Object that holds what type of matter data is hashed.
-        number:
-          type:
-          - string
-          - 'null'
-          description: Number of the matter
-      additionalProperties: false
-      description: Matter information
-    GetHierarchyLookupResponse:
-      type: object
-      properties:
-        results:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/GetHierarchyLookupResponseItem'
-      additionalProperties: false
-    SingleUsageMetric:
-      type: object
-      properties:
-        collectionTimeUtc:
-          type:
-          - string
-          - 'null'
-          description: Date when the value was collected
-          format: date-time
-        metadata:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/MetricMetadata'
-        comment:
-          type:
-          - string
-          - 'null'
-          description: Additional information related to the current metric
-        subMetrics:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/SingleSubMetric'
-        reportedValue:
-          type: number
-          description: Value reported for the metric (current usage)
-          format: double
-      additionalProperties: false
-    HierarchyItemSelector:
-      type: object
-      properties:
-        contractID:
-          type:
-          - string
-          - 'null'
-        instanceID:
-          type:
-          - string
-          - 'null'
-        clientArtifactID:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        matterArtifactID:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        workspaceArtifactID:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      additionalProperties: false
-      description: 'Specifies item to select.
-
-        instanceID_ must be provided, additionally depending on the chosen level must be provided _clientArtifactID_, _matterArtifactID_ or _workspaceArtifactID'
-    Instance:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-          description: Instance ID (GUID)
-        name:
-          type:
-          - string
-          - 'null'
-          description: Instance name
-        pricingVisibility:
-          enum:
-          - Visible
-          - HiddenResoldInstance
-          - HiddenFixedContract
-          type: string
-          description: 'Instance pricing visibility:
-
-            - Visible : pricing details are visible
-
-            - HiddenResoldInstance : pricing details are hidden due to resold of the instance
-
-            - HiddenFixedContract : pricing details are hidden because of fixed contracts with zero rates'
-      additionalProperties: false
-      description: Instance information
-    Client:
-      type: object
-      properties:
-        artifactID:
-          type: integer
-          description: Artifact ID of the client
-          format: int32
-        name:
-          type:
-          - string
-          - 'null'
-          description: Name of the client
-        status:
-          type:
-          - string
-          - 'null'
-          description: Status of the client
-        anonymization:
-          type:
-          - string
-          - 'null'
-          description: 'Flag that identifies if client data is hashed.
-
-            If the value is _Hashed_ then value of a _Name_ field is replaced with hash
-
-            List of possible values:
-
-            - Hashed
-
-            - None'
-        anonymizedFields:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type:
-            - string
-            - 'null'
-          description: Dictionary that holds what type of client data is hashed.
-        number:
-          type:
-          - string
-          - 'null'
-          description: Number of the client
-      additionalProperties: false
-      description: Client information.
-    MetricMetadata:
-      type: object
-      properties:
-        metadataKey:
-          type:
-          - string
-          - 'null'
-        description:
-          type:
-          - string
-          - 'null'
-        data:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type:
-            - string
-            - 'null'
       additionalProperties: false
     GetMonthDetailsRequest:
       type: object
@@ -2647,53 +2341,133 @@ components:
           description: Specifies if the response should include unhashed data. Default value is false.
       additionalProperties: false
       description: Request body used in month-details API
-    GetMonthDetailsResponseItem:
+    GetHierarchyLookupResponse:
       type: object
       properties:
-        contract:
-          $ref: '#/components/schemas/Contract'
-        instance:
-          $ref: '#/components/schemas/Instance'
-        client:
-          $ref: '#/components/schemas/Client'
-        matter:
-          $ref: '#/components/schemas/Matter'
-        workspace:
-          $ref: '#/components/schemas/Workspace'
-        usageMetrics:
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GetHierarchyLookupResponseItem'
+      additionalProperties: false
+    MetricMetadata:
+      type: object
+      properties:
+        metadataKey:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        data:
           type:
           - object
           - 'null'
           additionalProperties:
-            $ref: '#/components/schemas/SingleUsageMetric'
-          description: 'Usage metric represents current usage of the data or in case if previous month is requested it will represent state from the last day of monthly report.
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    GetUsersDetailsResponseItem:
+      type: object
+      properties:
+        email:
+          type:
+          - string
+          - 'null'
+          description: Email address of the User. Uniquely identifies the User.
+        userRole:
+          type:
+          - string
+          - 'null'
+          description: ' Role of the User in Relativity. Possible values:
 
-            Each property in this object is one of the _metricKeys_ specified in the request. If the usage metric does not exist for given item, it will be missing in the object.'
-        pricedMetrics:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/SinglePricedMetric'
-          description: "Priced metric represents billable data on the date when peak of the usage occurred. \nEach property in this object is one of the _metricKeys_ specified in the request. If the priced metric does not exist for given item, it will be missing in the object."
-        pricedMetricsSubMetricsSummary:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/SingleSubMetric'
-          description: 'Submetrics related to the priced metric.
+            - _Regular_
 
-            Each property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for priced item, it will have zero Value in the object.'
-        usageMetricsSubMetricsSummary:
+            - _Administrator_'
+        billableStatus:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies Billable status of the User. Possible values:
+
+            - _Billable RelativityOne_
+
+            - _Billable Server_
+
+            - _Non-billable_'
+        lastLoginUtc:
+          type:
+          - string
+          - 'null'
+          description: Specifies the last login date for the given datekey.
+          format: date-time
+        userActivity:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies if the User was active (has logged in) in the month identified by datekey. Possible values:
+
+            - _Active_
+
+            - _Inactive_'
+        userType:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies the type of the User. Possible values:
+
+            - _Internal_
+
+            - _External_'
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'If the value is _Hashed_ then value of a _Email_ field is replaced with hash
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        anonymizedFields:
           type:
           - object
           - 'null'
           additionalProperties:
-            $ref: '#/components/schemas/SingleSubMetric'
-          description: 'Submetrics related to the usage metric.
-
-            Each property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for usage item, it will have zero Value in the object.'
+            type:
+            - string
+            - 'null'
+          description: Collection that holds what type of user data is hashed.
+        comment:
+          type:
+          - string
+          - 'null'
+          description: Provides additional information about Billing data for the User
+        instanceSpecificData:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/UserInstanceSpecificData'
+          description: Describes instance-specific data of the User. Keys in the dictionary are lowercase Instance ids.
+        workspaces:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/ClientMatterData'
+          description: Collection that holds artifactIds of workspaces to which user has access and information about its' client and matter artifactId.
+        collectionTimeUtc:
+          type:
+          - string
+          - 'null'
+          description: Date when the value was collected
+          format: date-time
       additionalProperties: false
     UserInstanceSpecificData:
       type: object
@@ -2716,21 +2490,6 @@ components:
           description: Specifies the last login date for this particular instance.
           format: date-time
       additionalProperties: false
-    Contract:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-          description: ID of the contract
-        name:
-          type:
-          - string
-          - 'null'
-          description: Name of the contract
-      additionalProperties: false
-      description: Contract information
     PagingRequest:
       type: object
       properties:
@@ -2771,6 +2530,18 @@ components:
         - if _top_ and _skip_ are specified and _maxItemCount_ is not specified, _continuationToken_ will not be returned.The API guarantees that all the records were populated, and there is no need to fetch additional records.
 
         - In all other cases, _continuationToken_ might be returned, indicating there are more records to fetch.'
+    GetUsersDetailsResponse:
+      type: object
+      properties:
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GetUsersDetailsResponseItem'
+        pagingResponse:
+          $ref: '#/components/schemas/PagingResponse'
+      additionalProperties: false
     GetMonthDetailsResponse:
       type: object
       properties:
@@ -2793,6 +2564,47 @@ components:
           - MissingMetricsGuid
           type: string
       additionalProperties: false
+    Matter:
+      type: object
+      properties:
+        artifactID:
+          type: integer
+          description: Artifact ID of the matter
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the matter
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if matter data is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with hash
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        anonymizedFields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          description: Object that holds what type of matter data is hashed.
+        number:
+          type:
+          - string
+          - 'null'
+          description: Number of the matter
+      additionalProperties: false
+      description: Matter information
     GetHierarchyLookupResponseItem:
       type: object
       properties:
@@ -2826,16 +2638,94 @@ components:
         selector:
           $ref: '#/components/schemas/HierarchyItemSelector'
       additionalProperties: false
-    ClientMatterData:
+    GetUsersDetailsRequest:
       type: object
       properties:
-        clientArtifactId:
-          type: integer
-          format: int32
-        matterArtifactId:
-          type: integer
-          format: int32
+        dateKey:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
+          example: 202209
+        selectorLevel:
+          enum:
+          - Workspace
+          - Matter
+          - Client
+          - Instance
+          - Contract
+          type: string
+        itemSelectors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/HierarchyItemSelector'
+          description: Limits the results just to Users who have access to particular element in the hierarchy
+        filters:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FieldFilter'
+        order:
+          $ref: '#/components/schemas/FieldOrder'
+        pagingRequest:
+          $ref: '#/components/schemas/PagingRequest'
+        includeWorkspaceInfo:
+          type: boolean
+          description: Specifies if the response should include workspace artifact IDs with matter and client structure to which user has access to. Default value is false.
+        shouldUnhashData:
+          type: boolean
+          description: Specifies if the response should include unhashed data. Default value is false.
       additionalProperties: false
+      description: Request body used in users-details API
+    Client:
+      type: object
+      properties:
+        artifactID:
+          type: integer
+          description: Artifact ID of the client
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the client
+        status:
+          type:
+          - string
+          - 'null'
+          description: Status of the client
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if client data is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with hash
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        anonymizedFields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          description: Dictionary that holds what type of client data is hashed.
+        number:
+          type:
+          - string
+          - 'null'
+          description: Number of the client
+      additionalProperties: false
+      description: Client information.
     PagingResponse:
       type: object
       properties:
@@ -2884,79 +2774,6 @@ components:
           description: Specifies a filter value
       additionalProperties: false
       description: Field filter information
-    SingleSubMetric:
-      type: object
-      properties:
-        value:
-          type: number
-          description: Value reported for the submetric
-          format: double
-        comment:
-          type:
-          - string
-          - 'null'
-          description: Comment associated with submetric
-      additionalProperties: false
-    GetUsersDetailsRequest:
-      type: object
-      properties:
-        dateKey:
-          type:
-          - string
-          - 'null'
-          description: 'Specifies the year and the month for which details should be returned. Format: YYYYMM.'
-          example: 202209
-        selectorLevel:
-          enum:
-          - Workspace
-          - Matter
-          - Client
-          - Instance
-          - Contract
-          type: string
-        itemSelectors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/HierarchyItemSelector'
-          description: Limits the results just to Users who have access to particular element in the hierarchy
-        filters:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/FieldFilter'
-        order:
-          $ref: '#/components/schemas/FieldOrder'
-        pagingRequest:
-          $ref: '#/components/schemas/PagingRequest'
-        includeWorkspaceInfo:
-          type: boolean
-          description: Specifies if the response should include workspace artifact IDs with matter and client structure to which user has access to. Default value is false.
-        shouldUnhashData:
-          type: boolean
-          description: Specifies if the response should include unhashed data. Default value is false.
-      additionalProperties: false
-      description: Request body used in users-details API
-    FieldOrder:
-      type: object
-      properties:
-        fieldName:
-          type:
-          - string
-          - 'null'
-          description: 'Specifies the field name which should be used for sorting the results.
-
-            The field matches the structure of the response payload, with the exception that all the property names should be upper case instead of lower case.'
-        direction:
-          enum:
-          - Asc
-          - Desc
-          type: string
-          description: Specifies the sort direction
-      additionalProperties: false
-      description: Allows to specify order that should be applied to the query result
     Money:
       type: object
       properties:
@@ -2970,6 +2787,189 @@ components:
           - 'null'
           description: ISO 4217 currency code
       additionalProperties: false
+    Contract:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          description: ID of the contract
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the contract
+      additionalProperties: false
+      description: Contract information
+    GetMonthDetailsResponseItem:
+      type: object
+      properties:
+        contract:
+          $ref: '#/components/schemas/Contract'
+        instance:
+          $ref: '#/components/schemas/Instance'
+        client:
+          $ref: '#/components/schemas/Client'
+        matter:
+          $ref: '#/components/schemas/Matter'
+        workspace:
+          $ref: '#/components/schemas/Workspace'
+        usageMetrics:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/SingleUsageMetric'
+          description: 'Usage metric represents current usage of the data or in case if previous month is requested it will represent state from the last day of monthly report.
+
+            Each property in this object is one of the _metricKeys_ specified in the request. If the usage metric does not exist for given item, it will be missing in the object.'
+        pricedMetrics:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/SinglePricedMetric'
+          description: "Priced metric represents billable data on the date when peak of the usage occurred. \nEach property in this object is one of the _metricKeys_ specified in the request. If the priced metric does not exist for given item, it will be missing in the object."
+        pricedMetricsSubMetricsSummary:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/SingleSubMetric'
+          description: 'Submetrics related to the priced metric.
+
+            Each property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for priced item, it will have zero Value in the object.'
+        usageMetricsSubMetricsSummary:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/SingleSubMetric'
+          description: 'Submetrics related to the usage metric.
+
+            Each property in this object is one of the _subMetricsSummaryKeys_ specified in the request. If the submetric does not exist for usage item, it will have zero Value in the object.'
+      additionalProperties: false
+    Workspace:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          description: ID of the workspace (GUID)
+        artifactID:
+          type: integer
+          description: Artifact ID of the workspace
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+          description: Name of the workspace
+        activityStatus:
+          type:
+          - string
+          - 'null'
+          description: 'Workspace status. Could be one of the following:
+
+            - Active
+
+            - Inactive
+
+            - Archived
+
+            - Deleted'
+        billableStatus:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies billable status of the workspace
+
+            List of possible values:
+
+            - Billable
+
+            - Non-billable
+
+            - Billable Plaintiff'
+        billableComment:
+          type:
+          - string
+          - 'null'
+          description: Additional information about billable status, populated when _billableStatus_ is _Non-billable_
+        anonymization:
+          type:
+          - string
+          - 'null'
+          description: 'Flag that identifies if workspace data is hashed.
+
+            If the value is _Hashed_ then value of a _Name_ field is replaced with _ArtifactID_ value.
+
+            List of possible values:
+
+            - Hashed
+
+            - None'
+        billableType:
+          type:
+          - string
+          - 'null'
+          description: 'Specifies billable type of the workspace
+
+            List of possible values:
+
+            - Repository
+
+            - Review
+
+            - Cold Storage'
+        anonymizedFields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          description: Object that holds what type of workspace data is hashed.
+        projectType:
+          type:
+          - string
+          - 'null'
+          description: Object that holds what type of use case the workspace has.
+      additionalProperties: false
+      description: Workspace information
+    HierarchyItemSelector:
+      type: object
+      properties:
+        contractID:
+          type:
+          - string
+          - 'null'
+        instanceID:
+          type:
+          - string
+          - 'null'
+        clientArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        matterArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        workspaceArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+      description: 'Specifies item to select.
+
+        instanceID_ must be provided, additionally depending on the chosen level must be provided _clientArtifactID_, _matterArtifactID_ or _workspaceArtifactID'
     Workspace_2:
       type: object
       properties:

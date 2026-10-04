@@ -113,6 +113,17 @@ components:
           type: integer
           format: int32
       additionalProperties: false
+    DirectoryListRequest:
+      required:
+      - path
+      type: object
+      properties:
+        path:
+          minLength: 1
+          type: string
+        paging:
+          $ref: '#/components/schemas/Page'
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -138,17 +149,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    DirectoryListRequest:
-      required:
-      - path
-      type: object
-      properties:
-        path:
-          minLength: 1
-          type: string
-        paging:
-          $ref: '#/components/schemas/Page'
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: http

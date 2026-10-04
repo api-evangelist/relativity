@@ -165,6 +165,35 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    QuerySlimResponse:
+      type: object
+      description: Response from the Relativity Object Manager queryslim endpoint.
+      properties:
+        TotalCount:
+          type: integer
+          format: int32
+          description: Total number of objects matching the query. If 0 and results are expected, verify object type and workspace permissions.
+        Objects:
+          type: array
+          description: Array of result objects. Each object contains an ArtifactID and a Values array. Values are ordered to match the Fields array at the bottom of the response.
+          items:
+            $ref: '#/components/schemas/QuerySlimObject'
+        CurrentStartIndex:
+          type: integer
+          format: int32
+          description: The start index of this result page.
+        ResultCount:
+          type: integer
+          format: int32
+          description: Number of objects returned in this response page.
+        Fields:
+          type:
+          - array
+          - 'null'
+          description: Metadata for each field returned, in the same order as Values in each Object.
+          items:
+            type: object
+      additionalProperties: false
     QuerySlimRequest:
       type: object
       description: Request body for the Relativity Object Manager queryslim endpoint.
@@ -216,35 +245,6 @@ components:
           format: int32
           description: Maximum number of results to return. Increase and paginate using 'start' for large environments.
           default: 100
-      additionalProperties: false
-    QuerySlimResponse:
-      type: object
-      description: Response from the Relativity Object Manager queryslim endpoint.
-      properties:
-        TotalCount:
-          type: integer
-          format: int32
-          description: Total number of objects matching the query. If 0 and results are expected, verify object type and workspace permissions.
-        Objects:
-          type: array
-          description: Array of result objects. Each object contains an ArtifactID and a Values array. Values are ordered to match the Fields array at the bottom of the response.
-          items:
-            $ref: '#/components/schemas/QuerySlimObject'
-        CurrentStartIndex:
-          type: integer
-          format: int32
-          description: The start index of this result page.
-        ResultCount:
-          type: integer
-          format: int32
-          description: Number of objects returned in this response page.
-        Fields:
-          type:
-          - array
-          - 'null'
-          description: Metadata for each field returned, in the same order as Values in each Object.
-          items:
-            type: object
       additionalProperties: false
     QuerySlimObject:
       type: object

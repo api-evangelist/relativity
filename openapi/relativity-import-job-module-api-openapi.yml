@@ -249,6 +249,24 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ValueResponse.ImportProgress:
+      description: ValueResponse of ImportProgress type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: object
+            properties:
+              RecordsInDataSources:
+                type: integer
+                example: 11
+              ImportedRecords:
+                type: integer
+                example: 10
+              ErrorRecords:
+                type: integer
+                example: 1
+      - $ref: '#/components/schemas/Response'
     ImportState:
       type: string
       example: New
@@ -262,45 +280,6 @@ components:
       - Canceled
       - Failed
       - Completed
-    Response:
-      type: object
-      properties:
-        IsSuccess:
-          type: boolean
-          example: true
-        ErrorMessage:
-          type: string
-          example: ''
-        ErrorCode:
-          type: string
-          example: ''
-        ImportJobID:
-          description: Import job identification GUID number.
-          type: string
-          format: uuid
-          example: 00000000-0000-0000-0000-000000000000
-    ValueResponse.ImportJobs:
-      description: ValueResponse of ImportJobs type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            type: object
-            properties:
-              Jobs:
-                type: array
-                items:
-                  type: string
-                  format: uuid
-                uniqueItems: true
-                description: Jobs Guid ids.
-                example:
-                - 1D2F6FF7-D3BA-49D4-BAF0-808533EE5233
-                - 00000000-0000-0000-0000-000000000000
-              TotalCount:
-                type: integer
-                example: 2
-      - $ref: '#/components/schemas/Response'
     createJobBodyRequest:
       type: object
       properties:
@@ -312,15 +291,6 @@ components:
           type: string
           description: External correlation ID.
           example: c0r31ati0n_ID
-    ValueResponse.String:
-      description: ValueResponse of string type
-      allOf:
-      - type: object
-        properties:
-          Value:
-            type: string
-            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
-      - $ref: '#/components/schemas/Response'
     ValueResponse.ImportDetails:
       description: ValueResponse of ImportDetails type
       allOf:
@@ -352,25 +322,80 @@ components:
                 format: date-time
                 example: '2021-11-30T09:17:19.81'
       - $ref: '#/components/schemas/Response'
-    ValueResponse.ImportProgress:
-      description: ValueResponse of ImportProgress type
+    ValueResponse.ImportJobs:
+      description: ValueResponse of ImportJobs type
       allOf:
       - type: object
         properties:
           Value:
             type: object
             properties:
-              RecordsInDataSources:
+              Jobs:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+                uniqueItems: true
+                description: Jobs Guid ids.
+                example:
+                - 1D2F6FF7-D3BA-49D4-BAF0-808533EE5233
+                - 00000000-0000-0000-0000-000000000000
+              TotalCount:
                 type: integer
-                example: 11
-              ImportedRecords:
-                type: integer
-                example: 10
-              ErrorRecords:
-                type: integer
-                example: 1
+                example: 2
       - $ref: '#/components/schemas/Response'
+    ValueResponse.String:
+      description: ValueResponse of string type
+      allOf:
+      - type: object
+        properties:
+          Value:
+            type: string
+            example: //emttest/DefaultFileShare/EDDS124421/loadfile_d2609a39-f0ab-492e-a98e-a3171671cb00.dat
+      - $ref: '#/components/schemas/Response'
+    Response:
+      type: object
+      properties:
+        IsSuccess:
+          type: boolean
+          example: true
+        ErrorMessage:
+          type: string
+          example: ''
+        ErrorCode:
+          type: string
+          example: ''
+        ImportJobID:
+          description: Import job identification GUID number.
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
   parameters:
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: Workspace identification number.
+      required: true
+      schema:
+        type: integer
+      example: 10000
+    start:
+      name: start
+      in: query
+      description: Index from which import jobs will be read.
+      required: true
+      schema:
+        type: integer
+      example: '0'
     importJobID:
       name: importJobID
       in: path
@@ -388,28 +413,3 @@ components:
       schema:
         type: integer
       example: 10
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: Workspace identification number.
-      required: true
-      schema:
-        type: integer
-      example: 10000
-    start:
-      name: start
-      in: query
-      description: Index from which import jobs will be read.
-      required: true
-      schema:
-        type: integer
-      example: '0'
-    X-CSRF-Header:
-      name: X-CSRF-Header
-      in: header
-      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
-      required: true
-      schema:
-        type: string
-        format: System.String
-        default: .

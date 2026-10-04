@@ -93,10 +93,36 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    CancelJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/CancelJobRequest'
+      additionalProperties: false
+      description: Request for cancelling an ARM Job
     RunJobResponse:
       type: object
       additionalProperties: false
       description: Response for running an ARM Job
+    RunJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RunJobRequest'
+      additionalProperties: false
+      description: Request for running an ARM Job
+    CancelJobRequest:
+      type: object
+      additionalProperties: false
+      description: Request for cancelling an ARM Job
+    CancelJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for cancelling an ARM Job
+    RunJobRequest:
+      type: object
+      additionalProperties: false
+      description: Request for running an ARM Job
     ProblemDetails:
       type: object
       properties:
@@ -122,29 +148,3 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    RunJobRequest:
-      type: object
-      additionalProperties: false
-      description: Request for running an ARM Job
-    RunJobRequestWrapper:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RunJobRequest'
-      additionalProperties: false
-      description: Request for running an ARM Job
-    CancelJobResponse:
-      type: object
-      additionalProperties: false
-      description: Response for cancelling an ARM Job
-    CancelJobRequest:
-      type: object
-      additionalProperties: false
-      description: Request for cancelling an ARM Job
-    CancelJobRequestWrapper:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/CancelJobRequest'
-      additionalProperties: false
-      description: Request for cancelling an ARM Job

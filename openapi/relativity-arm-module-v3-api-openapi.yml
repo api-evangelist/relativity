@@ -231,36 +231,53 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CancelJobRequest_V3:
-      title: CancelJobRequest_V3
+    RestoreJobRequest_V3:
+      title: RestoreJobRequest_V3
       type: object
+      properties:
+        ArchivePath:
+          type: string
+        JobPriority:
+          enum:
+          - Low
+          - Medium
+          - High
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ExistingTargetDatabase:
+          type: string
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V3'
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V3'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V3'
+        UiJobActionsLocked:
+          type: boolean
+    JobActions_V3:
+      title: JobActions_V3
+      type: object
+      properties:
+        Date:
+          type: string
+          format: date-time
+        Type:
+          type: string
+        UserName:
+          type: string
     UpdateRestoreJobResponse_V3:
       title: UpdateRestoreJobResponse_V3
       type: object
-    CancelJobResponse_V3:
-      title: CancelJobResponse_V3
-      type: object
-    CreateRestoreJobResponse_V3:
-      title: CreateRestoreJobResponse_V3
-      type: object
-      properties:
-        JobID:
-          type: string
-    UpdateArchiveJobResponse_V3:
-      title: UpdateArchiveJobResponse_V3
-      type: object
-    MigratorOptions_V3:
-      title: MigratorOptions_V3
-      type: object
-      additionalProperties:
-        type: object
-      example: '"Common": {"FileFirstFlow": {"IsFilesFirstFlow": true, "AdditionalFilesDirectoryPath": "path"}},"UserGroup": {"GroupMapping": {"AutoMapGroups": false,"GroupMappings": [{"ArchiveGroupID": 1000000,"InstanceGroupID": 1000000}]},"UserMapping": {"AutoMapUsers": true,"UserMappings": [{"ArchiveUserID": 7000000,"InstanceUserID": 1000000}]}'
-    IArmRestoreJobManager_V3_UpdateAsync_RequestBody:
-      title: IArmRestoreJobManager_V3_UpdateAsync_RequestBody
+    IArmArchiveJobManager_V3_CreateAsync_RequestBody:
+      title: IArmArchiveJobManager_V3_CreateAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/RestoreJobRequest_V3'
+          $ref: '#/components/schemas/ArchiveJobRequest_V3'
     JobDetails_V3:
       title: JobDetails_V3
       type: object
@@ -275,24 +292,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/JobActions_V3'
-    IArmJobActionManager_V3_RunAsync_RequestBody:
-      title: IArmJobActionManager_V3_RunAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RunJobRequest_V3'
-    IArmArchiveJobManager_V3_UpdateAsync_RequestBody:
-      title: IArmArchiveJobManager_V3_UpdateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest_V3'
-    RunJobResponse_V3:
-      title: RunJobResponse_V3
-      type: object
-    RunJobRequest_V3:
-      title: RunJobRequest_V3
-      type: object
     ArchiveJobResponse_V3:
       title: ArchiveJobResponse_V3
       type: object
@@ -322,62 +321,9 @@ components:
           $ref: '#/components/schemas/NotificationOptions_V3'
         UiJobActionsLocked:
           type: boolean
-    RestoreJobRequest_V3:
-      title: RestoreJobRequest_V3
+    UpdateArchiveJobResponse_V3:
+      title: UpdateArchiveJobResponse_V3
       type: object
-      properties:
-        ArchivePath:
-          type: string
-        JobPriority:
-          enum:
-          - Low
-          - Medium
-          - High
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        ExistingTargetDatabase:
-          type: string
-        DestinationOptions:
-          $ref: '#/components/schemas/RestoreDestinationOptions_V3'
-        MigratorOptions:
-          $ref: '#/components/schemas/MigratorOptions_V3'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V3'
-        UiJobActionsLocked:
-          type: boolean
-    RestoreDestinationOptions_V3:
-      title: RestoreDestinationOptions_V3
-      type: object
-      properties:
-        MatterID:
-          type: integer
-    JobActions_V3:
-      title: JobActions_V3
-      type: object
-      properties:
-        Date:
-          type: string
-          format: date-time
-        Type:
-          type: string
-        UserName:
-          type: string
-    IArmJobActionManager_V3_CancelAsync_RequestBody:
-      title: IArmJobActionManager_V3_CancelAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/CancelJobRequest_V3'
-    IArmArchiveJobManager_V3_CreateAsync_RequestBody:
-      title: IArmArchiveJobManager_V3_CreateAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest_V3'
     NotificationOptions_V3:
       title: NotificationOptions_V3
       type: object
@@ -386,12 +332,48 @@ components:
           type: boolean
         NotifyJobExecutor:
           type: boolean
+    IArmRestoreJobManager_V3_UpdateAsync_RequestBody:
+      title: IArmRestoreJobManager_V3_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RestoreJobRequest_V3'
+    IArmArchiveJobManager_V3_UpdateAsync_RequestBody:
+      title: IArmArchiveJobManager_V3_UpdateAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest_V3'
     IArmRestoreJobManager_V3_CreateAsync_RequestBody:
       title: IArmRestoreJobManager_V3_CreateAsync_RequestBody
       type: object
       properties:
         request:
           $ref: '#/components/schemas/RestoreJobRequest_V3'
+    RunJobRequest_V3:
+      title: RunJobRequest_V3
+      type: object
+    MigratorOptions_V3:
+      title: MigratorOptions_V3
+      type: object
+      additionalProperties:
+        type: object
+      example: '"Common": {"FileFirstFlow": {"IsFilesFirstFlow": true, "AdditionalFilesDirectoryPath": "path"}},"UserGroup": {"GroupMapping": {"AutoMapGroups": false,"GroupMappings": [{"ArchiveGroupID": 1000000,"InstanceGroupID": 1000000}]},"UserMapping": {"AutoMapUsers": true,"UserMappings": [{"ArchiveUserID": 7000000,"InstanceUserID": 1000000}]}'
+    CreateRestoreJobResponse_V3:
+      title: CreateRestoreJobResponse_V3
+      type: object
+      properties:
+        JobID:
+          type: string
+    RestoreDestinationOptions_V3:
+      title: RestoreDestinationOptions_V3
+      type: object
+      properties:
+        MatterID:
+          type: integer
+    CancelJobResponse_V3:
+      title: CancelJobResponse_V3
+      type: object
     JobProgressResponse_V3:
       title: JobProgressResponse_V3
       type: object
@@ -408,39 +390,21 @@ components:
           - Errored
           - Completed
           type: string
-    RestoreJobResponse_V3:
-      title: RestoreJobResponse_V3
+    IArmJobActionManager_V3_CancelAsync_RequestBody:
+      title: IArmJobActionManager_V3_CancelAsync_RequestBody
       type: object
       properties:
-        JobID:
-          type: string
-        JobName:
-          type: string
-        ArchivePath:
-          type: string
-        ScheduledStartTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        SourceWorkspace:
-          type: string
-        DestinationWorkspaceID:
-          type:
-          - integer
-          - 'null'
-        ExistingTargetDatabase:
-          type: string
-        JobDetails:
-          $ref: '#/components/schemas/JobDetails_V3'
-        DestinationOptions:
-          $ref: '#/components/schemas/RestoreDestinationOptions_V3'
-        MigratorOptions:
-          $ref: '#/components/schemas/MigratorOptions_V3'
-        NotificationOptions:
-          $ref: '#/components/schemas/NotificationOptions_V3'
-        UiJobActionsLocked:
-          type: boolean
+        request:
+          $ref: '#/components/schemas/CancelJobRequest_V3'
+    RunJobResponse_V3:
+      title: RunJobResponse_V3
+      type: object
+    IArmJobActionManager_V3_RunAsync_RequestBody:
+      title: IArmJobActionManager_V3_RunAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RunJobRequest_V3'
     ArchiveJobRequest_V3:
       title: ArchiveJobRequest_V3
       type: object
@@ -477,6 +441,42 @@ components:
       properties:
         JobID:
           type: string
+    RestoreJobResponse_V3:
+      title: RestoreJobResponse_V3
+      type: object
+      properties:
+        JobID:
+          type: string
+        JobName:
+          type: string
+        ArchivePath:
+          type: string
+        ScheduledStartTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        SourceWorkspace:
+          type: string
+        DestinationWorkspaceID:
+          type:
+          - integer
+          - 'null'
+        ExistingTargetDatabase:
+          type: string
+        JobDetails:
+          $ref: '#/components/schemas/JobDetails_V3'
+        DestinationOptions:
+          $ref: '#/components/schemas/RestoreDestinationOptions_V3'
+        MigratorOptions:
+          $ref: '#/components/schemas/MigratorOptions_V3'
+        NotificationOptions:
+          $ref: '#/components/schemas/NotificationOptions_V3'
+        UiJobActionsLocked:
+          type: boolean
+    CancelJobRequest_V3:
+      title: CancelJobRequest_V3
+      type: object
   parameters:
     x-csrf-header:
       name: x-csrf-header

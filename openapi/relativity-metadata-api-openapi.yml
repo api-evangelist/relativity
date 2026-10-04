@@ -86,6 +86,16 @@ components:
         isActive:
           type: boolean
       additionalProperties: false
+    MetadataDto:
+      type: object
+      properties:
+        origins:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricOriginDto'
+      additionalProperties: false
     MetricOriginDto:
       type: object
       properties:
@@ -128,16 +138,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    MetadataDto:
-      type: object
-      properties:
-        origins:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/MetricOriginDto'
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: http

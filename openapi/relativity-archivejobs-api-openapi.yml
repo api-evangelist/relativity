@@ -228,6 +228,18 @@ components:
           description: Gets or sets the list of additional recipient emails.
       additionalProperties: false
       description: ARM Job notification options
+    JobPriority:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: Job priority levels
+      format: int32
+    UpdateArchiveJobResponse:
+      type: object
+      additionalProperties: false
+      description: Response for Archive Job update
     CreateArchiveJobResponse:
       type: object
       properties:
@@ -238,35 +250,6 @@ components:
           description: Gets or sets the created Job id.
       additionalProperties: false
       description: Response for Archive Job creation
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    UpdateArchiveJobResponse:
-      type: object
-      additionalProperties: false
-      description: Response for Archive Job update
     ArchiveJobResponse:
       type: object
       properties:
@@ -321,14 +304,13 @@ components:
           description: Gets or sets a value indicating whether this job ui actions are locked.
       additionalProperties: false
       description: Response with Archive Job
-    JobPriority:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: Job priority levels
-      format: int32
+    ArchiveJobRequestWrapper:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ArchiveJobRequest'
+      additionalProperties: false
+      description: Request to create new Archive job
     JobDetails:
       type: object
       properties:
@@ -362,10 +344,28 @@ components:
           description: User who performed the action
       additionalProperties: false
       description: Represents an action performed on a job
-    ArchiveJobRequestWrapper:
+    ProblemDetails:
       type: object
       properties:
-        request:
-          $ref: '#/components/schemas/ArchiveJobRequest'
-      additionalProperties: false
-      description: Request to create new Archive job
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}

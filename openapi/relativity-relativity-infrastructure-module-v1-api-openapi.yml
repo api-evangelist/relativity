@@ -1731,289 +1731,31 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    AgentInstanceLimitResult:
-      title: AgentInstanceLimitResult
+    WorkerServerRequest:
+      title: WorkerServerRequest
       type: object
       properties:
-        Limit:
-          enum:
-          - MinPerEnvironment
-          - MaxPerEnvironment
-          - MinPerResourcePool
-          - MinPerServer
-          - MaxPerServer
-          - LastPerEnvironment
-          type: string
-        ResourcePool:
-          $ref: '#/components/schemas/Securable_1'
-        AgentServer:
-          $ref: '#/components/schemas/Securable_1'
-    SqlDistributedServerRequest:
-      title: SqlDistributedServerRequest
-      type: object
-      properties:
-        FriendlyName:
-          type: string
-        IsVisible:
-          type: boolean
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        BcpPath:
-          type: string
-        WorkspaceUpgradeLimit:
-          type: integer
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    AnalyticsServerRequest:
-      title: AnalyticsServerRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        AnalyticsOperations:
+        WorkerDesignatedWork:
           type: array
           items:
             $ref: '#/components/schemas/ObjectIdentifier'
-        Url:
-          type: string
-        RestApiUsername:
-          type: string
-        RestApiPassword:
-          type: string
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        MaximumConnectors:
-          type: integer
-        MaximumTotalConnectors:
-          type: integer
         Keywords:
           type: string
         Notes:
           type: string
-    FieldRef:
-      title: FieldRef
+    Sort:
+      title: Sort
       type: object
       properties:
-        ArtifactID:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRef'
+        Order:
           type: integer
-        ViewFieldID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-        Name:
+        Direction:
+          enum:
+          - Ascending
+          - Descending
           type: string
-    WebApiFormsAuthServerRequest:
-      title: WebApiFormsAuthServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    WebApiWindowsAuthServerRequest:
-      title: WebApiWindowsAuthServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    WebServerRequest:
-      title: WebServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Url:
-          type: string
-        IsUserLoadBalancingEnabled:
-          type: boolean
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    RelativityObjectSlim:
-      title: RelativityObjectSlim
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Values:
-          type: array
-          items:
-            $ref: '#/components/schemas/Object'
-    ResourcePoolRequest:
-      title: ResourcePoolRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        Client:
-          $ref: '#/components/schemas/Securable_1'
-        IsVisible:
-          type: boolean
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    MotdResponse:
-      title: MotdResponse
-      type: object
-      properties:
-        Message:
-          type: string
-        Enabled:
-          type: boolean
-        AllowDismiss:
-          type: boolean
-    WebDistributedWindowsAuthServerRequest:
-      title: WebDistributedWindowsAuthServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    WebWindowsAuthServerRequest:
-      title: WebWindowsAuthServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Url:
-          type: string
-        IsUserLoadBalancingEnabled:
-          type: boolean
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    SampleParameters:
-      title: SampleParameters
-      type: object
-      properties:
-        ExistingToken:
-          type:
-          - string
-          - 'null'
-        MarginOfError:
-          type: number
-        ConfidenceLevel:
-          type: number
-        FixedSampleSize:
-          type: integer
-        SamplingPercentage:
-          type: number
-    ObjectType:
-      title: ObjectType
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-        Guids:
-          type: array
-          items:
-            type: string
-        ArtifactTypeID:
-          type: integer
-    ObjectTypeRef:
-      title: ObjectTypeRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-        Guid:
-          type:
-          - string
-          - 'null'
-        ArtifactTypeID:
-          type: integer
-    AgentServerRequest:
-      title: AgentServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        TemporaryDirectory:
-          type: string
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    DisplayableObjectIdentifier:
-      title: DisplayableObjectIdentifier
-      type: object
-      properties:
-        Name:
-          type: string
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-    SearchProviderCondition:
-      title: SearchProviderCondition
-      type: object
-      properties:
-        SearchIndex:
-          $ref: '#/components/schemas/SearchIndexRef'
-        Input:
-          type: string
-    WorkerManagerServerRequest:
-      title: WorkerManagerServerRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        ServerName:
-          type: string
-        IsDefault:
-          type: boolean
-        TemporaryDirectory:
-          type: string
-        InventoryPriority:
-          type: integer
-        DiscoveryPriority:
-          type: integer
-        PublishPriority:
-          type: integer
-        MassImagingPriority:
-          type: integer
-        ImageOnTheFlyPriority:
-          type: integer
-        SingleSaveAsPdfPriority:
-          type: integer
-        MassSaveAsPdfPriority:
-          type: integer
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    AnalyticsServerDefaultValuesResponse:
-      title: AnalyticsServerDefaultValuesResponse
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        MaximumConnectors:
-          type: integer
-        MaximumTotalConnectors:
-          type: integer
     QueryRequest:
       title: QueryRequest
       type: object
@@ -2086,133 +1828,6 @@ components:
           - DefaultWithErrors
           - TokenizedWithErrors
           type: string
-    Sort:
-      title: Sort
-      type: object
-      properties:
-        FieldIdentifier:
-          $ref: '#/components/schemas/FieldRef'
-        Order:
-          type: integer
-        Direction:
-          enum:
-          - Ascending
-          - Descending
-          type: string
-    WebFormsAuthServerRequest:
-      title: WebFormsAuthServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Url:
-          type: string
-        IsUserLoadBalancingEnabled:
-          type: boolean
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    Meta:
-      title: Meta
-      type: object
-      properties:
-        Unsupported:
-          type: array
-          items:
-            type: string
-        ReadOnly:
-          type: array
-          items:
-            type: string
-    WebDistributedServerRequest:
-      title: WebDistributedServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    WorkerManagerServerDefaultValuesResponse:
-      title: WorkerManagerServerDefaultValuesResponse
-      type: object
-      properties:
-        InventoryPriority:
-          type: integer
-        DiscoveryPriority:
-          type: integer
-        PublishPriority:
-          type: integer
-        MassImagingPriority:
-          type: integer
-        ImageOnTheFlyPriority:
-          type: integer
-        SingleSaveAsPdfPriority:
-          type: integer
-        MassSaveAsPdfPriority:
-          type: integer
-    Securable_1:
-      title: Securable`1
-      type: object
-      properties:
-        Secured:
-          type: boolean
-        Value:
-          $ref: '#/components/schemas/ObjectIdentifier'
-    SearchIndexRef:
-      title: SearchIndexRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    FileRepositoryServerRequest:
-      title: FileRepositoryServerRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        IsVisible:
-          type: boolean
-        UncPath:
-          type: string
-        FileAccessCredentials:
-          $ref: '#/components/schemas/Securable_1'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    WebDistributedFormsAuthServerRequest:
-      title: WebDistributedFormsAuthServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    AgentRequest:
-      title: AgentRequest
-      type: object
-      properties:
-        AgentType:
-          $ref: '#/components/schemas/Securable_1'
-        AgentServer:
-          $ref: '#/components/schemas/Securable_1'
-        Enabled:
-          type: boolean
-        Interval:
-          type: number
-        LoggingLevel:
-          type: integer
-        Keywords:
-          type: string
-        Notes:
-          type: string
     ServerTypeResponse:
       title: ServerTypeResponse
       type: object
@@ -2223,22 +1838,30 @@ components:
           type: string
         Url:
           type: string
-    ObjectIdentifier:
-      title: ObjectIdentifier
+    FieldRef:
+      title: FieldRef
       type: object
       properties:
         ArtifactID:
+          type: integer
+        ViewFieldID:
           type: integer
         Guids:
           type: array
           items:
             type: string
-    WebBackgroundProcessingServerRequest:
-      title: WebBackgroundProcessingServerRequest
+        Name:
+          type: string
+    ResourcePoolRequest:
+      title: ResourcePoolRequest
       type: object
       properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
+        Name:
+          type: string
+        Client:
+          $ref: '#/components/schemas/Securable_1'
+        IsVisible:
+          type: boolean
         Keywords:
           type: string
         Notes:
@@ -2261,6 +1884,210 @@ components:
           type: string
         Notes:
           type: string
+    ObjectIdentifier:
+      title: ObjectIdentifier
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+    Meta:
+      title: Meta
+      type: object
+      properties:
+        Unsupported:
+          type: array
+          items:
+            type: string
+        ReadOnly:
+          type: array
+          items:
+            type: string
+    AnalyticsServerRequest:
+      title: AnalyticsServerRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        AnalyticsOperations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectIdentifier'
+        Url:
+          type: string
+        RestApiUsername:
+          type: string
+        RestApiPassword:
+          type: string
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        MaximumConnectors:
+          type: integer
+        MaximumTotalConnectors:
+          type: integer
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    SqlDistributedServerRequest:
+      title: SqlDistributedServerRequest
+      type: object
+      properties:
+        FriendlyName:
+          type: string
+        IsVisible:
+          type: boolean
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        BcpPath:
+          type: string
+        WorkspaceUpgradeLimit:
+          type: integer
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    WebApiServerRequest:
+      title: WebApiServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    WebServerRequest:
+      title: WebServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Url:
+          type: string
+        IsUserLoadBalancingEnabled:
+          type: boolean
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    WebApiFormsAuthServerRequest:
+      title: WebApiFormsAuthServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    WebBackgroundProcessingServerRequest:
+      title: WebBackgroundProcessingServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    SampleDetails:
+      title: SampleDetails
+      type: object
+      properties:
+        SampleSize:
+          type:
+          - integer
+          - 'null'
+        UniverseSize:
+          type:
+          - integer
+          - 'null'
+        Token:
+          type: string
+    WorkerManagerServerRequest:
+      title: WorkerManagerServerRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        ServerName:
+          type: string
+        IsDefault:
+          type: boolean
+        TemporaryDirectory:
+          type: string
+        InventoryPriority:
+          type: integer
+        DiscoveryPriority:
+          type: integer
+        PublishPriority:
+          type: integer
+        MassImagingPriority:
+          type: integer
+        ImageOnTheFlyPriority:
+          type: integer
+        SingleSaveAsPdfPriority:
+          type: integer
+        MassSaveAsPdfPriority:
+          type: integer
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    AnalyticsServerDefaultValuesResponse:
+      title: AnalyticsServerDefaultValuesResponse
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        MaximumConnectors:
+          type: integer
+        MaximumTotalConnectors:
+          type: integer
+    SampleParameters:
+      title: SampleParameters
+      type: object
+      properties:
+        ExistingToken:
+          type:
+          - string
+          - 'null'
+        MarginOfError:
+          type: number
+        ConfidenceLevel:
+          type: number
+        FixedSampleSize:
+          type: integer
+        SamplingPercentage:
+          type: number
+    ServicesServerRequest:
+      title: ServicesServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    ObjectTypeRef:
+      title: ObjectTypeRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+        Guid:
+          type:
+          - string
+          - 'null'
+        ArtifactTypeID:
+          type: integer
     QueryResultSlim:
       title: QueryResultSlim
       type: object
@@ -2293,24 +2120,250 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Field'
-    WorkerServerRequest:
-      title: WorkerServerRequest
-      type: object
-      properties:
-        WorkerDesignatedWork:
-          type: array
-          items:
-            $ref: '#/components/schemas/ObjectIdentifier'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    ServicesServerRequest:
-      title: ServicesServerRequest
+    WebDistributedServerRequest:
+      title: WebDistributedServerRequest
       type: object
       properties:
         Status:
           $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    AgentServerRequest:
+      title: AgentServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        TemporaryDirectory:
+          type: string
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    Object:
+      title: Object
+      type: object
+    MotdResponse:
+      title: MotdResponse
+      type: object
+      properties:
+        Message:
+          type: string
+        Enabled:
+          type: boolean
+        AllowDismiss:
+          type: boolean
+    WorkerManagerServerDefaultValuesResponse:
+      title: WorkerManagerServerDefaultValuesResponse
+      type: object
+      properties:
+        InventoryPriority:
+          type: integer
+        DiscoveryPriority:
+          type: integer
+        PublishPriority:
+          type: integer
+        MassImagingPriority:
+          type: integer
+        ImageOnTheFlyPriority:
+          type: integer
+        SingleSaveAsPdfPriority:
+          type: integer
+        MassSaveAsPdfPriority:
+          type: integer
+    RelativityObjectSlim:
+      title: RelativityObjectSlim
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Values:
+          type: array
+          items:
+            $ref: '#/components/schemas/Object'
+    SearchIndexRef:
+      title: SearchIndexRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+    ObjectType:
+      title: ObjectType
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+        Guids:
+          type: array
+          items:
+            type: string
+        ArtifactTypeID:
+          type: integer
+    FileRepositoryServerRequest:
+      title: FileRepositoryServerRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        IsVisible:
+          type: boolean
+        UncPath:
+          type: string
+        FileAccessCredentials:
+          $ref: '#/components/schemas/Securable_1'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    Securable_1:
+      title: Securable`1
+      type: object
+      properties:
+        Secured:
+          type: boolean
+        Value:
+          $ref: '#/components/schemas/ObjectIdentifier'
+    AgentInstanceLimitResult:
+      title: AgentInstanceLimitResult
+      type: object
+      properties:
+        Limit:
+          enum:
+          - MinPerEnvironment
+          - MaxPerEnvironment
+          - MinPerResourcePool
+          - MinPerServer
+          - MaxPerServer
+          - LastPerEnvironment
+          type: string
+        ResourcePool:
+          $ref: '#/components/schemas/Securable_1'
+        AgentServer:
+          $ref: '#/components/schemas/Securable_1'
+    WebDistributedFormsAuthServerRequest:
+      title: WebDistributedFormsAuthServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    DisplayableObjectIdentifier:
+      title: DisplayableObjectIdentifier
+      type: object
+      properties:
+        Name:
+          type: string
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+    AgentRequest:
+      title: AgentRequest
+      type: object
+      properties:
+        AgentType:
+          $ref: '#/components/schemas/Securable_1'
+        AgentServer:
+          $ref: '#/components/schemas/Securable_1'
+        Enabled:
+          type: boolean
+        Interval:
+          type: number
+        LoggingLevel:
+          type: integer
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    MotdRequest:
+      title: MotdRequest
+      type: object
+      properties:
+        Message:
+          type: string
+        Enabled:
+          type: boolean
+        AllowDismiss:
+          type: boolean
+    SearchProviderCondition:
+      title: SearchProviderCondition
+      type: object
+      properties:
+        SearchIndex:
+          $ref: '#/components/schemas/SearchIndexRef'
+        Input:
+          type: string
+    WebDistributedWindowsAuthServerRequest:
+      title: WebDistributedWindowsAuthServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    WebWindowsAuthServerRequest:
+      title: WebWindowsAuthServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Url:
+          type: string
+        IsUserLoadBalancingEnabled:
+          type: boolean
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    CacheLocationServerRequest:
+      title: CacheLocationServerRequest
+      type: object
+      properties:
+        Name:
+          type: string
+        IsVisible:
+          type: boolean
+        UncPath:
+          type: string
+        FileAccessCredentials:
+          $ref: '#/components/schemas/Securable_1'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    WebApiWindowsAuthServerRequest:
+      title: WebApiWindowsAuthServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Keywords:
+          type: string
+        Notes:
+          type: string
+    WebFormsAuthServerRequest:
+      title: WebFormsAuthServerRequest
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Url:
+          type: string
+        IsUserLoadBalancingEnabled:
+          type: boolean
         Keywords:
           type: string
         Notes:
@@ -2365,116 +2418,7 @@ components:
             type: string
         Name:
           type: string
-    CacheLocationServerRequest:
-      title: CacheLocationServerRequest
-      type: object
-      properties:
-        Name:
-          type: string
-        IsVisible:
-          type: boolean
-        UncPath:
-          type: string
-        FileAccessCredentials:
-          $ref: '#/components/schemas/Securable_1'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    SampleDetails:
-      title: SampleDetails
-      type: object
-      properties:
-        SampleSize:
-          type:
-          - integer
-          - 'null'
-        UniverseSize:
-          type:
-          - integer
-          - 'null'
-        Token:
-          type: string
-    MotdRequest:
-      title: MotdRequest
-      type: object
-      properties:
-        Message:
-          type: string
-        Enabled:
-          type: boolean
-        AllowDismiss:
-          type: boolean
-    WebApiServerRequest:
-      title: WebApiServerRequest
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Keywords:
-          type: string
-        Notes:
-          type: string
-    Object:
-      title: Object
-      type: object
   parameters:
-    count:
-      name: count
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    serverID:
-      name: serverID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    agentID:
-      name: agentID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    includeMetadata:
-      name: includeMetadata
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    resourcePoolID:
-      name: resourcePoolID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    resourceServerID:
-      name: resourceServerID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    includeActions:
-      name: includeActions
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
-    length:
-      name: length
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
     workspaceID:
       name: workspaceID
       in: path
@@ -2489,22 +2433,22 @@ components:
       required: true
       schema:
         type: integer
-    resourceType:
-      name: resourceType
+    includeMetadata:
+      name: includeMetadata
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    count:
+      name: count
       in: query
       description: ''
       required: true
       schema:
-        type: string
-    agentTypeGuid:
-      name: agentTypeGuid
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    userID:
-      name: userID
+        type: integer
+    serverID:
+      name: serverID
       in: path
       description: ''
       required: true
@@ -2512,6 +2456,62 @@ components:
         type: integer
     agentTypeID:
       name: agentTypeID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    agentID:
+      name: agentID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    agentTypeGuid:
+      name: agentTypeGuid
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    length:
+      name: length
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    userID:
+      name: userID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    resourceType:
+      name: resourceType
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    resourceServerID:
+      name: resourceServerID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    includeActions:
+      name: includeActions
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    resourcePoolID:
+      name: resourcePoolID
       in: path
       description: ''
       required: true

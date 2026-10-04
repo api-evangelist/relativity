@@ -30,24 +30,6 @@ paths:
           description: Bad Request. Validation exception.
       x-summary-source: derived
 components:
-  parameters:
-    fileName:
-      name: fileName
-      in: path
-      description: The name of the file to return.
-      required: true
-      schema:
-        type: string
-      example: CsvReader.js
-    X-CSRF-Header:
-      name: X-CSRF-Header
-      in: header
-      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
-      required: true
-      schema:
-        type: string
-        format: System.String
-        default: .
   schemas:
     Response:
       type: object
@@ -78,3 +60,21 @@ components:
                 type: string
                 example: function CsvReader() {.....}
       - $ref: '#/components/schemas/Response'
+  parameters:
+    fileName:
+      name: fileName
+      in: path
+      description: The name of the file to return.
+      required: true
+      schema:
+        type: string
+      example: CsvReader.js
+    X-CSRF-Header:
+      name: X-CSRF-Header
+      in: header
+      description: 'Required CSRF header for any KeplerService. *Note: Actual string value does not matter*. '
+      required: true
+      schema:
+        type: string
+        format: System.String
+        default: .

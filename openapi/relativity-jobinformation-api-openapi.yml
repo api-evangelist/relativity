@@ -40,6 +40,30 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    JobProgressResponse:
+      type: object
+      properties:
+        jobId:
+          type:
+          - string
+          - 'null'
+          description: Unique identifier of the job
+        jobState:
+          $ref: '#/components/schemas/JobProgressStatus'
+      additionalProperties: false
+      description: Response containing job progress information
+    JobProgressStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      description: Job progress status values
+      format: int32
     ProblemDetails:
       type: object
       properties:
@@ -65,27 +89,3 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    JobProgressResponse:
-      type: object
-      properties:
-        jobId:
-          type:
-          - string
-          - 'null'
-          description: Unique identifier of the job
-        jobState:
-          $ref: '#/components/schemas/JobProgressStatus'
-      additionalProperties: false
-      description: Response containing job progress information
-    JobProgressStatus:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      type: integer
-      description: Job progress status values
-      format: int32

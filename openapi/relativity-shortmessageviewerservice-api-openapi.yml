@@ -247,21 +247,39 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo:
+    Reviewservice.Api.V2.Models.GetParticipantInfoRequest:
       type: object
       properties:
-        Id:
+        participantRequests:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo'
+      additionalProperties: false
+    Reviewservice.Api.V2.Models.SliceRSMFRequest:
+      type: object
+      properties:
+        sliceRequest:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequest'
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.SliceRequest:
+      type: object
+      properties:
+        EventIndexes:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        Options:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequestOptions'
+        CorrelationId:
           type:
           - string
           - 'null'
-        Name:
-          type:
-          - string
-          - 'null'
-        Email:
-          type:
-          - string
-          - 'null'
+          format: uuid
       additionalProperties: false
     Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails:
       type: object
@@ -285,36 +303,50 @@ components:
         ErrorCode:
           $ref: '#/components/schemas/Relativity.RSMFU.Validator.RSMFValidatorErrorCode'
       additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo:
+      type: object
+      properties:
+        Id:
+          type:
+          - string
+          - 'null'
+        Name:
+          type:
+          - string
+          - 'null'
+        Email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.V2.ParticipantResponseInfo:
+      type: object
+      properties:
+        Id:
+          type:
+          - string
+          - 'null'
+        EntityName:
+          type:
+          - string
+          - 'null'
+        Aliases:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        Url:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType:
       enum:
       - Passed
       - Failed
       - PassedWithWarnings
       type: string
-    Relativity.DocumentViewer.Services.V2.SliceRequest:
-      type: object
-      properties:
-        EventIndexes:
-          type:
-          - array
-          - 'null'
-          items:
-            type: integer
-            format: int32
-        Options:
-          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequestOptions'
-        CorrelationId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.SliceRSMFRequest:
-      type: object
-      properties:
-        sliceRequest:
-          $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.SliceRequest'
-      additionalProperties: false
     Relativity.RSMFU.Validator.RSMFValidatorErrorCode:
       enum:
       - RSMFValidatorError
@@ -368,6 +400,24 @@ components:
       - ManifestEventReadReceiptMissingTimeZone
       - ManifestUnknownObjectMissingTimeZone
       type: string
+    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse:
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType'
+        Errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
+        Warnings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
+      additionalProperties: false
     Relativity.DocumentViewer.Services.V2.SliceRequestOptions:
       type: object
       properties:
@@ -389,55 +439,15 @@ components:
           - boolean
           - 'null'
       additionalProperties: false
-    Relativity.DocumentViewer.Services.V2.ParticipantResponseInfo:
+    Reviewservice.Api.V2.Models.GetAttachmentInfoRequest:
       type: object
       properties:
-        Id:
-          type:
-          - string
-          - 'null'
-        EntityName:
-          type:
-          - string
-          - 'null'
-        Aliases:
+        attachmentIDs:
           type:
           - array
           - 'null'
           items:
             type: string
-        Url:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.GetParticipantInfoRequest:
-      type: object
-      properties:
-        participantRequests:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.V2.ParticipantRequestInfo'
-      additionalProperties: false
-    Relativity.DocumentViewer.Domain.DTOs.RSMFValidationResponse:
-      type: object
-      properties:
-        Status:
-          $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.Enums.RSMFValidationStatusType'
-        Errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
-        Warnings:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Domain.DTOs.RSMFValidationDetails'
       additionalProperties: false
     Relativity.DocumentViewer.Services.V2.AttachmentInfo:
       type: object
@@ -453,16 +463,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Reviewservice.Api.V2.Models.GetAttachmentInfoRequest:
-      type: object
-      properties:
-        attachmentIDs:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
       additionalProperties: false
   securitySchemes:
     Bearer:

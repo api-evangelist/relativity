@@ -281,51 +281,42 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    GenericMessageResponseModel:
-      title: GenericMessageResponseModel
+    ApplicationInstallSearchItem:
+      title: ApplicationInstallSearchItem
       type: object
       properties:
+        ApplicationInstallID:
+          type: integer
+        ApplicationIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        WorkspaceIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        ClientIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        MatterIdentifier:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
         Message:
           type: string
-        Success:
+        RootFolderID:
+          type: integer
+        InstallStatus:
+          $ref: '#/components/schemas/InstallStatus'
+        Version:
+          type: string
+        IsOutOfDate:
           type: boolean
-    InstallStatus:
-      title: InstallStatus
-      type: object
-      properties:
-        Code:
-          enum:
-          - Unknown
-          - Pending
-          - InProgress
-          - Failed
-          - Completed
-          - Canceled
-          type: string
-        Message:
-          type: string
-        Details:
-          type: string
-        GetDetailsAction:
-          $ref: '#/components/schemas/Action'
-        RetryInstallAction:
-          $ref: '#/components/schemas/Action'
-        CancelInstallAction:
-          $ref: '#/components/schemas/Action'
-    Workload:
-      title: Workload
-      type: object
-      properties:
-        Size:
-          enum:
-          - None
-          - One
-          - S
-          - M
-          - L
-          - XL
-          - XXL
-          type: string
+        InstalledBy:
+          $ref: '#/components/schemas/DisplayableObjectIdentifier'
+        StartedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        CompletedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
     ValidationSettings:
       title: ValidationSettings
       type: object
@@ -338,34 +329,16 @@ components:
           - Failure
           - NotApplicable
           type: string
-    Version:
-      title: Version
+    AcknowledgeOnBehalfModel:
+      title: AcknowledgeOnBehalfModel
       type: object
       properties:
-        Major:
-          type: integer
-        Minor:
-          type: integer
-        Build:
-          type: integer
-        Revision:
-          type: integer
-        MajorRevision:
-          $ref: '#/components/schemas/Int16'
-        MinorRevision:
-          $ref: '#/components/schemas/Int16'
-    ArtifactIDCollection:
-      title: ArtifactIDCollection
-      type: object
-      properties:
-        Error:
-          type: string
-        TotalCount:
-          type: integer
-        ArtifactIDs:
+        ArtifactIds:
           type: array
           items:
             type: integer
+        Reason:
+          type: string
     HttpResponseMessage:
       title: HttpResponseMessage
       type: object
@@ -435,16 +408,6 @@ components:
           $ref: '#/components/schemas/HttpRequestMessage'
         IsSuccessStatusCode:
           type: boolean
-    AcknowledgeOnBehalfModel:
-      title: AcknowledgeOnBehalfModel
-      type: object
-      properties:
-        ArtifactIds:
-          type: array
-          items:
-            type: integer
-        Reason:
-          type: string
     LegalHoldApplicationInstallResponse:
       title: LegalHoldApplicationInstallResponse
       type: object
@@ -471,135 +434,35 @@ components:
           $ref: '#/components/schemas/Action'
         LastPage:
           $ref: '#/components/schemas/Action'
-    DisplayableObjectIdentifier:
-      title: DisplayableObjectIdentifier
-      type: object
-      properties:
-        Name:
-          type: string
-        ArtifactID:
-          type: integer
-        Guids:
-          type: array
-          items:
-            type: string
-    Int16:
-      title: Int16
-      type: object
-    Action:
-      title: Action
-      type: object
-      properties:
-        Name:
-          type: string
-        Href:
-          type: string
-        Verb:
-          type: string
-        IsAvailable:
-          type: boolean
-        Reason:
-          type: array
-          items:
-            type: string
-    HttpRequestMessage:
-      title: HttpRequestMessage
-      type: object
-      properties:
-        Version:
-          $ref: '#/components/schemas/Version'
-        Content:
-          $ref: '#/components/schemas/HttpContent'
-        Method:
-          $ref: '#/components/schemas/HttpMethod'
-        RequestUri:
-          $ref: '#/components/schemas/Uri'
-        Headers:
-          type: array
-          items:
-            type: string
-            format: HttpRequestHeaders
-        Properties:
-          type: object
-          additionalProperties:
-            title: Object
-            type: object
-    HttpContent:
-      title: HttpContent
-      type: object
-      properties:
-        Headers:
-          type: array
-          items:
-            type: string
-            format: HttpContentHeaders
-    CommunicationLayoutStateModel:
-      title: CommunicationLayoutStateModel
-      type: object
     UrlRedirectModel:
       title: UrlRedirectModel
       type: object
       properties:
         Url:
           type: string
-    ActiveCustodianSummary:
-      title: ActiveCustodianSummary
+    InstallStatus:
+      title: InstallStatus
       type: object
       properties:
-        ProjectID:
-          type: integer
-        FullName:
+        Code:
+          enum:
+          - Unknown
+          - Pending
+          - InProgress
+          - Failed
+          - Completed
+          - Canceled
           type: string
-        FirstName:
-          type: string
-        LastName:
-          type: string
-        EmailAddress:
-          type: string
-        EmployeeNumber:
-          type: string
-        UniqueID:
-          type: string
-        ErrorMessage:
-          type: string
-        CustodianRole:
-          type: string
-    ApplicationInstallSearchItem:
-      title: ApplicationInstallSearchItem
-      type: object
-      properties:
-        ApplicationInstallID:
-          type: integer
-        ApplicationIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        WorkspaceIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        ClientIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        MatterIdentifier:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
         Message:
           type: string
-        RootFolderID:
-          type: integer
-        InstallStatus:
-          $ref: '#/components/schemas/InstallStatus'
-        Version:
+        Details:
           type: string
-        IsOutOfDate:
-          type: boolean
-        InstalledBy:
-          $ref: '#/components/schemas/DisplayableObjectIdentifier'
-        StartedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        CompletedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
+        GetDetailsAction:
+          $ref: '#/components/schemas/Action'
+        RetryInstallAction:
+          $ref: '#/components/schemas/Action'
+        CancelInstallAction:
+          $ref: '#/components/schemas/Action'
     HttpMethod:
       title: HttpMethod
       type: object
@@ -620,26 +483,14 @@ components:
           $ref: '#/components/schemas/HttpMethod'
         Method:
           type: string
-    InstallStatusSummary:
-      title: InstallStatusSummary
+    GenericMessageResponseModel:
+      title: GenericMessageResponseModel
       type: object
       properties:
-        Other:
-          type: integer
-        Pending:
-          type: integer
-        InProgress:
-          type: integer
-        Failed:
-          type: integer
-        Completed:
-          type: integer
-        Canceled:
-          type: integer
-        TotalActiveInstalls:
-          type: integer
-        Total:
-          type: integer
+        Message:
+          type: string
+        Success:
+          type: boolean
     Uri:
       title: Uri
       type: object
@@ -696,88 +547,159 @@ components:
           type: boolean
         UserInfo:
           type: string
+    HttpRequestMessage:
+      title: HttpRequestMessage
+      type: object
+      properties:
+        Version:
+          $ref: '#/components/schemas/Version'
+        Content:
+          $ref: '#/components/schemas/HttpContent'
+        Method:
+          $ref: '#/components/schemas/HttpMethod'
+        RequestUri:
+          $ref: '#/components/schemas/Uri'
+        Headers:
+          type: array
+          items:
+            type: string
+            format: HttpRequestHeaders
+        Properties:
+          type: object
+          additionalProperties:
+            title: Object
+            type: object
+    ArtifactIDCollection:
+      title: ArtifactIDCollection
+      type: object
+      properties:
+        Error:
+          type: string
+        TotalCount:
+          type: integer
+        ArtifactIDs:
+          type: array
+          items:
+            type: integer
+    Version:
+      title: Version
+      type: object
+      properties:
+        Major:
+          type: integer
+        Minor:
+          type: integer
+        Build:
+          type: integer
+        Revision:
+          type: integer
+        MajorRevision:
+          $ref: '#/components/schemas/Int16'
+        MinorRevision:
+          $ref: '#/components/schemas/Int16'
+    Action:
+      title: Action
+      type: object
+      properties:
+        Name:
+          type: string
+        Href:
+          type: string
+        Verb:
+          type: string
+        IsAvailable:
+          type: boolean
+        Reason:
+          type: array
+          items:
+            type: string
+    Workload:
+      title: Workload
+      type: object
+      properties:
+        Size:
+          enum:
+          - None
+          - One
+          - S
+          - M
+          - L
+          - XL
+          - XXL
+          type: string
+    DisplayableObjectIdentifier:
+      title: DisplayableObjectIdentifier
+      type: object
+      properties:
+        Name:
+          type: string
+        ArtifactID:
+          type: integer
+        Guids:
+          type: array
+          items:
+            type: string
+    Int16:
+      title: Int16
+      type: object
+    InstallStatusSummary:
+      title: InstallStatusSummary
+      type: object
+      properties:
+        Other:
+          type: integer
+        Pending:
+          type: integer
+        InProgress:
+          type: integer
+        Failed:
+          type: integer
+        Completed:
+          type: integer
+        Canceled:
+          type: integer
+        TotalActiveInstalls:
+          type: integer
+        Total:
+          type: integer
+    ActiveCustodianSummary:
+      title: ActiveCustodianSummary
+      type: object
+      properties:
+        ProjectID:
+          type: integer
+        FullName:
+          type: string
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        EmailAddress:
+          type: string
+        EmployeeNumber:
+          type: string
+        UniqueID:
+          type: string
+        ErrorMessage:
+          type: string
+        CustodianRole:
+          type: string
+    CommunicationLayoutStateModel:
+      title: CommunicationLayoutStateModel
+      type: object
+    HttpContent:
+      title: HttpContent
+      type: object
+      properties:
+        Headers:
+          type: array
+          items:
+            type: string
+            format: HttpContentHeaders
   parameters:
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    settingsType:
-      name: settingsType
+    startingIndex:
+      name: startingIndex
       in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    sendTestEmail:
-      name: sendTestEmail
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: boolean
-    projectArtifactId:
-      name: projectArtifactId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    authenticationType:
-      name: authenticationType
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    toggleName:
-      name: toggleName
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    pageSize:
-      name: pageSize
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 100
-    workspaceArtifactId:
-      name: workspaceArtifactId
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    state:
-      name: state
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    scope:
-      name: scope
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: string
-    guid:
-      name: guid
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    communicationArtifactId:
-      name: communicationArtifactId
-      in: path
       description: ''
       required: true
       schema:
@@ -789,29 +711,29 @@ components:
       required: true
       schema:
         type: integer
-    length:
-      name: length
+    sendTestEmail:
+      name: sendTestEmail
       in: query
       description: ''
       required: true
       schema:
-        type: integer
-    startingIndex:
-      name: startingIndex
-      in: query
-      description: ''
-      required: true
-      schema:
-        type: integer
-    code:
-      name: code
+        type: boolean
+    scope:
+      name: scope
       in: query
       description: ''
       required: true
       schema:
         type: string
-    emailAddress:
-      name: emailAddress
+    workspaceArtifactId:
+      name: workspaceArtifactId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    settingsType:
+      name: settingsType
       in: query
       description: ''
       required: true
@@ -824,3 +746,81 @@ components:
       required: true
       schema:
         type: integer
+    guid:
+      name: guid
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    emailAddress:
+      name: emailAddress
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    length:
+      name: length
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: integer
+    projectArtifactId:
+      name: projectArtifactId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    toggleName:
+      name: toggleName
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    authenticationType:
+      name: authenticationType
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    communicationArtifactId:
+      name: communicationArtifactId
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    pageSize:
+      name: pageSize
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 100
+    code:
+      name: code
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string
+    state:
+      name: state
+      in: query
+      description: ''
+      required: true
+      schema:
+        type: string

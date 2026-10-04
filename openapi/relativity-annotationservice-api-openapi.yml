@@ -159,16 +159,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.AnnotationList:
-      type: object
-      properties:
-        Annotations:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
-      additionalProperties: false
     Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.SaveAnnotationsReturnObject:
       type: object
       properties:
@@ -193,6 +183,16 @@ components:
       type: object
       properties:
         annotations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.Annotation'
+      additionalProperties: false
+    Relativity.DocumentViewer.Services.Interfaces.V2.DTOs.AnnotationList:
+      type: object
+      properties:
+        Annotations:
           type:
           - array
           - 'null'
