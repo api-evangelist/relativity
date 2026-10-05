@@ -1,0 +1,12 @@
+{
+ "url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/Relativity.MassOperations.V2.json",
+ "requested_url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/Relativity.MassOperations.V2.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 64927,
+ "sha256": "e4d1d8fb915efc98bd9d20e188fbfd1b32cc18657de393d24c396ff4113d576d",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}

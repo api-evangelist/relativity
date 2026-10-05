@@ -1,0 +1,12 @@
+{
+ "url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/import-services-api.v1_0.json",
+ "requested_url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/import-services-api.v1_0.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 58228,
+ "sha256": "55ed63feb6a31858858fa810c5d5f8f6a8f73320717a4f68715b500c4b497943",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}

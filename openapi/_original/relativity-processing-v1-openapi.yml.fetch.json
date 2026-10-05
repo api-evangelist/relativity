@@ -1,0 +1,12 @@
+{
+ "url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/Relativity.Processing.V1.json",
+ "requested_url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/Relativity.Processing.V1.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 106208,
+ "sha256": "46e0e7322490845ccfafc3708e3219868ea31939f6ce442a4370fd6f2a82f418",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}

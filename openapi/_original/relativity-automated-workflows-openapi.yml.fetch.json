@@ -1,0 +1,12 @@
+{
+ "url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/aw-sdk-api.v1_0.yaml",
+ "requested_url": "https://platform.relativity.com/RelativityOne/Content/OASFiles/aw-sdk-api.v1_0.yaml",
+ "status": 200,
+ "content_type": "binary/octet-stream",
+ "bytes": 35188,
+ "sha256": "f1a95208e1556ed5d54903438b1dcd4b6fe499c79165d253b5d63fcd44ef235d",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
