@@ -76,14 +76,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ObjectIdentifierSecurable:
-      type: object
-      properties:
-        Value:
-          $ref: '#/components/schemas/ObjectIdentifier'
-        Secured:
-          type: boolean
-      additionalProperties: false
     ObjectIdentifier:
       type: object
       properties:
@@ -99,6 +91,14 @@ components:
           items:
             type: string
             format: uuid
+      additionalProperties: false
+    ObjectIdentifierSecurable:
+      type: object
+      properties:
+        Value:
+          $ref: '#/components/schemas/ObjectIdentifier'
+        Secured:
+          type: boolean
       additionalProperties: false
     ProblemDetails:
       type: object

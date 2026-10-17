@@ -155,13 +155,13 @@ components:
         type: string
         format: System.String
         default: .
-    workspaceID:
-      name: workspaceID
-      in: path
+    includeMetadata:
+      name: includeMetadata
+      in: query
       description: No description set for this parameter
       required: true
       schema:
-        type: integer
+        type: boolean
     tabArtifactID:
       name: tabArtifactID
       in: path
@@ -176,13 +176,13 @@ components:
       required: true
       schema:
         type: boolean
-    includeMetadata:
-      name: includeMetadata
-      in: query
+    workspaceID:
+      name: workspaceID
+      in: path
       description: No description set for this parameter
       required: true
       schema:
-        type: boolean
+        type: integer
   schemas:
     UpdateAsync:
       title: UpdateAsync

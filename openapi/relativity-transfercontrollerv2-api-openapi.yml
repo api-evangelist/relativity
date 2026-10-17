@@ -124,35 +124,30 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    GetTokenResult:
+    CreateTransferRequestV2:
       type: object
       properties:
-        sasUrl:
+        destinationPath:
           type:
           - string
           - 'null'
-          format: uri
-      additionalProperties: false
-    EnumerationStatistics:
-      type: object
-      properties:
-        totalFiles:
-          type: integer
-          format: int64
-        totalSize:
-          type: integer
-          format: int64
-        totalEmptyDirectories:
-          type: integer
-          format: int64
-        status:
+        sourcePath:
           type:
           - string
           - 'null'
-        error:
+        tags:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        transferType:
           type:
           - string
           - 'null'
+        transferJobID:
+          type: string
+          format: uuid
       additionalProperties: false
     TransferStatistics:
       type: object
@@ -184,6 +179,50 @@ components:
         skippedEmptyDirectories:
           type: integer
           format: int64
+      additionalProperties: false
+    GetJobResultV2:
+      type: object
+      properties:
+        transferStatus:
+          type:
+          - string
+          - 'null'
+        transferJobID:
+          type: string
+          format: uuid
+        destinationFullPath:
+          type:
+          - string
+          - 'null'
+        sourceFullPath:
+          type:
+          - string
+          - 'null'
+        tags:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        eta:
+          $ref: '#/components/schemas/TimeSpan'
+        transferStatistics:
+          $ref: '#/components/schemas/TransferStatistics'
+        enumerationStatistics:
+          $ref: '#/components/schemas/EnumerationStatistics'
+        transferType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetTokenResult:
+      type: object
+      properties:
+        sasUrl:
+          type:
+          - string
+          - 'null'
+          format: uri
       additionalProperties: false
     TimeSpan:
       type: object
@@ -248,62 +287,23 @@ components:
           format: double
           readOnly: true
       additionalProperties: false
-    CreateTransferRequestV2:
+    EnumerationStatistics:
       type: object
       properties:
-        destinationPath:
+        totalFiles:
+          type: integer
+          format: int64
+        totalSize:
+          type: integer
+          format: int64
+        totalEmptyDirectories:
+          type: integer
+          format: int64
+        status:
           type:
           - string
           - 'null'
-        sourcePath:
-          type:
-          - string
-          - 'null'
-        tags:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type: string
-        transferType:
-          type:
-          - string
-          - 'null'
-        transferJobID:
-          type: string
-          format: uuid
-      additionalProperties: false
-    GetJobResultV2:
-      type: object
-      properties:
-        transferStatus:
-          type:
-          - string
-          - 'null'
-        transferJobID:
-          type: string
-          format: uuid
-        destinationFullPath:
-          type:
-          - string
-          - 'null'
-        sourceFullPath:
-          type:
-          - string
-          - 'null'
-        tags:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type: string
-        eta:
-          $ref: '#/components/schemas/TimeSpan'
-        transferStatistics:
-          $ref: '#/components/schemas/TransferStatistics'
-        enumerationStatistics:
-          $ref: '#/components/schemas/EnumerationStatistics'
-        transferType:
+        error:
           type:
           - string
           - 'null'

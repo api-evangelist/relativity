@@ -276,140 +276,7 @@ paths:
       summary: Relativity structured analytics V1 jobs IJob manager remove all choices async
       x-summary-source: derived
 components:
-  parameters:
-    workspaceID:
-      name: workspaceID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    start:
-      name: start
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 0
-    sasArtifactID:
-      name: sasArtifactID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    length:
-      name: length
-      in: query
-      description: ''
-      schema:
-        type: integer
-        default: 0
-    wait:
-      name: wait
-      in: query
-      description: ''
-      schema:
-        type: boolean
-        default: false
   schemas:
-    JobResults:
-      title: JobResults
-      type: object
-      properties:
-        DocumentsAnalyzed:
-          type: integer
-        EmailThreadingStats:
-          $ref: '#/components/schemas/EmailThreadingStatistics'
-        NameNormalizationStats:
-          $ref: '#/components/schemas/NameNormalizationStatistics'
-        TextualNearDupeStats:
-          $ref: '#/components/schemas/TextualNearDuplicatesStatistics'
-    ValidTaskResult:
-      title: ValidTaskResult
-      type: object
-      properties:
-        ValidTasks:
-          type: array
-          items:
-            enum:
-            - CANCEL_ANALYSIS
-            - RETRY_ERRORS
-            - GET_SET_ERRORS
-            - GET_DOCUMENT_ERRORS
-            - COPY_TO_LEGACY
-            - COPY_TO_LEGACY_CANCEL
-            - PREPARE_ANALYSIS
-            - RUN_ANALYSIS
-            type: string
-        CopyToLegacyQualified:
-          type: boolean
-    JobState:
-      title: JobState
-      type: object
-      properties:
-        Status:
-          type: string
-        Phase:
-          enum:
-          - Not_Started
-          - Setup
-          - SyncingData
-          - CalculatingFileSizes
-          - QueuedForExport
-          - Exporting
-          - CompletedExporting
-          - QueuedForAnalysis
-          - RunningOperations
-          - CompletedOperations
-          - QueuedForImport
-          - ImportingEntityAndAliases
-          - Importing
-          - Finalizing
-          - Completed
-          - CompletedWithErrors
-          - Error
-          - RetryErrors
-          - Canceling
-          - Canceled
-          - MissingFields
-          - CopyToLegacyInProgress
-          - CopyToLegacyCancelling
-          - PreparingAnalysisInProgress
-          - PreparingAnalysisCompleted
-          - PreparingAnalysisError
-          - Unknown
-          type: string
-        IsRunning:
-          type: boolean
-        IsRunningOperations:
-          type: boolean
-        IsCompleted:
-          type: boolean
-        IsCanceled:
-          type: boolean
-        IsCanceling:
-          type: boolean
-        IsQueued:
-          type:
-          - boolean
-          - 'null'
-        IsUnknown:
-          type: boolean
-        PhaseProgressPercentage:
-          type: number
-        JobTimeElapsed:
-          type: integer
-        OperationTimeElapsed:
-          type: integer
     MasterJob:
       title: MasterJob
       type: object
@@ -469,77 +336,25 @@ components:
             $ref: '#/components/schemas/DocumentError'
         TotalCount:
           type: integer
-    EmailThreadingStatistics:
-      title: EmailThreadingStatistics
+    ValidTaskResult:
+      title: ValidTaskResult
       type: object
       properties:
-        EmailsAnalyzed:
-          type: integer
-        InclusiveEmails:
-          type: integer
-        DocumentsAnalyzed:
-          type: integer
-    OperationResult:
-      title: OperationResult
-      type: object
-      properties:
-        IsSuccess:
-          type: boolean
-        Message:
-          type: string
-    SASDocumentErrorsRequestObject:
-      title: SASDocumentErrorsRequestObject
-      type: object
-      properties:
-        Sorts:
-          type: array
-          items:
-            type: string
-        Filters:
-          type: array
-          items:
-            type: string
-        Start:
-          type: integer
-        Length:
-          type: integer
-    AnalysisSettings:
-      title: AnalysisSettings
-      type: object
-      properties:
-        PopulateAll:
-          type: boolean
-        AnalyzeAll:
-          type: boolean
-    DocumentError:
-      title: DocumentError
-      type: object
-      properties:
-        DocumentArtifactID:
-          type: integer
-        DocumentIdentifier:
-          type: string
-        Message:
-          type: string
-        Operations:
+        ValidTasks:
           type: array
           items:
             enum:
-            - EmailThreading
-            - TextualNearDuplicateID
-            - LanguageID
-            - RepeatedContentID
-            - NameNormalizationID
+            - CANCEL_ANALYSIS
+            - RETRY_ERRORS
+            - GET_SET_ERRORS
+            - GET_DOCUMENT_ERRORS
+            - COPY_TO_LEGACY
+            - COPY_TO_LEGACY_CANCEL
+            - PREPARE_ANALYSIS
+            - RUN_ANALYSIS
             type: string
-        Status:
-          enum:
-          - IncludedInSet
-          - RemovedFromSet
-          - DataWarning
-          type: string
-        DateErrored:
-          type: string
-          format: date-time
+        CopyToLegacyQualified:
+          type: boolean
     OperationState:
       title: OperationState
       type: object
@@ -587,6 +402,51 @@ components:
           - string
           - 'null'
           format: date-time
+    DocumentError:
+      title: DocumentError
+      type: object
+      properties:
+        DocumentArtifactID:
+          type: integer
+        DocumentIdentifier:
+          type: string
+        Message:
+          type: string
+        Operations:
+          type: array
+          items:
+            enum:
+            - EmailThreading
+            - TextualNearDuplicateID
+            - LanguageID
+            - RepeatedContentID
+            - NameNormalizationID
+            type: string
+        Status:
+          enum:
+          - IncludedInSet
+          - RemovedFromSet
+          - DataWarning
+          type: string
+        DateErrored:
+          type: string
+          format: date-time
+    OperationResult:
+      title: OperationResult
+      type: object
+      properties:
+        IsSuccess:
+          type: boolean
+        Message:
+          type: string
+    AnalysisSettings:
+      title: AnalysisSettings
+      type: object
+      properties:
+        PopulateAll:
+          type: boolean
+        AnalyzeAll:
+          type: boolean
     Status:
       title: Status
       type: object
@@ -601,6 +461,110 @@ components:
             $ref: '#/components/schemas/OperationState'
         JobResults:
           $ref: '#/components/schemas/JobResults'
+    JobState:
+      title: JobState
+      type: object
+      properties:
+        Status:
+          type: string
+        Phase:
+          enum:
+          - Not_Started
+          - Setup
+          - SyncingData
+          - CalculatingFileSizes
+          - QueuedForExport
+          - Exporting
+          - CompletedExporting
+          - QueuedForAnalysis
+          - RunningOperations
+          - CompletedOperations
+          - QueuedForImport
+          - ImportingEntityAndAliases
+          - Importing
+          - Finalizing
+          - Completed
+          - CompletedWithErrors
+          - Error
+          - RetryErrors
+          - Canceling
+          - Canceled
+          - MissingFields
+          - CopyToLegacyInProgress
+          - CopyToLegacyCancelling
+          - PreparingAnalysisInProgress
+          - PreparingAnalysisCompleted
+          - PreparingAnalysisError
+          - Unknown
+          type: string
+        IsRunning:
+          type: boolean
+        IsRunningOperations:
+          type: boolean
+        IsCompleted:
+          type: boolean
+        IsCanceled:
+          type: boolean
+        IsCanceling:
+          type: boolean
+        IsQueued:
+          type:
+          - boolean
+          - 'null'
+        IsUnknown:
+          type: boolean
+        PhaseProgressPercentage:
+          type: number
+        JobTimeElapsed:
+          type: integer
+        OperationTimeElapsed:
+          type: integer
+    SASDocumentErrorsRequestObject:
+      title: SASDocumentErrorsRequestObject
+      type: object
+      properties:
+        Sorts:
+          type: array
+          items:
+            type: string
+        Filters:
+          type: array
+          items:
+            type: string
+        Start:
+          type: integer
+        Length:
+          type: integer
+    NameNormalizationStatistics:
+      title: NameNormalizationStatistics
+      type: object
+      properties:
+        AliasesIdentified:
+          type: integer
+        NewAliasesImported:
+          type: integer
+    JobResults:
+      title: JobResults
+      type: object
+      properties:
+        DocumentsAnalyzed:
+          type: integer
+        EmailThreadingStats:
+          $ref: '#/components/schemas/EmailThreadingStatistics'
+        NameNormalizationStats:
+          $ref: '#/components/schemas/NameNormalizationStatistics'
+        TextualNearDupeStats:
+          $ref: '#/components/schemas/TextualNearDuplicatesStatistics'
+    EmailThreadingStatistics:
+      title: EmailThreadingStatistics
+      type: object
+      properties:
+        EmailsAnalyzed:
+          type: integer
+        InclusiveEmails:
+          type: integer
+        DocumentsAnalyzed:
+          type: integer
     TextualNearDuplicatesStatistics:
       title: TextualNearDuplicatesStatistics
       type: object
@@ -611,11 +575,47 @@ components:
           type: integer
         DocumentsAnalyzed:
           type: integer
-    NameNormalizationStatistics:
-      title: NameNormalizationStatistics
-      type: object
-      properties:
-        AliasesIdentified:
-          type: integer
-        NewAliasesImported:
-          type: integer
+  parameters:
+    start:
+      name: start
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 0
+    workspaceID:
+      name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    wait:
+      name: wait
+      in: query
+      description: ''
+      schema:
+        type: boolean
+        default: false
+    length:
+      name: length
+      in: query
+      description: ''
+      schema:
+        type: integer
+        default: 0
+    sasArtifactID:
+      name: sasArtifactID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer

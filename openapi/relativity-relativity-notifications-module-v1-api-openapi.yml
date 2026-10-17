@@ -33,7 +33,32 @@ paths:
       summary: Relativity notifications V1 IEmail notifications manager send email…
       x-summary-source: derived
 components:
+  parameters:
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
   schemas:
+    EmailNotificationRequest:
+      title: EmailNotificationRequest
+      type: object
+      properties:
+        Sender:
+          type: string
+        Recipients:
+          type: array
+          items:
+            type: string
+        Subject:
+          type: string
+        Body:
+          type: string
+        IsBodyHtml:
+          type: boolean
     EmailNotificationResponse:
       title: EmailNotificationResponse
       type: object
@@ -52,28 +77,3 @@ components:
           type: boolean
         Message:
           type: string
-    EmailNotificationRequest:
-      title: EmailNotificationRequest
-      type: object
-      properties:
-        Sender:
-          type: string
-        Recipients:
-          type: array
-          items:
-            type: string
-        Subject:
-          type: string
-        Body:
-          type: string
-        IsBodyHtml:
-          type: boolean
-  parameters:
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'

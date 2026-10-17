@@ -565,8 +565,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    MassEditRequest:
-      title: MassEditRequest
+    MassEditAsync_RequestBody:
+      title: MassEditAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassEditRequest'
+    MassReplaceJobRequest:
+      title: MassReplaceJobRequest
       type: object
       properties:
         Type:
@@ -589,11 +595,63 @@ components:
         Fields:
           type: array
           items:
-            $ref: '#/components/schemas/EditField'
+            $ref: '#/components/schemas/ReplaceField'
+        ArtifactTypeID:
+          type: integer
+        MassProcessID:
+          type: integer
+    MassSaveAsListJobRequest:
+      title: MassSaveAsListJobRequest
+      type: object
+      properties:
+        Notes:
+          type: string
+        ListName:
+          type: string
+        ExistingListArtifactID:
+          type: integer
+        Options:
+          enum:
+          - CreateNewList
+          - ReplaceExistingList
+          type: string
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        ArtifactTypeID:
+          type: integer
+        MassProcessID:
+          type: integer
+    InitializeMassOperationRequest:
+      title: InitializeMassOperationRequest
+      type: object
+      properties:
         ArtifactTypeID:
           type: integer
         Query:
           $ref: '#/components/schemas/QueryRequest'
+        DatabaseTokenRequired:
+          type: boolean
+    PublishMassTallySumAverageJobRequestAsync_RequestBody:
+      title: PublishMassTallySumAverageJobRequestAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassTallySumAverageJobRequest'
     EditField:
       title: EditField
       type: object
@@ -610,24 +668,356 @@ components:
           type:
           - string
           - 'null'
+    MassTallySumAverageRequest:
+      title: MassTallySumAverageRequest
+      type: object
+      properties:
+        Field:
+          $ref: '#/components/schemas/FieldRef'
+        Operation:
+          enum:
+          - Tally
+          - Sum
+          - Average
+          type: string
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        ArtifactTypeID:
+          type: integer
+        Query:
+          $ref: '#/components/schemas/QueryRequest'
+    ReplaceAction:
+      title: ReplaceAction
+      type: object
+      properties:
+        Options:
+          enum:
+          - Text
+          - Field
+          type: string
+        ReplacementText:
+          type: string
+        ReplacementField:
+          $ref: '#/components/schemas/FieldRef'
+    MassExportToFileRequest:
+      title: MassExportToFileRequest
+      type: object
+      properties:
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        ViewID:
+          type: integer
+        ViewFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldRef'
+        EscapeFormulas:
+          type: boolean
+        HasRank:
+          type: boolean
+        SearchProviderArtifactID:
+          type:
+          - integer
+          - 'null'
+        ExportFileFormat:
+          enum:
+          - Csv
+          - Dat
+          - Xls
+          type: string
+        ExportEncodingType:
+          enum:
+          - JapaneseShiftJIS
+          - ChineseGB2312
+          - Korean
+          - ChineseTraditional
+          - Unicode
+          - UnicodeBigEndian
+          - WesternEuropean
+          - JapaneseJIS
+          - ChineseGB18030
+          - UnicodeUTF8
+          type: string
+        ArtifactTypeID:
+          type: integer
+        Query:
+          $ref: '#/components/schemas/QueryRequest'
+    PublishMassCopyJobRequestAsync_RequestBody:
+      title: PublishMassCopyJobRequestAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassCopyJobRequest'
+    InitializeMassOperationAsync_RequestBody:
+      title: InitializeMassOperationAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/InitializeMassOperationRequest'
     MassDeleteAsync_RequestBody:
       title: MassDeleteAsync_RequestBody
       type: object
       properties:
         request:
           $ref: '#/components/schemas/MassDeleteRequest'
-    Sort:
-      title: Sort
+    FieldRef:
+      title: FieldRef
       type: object
       properties:
-        FieldIdentifier:
-          $ref: '#/components/schemas/FieldRef'
-        Order:
+        Name:
+          type: string
+        ArtifactID:
           type: integer
-        Direction:
+        ViewFieldID:
+          type: integer
+        Guid:
+          type:
+          - string
+          - 'null'
+    MassReplaceAsync_RequestBody:
+      title: MassReplaceAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassReplaceRequest'
+    IKeplerStream:
+      title: IKeplerStream
+      type: object
+      properties:
+        ContentType:
+          type: string
+        ContentDisposition:
+          type: string
+        CacheControl:
+          type: string
+        StatusCode:
           enum:
-          - Ascending
-          - Descending
+          - Continue
+          - SwitchingProtocols
+          - OK
+          - Created
+          - Accepted
+          - NonAuthoritativeInformation
+          - NoContent
+          - ResetContent
+          - PartialContent
+          - MultipleChoices
+          - Ambiguous
+          - MovedPermanently
+          - Moved
+          - Found
+          - Redirect
+          - SeeOther
+          - RedirectMethod
+          - NotModified
+          - UseProxy
+          - Unused
+          - TemporaryRedirect
+          - RedirectKeepVerb
+          - BadRequest
+          - Unauthorized
+          - PaymentRequired
+          - Forbidden
+          - NotFound
+          - MethodNotAllowed
+          - NotAcceptable
+          - ProxyAuthenticationRequired
+          - RequestTimeout
+          - Conflict
+          - Gone
+          - LengthRequired
+          - PreconditionFailed
+          - RequestEntityTooLarge
+          - RequestUriTooLong
+          - UnsupportedMediaType
+          - RequestedRangeNotSatisfiable
+          - ExpectationFailed
+          - UpgradeRequired
+          - InternalServerError
+          - NotImplemented
+          - BadGateway
+          - ServiceUnavailable
+          - GatewayTimeout
+          - HttpVersionNotSupported
+          type:
+          - string
+          - 'null'
+        Headers:
+          type: array
+          items:
+            type: string
+            format: NameValueCollection
+    MassOperationProcessState:
+      title: MassOperationProcessState
+      type: object
+      properties:
+        ProcessIdentifier:
+          type: string
+        Name:
+          type: string
+        State:
+          enum:
+          - Idle
+          - Running
+          - Completed
+          - HandleException
+          - UnhandledException
+          - RunningWarning
+          - Canceled
+          - Cancelling
+          - CompletedWithError
+          - NotStarted
+          - Pausing
+          - Paused
+          type: string
+        Status:
+          type: string
+        IsCanceled:
+          type: boolean
+        TotalOperations:
+          type: integer
+        OperationsCompleted:
+          type: integer
+        ExceptionMessage:
+          type: string
+        CancelReason:
+          enum:
+          - UserInitiated
+          - AgentShutdown
+          - Unknown
+          - JobOrphaned
+          - NotApplicable
+          type: string
+    MassCopyJobRequest:
+      title: MassCopyJobRequest
+      type: object
+      properties:
+        ParentArtifactID:
+          type: integer
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        ArtifactTypeID:
+          type: integer
+        MassProcessID:
+          type: integer
+    MassOperationProcessStateExtendedResult:
+      title: MassOperationProcessStateExtendedResult
+      type: object
+      properties:
+        WorkspaceId:
+          type: integer
+        WorkspaceName:
+          type: string
+        MassOperationType:
+          type: string
+        Status:
+          type: string
+        StatusMessage:
+          type: string
+        ProcessIdentifier:
+          type: string
+        StartedDateTime:
+          type: string
+          format: date-time
+        ArtifactType:
+          type: string
+        ArtifactCount:
+          type: integer
+        MassOpsProgress:
+          type: number
+        MassOperationFriendlyName:
+          type: string
+        CancelReason:
+          enum:
+          - UserInitiated
+          - AgentShutdown
+          - Unknown
+          - JobOrphaned
+          - NotApplicable
+          type: string
+    PublishMassEditJobRequestAsync_RequestBody:
+      title: PublishMassEditJobRequestAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassEditJobRequest'
+    ObjectTypeRef:
+      title: ObjectTypeRef
+      type: object
+      properties:
+        ArtifactID:
+          type: integer
+        Name:
+          type: string
+        Guid:
+          type:
+          - string
+          - 'null'
+        ArtifactTypeID:
+          type: integer
+    MassCopyAsync_RequestBody:
+      title: MassCopyAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassCopyRequest'
+    ReplaceOptions:
+      title: ReplaceOptions
+      type: object
+      properties:
+        Options:
+          enum:
+          - ReplaceEntireField
+          - AppendToEnd
+          - InsertAtBeginning
+          - SearchFor
+          type: string
+        Value:
           type: string
     QueryRequest:
       title: QueryRequest
@@ -699,19 +1089,63 @@ components:
           - Default
           - Tokenized
           type: string
-    ReplaceAction:
-      title: ReplaceAction
+    SampleParameters:
+      title: SampleParameters
       type: object
       properties:
-        Options:
+        ExistingToken:
+          type:
+          - string
+          - 'null'
+        MarginOfError:
+          type: number
+        ConfidenceLevel:
+          type: number
+        FixedSampleSize:
+          type: integer
+        SamplingPercentage:
+          type: number
+    PublishMassSaveAsListJobRequestAsync_RequestBody:
+      title: PublishMassSaveAsListJobRequestAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassSaveAsListJobRequest'
+    PublishMassExportToFileJobRequestAsync_RequestBody:
+      title: PublishMassExportToFileJobRequestAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassExportToFileJobRequest'
+    MassEditRequest:
+      title: MassEditRequest
+      type: object
+      properties:
+        Type:
           enum:
-          - Text
-          - Field
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
           type: string
-        ReplacementText:
-          type: string
-        ReplacementField:
-          $ref: '#/components/schemas/FieldRef'
+        Fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/EditField'
+        ArtifactTypeID:
+          type: integer
+        Query:
+          $ref: '#/components/schemas/QueryRequest'
     MassMoveRequest:
       title: MassMoveRequest
       type: object
@@ -739,26 +1173,216 @@ components:
           type: integer
         Query:
           $ref: '#/components/schemas/QueryRequest'
-    MassMoveAsync_RequestBody:
-      title: MassMoveAsync_RequestBody
+    MinPerResourcePoolResult:
+      title: MinPerResourcePoolResult
+      type: object
+      properties:
+        AgentName:
+          type: string
+        ResourcePoolName:
+          type: string
+    MassSaveAsListRequest:
+      title: MassSaveAsListRequest
+      type: object
+      properties:
+        Notes:
+          type: string
+        ListName:
+          type: string
+        ExistingListArtifactID:
+          type: integer
+        Options:
+          enum:
+          - CreateNewList
+          - ReplaceExistingList
+          type: string
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        ArtifactTypeID:
+          type: integer
+        Query:
+          $ref: '#/components/schemas/QueryRequest'
+    InitializeMassOperationResult:
+      title: InitializeMassOperationResult
+      type: object
+      properties:
+        ProcessID:
+          type: integer
+        ObjectCount:
+          type: integer
+        DatabaseToken:
+          type: string
+    PublishMassDeleteJobRequestAsync_RequestBody:
+      title: PublishMassDeleteJobRequestAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/MassMoveRequest'
-    FieldRef:
-      title: FieldRef
+          $ref: '#/components/schemas/MassDeleteJobRequest'
+    MassAgentDeleteStartupResult:
+      title: MassAgentDeleteStartupResult
       type: object
       properties:
-        Name:
+        LastPerEnvironmentAgents:
+          type: array
+          items:
+            type: string
+        MinPerResourcePoolAgents:
+          type: array
+          items:
+            $ref: '#/components/schemas/MinPerResourcePoolResult'
+        ForceDelete:
+          type: boolean
+        WarningMessages:
+          type: array
+          items:
+            type: string
+    MassEditJobRequest:
+      title: MassEditJobRequest
+      type: object
+      properties:
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
           type: string
+        Fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/EditField'
+        ArtifactTypeID:
+          type: integer
+        MassProcessID:
+          type: integer
+    MassDeleteStartupResult:
+      title: MassDeleteStartupResult
+      type: object
+      properties:
+        IsCascadeDeletable:
+          type: boolean
+        HasDependencies:
+          type: boolean
+        HasDeleteObjectDependenciesPermission:
+          type: boolean
+        SnapshotAuditSettingFromObjectType:
+          type: boolean
+        PPDEventHandlerToggleValue:
+          type: boolean
+        SnapshotAuditOverrideOptionToggleValue:
+          type: boolean
+    SearchIndexRef:
+      title: SearchIndexRef
+      type: object
+      properties:
         ArtifactID:
           type: integer
-        ViewFieldID:
+        Name:
+          type: string
+    MassExportToFileAsync_RequestBody:
+      title: MassExportToFileAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassExportToFileRequest'
+    MassReplaceRequest:
+      title: MassReplaceRequest
+      type: object
+      properties:
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        Fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReplaceField'
+        ArtifactTypeID:
           type: integer
-        Guid:
-          type:
-          - string
-          - 'null'
+        Query:
+          $ref: '#/components/schemas/QueryRequest'
+    TallySumAverageAsync_RequestBody:
+      title: TallySumAverageAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/MassTallySumAverageRequest'
+    MassDeleteJobRequest:
+      title: MassDeleteJobRequest
+      type: object
+      properties:
+        DocumentDeleteOptions:
+          enum:
+          - DeleteDocumentAndAllAssociatedFiles
+          - DeleteOnlyImages
+          - DeleteOnlyNatives
+          - DeleteOnlyNativesAndImages
+          type: string
+        ForceDelete:
+          type: boolean
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        PromoteDuplicatesFromOtherSources:
+          type: boolean
+        SnapshotAuditSelectionForOperation:
+          type: boolean
+        ArtifactTypeID:
+          type: integer
+        MassProcessID:
+          type: integer
     MassDeleteRequest:
       title: MassDeleteRequest
       type: object
@@ -797,535 +1421,20 @@ components:
           type: integer
         Query:
           $ref: '#/components/schemas/QueryRequest'
-    TallySumAverageAsync_RequestBody:
-      title: TallySumAverageAsync_RequestBody
+    MassMoveAsync_RequestBody:
+      title: MassMoveAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/MassTallySumAverageRequest'
-    InitializeMassOperationResult:
-      title: InitializeMassOperationResult
-      type: object
-      properties:
-        ProcessID:
-          type: integer
-        ObjectCount:
-          type: integer
-        DatabaseToken:
-          type: string
-    MassTallySumAverageRequest:
-      title: MassTallySumAverageRequest
-      type: object
-      properties:
-        Field:
-          $ref: '#/components/schemas/FieldRef'
-        Operation:
-          enum:
-          - Tally
-          - Sum
-          - Average
-          type: string
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        ArtifactTypeID:
-          type: integer
-        Query:
-          $ref: '#/components/schemas/QueryRequest'
-    MassEditAsync_RequestBody:
-      title: MassEditAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassEditRequest'
-    ReplaceOptions:
-      title: ReplaceOptions
-      type: object
-      properties:
-        Options:
-          enum:
-          - ReplaceEntireField
-          - AppendToEnd
-          - InsertAtBeginning
-          - SearchFor
-          type: string
-        Value:
-          type: string
-    MassExportToFileRequest:
-      title: MassExportToFileRequest
-      type: object
-      properties:
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        ViewID:
-          type: integer
-        ViewFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldRef'
-        EscapeFormulas:
-          type: boolean
-        HasRank:
-          type: boolean
-        SearchProviderArtifactID:
-          type:
-          - integer
-          - 'null'
-        ExportFileFormat:
-          enum:
-          - Csv
-          - Dat
-          - Xls
-          type: string
-        ExportEncodingType:
-          enum:
-          - JapaneseShiftJIS
-          - ChineseGB2312
-          - Korean
-          - ChineseTraditional
-          - Unicode
-          - UnicodeBigEndian
-          - WesternEuropean
-          - JapaneseJIS
-          - ChineseGB18030
-          - UnicodeUTF8
-          type: string
-        ArtifactTypeID:
-          type: integer
-        Query:
-          $ref: '#/components/schemas/QueryRequest'
-    MassTallySumAverageJobRequest:
-      title: MassTallySumAverageJobRequest
-      type: object
-      properties:
-        Field:
-          $ref: '#/components/schemas/FieldRef'
-        Operation:
-          enum:
-          - Tally
-          - Sum
-          - Average
-          type: string
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        ArtifactTypeID:
-          type: integer
-        MassProcessID:
-          type: integer
-    PublishMassReplaceJobRequestAsync_RequestBody:
-      title: PublishMassReplaceJobRequestAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassReplaceJobRequest'
-    MassDeleteStartupResult:
-      title: MassDeleteStartupResult
-      type: object
-      properties:
-        IsCascadeDeletable:
-          type: boolean
-        HasDependencies:
-          type: boolean
-        HasDeleteObjectDependenciesPermission:
-          type: boolean
-        SnapshotAuditSettingFromObjectType:
-          type: boolean
-        PPDEventHandlerToggleValue:
-          type: boolean
-        SnapshotAuditOverrideOptionToggleValue:
-          type: boolean
-    MassReplaceJobRequest:
-      title: MassReplaceJobRequest
-      type: object
-      properties:
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        Fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReplaceField'
-        ArtifactTypeID:
-          type: integer
-        MassProcessID:
-          type: integer
-    MassMoveJobRequest:
-      title: MassMoveJobRequest
-      type: object
-      properties:
-        DestinationFolderArtifactID:
-          type: integer
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        ArtifactTypeID:
-          type: integer
-        MassProcessID:
-          type: integer
-    InitializeMassOperationAsync_RequestBody:
-      title: InitializeMassOperationAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/InitializeMassOperationRequest'
-    PublishMassEditJobRequestAsync_RequestBody:
-      title: PublishMassEditJobRequestAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassEditJobRequest'
-    MassAgentDeleteStartupResult:
-      title: MassAgentDeleteStartupResult
-      type: object
-      properties:
-        LastPerEnvironmentAgents:
-          type: array
-          items:
-            type: string
-        MinPerResourcePoolAgents:
-          type: array
-          items:
-            $ref: '#/components/schemas/MinPerResourcePoolResult'
-        ForceDelete:
-          type: boolean
-        WarningMessages:
-          type: array
-          items:
-            type: string
-    SampleParameters:
-      title: SampleParameters
-      type: object
-      properties:
-        ExistingToken:
-          type:
-          - string
-          - 'null'
-        MarginOfError:
-          type: number
-        ConfidenceLevel:
-          type: number
-        FixedSampleSize:
-          type: integer
-        SamplingPercentage:
-          type: number
-    MassCopyJobRequest:
-      title: MassCopyJobRequest
-      type: object
-      properties:
-        ParentArtifactID:
-          type: integer
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        ArtifactTypeID:
-          type: integer
-        MassProcessID:
-          type: integer
-    SearchProvider:
-      title: SearchProvider
-      type: object
-      properties:
-        SearchIndex:
-          $ref: '#/components/schemas/SearchIndexRef'
-        Input:
-          type: string
+          $ref: '#/components/schemas/MassMoveRequest'
     UInt32:
       title: UInt32
       type: object
-    MinPerResourcePoolResult:
-      title: MinPerResourcePoolResult
-      type: object
-      properties:
-        AgentName:
-          type: string
-        ResourcePoolName:
-          type: string
-    MassCopyAsync_RequestBody:
-      title: MassCopyAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassCopyRequest'
-    PublishMassDeleteJobRequestAsync_RequestBody:
-      title: PublishMassDeleteJobRequestAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassDeleteJobRequest'
     MassOperationResult:
       title: MassOperationResult
       type: object
       properties:
         ProcessID:
-          type: integer
-    IKeplerStream:
-      title: IKeplerStream
-      type: object
-      properties:
-        ContentType:
-          type: string
-        ContentDisposition:
-          type: string
-        CacheControl:
-          type: string
-        StatusCode:
-          enum:
-          - Continue
-          - SwitchingProtocols
-          - OK
-          - Created
-          - Accepted
-          - NonAuthoritativeInformation
-          - NoContent
-          - ResetContent
-          - PartialContent
-          - MultipleChoices
-          - Ambiguous
-          - MovedPermanently
-          - Moved
-          - Found
-          - Redirect
-          - SeeOther
-          - RedirectMethod
-          - NotModified
-          - UseProxy
-          - Unused
-          - TemporaryRedirect
-          - RedirectKeepVerb
-          - BadRequest
-          - Unauthorized
-          - PaymentRequired
-          - Forbidden
-          - NotFound
-          - MethodNotAllowed
-          - NotAcceptable
-          - ProxyAuthenticationRequired
-          - RequestTimeout
-          - Conflict
-          - Gone
-          - LengthRequired
-          - PreconditionFailed
-          - RequestEntityTooLarge
-          - RequestUriTooLong
-          - UnsupportedMediaType
-          - RequestedRangeNotSatisfiable
-          - ExpectationFailed
-          - UpgradeRequired
-          - InternalServerError
-          - NotImplemented
-          - BadGateway
-          - ServiceUnavailable
-          - GatewayTimeout
-          - HttpVersionNotSupported
-          type:
-          - string
-          - 'null'
-        Headers:
-          type: array
-          items:
-            type: string
-            format: NameValueCollection
-    MassReplaceRequest:
-      title: MassReplaceRequest
-      type: object
-      properties:
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        Fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReplaceField'
-        ArtifactTypeID:
-          type: integer
-        Query:
-          $ref: '#/components/schemas/QueryRequest'
-    ObjectTypeRef:
-      title: ObjectTypeRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-        Guid:
-          type:
-          - string
-          - 'null'
-        ArtifactTypeID:
-          type: integer
-    MassOperationProcessStateExtendedResult:
-      title: MassOperationProcessStateExtendedResult
-      type: object
-      properties:
-        WorkspaceId:
-          type: integer
-        WorkspaceName:
-          type: string
-        MassOperationType:
-          type: string
-        Status:
-          type: string
-        StatusMessage:
-          type: string
-        ProcessIdentifier:
-          type: string
-        StartedDateTime:
-          type: string
-          format: date-time
-        ArtifactType:
-          type: string
-        ArtifactCount:
-          type: integer
-        MassOpsProgress:
-          type: number
-        MassOperationFriendlyName:
-          type: string
-        CancelReason:
-          enum:
-          - UserInitiated
-          - AgentShutdown
-          - Unknown
-          - JobOrphaned
-          - NotApplicable
-          type: string
-    MassDeleteJobRequest:
-      title: MassDeleteJobRequest
-      type: object
-      properties:
-        DocumentDeleteOptions:
-          enum:
-          - DeleteDocumentAndAllAssociatedFiles
-          - DeleteOnlyImages
-          - DeleteOnlyNatives
-          - DeleteOnlyNativesAndImages
-          type: string
-        ForceDelete:
-          type: boolean
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        PromoteDuplicatesFromOtherSources:
-          type: boolean
-        SnapshotAuditSelectionForOperation:
-          type: boolean
-        ArtifactTypeID:
-          type: integer
-        MassProcessID:
           type: integer
     Object:
       title: Object
@@ -1415,186 +1524,72 @@ components:
           type: integer
         Query:
           $ref: '#/components/schemas/QueryRequest'
-    PublishMassCopyJobRequestAsync_RequestBody:
-      title: PublishMassCopyJobRequestAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassCopyJobRequest'
-    InitializeMassOperationRequest:
-      title: InitializeMassOperationRequest
-      type: object
-      properties:
-        ArtifactTypeID:
-          type: integer
-        Query:
-          $ref: '#/components/schemas/QueryRequest'
-        DatabaseTokenRequired:
-          type: boolean
-    PublishMassSaveAsListJobRequestAsync_RequestBody:
-      title: PublishMassSaveAsListJobRequestAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassSaveAsListJobRequest'
-    PublishMassExportToFileJobRequestAsync_RequestBody:
-      title: PublishMassExportToFileJobRequestAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassExportToFileJobRequest'
-    SearchIndexRef:
-      title: SearchIndexRef
-      type: object
-      properties:
-        ArtifactID:
-          type: integer
-        Name:
-          type: string
-    TallySumAverageResult:
-      title: TallySumAverageResult
-      type: object
-      properties:
-        Value:
-          type: string
-        Count:
-          type: number
-    MassReplaceAsync_RequestBody:
-      title: MassReplaceAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassReplaceRequest'
-    MassSaveAsListAsync_RequestBody:
-      title: MassSaveAsListAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/MassSaveAsListRequest'
-    MassEditJobRequest:
-      title: MassEditJobRequest
-      type: object
-      properties:
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        Fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/EditField'
-        ArtifactTypeID:
-          type: integer
-        MassProcessID:
-          type: integer
-    MassSaveAsListRequest:
-      title: MassSaveAsListRequest
-      type: object
-      properties:
-        Notes:
-          type: string
-        ListName:
-          type: string
-        ExistingListArtifactID:
-          type: integer
-        Options:
-          enum:
-          - CreateNewList
-          - ReplaceExistingList
-          type: string
-        Type:
-          enum:
-          - Edit
-          - Delete
-          - Replace
-          - Move
-          - Copy
-          - Report
-          - SendToCaseMap
-          - Tif
-          - Print
-          - Export
-          - Cluster
-          - Tally
-          - SaveAsList
-          - Custom
-          type: string
-        ArtifactTypeID:
-          type: integer
-        Query:
-          $ref: '#/components/schemas/QueryRequest'
     PublishMassMoveJobRequestAsync_RequestBody:
       title: PublishMassMoveJobRequestAsync_RequestBody
       type: object
       properties:
         request:
           $ref: '#/components/schemas/MassMoveJobRequest'
-    MassOperationProcessState:
-      title: MassOperationProcessState
+    Sort:
+      title: Sort
       type: object
       properties:
-        ProcessIdentifier:
-          type: string
-        Name:
-          type: string
-        State:
-          enum:
-          - Idle
-          - Running
-          - Completed
-          - HandleException
-          - UnhandledException
-          - RunningWarning
-          - Canceled
-          - Cancelling
-          - CompletedWithError
-          - NotStarted
-          - Pausing
-          - Paused
-          type: string
-        Status:
-          type: string
-        IsCanceled:
-          type: boolean
-        TotalOperations:
+        FieldIdentifier:
+          $ref: '#/components/schemas/FieldRef'
+        Order:
           type: integer
-        OperationsCompleted:
-          type: integer
-        ExceptionMessage:
-          type: string
-        CancelReason:
+        Direction:
           enum:
-          - UserInitiated
-          - AgentShutdown
-          - Unknown
-          - JobOrphaned
-          - NotApplicable
+          - Ascending
+          - Descending
           type: string
-    PublishMassTallySumAverageJobRequestAsync_RequestBody:
-      title: PublishMassTallySumAverageJobRequestAsync_RequestBody
+    SearchProvider:
+      title: SearchProvider
+      type: object
+      properties:
+        SearchIndex:
+          $ref: '#/components/schemas/SearchIndexRef'
+        Input:
+          type: string
+    MassSaveAsListAsync_RequestBody:
+      title: MassSaveAsListAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/MassTallySumAverageJobRequest'
-    MassExportToFileAsync_RequestBody:
-      title: MassExportToFileAsync_RequestBody
+          $ref: '#/components/schemas/MassSaveAsListRequest'
+    PublishMassReplaceJobRequestAsync_RequestBody:
+      title: PublishMassReplaceJobRequestAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/MassExportToFileRequest'
+          $ref: '#/components/schemas/MassReplaceJobRequest'
+    MassMoveJobRequest:
+      title: MassMoveJobRequest
+      type: object
+      properties:
+        DestinationFolderArtifactID:
+          type: integer
+        Type:
+          enum:
+          - Edit
+          - Delete
+          - Replace
+          - Move
+          - Copy
+          - Report
+          - SendToCaseMap
+          - Tif
+          - Print
+          - Export
+          - Cluster
+          - Tally
+          - SaveAsList
+          - Custom
+          type: string
+        ArtifactTypeID:
+          type: integer
+        MassProcessID:
+          type: integer
     ReplaceField:
       title: ReplaceField
       type: object
@@ -1613,20 +1608,17 @@ components:
           type:
           - string
           - 'null'
-    MassSaveAsListJobRequest:
-      title: MassSaveAsListJobRequest
+    MassTallySumAverageJobRequest:
+      title: MassTallySumAverageJobRequest
       type: object
       properties:
-        Notes:
-          type: string
-        ListName:
-          type: string
-        ExistingListArtifactID:
-          type: integer
-        Options:
+        Field:
+          $ref: '#/components/schemas/FieldRef'
+        Operation:
           enum:
-          - CreateNewList
-          - ReplaceExistingList
+          - Tally
+          - Sum
+          - Average
           type: string
         Type:
           enum:
@@ -1649,9 +1641,39 @@ components:
           type: integer
         MassProcessID:
           type: integer
+    TallySumAverageResult:
+      title: TallySumAverageResult
+      type: object
+      properties:
+        Value:
+          type: string
+        Count:
+          type: number
   parameters:
+    artifactTypeID:
+      name: artifactTypeID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
     workspaceID:
       name: workspaceID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: integer
+    x-csrf-header:
+      name: x-csrf-header
+      in: header
+      description: ''
+      required: true
+      schema:
+        type: string
+        default: '-'
+    processID:
+      name: processID
       in: path
       description: ''
       required: true
@@ -1664,25 +1686,3 @@ components:
       required: true
       schema:
         type: string
-    x-csrf-header:
-      name: x-csrf-header
-      in: header
-      description: ''
-      required: true
-      schema:
-        type: string
-        default: '-'
-    artifactTypeID:
-      name: artifactTypeID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer
-    processID:
-      name: processID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: integer

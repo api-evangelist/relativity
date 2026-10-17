@@ -292,35 +292,7 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    BillableSummaryReportDirectoryDetailsRequest:
-      required:
-      - container
-      - date
-      - path
-      type: object
-      properties:
-        container:
-          type: string
-          minLength: 1
-        date:
-          type: string
-          pattern: ^\d{8}$
-        path:
-          type: string
-          description: Path within the container. Use an empty string ("") to target the container root. A value of "/" is normalized to the empty string and is therefore also treated as the container root.
-      additionalProperties: false
-    BillableSummaryReport:
-      type: object
-      properties:
-        container:
-          type:
-          - string
-          - 'null'
-        date:
-          type: string
-          format: date-time
-      additionalProperties: false
-    BillableSummaryReportListResponse:
+    BillableSummaryReportPageResponse:
       type: object
       properties:
         reports:
@@ -329,6 +301,9 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/BillableSummaryReport'
+        totalCount:
+          type: integer
+          format: int32
       additionalProperties: false
     BillableSummaryReportDirectoryDetailsResponse:
       type: object
@@ -357,7 +332,7 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
-    BillableSummaryReportPageResponse:
+    BillableSummaryReportListResponse:
       type: object
       properties:
         reports:
@@ -366,9 +341,23 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/BillableSummaryReport'
-        totalCount:
-          type: integer
-          format: int32
+      additionalProperties: false
+    BillableSummaryReportDirectoryDetailsRequest:
+      required:
+      - container
+      - date
+      - path
+      type: object
+      properties:
+        container:
+          type: string
+          minLength: 1
+        date:
+          type: string
+          pattern: ^\d{8}$
+        path:
+          type: string
+          description: Path within the container. Use an empty string ("") to target the container root. A value of "/" is normalized to the empty string and is therefore also treated as the container root.
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
@@ -395,6 +384,17 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    BillableSummaryReport:
+      type: object
+      properties:
+        container:
+          type:
+          - string
+          - 'null'
+        date:
+          type: string
+          format: date-time
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: http

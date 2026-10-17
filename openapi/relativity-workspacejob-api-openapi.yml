@@ -179,40 +179,6 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    WorkspaceCreateEnqueueResponse:
-      required:
-      - JobId
-      type: object
-      properties:
-        JobId:
-          type: string
-          format: uuid
-      additionalProperties: false
     WorkspaceCreateRequestDto:
       required:
       - Name
@@ -257,6 +223,40 @@ components:
           - integer
           - 'null'
           format: int32
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    WorkspaceCreateEnqueueResponse:
+      required:
+      - JobId
+      type: object
+      properties:
+        JobId:
+          type: string
+          format: uuid
       additionalProperties: false
   securitySchemes:
     Bearer:

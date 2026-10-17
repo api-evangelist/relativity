@@ -489,14 +489,34 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    GetDiscoveredDocumentsWithPivotOnRequest:
-      title: GetDiscoveredDocumentsWithPivotOnRequest
+    ProcessingFilePathResponse:
+      title: ProcessingFilePathResponse
       type: object
       properties:
+        LogicalID:
+          type: string
+        StoredAs:
+          type: string
+    GetDiscoveredDocumentsRequest:
+      title: GetDiscoveredDocumentsRequest
+      type: object
+      properties:
+        StartingPointOfResult:
+          type: integer
+        NumberOfResults:
+          type: integer
         Expression:
           type: string
-        PivotOnOption:
-          $ref: '#/components/schemas/PivotOnOption'
+        AuditedSourceID:
+          type: integer
+        SortingOptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SortOption'
+        ExcludeTotalCount:
+          type: boolean
+        IncludeDuplicateHash:
+          type: boolean
         AdvancedOptionsFlag:
           enum:
           - None
@@ -504,12 +524,6 @@ components:
           type:
           - string
           - 'null'
-    UpdateExpressionFilterAsync_RequestBody:
-      title: UpdateExpressionFilterAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/UpdateProcessingExpressionFilterRequest'
     CreateProcessingExpressionFilterRequest:
       title: CreateProcessingExpressionFilterRequest
       type: object
@@ -524,12 +538,93 @@ components:
           type: string
         IncludeFamily:
           type: boolean
-    GetFilePathsAsync_RequestBody:
-      title: GetFilePathsAsync_RequestBody
+    IKeplerStream:
+      title: IKeplerStream
+      type: object
+      properties:
+        ContentType:
+          type: string
+        ContentDisposition:
+          type: string
+        CacheControl:
+          type: string
+        StatusCode:
+          enum:
+          - Continue
+          - SwitchingProtocols
+          - OK
+          - Created
+          - Accepted
+          - NonAuthoritativeInformation
+          - NoContent
+          - ResetContent
+          - PartialContent
+          - MultipleChoices
+          - Ambiguous
+          - MovedPermanently
+          - Moved
+          - Found
+          - Redirect
+          - SeeOther
+          - RedirectMethod
+          - NotModified
+          - UseProxy
+          - Unused
+          - TemporaryRedirect
+          - RedirectKeepVerb
+          - BadRequest
+          - Unauthorized
+          - PaymentRequired
+          - Forbidden
+          - NotFound
+          - MethodNotAllowed
+          - NotAcceptable
+          - ProxyAuthenticationRequired
+          - RequestTimeout
+          - Conflict
+          - Gone
+          - LengthRequired
+          - PreconditionFailed
+          - RequestEntityTooLarge
+          - RequestUriTooLong
+          - UnsupportedMediaType
+          - RequestedRangeNotSatisfiable
+          - ExpectationFailed
+          - UpgradeRequired
+          - InternalServerError
+          - NotImplemented
+          - BadGateway
+          - ServiceUnavailable
+          - GatewayTimeout
+          - HttpVersionNotSupported
+          type:
+          - string
+          - 'null'
+        Headers:
+          type: array
+          items:
+            type: string
+            format: NameValueCollection
+    GetDiscoveredDocumentsAsync_RequestBody:
+      title: GetDiscoveredDocumentsAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/ProcessingMetadataRequest'
+          $ref: '#/components/schemas/GetDiscoveredDocumentsRequest'
+    GetTotalJobExceptionCountRequest:
+      title: GetTotalJobExceptionCountRequest
+      type: object
+      properties:
+        ProcessingSetId:
+          type: integer
+    GetDocumentErrorHistoryAsync_RequestBody:
+      title: GetDocumentErrorHistoryAsync_RequestBody
+      type: object
+      properties:
+        skip:
+          type: integer
+        top:
+          type: integer
     ProcessingDocumentErrorInfo:
       title: ProcessingDocumentErrorInfo
       type: object
@@ -545,6 +640,120 @@ components:
           type: string
         RetryStatus:
           type: string
+    GetDiscoveredDocumentListRequest:
+      title: GetDiscoveredDocumentListRequest
+      type: object
+      properties:
+        Expression:
+          type: string
+        LogicalIDs:
+          type: array
+          items:
+            type: string
+        Columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExportColumn'
+        SortingOptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SortOption'
+        Culture:
+          type: string
+        IncludeDuplicateHash:
+          type: boolean
+        AdvancedOptionsFlag:
+          enum:
+          - None
+          - EnableMDSKepler
+          type:
+          - string
+          - 'null'
+    DownloadNistedDocumentListAsync_RequestBody:
+      title: DownloadNistedDocumentListAsync_RequestBody
+      type: object
+      properties:
+        processingSetId:
+          type: integer
+    GetDocumentsMetadataAsync_RequestBody:
+      title: GetDocumentsMetadataAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ProcessingMetadataRequest'
+    ExportColumn:
+      title: ExportColumn
+      type: object
+      properties:
+        Property:
+          enum:
+          - ContainerID
+          - ProcessingFileId
+          - FileSize
+          - ParentFileId
+          - DiscoverGroupId
+          - ContainerName
+          - ContainerExtension
+          - IngestionError
+          - ExtractedTextLocation
+          - FileName
+          - FileExtension
+          - FileType
+          - FolderPath
+          - ImportSource
+          - LogicalPath
+          - MD5Hash
+          - DocumentErrorMessage
+          - OriginalPath
+          - SHA1Hash
+          - SHA256Hash
+          - TextExtractionMethod
+          - VirtualPath
+          - IsContainer
+          - IsEmbedded
+          - OfficeEmbeddedItems
+          - Unprocessable
+          - IsPublished
+          - CustodianArtifactId
+          - DataSourceArtifactId
+          - CustodianName
+          - DataSourceName
+          - SenderDomain
+          - SortDate
+          - IsDeleted
+          - ErrorMessage
+          - ErrorCategory
+          - ErrorPhase
+          - ErrorStatus
+          - JobId
+          - DedupeStatus
+          - StorageId
+          - Severity
+          - SourceId
+          - DocumentUuid
+          - ParentId
+          - RootId
+          - UniqueId
+          - LogicalId
+          - ParentLogicalId
+          - Level
+          type: string
+        Header:
+          type: string
+    ProcessingFilterData:
+      title: ProcessingFilterData
+      type: object
+      properties:
+        Uuid:
+          type: string
+        TotalCount:
+          type: integer
+        UniqueDataSourceCount:
+          type: integer
+        Results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessingFilterResult'
     GetPublishJobErrorsAsync_RequestBody:
       title: GetPublishJobErrorsAsync_RequestBody
       type: object
@@ -565,24 +774,20 @@ components:
           type: array
           items:
             type: string
-    RetryDeleteDocumentAsync_RequestBody:
-      title: RetryDeleteDocumentAsync_RequestBody
+    ProcessingMetadataRequest:
+      title: ProcessingMetadataRequest
       type: object
       properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    CreateExpressionFilterAsync_RequestBody:
-      title: CreateExpressionFilterAsync_RequestBody
+        LogicalIDs:
+          type: array
+          items:
+            type: string
+    GetTotalJobExceptionCountAsync_RequestBody:
+      title: GetTotalJobExceptionCountAsync_RequestBody
       type: object
       properties:
         request:
-          $ref: '#/components/schemas/CreateProcessingExpressionFilterRequest'
-    GetTotalJobExceptionCountRequest:
-      title: GetTotalJobExceptionCountRequest
-      type: object
-      properties:
-        ProcessingSetId:
-          type: integer
+          $ref: '#/components/schemas/GetTotalJobExceptionCountRequest'
     ProcessingFilter:
       title: ProcessingFilter
       type: object
@@ -593,6 +798,30 @@ components:
           type: string
         Type:
           type: string
+    PublishDocumentsAsync_RequestBody:
+      title: PublishDocumentsAsync_RequestBody
+      type: object
+      properties:
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
+    RetryDeleteDocumentAsync_RequestBody:
+      title: RetryDeleteDocumentAsync_RequestBody
+      type: object
+      properties:
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
+    PivotOnDiscoveredDocumentsAsync_RequestBody:
+      title: PivotOnDiscoveredDocumentsAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/GetDiscoveredDocumentsWithPivotOnRequest'
+    UpdateExpressionFilterAsync_RequestBody:
+      title: UpdateExpressionFilterAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/UpdateProcessingExpressionFilterRequest'
     PivotOnOption:
       title: PivotOnOption
       type: object
@@ -709,439 +938,6 @@ components:
           - 'null'
         PivotOnCount:
           type: integer
-    GetTotalJobExceptionCountAsync_RequestBody:
-      title: GetTotalJobExceptionCountAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/GetTotalJobExceptionCountRequest'
-    ProcessingFilePathResponse:
-      title: ProcessingFilePathResponse
-      type: object
-      properties:
-        LogicalID:
-          type: string
-        StoredAs:
-          type: string
-    GetDiscoveredDocumentListRequest:
-      title: GetDiscoveredDocumentListRequest
-      type: object
-      properties:
-        Expression:
-          type: string
-        LogicalIDs:
-          type: array
-          items:
-            type: string
-        Columns:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExportColumn'
-        SortingOptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/SortOption'
-        Culture:
-          type: string
-        IncludeDuplicateHash:
-          type: boolean
-        AdvancedOptionsFlag:
-          enum:
-          - None
-          - EnableMDSKepler
-          type:
-          - string
-          - 'null'
-    ExportColumn:
-      title: ExportColumn
-      type: object
-      properties:
-        Property:
-          enum:
-          - ContainerID
-          - ProcessingFileId
-          - FileSize
-          - ParentFileId
-          - DiscoverGroupId
-          - ContainerName
-          - ContainerExtension
-          - IngestionError
-          - ExtractedTextLocation
-          - FileName
-          - FileExtension
-          - FileType
-          - FolderPath
-          - ImportSource
-          - LogicalPath
-          - MD5Hash
-          - DocumentErrorMessage
-          - OriginalPath
-          - SHA1Hash
-          - SHA256Hash
-          - TextExtractionMethod
-          - VirtualPath
-          - IsContainer
-          - IsEmbedded
-          - OfficeEmbeddedItems
-          - Unprocessable
-          - IsPublished
-          - CustodianArtifactId
-          - DataSourceArtifactId
-          - CustodianName
-          - DataSourceName
-          - SenderDomain
-          - SortDate
-          - IsDeleted
-          - ErrorMessage
-          - ErrorCategory
-          - ErrorPhase
-          - ErrorStatus
-          - JobId
-          - DedupeStatus
-          - StorageId
-          - Severity
-          - SourceId
-          - DocumentUuid
-          - ParentId
-          - RootId
-          - UniqueId
-          - LogicalId
-          - ParentLogicalId
-          - Level
-          type: string
-        Header:
-          type: string
-    GetDocumentErrorHistoryAsync_RequestBody:
-      title: GetDocumentErrorHistoryAsync_RequestBody
-      type: object
-      properties:
-        skip:
-          type: integer
-        top:
-          type: integer
-    GetDocumentsMetadataAsync_RequestBody:
-      title: GetDocumentsMetadataAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/ProcessingMetadataRequest'
-    ProcessingLogicalIdResults:
-      title: ProcessingLogicalIdResults
-      type: object
-      properties:
-        FilterUuid:
-          type: string
-        TotalCount:
-          type: integer
-        Results:
-          type: array
-          items:
-            type: string
-    GetDiscoveredDocumentIdsAsync_RequestBody:
-      title: GetDiscoveredDocumentIdsAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/GetDiscoveredDocumentsRequest'
-    RetrievePublishableDocumentCountAsync_RequestBody:
-      title: RetrievePublishableDocumentCountAsync_RequestBody
-      type: object
-      properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    DownloadDiscoveredDocumentListAsync_RequestBody:
-      title: DownloadDiscoveredDocumentListAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/GetDiscoveredDocumentListRequest'
-    IKeplerStream:
-      title: IKeplerStream
-      type: object
-      properties:
-        ContentType:
-          type: string
-        ContentDisposition:
-          type: string
-        CacheControl:
-          type: string
-        StatusCode:
-          enum:
-          - Continue
-          - SwitchingProtocols
-          - OK
-          - Created
-          - Accepted
-          - NonAuthoritativeInformation
-          - NoContent
-          - ResetContent
-          - PartialContent
-          - MultipleChoices
-          - Ambiguous
-          - MovedPermanently
-          - Moved
-          - Found
-          - Redirect
-          - SeeOther
-          - RedirectMethod
-          - NotModified
-          - UseProxy
-          - Unused
-          - TemporaryRedirect
-          - RedirectKeepVerb
-          - BadRequest
-          - Unauthorized
-          - PaymentRequired
-          - Forbidden
-          - NotFound
-          - MethodNotAllowed
-          - NotAcceptable
-          - ProxyAuthenticationRequired
-          - RequestTimeout
-          - Conflict
-          - Gone
-          - LengthRequired
-          - PreconditionFailed
-          - RequestEntityTooLarge
-          - RequestUriTooLong
-          - UnsupportedMediaType
-          - RequestedRangeNotSatisfiable
-          - ExpectationFailed
-          - UpgradeRequired
-          - InternalServerError
-          - NotImplemented
-          - BadGateway
-          - ServiceUnavailable
-          - GatewayTimeout
-          - HttpVersionNotSupported
-          type:
-          - string
-          - 'null'
-        Headers:
-          type: array
-          items:
-            type: string
-            format: NameValueCollection
-    RetryDocumentErrorsAsync_RequestBody:
-      title: RetryDocumentErrorsAsync_RequestBody
-      type: object
-      properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    PublishJobErrorInfoResponse:
-      title: PublishJobErrorInfoResponse
-      type: object
-      properties:
-        ErroredJobCount:
-          type: integer
-        GroupIdsWithJobErrors:
-          type: array
-          items:
-            type: integer
-        ErrorArtifactIds:
-          type: array
-          items:
-            type: integer
-        GroupIdsCheckedCount:
-          type: integer
-    DownloadNistedDocumentListAsync_RequestBody:
-      title: DownloadNistedDocumentListAsync_RequestBody
-      type: object
-      properties:
-        processingSetId:
-          type: integer
-    ProcessingDocumentsRequest:
-      title: ProcessingDocumentsRequest
-      type: object
-      properties:
-        LogicalIds:
-          type: array
-          items:
-            type: string
-        Expression:
-          type: string
-        AdvancedOptionsFlag:
-          enum:
-          - None
-          - EnableMDSKepler
-          type:
-          - string
-          - 'null'
-    GetDiscoveredDocumentsRequest:
-      title: GetDiscoveredDocumentsRequest
-      type: object
-      properties:
-        StartingPointOfResult:
-          type: integer
-        NumberOfResults:
-          type: integer
-        Expression:
-          type: string
-        AuditedSourceID:
-          type: integer
-        SortingOptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/SortOption'
-        ExcludeTotalCount:
-          type: boolean
-        IncludeDuplicateHash:
-          type: boolean
-        AdvancedOptionsFlag:
-          enum:
-          - None
-          - EnableMDSKepler
-          type:
-          - string
-          - 'null'
-    GetFilterResultAsync_RequestBody:
-      title: GetFilterResultAsync_RequestBody
-      type: object
-      properties:
-        skip:
-          type: integer
-        top:
-          type: integer
-    SortOption:
-      title: SortOption
-      type: object
-      properties:
-        Property:
-          enum:
-          - ContainerID
-          - ProcessingFileId
-          - FileSize
-          - ParentFileId
-          - DiscoverGroupId
-          - ContainerName
-          - ContainerExtension
-          - IngestionError
-          - ExtractedTextLocation
-          - FileName
-          - FileExtension
-          - FileType
-          - FolderPath
-          - ImportSource
-          - LogicalPath
-          - MD5Hash
-          - DocumentErrorMessage
-          - OriginalPath
-          - SHA1Hash
-          - SHA256Hash
-          - TextExtractionMethod
-          - VirtualPath
-          - IsContainer
-          - IsEmbedded
-          - OfficeEmbeddedItems
-          - Unprocessable
-          - IsPublished
-          - CustodianArtifactId
-          - DataSourceArtifactId
-          - CustodianName
-          - DataSourceName
-          - SenderDomain
-          - SortDate
-          - IsDeleted
-          - ErrorMessage
-          - ErrorCategory
-          - ErrorPhase
-          - ErrorStatus
-          - JobId
-          - DedupeStatus
-          - StorageId
-          - Severity
-          - SourceId
-          - DocumentUuid
-          - ParentId
-          - RootId
-          - UniqueId
-          - LogicalId
-          - ParentLogicalId
-          - Level
-          type: string
-        Order:
-          enum:
-          - Descending
-          - Ascending
-          type: string
-    GetDiscoveredDocumentsAsync_RequestBody:
-      title: GetDiscoveredDocumentsAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/GetDiscoveredDocumentsRequest'
-    ProcessingMetadataRequest:
-      title: ProcessingMetadataRequest
-      type: object
-      properties:
-        LogicalIDs:
-          type: array
-          items:
-            type: string
-    PivotOnDiscoveredDocumentsAsync_RequestBody:
-      title: PivotOnDiscoveredDocumentsAsync_RequestBody
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/GetDiscoveredDocumentsWithPivotOnRequest'
-    ProcessingFilterData:
-      title: ProcessingFilterData
-      type: object
-      properties:
-        Uuid:
-          type: string
-        TotalCount:
-          type: integer
-        UniqueDataSourceCount:
-          type: integer
-        Results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessingFilterResult'
-    ProcessingDocumentErrorHistoryResponse:
-      title: ProcessingDocumentErrorHistoryResponse
-      type: object
-      properties:
-        TotalCount:
-          type: integer
-        DocumentErrorHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessingDocumentErrorInfo'
-    PublishDocumentsAsync_RequestBody:
-      title: PublishDocumentsAsync_RequestBody
-      type: object
-      properties:
-        documentsRequest:
-          $ref: '#/components/schemas/ProcessingDocumentsRequest'
-    GetDiscoveredDocumentsWithPivotOnResponse:
-      title: GetDiscoveredDocumentsWithPivotOnResponse
-      type: object
-      properties:
-        GroupByIdentifier:
-          type: string
-        GroupByArtifactId:
-          type: string
-        PivotOnIdentifier:
-          type: string
-        PivotOnArtifactId:
-          type: string
-        ResultCount:
-          type: integer
-    UpdateProcessingExpressionFilterRequest:
-      title: UpdateProcessingExpressionFilterRequest
-      type: object
-      properties:
-        FilterName:
-          type: string
-        DataSourceIDs:
-          type: array
-          items:
-            type: integer
-        Expression:
-          type: string
-        IncludeFamily:
-          type: boolean
     ProcessingFilterResult:
       title: ProcessingFilterResult
       type: object
@@ -1241,16 +1037,227 @@ components:
           type: string
         Level:
           type: integer
+    GetFilterResultAsync_RequestBody:
+      title: GetFilterResultAsync_RequestBody
+      type: object
+      properties:
+        skip:
+          type: integer
+        top:
+          type: integer
+    ProcessingDocumentsRequest:
+      title: ProcessingDocumentsRequest
+      type: object
+      properties:
+        LogicalIds:
+          type: array
+          items:
+            type: string
+        Expression:
+          type: string
+        AdvancedOptionsFlag:
+          enum:
+          - None
+          - EnableMDSKepler
+          type:
+          - string
+          - 'null'
+    CreateExpressionFilterAsync_RequestBody:
+      title: CreateExpressionFilterAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/CreateProcessingExpressionFilterRequest'
+    GetDiscoveredDocumentIdsAsync_RequestBody:
+      title: GetDiscoveredDocumentIdsAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/GetDiscoveredDocumentsRequest'
+    RetryDocumentErrorsAsync_RequestBody:
+      title: RetryDocumentErrorsAsync_RequestBody
+      type: object
+      properties:
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
+    ProcessingLogicalIdResults:
+      title: ProcessingLogicalIdResults
+      type: object
+      properties:
+        FilterUuid:
+          type: string
+        TotalCount:
+          type: integer
+        Results:
+          type: array
+          items:
+            type: string
+    PublishJobErrorInfoResponse:
+      title: PublishJobErrorInfoResponse
+      type: object
+      properties:
+        ErroredJobCount:
+          type: integer
+        GroupIdsWithJobErrors:
+          type: array
+          items:
+            type: integer
+        ErrorArtifactIds:
+          type: array
+          items:
+            type: integer
+        GroupIdsCheckedCount:
+          type: integer
+    ProcessingDocumentErrorHistoryResponse:
+      title: ProcessingDocumentErrorHistoryResponse
+      type: object
+      properties:
+        TotalCount:
+          type: integer
+        DocumentErrorHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessingDocumentErrorInfo'
+    GetDiscoveredDocumentsWithPivotOnRequest:
+      title: GetDiscoveredDocumentsWithPivotOnRequest
+      type: object
+      properties:
+        Expression:
+          type: string
+        PivotOnOption:
+          $ref: '#/components/schemas/PivotOnOption'
+        AdvancedOptionsFlag:
+          enum:
+          - None
+          - EnableMDSKepler
+          type:
+          - string
+          - 'null'
+    SortOption:
+      title: SortOption
+      type: object
+      properties:
+        Property:
+          enum:
+          - ContainerID
+          - ProcessingFileId
+          - FileSize
+          - ParentFileId
+          - DiscoverGroupId
+          - ContainerName
+          - ContainerExtension
+          - IngestionError
+          - ExtractedTextLocation
+          - FileName
+          - FileExtension
+          - FileType
+          - FolderPath
+          - ImportSource
+          - LogicalPath
+          - MD5Hash
+          - DocumentErrorMessage
+          - OriginalPath
+          - SHA1Hash
+          - SHA256Hash
+          - TextExtractionMethod
+          - VirtualPath
+          - IsContainer
+          - IsEmbedded
+          - OfficeEmbeddedItems
+          - Unprocessable
+          - IsPublished
+          - CustodianArtifactId
+          - DataSourceArtifactId
+          - CustodianName
+          - DataSourceName
+          - SenderDomain
+          - SortDate
+          - IsDeleted
+          - ErrorMessage
+          - ErrorCategory
+          - ErrorPhase
+          - ErrorStatus
+          - JobId
+          - DedupeStatus
+          - StorageId
+          - Severity
+          - SourceId
+          - DocumentUuid
+          - ParentId
+          - RootId
+          - UniqueId
+          - LogicalId
+          - ParentLogicalId
+          - Level
+          type: string
+        Order:
+          enum:
+          - Descending
+          - Ascending
+          type: string
+    GetFilePathsAsync_RequestBody:
+      title: GetFilePathsAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/ProcessingMetadataRequest'
+    DownloadDiscoveredDocumentListAsync_RequestBody:
+      title: DownloadDiscoveredDocumentListAsync_RequestBody
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/GetDiscoveredDocumentListRequest'
+    GetDiscoveredDocumentsWithPivotOnResponse:
+      title: GetDiscoveredDocumentsWithPivotOnResponse
+      type: object
+      properties:
+        GroupByIdentifier:
+          type: string
+        GroupByArtifactId:
+          type: string
+        PivotOnIdentifier:
+          type: string
+        PivotOnArtifactId:
+          type: string
+        ResultCount:
+          type: integer
+    RetrievePublishableDocumentCountAsync_RequestBody:
+      title: RetrievePublishableDocumentCountAsync_RequestBody
+      type: object
+      properties:
+        documentsRequest:
+          $ref: '#/components/schemas/ProcessingDocumentsRequest'
+    UpdateProcessingExpressionFilterRequest:
+      title: UpdateProcessingExpressionFilterRequest
+      type: object
+      properties:
+        FilterName:
+          type: string
+        DataSourceIDs:
+          type: array
+          items:
+            type: integer
+        Expression:
+          type: string
+        IncludeFamily:
+          type: boolean
   parameters:
-    workspaceID:
-      name: workspaceID
+    logicalID:
+      name: logicalID
+      in: path
+      description: ''
+      required: true
+      schema:
+        type: string
+    dataSourceID:
+      name: dataSourceID
       in: path
       description: ''
       required: true
       schema:
         type: integer
-    filterID:
-      name: filterID
+    workspaceID:
+      name: workspaceID
       in: path
       description: ''
       required: true
@@ -1264,15 +1271,8 @@ components:
       schema:
         type: string
         default: '-'
-    logicalID:
-      name: logicalID
-      in: path
-      description: ''
-      required: true
-      schema:
-        type: string
-    dataSourceID:
-      name: dataSourceID
+    filterID:
+      name: filterID
       in: path
       description: ''
       required: true

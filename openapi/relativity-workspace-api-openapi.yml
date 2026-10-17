@@ -345,26 +345,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    DisplayableObjectIdentifier:
-      type: object
-      properties:
-        ArtifactID:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        Guids:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-        Name:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     WorkspaceUpdateRequest:
       type: object
       properties:
@@ -425,14 +405,45 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    KeplerValidationError:
+    Meta:
       type: object
       properties:
-        PropertyName:
+        Unsupported:
           type:
-          - string
+          - array
           - 'null'
-        ErrorMessage:
+          items:
+            type: string
+        ReadOnly:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    ObjectIdentifier:
+      type: object
+      properties:
+        ArtifactID:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Guids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+    NameIDPair:
+      type: object
+      properties:
+        ID:
+          type: integer
+          format: int32
+        Name:
           type:
           - string
           - 'null'
@@ -445,6 +456,90 @@ components:
         Secured:
           type: boolean
       additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    WorkspaceRequestEnvelope:
+      required:
+      - WorkspaceRequest
+      type: object
+      properties:
+        WorkspaceRequest:
+          $ref: '#/components/schemas/WorkspaceUpdateRequest'
+        LastModifiedOn:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Action:
+      type: object
+      properties:
+        Name:
+          type:
+          - string
+          - 'null'
+        Verb:
+          type:
+          - string
+          - 'null'
+        Href:
+          type:
+          - string
+          - 'null'
+        IsAvailable:
+          type: boolean
+        Reason:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    KeplerValidationError:
+      type: object
+      properties:
+        PropertyName:
+          type:
+          - string
+          - 'null'
+        ErrorMessage:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StringSecurable:
+      type: object
+      properties:
+        Value:
+          type:
+          - string
+          - 'null'
+        Secured:
+          type: boolean
+      additionalProperties: false
     ObjectIdentifierSecurable:
       type: object
       properties:
@@ -452,6 +547,28 @@ components:
           $ref: '#/components/schemas/ObjectIdentifier'
         Secured:
           type: boolean
+      additionalProperties: false
+    KeplerProblemDetails:
+      type: object
+      properties:
+        ErrorType:
+          type:
+          - string
+          - 'null'
+        Identifier:
+          type:
+          - string
+          - 'null'
+        Message:
+          type:
+          - string
+          - 'null'
+        Errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/KeplerValidationError'
       additionalProperties: false
     WorkspaceReadResponseV1:
       type: object
@@ -543,52 +660,7 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    WorkspaceRequestEnvelope:
-      required:
-      - WorkspaceRequest
-      type: object
-      properties:
-        WorkspaceRequest:
-          $ref: '#/components/schemas/WorkspaceUpdateRequest'
-        LastModifiedOn:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-    StringSecurable:
-      type: object
-      properties:
-        Value:
-          type:
-          - string
-          - 'null'
-        Secured:
-          type: boolean
-      additionalProperties: false
-    KeplerProblemDetails:
-      type: object
-      properties:
-        ErrorType:
-          type:
-          - string
-          - 'null'
-        Identifier:
-          type:
-          - string
-          - 'null'
-        Message:
-          type:
-          - string
-          - 'null'
-        Errors:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/KeplerValidationError'
-      additionalProperties: false
-    ObjectIdentifier:
+    DisplayableObjectIdentifier:
       type: object
       properties:
         ArtifactID:
@@ -603,83 +675,11 @@ components:
           items:
             type: string
             format: uuid
-      additionalProperties: false
-    Meta:
-      type: object
-      properties:
-        Unsupported:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        ReadOnly:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-    Action:
-      type: object
-      properties:
-        Name:
-          type:
-          - string
-          - 'null'
-        Verb:
-          type:
-          - string
-          - 'null'
-        Href:
-          type:
-          - string
-          - 'null'
-        IsAvailable:
-          type: boolean
-        Reason:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-    NameIDPair:
-      type: object
-      properties:
-        ID:
-          type: integer
-          format: int32
         Name:
           type:
           - string
           - 'null'
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: http

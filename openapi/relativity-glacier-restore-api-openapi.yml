@@ -89,16 +89,6 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
 components:
   schemas:
-    StartGlacierRestoreRequest:
-      type: object
-      required:
-      - destinationLocation
-      properties:
-        destinationLocation:
-          type: string
-          minLength: 10
-          description: Specify the destination location to restore from Glacier. The location should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM.
-          example: t001/ARM/RestoreLocation1
     StartGlacierRestoreResponse:
       type: object
       required:
@@ -135,6 +125,16 @@ components:
           type: string
           format: uri
           description: A URI reference identifying the specific occurrence
+    StartGlacierRestoreRequest:
+      type: object
+      required:
+      - destinationLocation
+      properties:
+        destinationLocation:
+          type: string
+          minLength: 10
+          description: Specify the destination location to restore from Glacier. The location should be located in one of the following locations ARM, ProcessingSource, StructuredData, or TenantVM.
+          example: t001/ARM/RestoreLocation1
     ValidationProblemDetails:
       allOf:
       - $ref: '#/components/schemas/ProblemDetails'

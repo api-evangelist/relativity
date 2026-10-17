@@ -50,6 +50,33 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    MetricOriginDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        metrics:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricDto'
+      additionalProperties: false
+    MetadataDto:
+      type: object
+      properties:
+        origins:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MetricOriginDto'
+      additionalProperties: false
     MetricDto:
       type: object
       properties:
@@ -85,33 +112,6 @@ components:
           type: boolean
         isActive:
           type: boolean
-      additionalProperties: false
-    MetadataDto:
-      type: object
-      properties:
-        origins:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/MetricOriginDto'
-      additionalProperties: false
-    MetricOriginDto:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type:
-          - string
-          - 'null'
-        metrics:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/MetricDto'
       additionalProperties: false
     ProblemDetails:
       type: object

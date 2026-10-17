@@ -159,31 +159,6 @@ components:
     Object:
       title: Object
       type: object
-    LogTimerAsync_RequestBody:
-      title: LogTimerAsync_RequestBody
-      type: object
-      properties:
-        metric:
-          $ref: '#/components/schemas/APMMetric'
-    APMMetric:
-      title: APMMetric
-      type: object
-      properties:
-        Name:
-          type: string
-        CustomData:
-          type: object
-          additionalProperties:
-            title: Object
-            type: object
-    LogMetricsAsync_RequestBody:
-      title: LogMetricsAsync_RequestBody
-      type: object
-      properties:
-        metrics:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetricRef'
     MetricRef:
       title: MetricRef
       type: object
@@ -217,6 +192,31 @@ components:
           type: string
         Value:
           $ref: '#/components/schemas/Object'
+    LogMetricsAsync_RequestBody:
+      title: LogMetricsAsync_RequestBody
+      type: object
+      properties:
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/MetricRef'
+    LogTimerAsync_RequestBody:
+      title: LogTimerAsync_RequestBody
+      type: object
+      properties:
+        metric:
+          $ref: '#/components/schemas/APMMetric'
+    APMMetric:
+      title: APMMetric
+      type: object
+      properties:
+        Name:
+          type: string
+        CustomData:
+          type: object
+          additionalProperties:
+            title: Object
+            type: object
   parameters:
     count:
       name: count
@@ -225,15 +225,15 @@ components:
       required: true
       schema:
         type: integer
-    workspaceGuid:
-      name: workspaceGuid
+    milliseconds:
+      name: milliseconds
       in: query
       description: ''
       required: true
       schema:
-        type: string
-    value:
-      name: value
+        type: number
+    workspaceGuid:
+      name: workspaceGuid
       in: query
       description: ''
       required: true
@@ -254,10 +254,10 @@ components:
       schema:
         type: string
         default: '-'
-    milliseconds:
-      name: milliseconds
+    value:
+      name: value
       in: query
       description: ''
       required: true
       schema:
-        type: number
+        type: string

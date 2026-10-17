@@ -121,6 +121,35 @@ components:
           items:
             $ref: '#/components/schemas/ErrorDetail'
           description: Collection of error objects with message details (only present for failed restores)
+    ErrorDetail:
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          type: string
+          description: Error message
+          example: Source directory not found
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference identifying the problem type
+        title:
+          type: string
+          description: A short, human-readable summary of the problem
+        status:
+          type: integer
+          description: The HTTP status code
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence
+        instance:
+          type: string
+          format: uri
+          description: A URI reference identifying the specific occurrence
     InventoryReport:
       type: object
       required:
@@ -198,35 +227,6 @@ components:
           items:
             $ref: '#/components/schemas/ErrorDetail'
           description: Collection of error objects with message details (only present for failed stores)
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          format: uri
-          description: A URI reference identifying the problem type
-        title:
-          type: string
-          description: A short, human-readable summary of the problem
-        status:
-          type: integer
-          description: The HTTP status code
-        detail:
-          type: string
-          description: A human-readable explanation specific to this occurrence
-        instance:
-          type: string
-          format: uri
-          description: A URI reference identifying the specific occurrence
-    ErrorDetail:
-      type: object
-      required:
-      - message
-      properties:
-        message:
-          type: string
-          description: Error message
-          example: Source directory not found
   securitySchemes:
     oauth2:
       type: oauth2

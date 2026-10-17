@@ -789,6 +789,23 @@ components:
         paging:
           $ref: '#/components/schemas/Page'
       additionalProperties: false
+    Page:
+      required:
+      - limit
+      - start
+      type: object
+      properties:
+        start:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+        limit:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+      additionalProperties: false
     ReportJobResponse:
       type: object
       properties:
@@ -831,13 +848,6 @@ components:
           - 'null'
           description: Sanitized, user-facing failure reason. Populated only when `state` is `Failed` (see Failure reporting in the implementation notes); null otherwise. Omitted from the JSON payload when null.
       additionalProperties: false
-    ReportResponse:
-      type: object
-      properties:
-        reportId:
-          type: string
-          format: uuid
-      additionalProperties: false
     DirectoryReportRequest:
       required:
       - depth
@@ -860,28 +870,20 @@ components:
           - 'null'
           description: Optional. When provided in YYYYMMDD format, a Summary report is produced from the Billable Summary CSV for the container/date combination instead of scanning storage.
       additionalProperties: false
-    Page:
-      required:
-      - limit
-      - start
+    ReportDepth:
+      enum:
+      - TopLevelOnly
+      - OneLevelDeep
+      - TwoLevelsDeep
+      - FullHierarchy
+      type: string
+    ReportResponse:
       type: object
       properties:
-        start:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
-        limit:
-          maximum: 2147483647
-          minimum: 1
-          type: integer
-          format: int32
+        reportId:
+          type: string
+          format: uuid
       additionalProperties: false
-    ReportCategory:
-      enum:
-      - DetailedReport
-      - SummaryReport
-      type: string
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -907,37 +909,11 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    ReportDepth:
+    ReportCategory:
       enum:
-      - TopLevelOnly
-      - OneLevelDeep
-      - TwoLevelsDeep
-      - FullHierarchy
+      - DetailedReport
+      - SummaryReport
       type: string
-    ReportDetailsDto:
-      type: object
-      properties:
-        fields:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        items:
-          type:
-          - array
-          - 'null'
-          items: {}
-        currentPage:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        totalItems:
-          type: integer
-          format: int32
-      additionalProperties: false
     Stream:
       type: object
       properties:
@@ -987,6 +963,55 @@ components:
           items:
             $ref: '#/components/schemas/ReportDto'
       additionalProperties: false
+    ReportDetailsDto:
+      type: object
+      properties:
+        fields:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        items:
+          type:
+          - array
+          - 'null'
+          items: {}
+        currentPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     ReportDto:
       type: object
       properties:
@@ -1053,31 +1078,6 @@ components:
           - boolean
           - 'null'
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: http

@@ -96,6 +96,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DirectoryListRequest:
+      required:
+      - path
+      type: object
+      properties:
+        path:
+          minLength: 1
+          type: string
+        paging:
+          $ref: '#/components/schemas/Page'
+      additionalProperties: false
     Page:
       required:
       - limit
@@ -112,17 +123,6 @@ components:
           minimum: 1
           type: integer
           format: int32
-      additionalProperties: false
-    DirectoryListRequest:
-      required:
-      - path
-      type: object
-      properties:
-        path:
-          minLength: 1
-          type: string
-        paging:
-          $ref: '#/components/schemas/Page'
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
